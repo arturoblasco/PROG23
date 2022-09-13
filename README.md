@@ -37,4 +37,4 @@ y  sigo ~~~aquí...f gsfdg sdfg sdf gsdfg sdfg dfg ~~~ fg sdfg <u>dfg</u>
 |horas|dilluns|dimarts|
 |---|---|---|
 |14.05|PR|PR|
-|15.00|PR|LM|
+||PR|LM|
