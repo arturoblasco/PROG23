@@ -24,3 +24,9 @@ y  sigo ~~~aquí...f gsfdg sdfg sdf gsdfg sdfg dfg ~~~ fg sdfg <u>dfg</u>
 1. kdjfkdjf
 1. kjdkfjdf
 1. kjdfkjdf
+
+
+* lista mal creada
+* kdjfkd
+* sdfsd
+* d
