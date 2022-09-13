@@ -30,3 +30,6 @@ y  sigo ~~~aquí...f gsfdg sdfg sdf gsdfg sdfg dfg ~~~ fg sdfg <u>dfg</u>
 * kdjfkd
 * sdfsd
 * d
+
+- [ ] estudiar.
+- [X] no estudiar. 
