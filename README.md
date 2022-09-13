@@ -9,5 +9,5 @@
 ###### encabezado 6
 
 
-vamos a      crear un párrafo
+vamos a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; crear un párrafo
 y sigo aquí...
