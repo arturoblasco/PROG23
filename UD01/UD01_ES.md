@@ -11,7 +11,115 @@
     typora-copy-images-to:${filename}/../assets
     imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD01/assets/cover.png
 ---
-Información leida:David Martinez
+[TOC]
+
+# Piensa como un programador 
+
+Una de las acepciones que trae el Diccionario de Real Academia de la Lengua Española (RAE) respecto a la palabra Problema es “**Planteamiento de una situación cuya respuesta desconocida debe obtenerse a través de métodos científicos**”. Con miras a lograr esa respuesta, un problema se puede definir como una situación en la cual se trata de alcanzar una meta y para lograrlo se deben hallar y utilizar unos medios y unas estrategias.
+
+La mayoría de problemas tienen algunos elementos en común: un *estado inicial*; una *meta*, lo que se *pretende lograr*; un *conjunto de recursos*, lo que está *permitido hacer* y/o utilizar; y un *dominio*, el *estado actual* de conocimientos, *habilidades* y energía de quien va a resolverlo (Moursund, 1999).
+
+Casi todos los problemas requieren, que quien los resuelve, los divida en submetas que, cuando son dominadas (por lo regular en orden), llevan a alcanzar el objetivo. La solución de problemas también requiere que se realicen operaciones durante el estado inicial y las submetas, actividades (conductuales, cognoscitivas) que alteran la naturaleza de tales estados (Schunk, 1997).
+
+Cada disciplina dispone de estrategias específicas para resolver problemas de su ámbito; por ejemplo, *resolver problemas matemáticos implica utilizar estrategias propias de las matemáticas*. Sin embargo, algunos psicólogos opinan que es posible utilizar con éxito estrategias generales, útiles para resolver problemas en muchas áreas. A través del tiempo, la humanidad ha utilizado diversas estrategias generales para resolver problemas. Schunk (1997), Woolfolk (1999) y otros, destacan los siguientes métodos o estrategias de tipo general:
+
+* **Ensayo y error**: Consiste en actuar hasta que algo funcione. Puede tomar mucho tiempo y no es seguro que se llegue a una solución. Es una estrategia apropiada cuando las soluciones posibles son pocas y se pueden probar todas, empezando por la que ofrece mayor probabilidad de resolver el problema.
+
+  Ejemplo: *una bombilla que no prende: revisar la bombilla, verificar la corriente eléctrica, verificar el interruptor*.
+
+* **Iluminación**: Implica la súbita conciencia de una solución que sea viable. Es muy utilizado el modelo de cuatro pasos formulado por Wallas (1921): preparación, incubación, iluminación y verificación.
+
+  Estos cuatro momentos también se conocen como proceso creativo. **Algunas investigaciones han determinado que cuando en el periodo de incubación se incluye una interrupción en el trabajo sobre un problema se logran mejores resultados desde el punto de vista de la creatividad**. La incubación ayuda a "olvidar" falsas pistas, mientras que no hacer interrupciones o descansos puede hacer que la persona que trata de encontrar una solución creativa se estanque en estrategias inapropiadas.
+
+  Ejemplos: <img src="/assets/problemas_lapices_cerillas.png" alt="problemas de lápices y cerillas" style="zoom:45%; float:right;" />
+
+  * *Dispones de 6 lápices/palillos/cerillas igual de largos, ¿como puedes formar 4 triángulos?*
+  * *Mueve 2 cerillas para seguir teniendo una copa pero con la cereza fuera.*
+
+* **Heurística**: Se basa en la utilización de reglas empíricas para llegar a una solución. El método heurístico conocido como “IDEAL”, formulado por Bransford y Stein (1984), incluye cinco pasos: 
+
+  *Identificar el problema*, *definir y presentar el problema*, *explorar las estrategias viables*, *avanzar en las estrategias* y *lograr la solución y volver para evaluar los efectos de las actividades* (Bransford & Stein, 1984). El matemático Polya (1957) también formuló un método heurístico para resolver problemas que se aproxima mucho al ciclo utilizado para programar computadores. <u>A lo largo de esta Guía se utilizará este método propuesto por Polya</u>.
+
+* **Algoritmos**: Consiste en aplicar adecuadamente una serie de pasos detallados que aseguran una solución correcta. Por lo general, cada algoritmo es específico de un dominio del conocimiento. La programación de computadores se apoya en este método.
+* **Modelo de procesamiento de información**: El modelo propuesto por Newell y Simon (1972) se basa en plantear varios momentos para un problema (estado inicial, estado final y vías de solución). Las posibles soluciones avanzan por subtemas y requieren que se realicen operaciones en cada uno de ellos.
+
+* **Análisis de medios y fines**: Se funda en la comparación del estado inicial con la meta que se pretende alcanzar para identificar las diferencias.
+
+  Luego se establecen submetas y se aplican las operaciones necesarias para alcanzar cada submeta hasta que se alcance la meta global. Con este método se puede proceder en retrospectiva (desde la meta hacia el estado inicial) o en prospectiva (desde el estado inicial hacia la meta).
+
+* **Razonamiento analógico**: Se apoya en el establecimiento de una analogía entre una situación que resulte familiar y la situación problema. Requiere conocimientos suficientes de ambas situaciones.
+
+* **Lluvia de ideas**: Consiste en formular soluciones viables a un problema. El modelo propuesto por Mayer (1992) plantea: definir el problema; generar muchas soluciones (sin evaluarlas); decidir los criterios para estimar las soluciones generadas; y emplear esos criterios para seleccionar la mejor solución. Requiere que los estudiantes no emitan juicios con respecto a las posibles soluciones hasta que terminen de formularlas.
+
+* **Sistemas de producción**: Se basa en la aplicación de una red de secuencias de condición y acción (Anderson, 1990). 
+
+* **Pensamiento lateral**: Se apoya en el pensamiento creativo, formulado por Edwar de Bono (1970), el cual difiere completamente del pensamiento lineal (lógico). El pensamiento lateral requiere que se exploren y consideren la mayor cantidad posible de alternativas para solucionar un problema. Su importancia para la educación radica en permitir que el estudiante: explore (escuche y acepte puntos de vista diferentes, busque alternativas); avive (promueva el uso de la fantasía y del humor); libere (use la discontinuidad y escape de ideas preestablecidas); y contrarreste la rigidez (vea las cosas desde diferentes ángulos y evite dogmatismos). Este es un método adecuado cuando el problema que se desea resolver no requiere información adicional, sino un reordenamiento de la información disponible; cuando hay ausencia del problema y es necesario apercibirse de que hay un problema; o cuando se debe reconocer la posibilidad de perfeccionamiento y redefinir esa posibilidad como un problema (De Bono, 1970).
+
+  Ejemplos:
+
+  * **El dilema del náufrago**. Un náufrago necesita trasladar a su isla de residencia algunos restos del naufragio de su barco, que afloraron en la orilla de la isla de enfrente. Allí tiene un zorro, un conejo y un racimo de zanahorias, que en su bote puede llevar a razón de uno por viaje. ¿Cómo puede llevarlo todo a su isla, sin que el zorro se coma al conejo, ni éste a las zanahorias?.
+
+    **Respuesta**: Deberá llevar primero al conejo y dejar al zorro con las zanahorias. Luego volver y llevarse al zorro, que dejará a solas en su isla, tomar al conejo y llevarlo de vuelta a la de enfrente. Después llevará las zanahorias, dejando al conejo solo y depositándolas junto al zorro. Finalmente regresará para hacer un último viaje con el conejo.
+
+  * **El dilema del ascensor**. Un hombre que vive en el décimo piso de un edificio, toma todos los días el ascensor hasta la planta baja, para ir a trabajar. En la tarde, sin embargo, toma de nuevo el mismo ascensor, pero si no hay nadie con él, baja en el séptimo piso y sube el resto de los pisos por la escalera. ¿Por qué?.
+
+    **Respuesta**: El hombre es enano y no logra presionar el botón del décimo piso.
+
+  * **La paradoja del globo**. ¿De qué manera podemos pinchar un globo con una aguja, sin que se fugue el aire y sin que el globo estalle?
+
+    **Respuesta**: Debemos pinchar el globo estando desinflado.
+
+  * **El dilema del bar**. Un hombre entra a un bar y le pide al barman un vaso de agua. El barman busca debajo de la barra y de golpe apunta al hombre con un arma. Este último da las gracias y se marcha. ¿Qué acaba de ocurrir?
+
+    **Respuesta**: El barman se percató de que el hombre tenía hipo, y decide curárselo dándole un buen susto.
+
+Como se puede apreciar, hay muchas estrategias para solucionar problemas; sin embargo, esta Guía se enfoca principalmente en dos de estas estrategias: <u>Heurística</u> y <u>Algorítmica</u>.
+
+Según Polya (1957), cuando se resuelven problemas, intervienen cuatro operaciones mentales:
+
+1. **Entender el problema**.
+2. **Trazar un plan**.
+3. **Ejecutar el plan (resolver)**.
+
+4. **Revisar**.
+
+Es importante notar que estas son flexibles y no una simple lista de pasos como a menudo se plantea en muchos de esos textos (Wilson, Fernández & Hadaway, 1993). Cuando estas etapas se siguen como un modelo lineal, resulta contraproducente para cualquier actividad encaminada a resolver problemas.
+Es necesario hacer énfasis en la naturaleza dinámica y cíclica de la solución de problemas. En el intento de trazar un plan, los estudiantes pueden concluir que necesitan entender mejor el problema y deben regresar a la etapa anterior; o cuando han trazado un plan y tratan de ejecutarlo, no encuentran cómo hacerlo; entonces, la actividad siguiente puede ser intentar con un nuevo plan o regresar y desarrollar una nueva comprensión del problema (Wilson, Fernández & Hadaway, 1993; Guzdial, 2000).
+
+> La mayoría de los textos escolares de matemáticas abordan la Solución de Problemas bajo el enfoque planteado por Polya. Por ejemplo, en “Recreo Matemático 5” (Díaz, 1993) y en “Dominios 5” (Melo, 2001) se pueden identificar las siguientes sugerencias propuestas a los estudiantes para llegar a la solución de un problema matemático:
+> 1. **COMPRENDER EL PROBLEMA**.
+>   * Leer el problema varias veces.
+>   * Establecer los datos del problema (¿marcarlos de alguna manera?).
+>   * Aclarar lo que se va a resolver (¿Cuál es la pregunta?).
+>   * Precisar el resultado que se desea lograr.
+>   * Determinar la incógnita del problema.
+>   * Organizar la información.
+>   * Agrupar los datos en categorías.
+>   * Trazar una figura o diagrama.
+> 2. **HACER EL PLAN**.
+> * Escoger y decidir las operaciones a efectuar.
+> * Eliminar los datos inútiles.
+> * Descomponer el problema en otros más pequeños.
+> 3. **EJECUTAR EL PLAN (Resolver)**.
+> * Ejecutar en detalle cada operación.
+> * Simplificar antes de calcular.
+> * Realizar un dibujo o diagrama.
+> 4. **ANALIZAR LA SOLUCIÓN (Revisar)**.
+> * Dar una respuesta completa.
+> * Hallar el mismo resultado de otra manera.
+> * Verificar por apreciación que la respuesta es adecuada.
+
+Numerosos autores de libros sobre programación, plantean cuatro fases para elaborar un procedimiento que realice una tarea específica. Estas fases concuerdan con las operaciones mentales descritas por Polya para resolver problemas:
+1. Analizar el problema (Entender el problema).
+2. Diseñar un algoritmo (Trazar un plan).
+3. Traducir el algoritmo a un lenguaje de programación (Ejecutar el plan).
+4. Depurar el programa (Revisar).
+
+Como se puede apreciar, hay una similitud entre las metodologías propuestas para solucionar problemas matemáticos (Clements & Meredith, 1992; Díaz, 1993; Melo, 2001; NAP, y las cuatro fases para solucionar problemas específicos de áreas diversas, mediante la programación de computadores.
+
+
+
+
 
 # Problemas, algoritmos y programas
 
@@ -19,47 +127,47 @@ Información leida:David Martinez
 
 Podríamos decir que la **programación** es una forma de resolución de **problemas**.
 
-Para que un problema pueda resolverse utilizando un programa informático, éste tiene que poder resolverse de forma mecánica, es decir, mediante una secuencia de instrucciones u operaciones que se puedan llevar a cabo de manera **automática** por un ordenador.
+Para que un problema pueda resolverse utilizando un programa informático, éste tiene que poder resolverse de forma mecánica; es decir, mediante una secuencia de instrucciones u operaciones que se puedan llevar a cabo de manera **automática** por un ordenador.
 
 Ejemplos de problemas resolubles mediante un ordenador:
 
-- Determinar el producto de dos números a y b.
-- Determinar la raíz cuadrada positiva del número 2.
-- Determinar la raíz cuadrada positiva de un número n cualquiera.
-- Determinar si el número n, entero mayor que uno, es primo.
-- Dada la lista de palabras, determinar las palabras repetidas.
-- Determinar si la palabra p es del idioma castellano.
-- Ordenar y listar alfabéticamente todas las palabras del castellano.
-- Dibujar en pantalla un círculo de radio r.
-- Separar las silabas de una palabra p.
-- A partir de la fotografía de un vehículo, reconocer y leer su matrícula.
-- Traducir un texto de castellano a inglés.
-- Detectar posibles tumores a partir de imágenes radiográficas.
+- *Determinar el producto de dos números a y b.*
+- *Determinar la raíz cuadrada positiva del número 2.*
+- *Determinar la raíz cuadrada positiva de un número n cualquiera.*
+- *Determinar si el número n, entero mayor que uno, es primo.*
+- *Dada la lista de palabras, determinar las palabras repetidas.*
+- *Determinar si la palabra p es del idioma castellano.*
+- *Ordenar y listar alfabéticamente todas las palabras del castellano.*
+- *Dibujar en pantalla un círculo de radio r.*
+- *Separar las silabas de una palabra p.*
+- *A partir de la fotografía de un vehículo, reconocer y leer su matrícula.*
+- *Traducir un texto de castellano a inglés.*
+- *Detectar posibles tumores a partir de imágenes radiográficas.*
 
 Por otra parte, el científico Alan Turing, demostró que existen problemas irresolubles, de los que ningún ordenador será capaz de obtener nunca su solución.
 
 Los problemas deben definirse de forma general y precisa, **evitando ambigüedades**.
 
-Ejemplo: Raíz cuadrada.
+Ejemplo: *Raíz cuadrada.*
 
-- Determinar la raíz cuadrada de un número n
-- Determinar la raíz cuadrada de un número n, entero no negativo, cualquiera.
+- *Determinar la raíz cuadrada de un número n.*
+- *Determinar la raíz cuadrada de un número n, entero no negativo, cualquiera.*
 
-Ejemplo: Dividir
+Ejemplo: *Dividir.*
 
-- Calcular la división de dos números de dos números a y b
-- Calcular el cociente entero de la división a/b, donde a y b son números enteros y b es
-  distinto de cero. (5/2 = 2)
-- Calcular el cociente real de la división a/b, donde a y b son números reales y b es
-  distinto de cero (5/2 = 2.5)
+- *Calcular la división de dos números de dos números a y b.*
+- *Calcular el cociente entero de la división a/b, donde a y b son números enteros y b es distinto de cero. (5/2 = 2).*
+- *Calcular el cociente real de la división a/b, donde a y b son números reales y b es distinto de cero (5/2 = 2.5).*
+
+
 
 ## Algoritmos
 
 Dado un problema P, un **algoritmo** es un conjunto de reglas o pasos que indican cómo resolver P en un tiempo finito.
 
-Ejemplo: Secuencias de reglas básicas que utilizamos para realizar operaciones aritméticas: sumas, restas, productos y divisiones.
+Secuencias de reglas básicas que utilizamos para realizar operaciones aritméticas: sumas, restas, productos y divisiones.
 
-Ejemplo: Algoritmo para desayunar
+Ejemplo: *Algoritmo para desayunar.*
 
 ```pseudocode
 Inicio
@@ -80,7 +188,7 @@ Fin
 
 Un algoritmo, por tanto, no es más que la secuencia de pasos que se deben seguir para solucionar un problema específico. La descripción o nivel de detalle de la solución de un problema en términos algorítmicos depende de qué o quién debe entenderlo, interpretarlo y resolverlo.
 
-Los algoritmos son independientes de los lenguajes de programación y de las computadoras donde se ejecutan. Un mismo algoritmo puede ser expresado en diferentes lenguajes de programación y podría ser ejecutado en diferentes dispositivos. Piensa en una receta de cocina, ésta puede ser expresada en castellano, inglés o francés, podría ser cocinada en fogón o vitrocerámica, por un cocinero o más, etc. Pero independientemente de todas estas circunstancias, el plato se preparará siguiendo los mismos pasos.
+Los **algoritmos son independientes de los lenguajes de programación** y de las computadoras donde se ejecutan. Un mismo algoritmo puede ser expresado en diferentes lenguajes de programación y podría ser ejecutado en diferentes dispositivos. Piensa en una receta de cocina, ésta puede ser expresada en castellano, inglés o francés, podría ser cocinada en fogón o vitrocerámica, por un cocinero o más, etc. Pero independientemente de todas estas circunstancias, el plato se preparará siguiendo los mismos pasos.
 
 > La **diferencia** fundamental entre **algoritmo** y **programa** es que, en el segundo, los pasos que permiten resolver el problema, deben escribirse en un determinado lenguaje de programación para que puedan ser ejecutados en el ordenador y así obtener la solución.
 
@@ -95,19 +203,19 @@ Un algoritmo, para que sea válido, tiene que tener ciertas características fun
 
 ### Representación de algoritmos
 
-Los métodos más usuales para representar algoritmos son los diagramas de flujo y el pseudocódigo. Ambos son sistemas de representación independientes de cualquier lenguaje de programación. Hay que tener en cuenta que el diseño de un algoritmo constituye un paso previo a la codificación de un programa en un lenguaje de programación determinado (C, C++, Java, Pascal). La independencia del algoritmo del lenguaje de programación facilita, precisamente, la posterior codificación en el lenguaje elegido.
+Los métodos más usuales para representar algoritmos son los **diagramas de flujo** y el **pseudocódigo**. Ambos son sistemas de representación independientes de cualquier lenguaje de programación. Hay que tener en cuenta que el diseño de un algoritmo constituye un paso previo a la codificación de un programa en un lenguaje de programación determinado (C, C++, Java, Pascal). La independencia del algoritmo del lenguaje de programación facilita, precisamente, la posterior codificación en el lenguaje elegido.
 
-Un **Diagrama de flujo** (Flowchart) es una de las técnicas de representación de algoritmos más antiguas y más utilizadas, aunque su empleo disminuyó considerablemente con los lenguajes de programación estructurados. Un diagrama de flujo utiliza símbolos estándar que contienen los pasos del algoritmo escritos en esos símbolos, unidos por flechas denominadas líneas de flujo que indican la secuencia en que deben ejecutarse.
+**Diagrama de flujo** (Flowchart) es una de las técnicas de representación de algoritmos más antiguas y más utilizadas, aunque su empleo disminuyó considerablemente con los lenguajes de programación estructurados. Un diagrama de flujo utiliza símbolos estándar que contienen los pasos del algoritmo escritos en esos símbolos, unidos por flechas denominadas líneas de flujo que indican la secuencia en que deben ejecutarse.
 
 Los símbolos más utilizados son:
 
 <img src="assets/diagrama_flujo.png" alt="Símbolos diagrama de flujo" style="zoom:80%;" />
 
-Ejemplo: Mostrar dos números ordenados de menor a mayor
+Ejemplo: *Mostrar dos números ordenados de menor a mayor*.
 
 ```mermaid
 graph TD
-    A(Inicio)
+   A(Inicio)
     A --> B[a, b]
     B --> C{a > b ?}
     C -->|Si| D[b, a]
@@ -116,13 +224,13 @@ graph TD
     E --> F
 ```
 
-El **pseudocódigo** es un lenguaje de descripción de algoritmos que está muy próximo a la sintaxis que utilizan los lenguajes de programación. Nace como medio para representar las estructuras de control de programación estructurada.
+**Pseudocódigo** es un lenguaje de descripción de algoritmos que está muy próximo a la sintaxis que utilizan los lenguajes de programación. Nace como medio para representar las estructuras de control de programación estructurada.
 
 El pseudocódigo no se puede ejecutar nunca en el ordenador, sino que tiene que traducirse a un lenguaje de programación (codificación). La ventaja del pseudocódigo, frente a los diagramas de flujo, es que se puede modificar más fácilmente si detecta un error en la lógica del algoritmo, y puede ser traducido fácilmente a los lenguajes estructurados como Pascal, C, fortran, Java, etc.
 
 El Pseudocódigo utiliza palabras reservadas (en sus orígenes se escribían en inglés) para representar las sucesivas acciones. Para mayor legibilidad utiliza la identación -sangría en el margen izquierdo- de sus líneas.
 
-Ejemplo: Mostrar dos números ordenados de menor a mayor
+Ejemplo: *Mostrar dos números ordenados de menor a mayor*.
 
 ```pseudocode
 Inicio
@@ -135,18 +243,37 @@ Inicio
 Fin
 ```
 
+Ejemplo: *Mostrar la potencia de un número elevado a otro número*.
+
+```pseudocode
+Inicio
+	Leer (A, B)
+	RESULTADO<-1
+	Desde contador<-1 hasta B con Paso 1 Hacer
+		RESULTADO<-RESULTADO*B
+	FinDesde
+	Escribir (RESULTADO)
+Fin
+```
+
+
+
+
+
 ## Programas
 
 > La **diferencia** fundamental entre **algoritmo** y **programa** es que, en el segundo, los pasos que permiten resolver el problema, deben escribirse en un determinado lenguaje de programación para que puedan ser ejecutados en el ordenador y así obtener la solución.
 
 Los lenguajes de programación son sólo un medio para expresar el algoritmo y el ordenador un procesador para ejecutarlo. El diseño de los algoritmos será una tarea que necesitará de la creatividad y conocimientos de las técnicas de programación. Estilos distintos, de distintos programadores a la hora de obtener la solución del problema, darán lugar a programas diferentes, igualmente válidos.
 
-Pero cuando los problemas son complejos, es necesario descomponer éstos en subproblemas más simples y, a su vez, en otros más pequeños. Estas estrategias reciben el nombre de diseño descendente (Metodología de diseño de programas, consistente en la descomposición del problema en problemas más sencillos de resolver) o diseño modular (top‐down design) (Metodología de diseño de programas, que consiste en dividir la solución a un problema en módulos más pequeños o subprogramas. Las soluciones de los módulos se unirán para obtener la solución general del problema). Este sistema se basa en el lema **divide y vencerás**.
+Pero cuando los problemas son complejos, es necesario descomponer éstos en subproblemas más simples y, a su vez, en otros más pequeños. Estas estrategias reciben el nombre de diseño descendente (Metodología de diseño de programas, consistente en la descomposición del problema en problemas más sencillos de resolver) o diseño modular (top‐down design) (Metodología de diseño de programas, que consiste en dividir la solución a un problema en módulos más pequeños o subprogramas; las soluciones de los módulos se unirán para obtener la solución general del problema). Este sistema se basa en el lema **divide y vencerás**.
 
-## Estructura y Bloques Fundamentales de un programa.
+
+
+## Estructura y Bloques Fundamentales de un programa
 
 ```java
-public class holamundo {
+public class holaMundo {
     // programa Hola Mundo
     public static void main(String[] args) {
         /* lo único que hace este programa es mostrar
@@ -156,10 +283,10 @@ public class holamundo {
 }
 ```
 
-En Java generalmente una clase lleva el identificador public y corresponde con un fichero. El nombre de la clase coincide con el del fichero `.java` respetando mayúsculas y minúsculas.
+En Java, generalmente, una clase lleva el identificador *public* y corresponde con un fichero. El nombre de la clase coincide con el del fichero `.java` respetando mayúsculas y minúsculas.
 
 ```java
-public class holamundo {
+public class holaMundo {
 	[...]
 }
 ```
@@ -187,20 +314,22 @@ Muestra por pantalla el mensaje `Hola Mundo`, ya que la clase `System` tiene un 
 
 Todas las instrucciones menos las llaves `{` `}` terminan con punto y coma ( `;` ) .
 
+
+
 ## Sangrado o Indentación
 
-El sangrado (también conocido como indentación) deberá aplicarse a toda estructura que esté lógicamente  contenida dentro de otra. El sangrado será de un tabulador. **Es suficiente entre 2 y 4 espacios**. Para alguien que empieza a programar suele ser preferible unos 4 espacios, ya que se ve todo más claro.
+El sangrado (también conocido como **indentación**) deberá aplicarse a toda estructura que esté lógicamente contenida dentro de otra. El sangrado será de un tabulador. **Es suficiente entre 2 y 4 espacios**. Para alguien que empieza a programar suele ser preferible unos 4 espacios, ya que se ve todo más claro.
 
-Las líneas no tendrán en ningún caso demasiados caracteres que impidan que se pueda leer en una pantalla. **Un número máximo recomendable suele estar entre unos 70 y 90 caracteres, incluyendo los espacios de sangrado**. Si una línea debe ocupar más caracteres, tiene que dividirse en dos o  más líneas,  para ello utiliza los siguientes  principios para realizar la división:
+Las líneas no tendrán en ningún caso demasiados caracteres que impidan que se pueda leer en una pantalla. **Un número máximo recomendable suele estar entre unos 70 y 90 caracteres, incluyendo los espacios de sangrado**. Si una línea debe ocupar más caracteres, tiene que dividirse en dos o más líneas, para ello utiliza los siguientes principios para realizar la división:
 
 - Tras una coma.
 - Antes de un operador, que pasará a la línea siguiente.
 - Una construcción de alto nivel (por ejemplo, una expresión con paréntesis).
-- La nueva línea deberá alinearse con un sangrado lógico, respecto al punto de ruptura
+- La nueva línea deberá alinearse con un sangrado lógico, respecto al punto de ruptura.
 
-Unos pocos ejemplos, para comprender mejor:
+Unos ejemplos, para comprender mejor:
 
-Dividir tras una coma:
+*Dividir tras una coma*:
 
 ```java
 funcion(expresionMuuuuyLarga1,
@@ -208,7 +337,7 @@ funcion(expresionMuuuuyLarga1,
          expresionMuuuyyyLarga3);
 ```
 
-Mantener la expresión entre paréntesis en la misma línea:
+*Mantener la expresión entre paréntesis en la misma línea*:
 
 ```java
 nombreLargo = nombreLargo2*
@@ -216,33 +345,39 @@ nombreLargo = nombreLargo2*
               4*nombreLargo5;
 ```
 
-Siempre hay excepciones. Puede resultar  que al aplicar estas reglas, en operaciones muy largas, o expresiones  lógicas enormes, el sangrado sea ilegible. En estos casos, el convenio  se puede relajar.
+Siempre hay excepciones. Puede resultar que al aplicar estas reglas, en operaciones muy largas, o expresiones lógicas enormes, el sangrado sea ilegible. En estos casos, el convenio se puede relajar.
 
 # Java
 
 ## ¿Qué y cómo es Java?
 
-Java es un lenguaje sencillo de aprender, con una sintaxis parecida a la de C++, pero en la que se han eliminado elementos complicados y que pueden originar errores. Java es orientado a objetos, con lo que elimina muchas preocupaciones al programador y permite la utilización de gran cantidad de bibliotecas ya definidas, evitando reescribir código que ya existe. Es un lenguaje de programación creado para satisfacer nuevas necesidades que los lenguajes existentes hasta el momento no eran capaces de solventar.
+Java es un lenguaje sencillo de aprender, con una sintaxis parecida a la de C++, pero en la que se han eliminado elementos complicados y que pueden originar errores. Java es <u>orientado a objetos</u>, con lo que elimina muchas preocupaciones al programador y permite la utilización de gran cantidad de bibliotecas ya definidas, evitando reescribir código que ya existe. Es un lenguaje de programación creado para satisfacer nuevas necesidades que los lenguajes existentes hasta el momento no eran capaces de solventar.
 
-Una de las principales virtudes de Java es su independencia del hardware, ya que el código que se genera es válido para cualquier plataforma. Este código será ejecutado sobre una máquina virtual denominada Maquina Virtual Java (MVJ o JVM – Java Virtual Machine), que interpretará el código convirtiéndolo a código específico de la plataforma que lo soporta. De este modo el programa se escribe una única vez y puede hacerse funcionar en cualquier lugar. Lema del lenguaje: "*Write once, run everywhere*".
+Una de las principales virtudes de Java es su <u>independencia del hardware</u>, ya que el código que se genera es válido para cualquier plataforma. Este código será ejecutado sobre una máquina virtual denominada Maquina Virtual Java (MVJ o JVM – Java Virtual Machine), que interpretará el código convirtiéndolo a código específico de la plataforma que lo soporta. De este modo el programa se escribe una única vez y puede hacerse funcionar en cualquier lugar. Lema del lenguaje: "*Write once, run everywhere*".
 
-Antes de que apareciera Java, el lenguaje C era uno de los más extendidos por su versatilidad. Pero cuando los programas escritos en C aumentaban de volumen, su manejo comenzaba a complicarse.
-Mediante las técnicas de programación estructurada y programación modular se conseguían reducir estas complicaciones, pero no era suficiente.
+Antes de que apareciera Java, el lenguaje C era uno de los más extendidos por su versatilidad. Pero cuando los programas escritos en C aumentaban de volumen, su manejo comenzaba a complicarse. Mediante las técnicas de programación estructurada y programación modular se conseguían reducir estas complicaciones, pero no era suficiente.
 
 Fue entonces cuando la Programación Orientada a Objetos (POO) entra en escena, aproximando notablemente la construcción de programas al pensamiento humano y haciendo más sencillo todo el proceso. Los problemas se dividen en objetos que tienen propiedades e interactúan con otros objetos, de este modo, el programador puede centrarse en cada objeto para programar internamente los elementos y funciones que lo componen.
 
 Las características principales de lenguaje Java se resumen a continuación:
 
 - El código generado por el compilador Java es independiente de la arquitectura.
-- Está totalmente orientado a objetos.
-- Su sintaxis es similar a C y C++.
-- Es distribuido, preparado para aplicaciones TCP/IP.
-- Dispone de un amplio conjunto de bibliotecas.
-- Es robusto, realizando comprobaciones del código en tiempo de compilación y de ejecución.
-- La seguridad está garantizada, ya que las aplicaciones Java no acceden a zonas delicadas de
-  memoria o de sistema. (*ejem, ejem!*)
 
-## Breve historia.
+- Está totalmente orientado a objetos.
+
+- Su sintaxis es similar a C y C++.
+
+- Es distribuido, preparado para aplicaciones TCP/IP.
+
+- Dispone de un amplio conjunto de bibliotecas.
+
+- Es robusto, realizando comprobaciones del código en tiempo de compilación y de ejecución.
+
+- La seguridad está garantizada, ya que las aplicaciones Java no acceden a zonas delicadas de memoria o de sistema. (*ejem, ejem!*).
+
+  
+
+## Breve historia
 
 Java surgió en 1991 cuando un grupo de ingenieros de Sun Microsystems trataron de diseñar un nuevo lenguaje de programación destinado a programar pequeños dispositivos electrónicos. La dificultad de estos dispositivos es que cambian continuamente y para que un programa funcione en el siguiente dispositivo aparecido, hay que reescribir el código. Por eso la empresa Sun quería crear un lenguaje independiente del dispositivo.
 
@@ -257,17 +392,22 @@ Para el desarrollo de programas en lenguaje Java es necesario utilizar un entorn
 Java 2 es la tercera versión del lenguaje, pero es algo más que un lenguaje de programación, incluye los siguientes elementos:
 
 - Un lenguaje de programación: Java.
+
 - Un conjunto de bibliotecas estándar que vienen incluidas en la plataforma y que son necesarias en todo entorno Java. Es el Java Core.
+
 - Un conjunto de herramientas para el desarrollo de programas, como es el compilador de bytecodes, el generador de documentación, un depurador, etc.
+
 - Un entorno de ejecución que en definitiva es una máquina virtual que ejecuta los programas traducidos a bytecodes.
+
+  
 
 ## Compilar y ejecutar un programa Java. Uso de la consola.
 
 Veamos los pasos para compilar e interpretar nuestro primer programa escrito en lenguaje Java.
 
-### PASO 1: Creación del código fuente
+### Paso 1: Creación del código fuente
 
-Abrimos un editor de texto (da igual cual sea, siempre que sea capaz de almacenar “texto sin formato” en código  ASCII). Una vez abierto escribiremos  nuestro primer programa, que mostrará un texto “Hola Mundo” en la consola. De momento no te preocupes si no entiendes lo que escribes, más adelante le daremos sentido. Ahora solo queremos ver si podemos ejecutar java en nuestro equipo.
+Abrimos un editor de texto (da igual cual sea, siempre que sea capaz de almacenar “texto sin formato” en código ASCII). Una vez abierto escribiremos nuestro primer programa, que mostrará un texto “Hola Mundo” en la consola. De momento no te preocupes si no entiendes lo que escribes, más adelante le daremos sentido. Ahora solo queremos ver si podemos ejecutar java en nuestro equipo.
 
 El código de nuestro programa en Java será el siguiente:
 
@@ -280,34 +420,34 @@ public class Ejemplo {
 }
 ```
 
-A continuación guardamos nuestro archivo y le ponemos  como nombre `Ejemplo.java`. Debemos seguir una norma dictada por Java,  hemos de  hacer coincidir nombre del archivo y nombre del programa, tanto en  mayúsculas como en minúsculas, y la extensión del archivo habrá de ser  siempre “.java”.
+A continuación guardamos nuestro archivo y le ponemos como nombre `Ejemplo.java`. Debemos seguir una norma dictada por Java, **hemos de hacer coincidir nombre del archivo y nombre del programa**, tanto en mayúsculas como en minúsculas, y la extensión del archivo habrá de ser siempre “.java”.
 
 <img src="assets/Ejemplo.java.png" alt="Ejemplo.java" style="zoom:75%;" />
 
 Debemos recordar exactamente la ruta donde guardamos el archivo de ejemplo `Ejemplo.java`.
 
-### PASO 2: Compilación del programa
+### Paso 2: Compilación del programa
 
-Vamos a proceder a compilar e interpretar este pequeño programa Java (no te preocupes si todavía no entiendes el significado de las palabras compilar e interpretar, lo veras en la asignatura de `Entornos de Desarrollo`). Para ello usaremos la consola. Una vez en la consola debemos colocarnos en la ruta donde previamente guardamos el archivo `Ejemplo.java`.
+Vamos a proceder a compilar e interpretar este pequeño programa Java (no te preocupes si todavía no entiendes el significado de las palabras compilar e interpretar, lo verás en la asignatura de `Entornos de Desarrollo`). Para ello usaremos la consola. Una vez en la consola debemos colocarnos en la ruta donde previamente guardamos el archivo `Ejemplo.java`.
 
-A continuación daremos la instrucción para que se  realice **el proceso de compilación del programa**, para lo que escribiremos `javac Ejemplo.java`, donde `javac` es el nombre del  compilador (**java c**ompiler) que transformará el programa que hemos escrito  nosotros en lenguaje Java al lenguaje de la máquina virtual Java (`bytecode`), dando como resultado un nuevo archivo `Ejemplo.class` que se creará en este mismo directorio. Comprueba que no aparezca ningún error y que javac esté instalado en tu sistema (desde la consola lo puedes comprobar con el comando `javac --version` y debería aparece el número de versión que tienes instalada). Si aparecen los dos archivos tanto `Ejemplo.java` (código fuente) como `Ejemplo.class` (bytecode creado por el  compilador) puedes continuar.
+A continuación daremos la instrucción para que se realice **el proceso de compilación del programa**, para lo que escribiremos `javac Ejemplo.java`, donde `javac` es el nombre del compilador (**java c**ompiler) que transformará el programa que hemos escrito nosotros en lenguaje Java al lenguaje de la máquina virtual Java (`bytecode`), dando como resultado un nuevo archivo `Ejemplo.class` que se creará en este mismo directorio. Comprueba que no aparezca ningún error y que javac esté instalado en tu sistema (desde la consola lo puedes comprobar con el comando `javac --version` y debería aparece el número de versión que tienes instalada). Si aparecen los dos archivos tanto `Ejemplo.java` (código fuente) como `Ejemplo.class` (bytecode creado por el compilador) puedes continuar.
 
 ```sh
 $ javac Ejemplo.java
 ```
 
-### PASO 3: Ejecución del programa
+### Paso 3: Ejecución del programa
 
-Finalmente, vamos a pedirle al  intérprete que ejecute el programa, es decir, que transforme el código  de la máquina virtual Java en código máquina interpretable por nuestro ordenador y lo ejecute. Para ello escribiremos en la ventana consola:  `java Ejemplo`.
+Finalmente, vamos a pedirle al intérprete que ejecute el programa, es decir, que transforme el código de la máquina virtual Java en código máquina interpretable por nuestro ordenador y lo ejecute. Para ello escribiremos en la ventana consola:  `java Ejemplo`.
 
-El resultado será que se nos muestra la  cadena `Hola Mundo`. Si logramos visualizar este texto en pantalla, ya  hemos desarrollado nuestro primer programa en Java.
+El resultado será que se nos muestra la cadena `Hola Mundo`. Si logramos visualizar este texto en pantalla, ya hemos desarrollado nuestro primer programa en Java.
 
 ```sh
 $ java Ejemplo
 Hola Mundo
 ```
 
-# Variables, identificadores, convenciones.
+# Variables, identificadores, convenciones
 
 ## Variables
 
@@ -324,6 +464,8 @@ Visibilidad, ámbito o scope de una variable es la parte de código del programa
 
 Al nombre que le damos a la variable se le llama identificador. Los identificadores permiten nombrar los elementos que se están manejando en un programa. Vamos a ver con más detalle ciertos aspectos sobre los identificadores que debemos tener en cuenta.
 
+
+
 ## Identificadores
 
 Un **identificador** en Java es una secuencia ilimitada sin espacios de letras y dígitos Unicode , de forma que el primer símbolo de la secuencia debe ser una letra, un símbolo de subrayado (`_`) o el símbolo dólar (`$`). Por ejemplo, son válidos los siguientes identificadores:
@@ -334,6 +476,8 @@ Un **identificador** en Java es una secuencia ilimitada sin espacios de letras y
 - numCuenta
 
 Unicode es un código de caracteres o sistema de codificación, un alfabeto que recoge los caracteres de prácticamente todos los idiomas importantes del mundo. Además, el código Unicode es “compatible” con el código ASCII, ya que para los caracteres del código ASCII, Unicode asigna como código los mismos 8 bits, a los que les añade a la izquierda otros 8 bits todos a cero. La conversión de un carácter ASCII a Unicode es inmediata.
+
+
 
 ## Convenciones
 
@@ -351,7 +495,7 @@ Además de estas restricciones, en la siguiente tabla puedes ver otras convencio
 | Identificador       | Convención                                                   | Ejemplo                     |
 | ------------------- | ------------------------------------------------------------ | --------------------------- |
 | nombre de variable  | Comienza por letra minúscula, y si tienen más de una palabra se colocan juntas y el resto comenzando por mayúsculas. A esto se le llama *lowerCamelCase*. | numAlumnos, suma            |
-| nombre de constante | En letras mayúsculas, separando las palabras con el guión bajo, por convenio el  guión bajo no se utiliza en ningún otro sitio | TAM_MAX, PI                 |
+| nombre de constante | En letras mayúsculas, separando las palabras con el guión bajo, por convenio el guión bajo no se utiliza en ningún otro sitio | TAM_MAX, PI                 |
 | nombre de una clase | Comienza por letra mayúscula, y si tienen más de una palabra se colocan juntas y el resto comenzando por mayúsculas. A esto se le llama *upperCamelCase*. | String, MiTipo              |
 | nombre de función   | Comienza por letra minúscula, y si tienen más de una palabra se colocan juntas y el resto comenzando por mayúsculas. A esto se le llama *lowerCamelCase*. | modificaValor, obtieneValor |
 
@@ -366,7 +510,7 @@ Las palabras reservadas en Java son:
 abstract, continue, for, new, switch, assert, default, goto, package, synchronized, boolean, do, if, private, this, break, double, implements, protected, throw, byte, else, import, public, throws, case, enum, instanceof, return, transient, catch, extends, int, short, try, char, final, interface, static, void, class, finally, long, strictfp, volatile, const, float, native, super, while
 ```
 
-# Tipos de datos.
+# Tipos de datos
 
 Los tipos de datos se utilizan para declarar variables y el compilador sepa de antemano que tipo de información contendrá la variable.
 
@@ -379,12 +523,12 @@ Java dispone de los siguientes tipos de datos simples:
 | **int**          | Numérico  Entero con signo                                   |                  4 |                    -2147483648 a 2147483647 |                     0 | Integer            |
 | **long**         | Numérico  Entero con signo                                   |                  8 | -9223372036854775808 a  9223372036854775807 |                     0 | Long               |
 | **float**        | Numérico  en Coma flotante de precisión  simple Norma IEEE 754 |                  4 |                   -3.4x10^-38^ a 3.4x10^38^ |                   0.0 | Float              |
-| **double**       | Numérico  en Coma flotante de precisión  doble Norma IEEE 754 |                  8 |                -1.8x10^-308^ a 1.8x10 ^308^ |                   0.0 | Double             |
+| **double**       | Numérico  en Coma flotante de precisión doble Norma IEEE 754 |                  8 |                -1.8x10^-308^ a 1.8x10 ^308^ |                   0.0 | Double             |
 | **char**         | Carácter  Unicode                                            |                  2 |                            \u0000  a \uFFFF |                \u0000 | Character          |
 | **boolean**      | Dato  lógico                                                 |                  - |                                true ó false |                 false | Boolean            |
 | **void**         | -                                                            |                  - |                                           - |                     - | Void               |
 
-> OJO!: Sobre valores por defecto y inicialización de variables: https://stackoverflow.com/questions/19131336/default-values-and-initialization-in-java
+> OJO!: Sobre valores por defecto e inicialización de variables: https://stackoverflow.com/questions/19131336/default-values-and-initialization-in-java
 
 Ejemplo de declaración y asignación de valores a variables:
 
@@ -469,7 +613,7 @@ En este ejemplo hemos utilizado el método `System.out.print`. Como podrás comp
 
 Sin embargo, también podemos escribir varias líneas usando una única sentencia. Así lo hacemos en la instrucción `println`, la cual imprime como resultado tres líneas de texto. Para ello hemos utilizado un carácter especial, llamado carácter escape (`\`). Este carácter sirve para darle ciertas órdenes al compilador, en lugar de que salga impreso en pantalla. Después del carácter de escape viene otro carácter que indica la orden a realizar, juntos reciben el nombre de secuencia de escape. La secuencia de escape `\n` recibe el nombre de carácter de nueva línea. Cada vez que el compilador se encuentra en un texto ese carácter, el resultado es que mueve el cursor al principio de la línea siguiente. En el próximo apartado vamos a ver algunas de las secuencias de escape más utilizadas.
 
-# Constantes y literales.
+# Constantes y literales
 
 Las constantes se utilizan para almacenar datos que no varían nunca, asegurándonos que el valor no va a poder ser modificado.
 
@@ -496,7 +640,7 @@ Respecto a los literales existen unos caracteres especiales que se representan u
 | \n                  | Salto de línea  | \’                  | Carácter comillas simples |
 | \f                  | Salto de página | \\                  | Barra diagonal            |
 
-# Operadores y expresiones.
+# Operadores y expresiones
 
 ## Operadores Aritméticos
 
@@ -522,6 +666,8 @@ producto = num1 * num2;  // 40
 division = num1 / num2;  // 1.6
 resto = num1 % num2;     // 3
 ```
+
+
 
 ## Operadores Relacionales
 
@@ -549,6 +695,8 @@ compara = valor1 <= valor2; // false
 compara = valor1 == valor2; // false
 compara = valor1 != valor2; // true
 ```
+
+
 
 ## Operadores Lógicos
 
@@ -585,6 +733,8 @@ Para representar resultados de operadores Lógicos también se pueden usar tabla
 | false | true  | false  | true     | true  |
 | true  | true  | true   | true     | false |
 
+
+
 ## Operadores Unarios o Unitarios
 
 Los **Operadores Unarios** o **Unitarios** permiten realizar incrementos y decrementos:
@@ -602,13 +752,15 @@ m++; // 6
 n--; // 2
 ```
 
-En el caso de utilizarlo como prefijo el valor de asignación será el  valor del operando más el incremento de la unidad. Y si lo utilizamos  como sufijo se asignará el valor del operador y luego se incrementará la unidad sobre el operando.
+En el caso de utilizarlo como prefijo el valor de asignación será el valor del operando más el incremento de la unidad. Y si lo utilizamos como sufijo se asignará el valor del operador y luego se incrementará la unidad sobre el operando.
 
 ```java
 int A = 1, B;
 B = ++A; // A vale 2 y B vale 2
 B = A++; // A vale 3 y B vale 2
 ```
+
+
 
 ## Operadores de Asignación
 
@@ -636,6 +788,8 @@ dato1%=dato2; // dato1 vale0
 ```
 
 Los operadores tienen diferente Prioridad por lo que es interesante utilizar paréntesis para controlar las operaciones sin necesidad de depender de la prioridad de los operadores.
+
+
 
 ## Operadores de desplazamiento
 
@@ -684,6 +838,8 @@ int u = q ^ r; // u: 00000000000000000000000000010100
 int v = ~q;    // v: 11111111111111111111111101111011 
 // El resultado da -133 
 ```
+
+
 ## Operador condicional `?:`
 
 El **operador condicional** `?:` sirve para evaluar una condición y devolver un resultado en función de si es verdadera o falsa dicha condición. Es el único operador ternario de Java, y como tal, necesita tres operandos para formar una expresión.
@@ -712,6 +868,8 @@ mayor=(exp1>exp2)?exp1:exp2;
 
 El operador condicional se puede sustituir por la sentencia `if...then...else` que veremos más adelante.
 
+
+
 ## Prevalencia de operadores
 
 Los operadores tienen diferente **Prioridad** por lo que es interesante utilizar paréntesis para controlar las operaciones sin necesidad de depender de la prioridad de los operadores.
@@ -731,7 +889,7 @@ Prevalencia de operadores, ordenados de arriba a abajo de más a menos prioridad
 | operador XOR              | ^                                       |
 | operador OR               | \|                                      |
 | AND booleano              | &&                                      |
-| OR  booleano              | \|\|                                    |
+| OR booleano               | \|\|                                    |
 | condicional               | ?:                                      |
 | operadores de asignación  | = += -= *= /= %= &= ^= \|= <<= >>= >>>= |
 
@@ -743,7 +901,7 @@ x = y1 + y2 * y3;   // 22
 x = (y1 + y2) * y3; // 64
 ```
 
-# Conversiones de tipo.
+# Conversiones de tipo
 
 Existen dos tipos de conversiones: Implícitas y Explicitas. Debemos evitar las conversiones de tipos ya que pueden suponer perdidas de información.
 
@@ -759,6 +917,8 @@ short destino;
 destino=origen;  // 5
 ```
 
+
+
 ## Conversión Explícita
 
 En la **Conversión Explícita** el programador fuerza la conversión con la operación llamada "cast":
@@ -771,7 +931,7 @@ byte destino2;
 destino2=(byte)origen2; // 3
 ```
 
-# Comentarios.
+# Comentarios
 
 Los comentarios son muy importantes a la hora de describir qué hace un determinado programa. A lo largo de la unidad los hemos utilizado para documentar los ejemplos y mejorar la comprensión del código. Para lograr ese objetivo, es normal que cada programa comience con unas líneas de comentario que indiquen, al menos, una breve descripción del programa, el autor del mismo y la última fecha en que se ha modificado.
 
@@ -821,6 +981,8 @@ System.out.println("El número es: "+numero);
 entero = (int)(Math.random()*100);
 System.out.println("El número sin decimales es: "+entero);
 ```
+
+
 
 ## Introducir un texto desde el teclado.
 
@@ -1097,6 +1259,7 @@ public class EjemploUD01 {
 
 # Fuentes de información
 
+- Apuntes módulo Programación (David Martínez Peña).
 - [Wikipedia](https://es.wikipedia.org)
 - [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
 - Apuntes IES Henri Matisse (Javi García Jimenez?)

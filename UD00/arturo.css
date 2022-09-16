@@ -265,6 +265,7 @@ thead {
 table th {
     font-weight: bold;
     border: 1px solid #dfe2e5;
+    background-color: #d0e0e9;
     border-bottom: 0;
     margin: 0;
     padding: 6px 13px;
