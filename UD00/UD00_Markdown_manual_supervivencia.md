@@ -149,7 +149,9 @@ Se corresponde a:
 
 ​	Este texto es en ambos \*\*\****negrita e itàlica***\*\*\*.
 
-> En Markdown no podemos tachar el texto. Sin embargo, podremos añadir la etiqueta de html underline <u></u>.
+> En Markdown no podemos subrayar el texto. Sin embargo, podremos añadir la etiqueta de html underline <u></u>.
+>
+> Este texto está <u>subrayado</u>
 
 Para **ignorar los caracteres** de formato de Markdown, ponga <code>\\</code> antes del carácter:
 
