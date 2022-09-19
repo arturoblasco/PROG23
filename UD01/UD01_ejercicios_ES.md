@@ -15,9 +15,9 @@
 
 # Retos
 
-1. **Reto 1**: haga un programa que evalúe una expresión que contenga literales de los cuatro tipos de datos (booleano, entero, real y carácter) y la muestre por pantalla.
+1. **Reto 1**: haz un programa que evalúe una expresión que contenga literales de los cuatro tipos de datos (booleano, entero, real y carácter) y la muéstralo por pantalla.
 
-2. **Reto 2**: en su entorno de trabajo, cree el programa siguiente. Obsérvese que pasa exactamente. Entonces, intente arreglar el problema.
+2. **Reto 2**: en tu entorno de trabajo, crea el programa siguiente. Observa qué pasa exactamente. Entonces, intenta arreglar el problema.
    
    ```java
    // Un programa que usa un entero muuuuy grande
@@ -28,11 +28,11 @@
    }
    ```
    
-3. **Reto 3**: haga un programa con dos variables que, sin usar ningún literal ninguna parte excepto para inicializar estas variables, vaya estimando e imprimiendo sucesivamente los 5 primeros valores de la tabla de multiplicar del 4. Puede usar operadores aritméticos y de asignación, si desea.
+3. **Reto 3**: haz un programa con dos variables que, sin usar ningún literal en ninguna parte excepto para inicializar estas variables, ves estimando e imprimiendo sucesivamente los 5 primeros valores de la tabla de multiplicar del 4. Puedes usar operadores aritméticos y de asignación, si deseas.
 
-4. **Reto 4**: haga dos programas, uno que muestre por pantalla la tabla de multiplicar del 3, y otro, la del 5. Los dos deben ser exactamente iguales, letra por letra, excepto en un único literal dentro de todo el código.
+4. **Reto 4**: haz dos programas, uno que muestre por pantalla la tabla de multiplicar del 3, y otro, la del 5. Los dos deben ser exactamente iguales, letra por letra, excepto en un único literal dentro de todo el código.
 
-5. **Reto 5**: experimente qué pasa si en el siguiente programa inicializa la variable realLargo con un valor con varios decimales. El programa continúa compilando? ¿Qué resultado da? Después inténtelo asignando un valor superior al rango de los enteros (por ejemplo, 3000000000.0).
+5. **Reto 5**: experimenta qué pasa si en el siguiente programa inicializas la variable *realLlarg* con un valor con varios decimales. ¿El programa continúa compilando?. ¿Qué resultado da?. Después inténtalo asignando un valor superior al rango de los enteros (*por ejemplo, 3000000000.0*).
 
    ```java
    public class ConversionExplicita {
@@ -47,9 +47,9 @@
    }
    ```
 
-6. **Reto 6**: haga un programa que muestre en pantalla de forma tabulada la tabla de verdad de una expresión de disyunción entre dos variables booleanas.
+6. **Reto 6**: haz un programa que muestre en pantalla de forma tabulada la tabla de verdad de una expresión de disyunción entre dos variables booleanas.
 
-7. **Reto 7**: haga un programa que muestre por pantalla la multiplicación de tres números reales entrados por teclado.
+7. **Reto 7**: haz un programa que muestre por pantalla la multiplicación de tres números reales entrados por teclado.
 
 # Ejercicios
 
@@ -70,7 +70,7 @@
    }
    ```
 
-   Ejecútalo para ver como se comporta el programa.
+   Ejecútalo para ver cómo se comporta el programa.
 
    ¿Qué ocurre si cuando nos pide un número entero le damos un número real? ¿Y si le damos un carácter no numérico?
 
@@ -82,7 +82,7 @@
    2. ¿Se puede "romper" una instrucción entre varias líneas?
    3. Algunos lenguajes de programación dan un valor por defecto a las variables cuando las declaramos sin inicializarlas. Otros no permiten usar el contenido de una variable que no haya sido previamente inicializada. ¿Cuál es comportamiento de Java? 
 
-3. **Ejercicio 03**. ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda
+3. **Ejercicio 03**. ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda:
    
    1. `n`
    2. `MiProblema`
@@ -100,7 +100,7 @@
    14. `Edad5`
    15. `_5Java`
    
-4. **Ejercicio 04**. (Por2) Escribir un programa que lea un entero desde teclado, lo multiplique por 2, y a continuación escriba el resultado en la pantalla:
+4. **Ejercicio 04**. Escribir un programa que lea un entero desde teclado, lo multiplique por 2, y a continuación escribe el resultado en la pantalla:
 
    Ejemplo de ejecución:
 
@@ -110,12 +110,12 @@
    El doble de 3 es 6
    ```
 
-5. **Ejercicio 05**. (Intercambio) Escribir un programa que …
+5. **Ejercicio 05**. (*Intercambio*) Escribir un programa que …
 
    1. Lea desde teclado dos valores enteros. Llama a las variables v1 y v2.
-   2. Muestre los valores introducidos por el usuario
-   3. Intercambie el valor de v1 y v2 (v1 pasa a  valer lo que valía v2 y viceversa)
-   4. Muestre de nuevo los valores, ahora con su valor intercambiado
+   2. Muestra los valores introducidos por el usuario
+   3. Intercambia el valor de v1 y v2 (v1 pasa a  valer lo que valía v2 y viceversa)
+   4. Muestra de nuevo los valores, ahora con su valor intercambiado
 
    Ejemplo de ejecución:
 
@@ -126,7 +126,7 @@
    Después de intercambiar	 v1: 9	 y	 v2: 2
    ```
 
-6. **Ejercicio 06**. Escribir las siguientes expresiones siguiendo la sintaxis de Java.
+6. **Ejercicio 06**. Escribe las siguientes expresiones siguiendo la sintaxis de Java.
 
    1. $$
       \frac{x}{y}+1
@@ -160,11 +160,11 @@
       \frac{xy}{mn}
       $$
    
-7. **Ejercicio 07**. (Superficie) Escribir un programa que solicite al usuario la longitud y la anchura de una habitación y a continuación muestre su superficie (longitud por anchura).
+7. **Ejercicio 07**. (*Superficie*) Escribe un programa que solicite al usuario la longitud y la anchura de una habitación y a continuación muestra su superficie (longitud por anchura).
 
-8. **Ejercicio 08**. (Medidas) Escribir un programa que convierta una medida dada en pies a sus equivalentes en yardas, pulgadas, centímetros  y metros, sabiendo que 1 pie = 12 pulgadas, 1 yarda = 3 pies, 1 pulgada = 2.54 cm, 1 m = 100 cm.
+8. **Ejercicio 08**. (*Medidas*) Escribir un programa que convierta una medida dada en pies a sus equivalentes en yardas, pulgadas, centímetros  y metros, sabiendo que 1 pie = 12 pulgadas, 1 yarda = 3 pies, 1 pulgada = 2.54 cm, 1 m = 100 cm.
 
-9. **Ejercicio 09**. (Segundos) Escribir un programa que, dada una cantidad de segundos, introducida por teclado, la desglose en días, horas, minutos y segundos.  
+9. **Ejercicio 09**. (*Segundos*) Escribir un programa que, dada una cantidad de segundos, introducida por teclado, la desglose en días, horas, minutos y segundos.  
 
    Ejemplo de ejecución: 
 
@@ -177,7 +177,7 @@
    1 segundos
    ```
 
-10. **Ejercicio 10**. (Fuerza) La fuerza de atracción entre dos masas m1 y m2 separadas por una distancia d, está dada por la fórmula:
+10. **Ejercicio 10**. (*Fuerza*) La fuerza de atracción entre dos masas m1 y m2 separadas por una distancia d, está dada por la fórmula:
     $$
     F= \frac{(G · m1 · m2)}{d^2}
     $$
@@ -186,9 +186,9 @@
 
     Escribir un programa que lea la masa de dos cuerpos y la distancia entre ellos y a continuación obtenga su fuerza de atracción.
 
-11. **Ejercicio 11**. (Círculo) Escribir un programa que calcule la longitud de la circunferencia y el área del círculo para un valor del radio introducido por teclado.
+11. **Ejercicio 11**. (*Círculo*) Escribir un programa que calcule la longitud de la circunferencia y el área del círculo para un valor del radio introducido por teclado.
 
-12. **Ejercicio 12**. (Dados) Escribir un programa que simula el lanzamiento de dos dados.
+12. **Ejercicio 12**. (*Dados*) Escribir un programa que simula el lanzamiento de dos dados.
 
     ```sh
     Dado 1 : 5
@@ -196,14 +196,14 @@
     Puntuación total: 9
     ```
 
-13. **Ejercicio 13**. (UltimaCifra) Escribir un programa que muestre la última cifra de un número entero que introduce el usuario por teclado. *Pista: ¿Qué devuelve a%10 ?*
+13. **Ejercicio 13**. (*UltimaCifra*) Escribir un programa que muestre la última cifra de un número entero que introduce el usuario por teclado. *Pista: ¿Qué devuelve a%10 ?*
 
     ```sh
     Introduce un número entero: 3761
     La última cifra de 3761 es 1
     ```
     
-14. **Ejercicio 14**. (PenultimaCifra) Escribir un programa que muestre la penúltima cifra de un número entero que introduce el usuario por teclado.
+14. **Ejercicio 14**. (*PenultimaCifra*) Escribir un programa que muestre la penúltima cifra de un número entero que introduce el usuario por teclado.
 
     ```sh
     Introduce un número entero: 3761
@@ -212,7 +212,7 @@
     
     Una vez hayas comprobado que el programa funciona correctamente, prueba qué ocurre si el usuario introduce un valor de una sola cifra (por ejemlo 4). Explica el resultado mostrado por el programa.
     
-15. **Ejercicio 15**. (Redondear1) `Math.round(x)` redondea x de manera que este queda sin decimales. (*`Math.round(35.5289)` da como resultado `36`)*
+15. **Ejercicio 15**. (*Redondear1*) `Math.round(x)` redondea x de manera que este queda sin decimales. (*`Math.round(35.5289)` da como resultado `36`)*
 
     Trata de escribir un programa en el que el usuario introduzca un número real y a continuación se muestre redondeado a un decimal. *Pista : combinar productos, divisiones y Math.round()*
 
