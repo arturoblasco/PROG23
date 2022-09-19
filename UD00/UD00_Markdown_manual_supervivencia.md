@@ -45,6 +45,8 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 
 
 
+
+
 ## Por qué utilizar Markdown
 
 ### Ventajas
@@ -67,19 +69,14 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 
 ### Off-line
 
-- **Typora**
-- MarkdownPad
-- HarooPad
-- Markdown Monster
-- ...
+- **Typora**, MarkdownPad, HarooPad, Markdown Monster ...
 
 ### Online
 
-- Dillinger
-
-- ...
+- Dillinger ...
 
   
+
 
 ## Párrafos y saltos de línea
 
@@ -99,11 +96,13 @@ Donde cada verso tiene **dos espacios en blanco al final**.
 
 
 
+
+
 ## Encabezados
 
 Las `#` **almohadillas** son uno de los métodos utilizados en Markdown para crear encabezados. Debes usarlos añadiendo **uno por cada nivel**.
 
-Es decir,
+Es decir:
 
 ```
 # Encabezado 1
@@ -116,7 +115,7 @@ Es decir,
 
 Se corresponde con:
 
-<img src="assets/markdown_encapcalament.PNG" style="zoom:70%;" />
+<img src="assets/markdown_encapcalament.PNG" style="zoom:65%;" />
 
 También puedes cerrar los encabezados con el mismo número de almohadillas, por ejemplo escribiendo `### Encabezado 3 ###`. Pero la única finalidad de esto es un **motivo estético**.
 
@@ -149,11 +148,15 @@ Se corresponde a:
 
 ​	Este texto es en ambos \*\*\****negrita e itàlica***\*\*\*.
 
+
+
+
+
 > En Markdown no podemos subrayar el texto. Sin embargo, podremos añadir la etiqueta de html underline <u></u>.
 >
-> Este texto está <u>subrayado</u>
+> Este texto está <u>subrayado</u>.
 
-Para **ignorar los caracteres** de formato de Markdown, ponga <code>\\</code> antes del carácter:
+Para **ignorar los caracteres** de formato de Markdown, pon <code>\\</code> antes del carácter:
 
 
 
@@ -209,8 +212,6 @@ Se corresponde con:
 * Siguiente ítem de la lista.
 * Siguiente ítem, el tercero, de la lista.
 
-
-
 También podremos combinar ambos tipos de listas. Como por ejemplo:
 
 - element de llista 2
@@ -259,6 +260,16 @@ Quedaría:
 | celda 2.1   | celda 2.2   | celda 2.3   |
 
 Si queremos una **celda con más de una línea** de texto podremos insertar <code>\<br /></code> (o **Shift+Intro**) al final de ésta.
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -311,6 +322,8 @@ Para ello utilizaremos:
 * Dos comillas invertidas <code>`` </code> si queremos escribir código dentro de la misma línea de texto del párrafo.
 * Si queremos crear un bloque de código multilínea, con un lenguaje específico, pondremos <code>```</code> seguido del <code>nombre del lenguaje del bloque</code>.
 
+
+
 Unos ejemplos:
 
 * En la misma línea:
@@ -356,34 +369,32 @@ Visualización:   :star:
 Cuando queremos crear documentos con elementos gráficos como diagramas de flujo, debemos generar una especie de *código* para construirlos.
 
 - Por eso, comenzaremos introduciendo la línea de inicio:		<code>```**flow**</code>	
-- Es conveniente asignar un nombre (por ejemplo: st, op, cond, e...) a cada elemento que conforma el diagrama; así, después podremos unir todos estos.
-- Forma de inicio:  <code>st=>**start**: Nombre</code>
-- Forma de fin:  <code>e=>**end**: Nombre</code>
-- Rectángulo:  <code>op=>**operation**: texto de nombre</code>
+- Es conveniente asignar un nombre (por ejemplo: st, op, cond, e...) a cada elemento que conforma el diagrama; así, después, podremos unir todos estos.
 
-- Condición:  <code>cond=>**condition**: texto de la condición (Si o No?)</code>
-
-- Subrutina: <code>sub1=>**subroutine**: nombre subtarea</code>
-- EntradaSalida: <code>io1=>**inputoutput**: nombre elemento entrada/salida</code>
-- Líneas:  <code>st->op->cond</code>
-
-- Caminos de condiciones:  <code>cond(yes)**->**e</code>   y <code>cond(no)->op</code>
-
-- Línea de cierre:  <code>```</code>	
-
-
+| descripción de elementos                      | código                                                       |
+| --------------------------------------------- | ------------------------------------------------------------ |
+| comenzamos introduciendo la línea de inicio   | <code>```**flow**</code>                                     |
+| elemento de inicio                            | <code>inicio=>**start**: Nombre</code>                       |
+| elemento de fin                               | <code>fin=>**end**: Nombre</code>                            |
+| rectángulo                                    | <code>op=>**operation**: texto de nombre</code>              |
+| condición                                     | <code>cond=>**condition**: texto de la condición (Si o No?)</code> |
+| subrutina                                     | <code>sub1=>**subroutine**: nombre subtarea</code>           |
+| elemento de entrada/salida                    | <code>io1=>**inputoutput**: nombre elemento entrada/salida</code> |
+| conexión de elementos                         | <code>inicio->op->cond</code>                                |
+| caminos de la condición                       | <code>cond(yes)**->**e</code>        y       <code>cond(no)->op</code> |
+| terminamos con el cierre del bloque de código | <code>```</code>                                             |
 
 
 Ejemplo:
 
 ~~~~
 ```flow
-st=>start: Usuario
-e=>end: Acceso
+inicio=>start: Usuario
+fin=>end: Acceso
 op=>operation: Operacion de usuario
 cond=>condition: Sí o No?
-st->op->cond
-cond(yes)->e
+inicio->op->cond
+cond(yes)->fin
 cond(no)->op
 ```
 ~~~~
@@ -391,13 +402,13 @@ cond(no)->op
 Visualización:
 
 ```flow
-st=>start: Usuario
+inicio=>start: Usuario
 op=>operation: Operacion de usuario
 cond=>condition: Sí o No?
-e=>end: Acceso
+fin=>end: Acceso
 
-st->op->cond
-cond(yes)->e
+inicio->op->cond
+cond(yes)->fin
 cond(no)->op
 ```
 
@@ -407,7 +418,7 @@ cond(no)->op
 
 ## Crear secuencias
 
-En la secuenciación podemos observar que es bastante paracido a la creación de diagramas; pero la primera línea (crear un bloque de código) no serà ~~**flow**~~ sino **sequence**.
+La secuenciación es paracido a la creación de diagramas pero la primera línea (crear un bloque de código será sequence y no ~~**flow**~~).
 
 ````
 ```sequence
@@ -417,8 +428,6 @@ Mundo-->Ana: Cómo estás?
 Ana->>Mundo: Estoy bien gracias!
 ```
 ````
-
-
 
 Visualización:
 
@@ -428,8 +437,6 @@ Note right of Mundo: Mundo está pensando\nla respuesta
 Mundo-->Ana: Cómo estás? 
 Ana->>Mundo: Estoy bien gracias!
 ```
-
-
 
 ## Crear índice
 
@@ -445,7 +452,8 @@ Como tarea, se propone:
 - En dicho documento crear título, índice.
 - Añadir 4 encabezados principales (y otros encabezados secundarios dentro de éstos) en el que hables por ejemplo de: *Tus datos*, *Currículum*, *Aficiones* y *Otros datos de interés*. <u>No</u> hace falta que indiques <u>información personal relevante</u>.
 - Se valorará la inclusión de distintos elementos como: negrita-cursiva-subrayado, listas ordenadas-desordenadas-tareas, enlaces, imágenes, citas, código, etc.
+- Crea una tabla con tu horario semanal de clase.
 - Si te atreves con ello, crea un diagrama de flujo en el que indiques los pasos que realizas un sábado por la mañana.
 - Exporta el documento a pdf.
 
-**Subir a la plataforma *<u>AULES</u>* un documento MD de nombre *<u>actividad01tunombre.md</u>*  y otro documento PDF que sea la exportación del primero.**
+**Subir a la plataforma *<u>AULES</u>* un documento MD y su PDF de nombre *<u>actividad01tunombre.md</u>* y *actividad01tunombre.pdf*.**

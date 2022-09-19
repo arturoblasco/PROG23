@@ -1,17 +1,19 @@
 ---
     title: UD01: Elementos de un programa informático
     language: ES
-    author: David Martínez Peña [www.martinezpenya.es]
+    author: Arturo BC [arturoblasco@iesmre.com]
     subject: Programación
-    keywords: [PRG, 2021, Programacion, Java]
-    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    keywords: [PRG, 2022, Programacion, Java]
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.com]
     header: ${title} - ${subject} (ver. ${today}) 
     footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
-    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD01/assets/cover.png
+    imgcover:assets/cover.png
 ---
 [TOC]
+
+
 
 # Piensa como un programador 
 
@@ -205,7 +207,7 @@ Un algoritmo, para que sea válido, tiene que tener ciertas características fun
 
 Los métodos más usuales para representar algoritmos son los **diagramas de flujo** y el **pseudocódigo**. Ambos son sistemas de representación independientes de cualquier lenguaje de programación. Hay que tener en cuenta que el diseño de un algoritmo constituye un paso previo a la codificación de un programa en un lenguaje de programación determinado (C, C++, Java, Pascal). La independencia del algoritmo del lenguaje de programación facilita, precisamente, la posterior codificación en el lenguaje elegido.
 
-**Diagrama de flujo** (Flowchart) es una de las técnicas de representación de algoritmos más antiguas y más utilizadas, aunque su empleo disminuyó considerablemente con los lenguajes de programación estructurados. Un diagrama de flujo utiliza símbolos estándar que contienen los pasos del algoritmo escritos en esos símbolos, unidos por flechas denominadas líneas de flujo que indican la secuencia en que deben ejecutarse.
+**Diagrama de flujo** (*Flowchart*) es una de las técnicas de representación de algoritmos más antiguas y más utilizadas, aunque su empleo disminuyó considerablemente con los lenguajes de programación estructurados. Un diagrama de flujo utiliza símbolos estándar que contienen los pasos del algoritmo escritos en esos símbolos, unidos por flechas denominadas líneas de flujo que indican la secuencia en que deben ejecutarse.
 
 Los símbolos más utilizados son:
 
@@ -243,6 +245,8 @@ Inicio
 Fin
 ```
 
+
+
 Ejemplo: *Mostrar la potencia de un número elevado a otro número*.
 
 ```pseudocode
@@ -255,8 +259,6 @@ Inicio
 	Escribir (RESULTADO)
 Fin
 ```
-
-
 
 
 
@@ -282,6 +284,8 @@ public class holaMundo {
     }
 }
 ```
+
+Desglosemos el ejemplo anterior:
 
 En Java, generalmente, una clase lleva el identificador *public* y corresponde con un fichero. El nombre de la clase coincide con el del fichero `.java` respetando mayúsculas y minúsculas.
 
@@ -320,7 +324,7 @@ Todas las instrucciones menos las llaves `{` `}` terminan con punto y coma ( `;`
 
 El sangrado (también conocido como **indentación**) deberá aplicarse a toda estructura que esté lógicamente contenida dentro de otra. El sangrado será de un tabulador. **Es suficiente entre 2 y 4 espacios**. Para alguien que empieza a programar suele ser preferible unos 4 espacios, ya que se ve todo más claro.
 
-Las líneas no tendrán en ningún caso demasiados caracteres que impidan que se pueda leer en una pantalla. **Un número máximo recomendable suele estar entre unos 70 y 90 caracteres, incluyendo los espacios de sangrado**. Si una línea debe ocupar más caracteres, tiene que dividirse en dos o más líneas, para ello utiliza los siguientes principios para realizar la división:
+Las líneas no tendrán, en ningún caso, demasiados caracteres que impidan que se pueda leer en una pantalla. **Un número máximo recomendable suele estar entre unos 70 y 90 caracteres, incluyendo los espacios de sangrado**. Si una línea debe ocupar más caracteres, tiene que dividirse en dos o más líneas, para ello utiliza los siguientes principios para realizar la división:
 
 - Tras una coma.
 - Antes de un operador, que pasará a la línea siguiente.
@@ -351,13 +355,13 @@ Siempre hay excepciones. Puede resultar que al aplicar estas reglas, en operacio
 
 ## ¿Qué y cómo es Java?
 
-Java es un lenguaje sencillo de aprender, con una sintaxis parecida a la de C++, pero en la que se han eliminado elementos complicados y que pueden originar errores. Java es <u>orientado a objetos</u>, con lo que elimina muchas preocupaciones al programador y permite la utilización de gran cantidad de bibliotecas ya definidas, evitando reescribir código que ya existe. Es un lenguaje de programación creado para satisfacer nuevas necesidades que los lenguajes existentes hasta el momento no eran capaces de solventar.
+Java es un lenguaje sencillo de aprender, con una sintaxis parecida a la de C++, pero en la que se han eliminado elementos complicados y que pueden originar errores. Java es un lenguaje <u>orientado a objetos</u>, con lo que elimina muchas preocupaciones al programador y permite la utilización de gran cantidad de bibliotecas ya definidas, evitando reescribir código que ya existe. Es un lenguaje de programación creado para satisfacer nuevas necesidades que los lenguajes existentes hasta el momento no eran capaces de solventar.
 
-Una de las principales virtudes de Java es su <u>independencia del hardware</u>, ya que el código que se genera es válido para cualquier plataforma. Este código será ejecutado sobre una máquina virtual denominada Maquina Virtual Java (MVJ o JVM – Java Virtual Machine), que interpretará el código convirtiéndolo a código específico de la plataforma que lo soporta. De este modo el programa se escribe una única vez y puede hacerse funcionar en cualquier lugar. Lema del lenguaje: "*Write once, run everywhere*".
+Una de las principales virtudes de Java es su <u>independencia del hardware</u>, ya que el código que se genera es válido para cualquier plataforma. Este código será ejecutado sobre una máquina virtual denominada Maquina Virtual Java (*MVJ* o *JVM* – *Java Virtual Machine*), que interpretará el código convirtiéndolo a código específico de la plataforma que lo soporta. De este modo el programa se escribe una única vez y puede hacerse funcionar en cualquier lugar. Lema del lenguaje: "*Write once, run everywhere*".
 
 Antes de que apareciera Java, el lenguaje C era uno de los más extendidos por su versatilidad. Pero cuando los programas escritos en C aumentaban de volumen, su manejo comenzaba a complicarse. Mediante las técnicas de programación estructurada y programación modular se conseguían reducir estas complicaciones, pero no era suficiente.
 
-Fue entonces cuando la Programación Orientada a Objetos (POO) entra en escena, aproximando notablemente la construcción de programas al pensamiento humano y haciendo más sencillo todo el proceso. Los problemas se dividen en objetos que tienen propiedades e interactúan con otros objetos, de este modo, el programador puede centrarse en cada objeto para programar internamente los elementos y funciones que lo componen.
+Fue entonces cuando la Programación Orientada a Objetos (*POO*) entra en escena, aproximando notablemente la construcción de programas al pensamiento humano y haciendo más sencillo todo el proceso. Los problemas se dividen en objetos que tienen propiedades e interactúan con otros objetos, de este modo, el programador puede centrarse en cada objeto para programar internamente los elementos y funciones que lo componen.
 
 Las características principales de lenguaje Java se resumen a continuación:
 
@@ -385,8 +389,6 @@ Pero no fue hasta 1995 cuando pasó a llamarse Java, dándose a conocer al públ
 
 El factor determinante para su expansión fue la incorporación de un intérprete Java en la versión 2.0 del navegador Web Netscape Navigator, lo que supuso una gran revuelo en Internet. A principios de 1997 apareció Java 1.1 que proporcionó sustanciales mejoras al lenguaje. Java 1.2, más tarde rebautizado como Java 2, nació a finales de 1998.
 
-El principal objetivo del lenguaje Java es llegar a ser el nexo universal que conecte a los usuarios con la información, esté ésta situada en el ordenador local, en un servidor Web, en una base de datos o en cualquier otro lugar.
-
 Para el desarrollo de programas en lenguaje Java es necesario utilizar un entorno de desarrollo denominado JDK (Java Development Kit), que provee de un compilador y un entorno de ejecución (JRE – Java RunEnvironment) para los bytecodes generados a partir del código fuente. Al igual que las diferentes versiones del lenguaje han incorporado mejoras, el entorno de desarrollo y ejecución también ha sido mejorado sucesivamente.
 
 Java 2 es la tercera versión del lenguaje, pero es algo más que un lenguaje de programación, incluye los siguientes elementos:
@@ -403,7 +405,7 @@ Java 2 es la tercera versión del lenguaje, pero es algo más que un lenguaje de
 
 ## Compilar y ejecutar un programa Java. Uso de la consola.
 
-Veamos los pasos para compilar e interpretar nuestro primer programa escrito en lenguaje Java.
+Veamos los pasos para compilar e interpretar nuestro primer programa escrito en lenguaje Java: Paso 1. Creación del código fuente   -->   Paso 2. Compilación del programa   -->   Paso 3. Ejecución del programa.
 
 ### Paso 1: Creación del código fuente
 
@@ -420,17 +422,17 @@ public class Ejemplo {
 }
 ```
 
-A continuación guardamos nuestro archivo y le ponemos como nombre `Ejemplo.java`. Debemos seguir una norma dictada por Java, **hemos de hacer coincidir nombre del archivo y nombre del programa**, tanto en mayúsculas como en minúsculas, y la extensión del archivo habrá de ser siempre “.java”.
+A continuación guardamos nuestro archivo y le ponemos como nombre `Ejemplo.java`. Debemos seguir una norma dictada por Java, **hemos de hacer coincidir nombre del archivo y nombre del programa**, tanto en mayúsculas como en minúsculas, y la extensión del archivo habrá de ser siempre <code>.java</code>.
 
-<img src="assets/Ejemplo.java.png" alt="Ejemplo.java" style="zoom:75%;" />
+<img src="/assets/ejemplo_java.png" style="zoom: 67%;" />
 
-Debemos recordar exactamente la ruta donde guardamos el archivo de ejemplo `Ejemplo.java`.
+> Debemos recordar exactamente la ruta donde guardamos el archivo de ejemplo `Ejemplo.java`.
 
 ### Paso 2: Compilación del programa
 
-Vamos a proceder a compilar e interpretar este pequeño programa Java (no te preocupes si todavía no entiendes el significado de las palabras compilar e interpretar, lo verás en la asignatura de `Entornos de Desarrollo`). Para ello usaremos la consola. Una vez en la consola debemos colocarnos en la ruta donde previamente guardamos el archivo `Ejemplo.java`.
+Vamos a proceder a compilar e interpretar este pequeño programa Java (no te preocupes si todavía no entiendes el significado de las palabras compilar e interpretar, lo verás en el módulo de *Entornos de Desarrollo*). Para ello usaremos la consola. Una vez en la consola debemos colocarnos en la ruta donde previamente guardamos el archivo `Ejemplo.java`.
 
-A continuación daremos la instrucción para que se realice **el proceso de compilación del programa**, para lo que escribiremos `javac Ejemplo.java`, donde `javac` es el nombre del compilador (**java c**ompiler) que transformará el programa que hemos escrito nosotros en lenguaje Java al lenguaje de la máquina virtual Java (`bytecode`), dando como resultado un nuevo archivo `Ejemplo.class` que se creará en este mismo directorio. Comprueba que no aparezca ningún error y que javac esté instalado en tu sistema (desde la consola lo puedes comprobar con el comando `javac --version` y debería aparece el número de versión que tienes instalada). Si aparecen los dos archivos tanto `Ejemplo.java` (código fuente) como `Ejemplo.class` (bytecode creado por el compilador) puedes continuar.
+A continuación daremos la instrucción para que se realice **el proceso de compilación del programa**, para lo que escribiremos `javac Ejemplo.java`, donde `javac` es el nombre del compilador (***java c**ompiler*) que transformará el programa que hemos escrito nosotros en lenguaje Java al lenguaje de la máquina virtual Java (`bytecode`), dando como resultado un nuevo archivo `Ejemplo.class` que se creará en este mismo directorio. Comprueba que no aparezca ningún error y que javac esté instalado en tu sistema (desde la consola lo puedes comprobar con el comando `javac --version` y debería aparece el número de versión que tienes instalada). Si aparecen los dos archivos tanto `Ejemplo.java` (código fuente) como `Ejemplo.class` (bytecode creado por el compilador) puedes continuar.
 
 ```sh
 $ javac Ejemplo.java
@@ -464,11 +466,9 @@ Visibilidad, ámbito o scope de una variable es la parte de código del programa
 
 Al nombre que le damos a la variable se le llama identificador. Los identificadores permiten nombrar los elementos que se están manejando en un programa. Vamos a ver con más detalle ciertos aspectos sobre los identificadores que debemos tener en cuenta.
 
-
-
 ## Identificadores
 
-Un **identificador** en Java es una secuencia ilimitada sin espacios de letras y dígitos Unicode , de forma que el primer símbolo de la secuencia debe ser una letra, un símbolo de subrayado (`_`) o el símbolo dólar (`$`). Por ejemplo, son válidos los siguientes identificadores:
+Un **identificador** en Java es una secuencia ilimitada sin espacios de letras y dígitos Unicode, de forma que el primer símbolo de la secuencia puede ser una letra, un símbolo de subrayado (`_`) o el símbolo dólar (`$`). Por ejemplo, son válidos los siguientes identificadores:
 
 - x5
 - ατη
@@ -477,11 +477,9 @@ Un **identificador** en Java es una secuencia ilimitada sin espacios de letras y
 
 Unicode es un código de caracteres o sistema de codificación, un alfabeto que recoge los caracteres de prácticamente todos los idiomas importantes del mundo. Además, el código Unicode es “compatible” con el código ASCII, ya que para los caracteres del código ASCII, Unicode asigna como código los mismos 8 bits, a los que les añade a la izquierda otros 8 bits todos a cero. La conversión de un carácter ASCII a Unicode es inmediata.
 
-
-
 ## Convenciones
 
-**Normas de estilo para nombra variables**
+**Normas de estilo para nombrar variables**
 
 A la hora de nombrar un identificador existen una serie de normas de estilo de uso generalizado que, no siendo obligatorias, se usan en la mayor parte del código Java. Estas reglas para la nomenclatura de variables son las siguientes:
 
@@ -528,7 +526,7 @@ Java dispone de los siguientes tipos de datos simples:
 | **boolean**      | Dato  lógico                                                 |                  - |                                true ó false |                 false | Boolean            |
 | **void**         | -                                                            |                  - |                                           - |                     - | Void               |
 
-> OJO!: Sobre valores por defecto e inicialización de variables: https://stackoverflow.com/questions/19131336/default-values-and-initialization-in-java
+> **Ojo!** Sobre valores por defecto e inicialización de variables: https://stackoverflow.com/questions/19131336/default-values-and-initialization-in-java
 
 Ejemplo de declaración y asignación de valores a variables:
 
@@ -538,13 +536,13 @@ Ejemplo de declaración y asignación de valores a variables:
 |         short | `short b, c=3;`                                              |
 |           int | `int d=-30;`<br />`int e=0xC125; //la 0x significa Hexadecimal` |
 |          long | `long b=46240;`<br />`long b=5L; // La L en este caso indica Long` |
-|          char | `char car1='c'`<br />`char car2=99; //car1 y car2 son iguales, la c equivale al ascii 99`<br />`char letra = '\u0061'; //código unicode del carácter "a"` |
+|          char | `char car1='c'`<br />`char car2=99; //car1 y car2 son iguales, la c equivale al ascii 99`<br />`char letra = '\u0063'; //código unicode del carácter "c"` |
 |         float | `float pi=3.1416;`<br />`float pi=3.1416F; //La F significa float`<br />`float medio=1/2; //0.5` |
 |        double | `double millon=1e6; // 1x10^6`<br />`double medio=1/2D; //0.5, la D significa double`<br />`double z=.123; //si la parte entera es 0 se puede omitir` |
 |       boolean | `boolean primero;`<br />`boolean par=false;`                 |
 # Tipos referenciados
 
-A partir de los ocho tipos datos primitivos, se pueden construir otros tipos de datos. Estos tipos de datos se llaman tipos referenciados o referencias, porque se utilizan para almacenar la dirección de los datos en la memoria del ordenador.
+A partir de los ocho tipos datos primitivos, se pueden construir otros tipos de datos. Estos tipos de datos se llaman *tipos referenciados* o *referencias*, porque se utilizan para almacenar la dirección de los datos en la memoria del ordenador.
 
 ```java
 int[] arrayDeEnteros;
@@ -568,7 +566,7 @@ Hemos visto qué son las variables, cómo se declaran y los tipos de datos que p
 
 Para mostrar por pantalla un mensaje utilizamos `System.out`, conocido como la salida estándar del programa. Este método lo que hace es escribir un conjunto de caracteres a través de la línea de comandos. Podemos utilizar `System.out.print` o `System.out.println`. En el segundo caso lo que hace el método es que justo después de escribir el mensaje, sitúa el cursor al principio de la línea siguiente.
 
-El texto en color gris que aparece entre caracteres // son comentarios que permiten documentar el código, pero no son tenidos en cuenta por el compilador y, por tanto, no afectan a la ejecución del programa.
+El texto en color gris que aparece entre caracteres <code>//</code> son comentarios que permiten documentar el código, pero no son tenidos en cuenta por el compilador y, por tanto, no afectan a la ejecución del programa.
 
 # Tipos enumerados
 
@@ -585,15 +583,15 @@ En el siguiente ejemplo puedes comprobar el uso que se hace de los tipos de dato
 
 ```java
 public class tiposEnumerados {
-    public enum dias {Lunes, Martes, Miercoles, Jueves, Viernes, Sábado, Domingo};
-    
+    public enum dias {Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo};
+
     public static void main(String[] args) {
         dias diaActual = dias.Martes;
         dias diaSiguiente = dias.Miercoles;
-        
-        System.out.print("Hoy es:");
+
+        System.out.print("Hoy es: ");
         System.out.println(diaActual);
-        System.out.println("Mañana\nes\n"+diaSiguiente);
+        System.out.println("Mañana es: "+diaSiguiente);
     }
 }
 ```
@@ -601,13 +599,11 @@ public class tiposEnumerados {
 El resultado después de la ejecución será:
 
 ```java
-Hoy es:Martes
-Mañana
-es
-Miercoles
+Hoy es: Martes
+Y mañana es: Miercoles
 ```
 
-Tenemos una variable `Dias` que almacena los días de la semana. Para acceder a cada elemento del tipo enumerado se utiliza el nombre de la variable seguido de un punto y el valor en la lista. Más tarde veremos que podemos añadir métodos y campos o variables en la declaración del tipo enumerado, ya que como hemos comentado un tipo enumerado en Java tiene el mismo tratamiento que las clases.
+Tenemos una variable `dias` que almacena los días de la semana. Para acceder a cada elemento del tipo enumerado se utiliza el nombre de la variable seguido de un punto y el valor en la lista. Más tarde veremos qué podemos añadir métodos y campos o variables en la declaración del tipo enumerado, ya que como hemos comentado un tipo enumerado en Java tiene el mismo tratamiento que las clases.
 
 En este ejemplo hemos utilizado el método `System.out.print`. Como podrás comprobar si lo ejecutas, la instrucción `print` escribe el texto que tiene entre comillas pero no salta a la siguiente línea, por lo que la instrucción `println` escribe justo a continuación.
 
@@ -615,7 +611,7 @@ Sin embargo, también podemos escribir varias líneas usando una única sentenci
 
 # Constantes y literales
 
-Las constantes se utilizan para almacenar datos que no varían nunca, asegurándonos que el valor no va a poder ser modificado.
+Las **constantes** se utilizan para almacenar datos que no varían nunca, asegurándonos que el valor no va a poder ser modificado.
 
 Podemos declarar una constante utilizando:
 
@@ -629,7 +625,9 @@ El calificador final indica que es constante. A continuación indicaremos el tip
 final double IVA = 0.21;
 ```
 
-Los literales pueden ser de tipo simple, null o string, como por ejemplo 230, null o "Java".
+
+
+Los **literales** pueden ser de tipo simple, null o string, como por ejemplo *230*, *null* o "*Java*".
 
 Respecto a los literales existen unos caracteres especiales que se representan utilizando secuencias de escape:
 
@@ -660,7 +658,7 @@ Ejemplo:
 double num1, num2, suma, resta, producto, division, resto;
 num1 =8;
 num2 =5;
-suma = num1 + num2;        // 13
+suma = num1 + num2;      // 13
 resta = num1 - num2;     // 3
 producto = num1 * num2;  // 40
 division = num1 / num2;  // 1.6
@@ -671,7 +669,7 @@ resto = num1 % num2;     // 3
 
 ## Operadores Relacionales
 
-Los **Operadores Relacionales** permiten evaluar (la respuesta es un booleano: si o no) la igualdad de los operandos:
+Los **Operadores Relacionales** permiten evaluar (la respuesta es un booleano: sí o no) la igualdad de los operandos:
 
 | Operador | Uso    | Operación             |
 | -------- | ------ | --------------------- |
@@ -702,12 +700,12 @@ compara = valor1 != valor2; // true
 
 Los **Operadores Lógicos** permiten realizar operaciones lógicas:
 
-| Operador  | Uso                    | Operación                                                    |
-| --------- | ---------------------- | ------------------------------------------------------------ |
-| && o &    | A && B o<br />A & B    | A AND B. El resultado será true si ambos operadores son true y false en caso contrario. |
-| \|\| o \| | A \|\| B o<br />A \| B | A OR B. El resultado será false si ambos operandos son false y true en caso contrario |
-| !         | !A                     | NOT A. Si el operando es true el resultado es false y si el operando es false el resultado es true. |
-| ^         | A ^ B                  | A XOR B. El resultado será true si un operando es true y el otro false, y false en caso contrario. |
+| Operador      | Uso                    | Operación                                                    |
+| ------------- | ---------------------- | ------------------------------------------------------------ |
+| &&   o   &    | A && B o<br />A & B    | A AND B. El resultado será true si ambos operadores son true y false en caso contrario. |
+| \|\|   o   \| | A \|\| B o<br />A \| B | A OR B. El resultado será false si ambos operandos son false y true en caso contrario |
+| !             | !A                     | NOT A. Si el operando es true el resultado es false y si el operando es false el resultado es true. |
+| ^             | A ^ B                  | A XOR B. El resultado será true si un operando es true y el otro false, y false en caso contrario. |
 
 Ejemplo:
 
@@ -726,12 +724,12 @@ logica = (sueldo<1000  ^edad>40);   //false
 
 Para representar resultados de operadores Lógicos también se pueden usar tablas de verdad a las que conviene acostumbrarse:
 
-| A     | B     | A && B | A \|\| B | !A    |
-| ----- | ----- | ------ | -------- | ----- |
-| false | false | false  | false    | true  |
-| true  | false | false  | true     | false |
-| false | true  | false  | true     | true  |
-| true  | true  | true   | true     | false |
+| A     | B     | A && B  | A \|\| B | !A      |
+| ----- | ----- | ------- | -------- | ------- |
+| false | false | *false* | *false*  | *true*  |
+| true  | false | *false* | *true*   | *false* |
+| false | true  | *false* | *true*   | *true*  |
+| true  | true  | *true*  | *true*   | *false* |
 
 
 
@@ -739,10 +737,10 @@ Para representar resultados de operadores Lógicos también se pueden usar tabla
 
 Los **Operadores Unarios** o **Unitarios** permiten realizar incrementos y decrementos:
 
-| Operador | Uso       | Operación       |
-| -------- | --------- | --------------- |
-| ++       | A++ o ++A | Incremento de A |
-| --       | A-- o --A | Decremento de A |
+| Operador | Uso             | Operación       |
+| -------- | --------------- | --------------- |
+| ++       | A++    o    ++A | Incremento de A |
+| --       | A--    o    --A | Decremento de A |
 
 Ejemplo:
 
@@ -768,26 +766,26 @@ Los **Operadores de Asignación** permiten asignar valores:
 
 | Operador | Uso    | Operación                                                    |
 | -------- | ------ | ------------------------------------------------------------ |
-| =        | A = B  | Asignación (como ya hemos visto)                             |
-| *=       | A *= B | Multiplicación y asignación. La operación A*=B equivale a A=A\*B |
-| /=       | A /= B | División y asignación. La operación A/=B equivale a A=A/B    |
-| %=       | A %= B | Módulo y asignación. La operación A%=B equivale a A=A%B      |
-| +=       | A += B | Suma y asignación. La operación A+=B equivale a A=A+B        |
-| -=       | A -= B | Resta y asignación. La operación A-=B equivale a A=A-B       |
+| =        | A = B  | Asignación (*como ya hemos visto*)                           |
+| +=       | A += B | Suma y asignación. La operación  A+=B  equivale a  A=A+B     |
+| -=       | A -= B | Resta y asignación. La operación  A-=B  equivale a  A=A-B    |
+| *=       | A *= B | Multiplicación y asignación. La operación  A*=B  equivale a A=A\*B |
+| %=       | A %= B | Módulo y asignación. La operación  A%=B  equivale a  A=A%B   |
+| /=       | A /= B | División y asignación. La operación  A/=B  equivale a  A=A/B |
 
 Ejemplo:
 
 ```java
 int dato1 = 10, dato2 = 2, dato;
 dato=dato1;   // dato vale 10
-dato2*=dato1; // dato2 vale 20
-dato2/=dato1; // datos2 vale 2
 dato2+=dato1; // dato2 vale 12
 dato2-=dato1; // dato2 vale 2
+dato2*=dato1; // dato2 vale 20
+dato2/=dato1; // datos2 vale 2
 dato1%=dato2; // dato1 vale0
 ```
 
-Los operadores tienen diferente Prioridad por lo que es interesante utilizar paréntesis para controlar las operaciones sin necesidad de depender de la prioridad de los operadores.
+> Los operadores tienen diferente Prioridad por lo que es interesante utilizar paréntesis para controlar las operaciones sin necesidad de depender de la prioridad de los operadores.
 
 
 
@@ -842,9 +840,11 @@ int v = ~q;    // v: 11111111111111111111111101111011
 
 ## Operador condicional `?:`
 
-El **operador condicional** `?:` sirve para evaluar una condición y devolver un resultado en función de si es verdadera o falsa dicha condición. Es el único operador ternario de Java, y como tal, necesita tres operandos para formar una expresión.
+El **operador condicional** `?:` sirve para evaluar una condición y devolver un resultado en función de si es verdadera o falsa dicha condición. Es el único operador ternario de Java, y como tal, necesita tres operandos para formar una expresión:
 
-El primer operando se sitúa a la izquierda del símbolo de interrogación, y siempre será una expresión booleana, también llamada condición. El siguiente operando se sitúa a la derecha del símbolo de interrogación y antes de los dos puntos, y es el valor que devolverá el operador condicional si la condición es verdadera. El último operando, que aparece después de los dos puntos, es la expresión cuyo resultado se devolverá si la condición evaluada es falsa.
+* El **primer operando** se sitúa a la izquierda del símbolo de interrogación, y siempre será una expresión booleana, también llamada **condición**. 
+* El **siguiente operando** se sitúa a la derecha del símbolo de interrogación y antes de los dos puntos, y es el valor que devolverá el operador condicional **si la condición es verdadera**. 
+* El **último operando**, que aparece después de los dos puntos, es la expresión cuyo resultado se devolverá **si la condición evaluada es falsa**.
 
 ```java
 condición ? exp1 : exp2
@@ -876,22 +876,22 @@ Los operadores tienen diferente **Prioridad** por lo que es interesante utilizar
 
 Prevalencia de operadores, ordenados de arriba a abajo de más a menos prioridad:
 
-| Descripción               | Operadores                              |
-| ------------------------- | --------------------------------------- |
-| operadores posfijos       | op++ op--                               |
-| operadores unarios        | ++op --op +op -op ~ !                   |
-| multiplicación y división | * / %                                   |
-| suma y resta              | + -                                     |
-| desplazamiento            | << >> >>>                               |
-| operadores relacionales   | < > <= =>                               |
-| equivalencia              | == !=                                   |
-| operador AND              | &                                       |
-| operador XOR              | ^                                       |
-| operador OR               | \|                                      |
-| AND booleano              | &&                                      |
-| OR booleano               | \|\|                                    |
-| condicional               | ?:                                      |
-| operadores de asignación  | = += -= *= /= %= &= ^= \|= <<= >>= >>>= |
+| Descripción               | Operadores                                                   |
+| ------------------------- | ------------------------------------------------------------ |
+| operadores posfijos       | op++   op--                                                  |
+| operadores unarios        | ++op   --op   +op   -op   ~   !                              |
+| multiplicación y división | *   /   %                                                    |
+| suma y resta              | +   -                                                        |
+| desplazamiento            | <<   >>   >>>                                                |
+| operadores relacionales   | <   >   <=   =>                                              |
+| equivalencia              | ==   !=                                                      |
+| operador AND              | &                                                            |
+| operador XOR              | ^                                                            |
+| operador OR               | \|                                                           |
+| AND booleano              | &&                                                           |
+| OR booleano               | \|\|                                                         |
+| condicional               | ?:                                                           |
+| operadores de asignación  | =   +=   -=   *=   /=   %=   &=   ^=   \|=   <<=   >>=   >>>= |
 
 Por ejemplo:
 
@@ -937,7 +937,7 @@ Los comentarios son muy importantes a la hora de describir qué hace un determin
 
 Todos los lenguajes de programación disponen de alguna forma de introducir comentarios en el código. En el caso de Java, nos podemos encontrar los siguientes tipos de comentarios:
 
-- Comentarios de **una sola línea**. Utilizaremos el delimitador // para introducir comentarios de sólo una línea.
+- Comentarios de **una sola línea**. Utilizaremos el delimitador <code>//</code> para introducir comentarios de sólo una línea.
 
     ```java
     // comentario de una sola línea
@@ -1007,7 +1007,7 @@ int entero2;
 System.out.print("Introduce un número: ");
 texto2 = System.console().readLine();
 entero2 = Integer.parseInt(texto2);
-System.out.println("El número introducido es:"+entero2);
+System.out.println("El número introducido es: "+entero2);
 ```
 
 Ejemplo 3: Introducción de un número decimal.
@@ -1020,6 +1020,159 @@ texto3 = System.console().readLine();
 doble3 = Double.parseDouble(texto3); // convertimos texto a doble
 System.out.println("Número decimal introducido es: "+doble3);
 ```
+
+
+
+# Instalar Java en Linux
+
+1. Comprobamos la versión actual de Java:
+
+   ````sh 
+   $ java -version
+   ````
+
+   ![](/assets/java_linux02.png)
+
+   Si vemos que no tenemos ninguna versión, **instalamos el JRE predeterminado**:
+
+   ````sh
+   $ sudo apt install default-jre
+   ````
+
+![](/assets/java_linux01.png)
+
+2. Para compilar y ejecutar Java necesitamos el programa javac (viene con JDK). 
+
+   ````sh
+   $ javac -version
+   ````
+
+   Si no tenemos salida, **instalamos JDK predeterminado**:
+
+   ````sh
+   $ sudo apt install default-jdk
+   ````
+
+![](/assets/java_linux03.png)
+
+
+
+# Instalar Java en Windows
+
+## Instalar Java
+
+1. Comprobamos la versión actual de Java:
+
+   ````sh
+   java -version
+   ````
+
+   ![](/assets/java_windows1.png)
+
+2. Si el sistema nos responde con algún mensaje de error, es que no tenemos instalado ni *JRE* ni *JDK*; deberemos comprobar si podemos ejecutar el compilador javac:
+
+   ````sh
+   javac -version
+   ````
+
+   pues si no tenemos instalado este deberemos instalar JDK desde [enlace a JDK de Oracle](http://www.oracle.com/technetwork/java/javase/downloads).
+
+   
+
+3. Después de la instalar JDK deberemos añadir, de forma manual, la ruta donde está instalado al conjunto de rutas de Windows donde se encuentran los programas ejecutables.
+
+   Para ello:
+
+   * Acceder a la ventana Sistema: ``Panel de control -- Sistema y Seguridad  -- Sistema`` y después a ``Cambiar configuración``:
+
+     <img src="/assets/java_windows2.png" style="zoom:67%;" />
+
+   * En la pestaña ``Opciones avanzadas`` pulsar el botón ``Variables de entorno...``:
+
+     <img src="/assets/java_windows3.png" style="zoom:67%;" />
+
+   * Seleccionar la variable ``Path`` y pulsar ``Editar``(o doble clic):
+
+     <img src="/assets/java_windows4.png" style="zoom:67%;" />
+
+   * Añadir a la ruta actual de Path: **un punto y coma** y **la ruta** donde se encuentran los ejecutable de JDK que acabamos de instalar (que por lo general será **c:\Program Files\Java\jdk[VERSION_INSTALADA]\bin**):
+
+     ````SH
+     ; C:\Program Files\Java\jdk[VERSION_INSTALADA]\bin
+     ````
+
+     <img src="/assets/java_windows5.png" style="zoom:80%;" />
+
+## Visual Studio Code. Instalar extensión Java Extension Pack
+
+Abrimos Visual Studio Code y, en extensiones, instalamos la extensión **Java Extension Pack**:
+
+<img src="/assets/java_vscode01.png" style="zoom: 40%;" />
+
+## Modificar fichero tasks de VSCode para compilar y ejecutar
+
+>  Este punto es opcional.
+
+Tenemos que editar el fichero de tareas <code>tasks.json</code>, para crear un par de ellas: <code>JC</code>, para compilar el archhivo .java; y <code>JR</code>, para ejecutarlo:
+
+* Abriremos <code>Terminal - Configurar tares de compilación predeterminada...</code> y pulsamos <code>Intro</code>:
+
+<img src="/assets/java_vscode02.png" style="zoom: 50%;" />
+
+<img src="/assets/java_vscode03.png" style="zoom: 67%;" />
+
+Borramos el contenido del fichero e introducimos el siguiente código:
+
+````
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "JC",
+			"command": "java",
+			"windows": {
+				"command": "C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\javac.exe"
+			},
+			"args": [
+				"${file}"
+			],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "JR",
+			"command": "java",
+			"windows": {
+				"command": "C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\java.exe"
+			},
+			"args": [
+				"${fileBasenameNoExtension}"
+			]
+		}
+	]
+}
+````
+
+Podemos observar que en "command" ponemos la ruta donde se encuentra instalado JDK <code>C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\</code>.
+
+Quedaría de la siguiente manera:
+
+<img src="/assets/java_vscode04.png" style="zoom: 60%;" />
+
+## Compilar y ejecutar un programa
+
+Una vez realizado los dos pasos anteriores ya podremos realizar las dos tareas (JC para compilar y JR para ejecutar).
+
+1. Desde <code>Terminal - Ejecutar tarea ... </code> y elegir, primero, compilar (**JC**):
+
+   <img src="/assets/java_vscode07.png" style="zoom: 67%;" />
+
+2. Desde <code>Terminal - Ejecutar tarea ... </code> y elegir, seguidamente, ejecutar (**JR**):
+
+<img src="/assets/java_vscode08.png" style="zoom: 65%;" />
 
 # Ejemplo UD01
 

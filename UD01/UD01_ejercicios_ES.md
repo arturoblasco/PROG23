@@ -1,4 +1,4 @@
-﻿---
+---
     title: Ejercicios de la UD01
     language: ES
     author: David Martínez Peña [www.martinezpenya.es]
@@ -15,9 +15,9 @@
 
 # Retos
 
-1. Reto 1: haga un programa que evalúe una expresión que contenga literales de los cuatro tipos de datos (booleano, entero, real y carácter) y la muestre por pantalla.
+1. **Reto 1**: haga un programa que evalúe una expresión que contenga literales de los cuatro tipos de datos (booleano, entero, real y carácter) y la muestre por pantalla.
 
-2. Reto 2: en su entorno de trabajo, cree el programa siguiente. Obsérvese que pasa exactamente. Entonces, intente arreglar el problema.
+2. **Reto 2**: en su entorno de trabajo, cree el programa siguiente. Obsérvese que pasa exactamente. Entonces, intente arreglar el problema.
    
    ```java
    // Un programa que usa un entero muuuuy grande
@@ -28,11 +28,11 @@
    }
    ```
    
-3. Reto 3: haga un programa con dos variables que, sin usar ningún literal ninguna parte excepto para inicializar estas variables, vaya estimando e imprimiendo sucesivamente los 5 primeros valores de la tabla de multiplicar del 4. Puede usar operadores aritméticos y de asignación, si desea.
+3. **Reto 3**: haga un programa con dos variables que, sin usar ningún literal ninguna parte excepto para inicializar estas variables, vaya estimando e imprimiendo sucesivamente los 5 primeros valores de la tabla de multiplicar del 4. Puede usar operadores aritméticos y de asignación, si desea.
 
-4. Reto 4: haga dos programas, uno que muestre por pantalla la tabla de multiplicar del 3, y otro, la del 5. Los dos deben ser exactamente iguales, letra por letra, excepto en un único literal dentro de todo el código.
+4. **Reto 4**: haga dos programas, uno que muestre por pantalla la tabla de multiplicar del 3, y otro, la del 5. Los dos deben ser exactamente iguales, letra por letra, excepto en un único literal dentro de todo el código.
 
-5. Reto 5: experimente qué pasa si en el siguiente programa inicializa la variable realLargo con un valor con varios decimales. El programa continúa compilando? ¿Qué resultado da? Después inténtelo asignando un valor superior al rango de los enteros (por ejemplo, 3000000000.0).
+5. **Reto 5**: experimente qué pasa si en el siguiente programa inicializa la variable realLargo con un valor con varios decimales. El programa continúa compilando? ¿Qué resultado da? Después inténtelo asignando un valor superior al rango de los enteros (por ejemplo, 3000000000.0).
 
    ```java
    public class ConversionExplicita {
@@ -47,13 +47,13 @@
    }
    ```
 
-6. Reto 6: haga un programa que muestre en pantalla de forma tabulada la tabla de verdad de una expresión de disyunción entre dos variables booleanas.
+6. **Reto 6**: haga un programa que muestre en pantalla de forma tabulada la tabla de verdad de una expresión de disyunción entre dos variables booleanas.
 
-7. Reto 7: haga un programa que muestre por pantalla la multiplicación de tres números reales entrados por teclado.
+7. **Reto 7**: haga un programa que muestre por pantalla la multiplicación de tres números reales entrados por teclado.
 
 # Ejercicios
 
-1. Probar la E/S elemental: Escribe el pequeño programa que aparece a continuación.
+1. **Ejercicio 01**. Probar la E/S elemental: Escribe el pequeño programa que aparece a continuación.
 
    ```java
    import java.util.*;
@@ -76,13 +76,14 @@
 
    ¿Qué ocurre si eliminamos la instrucción `import java.util.*`;
 
-2. Averigua mediante pruebas:
+2. **Ejercicio 02**. Averigua mediante pruebas:
 
    1. ¿Es posible escribir dos instrucciones en la misma línea de un programa?
    2. ¿Se puede "romper" una instrucción entre varias líneas?
    3. Algunos lenguajes de programación dan un valor por defecto a las variables cuando las declaramos sin inicializarlas. Otros no permiten usar el contenido de una variable que no haya sido previamente inicializada. ¿Cuál es comportamiento de Java? 
 
-3. ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda
+3. **Ejercicio 03**. ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda
+   
    1. `n`
    2. `MiProblema`
    3. `MiJuego`
@@ -98,8 +99,8 @@
    13. `Juan=Rubio`
    14. `Edad5`
    15. `_5Java`
-
-4. (Por2) Escribir un programa que lea un entero desde teclado, lo multiplique por 2, y a continuación escriba el resultado en la pantalla:
+   
+4. **Ejercicio 04**. (Por2) Escribir un programa que lea un entero desde teclado, lo multiplique por 2, y a continuación escriba el resultado en la pantalla:
 
    Ejemplo de ejecución:
 
@@ -109,7 +110,7 @@
    El doble de 3 es 6
    ```
 
-5. (Intercambio) Escribir un programa que …
+5. **Ejercicio 05**. (Intercambio) Escribir un programa que …
 
    1. Lea desde teclado dos valores enteros. Llama a las variables v1 y v2.
    2. Muestre los valores introducidos por el usuario
@@ -125,7 +126,7 @@
    Después de intercambiar	 v1: 9	 y	 v2: 2
    ```
 
-6. Escribir las siguientes expresiones siguiendo la sintaxis de Java.
+6. **Ejercicio 06**. Escribir las siguientes expresiones siguiendo la sintaxis de Java.
 
    1. $$
       \frac{x}{y}+1
@@ -159,11 +160,11 @@
       \frac{xy}{mn}
       $$
    
-7. (Superficie) Escribir un programa que solicite al usuario la longitud y la anchura de una habitación y a continuación muestre su superficie (longitud por anchura).
+7. **Ejercicio 07**. (Superficie) Escribir un programa que solicite al usuario la longitud y la anchura de una habitación y a continuación muestre su superficie (longitud por anchura).
 
-8. (Medidas) Escribir un programa que convierta una medida dada en pies a sus equivalentes en yardas, pulgadas, centímetros  y metros, sabiendo que 1 pie = 12 pulgadas, 1 yarda = 3 pies, 1 pulgada = 2.54 cm, 1 m = 100 cm.
+8. **Ejercicio 08**. (Medidas) Escribir un programa que convierta una medida dada en pies a sus equivalentes en yardas, pulgadas, centímetros  y metros, sabiendo que 1 pie = 12 pulgadas, 1 yarda = 3 pies, 1 pulgada = 2.54 cm, 1 m = 100 cm.
 
-9. (Segundos) Escribir un programa que, dada una cantidad de segundos, introducida por teclado, la desglose en días, horas, minutos y segundos.  
+9. **Ejercicio 09**. (Segundos) Escribir un programa que, dada una cantidad de segundos, introducida por teclado, la desglose en días, horas, minutos y segundos.  
 
    Ejemplo de ejecución: 
 
@@ -176,7 +177,7 @@
    1 segundos
    ```
 
-10. (Fuerza) La fuerza de atracción entre dos masas m1 y m2 separadas por una distancia d, está dada por la fórmula:
+10. **Ejercicio 10**. (Fuerza) La fuerza de atracción entre dos masas m1 y m2 separadas por una distancia d, está dada por la fórmula:
     $$
     F= \frac{(G · m1 · m2)}{d^2}
     $$
@@ -185,9 +186,9 @@
 
     Escribir un programa que lea la masa de dos cuerpos y la distancia entre ellos y a continuación obtenga su fuerza de atracción.
 
-11. (Círculo) Escribir un programa que calcule la longitud de la circunferencia y el área del círculo para un valor del radio introducido por teclado.
+11. **Ejercicio 11**. (Círculo) Escribir un programa que calcule la longitud de la circunferencia y el área del círculo para un valor del radio introducido por teclado.
 
-12. (Dados) Escribir un programa que simula el lanzamiento de dos dados.
+12. **Ejercicio 12**. (Dados) Escribir un programa que simula el lanzamiento de dos dados.
 
     ```sh
     Dado 1 : 5
@@ -195,14 +196,14 @@
     Puntuación total: 9
     ```
 
-13. (UltimaCifra) Escribir un programa que muestre la última cifra de un número entero que introduce el usuario por teclado. *Pista: ¿Qué devuelve a%10 ?*
+13. **Ejercicio 13**. (UltimaCifra) Escribir un programa que muestre la última cifra de un número entero que introduce el usuario por teclado. *Pista: ¿Qué devuelve a%10 ?*
 
     ```sh
     Introduce un número entero: 3761
     La última cifra de 3761 es 1
     ```
     
-14. (PenultimaCifra) Escribir un programa que muestre la penúltima cifra de un número entero que introduce el usuario por teclado.
+14. **Ejercicio 14**. (PenultimaCifra) Escribir un programa que muestre la penúltima cifra de un número entero que introduce el usuario por teclado.
 
     ```sh
     Introduce un número entero: 3761
@@ -211,7 +212,7 @@
     
     Una vez hayas comprobado que el programa funciona correctamente, prueba qué ocurre si el usuario introduce un valor de una sola cifra (por ejemlo 4). Explica el resultado mostrado por el programa.
     
-15. (Redondear1) `Math.round(x)` redondea x de manera que este queda sin decimales. (*`Math.round(35.5289)` da como resultado `36`)*
+15. **Ejercicio 15**. (Redondear1) `Math.round(x)` redondea x de manera que este queda sin decimales. (*`Math.round(35.5289)` da como resultado `36`)*
 
     Trata de escribir un programa en el que el usuario introduzca un número real y a continuación se muestre redondeado a un decimal. *Pista : combinar productos, divisiones y Math.round()*
 
@@ -221,7 +222,7 @@
     Introduce un número real: 35.5289
     El número 35.5289, redondeado a un decimal es 35.5
     ```
-16. Cuál es el valor resultante de dada una de las siguientes expresiones
+16. **Ejercicio 16**. Cuál es el valor resultante de dada una de las siguientes expresiones
 
     1. `5 * 4 – 3 * 6`
     2. `4 * 5 * 2`
@@ -234,9 +235,9 @@
     9. `4 / 2 * 3`
     10. `213 /100`
 
-17. La famosa ecuación de Einstein para la conversión de una masa m en energía viene dada por la fórmula E=mc^2^, donde c es la velocidad de la luz que vale 2.997925 · 10^8^ m/s. Escribir un programa que lea el valor de la masa y obtenga la energía correspondiente según la anterior fórmula.
+17. **Ejercicio 17**. La famosa ecuación de Einstein para la conversión de una masa m en energía viene dada por la fórmula E=mc^2^, donde c es la velocidad de la luz que vale 2.997925 · 10^8^ m/s. Escribir un programa que lea el valor de la masa y obtenga la energía correspondiente según la anterior fórmula.
 
-18. Indica cuales serán los valores de las variables después de ejecutar cada uno de los siguientes fragmentos de código. Resuelve el ejercicio sin escribir los programas correspondientes y probarlos.
+18. **Ejercicio 18**. Indica cuales serán los valores de las variables después de ejecutar cada uno de los siguientes fragmentos de código. Resuelve el ejercicio sin escribir los programas correspondientes y probarlos.
 
     1. ```java
        int a=3, b = 2;
@@ -330,25 +331,26 @@ Solución: `m >= 18`
 
 # Actividades
 
-1. Realiza un conversor de euros a pesetas. La cantidad de euros que se quiere convertir debe ser introducida por teclado.
+1. **Actividad 01**. Realiza un conversor de euros a pesetas. La cantidad de euros que se quiere convertir debe ser introducida por teclado.
 
-2. Realiza un conversor de pesetas a euros. La cantidad de pesetas que se quiere convertir debe ser introducida por teclado.
+2. **Actividad 02**. Realiza un conversor de pesetas a euros. La cantidad de pesetas que se quiere convertir debe ser introducida por teclado.
 
-3. Escribe un programa que calcule el área de un rectángulo. (`area = base * altura`)
+3. **Actividad 03**. Escribe un programa que calcule el área de un rectángulo. (`area = base * altura`)
 
-4. Escribe un programa que calcule el área de un triángulo. (`area = (base * altura) / 2`)
+4. **Actividad 04**. Escribe un programa que calcule el área de un triángulo. (`area = (base * altura) / 2`)
 
-5. Escribe un programa que calcule el salario semanal de un empleado en base a las horas trabajadas, a razón de 12 euros la hora.
+5. **Actividad 05**. Escribe un programa que calcule el salario semanal de un empleado en base a las horas trabajadas, a razón de 12 euros la hora.
 
-6. Realiza un conversor de MiB a KiB. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
+6. **Actividad 06**. Realiza un conversor de MiB a KiB. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
 
-7. Realiza un conversor de Kib a Mib. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
+7. **Actividad 07**. Realiza un conversor de Kib a Mib. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
 
-8. Realiza un programa en Java que genere letras de forma aleatoria.
+8. **Actividad 08**. Realiza un programa en Java que genere letras de forma aleatoria.
 
-9. Realiza un programa en Java que genere el número premiado del Cupón de la ONCE.
+9. **Actividad 09**. Realiza un programa en Java que genere el número premiado del Cupón de la ONCE.
 
-10. Modificar el siguiente programa para que compile y funcione:
+10. **Actividad 10**. Modificar el siguiente programa para que compile y funcione:
+    
     ```java
     public class activ10 {
         public static void main(String[] args) {
@@ -359,8 +361,8 @@ Solución: `m >= 18`
         }
     }
     ```
-
-11. Modificar el siguiente programa para que compile y funcione:
+    
+11. **Actividad 11**. Modificar el siguiente programa para que compile y funcione:
 
     ```java
     public class activ11 {
@@ -372,7 +374,7 @@ Solución: `m >= 18`
     }
     ```
     
-12. Indicar que valor devolverá la ejecución del siguiente programa:
+12. **Actividad 12**. Indicar que valor devolverá la ejecución del siguiente programa:
 
     ```java
     public class activ12 {
@@ -384,7 +386,7 @@ Solución: `m >= 18`
     }
     ```
 
-13. Indicar que valor devolverá la ejecución del siguiente programa:
+13. **Actividad 13**. Indicar que valor devolverá la ejecución del siguiente programa:
 
     ```java
     public class activ13 {
@@ -396,16 +398,16 @@ Solución: `m >= 18`
     }
     ```
 
-14. Realizar un programa que muestre por pantalla respetando los saltos de carro el siguiente texto (con un solo `println`):
+14. **Actividad 14**. Realizar un programa que muestre por pantalla respetando los saltos de carro el siguiente texto (con un solo `println`):
 
     ```sh
     Me gusta la programación
     cada día más
     ```
 
-17. Realiza un programa en Java que tenga las variables edad, nivel de estudios e ingresos y almacene en una variable llamada jasp el valor verdadero si la edad es menor o igual a 28 y el nivel de estudios es mayor a 3, o bien la edad es menor de 30 y los ingresos superiores a 28000. En caso contrario almacenar el valor falso.
-18. Realizar un programa que realice el cálculo del precio de un producto teniendo en cuenta que el producto vale 120 €, tiene un descuento del 15% y el IVA que se le aplica es del 21%.
-19. Realiza un programa que calcule la nota que hace falta sacar en el segundo examen de la asignatura Programación para obtener la media deseada. Hay que tener en cuenta que la nota del primer examen cuenta el 40% y la del segundo examen un 60%.
+17. **Actividad 15**. Realiza un programa en Java que tenga las variables edad, nivel de estudios e ingresos y almacene en una variable llamada jasp el valor verdadero si la edad es menor o igual a 28 y el nivel de estudios es mayor a 3, o bien la edad es menor de 30 y los ingresos superiores a 28000. En caso contrario almacenar el valor falso.
+18. **Actividad 16**. Realizar un programa que realice el cálculo del precio de un producto teniendo en cuenta que el producto vale 120 €, tiene un descuento del 15% y el IVA que se le aplica es del 21%.
+19. **Actividad 17**. Realiza un programa que calcule la nota que hace falta sacar en el segundo examen de la asignatura Programación para obtener la media deseada. Hay que tener en cuenta que la nota del primer examen cuenta el 40% y la del segundo examen un 60%.
     Ejemplo 1:
 
     ```sh
@@ -422,7 +424,7 @@ Solución: `m >= 18`
     Para tener un 7 en el trimestre necesitas sacar un 6.33 en el segundo examen.
     ```
 
-20. Realizar un programa que dado un importe en euros nos indique el mínimo número de billetes y la cantidad sobrante de euros. Debes usar el operador condicional `?:`
+20. **Actividad 18**. Realizar un programa que dado un importe en euros nos indique el mínimo número de billetes y la cantidad sobrante de euros. Debes usar el operador condicional `?:`
 
     ```java
     ¿Cuántos euros tienes?: 232

@@ -26,6 +26,46 @@ En esta actividad deberás buscar información y explicar las 3 áreas de un pro
 
 **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*actividad01tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
 
+
+
+# Configurar nuestro git
+
+Antes de comenzar a utilizar git, debemos configurarlo con los valores que tendrá a partir de ahora (*nombre, correo electrónico, ...*).
+
+Para ello, establecemos:
+
+- el **nombre** de usuario:
+
+  ````
+  git config --global user.name "tu_nombre_completo"
+  ````
+
+- el **correo** de usuario:
+
+  ````
+  git config --global user.email "tu_direccion_de_correo_electronico"
+  ````
+
+- el **coloreado** de la salida:
+
+  ````
+  git config --global colori.ui auto
+  ````
+
+- el **estado original en los conflictos**:
+
+  ````
+  git config --global merge.conflictstyle diff3
+  ````
+
+Para mostrar la configuración, que ya hemos establecido:
+
+````
+git config --list
+````
+
+
+
 # Inicializar repositorio local
 
 En la actividad siguiente, vamos a crear un repositorio local, es decir en nuestro PC personal. 
