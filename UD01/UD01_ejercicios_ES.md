@@ -105,7 +105,7 @@
    Ejemplo de ejecución:
 
    ```sh
-   Escribe un número:
+   Escribe un número: 
    3
    El doble de 3 es 6
    ```
@@ -113,9 +113,9 @@
 5. **Ejercicio 05**. (*Intercambio*) Escribir un programa que …
 
    1. Lea desde teclado dos valores enteros. Llama a las variables v1 y v2.
-   2. Muestra los valores introducidos por el usuario
-   3. Intercambia el valor de v1 y v2 (v1 pasa a  valer lo que valía v2 y viceversa)
-   4. Muestra de nuevo los valores, ahora con su valor intercambiado
+   2. Muestra los valores introducidos por el usuario.
+   3. Intercambia el valor de v1 y v2 (*v1 pasa a  valer lo que valía v2 y viceversa*).
+   4. Muestra de nuevo los valores, ahora con su valor intercambiado.
 
    Ejemplo de ejecución:
 
@@ -214,7 +214,7 @@
     
 15. **Ejercicio 15**. (*Redondear1*) `Math.round(x)` redondea x de manera que este queda sin decimales. (*`Math.round(35.5289)` da como resultado `36`)*
 
-    Trata de escribir un programa en el que el usuario introduzca un número real y a continuación se muestre redondeado a un decimal. *Pista : combinar productos, divisiones y Math.round()*
+    Trata de escribir un programa en el que el usuario introduzca un número real y a continuación se muestre redondeado a un solo decimal. *Pista : combinar productos, divisiones y Math.round()*
 
     Ejemplo de ejecución:
 
@@ -374,7 +374,7 @@ Solución: `m >= 18`
     }
     ```
     
-12. **Actividad 12**. Indicar que valor devolverá la ejecución del siguiente programa:
+12. **Actividad 12**. Indicar qué valor devolverá la ejecución del siguiente programa:
 
     ```java
     public class activ12 {
@@ -386,7 +386,7 @@ Solución: `m >= 18`
     }
     ```
 
-13. **Actividad 13**. Indicar que valor devolverá la ejecución del siguiente programa:
+13. **Actividad 13**. Indicar qué valor devolverá la ejecución del siguiente programa:
 
     ```java
     public class activ13 {
@@ -405,8 +405,8 @@ Solución: `m >= 18`
     cada día más
     ```
 
-17. **Actividad 15**. Realiza un programa en Java que tenga las variables edad, nivel de estudios e ingresos y almacene en una variable llamada jasp el valor verdadero si la edad es menor o igual a 28 y el nivel de estudios es mayor a 3, o bien la edad es menor de 30 y los ingresos superiores a 28000. En caso contrario almacenar el valor falso.
-18. **Actividad 16**. Realizar un programa que realice el cálculo del precio de un producto teniendo en cuenta que el producto vale 120 €, tiene un descuento del 15% y el IVA que se le aplica es del 21%.
+17. **Actividad 15**. Realiza un programa en Java que tenga las variables *edad*, *nivel de estudios* e *ingresos* y almacene en una variable llamada *jasp* el valor verdadero si la edad es menor o igual a 28 y el nivel de estudios es mayor a 3, o bien la edad es menor de 30 y los ingresos superiores a 28000. En caso contrario almacenar el valor falso.
+18. **Actividad 16**. Realizar un programa que calcule el precio de un producto teniendo en cuenta que el producto vale 120 €, tiene un descuento del 15% y el IVA que se le aplica es del 21%.
 19. **Actividad 17**. Realiza un programa que calcule la nota que hace falta sacar en el segundo examen de la asignatura Programación para obtener la media deseada. Hay que tener en cuenta que la nota del primer examen cuenta el 40% y la del segundo examen un 60%.
     Ejemplo 1:
 
