@@ -1039,7 +1039,7 @@ Cuando se realiza una conexión SSH con una nueva clave, la primera vez se pide 
 
 En esta actividad veremos qué se entiende por conflicto, cuándo se produce y cómo resolverlo.
 
-Como sabéis un mismo repositorio puede tener copias en distintos sitios.  Ahora mismo tenemos una copia en GitHub y otra local en nuestro PC. Pero podrían existir más copias locales en otros PC.
+Como sabéis un mismo repositorio puede tener copias en distintos sitios.  Ahora mismo tenemos una copia en GitHub y otra local en nuestro PC. Pero **podrían existir más copias locales en otros PC**.
 
 Siempre que realicemos cambios (es decir commits) en el mismo archivo en las mismas líneas pero en copias distintas, se producirá un conflicto.
 
@@ -1051,11 +1051,10 @@ Para ver esto, vamos a hacer un commit en nuestro repositorio en GitHub, y luego
 
 En GitHub vamos a modificar el archivo `README.md` y registrar el cambio (commit).
 
-Para ello, entramos en nuestro repositorio remoto, pulsamos sobre el archivo `README.md`
-y luego pulsamos sobre el lápiz para editar.
+Para ello, entramos en nuestro repositorio remoto, pulsamos sobre el archivo `README.md`y luego pulsamos sobre el lápiz para editar.
 ![readme edit](assets/readme-edit.png)
 
-> Recientemente (mediados de agosto de 2021) gitHub añadió una funcionalidad interesante a todos sus repositorios, y es la posibilidad de abrir el editor vsCode online para cualquier repositorio simplemente usando la `hotkey` "`.`".
+> Recientemente (mediados de agosto de 2021) gitHub añadió una funcionalidad interesante a todos sus repositorios, y es la **posibilidad de abrir el editor vsCode online** para cualquier repositorio simplemente usando la *hotkey* `.`.
 >
 > Por tanto podemos hacer esta modificación tal y como se muestra en las capturas, o pulsar la tecla "." (punto) y usar vsCode Online para hacer la modificación.
 
@@ -1066,8 +1065,7 @@ y luego pulsamos sobre el lápiz para editar.
 
 Registramos commit. Para ello pulsamos en **Commit changes**
 
-Si lo deseamos, podemos poner un mensaje al commit y un descripción, aunque no es obligatorio.  
-GitHub pone una por defecto.
+Si lo deseamos, podemos poner un mensaje al commit y un descripción, aunque no es obligatorio. GitHub pone una por defecto.
 
 
 ![github commit changes](assets/github-commit-changes.png)
@@ -1102,13 +1100,12 @@ git commit -m "Actualización de README.md"
 Al intentar subir nuestro commit local al repositorio remoto,  se rechazará.
 
 ```sh
-git  push
+git push
 ```
 
 ![git push conflicto](assets/git-push-conflicto.png)
 
-**Esto no es un conflicto. 
-Simplemente nos dice que debemos actualizar antes nuestro repositorio local con el contenido del repositorio remoto**.
+**Esto no es un conflicto. Simplemente nos dice que debemos actualizar antes nuestro repositorio local con el contenido del repositorio remoto**.
 
 Si hemos realizado cambios en nuestro repositorio remoto, deberemos integrarlos en nuestro repositorio local antes de poder subir nuevos cambios locales.
 
@@ -1119,14 +1116,12 @@ Si hemos realizado cambios en nuestro repositorio remoto, deberemos integrarlos 
 Así que ejecutamos:
 
 ```sh
-git  pull origin master
+git pull origin master
 ```
 
 para **bajar los commits del repositorio remoto** que no tenemos en local.
 
-**Esto no tendría por que provocar un conflicto. 
-Pero en este caso sí se produce, porque hemos modificado el mismo archivo (`README.md`)
-y además en la misma linea (la línea de la fecha)**.
+**Esto no tendría por qué provocar un conflicto. Pero en este caso sí se produce, porque hemos modificado el mismo archivo (`README.md`) y además en la misma linea (*la línea de la fecha*)**.
 
 Así que se realiza la fusión, pero nos avisa que hay conflicto en dicho archivo. Deberemos resolverlo manualmente.
 
@@ -1166,7 +1161,9 @@ git commit  -m "Arreglado conflicto en README.md"
 
 Ahora ya podremos subir nuestro commit con el conflicto solucionado.
 
-**`git push origin master`** 
+````sh
+git push origin master
+````
 
 ![git push sin conflicto](assets/git-push-sin-conflicto.png)
 
@@ -1223,8 +1220,7 @@ El comando `git checkout -b  nueva-rama` tiene esencialmente 2 formas:
 1. **`git checkout -b  nueva-rama`**  (creamos una nueva rama a partir del commit actual, y nos pasamos a ella).
 2. **`git checkout -b  nueva-rama  commit-de-partida`**  (creamos una nueva rama a partir del commit indicado, y nos pasamos a ella).
 
-En este apartado vamos a crear 2 ramas (las llamaremos `rama1` y `rama2`) a partir del primer commit, 
-es decir el commit más antiguo, que tenemos etiquetado como `v1`.
+En este apartado vamos a crear 2 ramas (las llamaremos `rama1` y `rama2`) a partir del primer commit, es decir el commit más antiguo, que tenemos etiquetado como `v1`.
 
 Para crear `rama1` y movernos a ella, vamos a usar la forma más directa. Para ello hacemos:
 
@@ -1244,7 +1240,9 @@ Ahora hagamos otra rama llamada `rama2` a partir del commit `v1`, de una forma u
 
 Imaginemos que, por despiste, nos hemos movido al commit `v1` con:
 
-**`git checkout v1`**
+````sh
+git checkout v1
+````
 
 ![git checkout v1](assets/git-checkout-v1.png)	
 
@@ -1268,7 +1266,9 @@ Como se muestra en la captura, no existe ningún apuntador en forma de rama, as�
 
 Si no deseamos perder dichos commits, debemos ejecutar:
 
-**`git checkout -b rama2`**
+````sh
+git checkout -b rama2
+````
 
 ![git log graph 4](assets/git-log-graph4.png)	
 
