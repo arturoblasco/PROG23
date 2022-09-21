@@ -168,7 +168,7 @@ git commit -m "primer cambio Arturo"
 
 
 
-## Realizar los puntos 2.5, 2.6 y 2.7 otras dos veces
+## Realizar los puntos 3.5, 3.6 y 3.7 otras dos veces
 
 La primera vez añadimos una segunda línea con la *fecha actual* y luego volvemos a hacer  `git add ...`   y   `git commit ...` correspondientes.
 

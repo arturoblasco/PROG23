@@ -1023,6 +1023,117 @@ System.out.println("Número decimal introducido es: "+doble3);
 
 
 
+## Entrada y Salida por consola
+
+Podemos utilizar una variable de tipo Scanner para leer desde consola.
+
+1. Para ello deberemos, primero, importar la librería ``util``:
+
+   ``import java.util.*;``
+
+2. Después inicializar una variable (en el ejemplo ``sc``) de tipo Scanner:
+
+   ``Scanner sc = new Scanner (System.in);``
+
+3. Para guardar en las variables correspondientes (entero, float, double, string, char...):
+
+   ``entero = sc.nextInt();`` ,
+
+   ``decimal = sc.nextFloat();`` ,
+
+   ``cadena = sc.next();`` o ``cadena = sc.nextLine();``  ,
+
+   ``letra = sc.next().charAt(0);``
+
+En el siguiente ejemplo podemos observar mejor lo expuesto:
+
+````java
+// importar libreria
+import java.util.*;
+
+public class Mostrarinformacion {
+    public static void main (String[] args){
+        Scanner sc = new Scanner (System.in);
+        int entero;
+        float decimal;
+        String cadena;
+        char letra;
+
+        // guardar cadena y convertir a valores y tipos correspondientes:
+        System.out.print("Muestra un número entero: ");
+        entero = sc.nextInt();
+        
+        System.out.print("Muestra un número flotante: ");
+        decimal = sc.nextFloat(); //recordar que tenemos que poner coma para el decimal
+        
+        System.out.print("Muestra un texto o cadena: ");
+        cadena = sc.next(); //solo mostrará la primera palabra
+        cadena = sc.nextLine(); //solo mostrará la primera palabra       
+
+        System.out.print("Muestra una sola letra: ");
+        letra = sc.next().charAt(0); //solo mostrará la primera letra
+
+        // mostrar en ventana los valores:
+        System.out.println("El número entero guardado es: "+entero);     
+        //el resto de variables se muestran igual que la línia anterior
+    }
+}
+````
+
+
+
+## Entrada y Salida con JOptionPane
+
+Otra forma de introducir y mostrar información, más elegante que por consola, es utilizar ventanas.
+
+1. Para ello deberemos, primero, importar la librería ``util``:
+
+   ``import javax.swing.JOptionPane;``
+
+2. Para guardar la información que introduciremos desde la ventana emergente:
+
+   ``variable_string = JOptionPane.showInputDialog ("texto en descripción de ventana:");``
+
+   > Debemos tener en cuenta que la información que se *recoge* en dicha ventana es SIEMPRE una cadena; por lo que, si queremos almacenar su valor con otro tipo de datos distinto, deberemos hacerlo explícitamente mediante el tipo de datos en cuestión y método *parse*.
+
+   ``entero = Integer.parseInt( JOptionPane.showInputDialog ("inserta un número entero:"));``
+
+   ``decimal= Double.parseDouble( JOptionPane.showInputDialog ("inserta un número decimal:"));``
+
+   ``letra= JOptionPane.showInputDialog ("inserta una letra:").charAt(0);``
+
+3. Para mostrar por ventana emergente alguna variable:
+
+   ``JOptionPane.showMessageDialog(null, "la cadena es: "+cadena);``
+
+En el siguiente ejemplo podemos observar mejor lo expuesto:
+
+````java
+// importar libreria
+import javax.swing.JOptionPane;
+
+public class Mostrarinformacion {
+    public static void main (String[] args){
+        String cadena;
+        int entero;
+        char letra;
+        double decimal;
+
+        // guardar cadena y convertir a valores y tipos correspondientes:
+        cadena = JOptionPane.showInputDialog ("texto en descripción de ventana:");
+        entero = Integer.parseInt( JOptionPane.showInputDialog ("inserta un número entero:")); // convertir la cadena a otro tipo; como entero
+        decimal= Double.parseDouble( JOptionPane.showInputDialog ("inserta un número decimal:"));
+        letra= JOptionPane.showInputDialog ("inserta una letra:").charAt(0);
+
+        // mostrar en ventana los valores:
+        JOptionPane.showMessageDialog(null, "la cadena es: "+cadena);
+        JOptionPane.showMessageDialog(null, "el número entero es: "+entero);
+        JOptionPane.showMessageDialog(null, "la número decimal es: "+decimal);
+        JOptionPane.showMessageDialog(null, "la letra es: "+letra);       
+    }
+}
+````
+
 # Instalar Java en Linux
 
 1. Comprobamos la versión actual de Java:
