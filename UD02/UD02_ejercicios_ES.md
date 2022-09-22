@@ -1,4 +1,4 @@
-﻿---
+---
     title: Ejercicios de la UD02
     language: ES
     author: David Martínez Peña [www.martinezpenya.es]
@@ -15,7 +15,8 @@
 
 # Actividades
 
-1. Crear una clase llamada Temperatura con dos métodos:
+1. **Actividad 01** - Crear una clase llamada Temperatura con dos métodos:
+      
       - `celsiusToFarenheit`. Convierte grados *Celsius* a *Farenheit*.
         $$
         F=(1,8*C)+32
@@ -26,7 +27,7 @@
         C=\frac{F-32}{1,8}
         $$
       
-2. A partir de la siguiente clase:
+2. **Actividad 02** - A partir de la siguiente clase:
 
    ```java
    public class Moto {
@@ -45,18 +46,19 @@
 
    - `void frena(int menos)`. Permite reducir la velocidad del objeto moto.
 
-3. Crea una clase Rebajas con un método `descubrePorcentaje()` que descubra el descuento aplicado en un producto. El método recibe el precio original del producto y el rebajado y devuelve el porcentaje aplicado. Podemos calcular el descuento realizando la operación:
+3. **Actividad 03** - Crea una clase Rebajas con un método `descubrePorcentaje()` que descubra el descuento aplicado en un producto. El método recibe el precio original del producto y el rebajado y devuelve el porcentaje aplicado. Podemos calcular el descuento realizando la operación:
    $$
    porcentajeDescuento = \frac{precioOriginal-precioRebajado}{precioOriginal}
    $$
 
-4. Realiza una clase finanzas que convierta dólares a euros y viceversa. Codifica los métodos `dolaresToEuros` y `eurosToDolares`. Prueba que dicha clase funciona correctamente haciendo conversiones entre euros y dólares. La clase tiene que tener:
+4. **Actividad 04** - Realiza una clase finanzas que convierta dólares a euros y viceversa. Codifica los métodos `dolaresToEuros` y `eurosToDolares`. Prueba que dicha clase funciona correctamente haciendo conversiones entre euros y dólares. La clase tiene que tener:
+      
       - Un constructor `finanzas()` por defecto el cual establece el cambio Dólar-Euro en 1.36.
       - Un constructor `finanzas(double cambio)`, el cual permitirá configurar el cambio Dólar-euro a una cantidad personalizada.
+      
+5. **Actividad 05** - Realiza una clase `minumero` que proporcione el doble, triple y cuádruple de un número proporcionado en su constructor (realiza un método para `doble`, otro para `triple` y otro para `cuádruple`). Haz que la clase tenga un método `main` y comprueba los distintos métodos.
 
-5. Realiza una clase `minumero` que proporcione el doble, triple y cuádruple de un número proporcionado en su constructor (realiza un método para `doble`, otro para `triple` y otro para `cuádruple`). Haz que la clase tenga un método `main` y comprueba los distintos métodos.
-
-6. Realiza una clase número que almacene un número entero y tenga las siguientes características:
+6. **Actividad 06** - Realiza una clase número que almacene un número entero y tenga las siguientes características:
 
     - Constructor por defecto que inicializa a 0 el número interno.
     - Constructor que inicializa el número interno.
@@ -67,7 +69,7 @@
     - Método `getTriple`. Devuelve el triple del valor interno.
     - Método `setNumero`. Inicializa de nuevo el valor interno.
 
-7. Crea la clase peso, la cual tendrá las siguientes características:
+7. **Actividad 07** - Crea la clase peso, la cual tendrá las siguientes características:
 
     - Deberá tener un atributo donde se almacene el peso de un objeto en kilogramos.
       En el constructor se le pasará el peso y la medida en la que se ha tomado ("Lb" para libras, "Li" para lingotes, "Oz" para onzas, "P" para peniques, "K" para kilos, "G" para gramos y "Q" para quintales).
@@ -83,11 +85,11 @@
       - 1 Quintal = 100 libras = 43,3 kg.
     - Crea además un método `main` para testear y verificar los métodos de esta clase.
     
-8. Crea una clase con un método `millasAMetros()` que toma como parámetro de entrada un valor en millas marinas y las convierte a metros. Una vez tengas este método escribe otro `millasAKilometros()` que realice la misma conversión, pero esta vez exprese el resultado en kilómetros. *Nota: 1 milla marina equivale a 1852 metros.*
+8. **Actividad 08** - Crea una clase con un método `millasAMetros()` que toma como parámetro de entrada un valor en millas marinas y las convierte a metros. Una vez tengas este método escribe otro `millasAKilometros()` que realice la misma conversión, pero esta vez exprese el resultado en kilómetros. *Nota: 1 milla marina equivale a 1852 metros.*
 
-9. Crea la clase `Coche` con dos constructores. Uno no toma parámetros y el otro sí. Los dos constructores inicializarán los atributos `marca` y `modelo` de la clase. Crea dos objetos (cada objeto llama a un constructor distinto) y verifica que todo funciona correctamente.
+9. **Actividad 09** - Crea la clase `Coche` con dos constructores. Uno no toma parámetros y el otro sí. Los dos constructores inicializarán los atributos `marca` y `modelo` de la clase. Crea dos objetos (cada objeto llama a un constructor distinto) y verifica que todo funciona correctamente.
 
-10. Implementa una clase `Consumo`, la cual forma parte del "ordenador de a bordo" de un coche y tiene las siguientes características:
+10. **Actividad 10** - Implementa una clase `Consumo`, la cual forma parte del "ordenador de a bordo" de un coche y tiene las siguientes características:
 
     - Atributos:
        - kilometros.
@@ -101,16 +103,16 @@
     
     No olvides crear un constructor para la clase que establezca el valor de los atributos. Elige el tipo de datos más apropiado para cada atributo.
     
-11. Para la clase anterior implementa los siguientes métodos, los cuales podrán modificar los valores de los atributos de la clase:
+11. **Actividad 11** - Para la clase anterior implementa los siguientes métodos, los cuales podrán modificar los valores de los atributos de la clase:
 
      - `setKms`
      -  `setLitros`
      - `setVmed`
      - `setPgas`
 
-12. Un restaurante cuya especialidad son las patatas con carne nos pide diseñar un método con el que se pueda saber cuántos clientes pueden atender con la materia prima que tienen en el almacén. El método recibe la cantidad de patatas y carne en kilos y devuelve el número de clientes que puede atender el restaurante teniendo en cuenta que por cada tres personas, utilizan un dos kilos de patatas y un kilo de carne.
+12. **Actividad 12** - Un restaurante cuya especialidad son las patatas con carne nos pide diseñar un método con el que se pueda saber cuántos clientes pueden atender con la materia prima que tienen en el almacén. El método recibe la cantidad de patatas y carne en kilos y devuelve el número de clientes que puede atender el restaurante teniendo en cuenta que por cada tres personas, utilizan un dos kilos de patatas y un kilo de carne.
 
-13. Modifica el programa anterior creando una clase que permita almacenar los kilos de patatas y carne del restaurante. Implementa los siguientes métodos:
+13. **Actividad 13** - Modifica el programa anterior creando una clase que permita almacenar los kilos de patatas y carne del restaurante. Implementa los siguientes métodos:
 
      . `public void addCarne(int x)`. Añade x kilos de carne a los ya existentes.
      . `public void addPatatas(int x)`. Añade x kilos de patatas a los ya existentes.
@@ -118,7 +120,8 @@
      . `public double getCarne()`. Devuelve los kilos de carne que hay en el almacén.
      . `public double getPatatas()`. Devuelve los kilos de patatas que hay en el almacén.
 
-14. Crear un clase llamada `Proveedor` con las siguientes propiedades:
+14. **Actividad 14** - Crear un clase llamada `Proveedor` con las siguientes propiedades:
+    
       - `CIF`
       - `nombreEmpresa`
       - `descripcion`
@@ -128,7 +131,7 @@
       - `poblacion`
       - `codPostal`
       - `correo`
-
+    
     Crear para la clase `Proveedor` los métodos:
     
     - Constructor que permite crear una instancia con los datos de un proveedor.
@@ -145,7 +148,7 @@
     - Verifique si el correo es válido.
     - Muestre todos los datos del `proveedor`.
     
-15. Crear una clase llamada `Producto` con las siguientes propiedades:
+15. **Actividad 15** - Crear una clase llamada `Producto` con las siguientes propiedades:
 
       - `codProducto`
       - `nombreProducto`
@@ -172,7 +175,7 @@
       - Calcula el IVA de los dos objetos `Producto` que hemos creado.
       - Mostrar los datos de los dos objetos `Producto`, así como sus importes de IVA y los precios finales de cada una de las instancias.
 
-16. Crear una clase llamada `Password` con las siguientes características:
+16. **Actividad 16** - Crear una clase llamada `Password` con las siguientes características:
 
      - Propiedades: `clave`.
      - Los métodos que implementa serán:
@@ -184,7 +187,7 @@
        - Método set para clave.
      - Crear una clase principal `main` que compruebe todos los métodos creados.
 
-17. Crea una clase llamada `Cuenta` que tendrá los siguientes atributos: `titular` y `cantidad` (puede tener decimales).
+17. **Actividad 17** - Crea una clase llamada `Cuenta` que tendrá los siguientes atributos: `titular` y `cantidad` (puede tener decimales).
 
     Al crear una instancia del objeto Cuenta, el titular será obligatorio y la cantidad es opcional. Crea dos constructores que cumplan lo anterior, es decir debemos crear dos métodos constructores con el mismo nombre que será el nombre del objeto.
 
@@ -203,7 +206,7 @@
     - Retirar 500 € en la instancia `cuentaEmpresa1`.
     - Mostrar los datos de las dos instancias del objeto `Cuenta`.
 
-18. Crea una clase llamada `Libro` que guarde la información de cada uno de los libros de una biblioteca. La clase debe guardar las siguientes propiedades:
+18. **Actividad 18** - Crea una clase llamada `Libro` que guarde la información de cada uno de los libros de una biblioteca. La clase debe guardar las siguientes propiedades:
 
     - `título`
     - `autor`
@@ -235,7 +238,7 @@
     - Muestra los ejemplares de la instancia `libroInformatica1`.
     - Muestra todos los datos de la instancia `libroInformatica1`.
     
-19. Crear una clase llamada `Hospital` con las siguientes propiedades y métodos: 
+19. **Actividad 19** - Crear una clase llamada `Hospital` con las siguientes propiedades y métodos: 
 
      - Propiedades:
        - `codHospital`
@@ -263,7 +266,7 @@
        - Muestra las habitaciones ocupadas de la instancia `hospitalRibera`.
        - Muestre todos los datos de la instancia `hospitalRibera`.
 
-20. Crear un clase llamada `Medico` con las siguientes propiedades y métodos:
+20. **Actividad 20** - Crear un clase llamada `Medico` con las siguientes propiedades y métodos:
 
      - Propiedades:
        - `codMedico`
@@ -298,7 +301,7 @@
 >
 > El primero está resuelto y comentado para que te ayude a resolver el resto por tu cuenta o con la ayuda del docente.
 
-1.     (LlenarConCirculo) Crear una pizarra cuadrada y dibujar en ella un círculo que la ocupe por completo.
+1.     **Ejercicio 1** - (*LlenarConCirculo*) Crear una pizarra cuadrada y dibujar en ella un círculo que la ocupe por completo.
 
     ```java
     //importaciones necesarias para los ejercicios, no necesitas más.
@@ -412,17 +415,17 @@
     }
     ```
     
-2.     (LlenarConRectangulo) Crear una pizarra de tamaño aleatorio y dibujar en ella un rectángulo que la ocupe por completo. 
+2.     **Ejercicio 2** - (*LlenarConRectangulo*) Crear una pizarra de tamaño aleatorio y dibujar en ella un rectángulo que la ocupe por completo. 
 
-3. (MitadYMitad) Crear una pizarra de tamaño aleatorio y dibujar un rectángulo ROJO que ocupe la mitad izquierda y uno VERDE que ocupe la mitad derecha.
+3. **Ejercicio 3** - (*MitadYMitad*) Crear una pizarra de tamaño aleatorio y dibujar un rectángulo ROJO que ocupe la mitad izquierda y uno VERDE que ocupe la mitad derecha.
 
-4. (Dos partes) Crear una pizarra de tamaño aleatorio y dibujar un rectángulo ROJO que ocupe la parte superior (25% de la altura) y uno VERDE que ocupe la parte inferior (75% restante).
+4. **Ejercicio 4** - (*Dos partes*) Crear una pizarra de tamaño aleatorio y dibujar un rectángulo ROJO que ocupe la parte superior (25% de la altura) y uno VERDE que ocupe la parte inferior (75% restante).
 
-5. (CentrarFiguras) Crear una pizarra de tamaño aleatorio. Dibujar en el centro un cuadrado de lado 100 y  un circulo de radio 25.
+5. **Ejercicio 5** - (*CentrarFiguras*) Crear una pizarra de tamaño aleatorio. Dibujar en el centro un cuadrado de lado 100 y  un circulo de radio 25.
 
-6. (RadioAleatorioCentrado) Crear una pizarra de tamaño aleatorio. Dibujar en centro de la pizarra un círculo de radio aleatorio (entre 50 y 200 pixels de radio)
+6. **Ejercicio 6** - (*RadioAleatorioCentrado*) Crear una pizarra de tamaño aleatorio. Dibujar en centro de la pizarra un círculo de radio aleatorio (entre 50 y 200 pixels de radio).
 
-7. (RadioAleatorio) Crear una pizarra de tamaño aleatorio. Dibujar en la esquina superior izquierda un círculo de radio aleatorio (entre 50 y 200)
+7. **Ejercicio 7** - (*RadioAleatorio*) Crear una pizarra de tamaño aleatorio. Dibujar en la esquina superior izquierda un círculo de radio aleatorio (entre 50 y 200).
 
 # Fuentes de información
 

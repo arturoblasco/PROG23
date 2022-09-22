@@ -479,8 +479,8 @@ Dentro de un método nos encontramos el cuerpo del método que contiene el códi
 
 Los métodos se pueden utilizar tanto para consultar información sobre el objeto como para modificar su estado. La información consultada del objeto se devuelve a través de lo que se conoce como valor de retorno, y la modificación del estado del objeto, o sea, de sus atributos, se hace mediante la lista de parámetros. En general, la lista de parámetros de un método se puede declarar de dos formas diferentes:
 
-- **Por valor**. El valor de los parámetros no se devuelve al finalizar el método, es decir, cualquier modificación que se haga en los parámetros no tendrá efecto una vez se salga del método. Esto es así porque cuando se llama al método desde cualquier parte del programa, dicho método recibe una copia de los argumentos, por tanto cualquier modificación que haga será sobre la copia, no sobre las variables originales.
-- **Por referencia**. La modificación en los valores de los parámetros sí tienen efecto tras la finalización del método. Cuando pasamos una variable a un método por referencia lo que estamos haciendo es pasar la dirección del dato en memoria, por tanto cualquier cambio en el dato seguirá modificado una vez que salgamos del método.
+- **Por valor**. El valor de los parámetros **no** se devuelve al finalizar el método; es decir, cualquier modificación que se haga en los parámetros no tendrá efecto una vez se salga del método. Esto es así porque cuando se llama al método desde cualquier parte del programa, dicho método recibe una copia de los argumentos, por tanto cualquier modificación que haga será sobre la copia, no sobre las variables originales.
+- **Por referencia**. La modificación en los valores de los parámetros **sí** tienen efecto tras la finalización del método. Cuando pasamos una variable a un método por referencia lo que estamos haciendo es pasar la dirección del dato en memoria, por tanto cualquier cambio en el dato seguirá modificado una vez que salgamos del método.
 
 > En el lenguaje Java, todas las variables se pasan por valor, excepto los objetos que se pasan por referencia.
 
@@ -493,7 +493,7 @@ En Java, la declaración de un método tiene dos restricciones:
 
 Según hemos visto en el apartado anterior, la cabecera de un método se declara como sigue:
 
-```
+```java
 public tipo_de_dato_devuelto nombre_metodo (lista_de_parametros);
 ```
 
@@ -501,19 +501,17 @@ Como vemos, el tipo de dato devuelto aparece después del modificador `public` y
 
 La lista de parámetros aparece al final de la cabecera del método, justo después del nombre, encerrados entre signos de paréntesis y separados por comas. Se debe indicar el tipo de dato de cada parámetro así:
 
-```
+```java
 (tipo_parámetro1 nombre_parámetro1, ..., tipo_parámetroN nombre_parámetroN)
 ```
 
-> Cuando se llame al método, se deberá utilizar el nombre del método, seguido de los argumentos que deben coincidir con la lista de parámetros.
+> Cuando se llame al método, se deberá utilizar el nombre del método, seguido de los argumentos que deben coincidir, en número y tipo, con la lista de parámetros.
 
 La lista de argumentos en la llamada a un método debe coincidir en número, tipo y orden con los parámetros del método, ya que de lo contrario se produciría un error de sintaxis.
 
 ## Constructores
 
-¿Recuerdas cuando hablábamos de la creación e instanciación de un objeto? Decíamos que utilizábamos el operador `new` seguido del nombre de la clase y una pareja de abrir‐cerrar paréntesis.
-
-Además, el nombre de la clase era realmente el constructor de la misma, y lo definíamos como un método especial que sirve para inicializar valores. En este apartado vamos a ver un poco más sobre los constructores.
+¿Recuerdas cuando hablábamos de la creación e instanciación de un objeto? Decíamos que utilizábamos el operador `new` seguido del nombre de la clase y una pareja de abrir‐cerrar paréntesis. Además, el nombre de la clase era realmente el constructor de la misma, y lo definíamos como un método especial que sirve para inicializar valores. En este apartado vamos a ver un poco más sobre los constructores.
 
 Un constructor es un método especial con el mismo nombre de la clase y que no devuelve ningún valor tras su ejecución.
 
@@ -544,7 +542,7 @@ Los constructores y métodos de un objeto suelen utilizar el operador `this`. Es
 
 ## Métodos estáticos
 
-Cuando trabajábamos con cadenas de caracteres utilizando la clase `String`, veíamos las operaciones que podíamos hacer con ellas: obtener longitud, comparar dos cadenas de caracteres, cambiar a mayúsculas o minúsculas, etc. Pues bien, sin saberlo estábamos utilizando métodos estáticos definidos por Java para la clase `String`. Pero ¿qué son los métodos estáticos? Veámoslo.
+Cuando trabajábamos con cadenas de caracteres utilizando la clase `String`, veíamos las operaciones que podíamos hacer con ellas: *obtener longitud*, *comparar dos cadenas de caracteres*, *cambiar a mayúsculas o minúsculas*, *etc*. Pues bien, sin saberlo estábamos utilizando métodos estáticos definidos por Java para la clase `String`. Pero ¿qué son los métodos estáticos? Veámoslo.
 
 Los métodos estáticos son aquellos métodos definidos para una clase que se pueden usar directamente, sin necesidad de crear un objeto de dicha clase. También se llaman métodos de clase.
 
@@ -554,13 +552,13 @@ Para llamar a un método estático utilizaremos:
 
 - **El nombre de la clase**, seguido por el operador punto (`.`) más el nombre del método estático, si lo llamamos desde una clase distinta a la que se encuentra definido:
 
-  ```
+  ```java
   nombre_clase.nombre_metodo_estatico
   ```
 
 - **El nombre del objeto**, seguido por el operador punto (`.`) más el nombre del método estático. Utilizaremos esta forma cuando tengamos un objeto instanciado de la clase en la que se encuentra definido el método estático, y no podamos utilizar la anterior:
 
-  ```
+  ```java
   nombre_objeto.nombre_metodo_estatico
   ```
 
@@ -568,9 +566,9 @@ Los métodos estáticos no afectan al estado de los objetos instanciados de la c
 
 En la Biblioteca de Clases de Java existen muchas clases que contienen métodos estáticos. Pensemos en las clases que ya hemos utilizado en unidades anteriores, como hemos comentado la clase `String` con todas las operaciones que podíamos hacer con ella y con los objetos instanciados a partir de ella. O bien la clase `Math` para la conversión de tipos de datos. Todos ellos son métodos estáticos que la API de Java define para esas clases. Lo importante es que tengamos en cuenta que al tratarse de métodos estáticos, para utilizarlos no necesitamos crear un objeto de dichas clases.
 
-Fijémonos en esta secuencia de instrucciones
+Fijémonos en esta secuencia de instrucciones:
 
-```
+```java
 //Creamos dos círculos de radio 100  en distintas posiciones
 Circulo c1 = new Circulo(50,50,100); 
 Circulo c2 = new Circulo(80,80,100); 
@@ -579,9 +577,9 @@ Circulo c2 = new Circulo(80,80,100);
 c1.setRadio(200);
 ```
 
-y en esta otra
+y en esta otra:
 
-```
+```java
 System.out.println(Math.sqrt(4));
 ```
 
@@ -591,19 +589,19 @@ En el segundo ejemplo, en cambio, a la izquierda de `.sqrt(4)` no se ha puesto e
 
 ## Métodos sobrecargados
 
-Se dice que un operador o un método están **sobrecargados** cuando se utiliza para varias cosas distintas. Por ejemplo,
+Se dice que un operador o un método están **sobrecargados** cuando se utiliza para varias funciones/tareas distintas. Por ejemplo:
 
 - El símbolo + está sobrecargado. Se utiliza para:
 
   - Operador aritmético suma:
 
-    ```
+    ```java
     a = b + c; 
     ```
 
   - Concatenación de cadenas de caracteres:
 
-    ```
+    ```java
     System.out.println("Edad:" + edad);
     ```
 
@@ -611,13 +609,13 @@ Se dice que un operador o un método están **sobrecargados** cuando se utiliza 
 
   - Operador aritmético resta:
 
-    ```
+    ```java
     a = b - c;
     ```
 
   - Cambio de signo:
 
-    ```
+    ```java
     a = -b;
     ```
 
@@ -625,21 +623,21 @@ Se dice que un operador o un método están **sobrecargados** cuando se utiliza 
 
   - División entera:
 
-    ```
+    ```java
     a = 5 / 2;
     ```
 
   - División real:
 
-    ```
+    ```java
     a = 5 / 2.0;
     ```
 
-Del mismo modo, los métodos también pueden estar sobrecargados de forma que, en una misma clase puede haber dos métodos distintos que tengan el mismo nombre. Para que esto sea posible Java los métodos se tienen que diferenciar en el tipo o número de parámetros que recibe.
+Del mismo modo, los métodos también pueden estar sobrecargados de forma que, en una misma clase puede haber dos métodos distintos que tengan el mismo nombre. Para que esto sea posible Java los métodos **se tienen que diferenciar en el tipo o número de parámetros que recibe**.
 
 En la siguiente imagen de la documentación de la clase `Math` vemos como hay cuatro métodos distintos llamados `abs`. Estos métodos se diferencian en el tipo del número para el cual calculan el valor absoluto. Aunque los cuatro métodos realizan la misma tarea (calcular el valor absoluto de un número), se trata de métodos distintos.
 
-[![image-20210809173423312](https://github.com/martinezpenya/PRG-CFGS-2122/raw/main/UD02/assets/methodsummary.png)](https://github.com/martinezpenya/PRG-CFGS-2122/blob/main/UD02/assets/methodsummary.png)
+<img src="/assets/methodsummary.png" style="zoom: 67%;" />
 
 > Es muy habitual que el método constructor esté sobrecargado. Por ejemplo un método sin parámetros (que seria el constructor por defecto), y otro con diferentes cantidades de parámetros que permitirán instanciar objetos con más o menos atributos.
 
@@ -657,13 +655,13 @@ Los paquetes se declaran utilizando la palabra clave `package` seguida del nombr
 
 Para establecer el paquete al que pertenece una clase hay que poner una sentencia de declaración como la siguiente al principio de la clase:
 
-```
+```java
 package Nombre_de_Paquete;
 ```
 
 Por ejemplo, si decidimos agrupar en un paquete `ejemplos` un programa llamado `Bienvenida`, pondríamos en nuestro fichero `Bienvenida.java` lo siguiente:
 
-```
+```java
 package ejemplos;
 
 public class Bienvenida {
@@ -677,13 +675,13 @@ El código es exactamente igual que como hemos venido haciendo hasta ahora, sola
 
 Cuando queremos utilizar una clase que está en un paquete distinto a la clase que estamos utilizando, se suele utilizar la sentencia `import`. Por ejemplo, si queremos utilizar la clase `Scanner` que está en el paquete `java.util` de la Biblioteca de Clases de Java, tendremos que utilizar esta sentencia:
 
-```
+```java
 import java.util.Scanner;
 ```
 
 Se pueden importar todas las clases de un paquete, así:
 
-```
+```java
 import java.awt.*;
 ```
 
@@ -691,7 +689,7 @@ Esta sentencia debe aparecer al principio de la clase, justo después de la sent
 
 También podemos utilizar la clase sin sentencia `import`, en cuyo caso cada vez que queramos usarla debemos indicar su ruta completa:
 
-```
+```java
 java.util.Scanner teclado = new java.util.Scanner (System.in);
 ```
 
@@ -701,7 +699,7 @@ Hasta aquí todo correcto. Sin embargo, al trabajar con paquetes, Java nos oblig
 
 Si hacemos que `Bienvenida.java` pertenezca al paquete ejemplos, debemos crear un subdirectorio `ejemplos` y meter dentro el archivo `Bienvenida.java`. Por ejemplo, en GNU/Linux tendríamos esta estructura de directorios:
 
-```
+```sh
 /<directorio_usuario>/Proyecto_Bienvenida/ejemplos/Bienvenida.java
 ```
 
@@ -709,7 +707,7 @@ Debemos tener cuidado con las mayúsculas y las minúsculas, para evitar problem
 
 Para compilar la clase `Bienvenida.java` que está en el paquete ejemplos debemos situarnos en el directorio padre del paquete y compilar desde ahí:
 
-```
+```sh
 $ cd /<directorio_usuario>/Proyecto_Bienvenida
 $ javac ejemplos/Bienvenida.java
 ```
@@ -718,7 +716,7 @@ Si todo va bien, en el directorio ejemplos nos aparecerá la clase compilada `Bi
 
 Para ejecutar la clase compilada `Bienvenida.class` que está en el directorio ejemplos, debemos seguir situados en el directorio padre del paquete. El nombre completo de la clase es `paquete.clase`, es decir `ejemplos.Bienvenida`. Los pasos serían los siguientes:
 
-```
+```sh
 $ cd /<directorio_usuario>/Proyecto_Bienvenida
 $ java ejemplos.Bienvenida
 Bienvenido a Java
@@ -730,7 +728,7 @@ Si todo es correcto, debe salir el mensaje `Bienvenido a Java` por la pantalla.
 
 Para organizar mejor las cosas, un paquete, en vez de clases, también puede contener otros paquetes. Es decir, podemos hacer subpaquetes de los paquetes y subpaquetes de los subpaquetes y así sucesivamente. Esto permite agrupar paquetes relacionados en un paquete más grande. Por ejemplo, si quiero dividir mis clases de ejemplos en ejemplos básicos y ejemplos avanzados, puedo poner más niveles de paquetes separando por puntos:
 
-```
+```java
 package ejemplos.basicos;
 package ejemplos.avanzados;
 ```
@@ -739,13 +737,13 @@ A nivel de sistema operativo, tendríamos que crear los subdirectorios `basicos`
 
 La estructura de directorios en el sistema operativo cuando usamos subpaquetes sería:
 
-```
+```sh
 /<directorio_usuario>/Proyecto_Bienvenida/ejemplos/basicos/HolaMundo.java
 ```
 
 Y la compilación y ejecución sería:
 
-```
+```sh
 $ cd /<directorio_usuario>/Proyecto_Bienvenida
 $ javac ejemplos/basicos/Bienvenida.java
 $ java ejemplos/basicos/Bienvenida
@@ -764,7 +762,7 @@ Para encontrar una clase Java necesitamos el nombre del paquete y la ruta donde 
 
 La variable de entorno `CLASSPATH` sirve para localizar las clases creadas por el usuario y que no forman parte de la plataforma Java. Debemos establecer el valor de la variable cuando el paquete o la clase no se encuentre en la misma carpeta donde se está trabajando o en ningún lugar definido en la `CLASSPATH`.
 
-```
+```sh
 CLASSPATH = c:\mijava\paquetes; export CLASSPATH
 ```
 
@@ -772,7 +770,7 @@ En el ejemplo anterior añadimos la ruta **c:\mijava\paquetes** a la variable de
 
 También podemos especificar el `CLASSPATH` en el momento de ejecutar `java` con el parámetro `-cp`:
 
-```
+```sh
 java -cp c:\mijava\paquetes MiClase.java
 ```
 
@@ -780,7 +778,7 @@ java -cp c:\mijava\paquetes MiClase.java
 
 Cuando descargamos el entorno de compilación y ejecución de Java, obtenemos la API de Java. Como ya sabemos, se trata de un conjunto de bibliotecas que nos proporciona paquetes de clases útiles para nuestros programas. Utilizar las clases y métodos de la Biblioteca de Java nos va ayudar a reducir el tiempo de desarrollo considerablemente, por lo que es importante que aprendamos a consultarla y conozcamos las clases más utilizadas. Ejemplo:
 
-```
+```java
 import java.lang.System; // Se importa la clase System.
 import java.awt.*;       // Se importa todas las clases del paquete awt;
 ```
@@ -807,7 +805,7 @@ Como se puede comprobar Java ofrece una completa jerarquía de clases organizada
 
 Hasta ahora hemos utilizado literales de cadenas de caracteres que, como sabemos, se ponen entre comillas dobles, como en la siguiente expresión
 
-```
+```java
 System.out.println("Hola");
 ```
 
@@ -815,26 +813,26 @@ Para almacenar cadenas de caracteres en variables se utiliza la clase `String`. 
 
 La forma de `String` es la siguiente:
 
-```
+```java
 String variable = new String("texto");
 ```
 
 Ejemplo:
 
-```
+```java
 String nombre = new String("Javier");
 System.out.println("Mi nombre es " + nombre);
 ```
 
 **Sin embargo**, debido a que es una clase que se utiliza ampliamente en los programas, Java permite una forma abreviada de crear objetos String:
 
-```
+```java
 String nombreVariable = "texto";	
 ```
 
 Ejemplo:
 
-```
+```java
 String nombre = "Javier";
 System.out.println("Mi nombre es " + nombre);
 ```
@@ -845,8 +843,8 @@ System.out.println("Mi nombre es " + nombre);
 
 Para leer cadenas de caracteres desde teclado podemos utilizar la clase `Scanner`. Ésta dispone de dos métodos para leer cadenas:
 
-- `next()`: Lee desde la entrada estándar (teclado) una secuencia de caracteres hasta encontrar un delimitador (un espacio). Devuelve un `String`.
-- `nextLine()`: Lee desde la entrada estándar (teclado) una secuencia de caracteres hasta encontrar un salto de línea. Devuelve un `String`.
+- `next()`: Lee desde la entrada estándar (teclado) una secuencia de caracteres **hasta** encontrar un delimitador (**un espacio**). Devuelve un `String`.
+- `nextLine()`: Lee desde la entrada estándar (teclado) una secuencia de caracteres **hasta** encontrar **un salto de línea**. Devuelve un `String`.
 
 Ejemplo:
 
@@ -860,9 +858,9 @@ String nombreCompleto = tec.nextLine();
 
 ### Ejemplos de la UD01 pero utilizando `Scanner` (compatible con los IDE's)
 
-A continuación vamos a ver los mismos ejemplos de la UD01, pero utilizando la clase `Scanner` que si es compatible con los IDE's. Para poder usar la clase `Scanner` necesitamos importar el paquete: `java.util.Scanner`.
+A continuación vamos a ver los mismos ejemplos de la UD01, pero utilizando la clase `Scanner` que sí es compatible con los IDE's. Para poder usar la clase `Scanner` necesitamos importar el paquete: `java.util.Scanner`.
 
-```
+```java
 import java.util.Scanner;
 
 public class EjemploUD02 {
@@ -875,7 +873,7 @@ public class EjemploUD02 {
         String texto;
         System.out.print("Introduce un texto: ");
         texto = teclado.nextLine(); 
-        System.out.println("El texto introducido es: "+ texto);
+        System.out.println("El texto introducido es: "+texto);
         
         //Introducir un número entero desde teclado
         String texto2;
@@ -902,7 +900,7 @@ Además de permitir almacenar cadenas de caracteres, `String` tiene métodos par
 
 Así por ejemplo, la clase tiene un método `toUpperCase()` que devuelve el `String` convertido a mayúsculas. El siguiente ejemplo ilustra su uso:
 
-```
+```java
 String nombre = "Javier";
 System.out.println(nombre.toUpperCase()); // Se muestra JAVIER por pantalla
 ```
@@ -927,7 +925,7 @@ El método `printf()` o `format()` (son sinónimos) utilizan unos códigos de co
 
 Por ejemplo, si queremos escribir el número float `12345.1684` con el punto de los miles y sólo dos cifras decimales la orden sería:
 
-```
+```java
 System.out.printf("%,.2f\n", 12345.1684);
 ```
 
@@ -935,7 +933,7 @@ Esta orden mostraría el número `12.345,17` por pantalla.
 
 Otro ejemplo seria:
 
-```
+```java
 System.out.format("El valor de la variable float es" +
      "%f, mientras que el valor del entero es %d" +
      "y el string contiene %s", variableFloat, variableInt, variableString); 
@@ -947,7 +945,7 @@ Puedes investigar más sobre `printf` o `format` en este [enlace](https://docs.o
 
 La salida de error está representada por el objeto `System.err`. No parece muy útil utilizar `out` y `err` si su destino es la misma pantalla, o al menos en el caso de la consola del sistema donde las dos salidas son representadas con el mismo color y no notamos diferencia alguna. En cambio en la consola de varios entornos integrados de desarrollo como NetBeans o Eclipse la salida de `err` se ve en un color diferente. Teniendo el siguiente código:
 
-```
+```java
 System.out.println("Salida estándar por pantalla");
 System.err.println("Salida de error por pantalla");
 ```
@@ -956,7 +954,7 @@ Tanto NetBeans como Eclipse mostraran el mensaje `err` en color rojo.
 
 # Ejemplo UD02
 
-```
+```java
 package UD02;
 
 import java.util.Scanner;
@@ -1022,11 +1020,13 @@ Enunciado:
 >
 > - `pajaro()`. Constructor por defecto. En este caso, el constructor por defecto no contiene ninguna instrucción, ya que Java inicializa de forma automática las variables miembro, si no le damos ningún valor.
 > - `pajaro(String nombre, int posX, int posY)`. Constructor que recibe como argumentos una cadena de texto y dos enteros para inicializar el valor de los atributos.
-> - `volar(int posX, int posY)`. Método que recibe como argumentos dos enteros: `posX` y `posY`, y devuelve un valor de tipo `double` como resultado, usando la palabra clave `return`. El valor devuelto es el resultado de aplicar un desplazamiento de acuerdo con la siguiente fórmula: $$ desplazamiento = \sqrt{posX · posX + posY · posY} $$ Diseña un programa que utilice la clase `Pajaro`, cree una instancia de dicha clase y ejecute sus métodos.
+> - `volar(int posX, int posY)`. Método que recibe como argumentos dos enteros: `posX` y `posY`, y devuelve un valor de tipo `double` como resultado, usando la palabra clave `return`. El valor devuelto es el resultado de aplicar un desplazamiento de acuerdo con la siguiente fórmula: $$ desplazamiento = \sqrt{posX · posX + posY · posY} $$.
+>
+> Diseña un programa que utilice la clase `Pajaro`, cree una instancia de dicha clase y ejecute sus métodos.
 
 Lo primero que debemos hacer es crear la clase `Pajaro`, con sus métodos y atributos. De acuerdo con los datos que tenemos, el código de la clase sería el siguiente:
 
-```
+```java
 public class Pajaro {
 
     String nombre;
@@ -1068,7 +1068,7 @@ Para inicializar el objeto utilizaremos el constructor con parámetros, después
 
 Luego crearemos otro pajaro2 usando el constructor por defecto (sin parámetros). Le asignaremos el nombre y la posición manualmente, y calcularemos su desplazamiento llamando al método, pero usando los atributos del objeto (pajaro2.posX y pajaro2.posY) en lugar de constantes. El código del método `main()` quedaría como sigue:
 
-```
+```java
 public static void main(String[] args) {
     //creamos el objeto con parámetros
     Pajaro pajaro1 = new Pajaro("WoodPecker", 50, 50);
@@ -1087,7 +1087,7 @@ public static void main(String[] args) {
 
 Si ejecutamos nuestro programa el resultado sería el siguiente:
 
-```
+```sh
 El desplazamiento de WoodPecker ha sido 70.71067811865476
 El desplazamiento de Piolín ha sido 42.42640687119285
 ```
