@@ -16,7 +16,7 @@
 # Actividades
 
 1. **Actividad 01** - Crear una clase llamada Temperatura con dos métodos:
-      
+   
       - `celsiusToFarenheit`. Convierte grados *Celsius* a *Farenheit*.
         $$
         F=(1,8*C)+32
@@ -52,8 +52,8 @@
    $$
 
 4. **Actividad 04** - Realiza una clase finanzas que convierta dólares a euros y viceversa. Codifica los métodos `dolaresToEuros` y `eurosToDolares`. Prueba que dicha clase funciona correctamente haciendo conversiones entre euros y dólares. La clase tiene que tener:
-      
-      - Un constructor `finanzas()` por defecto el cual establece el cambio Dólar-Euro en 1.36.
+   
+      - Un constructor `finanzas()` por defecto el cual establece el cambio Dólar-Euro en 1.02.
       - Un constructor `finanzas(double cambio)`, el cual permitirá configurar el cambio Dólar-euro a una cantidad personalizada.
       
 5. **Actividad 05** - Realiza una clase `minumero` que proporcione el doble, triple y cuádruple de un número proporcionado en su constructor (realiza un método para `doble`, otro para `triple` y otro para `cuádruple`). Haz que la clase tenga un método `main` y comprueba los distintos métodos.
@@ -78,11 +78,11 @@
       - `getLingotes`. Devuelve el peso en lingotes.
       - `getPeso`. Devuelve el peso en la medida que se pase como parámetro ("Lb" para libras, "Li" para lingotes, "Oz" para onzas, "P" para peniques, "K" para kilos, "G" para gramos y "Q" para quintales).
     - Para la realización del ejercicio toma como referencia los siguientes datos:
-      - 1 Libra = 16 onzas = 453 gramos.
-      - 1 Lingote = 32,17 libras = 14,59 kg.
-      - 1 Onza = 0,0625 libras = 28,35 gramos.
-      - 1 Penique = 0,05 onzas = 1,55 gramos.
-      - 1 Quintal = 100 libras = 43,3 kg.
+      - 1 Libra = *16 onzas* = 453 gramos.
+      - 1 Lingote = *32,17 libras* = 14,59 kg.
+      - 1 Onza = *0,0625 libras* = 28,35 gramos.
+      - 1 Penique = *0,05 onzas* = 1,55 gramos.
+      - 1 Quintal = *100 libras* = 43,3 kg.
     - Crea además un método `main` para testear y verificar los métodos de esta clase.
     
 8. **Actividad 08** - Crea una clase con un método `millasAMetros()` que toma como parámetro de entrada un valor en millas marinas y las convierte a metros. Una vez tengas este método escribe otro `millasAKilometros()` que realice la misma conversión, pero esta vez exprese el resultado en kilómetros. *Nota: 1 milla marina equivale a 1852 metros.*

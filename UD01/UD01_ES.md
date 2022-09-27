@@ -574,8 +574,7 @@ Los tipos de datos enumerados son una forma de declarar una variable con un conj
 
 La forma de declararlos es con la palabra reservada `enum`, seguida del nombre de la variable y la lista de valores que puede tomar entre llaves. A los valores que se colocan dentro de las llaves se les considera como constantes, van separados por comas y deben ser valores únicos.
 
-La lista de valores se coloca entre llaves, porque un tipo de datos `enum` no es otra cosa que una
-especie de clase en Java, y todas las clases llevan su contenido entre llaves.
+La lista de valores se coloca entre llaves, porque un tipo de datos `enum` no es otra cosa que una especie de clase en Java, y todas las clases llevan su contenido entre llaves.
 
 Al considerar Java este tipo de datos como si de una clase se tratara, no sólo podemos definir los valores de un tipo enumerado, sino que también podemos definir operaciones a realizar con él y otro tipo de elementos, lo que hace que este tipo de dato sea más versátil y potente que en otros lenguajes de programación.
 
@@ -603,7 +602,7 @@ Hoy es: Martes
 Y mañana es: Miercoles
 ```
 
-Tenemos una variable `dias` que almacena los días de la semana. Para acceder a cada elemento del tipo enumerado se utiliza el nombre de la variable seguido de un punto y el valor en la lista. Más tarde veremos qué podemos añadir métodos y campos o variables en la declaración del tipo enumerado, ya que como hemos comentado un tipo enumerado en Java tiene el mismo tratamiento que las clases.
+Tenemos una variable `dias` que almacena los días de la semana. Para acceder a cada elemento del tipo enumerado se utiliza el nombre de la variable seguido de un punto y el valor en la lista. Más tarde veremos que podemos añadir métodos y campos o variables en la declaración del tipo enumerado, ya que como hemos comentado un tipo enumerado en Java tiene el mismo tratamiento que las clases.
 
 En este ejemplo hemos utilizado el método `System.out.print`. Como podrás comprobar si lo ejecutas, la instrucción `print` escribe el texto que tiene entre comillas pero no salta a la siguiente línea, por lo que la instrucción `println` escribe justo a continuación.
 
@@ -1178,7 +1177,7 @@ public class Mostrarinformacion {
    java -version
    ````
 
-   ![](/assets/java_windows1.png)
+   <img src="/assets/java_windows1.png" style="zoom:80%;" />
 
 2. Si el sistema nos responde con algún mensaje de error, es que no tenemos instalado ni *JRE* ni *JDK*; deberemos comprobar si podemos ejecutar el compilador javac:
 
@@ -1234,7 +1233,7 @@ Tenemos que editar el fichero de tareas <code>tasks.json</code>, para crear un p
 
 Borramos el contenido del fichero e introducimos el siguiente código:
 
-````
+````java
 {
 	"version": "2.0.0",
 	"tasks": [
