@@ -699,26 +699,27 @@ compara = valor1 != valor2; // true
 
 Los **Operadores Lógicos** permiten realizar operaciones lógicas:
 
-| Operador      | Uso                    | Operación                                                    |
-| ------------- | ---------------------- | ------------------------------------------------------------ |
-| &&   o   &    | A && B o<br />A & B    | A AND B. El resultado será true si ambos operadores son true y false en caso contrario. |
-| \|\|   o   \| | A \|\| B o<br />A \| B | A OR B. El resultado será false si ambos operandos son false y true en caso contrario |
-| !             | !A                     | NOT A. Si el operando es true el resultado es false y si el operando es false el resultado es true. |
-| ^             | A ^ B                  | A XOR B. El resultado será true si un operando es true y el otro false, y false en caso contrario. |
+| Operador      | Manejo                  | Operación                                                    |
+| ------------- | ----------------------- | ------------------------------------------------------------ |
+| &&   o   &    | A && B<br />ó  A & B    | A AND B.<br />El resultado será true si ambos operadores son true y false en caso contrario. |
+| \|\|   o   \| | A \|\| B<br />ó  A \| B | A OR B.<br />El resultado será false si ambos operandos son false y true en caso contrario |
+| !             | !A                      | NOT A.<br />Si el operando es true el resultado es false y si el operando es false el resultado es true. |
+| ^             | A ^ B                   | A XOR B.<br />El resultado será true si un operando es true y el otro false, y false en caso contrario. |
 
 Ejemplo:
 
 ```java
 double sueldo = 1400;
 int edad = 34;
-booleanlogica;
+boolean logica;
+
 logica = (sueldo>1000 & edad<40);   //true
-logica = (sueldo>1000 && edad >40); //false
+logica = (sueldo>1000 && edad>40);  //false
 logica = (sueldo>1000 | edad>40);   //true
-logica = (sueldo<1000 ||edad >40);  //false
-logica = !(edad <40);               //false
-logica = (sueldo>1000  ^edad>40);   //true
-logica = (sueldo<1000  ^edad>40);   //false
+logica = (sueldo<1000 || edad>40);  //false
+logica = !(edad<40);                //false
+logica = (sueldo>1000 ^ edad>40);   //true
+logica = (sueldo<1000 ^ edad>40);   //false
 ```
 
 Para representar resultados de operadores Lógicos también se pueden usar tablas de verdad a las que conviene acostumbrarse:
@@ -922,12 +923,22 @@ destino=origen;  // 5
 
 En la **Conversión Explícita** el programador fuerza la conversión con la operación llamada "cast":
 
-Ejemplo:
+Ejemplo1:
 ```java
 // Conversión Explícita
 short origen2 = 3;
 byte destino2;
 destino2=(byte)origen2; // 3
+```
+
+Ejemplo2:
+
+```java
+// Conversión Explícita
+int numero1 = 5; numero2 = 8;
+double division;
+
+division=(double)numero1 / (doube)numero2; // Sin casting la expresión sería int y el valor de division sería 0
 ```
 
 # Comentarios
@@ -988,6 +999,14 @@ System.out.println("El número sin decimales es: "+entero);
 > Este método de leer texto y números desde consola no nos servirá cuando comencemos a usar IDE's.
 
 Podemos introducir texto desde el teclado utilizando `System.console().readLine();` 
+
+Devuelve la cadena de caracteres introducida.
+
+Para otro tipo de dato hay que usar métodos de conversión:
+
+* **Integer.parseInt**(System.console().readLine())
+* **Double.parseDouble**(System.console().readLine())
+* …
 
 Ejemplo 1: Introducción de texto.
 
