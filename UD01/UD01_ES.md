@@ -935,10 +935,10 @@ Ejemplo2:
 
 ```java
 // Conversión Explícita
-int numero1 = 5; numero2 = 8;
+int numero1 = 5, numero2 = 8;
 double division;
 
-division=(double)numero1 / (doube)numero2; // Sin casting la expresión sería int y el valor de division sería 0
+division=(double)numero1 / (double)numero2; // Sin casting la expresión sería int y el valor de division sería 0
 ```
 
 # Comentarios
