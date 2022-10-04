@@ -1,4 +1,4 @@
-package UD02;
+ï»¿package UD02;
 
 import java.util.Scanner;
 
@@ -14,21 +14,21 @@ public class EjemploUD02 {
         texto = teclado.nextLine();
         System.out.println("El texto introducido es: " + texto);
 
-        //Introducir un número entero desde teclado
+        //Introducir un nÃºmero entero desde teclado
         String texto2;
         int entero2;
-        System.out.print("Introduce un número: ");
+        System.out.print("Introduce un nÃºmero: ");
         texto2 = teclado.nextLine();
         entero2 = Integer.parseInt(texto2);
-        System.out.println("El número introducido es:" + entero2);
+        System.out.println("El nÃºmero introducido es:" + entero2);
 
-        //Introducir un número decimal desde teclado
+        //Introducir un nÃºmero decimal desde teclado
         String texto3;
         double doble3;
-        System.out.print("Introduce un número decimal: ");
+        System.out.print("Introduce un nÃºmero decimal: ");
         texto3 = teclado.nextLine();
         doble3 = Double.parseDouble(texto3); // convertimos texto a doble
-        System.out.println("Número decimal introducido es: " + doble3);
+        System.out.println("NÃºmero decimal introducido es: " + doble3);
 
         System.out.println("La clase String");
         String nombre = "Javier "; //Observa que hay un espacio final
