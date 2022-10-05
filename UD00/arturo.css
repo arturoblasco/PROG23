@@ -573,7 +573,6 @@ h6.md-focus:before {
  * Header Counters in TOC
  **************************************/
 
-
 /* No link underlines in TOC */
 
 .md-toc-inner {
@@ -581,42 +580,42 @@ h6.md-focus:before {
 }
 
 .md-toc-content {
-    counter-reset: h1toc
+    counter-reset: h1toc;
 }
 
 .md-toc-h1 {
     margin-left: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     counter-reset: h2toc
 }
 
 .md-toc-h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-left: 2rem;
     counter-reset: h3toc
 }
 
 .md-toc-h3 {
     margin-left: 3rem;
-    font-size: .9rem;
+    font-size: .8rem;
     counter-reset: h4toc
 }
 
 .md-toc-h4 {
     margin-left: 4rem;
-    font-size: .85rem;
+    font-size: .75rem;
     counter-reset: h5toc
 }
 
 .md-toc-h5 {
     margin-left: 5rem;
-    font-size: .8rem;
+    font-size: .7rem;
     counter-reset: h6toc
 }
 
 .md-toc-h6 {
     margin-left: 6rem;
-    font-size: .75rem;
+    font-size: .65rem;
 }
 
 .md-toc-h1:before {

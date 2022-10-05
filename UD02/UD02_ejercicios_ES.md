@@ -9,7 +9,7 @@
     footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
-    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD02/assets/cover.png
+    imgcover:./assets/cover.png
 ---
 [toc]
 

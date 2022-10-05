@@ -9,7 +9,7 @@
     footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
-    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD02/assets/cover.png
+    imgcover:./assets/cover.png
 ---
 
 [toc]
@@ -30,62 +30,66 @@ Cuando hablamos de Programación Orientada a Objetos, existen una serie de carac
 
 - **Abstracción**. Es el proceso por el cual definimos las características más importantes de un objeto, sin preocuparnos de cómo se escribirán en el código del programa, simplemente lo definimos de forma general. En la Programación Orientada a Objetos la herramienta más importante para soportar la abstracción es la clase. Básicamente, una *clase* es un *tipo de dato que agrupa las características comunes de un conjunto de objetos*. 
 
-  Poder ver los objetos del mundo real que deseamos trasladar a nuestros programas, en términos abstractos, resulta de gran utilidad para un buen diseño del software, ya que nos ayuda a comprender mejor el problema y a tener una visión global de todo el conjunto. Por ejemplo, si pensamos en una clase Vehículo que agrupa las características comunes de todos ellos, a partir de dicha clase podríamos crear objetos como Coche y Camión. Entonces se dice que Vehículo es una abstracción de Coche y de Camión.
+  Poder ver los objetos del mundo real que deseamos trasladar a nuestros programas, en términos abstractos, resulta de gran utilidad para un buen diseño del software, ya que nos ayuda a comprender mejor el problema y a tener una visión global de todo el conjunto. Por ejemplo, si pensamos en una clase *Vehículo* que agrupa las características comunes de todos ellos, a partir de dicha clase podríamos crear objetos como *Coche* y *Camión*. Entonces se dice que Vehículo es una abstracción de *Coche* y de *Camión*.
 
 - **Modularidad**. Una vez que hemos representado el escenario del problema en nuestra aplicación, tenemos como resultado un conjunto de objetos software a utilizar. Este conjunto de objetos se crean a partir de una o varias clases. Cada clase se encuentra en un archivo diferente, por lo que la modularidad nos permite modificar las características de la clase que define un objeto, sin que esto afecte al resto de clases de la aplicación.
 
-- **Encapsulación**. También llamada "ocultamiento de la información". La encapsulación o encapsulamiento es el mecanismo básico para ocultar la información de las partes internas de un objeto a los demás objetos de la aplicación. Con la encapsulación un objeto puede ocultar la información que contiene al mundo exterior, o bien restringir el acceso a la misma para evitar ser manipulado de forma inadecuada. Por ejemplo, pensemos en un programa con dos objetos, un objeto Persona y otro Coche. Persona se comunica con el objeto Coche para llegar a su destino, utilizando para ello las acciones que Coche tenga definidas como por ejemplo conducir. Es decir, Persona utiliza Coche pero no sabe cómo funciona internamente, sólo sabe utilizar sus métodos o acciones.
+- **Encapsulación**. También llamada "ocultamiento de la información". La encapsulación o encapsulamiento es el mecanismo básico para ocultar la información de las partes internas de un objeto a los demás objetos de la aplicación. Con la encapsulación un objeto puede ocultar la información que contiene al mundo exterior, o bien restringir el acceso a la misma para evitar ser manipulado de forma inadecuada. 
+
+  Por ejemplo, pensemos en un programa con dos objetos, un objeto *Persona* y otro *Coche*. Persona se comunica con el objeto *Coche* para llegar a su destino, utilizando para ello las acciones que *Coche* tenga definidas como por ejemplo conducir. Es decir, Persona utiliza *Coche* pero no sabe cómo funciona internamente, sólo sabe utilizar sus métodos o acciones.
 
 - **Jerarquía**. Mediante esta propiedad podemos definir relaciones de jerarquías entre clases y objetos. Las dos jerarquías más importantes son la jerarquía "*es un*" llamada generalización o especialización y la jerarquía "*es parte de*", llamada agregación. Conviene detallar algunos aspectos:
 
-  - La ***generalización*** o especialización, también conocida como herencia, permite crear una clase nueva en términos de una clase ya existente (herencia simple) o de varias clases ya existentes (herencia múltiple). Por ejemplo, podemos crear la clase CochedeCarreras a partir de la clase Coche, y así sólo tendremos que definir las nuevas características que tenga.
-  - La ***agregación***, también conocida como inclusión, permite agrupar objetos relacionados entre sí dentro de una clase. Así, un Coche está formado por Motor, Ruedas, Frenos y Ventanas. Se dice que Coche es una agregación y Motor, Ruedas, Frenos y Ventanas son agregados de Coche.
+  - La ***generalización*** o especialización, también conocida como **herencia**, permite crear una clase nueva en términos de una clase ya existente (herencia simple) o de varias clases ya existentes (herencia múltiple). 
 
-- **Polimorfismo**. Esta propiedad indica la capacidad de que varias clases creadas a partir de una antecesora realicen una misma acción de forma diferente. Por ejemplo, pensemos en la clase Animal y la acción de expresarse. Nos encontramos que cada tipo de Animal puede hacerlo de manera distinta, los Perros ladran, los Gatos maullan, las Personas hablamos, etc. Dicho de otra manera, el polimorfismo indica la posibilidad de tomar un objeto (de tipo Animal, por ejemplo), e indicarle que realice la acción de expresarse, esta acción será diferente según el tipo de mamífero del que se trate.
+    Por ejemplo, podemos crear la clase *CochedeCarreras* a partir de la clase *Coche*, y así sólo tendremos que definir las nuevas características que tenga.
+
+  - La ***agregación***, también conocida como inclusión, permite agrupar objetos relacionados entre sí dentro de una clase. Así, un *Coche* está formado por *Motor*, *Ruedas*, *Frenos* y *Ventanas*. Se dice que *Coche* es una agregación y *Motor*, Ruedas, *Frenos* y *Ventanas* son agregados de *Coche*.
+
+- **Polimorfismo**. Esta propiedad indica la capacidad de que varias clases creadas a partir de una antecesora realicen una misma acción de forma diferente. 
+
+  Por ejemplo, pensemos en la clase *Animal* y la acción de expresarse. Nos encontramos que cada tipo de *Animal* puede hacerlo de manera distinta, los *Perros* ladran, los *Gatos* maullan, las *Personas* hablamos, etc. Dicho de otra manera, el polimorfismo indica la posibilidad de tomar un objeto (de tipo *Animal*, por ejemplo), e indicarle que realice la acción de expresarse, esta acción será diferente según el tipo de mamífero del que se trate.
 
 # Objetos y Clases
 
 ## Características de los objetos
 
-En este contexto, un objeto de software es una representación de un objeto del mundo real, compuesto de una serie de características y un comportamiento específico. Pero ¿qué es más concretamente un objeto en Programación Orientada a Objetos? Veámoslo.
+En este contexto, un objeto de software es una representación de un objeto del mundo real, compuesto de una serie de características y un comportamiento específico. Pero ¿qué es más concretamente un objeto en Programación Orientada a Objetos?
 
 > Un objeto es un conjunto de datos con las operaciones definidas para ellos. Los objetos tienen un <u>estado</u> y un <u>comportamiento</u>.
 
 Por tanto, estudiando los objetos que están presentes en un problema podemos dar con la solución a dicho problema. Los objetos tienen unas **características** fundamentales que los distinguen:
 
 - **Identidad**. Es la característica que permite diferenciar un objeto de otro. De esta manera, aunque dos objetos sean exactamente iguales en sus atributos, son distintos entre sí. Puede ser una dirección de memoria, el nombre del objeto o cualquier otro elemento que utilice el lenguaje para distinguirlos. Por ejemplo, dos vehículos que hayan salido de la misma cadena de fabricación y sean iguales aparentemente, son distintos porque tienen un código que los identifica.
-- **Estado**. El estado de un objeto viene determinado por una serie de parámetros o atributos que lo describen, y los valores de éstos. Por ejemplo, si tenemos un objeto `Coche`, el estado estaría definido por atributos como `Marca`, `Modelo`, `Color`, `Cilindrada`, etc.
-- **Comportamiento**. Son las acciones que se pueden realizar sobre el objeto. En otras palabras, son los métodos o procedimientos que realiza el objeto. Siguiendo con el ejemplo del objeto Coche, el el comportamiento serían acciones como: `arrancar()`, `parar()`, `acelerar()`, `frenar()`, etc. Definición de clases.
-
-Una clase java se escribe en un fichero con extensión `.java` que tiene el mismo nombre que la clase. Por ejemplo la clase `Vehículo` se escribiría en el fichero `Vehiculo.java`.
-
-Cuando la clase se compila se obtiene un fichero con el mismo nombre que la clase y extensión `.class`. Ejemplo: `Vehiculo.class`.
-
-> Los identificadores de clase siguen las mismas reglas que otros identificadores de Java (contienen carácter alfanuméricos y especiales, no pueden comenzar por un dígito, no pueden coincidir con una palabra reservada, etc.). Por convenio los identificadores de las clases comienzan por mayúsculas.
+- **Estado**. El estado de un objeto viene determinado por una serie de parámetros o **atributos** que lo describen, y los valores de éstos. Por ejemplo, si tenemos un objeto *Coche*, el estado estaría definido por atributos como `Marca`, `Modelo`, `Color`, `Cilindrada`, etc.
+- **Comportamiento**. Son las **acciones** que se pueden realizar sobre el objeto. En otras palabras, son los métodos o procedimientos que realiza el objeto. Siguiendo con el ejemplo del objeto *Coche*, el el comportamiento serían acciones como: `arrancar()`, `parar()`, `acelerar()`, `frenar()`, etc. 
 
 ## Propiedades y métodos de los objetos
 
 Como acabamos de ver todo objeto tiene un estado y un comportamiento. Concretando un poco más, las partes de un objeto son:
 
-- **Campos, Atributos o Propiedades**: Parte del objeto que almacena los datos. También se les denomina *Variables Miembro*. Estos datos pueden ser de cualquier tipo primitivo (`boolean`, `char`, `int`, `double`, etc) o ser a su vez otro objeto. Por ejemplo, un objeto de la clase `Coche` puede tener un objeto de la clase `Ruedas` (o más concretamente cuatro).
+- **Campos, Atributos o Propiedades**: Parte del objeto que almacena los datos. También se les denomina *Variables Miembro*. Estos datos pueden ser de cualquier tipo primitivo (`boolean`, `char`, `int`, `double`, *etc*) o ser a su vez otro objeto. 
+
+  Por ejemplo, un objeto de la clase *Coche* puede tener un objeto de la clase *Ruedas* (o más concretamente cuatro).
+
 - **Métodos o Funciones Miembro**: Parte del objeto que lleva a cabo las operaciones sobre los atributos definidos para ese objeto.
 
 La idea principal es que el objeto reúne en una sola entidad los datos y las operaciones, y para acceder a los datos privados del objeto debemos utilizar los métodos que hay definidos para ese objeto.
 
-***La única forma de manipular la información del objeto es a través de sus métodos***. Es decir, si queremos saber el valor de algún atributo, tenemos que utilizar el método que nos muestre el valor de ese atributo. De esta forma, evitamos que métodos externos puedan alterar los datos del objeto de manera inadecuada. Se dice que los datos y los métodos están encapsulados dentro del objeto.
+> ***La única forma de manipular la información del objeto es a través de sus métodos***. Es decir, si queremos saber el valor de algún atributo, tenemos que utilizar el método que nos muestre el valor de ese atributo. De esta forma, evitamos que métodos externos puedan alterar los datos del objeto de manera inadecuada. Se dice que los datos y los métodos están encapsulados dentro del objeto.
 
 ### Atributos
 
 Los atributos representan la información que almacenan los objetos de la clase. Los atributos son declaraciones de variables dentro de la clase.
 
-Se sigue la siguiente sintaxis (los corchetes indican opcionalidad):
+Se sigue la siguiente sintaxis (*los corchetes indican opcionalidad*):
 
-```sh
+```java
 [ámbito] tipo nombreDelAtributo;
 [ámbito] tipo nombreDelAtributo1, nombreDelAtributo2, ...;
 ```
 
-donde …
+donde:
 
 - ***ámbito*** permite indicar desde qué clases es accesible el atributo.
 - ***tipo*** indica el tipo de dato del atributo.
@@ -115,10 +119,11 @@ En la definición de un método se distinguen dos partes:
 - **La cabecera**, en la cual se indica información relevante sobre el método.
 - **El cuerpo**, que contiene las instrucciones mediante las cuales el método realiza su tarea.
 
-Para definirlos, se sigue la siguiente sintaxis (los corchetes indican opcionalidad):
+Para definirlos, se sigue la siguiente sintaxis (*los corchetes indican opcionalidad*):
 
 ```java
-[ámbito] [static] tipoDevuelto nombreDelMetodo ([parámetros]){
+[ámbito] [static] tipoDevuelto nombreDelMetodo ([parámetros])  //Cabecera del método
+{
 	//Cuerpo del método (instrucciones)
 	...
 	...
@@ -126,7 +131,7 @@ Para definirlos, se sigue la siguiente sintaxis (los corchetes indican opcionali
 }
 ```
 
-donde …
+donde:
 
 - ***ámbito*** permite indicar desde qué clases es accesible el método.
 - ***static***, cuando aparece, indica que el método es estático.
@@ -154,9 +159,15 @@ El proceso de interacción entre objetos se suele resumir diciendo que se ha "en
 
 Hasta ahora hemos visto lo que son los objetos. Un programa informático se compone de muchos objetos, algunos de los cuales comparten la misma estructura y comportamiento. Si tuviéramos que definir su estructura y comportamiento del objeto cada vez que queremos crear un objeto, estaríamos utilizando mucho código redundante. Por ello lo que se hace es crear una clase, que es una descripción de un conjunto de objetos que comparten una estructura y un comportamiento común. Y a partir de la clase, se crean tantas "copias" o "instancias" como necesitemos. Esas copias son los objetos de la clase.
 
+Una clase java se escribe en un fichero con extensión `.java` que tiene el mismo nombre que la clase. Por ejemplo la clase *Vehículo* se escribiría en el fichero `Vehiculo.java`.
+
+Cuando la clase se compila se obtiene un fichero con el mismo nombre que la clase y extensión `.class`. Ejemplo: `Vehiculo.class`.
+
+> Los identificadores de clase siguen las mismas reglas que otros identificadores de Java (contienen carácter alfanuméricos y especiales, no pueden comenzar por un dígito, no pueden coincidir con una palabra reservada, etc.). Por convenio los identificadores de las clases comienzan por mayúsculas (*UpperCamelCase*).
+
 > Las clases constan de datos y métodos que resumen las características comunes de un conjunto de objetos. Un programa informático está compuesto por un conjunto de clases, a partir de las cuales se crean objetos que interactúan entre sí.
 
-En otras palabras, una clase es una plantilla o prototipo donde se especifican:
+En otras palabras, una clase es una **plantilla** o prototipo donde se especifican:
 
 - Los **atributos** comunes a todos los objetos de la clase.
 - Los **métodos** que pueden utilizarse para manejar esos objetos.
@@ -187,7 +198,7 @@ public class NombreDeLaClase {
 }
 ```
 
-> * En la unidad anterior ya hemos utilizado clases, aunque aún no sabíamos su significado exacto. Por ejemplo, en los ejemplos de la unidad o en la tarea, estábamos utilizando clases, todas ellas eran clases principales, no tenían ningún atributo y el único método del que disponían era el método `main()`.
+> * En la unidad anterior ya hemos utilizado clases, aunque aún no sabíamos su significado exacto. Por ejemplo, estábamos utilizando clases; todas ellas eran clases principales, no tenían ningún atributo y el único método del que disponían era el método `main()`.
 > * También es una clase `Math` y su método era `random()`, el que nos permitía usar números aleatorios.
 > * El método `main()` se utiliza para indicar que se trata de una clase principal, a partir de la cual va a empezar la ejecución del programa. Este método no aparece si la clase que estamos creando no va a ser la clase principal del programa.
 
@@ -209,11 +220,11 @@ Los objetos se crean a partir de las clases, y representan casos individuales de
 
 > Para entender mejor la relación entre un objeto y su clase, piensa en un molde de galletas y las galletas. El molde sería la clase, que define las características del objeto, por ejemplo su forma y tamaño. Las galletas creadas a partir de ese molde son los objetos o instancias.
 
-Otro ejemplo, imagina una clase Persona que reúna las características comunes de las personas (`color de pelo`, `ojos`, `peso`, `altura`, etc.) y las acciones que pueden realizar (`crecer`, `dormir`, `comer`, etc.). Posteriormente dentro del programa podremos crear un objeto `Trabajador` que esté basado en esa clase Persona. Entonces se dice que el objeto `Trabajador` es una instancia de la clase `Persona`, o que la clase `Persona` es una abstracción del objeto `Trabajador`.
+Otro ejemplo, imagina una clase *Persona* que reúna las características comunes de las personas (`color de pelo`, `ojos`, `peso`, `altura`, etc.) y las acciones que pueden realizar (`crecer`, `dormir`, `comer`, etc.). Posteriormente dentro del programa podremos crear un objeto *Trabajador* que esté basado en esa clase *Persona*. Entonces se dice que el objeto *Trabajador* es una instancia de la clase *Persona*, o que la clase *Persona* es una abstracción del objeto *Trabajador*.
 
 Cualquier objeto instanciado de una clase contiene una copia de todos los atributos definidos en la clase. En otras palabras, lo que estamos haciendo es reservar un espacio en la memoria del ordenador para guardar sus atributos y métodos. Por tanto, cada objeto tiene una zona de almacenamiento propia donde se guarda toda su información, que será distinta a la de cualquier otro objeto. A las variables miembro instanciadas también se les llama variables instancia. De igual forma, a los métodos que manipulan esas variables se les llama métodos instancia.
 
-En el ejemplo del objeto Trabajador, las variables instancia serían `color_de_pelo`, `peso`, `altura`, etc. Y los métodos instancia serían `crecer()`, `dormir()`, `comer()`, etc.
+En el ejemplo del objeto *Trabajador*, las variables instancia serían `color_de_pelo`, `peso`, `altura`, etc. Y los métodos instancia serían `crecer()`, `dormir()`, `comer()`, etc.
 
 ## Ciclo de vida de los objetos
 
@@ -270,8 +281,8 @@ Por tanto, cuando creamos un objeto estamos haciendo uso de una variable que alm
 
 ```java
 String saludo = new String ("Bienvenido a Java");
-String s; //s vale null
-s = saludo; //asignación de referencias
+String s;    //s vale null
+s = saludo;  //asignación de referencias
 ```
 
 En las instrucciones anteriores, las variables `s` y ` saludo` apuntan al mismo objeto de la clase `String`. Esto implica que cualquier modificación en el objeto saludo modifica también el objeto al que hace referencia la variable `s`, ya que realmente son el mismo.
@@ -351,13 +362,13 @@ En la sentencia anterior `par1`, `par2`, *etc*. son los parámetros que utiliza 
 
 Para entender mejor cómo se manipulan objetos vamos a utilizar un ejemplo. Para ello necesitamos la Biblioteca de Clases Java o API (*Application Programming Interface* ‐ Interfaz de programación de aplicaciones). Uno de los paquetes de librerías o bibliotecas es `java.awt`. Este paquete contiene clases destinadas a la creación de objetos gráficos e imágenes. Vemos por ejemplo cómo crear un rectángulo.
 
-En primer lugar instanciamos el objeto utilizando el método constructor, que se llama igual que el objeto, e indicando los parámetros correspondientes a la posición y a las dimensiones del rectángulo:
+1. En primer lugar instanciamos el objeto utilizando el método constructor, que se llama igual que el objeto, e indicando los parámetros correspondientes a la posición y a las dimensiones del rectángulo:
 
 ```java
 Rectangle rect = new Rectangle(50, 50, 150, 150);
 ```
 
-Una vez instanciado el objeto rectángulo si queremos cambiar el valor de los atributos utilizamos el operador punto. Por ejemplo, para cambiar la dimensión del rectángulo:
+2. Una vez instanciado el objeto rectángulo si queremos cambiar el valor de los atributos utilizamos el operador punto. Por ejemplo, para cambiar la dimensión del rectángulo:
 
 ```java
 rect.height=100;

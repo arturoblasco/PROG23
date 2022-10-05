@@ -444,6 +444,49 @@ Para crear el índice a partir de los encabezados creados debemos insertar ``[TO
 
 
 
+## Crear portada, cabecera y pié de página en Typora
+
+Una forma útil de crear una portada, cabeceras y pié de página (con contador de páginas) en Typora es utilizar YALM front matter; para eso debemos añadir un script en **Fichero** - **Preferencias** - **Exporta**, en el apartado **PDF**, configurar de la siguiente manera:
+
+<img src="/assets/markdown_frontmatter1.png" style="zoom: 67%;" />
+
+Marcar el check **Read and overwrite export settings from YAML front matters**.
+
+El script que queda en **Append Extra Content (HTML)**, *punto 3 de la imagen*, insertar el siguiente código:
+
+````javascript
+<meta name="title" content="${title}">
+<meta name="currentPath" content="${currentPath}">
+<div id='_export_cover' style="height:100vh;">
+<div id='_export_title' style="margin-top: 25%;text-align: center;font-size: 3rem;">
+</div><img id="imgcover" style="display: block;margin-left: auto;margin-right: auto;width: 75%;"/></div>
+<script>
+    var $cover = document.querySelector("#_export_cover");
+    var title = document.querySelector("meta[name='title']").getAttribute("content");
+    var currentPath = document.querySelector("meta[name='currentPath']").getAttribute("content");
+    document.body.insertBefore($cover, document.body.childNodes[0])
+    $cover.querySelector("#_export_title").textContent = title;
+    document.getElementById("imgcover").src=currentPath+'/../assets/cover.png';
+</script>
+````
+
+Seguidamente, al inicio del documento markdown, y delimitadas con `---`, podremos introducir las variables que utilizaremos ,por ejemplo, para crear el título de la portada, la cabecera (header) o el pié de página (footer).
+
+````
+---
+title: UD00: Markdown - Manual de supervivencia 
+language: ES
+author: Arturo BC
+subject: Programación
+keywords: [Markdown, PROG, 2022, Programación]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url: ${filename}/../
+typora-copy-images-to: ${filename}/../assets
+---
+````
+
 ## Tarea propuesta para el alumn@
 
 Como tarea, se propone:
