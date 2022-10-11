@@ -362,7 +362,7 @@ En la sentencia anterior `par1`, `par2`, *etc*. son los parámetros que utiliza 
 
 Para entender mejor cómo se manipulan objetos vamos a utilizar un ejemplo. Para ello necesitamos la Biblioteca de Clases Java o API (*Application Programming Interface* ‐ Interfaz de programación de aplicaciones). Uno de los paquetes de librerías o bibliotecas es `java.awt`. Este paquete contiene clases destinadas a la creación de objetos gráficos e imágenes. Vemos por ejemplo cómo crear un rectángulo.
 
-1. En primer lugar instanciamos el objeto utilizando el método constructor, que se llama igual que el objeto, e indicando los parámetros correspondientes a la posición y a las dimensiones del rectángulo:
+1. En primer lugar instanciamos el objeto utilizando el método constructor, que se llama igual que el objeto, e indicando los parámetros correspondientes a las dimensiones (alto, ancho) y la posición (x, y) del rectángulo:
 
 ```java
 Rectangle rect = new Rectangle(50, 50, 150, 150);
@@ -390,25 +390,25 @@ A continuación puedes acceder al código del ejemplo:
 import java.awt.Rectangle;
 
 public class Manipular {
-    public static void main(String[] args) {
-        // Instanciamos el objeto rect indicando posicion y dimensiones
-        Rectangle rect = new Rectangle( 50, 50, 150, 150 );
-        //Consultamos las coordenadas x e y del rectangulo
-        System.out.println( "\n------- Coordenadas esquina superior izqda. -------");
-        System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
-        // Consultamos las dimensiones (altura y anchura) del rectangulo
-        System.out.println( "\n----------------- Dimensiones -------------------");
-        System.out.println("\tAlto = " + rect.height );
-        System.out.println( "\tAncho = " + rect.width);
-        //Cambiar dimensiones del rectangulo
-        rect.height=100;
-        rect.width=100;
-        rect.setSize(200, 200);
-        System.out.println( "\n-- Nuevos valores de los atributos --");
-        System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
-        System.out.println("\tAlto = " + rect.height );
-        System.out.println( "\tAncho = " + rect.width);
-    }
+  public static void main(String[] args) {
+    // Instanciamos el objeto rect indicando posicion y dimensiones
+    Rectangle rect = new Rectangle( 50, 50, 150, 150 );
+    //Consultamos las coordenadas x e y del rectangulo
+    System.out.println( "\n-- Coordenadas esquina superior-izqda. --");
+    System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
+    // Consultamos las dimensiones (altura y anchura) del rectangulo
+    System.out.println( "\n------------- Dimensiones ---------------");
+    System.out.println("\tAlto = " + rect.height );
+    System.out.println( "\tAncho = " + rect.width);
+    //Cambiar dimensiones del rectangulo
+    rect.height=100;
+    rect.width=100;
+    rect.setSize(200, 200);
+    System.out.println( "\n-- Nuevos valores de los atributos --");
+    System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
+    System.out.println("\tAlto = " + rect.height );
+    System.out.println( "\tAncho = " + rect.width);
+  }
 }
 ```
 
@@ -441,7 +441,7 @@ Dentro de un método nos encontramos el cuerpo del método que contiene el códi
 - **Inicializar** los atributos del objeto.
 - **Consultar** los valores de los atributos.
 - **Modificar** los valores de los atributos.
-- **Llamar a otros métodos**, del mismo del objeto o de objetos externos.
+- **Llamar a otros métodos**, del mismo objeto o de objetos externos.
 
 ## Parámetros y valores devueltos
 
@@ -450,7 +450,7 @@ Los métodos se pueden utilizar tanto para consultar información sobre el objet
 - **Por valor**. El valor de los parámetros **no** se devuelve al finalizar el método; es decir, cualquier modificación que se haga en los parámetros no tendrá efecto una vez se salga del método. Esto es así porque cuando se llama al método desde cualquier parte del programa, dicho método recibe una copia de los argumentos, por tanto cualquier modificación que haga será sobre la copia, no sobre las variables originales.
 - **Por referencia**. La modificación en los valores de los parámetros **sí** tienen efecto tras la finalización del método. Cuando pasamos una variable a un método por referencia lo que estamos haciendo es pasar la dirección del dato en memoria, por tanto cualquier cambio en el dato seguirá modificado una vez que salgamos del método.
 
-> En el lenguaje Java, todas las variables se pasan por valor, excepto los objetos que se pasan por referencia.
+> En el lenguaje Java, todas las **variables se pasan por valor**, excepto los **objetos que se pasan por referencia**.
 
 En Java, la declaración de un método tiene dos restricciones:
 
@@ -475,13 +475,13 @@ La lista de parámetros aparece al final de la cabecera del método, justo despu
 
 > Cuando se llame al método, se deberá utilizar el nombre del método, seguido de los argumentos que deben coincidir, en número y tipo, con la lista de parámetros.
 
-La lista de argumentos en la llamada a un método debe coincidir en número, tipo y orden con los parámetros del método, ya que de lo contrario se produciría un error de sintaxis.
+> La lista de argumentos en la llamada a un método debe coincidir en número, tipo y orden con los parámetros del método, ya que de lo contrario se produciría un error de sintaxis.
 
 ## Constructores
 
-¿Recuerdas cuando hablábamos de la creación e instanciación de un objeto? Decíamos que utilizábamos el operador `new` seguido del nombre de la clase y una pareja de abrir‐cerrar paréntesis. Además, el nombre de la clase era realmente el constructor de la misma, y lo definíamos como un método especial que sirve para inicializar valores. En este apartado vamos a ver un poco más sobre los constructores.
+¿*Recuerdas cuando hablábamos de la creación (declaración) e instanciación de un objeto*? Decíamos que utilizábamos el operador `new` seguido del nombre de la clase y una pareja de abrir‐cerrar paréntesis. Además, el nombre de la clase era realmente el constructor de la misma, y lo definíamos como un método especial que sirve para inicializar valores. En este apartado vamos a ver un poco más sobre los constructores.
 
-Un constructor es un método especial con el mismo nombre de la clase y que no devuelve ningún valor tras su ejecución.
+> Un constructor es un método especial con el mismo nombre de la clase y que no devuelve ningún valor tras su ejecución.
 
 Cuando creamos un objeto debemos instanciarlo utilizando el constructor de la clase. Veamos la clase `Date` proporcionada por la Biblioteca de Clases de Java. Si queremos instanciar un objeto a partir de la clase `Date` tan sólo tendremos que utilizar el constructor seguido de una pareja de abrir‐cerrar paréntesis:
 
@@ -510,7 +510,7 @@ Los constructores y métodos de un objeto suelen utilizar el operador `this`. Es
 
 ## Métodos estáticos
 
-Cuando trabajábamos con cadenas de caracteres utilizando la clase `String`, veíamos las operaciones que podíamos hacer con ellas: *obtener longitud*, *comparar dos cadenas de caracteres*, *cambiar a mayúsculas o minúsculas*, *etc*. Pues bien, sin saberlo estábamos utilizando métodos estáticos definidos por Java para la clase `String`. Pero ¿qué son los métodos estáticos? Veámoslo.
+Cuando trabajábamos con cadenas de caracteres utilizando la clase `String`, veíamos las operaciones que podíamos hacer con ellas: *obtener longitud*, *comparar dos cadenas de caracteres*, *cambiar a mayúsculas o minúsculas*, *etc*. Pues bien, sin saberlo estábamos utilizando métodos estáticos definidos por Java para la clase `String`. Pero ¿*qué son los métodos estáticos*?
 
 Los métodos estáticos son aquellos métodos definidos para una clase que se pueden usar directamente, sin necesidad de crear un objeto de dicha clase. También se llaman métodos de clase.
 
@@ -625,7 +625,7 @@ import java.awt.*;       // Se importa todas las clases del paquete awt;
 Los paquetes más importantes que ofrece el lenguaje Java son:
 
 | Paquete o librería | Descripción                                                  |
-| ------------------ | ------------------------------------------------------------ |
+| :----------------- | ------------------------------------------------------------ |
 | **java.io**        | Contiene las clases que gestionan la entrada y salida, ya sea para manipular ficheros, leer o escribir en pantalla, en memoria, etc. Este paquete contiene por ejemplo la clase BufferedReader que se utiliza para la entrada por teclado. |
 | **java.lang**      | Contiene las clases básicas del lenguaje. Este paquete no es necesario importarlo, ya que es importado automáticamente por el entorno de ejecución. En este paquete se encuentra la clase Object, que sirve como raíz para la jerarquía de clases de Java, o la clase System que ya hemos utilizado en algunos ejemplos y que representa al sistema en el que se está ejecutando la aplicación. También podemos encontrar en este paquete las clases que "envuelven" los tipos primitivos de datos. Lo que proporciona una serie de métodos para cada tipo de dato de utilidad, como por ejemplo las conversiones de datos. |
 | **java.util**      | Biblioteca de clases de utilidad general para el programador. Este paquete contiene por ejemplo la clase Scanner utilizada para la entrada por teclado de diferentes tipos de datos, la clase Date, para el tratamiento de fechas, etc. |
@@ -687,7 +687,7 @@ Para leer cadenas de caracteres desde teclado podemos utilizar la clase `Scanner
 
 Ejemplo:
 
-```
+```java
 Scanner tec = new Scanner(System.in);
 //De lo que introduce el usuario, lee la 1º palabra.
 String nombre = tec.next();
@@ -695,7 +695,7 @@ String nombre = tec.next();
 String nombreCompleto = tec.nextLine(); 
 ```
 
-### Ejemplos de la UD01 pero utilizando `Scanner` (compatible con los IDE's)
+### Ejemplos de la UD01 utilizando `Scanner` (compatible con los IDE's)
 
 A continuación vamos a ver los mismos ejemplos de la UD01, pero utilizando la clase `Scanner` que sí es compatible con los IDE's. Para poder usar la clase `Scanner` necesitamos importar el paquete: `java.util.Scanner`.
 
@@ -754,7 +754,7 @@ Accede a la documentación en línea de Java y estudia los siguientes métodos d
 
 ## `printf` o `format`
 
-El método `printf()` o `format()` (son sinónimos) utilizan unos códigos de conversión para indicar si el contenido a mostrar de qué tipo es. Estos códigos se caracterizan porque llevan delante el símbolo %, algunos de ellos son:
+El método `printf()` o `format()` (*son sinónimos*) utilizan unos códigos de conversión para indicar el contenido a mostrar de qué tipo es. Estos códigos se caracterizan porque llevan delante el símbolo %, algunos de ellos son:
 
 - `%c`: Escribe un carácter.
 - `%s`: Escribe una cadena de texto.
@@ -782,7 +782,7 @@ Puedes investigar más sobre `printf` o `format` en este [enlace](https://docs.o
 
 ## Salida de error
 
-La salida de error está representada por el objeto `System.err`. No parece muy útil utilizar `out` y `err` si su destino es la misma pantalla, o al menos en el caso de la consola del sistema donde las dos salidas son representadas con el mismo color y no notamos diferencia alguna. En cambio en la consola de varios entornos integrados de desarrollo como NetBeans o Eclipse la salida de `err` se ve en un color diferente. Teniendo el siguiente código:
+La salida de error está representada por el objeto `System.err`. No parece muy útil utilizar `out` y `err` si su destino es la misma pantalla, o al menos en el caso de la consola del sistema donde las dos salidas son representadas con el mismo color y no notamos diferencia alguna. En cambio en la consola de varios entornos integrados de desarrollo como *Visual Studio Code*, *NetBeans* o *Eclipse* la salida de `err` se ve en un color diferente. Teniendo el siguiente código:
 
 ```java
 System.out.println("Salida estándar por pantalla");
@@ -851,15 +851,17 @@ Vamos a ilustrar mediante un ejemplo la utilización de objetos y métodos, así
 
 Las clases se suelen representar como un rectángulo, y dentro de él se sitúan los atributos y los métodos de dicha clase.
 
-En la imagen, la clase `Pajaro` está compuesta por tres atributos, uno de ellos el nombre y otros dos que indican la posición del ave, `posX` y `posY`. Tiene dos métodos constructores y un método `volar()`. Como sabemos, los métodos constructores reciben el mismo nombre de la clase, y puede haber varios para una misma clase, dentro de ella se diferencian unos de otros por los parámetros que utilizan.
+<img src="/assets/ejemplo_pajaro.png" style="zoom: 50%;" />
+
+En la imagen anterior, la clase `Pajaro` está compuesta por tres atributos, uno de ellos el nombre y otros dos que indican la posición del ave, `posX` y `posY`. Tiene dos métodos constructores y un método `volar()`. Como sabemos, los métodos constructores reciben el mismo nombre de la clase, y puede haber varios para una misma clase, dentro de ella se diferencian unos de otros por los parámetros que utilizan.
 
 Enunciado:
 
-> Dada una clase principal llamada `Pajaro`, se definen los atributos y métodos que aparecen en la imagen. Los métodos realizan las siguientes acciones:
+> Dada una clase principal llamada `Pajaro`, se definen los atributos y métodos que aparecen en la imagen anterior. Los métodos realizan las siguientes acciones:
 >
-> - `pajaro()`. Constructor por defecto. En este caso, el constructor por defecto no contiene ninguna instrucción, ya que Java inicializa de forma automática las variables miembro, si no le damos ningún valor.
+> - `Pajaro()`. Constructor por defecto. En este caso, el constructor por defecto no contiene ninguna instrucción, ya que Java inicializa de forma automática las variables miembro, si no le damos ningún valor.
 >
-> - `pajaro(String nombre, int posX, int posY)`. Constructor que recibe como argumentos una cadena de texto y dos enteros para inicializar el valor de los atributos.
+> - `Pajaro(String nombre, int posX, int posY)`. Constructor que recibe como argumentos una cadena de texto y dos enteros para inicializar el valor de los atributos.
 >
 > - `volar(int posX, int posY)`. Método que recibe como argumentos dos enteros: `posX` y `posY`, y devuelve un valor de tipo `double` como resultado, usando la palabra clave `return`. El valor devuelto es el resultado de aplicar un desplazamiento de acuerdo con la siguiente fórmula:     
 >   $$
@@ -914,26 +916,26 @@ Luego crearemos otro pajaro2 usando el constructor por defecto (sin parámetros)
 
 ```java
 public static void main(String[] args) {
-    //creamos el objeto con parámetros
-    Pajaro pajaro1 = new Pajaro("WoodPecker", 50, 50);
-    double d1 = pajaro1.volar(50, 50);
-    System.out.println("El desplazamiento de " + pajaro1.nombre + " ha sido " + d1);
-
-    Pajaro pajaro2 = new Pajaro();
-    //damos nombre y cambiamos la posición de "Piolin" a mano
-    pajaro2.nombre="Piolín";
-    pajaro2.posX=30;
-    pajaro2.posY=30;
-    double d2 = pajaro2.volar(pajaro2.posX, pajaro2.posY);
-    System.out.println("El desplazamiento de " + pajaro2.nombre + " ha sido " + d2);
+  //creamos el objeto con parámetros
+  Pajaro pajaro1 = new Pajaro("WoodPecker", 50, 50);
+  double d1 = pajaro1.volar(50, 50);
+  System.out.printf("\nEl desplazamiento de %s ha sido %.2f",pajaro1.nombre,d1);
+    
+  Pajaro pajaro2 = new Pajaro();
+  //damos nombre y cambiamos la posición de "Piolin" a mano
+  pajaro2.nombre="Piolín";
+  pajaro2.posX=30;
+  pajaro2.posY=30;
+  double d2 = pajaro2.volar(pajaro2.posX, pajaro2.posY);
+  System.out.printf("\nEl desplazamiento de %s ha sido %.2f\n",pajaro2.nombre,d2);
 }
 ```
 
 Si ejecutamos nuestro programa el resultado sería el siguiente:
 
 ```sh
-El desplazamiento de WoodPecker ha sido 70.71067811865476
-El desplazamiento de Piolín ha sido 42.42640687119285
+El desplazamiento de WoodPecker ha sido 70.71
+El desplazamiento de Piolín ha sido 42.43
 ```
 
 # Píldoras informáticas relacionadas
