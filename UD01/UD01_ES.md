@@ -1,15 +1,16 @@
 ---
-    title: UD01: Elementos de un programa informático
+    unit: UD01
+    title: Elementos de un programa informático
     language: ES
     author: Arturo BC [arturoblasco@iesmre.com]
     subject: Programación
     keywords: [PRG, 2022, Programacion, Java]
-    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.com]
-    header: ${title} - ${subject} (ver. ${today}) 
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    header: ${unit}: ${title} - ${subject} (${today})
     footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
-    imgcover:assets/cover.png
+    imgcover:./assets/cover.png
 ---
 [TOC]
 

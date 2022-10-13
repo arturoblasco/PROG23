@@ -1,15 +1,20 @@
 ---
-title: UD00: Markdown - Manual de supervivencia 
-language: ES
-author: Arturo BC
-subject: Programación
-keywords: [Markdown, PROG, 2022, Programación]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today})
-footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url: ${filename}/../
-typora-copy-images-to: ${filename}/../assets
+    unit: UD00
+    title: Markdown - Manual de supervivencia
+    language: ES
+    author: Arturo BC [arturoblasco@iesmre.com]
+    subject: Programación
+    keywords: [Markdown, PROG, 2022, Programacion]
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    header: ${unit}: ${title} - ${subject} (${today})
+    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+    typora-root-url:${filename}/../
+    typora-copy-images-to:${filename}/../assets
+    imgcover:./assets/cover.png
 ---
+
+
+
 [TOC]
 
 
@@ -454,17 +459,21 @@ Marcar el check **Read and overwrite export settings from YAML front matters**.
 
 El script que queda en **Append Extra Content (HTML)**, *punto 3 de la imagen*, insertar el siguiente código:
 
-````javascript
+````html
+<meta name="unit" content="${unit}">
 <meta name="title" content="${title}">
 <meta name="currentPath" content="${currentPath}">
-<div id='_export_cover' style="height:100vh;">
-<div id='_export_title' style="margin-top: 25%;text-align: center;font-size: 3rem;">
-</div><img id="imgcover" style="display: block;margin-left: auto;margin-right: auto;width: 75%;"/></div>
+<div id='_export_cover' style="height:85vh;">
+<div id='_export_unit' style="margin-top: 20%; color: #003380; text-align: center;font-size: 3rem;"></div>
+<div id='_export_title' style="color: #003380; text-align: center;font-size: 3rem;"></div>
+<img id="imgcover" style="display: block;margin-left: auto;margin-right: auto;width: 75%;"/></div>
 <script>
     var $cover = document.querySelector("#_export_cover");
+    var unit = document.querySelector("meta[name='unit']").getAttribute("content");
     var title = document.querySelector("meta[name='title']").getAttribute("content");
     var currentPath = document.querySelector("meta[name='currentPath']").getAttribute("content");
     document.body.insertBefore($cover, document.body.childNodes[0])
+    $cover.querySelector("#_export_unit").textContent = unit;
     $cover.querySelector("#_export_title").textContent = title;
     document.getElementById("imgcover").src=currentPath+'/../assets/cover.png';
 </script>
@@ -474,16 +483,18 @@ Seguidamente, al inicio del documento markdown, y delimitadas con `---`, podremo
 
 ````
 ---
-title: UD00: Markdown - Manual de supervivencia 
-language: ES
-author: Arturo BC
-subject: Programación
-keywords: [Markdown, PROG, 2022, Programación]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today})
-footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url: ${filename}/../
-typora-copy-images-to: ${filename}/../assets
+    unit: UD00
+    title: Markdown - Manual de supervivencia
+    language: ES
+    author: Arturo BC [arturoblasco@iesmre.com]
+    subject: Programación
+    keywords: [Markdown, PROG, 2022, Programacion]
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    header: ${unit}: ${title} - ${subject} (${today})
+    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+    typora-root-url:${filename}/../
+    typora-copy-images-to:${filename}/../assets
+    imgcover:./assets/cover.png
 ---
 ````
 

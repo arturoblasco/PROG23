@@ -1,12 +1,12 @@
 ---
-    title: "UD03: Estructuras de control y Excepciones"
+    unit: UD03
+    title: Estructuras de control y Excepciones
     language: ES
-    author: Arturo BC
+    author: Arturo BC [arturoblasco@iesmre.com]
     subject: Programación
     keywords: [PRG, 2022, Programacion, Java]
     IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-    header: ${title} - ${subject} (ver:${today})
-    footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+    header: ${unit}: ${title} - ${subject} (${today})
     footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets

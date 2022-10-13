@@ -1,11 +1,12 @@
 ---
-    title: UD02: Utilización de Objetos y Clases
+    unit: UD02
+    title: Utilización de Objetos y Clases
     language: ES
-    author: David Martínez Peña [www.martinezpenya.es]
+    author: Arturo BC [arturoblasco@iesmre.com]
     subject: Programación
-    keywords: [PRG, 2021, Programacion, Java]
+    keywords: [PRG, 2022, Programacion, Java]
     IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-    header: ${title} - ${subject} (${today})
+    header: ${unit}: ${title} - ${subject} (${today})
     footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
@@ -240,6 +241,8 @@ A la vista de lo anterior, podemos concluir que los objetos tienen un ciclo de v
 - **Manipulación**, que se lleva a cabo cuando se hace uso de los atributos y métodos del objeto.
 - **Destrucción**, eliminación del objeto y liberación de recursos.
 
+
+
 ## Creación
 
 ### Declaración
@@ -247,8 +250,6 @@ A la vista de lo anterior, podemos concluir que los objetos tienen un ciclo de v
 Para la creación de un objeto hay que seguir los siguientes pasos:
 
 - **Declaración**: Definir el tipo de objeto.
-
-- **Instanciación**: Creación del objeto utilizando el operador `new`. Pero ¿en qué consisten estos pasos a nivel de programación en Java? Veamos primero cómo declarar un objeto. Para la definición del tipo de objeto debemos emplear la siguiente instrucción:
 
   ```java
   <tipo> nombre_objeto;
@@ -259,11 +260,11 @@ Para la creación de un objeto hay que seguir los siguientes pasos:
   - **tipo** es la case a partir de la cual se va a crear el objeto, y
   - **nombre_objeto** es el nombre de la variable referencia con la cual nos referiremos al objeto.
 
+- **Instanciación**: Creación del objeto utilizando el operador `new`. Pero ¿en qué consisten estos pasos a nivel de programación en Java? Veamos primero cómo declarar un objeto. Para la definición del tipo de objeto debemos emplear la siguiente instrucción:
+
 Los tipos referenciados o referencias se utilizan para guardar la dirección de los datos en la memoria del ordenador.
 
-Nada más crear una referencia, ésta se encuentra vacía. Cuando una referencia a un objeto no contiene ninguna instancia se dice que es una referencia nula, es decir, que contiene el valor `null`.
-
-Esto quiere decir que la referencia está creada pero que el objeto no está instanciado todavía, por eso la referencia apunta a un objeto inexistente llamado "nulo".
+Nada más crear una referencia, ésta se encuentra vacía. Cuando una referencia a un objeto no contiene ninguna instancia se dice que es una referencia nula, es decir, que contiene el valor `null`. Esto quiere decir que la referencia está creada pero que el objeto no está instanciado todavía, por eso la referencia apunta a un objeto inexistente llamado "nulo".
 
 Para entender mejor la declaración de objetos veamos un ejemplo. Cuando veíamos los tipos de datos, decíamos que Java proporciona un tipo de dato especial para los textos o cadenas de caracteres que era el tipo de dato `String`. Veíamos que realmente este tipo de dato es un tipo referenciado y creábamos una variable mensaje de ese tipo de dato de la siguiente forma:
 
@@ -273,7 +274,7 @@ String mensaje;
 
 Los nombres de la clase empiezan con mayúscula, como `String`, y los nombres de los objetos con minúscula, como `mensaje`, así sabemos qué tipo de elemento estamos utilizando.
 
-Pues bien, `String` es realmente la clase a partir de la cual creamos nuestro objeto llamado mensaje ( :astonished: ).
+`String` es realmente la clase a partir de la cual creamos nuestro objeto llamado mensaje ( :astonished: ).
 
 Si observas, poco se diferencia esta declaración de las declaraciones de variables que hacíamos para los tipos primitivos. Antes decíamos que `mensaje` era una variable del tipo de dato `String`. Ahora realmente vemos que `mensaje` es un objeto de la clase `String`. Pero mensaje aún no contiene el objeto porque no ha sido instanciado, veamos cómo hacerlo.
 
@@ -310,7 +311,7 @@ De este modo, para instanciar un objeto `String`, haríamos lo siguiente:
 mensaje = new String;
 ```
 
-Así estaríamos instanciando el objeto mensaje. Para ello utilizaríamos el operador `new` y el constructor de la clase `String` a la que pertenece el objeto según la declaración que hemos hecho en el apartado anterior. A continuación utilizamos el constructor, que se llama igual que la clase, `String`.
+Así declaramos el objeto mensaje. Para ello utilizaríamos el operador `new` y el constructor de la clase `String` a la que pertenece el objeto según la declaración que hemos hecho en el apartado anterior. A continuación utilizamos el constructor, que se llama igual que la clase, `String`.
 
 En el ejemplo anterior el objeto se crearía con la cadena vacía (`""`), si queremos que tenga un contenido debemos utilizar parámetros en el constructor, así:
 
@@ -318,7 +319,7 @@ En el ejemplo anterior el objeto se crearía con la cadena vacía (`""`), si que
 mensaje = new String ("El primer programa");
 ```
 
-Java permite utilizar la clase `String` como si de un tipo de dato primitivo se tratara, por eso no hace falta utilizar el operador `new` para instanciar un objeto de la clase `String` (pero no es lo habitual en el resto de clases).
+Java permite utilizar la clase `String` como si de un tipo de dato primitivo se tratara, por eso no hace falta  el operador `new` para instanciar un objeto de la clase `String` (pero no es lo habitual en el resto de clases).
 
 ```java
 mensaje = "El primer programa";
@@ -422,7 +423,7 @@ El recolector de basura se ejecuta en modo *segundo plano* y de manera muy efici
 
 Después los elimina en el momento que considera oportuno.
 
-Justo antes de que un objeto sea eliminado por el recolector de basura, se ejecuta su método `finalize()`. Si queremos forzar que se ejecute el proceso de finalización de todos los objetos del programa podemos utilizar el método `runFinalization()` de la clase `System`. La clase `System` forma parte de la Biblioteca de Clases de Java y contiene diversas clases para la entrada/salida de información, acceso a variables de entorno del programa y otros métodos de diversa utilidad. Para forzar el proceso de finalización ejecutaríamos:
+Justo antes de que un objeto sea eliminado por el recolector de basura, se ejecuta su método `finalize()`. Si queremos forzar que se ejecute el proceso de finalización de todos los objetos del programa podemos utilizar el método `runFinalization()` de la clase `System`. La clase `System` forma parte de la Biblioteca de Clases de Java y contiene diversos métodos para la entrada/salida de información, acceso a variables de entorno del programa y otros métodos de diversa utilidad. Para forzar el proceso de finalización ejecutaríamos:
 
 ```java
 System.runFinalization();
@@ -445,10 +446,10 @@ Dentro de un método nos encontramos el cuerpo del método que contiene el códi
 
 ## Parámetros y valores devueltos
 
-Los métodos se pueden utilizar tanto para consultar información sobre el objeto como para modificar su estado. La información consultada del objeto se devuelve a través de lo que se conoce como valor de retorno, y la modificación del estado del objeto, o sea, de sus atributos, se hace mediante la lista de parámetros. En general, la lista de parámetros de un método se puede declarar de dos formas diferentes:
+Los métodos se pueden utilizar tanto para consultar información sobre el objeto como para modificar su estado. La información consultada del objeto se devuelve a través de lo que se conoce como valor de retorno, y la modificación del estado del objeto, o sea, de sus atributos, se hace mediante la lista de parámetros. En general, la lista de **parámetros de un método** se puede declarar de dos formas diferentes:
 
 - **Por valor**. El valor de los parámetros **no** se devuelve al finalizar el método; es decir, cualquier modificación que se haga en los parámetros no tendrá efecto una vez se salga del método. Esto es así porque cuando se llama al método desde cualquier parte del programa, dicho método recibe una copia de los argumentos, por tanto cualquier modificación que haga será sobre la copia, no sobre las variables originales.
-- **Por referencia**. La modificación en los valores de los parámetros **sí** tienen efecto tras la finalización del método. Cuando pasamos una variable a un método por referencia lo que estamos haciendo es pasar la dirección del dato en memoria, por tanto cualquier cambio en el dato seguirá modificado una vez que salgamos del método.
+- **Por referencia**. La modificación en los valores de los parámetros **sí** tienen efecto tras la finalización del método. Cuando pasamos una variable a un método por referencia lo que estamos haciendo es *pasar la dirección del dato en memoria*, por tanto cualquier cambio en el dato seguirá modificado una vez que salgamos del método.
 
 > En el lenguaje Java, todas las **variables se pasan por valor**, excepto los **objetos que se pasan por referencia**.
 
@@ -473,17 +474,19 @@ La lista de parámetros aparece al final de la cabecera del método, justo despu
 (tipo_parámetro1 nombre_parámetro1, ..., tipo_parámetroN nombre_parámetroN)
 ```
 
-> Cuando se llame al método, se deberá utilizar el nombre del método, seguido de los argumentos que deben coincidir, en número y tipo, con la lista de parámetros.
-
-> La lista de argumentos en la llamada a un método debe coincidir en número, tipo y orden con los parámetros del método, ya que de lo contrario se produciría un error de sintaxis.
+> Cuando se llame al método, se deberá utilizar el nombre del método, seguido de los argumentos que deben coincidir, en número y tipo, con la lista de parámetros, ya que de lo contrario se produciría un error de sintaxis.
 
 ## Constructores
 
-¿*Recuerdas cuando hablábamos de la creación (declaración) e instanciación de un objeto*? Decíamos que utilizábamos el operador `new` seguido del nombre de la clase y una pareja de abrir‐cerrar paréntesis. Además, el nombre de la clase era realmente el constructor de la misma, y lo definíamos como un método especial que sirve para inicializar valores. En este apartado vamos a ver un poco más sobre los constructores.
+¿*Recuerdas cuando hablábamos de la creación (declaración) e instanciación de un objeto*? Decíamos que utilizábamos el operador `new` seguido del nombre de la clase y una pareja de abrir‐cerrar paréntesis. Además, el nombre de la clase era realmente el constructor de la misma, y lo definíamos como un método especial que sirve para inicializar valores. 
+
+En este apartado vamos a ver un poco más sobre los constructores.
 
 > Un constructor es un método especial con el mismo nombre de la clase y que no devuelve ningún valor tras su ejecución.
 
-Cuando creamos un objeto debemos instanciarlo utilizando el constructor de la clase. Veamos la clase `Date` proporcionada por la Biblioteca de Clases de Java. Si queremos instanciar un objeto a partir de la clase `Date` tan sólo tendremos que utilizar el constructor seguido de una pareja de abrir‐cerrar paréntesis:
+Cuando creamos un objeto debemos instanciarlo utilizando el constructor de la clase. 
+
+Veamos la clase `Date` proporcionada por la Biblioteca de Clases de Java. Si queremos instanciar un objeto a partir de la clase `Date` tan sólo tendremos que utilizar el constructor seguido de una pareja de abrir‐cerrar paréntesis:
 
 ```java
 Date fecha = new Date();
@@ -524,11 +527,13 @@ Para llamar a un método estático utilizaremos:
   nombre_clase.nombre_metodo_estatico
   ```
 
+
 - **El nombre del objeto**, seguido por el operador punto (`.`) más el nombre del método estático. Utilizaremos esta forma cuando tengamos un objeto instanciado de la clase en la que se encuentra definido el método estático, y no podamos utilizar la anterior:
 
   ```java
   nombre_objeto.nombre_metodo_estatico
   ```
+
 
 Los métodos estáticos no afectan al estado de los objetos instanciados de la clase (variables instancia), y suelen utilizarse para realizar operaciones comunes a todos los objetos de la clase. Por ejemplo, si necesitamos contar el número de objetos instanciados de una clase, podríamos utilizar un método estático que fuera incrementando el valor de una variable entera de la clase conforme se van creando los objetos.
 
@@ -537,7 +542,7 @@ En la Biblioteca de Clases de Java existen muchas clases que contienen métodos 
 Fijémonos en esta secuencia de instrucciones:
 
 ```java
-//Creamos dos círculos de radio 100  en distintas posiciones
+//Creamos dos círculos de radio 100 en distintas posiciones
 Circulo c1 = new Circulo(50,50,100); 
 Circulo c2 = new Circulo(80,80,100); 
 ...
@@ -559,7 +564,7 @@ En el segundo ejemplo, en cambio, a la izquierda de `.sqrt(4)` no se ha puesto e
 
 # Librerías de Objetos (Paquetes)
 
-Conforme nuestros programas se van haciendo más grandes, el número de clases va creciendo. Meter todas las clases en único directorio no ayuda a que estén bien organizadas, lo mejor es hacer grupos de clases, de forma que todas las clases que estén relacionadas o traten sobre un mismo tema estén en el mismo grupo.
+Conforme nuestros programas se van haciendo más grandes, el número de clases va creciendo. Introducir todas las clases en un único directorio no ayuda a que estén bien organizadas, lo mejor es hacer grupos de clases, de forma que todas las clases que estén relacionadas o traten sobre un mismo tema estén en el mismo grupo.
 
 Un **paquete** de clases es una agrupación de clases que consideramos que están relacionadas entre sí o tratan de un tema común.
 

@@ -1,15 +1,16 @@
 ---
-    title: Ejercicios de la UD01
+    unit: UD01
+    title: Ejercicios
     language: ES
-    author: David Martínez Peña [www.martinezpenya.es]
+    author: Arturo BC [arturoblasco@iesmre.com]
     subject: Programación
-    keywords: [PRG, 2021, Programacion, Java]
+    keywords: [PRG, 2022, Programacion, Java]
     IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-    header: ${title} - ${subject} (ver. ${today}) 
+    header: ${unit}: ${title} - ${subject} (${today})
     footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
-    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD01/assets/cover.png
+    imgcover:./assets/cover.png
 ---
 [toc]
 

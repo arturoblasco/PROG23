@@ -1,15 +1,21 @@
 ---
-title: UD00: Control de versiones Git
-language: ES
-author: David Martínez Peña
-subject: Programación
-keywords: [PROG, 2022, Programación]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today})
-footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url: ${filename}/../
-typora-copy-images-to: ${filename}/../../assets
+    unit: UD00
+    title: Control de versiones Git
+    language: ES
+    author: Arturo BC [arturoblasco@iesmre.com]
+    subject: Programación
+    keywords: [PRG, 2022, Programacion, Java]
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    header: ${unit}: ${title} - ${subject} (${today})
+    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+    typora-root-url:${filename}/../
+    typora-copy-images-to:${filename}/../assets
+    imgcover:./assets/cover.png
 ---
+
+
+
+
 
 [toc]
 
