@@ -1,4 +1,17 @@
 ---
+<<<<<<< HEAD
+unit: UD03
+title: Estructuras de control y Excepciones
+language: ES
+author: Arturo BC
+subject: Programación
+keywords: [PROG, 2022, Programación, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url: ${filename}/../
+typora-copy-images-to: ${filename}/../assets
+=======
     unit: UD03
     title: Estructuras de control y Excepciones
     language: ES
@@ -11,6 +24,7 @@
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
     imgcover:./assets/cover.png
+>>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 ---
 [toc]
 
@@ -74,15 +88,15 @@ package organizacion_sentencias1;
 * Organización de sentencias secuencial
 */
 public class Organizacion_sentencias_1 {
-    public static void main(String[] args) {
-        System.out.println ("Organización secuencial de sentencias");
-        int dia=12;
-        System.out.println ("El día es: " + dia);
-        int mes=11;
-        System.out.println ("El mes es: " + mes);
-        int anio=2011;
-        System.out.println ("El anio es: " + anio);
-    }
+  public static void main(String[] args) {
+    System.out.println ("Organización secuencial de sentencias");
+    int dia=12;
+    System.out.println ("El día es: " + dia);
+    int mes=11;
+    System.out.println ("El mes es: " + mes);
+    int anio=2011;
+     System.out.println ("El anio es: " + anio);
+  }
 }
 ```
 
@@ -93,20 +107,19 @@ En este segundo archivo, se declaran al principio las variables necesarias. En J
 ```java
 package organizacion_sentencias2;
 /**
-*
 * Organización de sentencias con declaración previa de variables
 */
 public class Organizacion_sentencias_2 {
-    public static void main(String[] args) {
-        // Zona de declaración de variables
-        int dia=10;
-        int mes=11;
-        int anio=2011;
-        System.out.println ("Organización con declaración previa de variables");
-        System.out.println ("El día es: " + dia);
-        System.out.println ("El mes es: " + mes);
-        System.out.println ("El anio es: " + anio);
-    }
+  public static void main(String[] args) {
+    // Zona de declaración de variables
+    int dia=10;
+    int mes=11;
+    int anio=2011;
+    System.out.println ("Organización con declaración previa de variables");
+    System.out.println ("El día es: " + dia);
+    System.out.println ("El mes es: " + mes);
+    System.out.println ("El anio es: " + anio);
+  }
 }
 ```
 
@@ -119,28 +132,27 @@ En este tercer archivo, podrás apreciar que se ha organizado el código en las 
 ```java
 package organizacion_sentencias3;
 /**
-*
 * Organización de sentencias en zonas diferenciadas
 * según las operaciones que se realicen en el código
 */
 public class Organizacion_sentencias_3 {
-    public static void main(String[] args) {
-        // Zona de declaración de variables
-        int dia;
-        int mes;
-        int anio;
-        String fecha;
-        //Zona de inicialización o entrada de datos
-        dia=10;
-        mes=11;
-        anio=2011;
-        fecha="";
-        //Zona de procesamiento
-        fecha=dia+"/"+mes+"/"+anio;
-        //Zona de salida
-        System.out.println ("Organización con zonas diferenciadas en el código");
-        System.out.println ("La fecha es: " + fecha);
-    }
+  public static void main(String[] args) {
+    // Zona de declaración de variables
+    int dia;
+    int mes;
+    int anio;
+    String fecha;
+    //Zona de inicialización o entrada de datos
+    dia=10;
+    mes=11;
+    anio=2011;
+    fecha="";
+    //Zona de procesamiento
+    fecha=dia+"/"+mes+"/"+anio;
+    //Zona de salida
+    System.out.println ("Organización con zonas diferenciadas en el código");
+    System.out.println ("La fecha es: " + fecha);
+  }
 }
 ```
 
@@ -1027,6 +1039,8 @@ public class Repetitiva_For {
 }
 ```
 
+
+
 ## `while`
 
 Observa el siguiente código java y podrás analizar un ejemplo de utilización del bucle `while` para la impresión por pantalla de la tabla de multiplicar del siete. Lee atentamente los comentarios incluidos en el código, pues aclaran algunas cuestiones interesantes sobre este bucle. Como podrás comprobar, el resultado de este bucle es totalmente equivalente al obtenido utilizando el bucle for.
@@ -1178,6 +1192,12 @@ public class EtiquetasSalto {
 }
 ```
 
+
+
+
+
+
+
 ## Sentencia `return`
 
 En el siguiente archivo java encontrarás el código de un programa que obtiene la suma de dos números, empleando para ello un método sencillo que retorna el valor de la suma de los números que se le han pasado como parámetros.
@@ -1219,6 +1239,10 @@ public class Sentencia_Return {
     }
 }
 ```
+
+
+
+
 
 ## Excepciones
 

@@ -1,4 +1,17 @@
 ---
+<<<<<<< HEAD
+unit: UD02
+title: Utilización de Objetos y Clases
+language: ES
+author: Arturo BC
+subject: Programación
+keywords: [PROG, 2022, Programación, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url: ${filename}/../
+typora-copy-images-to: ${filename}/../assets
+=======
     unit: UD02
     title: Utilización de Objetos y Clases
     language: ES
@@ -11,6 +24,7 @@
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
     imgcover:./assets/cover.png
+>>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 ---
 
 [toc]
@@ -59,7 +73,7 @@ En este contexto, un objeto de software es una representación de un objeto del 
 
 > Un objeto es un conjunto de datos con las operaciones definidas para ellos. Los objetos tienen un <u>estado</u> y un <u>comportamiento</u>.
 
-Por tanto, estudiando los objetos que están presentes en un problema podemos dar con la solución a dicho problema. Los objetos tienen unas **características** fundamentales que los distinguen:
+Por tanto, estudiando los objetos que están presentes en un problema podemos dar con la solución a este. Los objetos tienen unas **características** fundamentales que los distinguen:
 
 - **Identidad**. Es la característica que permite diferenciar un objeto de otro. De esta manera, aunque dos objetos sean exactamente iguales en sus atributos, son distintos entre sí. Puede ser una dirección de memoria, el nombre del objeto o cualquier otro elemento que utilice el lenguaje para distinguirlos. Por ejemplo, dos vehículos que hayan salido de la misma cadena de fabricación y sean iguales aparentemente, son distintos porque tienen un código que los identifica.
 - **Estado**. El estado de un objeto viene determinado por una serie de parámetros o **atributos** que lo describen, y los valores de éstos. Por ejemplo, si tenemos un objeto *Coche*, el estado estaría definido por atributos como `Marca`, `Modelo`, `Color`, `Cilindrada`, etc.
@@ -77,7 +91,7 @@ Como acabamos de ver todo objeto tiene un estado y un comportamiento. Concretand
 
 La idea principal es que el objeto reúne en una sola entidad los datos y las operaciones, y para acceder a los datos privados del objeto debemos utilizar los métodos que hay definidos para ese objeto.
 
-> ***La única forma de manipular la información del objeto es a través de sus métodos***. Es decir, si queremos saber el valor de algún atributo, tenemos que utilizar el método que nos muestre el valor de ese atributo. De esta forma, evitamos que métodos externos puedan alterar los datos del objeto de manera inadecuada. Se dice que los datos y los métodos están encapsulados dentro del objeto.
+> ***La única forma de manipular la información del objeto es a través de sus métodos***; si queremos saber el valor de algún atributo, tenemos que utilizar el método que nos muestre el valor de ese atributo. Así, evitamos que métodos externos puedan alterar los datos del objeto de manera inadecuada. Se dice que los datos y los métodos están encapsulados dentro del objeto.
 
 ### Atributos
 
@@ -238,10 +252,16 @@ Las instancias u objetos tienen un tiempo de vida determinado. Cuando un objeto 
 A la vista de lo anterior, podemos concluir que los objetos tienen un ciclo de vida, en el cual podemos distinguir las siguientes fases:
 
 - **Creación**, donde se hace la reserva de memoria e inicialización de atributos.
+
 - **Manipulación**, que se lleva a cabo cuando se hace uso de los atributos y métodos del objeto.
+
 - **Destrucción**, eliminación del objeto y liberación de recursos.
 
+<<<<<<< HEAD
+  
+=======
 
+>>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 
 ## Creación
 

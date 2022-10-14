@@ -1,4 +1,17 @@
 ---
+<<<<<<< HEAD
+unit: UD02
+title: Ejercicios
+language: ES
+author: Arturo BC
+subject: Programación
+keywords: [PROG, 2022, Programación, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url: ${filename}/../
+typora-copy-images-to: ${filename}/../assets
+=======
     unit: UD02
     title: Ejercicios
     language: ES
@@ -11,6 +24,7 @@
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
     imgcover:./assets/cover.png
+>>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 ---
 [toc]
 
@@ -298,11 +312,11 @@
 
 # Ejercicios
 
-> Estos ejercicios utilizan la interfaz gráfica a la que dedicaremos más tiempo hacia finales de curso. De momento con entender algunos conceptos muy básicos de como dibujar elementos gráficos en una ventana podemos intentar resolverlos usando los conceptos de objetos, clases, herencia, métodos, etcétera que hemos visto en teoría.
+> Estos ejercicios utilizan la interfaz gráfica a la que dedicaremos más tiempo hacia finales de curso. De momento con entender algunos conceptos muy básicos de cómo dibujar elementos gráficos en una ventana podemos intentar resolverlos usando los conceptos de objetos, clases, herencia, métodos, etcétera que hemos visto en teoría.
 >
 > El primero está resuelto y comentado para que te ayude a resolver el resto por tu cuenta o con la ayuda del docente.
 
-1.     **Ejercicio 1** - (*LlenarConCirculo*) Crear una pizarra cuadrada y dibujar en ella un círculo que la ocupe por completo.
+1.     **Ejercicio 1** - **RESUELTO** - (*LlenarConCirculo*) Crear una pizarra cuadrada y dibujar en ella un círculo que la ocupe por completo.
 
     ```java
     //importaciones necesarias para los ejercicios, no necesitas más.
@@ -317,65 +331,65 @@
     */
     public class LlenarConCirculo extends JPanel {
     
-        @Override
-        public void paint(Graphics g) {
-            //Fijamos el color que tendrá la figura
-            g.setColor(Color.RED);
-            /*
-              Dibujamos un ovalo relleno fijando las 4 esquinas que lo delimitan:
-              - x1, y1, x2, y2
-              En nuestro caso además hacemos uso de la función reflexiva
-              this.getWidth() y this.getHeight() para conocer la anchura y altura
-              (respectivamente) de nuestra ventana.
-            */        
-            g.fillOval(0, 0, this.getWidth(), this.getHeight());
-            /* 
-              Otras funciones disponibles para dibujar son:
-              - fill3DRect(int x, int y, int width, int height, boolean raised)
-                Paints a 3-D highlighted rectangle filled with the current color.
-              - fillArc(int x, int y, int width, int height, int startAngle, int arcAngle)
-                Fills a circular or elliptical arc covering the specified rectangle.
-              - fillOval(int x, int y, int width, int height)
-                Fills an oval bounded by the specified rectangle with the current color.
-              - fillPolygon(int[] xPoints, int[] yPoints, int nPoints)
-                Fills a closed polygon defined by arrays of x and y coordinates.
-              - fillPolygon(Polygon p)
-                Fills the polygon defined by the specified Polygon object with the graphics 
-                context's current color.
-              - fillRect(int x, int y, int width, int height)
-                Fills the specified rectangle.
-              - fillRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight)
-                Fills the specified rounded corner rectangle with the current color.                
-              - fill3DRect(int x, int y, int width, int height, boolean raised)
-                Paints a 3-D highlighted rectangle filled with the current color.
-              - fillArc(int x, int y, int width, int height, int startAngle, int arcAngle)
-                Fills a circular or elliptical arc covering the specified rectangle.
-              - fillOval(int x, int y, int width, int height)
-                Fills an oval bounded by the specified rectangle with the current color.
-              - fillPolygon(int[] xPoints, int[] yPoints, int nPoints)
-                Fills a closed polygon defined by arrays of x and y coordinates.
-              - fillPolygon(Polygon p)
-                Fills the polygon defined by the specified Polygon object with the graphics 
-                context's current color.
-              - fillRect(int x, int y, int width, int height)
-                Fills the specified rectangle.
-              - fillRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight)
-                Fills the specified rounded corner rectangle with the current color.            - 
-            */
-        }
+      @Override
+      public void paint(Graphics g) {
+        //Fijamos el color que tendrá la figura
+        g.setColor(Color.RED);
+        /*
+          Dibujamos un ovalo relleno fijando las 4 esquinas que lo delimitan:
+          - x1, y1, x2, y2
+          En nuestro caso además hacemos uso de la función reflexiva
+          this.getWidth() y this.getHeight() para conocer la anchura y altura
+          (respectivamente) de nuestra ventana.
+        */        
+        g.fillOval(0, 0, this.getWidth(), this.getHeight());
+        /* 
+          Otras funciones disponibles para dibujar son:
+          - fill3DRect(int x, int y, int width, int height, boolean raised)
+            Paints a 3-D highlighted rectangle filled with the current color.
+          - fillArc(int x, int y, int width, int height, int startAngle, int arcAngle)
+            Fills a circular or elliptical arc covering the specified rectangle.
+          - fillOval(int x, int y, int width, int height)
+            Fills an oval bounded by the specified rectangle with the current color.
+          - fillPolygon(int[] xPoints, int[] yPoints, int nPoints)
+            Fills a closed polygon defined by arrays of x and y coordinates.
+          - fillPolygon(Polygon p)
+            Fills the polygon defined by the specified Polygon object with the graphics 
+            context's current color.
+          - fillRect(int x, int y, int width, int height)
+            Fills the specified rectangle.
+          - fillRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight)
+            Fills the specified rounded corner rectangle with the current color.                
+          - fill3DRect(int x, int y, int width, int height, boolean raised)
+            Paints a 3-D highlighted rectangle filled with the current color.
+          - fillArc(int x, int y, int width, int height, int startAngle, int arcAngle)
+            Fills a circular or elliptical arc covering the specified rectangle.
+          - fillOval(int x, int y, int width, int height)
+            Fills an oval bounded by the specified rectangle with the current color.
+          - fillPolygon(int[] xPoints, int[] yPoints, int nPoints)
+            Fills a closed polygon defined by arrays of x and y coordinates.
+          - fillPolygon(Polygon p)
+            Fills the polygon defined by the specified Polygon object with the graphics 
+            context's current color.
+          - fillRect(int x, int y, int width, int height)
+            Fills the specified rectangle.
+          - fillRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight)
+            Fills the specified rounded corner rectangle with the current color.            - 
+          */
+      }
     
-        public static void main(String[] args) {
-            //Creamos una nueva ventana
-            JFrame MainFrame = new JFrame();
-            //Fijamos su tamaño en 300px de ancho por 300px de alto
-            MainFrame.setSize(300, 300);
-            //Creamos el objeto que vamos a dibujar con el método paint()
-            LlenarConCirculo circlePanel = new LlenarConCirculo();
-            //Añadimos el objeto recien creado a la ventana
-            MainFrame.add(circlePanel);
-            //Hacemos visible la ventana (con el dibujo)
-            MainFrame.setVisible(true);
-        }
+      public static void main(String[] args) {
+        //Creamos una nueva ventana
+        JFrame MainFrame = new JFrame();
+        //Fijamos su tamaño en 300px de ancho por 300px de alto
+        MainFrame.setSize(300, 300);
+        //Creamos el objeto que vamos a dibujar con el método paint()
+        LlenarConCirculo circlePanel = new LlenarConCirculo();
+        //Añadimos el objeto recien creado a la ventana
+        MainFrame.add(circlePanel);
+        //Hacemos visible la ventana (con el dibujo)
+        MainFrame.setVisible(true);
+      }
     }
     ```
     
@@ -394,25 +408,25 @@
     */
     public class TuClaseEjercicio extends JPanel {
     
-        @Override
-        public void paint(Graphics g) {
-    		// INSERTA TU CÓDIGO AQUÍ!!! <<--
-            //Fijamos el color que tendrá la figura
-            //Dibuja la/s figura/s que te pide el ejercicio
-        }
+      @Override
+      public void paint(Graphics g) {
+        // INSERTA TU CÓDIGO AQUÍ!!! <<--
+        //Fijamos el color que tendrá la figura
+        //Dibuja la/s figura/s que te pide el ejercicio
+      }
     
-        public static void main(String[] args) {
-            //Creamos una nueva ventana
-            JFrame MainFrame = new JFrame();
-            //Fijamos su tamaño en 300px de ancho por 300px de alto
-            MainFrame.setSize(300, 300);
-            //Creamos el objeto que vamos a dibujar con el método paint()
-            LlenarConCirculo tuDibujo = new LlenarConCirculo();
-            //Añadimos el objeto recien creado a la ventana
-            MainFrame.add(tuDibujo);
-            //Hacemos visible la ventana (con el dibujo)
-            MainFrame.setVisible(true);
-        }
+      public static void main(String[] args) {
+        //Creamos una nueva ventana
+        JFrame MainFrame = new JFrame();
+        //Fijamos su tamaño en 300px de ancho por 300px de alto
+        MainFrame.setSize(300, 300);
+        //Creamos el objeto que vamos a dibujar con el método paint()
+        LlenarConCirculo tuDibujo = new LlenarConCirculo();
+        //Añadimos el objeto recien creado a la ventana
+        MainFrame.add(tuDibujo);
+        //Hacemos visible la ventana (con el dibujo)
+        MainFrame.setVisible(true);
+      }
     }
     ```
     

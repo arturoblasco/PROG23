@@ -1,4 +1,17 @@
 ---
+<<<<<<< HEAD
+unit: UD03
+title: Ejercicios
+language: ES
+author: Arturo BC
+subject: Programación
+keywords: [PROG, 2022, Programación, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url: ${filename}/../
+typora-copy-images-to: ${filename}/../assets
+=======
     unit: UD03
     title: Ejercicios
     language: ES
@@ -11,6 +24,7 @@
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
     imgcover:./assets/cover.png
+>>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 ---
 
 [toc]
@@ -24,20 +38,20 @@
    //Un programa que calcula descomptes.
    
    public class Descompte {
-       public static final float DESCOMPTE = 8;
-       public static final float COMPRA_MIN = 100;
+     public static final float DESCOMPTE = 8;
+     public static final float COMPRA_MIN = 100;
    
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.print("Quin és el preu del producte, en euros? ");
-           float preu = lector.nextFloat();
-           lector.nextLine();
-           if (preu >= COMPRA_MIN) {
-               float descompteFet = preu * DESCOMPTE / 100;
-               preu = preu - descompteFet;
-           }
-           System.out.println("El preu final per pagar és de " + preu + " euros.");
-       }
+     public static void main(String[] args) {
+       Scanner lector = new Scanner(System.in);
+       System.out.print("Quin és el preu del producte, en euros? ");
+       float preu = lector.nextFloat();
+       lector.nextLine();
+       if (preu >= COMPRA_MIN) {
+         float descompteFet = preu * DESCOMPTE / 100;
+         preu = preu - descompteFet;
+         }
+       System.out.println("El preu final per pagar és de " + preu + " euros.");
+     }
    }
    ```
 
@@ -48,21 +62,21 @@
    
    public class Endevina {
    
-       public static final int VALOR_SECRET = 4;
+     public static final int VALOR_SECRET = 4;
    
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.println("Comencem el joc.");
-           System.out.print("Endevina el valor enter, entre 0 i 10: ");
-           int valorUsuari = lector.nextInt();
-           lector.nextLine();
-           if (VALOR_SECRET == valorUsuari) {
-               System.out.println("Exacte! Era " + VALOR_SECRET + ".");
-           } else {
-               System.out.println("T’has equivocat!");
-           }
-           System.out.println("Hem acabat el joc.");
+     public static void main(String[] args) {
+       Scanner lector = new Scanner(System.in);
+       System.out.println("Comencem el joc.");
+       System.out.print("Endevina el valor enter, entre 0 i 10: ");
+       int valorUsuari = lector.nextInt();
+       lector.nextLine();
+       if (VALOR_SECRET == valorUsuari) {
+         System.out.println("Exacte! Era " + VALOR_SECRET + ".");
+       } else {
+         System.out.println("T’has equivocat!");
        }
+       System.out.println("Hem acabat el joc.");
+     }
    }
    ```
 
@@ -75,28 +89,28 @@
    
    public class EndevinaControlErrorsEntrada {
    
-       public static final int VALOR_SECRET = 4;
+     public static final int VALOR_SECRET = 4;
    
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.println("Comencem el joc.");
-           System.out.print("Endevina el valor enter, entre 0 i 10: ");
-           boolean tipusCorrecte = lector.hasNextInt();
-           if (tipusCorrecte) {
-               //S’ha escrit un enter correctament. Ja es pot llegir.
-               int valorUsuari = lector.nextInt();
-               lector.nextLine();
-               if (VALOR_SECRET == valorUsuari) {
-                   System.out.println("Exacte! Era " + VALOR_SECRET + ".");
-               } else {
-                   System.out.println("T’has equivocat!");
-               }
-               System.out.println("Hem acabat el joc.");
-           } else {
-               //No s’ha escrit un enter.
-               System.out.println("El valor introduït no és un enter.");
-           }
+     public static void main(String[] args) {
+       Scanner lector = new Scanner(System.in);
+       System.out.println("Comencem el joc.");
+       System.out.print("Endevina el valor enter, entre 0 i 10: ");
+       boolean tipusCorrecte = lector.hasNextInt();
+       if (tipusCorrecte) {
+          //S’ha escrit un enter correctament. Ja es pot llegir.
+          int valorUsuari = lector.nextInt();
+          lector.nextLine();
+          if (VALOR_SECRET == valorUsuari) {
+              System.out.println("Exacte! Era " + VALOR_SECRET + ".");
+          } else {
+              System.out.println("T’has equivocat!");
+          }
+          System.out.println("Hem acabat el joc.");
+       } else {
+          //No s’ha escrit un enter.
+          System.out.println("El valor introduït no és un enter.");
        }
+     }
    }
    ```
 
@@ -107,18 +121,18 @@
    
    public class Linia {
    
-       public static void main(String[] args) {
-           //Inicialitzem un comptador
-           int i = 0;
-           //Ja hem fet això 100 cops?
-           while (i < 100) {
-               System.out.print("−");
-               //Ho hem fet un cop, sumem 1 al comptador
-               i = i + 1;
-           }
-           //Forcem un salt de línia
-           System.out.println();
+     public static void main(String[] args) {
+       //Inicialitzem un comptador
+       int i = 0;
+       //Ja hem fet això 100 cops?
+       while (i < 100) {
+         System.out.print("−");
+         //Ho hem fet un cop, sumem 1 al comptador
+         i = i + 1;
        }
+       //Forcem un salt de línia
+       System.out.println();
+     }
    }
    ```
 
@@ -128,19 +142,19 @@
    import java.util.Scanner;
    public class TaulaMultiplicar {
    
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.print("Quina taula de multiplicar vols? ");
-           int taula = lector.nextInt();
-           lector.nextLine();
-           int i = 1;
-           while (i <= 10) {
-               int resultat = taula * i;
-               System.out.println(taula + " * " + i + " = " + resultat);
-               i = i + 1;
-           }
-           System.out.println("Aquesta ha estat la taula del " + taula);
+     public static void main(String[] args) {
+       Scanner lector = new Scanner(System.in);
+       System.out.print("Quina taula de multiplicar vols? ");
+       int taula = lector.nextInt();
+       lector.nextLine();
+       int i = 1;
+       while (i <= 10) {
+          int resultat = taula * i;
+          System.out.println(taula + " * " + i + " = " + resultat);
+          i = i + 1;
        }
+       System.out.println("Aquesta ha estat la taula del " + taula);
+     }
    }
    ```
 
@@ -151,20 +165,20 @@
    
    public class Modul {
    
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.print("Quin és el dividend? ");
-           int dividend = lector.nextInt();
-           lector.nextLine();
-           System.out.print("Quin és el divisor? ");
-           int divisor = lector.nextInt();
-           lector.nextLine();
-           while (dividend >= divisor) {
-               dividend = dividend - divisor;
-               System.out.println("Bucle: per ara el dividend val " + dividend + ".");
-           }
-           System.out.println("El resultat final és " + dividend + ".");
-       }
+     public static void main(String[] args) {
+        Scanner lector = new Scanner(System.in);
+        System.out.print("Quin és el dividend? ");
+        int dividend = lector.nextInt();
+        lector.nextLine();
+        System.out.print("Quin és el divisor? ");
+        int divisor = lector.nextInt();
+        lector.nextLine();
+        while (dividend >= divisor) {
+           dividend = dividend - divisor;
+            System.out.println("Bucle: per ara el dividend val " + dividend + ".");
+        }
+        System.out.println("El resultat final és " + dividend + ".");
+     }
    }
    ```
 

@@ -1,4 +1,17 @@
 ---
+<<<<<<< HEAD
+unit: UD00
+title: Ejercicios
+language: ES
+author: Arturo BC
+subject: Programación
+keywords: [Markdown, PROG, 2022, Programación]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url: ${filename}/../
+typora-copy-images-to: ${filename}/../assets
+=======
     unit: UD00
     title: Ejercicios Git
     language: ES
@@ -11,6 +24,7 @@
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
     imgcover:./assets/cover.png
+>>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 ---
 
 [toc]
@@ -607,6 +621,20 @@ Es una convención ampliamente seguida, así que respétala.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Comprobando la subida
 
 Volvemos a la página de GitHub y la actualizamos. Nos aparecerá algo semejante a esto:
@@ -631,6 +659,8 @@ Así que ejecutaremos dicho comando desde nuestro repositorio local. Refrescarem
 
 
 
+
+
 ## Examinando commits y releases en GitHub
 
 **Pulsa en commits** y haz una captura de pantalla. Por tu cuenta puedes examinar cada uno de los commits.
@@ -639,8 +669,6 @@ Así que ejecutaremos dicho comando desde nuestro repositorio local. Refrescarem
 
 
 > *NOTA: No borrar los repositorio local ni repositorio remoto. Los volveremos a utilizar en la siguiente actividad.*
-
-
 
 
 
@@ -977,6 +1005,8 @@ La clave anterior puede usarse para cualquiera de nuestros repositorios. Para ha
 Si, por cualquier motivo, alguien accediera a nuestro PC y cogiera la clave privada, bastaría con eliminar esta clave pública de GitHub y al ladrón no le serviría de nada nuestra clave privada.
 
 ![github list ssh keys](assets/github-list-ssh-keys.png)
+
+
 
 
 
@@ -1425,6 +1455,10 @@ De esta manera perdemos todas las modificaciones que hubiésemos realizado en di
 
 
 
+
+
+
+
 ## Fusionando ramas locales 
 
 Vamos a integrar en la rama `master` los cambios realizados en `rama1`, `licencia` y `autor`.
@@ -1571,9 +1605,7 @@ Observa como las ramas están actualizadas y sincronizadas con el repositorio re
 
 Para ver un gráfico de las ramas en el repositorio remoto pulsamos en **Insights**, **Network**.
 
-![github insights network](assets/github-insights-network2.png)
-
-
+<img src="assets/github-insights-network2.png" alt="github insights network" style="zoom:67%;" />
 
 ## Tarea propuesta para el alumno/a
 
@@ -1584,7 +1616,5 @@ Como tarea, se propone
 - integrar los cambios de ambas ramas en la rama `master`.
 
 > *NOTA: No borrar los repositorio local ni repositorio remoto. Los volveremos a utilizar en la siguiente actividad.*
-
-
 
 **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad11tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**

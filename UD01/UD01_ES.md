@@ -1,4 +1,17 @@
 ---
+<<<<<<< HEAD
+unit: UD01
+title: Elementos de un programa informático
+language: ES
+author: Arturo BC
+subject: Programación
+keywords: [PROG, 2022, Programación, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url: ${filename}/../
+typora-copy-images-to: ${filename}/../assets
+=======
     unit: UD01
     title: Elementos de un programa informático
     language: ES
@@ -11,6 +24,7 @@
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
     imgcover:./assets/cover.png
+>>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 ---
 [TOC]
 
@@ -44,6 +58,7 @@ Cada disciplina dispone de estrategias específicas para resolver problemas de s
   *Identificar el problema*, *definir y presentar el problema*, *explorar las estrategias viables*, *avanzar en las estrategias* y *lograr la solución y volver para evaluar los efectos de las actividades* (Bransford & Stein, 1984). El matemático Polya (1957) también formuló un método heurístico para resolver problemas que se aproxima mucho al ciclo utilizado para programar computadores. <u>A lo largo de esta Guía se utilizará este método propuesto por Polya</u>.
 
 * **Algoritmos**: Consiste en aplicar adecuadamente una serie de pasos detallados que aseguran una solución correcta. Por lo general, cada algoritmo es específico de un dominio del conocimiento. La programación de computadores se apoya en este método.
+
 * **Modelo de procesamiento de información**: El modelo propuesto por Newell y Simon (1972) se basa en plantear varios momentos para un problema (estado inicial, estado final y vías de solución). Las posibles soluciones avanzan por subtemas y requieren que se realicen operaciones en cada uno de ellos.
 
 * **Análisis de medios y fines**: Se funda en la comparación del estado inicial con la meta que se pretende alcanzar para identificar las diferencias.
@@ -57,6 +72,8 @@ Cada disciplina dispone de estrategias específicas para resolver problemas de s
 * **Sistemas de producción**: Se basa en la aplicación de una red de secuencias de condición y acción (Anderson, 1990). 
 
 * **Pensamiento lateral**: Se apoya en el pensamiento creativo, formulado por Edwar de Bono (1970), el cual difiere completamente del pensamiento lineal (lógico). El pensamiento lateral requiere que se exploren y consideren la mayor cantidad posible de alternativas para solucionar un problema. Su importancia para la educación radica en permitir que el estudiante: explore (escuche y acepte puntos de vista diferentes, busque alternativas); avive (promueva el uso de la fantasía y del humor); libere (use la discontinuidad y escape de ideas preestablecidas); y contrarreste la rigidez (vea las cosas desde diferentes ángulos y evite dogmatismos). Este es un método adecuado cuando el problema que se desea resolver no requiere información adicional, sino un reordenamiento de la información disponible; cuando hay ausencia del problema y es necesario apercibirse de que hay un problema; o cuando se debe reconocer la posibilidad de perfeccionamiento y redefinir esa posibilidad como un problema (De Bono, 1970).
+
+  
 
   Ejemplos:
 
@@ -73,7 +90,7 @@ Cada disciplina dispone de estrategias específicas para resolver problemas de s
     **Respuesta**: Debemos pinchar el globo estando desinflado.
 
   * **El dilema del bar**. Un hombre entra a un bar y le pide al barman un vaso de agua. El barman busca debajo de la barra y de golpe apunta al hombre con un arma. Este último da las gracias y se marcha. ¿Qué acaba de ocurrir?
-
+  
     **Respuesta**: El barman se percató de que el hombre tenía hipo, y decide curárselo dándole un buen susto.
 
 Como se puede apreciar, hay muchas estrategias para solucionar problemas; sin embargo, esta Guía se enfoca principalmente en dos de estas estrategias: <u>Heurística</u> y <u>Algorítmica</u>.
@@ -164,11 +181,15 @@ Ejemplo: *Dividir.*
 
 
 
+
+
 ## Algoritmos
 
 Dado un problema P, un **algoritmo** es un conjunto de reglas o pasos que indican cómo resolver P en un tiempo finito.
 
 Secuencias de reglas básicas que utilizamos para realizar operaciones aritméticas: sumas, restas, productos y divisiones.
+
+
 
 Ejemplo: *Algoritmo para desayunar.*
 
@@ -213,6 +234,10 @@ Los métodos más usuales para representar algoritmos son los **diagramas de flu
 Los símbolos más utilizados son:
 
 <img src="assets/diagrama_flujo.png" alt="Símbolos diagrama de flujo" style="zoom:80%;" />
+
+
+
+
 
 Ejemplo: *Mostrar dos números ordenados de menor a mayor*.
 
@@ -333,6 +358,12 @@ Las líneas no tendrán, en ningún caso, demasiados caracteres que impidan que 
 - La nueva línea deberá alinearse con un sangrado lógico, respecto al punto de ruptura.
 
 Unos ejemplos, para comprender mejor:
+
+
+
+
+
+
 
 *Dividir tras una coma*:
 
@@ -625,8 +656,6 @@ El calificador final indica que es constante. A continuación indicaremos el tip
 final double IVA = 0.21;
 ```
 
-
-
 Los **literales** pueden ser de tipo simple, null o string, como por ejemplo *230*, *null* o "*Java*".
 
 Respecto a los literales existen unos caracteres especiales que se representan utilizando secuencias de escape:
@@ -679,6 +708,10 @@ Los **Operadores Relacionales** permiten evaluar (la respuesta es un booleano: s
 | >=       | A >= B | A mayor o igual que B |
 | !=       | A != B | A distinto de B       |
 | ==       | A == B | A igual a B           |
+
+
+
+
 
 Por ejemplo:
 
@@ -1083,7 +1116,7 @@ public class Mostrarinformacion {
         entero = sc.nextInt();
         
         System.out.print("Muestra un número flotante: ");
-        decimal = sc.nextFloat(); //recordar que tenemos que poner coma para el decimal
+        decimal = sc.nextFloat(); //recordar poner coma para el decimal
         
         System.out.print("Muestra un texto o cadena: ");
         cadena = sc.next(); //solo mostrará la primera palabra
@@ -1132,24 +1165,24 @@ En el siguiente ejemplo podemos observar mejor lo expuesto:
 import javax.swing.JOptionPane;
 
 public class Mostrarinformacion {
-    public static void main (String[] args){
-        String cadena;
-        int entero;
-        char letra;
-        double decimal;
+  public static void main (String[] args){
+    String cadena;
+    int entero;
+    char letra;
+    double decimal;
 
-        // guardar cadena y convertir a valores y tipos correspondientes:
-        cadena = JOptionPane.showInputDialog ("texto en descripción de ventana:");
-        entero = Integer.parseInt( JOptionPane.showInputDialog ("inserta un número entero:")); // convertir la cadena a otro tipo; como entero
-        decimal= Double.parseDouble( JOptionPane.showInputDialog ("inserta un número decimal:"));
-        letra= JOptionPane.showInputDialog ("inserta una letra:").charAt(0);
+    // guardar cadena y convertir a valores y tipos correspondientes:
+    cadena = JOptionPane.showInputDialog ("texto en descripción de ventana:");
+    entero = Integer.parseInt( JOptionPane.showInputDialog ("inserta un número entero:")); // convertir la cadena a otro tipo; como entero
+    decimal= Double.parseDouble( JOptionPane.showInputDialog ("inserta un número decimal:"));
+    letra= JOptionPane.showInputDialog ("inserta una letra:").charAt(0);
 
-        // mostrar en ventana los valores:
-        JOptionPane.showMessageDialog(null, "la cadena es: "+cadena);
-        JOptionPane.showMessageDialog(null, "el número entero es: "+entero);
-        JOptionPane.showMessageDialog(null, "la número decimal es: "+decimal);
-        JOptionPane.showMessageDialog(null, "la letra es: "+letra);       
-    }
+    // mostrar en ventana los valores:
+    JOptionPane.showMessageDialog(null, "la cadena es: "+cadena);
+    JOptionPane.showMessageDialog(null, "el número entero es: "+entero);
+    JOptionPane.showMessageDialog(null, "la número decimal es: "+decimal);
+    JOptionPane.showMessageDialog(null, "la letra es: "+letra);       
+  }
 }
 ````
 
@@ -1233,6 +1266,14 @@ public class Mostrarinformacion {
 
      <img src="/assets/java_windows5.png" style="zoom:80%;" />
 
+
+
+
+
+
+
+
+
 ## Visual Studio Code. Instalar extensión Java Extension Pack
 
 Abrimos Visual Studio Code y, en extensiones, instalamos la extensión **Java Extension Pack**:
@@ -1255,34 +1296,34 @@ Borramos el contenido del fichero e introducimos el siguiente código:
 
 ````java
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "JC",
-			"command": "java",
-			"windows": {
-				"command": "C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\javac.exe"
-			},
-			"args": [
-				"${file}"
-			],
-			"problemMatcher": [],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		},
-		{
-			"label": "JR",
-			"command": "java",
-			"windows": {
-				"command": "C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\java.exe"
-			},
-			"args": [
-				"${fileBasenameNoExtension}"
-			]
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "JC",
+      "command": "java",
+      "windows": {
+		  "command": "C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\javac.exe"
+      },
+      "args": [
+		  "${file}"
+      ],
+      "problemMatcher": [],
+      "group": {
+		  "kind": "build",
+		  "isDefault": true
+	  }
+	},
+	{
+      "label": "JR",
+      "command": "java",
+      "windows": {
+		  "command": "C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\java.exe"
+      },
+      "args": [
+		  "${fileBasenameNoExtension}"
+      ]
+	}
+  ]
 }
 ````
 
