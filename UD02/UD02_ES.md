@@ -258,7 +258,7 @@ A la vista de lo anterior, podemos concluir que los objetos tienen un ciclo de v
 - **Destrucción**, eliminación del objeto y liberación de recursos.
 
 <<<<<<< HEAD
-  
+
 =======
 
 >>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
@@ -893,7 +893,7 @@ Enunciado:
 >   desplazamiento = \sqrt{posX · posX + posY · posY}
 >   $$
 >
-> Diseña un programa que utilice la clase `Pajaro`, cree una instancia de dicha clase y ejecute sus métodos.
+> Diseña un programa que utilice la clase `Pajaro`, crea una instancia de dicha clase y ejecute sus métodos.
 
 Lo primero que debemos hacer es crear la clase `Pajaro`, con sus métodos y atributos. De acuerdo con los datos que tenemos, el código de la clase sería el siguiente:
 
