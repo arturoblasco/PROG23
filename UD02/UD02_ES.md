@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 unit: UD02
 title: Utilización de Objetos y Clases
 language: ES
@@ -11,20 +10,6 @@ header: ${unit}: ${title} - ${subject} (ver: ${today})
 footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url: ${filename}/../
 typora-copy-images-to: ${filename}/../assets
-=======
-    unit: UD02
-    title: Utilización de Objetos y Clases
-    language: ES
-    author: Arturo BC [arturoblasco@iesmre.com]
-    subject: Programación
-    keywords: [PRG, 2022, Programacion, Java]
-    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-    header: ${unit}: ${title} - ${subject} (${today})
-    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-    typora-root-url:${filename}/../
-    typora-copy-images-to:${filename}/../assets
-    imgcover:./assets/cover.png
->>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 ---
 
 [toc]
@@ -257,11 +242,7 @@ A la vista de lo anterior, podemos concluir que los objetos tienen un ciclo de v
 
 - **Destrucción**, eliminación del objeto y liberación de recursos.
 
-<<<<<<< HEAD
-
-=======
-
->>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
+  
 
 ## Creación
 
