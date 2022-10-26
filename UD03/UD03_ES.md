@@ -1,17 +1,4 @@
 ---
-<<<<<<< HEAD
-unit: UD03
-title: Estructuras de control y Excepciones
-language: ES
-author: Arturo BC
-subject: Programación
-keywords: [PROG, 2022, Programación, Java]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${unit}: ${title} - ${subject} (ver: ${today})
-footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url: ${filename}/../
-typora-copy-images-to: ${filename}/../assets
-=======
     unit: UD03
     title: Estructuras de control y Excepciones
     language: ES
@@ -24,7 +11,6 @@ typora-copy-images-to: ${filename}/../assets
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
     imgcover:./assets/cover.png
->>>>>>> 976ff0d06f7040cf494ba7ea57a7172ca0091835
 ---
 [toc]
 
@@ -202,6 +188,17 @@ if (expresión-lógica)
 
 Si la evaluación de la expresión‐lógica ofrece un resultado verdadero, se ejecuta la sentencia1 o bien el bloque de sentencias asociado. Si el resultado de dicha evaluación es falso, no se ejecutará ninguna instrucción asociada a la estructura condicional.
 
+**Ejemplo:**
+
+````java
+int edad = 22;
+if (edad > 18) {
+    System.out.printf("%d es mayor que 18", edad);
+}
+````
+
+
+
 **Estructura `if` de doble alternativa.**
 
 ```java
@@ -226,6 +223,16 @@ if (expresión-lógica){
 Si la evaluación de la expresión‐lógica ofrece un resultado verdadero, se ejecutará la primera sentencia o el primer bloque de sentencias. Si, por el contrario, la evaluación de la expresión‐lógica ofrece un resultado falso, no se ejecutará la primera sentencia o el primer bloque y sí se ejecutará la segunda sentencia o el segundo bloque.
 
 > Haciendo una interpretación cercana al pseudocódigo tendríamos que si se cumple la condición (expresión lógica), se ejecutará un conjunto de instrucciones y si no se cumple, se ejecutará otro conjunto de instrucciones. 
+
+**Ejemplo:**
+
+````java
+if (temperatura > 25) {
+    System.out.println("Debemos abrigarnos!");
+} else {
+    System.out.println("Voy a ponerme pantalón corto.");
+}
+````
 
 Hay que tener en cuenta que la cláusula `else` de la sentencia `if` no es obligatoria. En algunos casos no necesitaremos utilizarla, pero sí se recomienda cuando es necesario llevar a cabo alguna acción en el caso de que la expresión lógica no se cumpla.
 
@@ -269,6 +276,38 @@ if (condicion1) {
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+**Ejemplo:**
+
+````java
+if (temperatura > 25) {
+    // Si la temperatura es mayor que 25 ...
+    System.out.println("A la playa!!!");
+} else if (temperatura > 15) {
+    // si es mayor que 15 y no es mayor que 25 ..
+    System.out.println("A la montaña!!!");
+} else if (temperatura < 5 && nevando) {
+    // si es menor que 5 y esta nevando y no es mayor que 15 ni mayor que 25
+    System.out.println("A esquiar!!!");
+} else {
+    // si la tempera  no es mayor que 25 ni que 15 ni menor que 5 si esta nevando
+    System.out.println("A descansar... zZz");
+}
+````
+
+
+
 ## Estructura `switch`
 
 ¿Qué podemos hacer cuando nuestro programa debe elegir entre más de dos alternativas? Una posible solución podría ser emplear estructuras if anidadas, aunque no siempre esta solución es la más eficiente. Cuando estamos ante estas situaciones podemos utilizar la estructura de selección múltiple ``switch``. En la siguiente tabla se muestra tanto la sintaxis, como el funcionamiento de esta estructura.
@@ -309,6 +348,52 @@ switch (expresion) {
 - La cláusula *default* puede no existir, y por tanto, si ningún case ha sido activado finalizaría el switch.
 - Cada cláusula *case* puede llevar asociadas una o varias sentencias, sin necesidad de delimitar dichos bloques por medio de llaves.
 - En el momento en el que el resultado de la evaluación de la expresión coincide con alguno de los valores asociados a las cláusulas *case*, se ejecutarán todas las instrucciones asociadas hasta la aparición de una sentencia break de ruptura (la sentencia break se analizará en epígrafes posteriores).
+
+**Ejemplo:**
+
+````java
+int numeroMes = 4;
+String estacion = "", mes = "";
+
+switch (numeroMes) {
+  case 12:
+    mes = "Diciembre";
+  case 1:
+    mes = "Enero";
+  case 2:
+    mes = "Febrero";
+    estacion = "Invierno";
+    break;
+  case 3:
+    mes = "Marzo";
+  case 4:
+    mes = "Abril";
+  case 5:
+    mes = "Mayo";
+    estacion = "Primavera";
+    break;
+  case 6:
+    mes = "Junio";
+  case 7:
+    mes = "Julio";
+  case 8:
+    mes = "Agosto";
+    estacion = "Verano";
+    break;
+  case 9:
+    mes = "Septiembre";
+  case 10:
+    mes = "Octubre";
+  case 11:
+    mes = "Noviembre";
+    estacion = "Otoño";
+    break;
+}
+
+System.out.printf("El mes de %s se encuentra en la estación %s.", mes, estacion);
+````
+
+
 
 ### Expresiones switch mejoradas
 
@@ -420,6 +505,15 @@ Donde...:
 - `condición` es una expresión que evaluará la variable de control. Mientras la condición sea falsa, el cuerpo del bucle estará repitiéndose. Cuando la condición se cumpla, terminará la ejecución del bucle.
 - `iteración` indica la manera en la que la variable de control va cambiando en cada iteración del bucle. Podrá ser mediante incremento o decremento, y no solo de uno en uno.
 
+**Ejemplo:**
+
+```java
+for(int i=1;i<=1000;i++)
+    System.out.printf("\n%d)\t No comeré, beberé ni escribiré mensajes por móvil en clase.", i);
+```
+
+
+
 ## Estructura `for`/`in`
 
 Junto a la estructura `for`, `for`/`in` también se considera un bucle controlado por contador. Este bucle es una mejora incorporada en la versión 5.0. de Java. 
@@ -490,13 +584,27 @@ En el momento en el que la condición no se cumpla, el control del flujo del pro
 
 La condición se evaluará siempre al principio, y podrá darse el caso de que las instrucciones contenidas en él no lleguen a ejecutarse nunca si no se satisface la condición de partida.
 
+**Ejemplo:**
+
+````java
+Scanner sc = new Scanner(System.in);
+int numero = sc.nextInt();
+
+while(numero <= 500) {
+    System.out.println("Ingresa otro número:");
+    numero = sc.nextInt();
+}
+````
+
+
+
 ## Estructura `do­ while`
 
 La segunda de las estructuras repetitivas controladas por sucesos es `do­ while`. En este caso, la pregunta que nos planteamos es la siguiente: ¿Qué podemos hacer si lo único que sabemos es que se han de ejecutar, **al menos una vez**, un conjunto de instrucciones y seguir repitiéndose hasta que se cumpla una determinada condición?.
 
 La característica fundamental de este tipo de estructura repetitiva estriba en ser útil en aquellos casos en los que las instrucciones que forman el cuerpo del bucle necesitan ser ejecutadas, al menos, una vez y repetir su ejecución hasta que la condición sea verdadera. Por tanto, en esta estructura repetitiva siempre se ejecuta el cuerpo del bucle una primera vez.
 
-Es imprescindible que en el interior del bucle se realice alguna acción que modifique la condición que controla la ejecución del mismo, en caso contrario estaríamos ante un bucle infinito.
+> Es imprescindible que en el interior del bucle se realice alguna acción que modifique la condición que controla la ejecución del mismo, en caso contrario estaríamos ante un bucle infinito.
 
 Sintaxis estructura `while` con una única sentencia:
 
@@ -522,11 +630,26 @@ El cuerpo del bucle se ejecuta la primera vez, a continuación se evaluará la c
 
 En ese momento el control del flujo del programa pasará a la siguiente instrucción que exista justo detrás del bucle do‐while. La condición se evaluará siempre después de una primera ejecución del cuerpo del bucle, por lo que no se dará el caso de que las instrucciones contenidas en él no lleguen a ejecutarse nunca.
 
+**Ejemplo:**
+
+````java
+Scanner sc = new Scanner(System.in);
+int numero;
+
+do {}
+    System.out.println("Ingresa un numero: ");
+    numero = sc.nextInt();
+}
+while(numero <= 500);
+````
+
+
+
 ## Bucle infinito
 
 Uno de los errores más comunes al implementar cualquier tipo de bucle es que nunca pueda salir, es decir, el bucle se ejecuta durante un número infinito de veces. Esto sucede cuando la condición falla por alguna razón.
 
-Ejemplo 1:
+**Ejemplo 1:**
 
 ```java
 // bucle infinito porque la condición no es apta
@@ -536,7 +659,8 @@ for (int i = 5; i != 0; i -= 2) {
 }
 ```
 
-Ejemplo 2:
+**Ejemplo 2:**
+
 ```java
 int x = 5; 
 // bucle infinito porque la actualización
@@ -545,9 +669,9 @@ while (x == 5) {
 	System.out.println("En el bucle");
 }
 ```
-Otro inconveniente es que puede estar agregando algo en su objeto de colección a través de un bucle y puede **quedarse sin memoria**. Si intenta ejecutar el siguiente programa, después de un tiempo, se producirá una excepción de falta de memoria. 
+Otro inconveniente es que puede estar agregando algo en su objeto de colección a través de un bucle y puede **quedarse sin memoria**. Si intentas ejecutar el siguiente programa, después de un tiempo, se producirá una excepción de falta de memoria. 
 
-Ejemplo 3:
+**Ejemplo 3:**
 
 ```java
 /* Se hace uso de la colección ArrayList, pero de momento solo necesitamos saber que se comporta como un casillero al que vamos asignando elementos (que evidentemente ocupan memoria).*/
@@ -593,6 +717,32 @@ La sentencia `break` incidirá sobre las estructuras de control `switch`, `while
 
   Es decir, que `break` sirve para romper el flujo de control de un bucle, aunque no se haya cumplido la condición del bucle. Si colocamos un `break` dentro del código de un bucle, cuando se alcance el `break`, automáticamente se saldrá del bucle pasando a ejecutarse la siguiente instrucción inmediatamente después de él.
 
+**Ejemplo:**
+
+````java
+public class EjemploBreak {
+    public static void main(String args[]){
+        for (int i = 0; i < 10; i++) {
+            if(i == 6) {
+                break;
+            }
+            System.out.println("i: " + i);
+        }
+    }
+}
+````
+
+Salida:
+
+````java
+i: 0
+i: 1
+i: 2
+i: 3
+i: 4
+i: 5
+````
+
 La sentencia `continue` incidirá sobre las sentencias o estructuras de control `while`, `for` y `do while` del siguiente modo:
 
 - Si aparece una sentencia `continue` dentro de la secuencia de instrucciones de cualquiera de las sentencias anteriormente indicadas, dicha sentencia dará por terminada la iteración actual y se ejecuta una nueva iteración, evaluando de nuevo la expresión condicional del bucle.
@@ -600,6 +750,38 @@ La sentencia `continue` incidirá sobre las sentencias o estructuras de control 
 - Si aparece en el interior de un bucle anidado solo afectará a la sentencia de iteración más interna, el resto se ejecutaría de forma normal.
 
   Es decir, la sentencia `continue` forzará a que se ejecute la siguiente iteración del bucle, sin tener en cuenta las instrucciones que pudiera haber después del `continue`, y hasta el final del código del bucle.
+
+**Ejemplo:**
+
+````java
+public class EjemploContinueFor {
+    public static void main(String args[]){
+        
+        for (int i = 0; i < 10; i++) {
+            if(i == 6) {
+                continue;
+            }
+            System.out.println("i: " + i);
+        }
+    }
+}
+````
+
+Salida:
+
+````java
+i: 0
+i: 1
+i: 2
+i: 3
+i: 4
+i: 5
+i: 7
+i: 8
+i: 9
+````
+
+
 
 ## Etiquetas de salto
 
@@ -1311,3 +1493,4 @@ El bloque `finally`, se ejecutará tanto si `try` terminó correctamente, como s
 - [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
 - [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
 - [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
+
