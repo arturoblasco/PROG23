@@ -1,23 +1,23 @@
-package UD04;
+Ôªøpackage UD04;
 
 import java.util.Scanner;
 
 public class EjemploUD04 {
 
     public static void main(String[] args) {
-        //declaraciÛn
+        //declaraci√≥n
         double lluvia1[]; // lluvia1 es un array de double
         double[] lluvia2;  // lluvia2 es un array de double
 
-        //instanciaciÛn
+        //instanciaci√≥n
         lluvia1 = new double[31];
 
-        //declaraciÛn + instanciaciÛn
+        //declaraci√≥n + instanciaci√≥n
         double lluvia3[] = new double[31];
 
         // usamos un array para almacenar las edades de un grupo de personas
-        // la variable numPersonas contiene el n˙mero de personas del grupo
-        // y se asigna en tiempo de ejecuciÛn
+        // la variable numPersonas contiene el n√∫mero de personas del grupo
+        // y se asigna en tiempo de ejecuci√≥n
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduce cuantos elementos debe tener el array edad[]:");
         int numPersonas = teclado.nextInt();
@@ -33,12 +33,12 @@ public class EjemploUD04 {
         System.out.println("El componente [1] vale " + edad[1]);
         System.out.println("El componente [2] vale " + edad[2]);
 
-        //el Ìndice tambiÈn admite calculos/variables:
+        //el √≠ndice tambi√©n admite calculos/variables:
         int i = 3;
         edad[i] = edad[i + 1];
         edad[i + 2] = edad[i];
 
-        //InicializaciÛn
+        //Inicializaci√≥n
         int edad2[] = new int[10];
         edad2[0] = 25;
         edad2[1] = 10;
@@ -47,23 +47,23 @@ public class EjemploUD04 {
 
         int edad3[] = {25, 10, 23, 34, 65, 23, 1, 67, 54, 12};
 
-        //Ejemplo pr·ctico
+        //Ejemplo pr√°ctico
         System.out.println(nombreMes(3)); //marzo
 
-        //Paso de arrays como par·metros:
+        //Paso de arrays como par√°metros:
         int a = 1;
         int v[] = {1, 1, 1};
-        metodo(v, a); //Pasar un array como par·metro
+        metodo(v, a); //Pasar un array como par√°metro
         System.out.println(a); // Muesta 1
         System.out.println(v[0]); // Muestra 2
 
         //atributo lenght
         double estatura[] = new double[25];
-        System.out.println(estatura.length); // Mostrar· por pantalla: 25
+        System.out.println(estatura.length); // Mostrar√° por pantalla: 25
 
-        //Array args[] del mÈtodo main contiene los par·metros de entrada
-        System.out.println(args[0]);//par·metro 1 de la lÌnea de comandos
-        System.out.println(args[1]);//par·metro 2 de la lÌnea de comandos
+        //Array args[] del m√©todo main contiene los par√°metros de entrada
+        System.out.println(args[0]);//par√°metro 1 de la l√≠nea de comandos
+        System.out.println(args[1]);//par√°metro 2 de la l√≠nea de comandos
 
         //busquedas y recorridos de arrays
         double pluviosidad[] = {5, 4, 0, 0, 0, 10, 0, 0, 0, 0, 2, 2, 3, 4, 0,
@@ -73,7 +73,7 @@ public class EjemploUD04 {
         System.out.println(pluviosidadMediaAscendente(pluviosidad)); //1.3
         //recorrido descendente
         System.out.println(pluviosidadMediaDescendente(pluviosidad)); //1.3
-        //recorrido para m·ximo
+        //recorrido para m√°ximo
         System.out.println(pluviosidadMaxima(pluviosidad)); //10.0
         //busqueda con while y boolean
         System.out.println(primerDiaSinLluvia1(pluviosidad)); //2
@@ -100,7 +100,7 @@ public class EjemploUD04 {
         //arrays bidimensionales
         double m1[][] = new double[5][4];
 
-        //con el mismo n˙mero de columnas
+        //con el mismo n√∫mero de columnas
         double m2[][] = new double[5][];
         m2[0] = new double[4];
         m2[1] = new double[4];
@@ -108,7 +108,7 @@ public class EjemploUD04 {
         m2[3] = new double[4];
         m2[4] = new double[4];
 
-        //diferentes n˙meros de columnas
+        //diferentes n√∫meros de columnas
         double m3[][] = new double[5][];
         m3[0] = new double[3];
         m3[1] = new double[4];
@@ -151,14 +151,14 @@ public class EjemploUD04 {
         //2 2 4 2 
         //4 5 3 4         
 
-        System.out.println("\nRecorrido por columnas versiÛn 2: ");
+        System.out.println("\nRecorrido por columnas versi√≥n 2: ");
         for (int j = 0; j < m4[0].length; j++) {
             for (int k = 0; k < m4.length; k++) {
                 System.out.print(m4[k][j] + " ");
             }
             System.out.println("");
         }
-        //Recorrido por columnas versiÛn 2: 
+        //Recorrido por columnas versi√≥n 2: 
         //7 8 9 1 
         //2 2 4 2 
         //4 5 3 4
@@ -175,7 +175,7 @@ public class EjemploUD04 {
         return nombre[mes];
     }
 
-    public static void metodo(int x[], int y) { //recibir un array como par·metro
+    public static void metodo(int x[], int y) { //recibir un array como par√°metro
         x[0]++;
         y++;
     }
@@ -202,11 +202,11 @@ public class EjemploUD04 {
         return media;
     }
 
-    //recorremos el array para encontrar el dia con m·s pluviosidad
+    //recorremos el array para encontrar el dia con m√°s pluviosidad
     public static double pluviosidadMaxima(double lluvia[]) {
-        // Suponemos el la pluviosidad m·xima se produjo el primer dÌa
+        // Suponemos el la pluviosidad m√°xima se produjo el primer d√≠a
         double max = lluvia[0];
-        //Recorremos el array desde la posiciÛn 1, comprobando si hay una pluviosidad mayor
+        //Recorremos el array desde la posici√≥n 1, comprobando si hay una pluviosidad mayor
         for (int i = 1; i < lluvia.length; i++) {
             if (lluvia[i] > max) {
                 max = lluvia[i];
@@ -214,8 +214,8 @@ public class EjemploUD04 {
         }
         return max;
     }
-    //Devolveremos el subÌndice del primer componente del array cuyo valor es cero.
-// Si no hay ning˙n dÌa sin lluvias devolveremos -1
+    //Devolveremos el sub√≠ndice del primer componente del array cuyo valor es cero.
+// Si no hay ning√∫n d√≠a sin lluvias devolveremos -1
 
     public static int primerDiaSinLluvia1(double lluvia[]) {
         int i = 0;
@@ -274,25 +274,25 @@ public class EjemploUD04 {
     }
 
     public static boolean hayAlguienDe36(int edad[]) {
-        // Las variables izq y der marcar·n el fragmento del array en el que
-        // realizamos la b˙squeda. Inicialmente buscamos en todo el array.
+        // Las variables izq y der marcar√°n el fragmento del array en el que
+        // realizamos la b√∫squeda. Inicialmente buscamos en todo el array.
         int izq = 0;
         int der = edad.length - 1;
         boolean encontrado = false;
         while (izq <= der && !encontrado) {
-            // Calculamos posiciÛn central del fragmento en el que buscamos
+            // Calculamos posici√≥n central del fragmento en el que buscamos
             int m = (izq + der) / 2;
             if (edad[m] == 36) // Hemos encontrado una persona de 36
             {
                 encontrado = true;
             } else if (edad[m] > 36) {
-                // El elemento central tiene m·s de 36.
-                // Continuamos la b˙squeda en la mitad izquierda. Es decir,
-                // entre las posiciÛnes izq y m-1
+                // El elemento central tiene m√°s de 36.
+                // Continuamos la b√∫squeda en la mitad izquierda. Es decir,
+                // entre las posici√≥nes izq y m-1
                 der = m - 1;
             } else {
                 // El elemento central tiene menos de 36.
-                //Continuamos la b˙squeda en la mitad derecha. Es decir,
+                //Continuamos la b√∫squeda en la mitad derecha. Es decir,
                 // entre las posiciones m+1 y der
                 izq = m + 1;
             } // del if
@@ -302,7 +302,7 @@ public class EjemploUD04 {
 
     public static void seleccionDirecta(int v[]) {
         for (int i = 0; i < v.length - 1; i++) {
-            //Localizamos elemento que tiene que ir en la posiciÛn i
+            //Localizamos elemento que tiene que ir en la posici√≥n i
             int posMin = i;
             for (int j = i + 1; j < v.length; j++) {
                 if (v[j] < v[posMin]) {

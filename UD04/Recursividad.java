@@ -1,4 +1,4 @@
-package UD04;
+ï»¿package UD04;
 
 public class Recursividad {
 
@@ -19,7 +19,7 @@ public class Recursividad {
     }
 
     /**
-     * Método recursivo que calcula el factorial
+     * MÃ©todo recursivo que calcula el factorial
      */
     public static int factorial(int n) {
         if (n == 0) {
@@ -27,8 +27,8 @@ public class Recursividad {
             System.out.println("Caso base: n es igual a 0");
             return 1;
         } else {
-            //Caso recursivo: Para calcularlo hay que invocar al método recursivo
-            //El valor del nuevo parámetro de entradad se ha de modificar, de
+            //Caso recursivo: Para calcularlo hay que invocar al mÃ©todo recursivo
+            //El valor del nuevo parÃ¡metro de entradad se ha de modificar, de
             //manera que se vaya acercando al caso base
             System.out.println("Caso recursivo " + (n - 1)
                     + ": Se invoca al factorial(" + (n - 1) + ")");
@@ -43,15 +43,15 @@ public class Recursividad {
             //Caso base: No se ha encontrado el valor
             return - 1;
         }
-        //Es calcula la posició central entre els dos índexs de cerca
+        //Es calcula la posiciÃ³ central entre els dos Ã­ndexs de cerca
         int pos = inicio + (fin - inicio) / 2;
         if (array[pos] > valor) {
-            //Caso recursivo: Si el valor es menor que la posición que se ha 
+            //Caso recursivo: Si el valor es menor que la posiciÃ³n que se ha 
             //consultado, entonces hay que seguir buscando por la parte 
             //"izquierda" del array
             return BusquedaBinaria(array, inicio, pos - 1, valor);
         } else if (array[pos] < valor) {
-            //Caso recursivo: Si el valor es mayor que la posición que se ha
+            //Caso recursivo: Si el valor es mayor que la posiciÃ³n que se ha
             //consultado, entonces hay que seguir buscando por la parte 
             //"derecha" del array
             return BusquedaBinaria(array, pos + 1, fin, valor);
@@ -62,7 +62,7 @@ public class Recursividad {
     }
 
     public static int desbordamientoPila(int n) {
-        // condición base incorrecta (esto provoca un desbordamiento de la pila).
+        // condiciÃ³n base incorrecta (esto provoca un desbordamiento de la pila).
         if (n == 100) {
             return 1;
         } else {
