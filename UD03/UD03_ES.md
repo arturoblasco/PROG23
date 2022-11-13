@@ -7,7 +7,7 @@
     keywords: [PRG, 2022, Programacion, Java]
     IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
     header: ${unit}: ${title} - ${subject} (${today})
-    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+ footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
     imgcover:./assets/cover.png

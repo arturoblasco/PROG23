@@ -17,120 +17,120 @@
 
 # Retos
 
-1. **Repte 1**: modifiqueu el programa perquè, en lloc de fer un descompte del 8% si la compra és de 100 € o més, apliqui una penalització de 2 € si el preu és inferior a 30 €.
+1. **Reto 1**: modificad el programa para que, en lugar de hacer un descuento del 8% si la compra es de 100 € o más, aplique una penalización de 2 € si el precio es inferior a 30 €.
 
    ```java
    import java.util.Scanner;
-   //Un programa que calcula descomptes.
+   //Un programa que calcula descuento.
    
-   public class Descompte {
+   public class Descuento {
      public static final float DESCOMPTE = 8;
      public static final float COMPRA_MIN = 100;
    
      public static void main(String[] args) {
        Scanner lector = new Scanner(System.in);
-       System.out.print("Quin és el preu del producte, en euros? ");
+       System.out.print("Cuál es el precio del producto, en euros? ");
        float preu = lector.nextFloat();
        lector.nextLine();
        if (preu >= COMPRA_MIN) {
          float descompteFet = preu * DESCOMPTE / 100;
          preu = preu - descompteFet;
          }
-       System.out.println("El preu final per pagar és de " + preu + " euros.");
+       System.out.println("El precio final para pagar es de " + preu + " euros.");
      }
    }
    ```
 
-2. **Repte 2**: modifiqueu el programa perquè, en lloc d’un únic valor secret, n’hi hagi dos. Per guanyar, només cal encertar-ne un dels dos. La condició lògica que us caldrà ja no es pot resoldre amb una expressió composta per una única comparació. Serà més complexa.
+2. **Reto 2**: modificad el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, solo hay que acertar uno de los dos. La condición lógica que os hará falta ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
 
    ```java
    import java.util.Scanner;
    
-   public class Endevina {
+   public class Adivina {
    
      public static final int VALOR_SECRET = 4;
    
      public static void main(String[] args) {
        Scanner lector = new Scanner(System.in);
-       System.out.println("Comencem el joc.");
-       System.out.print("Endevina el valor enter, entre 0 i 10: ");
+       System.out.println("Comencemos el juego.");
+       System.out.print("Adivina el valor entero, entre 0 y 10: ");
        int valorUsuari = lector.nextInt();
        lector.nextLine();
        if (VALOR_SECRET == valorUsuari) {
-         System.out.println("Exacte! Era " + VALOR_SECRET + ".");
+         System.out.println("Exacto! Era " + VALOR_SECRET + ".");
        } else {
-         System.out.println("T’has equivocat!");
+         System.out.println("Te has equivocado!");
        }
-       System.out.println("Hem acabat el joc.");
+       System.out.println("Hemos terminado el juego.");
      }
    }
    ```
 
-3. **Repte 3**: modifiqueu els exemple anterior (Endevina) perquè comprovin que el valor que ha introduït l’usuari es troba dins del rang de valors correcte (entre 0 i 10).
+3. **Reto 3**: modificad el ejemplo anterior (*Adivina*) para que  compruebe que el valor que ha introducido el usuario se encuentra dentro del rango de valores correcto (entre 0 y 10).
 
-4. **Repte 4**: apliqueu el mateix tipus de control sobre les dades de l’entrada de l'exemple següent a l'exercici del repte 1.
+4. **Repte 4**: aplicad el mismo tipo de control sobre los datos de la entrada del ejemplo siguiente al ejercicio del reto 1.
 
    ```java
    import java.util.Scanner;
    
-   public class EndevinaControlErrorsEntrada {
+   public class AdivinaControlErrorsEntrada {
    
      public static final int VALOR_SECRET = 4;
    
      public static void main(String[] args) {
        Scanner lector = new Scanner(System.in);
-       System.out.println("Comencem el joc.");
-       System.out.print("Endevina el valor enter, entre 0 i 10: ");
+       System.out.println("Comencemos el juego.");
+       System.out.print("Adivina el valor entero, entre 0 y 10: ");
        boolean tipusCorrecte = lector.hasNextInt();
        if (tipusCorrecte) {
-          //S’ha escrit un enter correctament. Ja es pot llegir.
+          //Se ha escrito un entero correctamente. Ya se puede leer.
           int valorUsuari = lector.nextInt();
           lector.nextLine();
           if (VALOR_SECRET == valorUsuari) {
-              System.out.println("Exacte! Era " + VALOR_SECRET + ".");
+              System.out.println("Exacto! Era " + VALOR_SECRET + ".");
           } else {
-              System.out.println("T’has equivocat!");
+              System.out.println("Te has equivocado!");
           }
-          System.out.println("Hem acabat el joc.");
+          System.out.println("Hemos terminado el juego.");
        } else {
-          //No s’ha escrit un enter.
-          System.out.println("El valor introduït no és un enter.");
+          //No se ha escrito un entero.
+          System.out.println("El valor introducido no es un entero.");
        }
      }
    }
    ```
 
-5. **Repte 5**: Modifiqueu l’exemple perquè primer pregunti a l’usuari quants caràcters "-" vol escriure per pantalla, i llavors els escrigui. Quan proveu el programa, no introduïu un nombre gaire alt!
+5. **Reto 5**: Modificad el ejemplo para que primero pregunte al usuario cuántos caracteres "-" quiere escribir por pantalla, y entonces los escriba. Cuando probéis el programa, no introducid un número muy alto!
 
    ```java
-   //Un programa que escriu una línia amb 100 caràcters ’ − ’.
+   //Un programa que escribe una línea con 100 caracteres ’ − ’.
    
-   public class Linia {
+   public class Linea {
    
      public static void main(String[] args) {
-       //Inicialitzem un comptador
+       //Inicializamos un contador
        int i = 0;
-       //Ja hem fet això 100 cops?
+       //Ja hemos hecho esto 100 veces
        while (i < 100) {
          System.out.print("−");
-         //Ho hem fet un cop, sumem 1 al comptador
+         //Lo hemos hecho una vez, sumamos 1 al contador
          i = i + 1;
        }
-       //Forcem un salt de línia
+       //Forzamos un salto de línea
        System.out.println();
      }
    }
    ```
 
-6. **Repte 6**: un comptador tant pot començar a comptar des de 0 i anar pujant, com des del final i anar disminuint com un compte enrere. Modifiqueu aquest programa perquè la taula de multiplicar comenci mostrant el valor per a 10 i vagi baixant fins a l’1.
+6. **Reto 6**: un contador tanto puede empezar a contar desde 0 e ir subiendo, como desde el final e ir disminuyendo como una cuenta atrás. Modificad este programa para que la tabla de multiplicar empiece mostrando el valor para 10 y vaya bajando hasta el 1.
 
    ```java
    import java.util.Scanner;
-   public class TaulaMultiplicar {
+   public class TablaMultiplicar {
    
      public static void main(String[] args) {
        Scanner lector = new Scanner(System.in);
-       System.out.print("Quina taula de multiplicar vols? ");
+       System.out.print("Qué tabla de multiplicar quieres? ");
        int taula = lector.nextInt();
        lector.nextLine();
        int i = 1;
@@ -139,31 +139,31 @@
           System.out.println(taula + " * " + i + " = " + resultat);
           i = i + 1;
        }
-       System.out.println("Aquesta ha estat la taula del " + taula);
+       System.out.println("Esta ha estado la tabla del " + taula);
      }
    }
    ```
 
-7. **Repte 7**: l’ús de comptadors i acumuladors no és excloent, sinó que pot ser complementari. Penseu com es podria modificar el programa per calcular el resultat del mòdul i la divisió entera alhora. Recordeu que la divisió entera simplement seria comptar quantes vegades s’ha pogut restar el divisor.
+7. **Reto 7**: el uso de contadores y acumuladores no es excluyente, sino que puede ser complementario. Pensad cómo se podría modificar el programa para calcular el resultado del módulo y la división entera a la vez. Recordad que la división entera simplemente sería contar cuántas veces se ha podido restar el divisor.
 
    ```java
    import java.util.Scanner;
    
-   public class Modul {
+   public class Modulo {
    
      public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
-        System.out.print("Quin és el dividend? ");
+        System.out.print("Cuál es el dividendo? ");
         int dividend = lector.nextInt();
         lector.nextLine();
-        System.out.print("Quin és el divisor? ");
+        System.out.print("Cual es el divisor? ");
         int divisor = lector.nextInt();
         lector.nextLine();
         while (dividend >= divisor) {
            dividend = dividend - divisor;
-            System.out.println("Bucle: per ara el dividend val " + dividend + ".");
+            System.out.println("Bucle: por ahora el dividendo vale " + dividend + ".");
         }
-        System.out.println("El resultat final és " + dividend + ".");
+        System.out.println("El resultado final es " + dividend + ".");
      }
    }
    ```
