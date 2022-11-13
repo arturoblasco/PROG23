@@ -1,5 +1,6 @@
 ---
-    title: Ejercicios de la UD04
+    unit: UD04
+    title: Ejercicios
     language: ES
     author: Arturo BC [arturoblasco@iesmre.com]
     subject: Programación
