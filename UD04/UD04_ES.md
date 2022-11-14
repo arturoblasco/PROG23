@@ -2,15 +2,15 @@
 unit: UD04
 title: Estructuras de datos: Arrays y matrices. Recursividad.
 language: ES
-author: Arturo BC [arturoblasco@iesmre.es]
+author: Arturo BC
 subject: Programación
 keywords: [PRG, 2022, Programacion, Java]
-IES: IES Mestre Ramon Esteve (Catadau) [www.iesmre.es]
+IES: IES Mestre Ramon Esteve [www.iesmre.com]
 header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
-imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2223/PRG-CFGS-2223/UD01/assets/cover.png
+imgcover:/assets/cover.png
 ---
 [toc]
 
@@ -165,11 +165,13 @@ public static String nombreMes(int mes){
 ```
 
 El método define un array de `String` que se inicializa con los nombres de los doce meses. La primera componente del array (`nombre[0]`) se deja vacía, de forma que enero quede almacenado en `nombre[1]`.
-Devolver el nombre del mes indicado se reduce a devolver el componente del array cuyo número indica el parámetro mes: `nombre[mes]`
+Devolver el nombre del mes indicado se reduce a devolver el componente del array cuyo número indica el parámetro mes: `nombre[mes]`.
+
+Pregunta :arrow_right: *¿Crees que se podría mejorar el ejemplo anterior de alguna forma? ¿Cómo?*
 
 ## Arrays como parámetros. Paso de parámetros por referencia
 
-Hasta el momento sólo se ha considerado el paso de parámetros por valor; de manera que cualquier cambio que el método realice sobre los parámetros formales no modifica el valor que tiene el parámetro real con el que se llama al método. En java, todos los parámetros de tipo simple (`byte`, `short`, `int`, ...) se pasan por valor.
+Hasta el momento sólo se ha considerado el **paso de parámetros por valor**; de manera que **cualquier cambio que el método realice sobre los parámetros formales no modifica el valor que tiene el parámetro real con el que se llama al método**. En java, todos los parámetros de tipo primitivo (`byte`, `short`, `int`, ...) se pasan por valor.
 
 Por el contrario, los arrays no son variables de tipo primitivo, y como cualquier otro objeto, se pasa siempre por referencia.
 
@@ -192,7 +194,7 @@ public static void metodo(int x[], int y){ //recibir un array como parámetro
 }
 ```
 
-> Como podemos observar, para pasar un array a un método, simplemente usamos el nombre de la variable en la llamada.
+> Como podemos observar, para pasar un array a un método, simplemente usamos el nombre de la variable en la llamada (sin los corchetes `[]`).
 >
 > En la cabecera del método, sin embargo, tenemos que utilizar los corchetes `[]` para indicar que el parámetro es un array.
 
@@ -212,21 +214,21 @@ El método `main` puede recibir argumentos desde la línea de comandos. Para ell
 
 ```java
 public class EsNavidad {
-    public static void main(String[] args) {
-        if (args.length != 2) {
-            System.out.println("ERROR:");
-            System.out.println("Llame al programa de la siguiente forma:");
-            System.out.println("java EsNavidad dia mes");
-        } else {
-            // args[0] es el día
-            // args[1] es el mes
-            if ((Integer.valueOf(args[0]) == 25) && (Integer.valueOf(args[1]) == 12)) {
-                    System.out.println("ES NAVIDAD!");
-            } else {
-                System.out.println("No es navidad :(");
-            }
-        }
+  public static void main(String[] args) {
+    if (args.length != 2) {
+      System.out.println("ERROR:");
+      System.out.println("Llame al programa de la siguiente forma:");
+      System.out.println("java EsNavidad dia mes");
+    } else {
+      // args[0] es el día
+      // args[1] es el mes
+      if ((Integer.parseInt(args[0]) == 25) && (Integer.parseInt(args[1]) == 12)) {
+          System.out.println("ES NAVIDAD!");
+      } else {
+          System.out.println("No es navidad :(");
+      }
     }
+  }
 }
 ```
 
@@ -321,7 +323,9 @@ public static int primerDiaSinLluvia2(double lluvia[]){
 }
 ```
 
-En este caso el subíndice `i` se incrementa mientras estemos dentro de los límites del array y no encontremos un día con lluvia `0`. Al finalizar el bucle hay que comprobar por cual de las dos razones finalizó: ¿Se encontró un día sin lluvias o se recorrió todo el array sin encontrar ninguno? En esta comprobación es importante no acceder al array si existe la posibilidad de que el subíndice esté fuera de los límites del array. La siguiente comprobación sería incorrecta:
+En este caso el subíndice `i` se incrementa mientras estemos dentro de los límites del array y no encontremos un día con lluvia `0`. Al finalizar el bucle hay que comprobar por cual de las dos razones finalizó: ¿Se encontró un día sin lluvias o se recorrió todo el array sin encontrar ninguno? En esta comprobación es importante no acceder al array si existe la posibilidad de que el subíndice esté fuera de los límites del array. 
+
+La siguiente comprobación sería **incorrecta**:
 
 ```java
 if (lluvia[i] == 0) return i;
@@ -362,11 +366,11 @@ public static int ultimoDiaSinLluvia(double lluvia[]){
 
 ### Búsqueda en un array ordenado: búsqueda binaria
 
-Suponga que una amiga apunta un número entre el 0 y el 99 en una hoja de papel y vosotros debéis adivinarlo. Cada vez que conteste, le dirá si el valor que ha dicho es mayor o menor que el que ha de adivinar. ¿Qué estrategia seguiría para lograrlo? Hay que pensar un algoritmo a seguir para resolver este problema.
+Vamos a suponer que una amiga apunta un número entre el 0 y el 99 en una hoja de papel y vosotros debéis adivinarlo. Cada vez que conteste, le dirá si el valor que ha dicho es mayor o menor que el que debemos de adivinar. ¿Qué estrategia seguirías para lograrlo? Hay que pensar un algoritmo a seguir para resolver este problema.
 
-Una aproximación muy ingenua podría ser ir diciendo todos los valores uno por uno, empezando por 0. Está claro que cuando llegue al 99 lo habréis adivinado. En el mejor caso, si había escrito el 0, acertará en la primera, mientras que en el peor caso, si había escrito el 99, necesitareis 100 intentos. Si estaba por medio, tal vez con 40-70 basta. Este sería un algoritmo eficaz (hace lo que tiene que hacer), pero no muy eficiente (lo hace de la mejor manera posible). Ir probando valores al azar en lugar de hacer esto tampoco mejora gran cosa el proceso, y viene a ser lo mismo.
+Una aproximación muy ingenua podría ser ir diciendo todos los valores uno por uno, empezando por 0. Está claro que cuando llegue al 99 lo habréis adivinado. En el mejor caso, si habías escrito el 0, acertarás en la primera, mientras que en el peor caso, si habías escrito el 99, necesitarías 100 intentos. Si estaba por medio, tal vez con 40-70 basta. Este sería un algoritmo eficaz (hace lo que tiene que hacer), pero no muy eficiente (lo hace de la mejor manera posible). Ir probando valores al azar en lugar de hacer esto tampoco mejora gran cosa el proceso, y viene a ser lo mismo.
 
-Si alguna vez habeis jugado a este juego, lo que habreis hecho es ser un poco más astutos y empezar por algún valor del medio. En este caso, por ejemplo, podría ser el 50. Entonces, en caso de fallar, una vez está seguro de si el valor secreto es mayor o menor que su respuesta, en el intento siguiente probar un valor más alto o más bajo , e ir haciendo esto repetidas veces.
+Si alguna vez habéis jugado a este juego, lo que habréis hecho es ser un poco más astutos y empezar por algún valor del medio. En este caso, por ejemplo, podría ser el 50. Entonces, en caso de fallar, una vez estás seguro de si el valor secreto es mayor o menor que tu respuesta, en el intento siguiente probar un valor más alto o más bajo , e ir haciendo esto repetidas veces.
 
 Generalmente, la mejor estrategia para adivinar un número secreto entre 0 y N sería primer probar N/2. Si no se ha acertado, entonces si el número secreto es más alto se intenta adivinar entre (N/2 + 1) y N. Si era más bajo, se intenta adivinar el valor entre 0 y N-1. Para cada caso, se vuelve a probar el valor que hay en el medio del nuevo intervalo. Y así sucesivamente, haciendo cada vez más pequeño el intervalo de búsqueda, hasta adivinarlo. En el caso de 100 valores, esto garantiza que, en el peor de los casos, en 7 intentos seguro que se adivina. Esto es una mejora muy grande respecto al primer algoritmo, donde hacían falta 100 intentos, y por tanto, este sería un algoritmo más eficiente. Concretamente, siempre se adivinará en log~2~ (N) intentos como máximo.
 
@@ -425,9 +429,9 @@ Existen multitud de algoritmos que permiten ordenar los elementos de un array, e
 
 Entre los algoritmos **iterativos** tenemos, por ejemplo, el **método de la burbuja**, el **método de selección directa** y el **método de inserción directa**.
 
-Entre los **recursivos**, son conocidos el algoritmo **mergeSort** y el **quickSort**, que realizan la ordenación más rápidamente que los algoritmos iterativos que hemos nombrado.
+Entre los **recursivos**, son conocidos el algoritmo **mergesort** y el **quickSort**, que realizan la ordenación más rápidamente que los algoritmos iterativos que hemos nombrado.
 
-Como ejemplo vamos a ver cómo se realiza la ordenación de un array de enteros utilizando el **método de** **selección directa**:
+Como ejemplo vamos a ver como se realiza la ordenación de un array de enteros utilizando el método de **selección directa**:
 
 ```java
 public static void seleccionDirecta(int v[]) {
@@ -501,7 +505,7 @@ Los arrays bidimensionales, también llamados matrices, son muy similares a los 
 
 - A cada componente de una matriz se accede mediante dos subíndices: el primero se refiere al número de fila y el segundo al número de columna. En la siguiente figura, `m[0][0]` es `2`, `m[0][3]` es `9`, `m[2][0]` es `57`
 
-  <img src="assets/matrizM.png" alt="Screenshot_20210821_085938" style="zoom:75%;" />
+  <img src="assets/matrizM.png" alt="Screenshot_20210821_085938" style="zoom:100%;" />
 
 - Como vemos, filas y columnas se numeran a partir del `0`.
 
@@ -528,7 +532,7 @@ Esto, que no es igual en otros lenguajes de programación, tiene ciertas consecu
 
 - Podríamos dibujar la matriz `m` del ejemplo anterior de una forma más cercana a cómo Java las representa internamente:
 
-  <img src="assets/matrizMJava.png" alt="Screenshot_20210821_090234" style="zoom:75%;" />
+  <img src="assets/matrizMJava.png" alt="Screenshot_20210821_090234" style="zoom:100%;" />
 
 ## Declaración de matrices.
 
@@ -641,7 +645,7 @@ Este *anidamiento* de estructuras se puede generalizar, de forma que podríamos 
 
 ```java
 int notas[][][] = new int[10][5][3]; //Notas de 10 alum. en 5 asign. en 3 eval.
-notas[2][3][1]=5;//El alumno 2, para la asignatura 3 de la primera evaluación ha sacado un 5
+notas[2][3][1]=5; //El alumno 2, para la asignatura 3 de la 1ª evaluación ha sacado un 5.
 double w[][][][][] = new double [2][7][10][4][10];
 ```
 
@@ -685,8 +689,8 @@ Dentro de la estructura de selección siempre debe haber al menos un caso base y
 
 Como ejemplo del funcionamiento de un método recursivo, se empezará con un caso sencillo. Se trata del cálculo de la llamada operación **factorial** de un valor entero positivo. Esta es unaria y se expresa con el operador exclamación (por ejemplo, 4!, 20!, 3!). El resultado de esta operación es la multiplicación de todos los valores desde el 1 hasta el indicado (7! = 1 * 2 * 3 * 4 * 5 * 6 * 7). Normalmente, la definición matemática de esta operación se hace de manera recursiva:
 
-- `0! = 1` **:arrow_left:  caso base**
-- `n! = N * (n - 1)!` **:arrow_left: caso recursivo**
+- `0! = 1`   **:arrow_left:  caso base**
+- `n! = N * (n - 1)!`   **:arrow_left: caso recursivo**
 
 Así pues, tened en cuenta que el caso recursivo realiza un cálculo que depende de usar la propia definición de la operación, pero cuando lo hace es con un nuevo valor inferior al original, por lo que se garantiza que, en algún momento, se hará una llamada recursiva que desembocará en el caso base. Cuando esto ocurra, la cadena de llamadas recursivas acabará. Una manera de ver esto es desarrollando paso a paso esta definición:
 1. `4! = 4 * (4 - 1)! = 4 * (3)! `
