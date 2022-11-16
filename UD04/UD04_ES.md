@@ -198,6 +198,8 @@ public static void metodo(int x[], int y){ //recibir un array como parámetro
 >
 > En la cabecera del método, sin embargo, tenemos que utilizar los corchetes `[]` para indicar que el parámetro es un array.
 
+
+
 ## El atributo `length`
 
 Todas las variables de tipo array tienen un atributo `length` que permite consultar el número de componentes del array. Su uso se realiza posponiendo `.length` al nombre de la variable:
@@ -208,23 +210,28 @@ double estatura[] = new double[25];
 System.out.println(estatura.length); // Mostrará por pantalla: 25
 ```
 
+
+
 ## `String[] args` en el `main`
 
 El método `main` puede recibir argumentos desde la línea de comandos. Para ello, el método `main` recibe un parámetro (`String args[]`). Vemos que se trata de un array de `Strings`. El uso del atributo `length` nos permite comprobar si se ha llamado al programa de forma correcta o no. Veamos un ejemplo para saber si es Navidad. Se habrá llamado correctamente si el array `args` contiene dos componentes (día, mes):
+
+
 
 ```java
 public class EsNavidad {
   public static void main(String[] args) {
     if (args.length != 2) {
       System.out.println("ERROR:");
-      System.out.println("Llame al programa de la siguiente forma:");
+      System.out.println("Llama al programa de la siguiente forma:");
       System.out.println("java EsNavidad dia mes");
     } else {
       // args[0] es el día
       // args[1] es el mes
-      if ((Integer.parseInt(args[0]) == 25) && (Integer.parseInt(args[1]) == 12)) {
+      if ((Integer.parseInt(args[0]) == 25) && (Integer.parseInt(args[1]) == 12))
+      // también podría ser --> if (args[0].equals("25") && args[1].equals("12"))
           System.out.println("ES NAVIDAD!");
-      } else {
+      else
           System.out.println("No es navidad :(");
       }
     }
@@ -294,7 +301,7 @@ Se denominan problemas de búsqueda a aquellos que, de alguna manera, implican d
 Consideremos, por ejemplo, el problema de encontrar cual fue el primer día del mes en que no llovió nada, es decir, el primer elemento del array con valor cero:
 
 ```java
-//Devolveremos el subíndice del primer componente del array cuyo valor es cero.
+// Devolveremos el subíndice del primer componente del array cuyo valor es cero.
 // Si no hay ningún día sin lluvias devolveremos -1
 public static int primerDiaSinLluvia1(double lluvia[]){
     int i=0 ;
@@ -323,7 +330,7 @@ public static int primerDiaSinLluvia2(double lluvia[]){
 }
 ```
 
-En este caso el subíndice `i` se incrementa mientras estemos dentro de los límites del array y no encontremos un día con lluvia `0`. Al finalizar el bucle hay que comprobar por cual de las dos razones finalizó: ¿Se encontró un día sin lluvias o se recorrió todo el array sin encontrar ninguno? En esta comprobación es importante no acceder al array si existe la posibilidad de que el subíndice esté fuera de los límites del array. 
+En este caso el subíndice `i` se incrementa mientras estemos dentro de los límites del array y no encontremos un día con lluvia `0`. Al finalizar el bucle hay que comprobar por cual de las dos razones finalizó: ¿*Se encontró un día sin lluvias o se recorrió todo el array sin encontrar ninguno*? En esta comprobación es importante no acceder al array si existe la posibilidad de que el subíndice esté fuera de los límites del array. 
 
 La siguiente comprobación sería **incorrecta**:
 
