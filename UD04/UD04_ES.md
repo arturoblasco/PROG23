@@ -562,7 +562,7 @@ m3[4] = new double[9];
 
 ## Inicialización
 
-La forma de inicializar una matriz de enteros de por ejemplo \[4][3] seria:
+La forma de inicializar una matriz de enteros de, por ejemplo \[4][3], sería:
 
 ```java
 int m4 [][] = {

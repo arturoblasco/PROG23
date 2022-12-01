@@ -117,309 +117,285 @@
 
 ## Arrays. Ejercicios de búsqueda
 
-1. (Lluvias – continuación). Queremos incorporar al programa la siguiente información:
+8. (Lluvias – continuación). Queremos incorporar al programa la siguiente información:
 
-   - Cual fue el **primer** día del mes en que llovió exactamente 19 litros (si no hubo ninguno mostrar un mensaje por pantalla indicándolo)
-   - Cual fue el **último** día del mes en que llovió exáctamente 8 litros (si no hubo ninguno mostrar un mensaje por pantalla indicándolo)
+- Cual fue el **primer** día del mes en que llovió exactamente 19 litros (si no hubo ninguno mostrar un mensaje por pantalla indicándolo)
+- Cual fue el **último** día del mes en que llovió exáctamente 8 litros (si no hubo ninguno mostrar un mensaje por pantalla indicándolo)
 
-   Para ello desarrollarán los siguientes métodos:
+​	Para ello desarrollarán los siguientes métodos:
 
-   - `public static int posPrimero(double[] v, double x)`, que devuelve la posición de la primera aparición de `x` en el array `v`. Si `x` no está en `v` el método devolverá -1. El método realizará una búsqueda ascendente para proporcionar el resultado.
-   - `public static int posUltimo(double[] v, double x)`, que devuelve la posición de la última aparición de `x` en el array `v`. Si `x` no está en `v` el método devolverá -1. El método realizará una búsqueda descendente para proporcionar el resultado.
+- `public static int posPrimero(double[] v, double x)`, que devuelve la posición de la primera aparición de `x` en el array `v`. Si `x` no está en `v` el método devolverá -1. El método realizará una búsqueda ascendente para proporcionar el resultado.
+- `public static int posUltimo(double[] v, double x)`, que devuelve la posición de la última aparición de `x` en el array `v`. Si `x` no está en `v` el método devolverá -1. El método realizará una búsqueda descendente para proporcionar el resultado.
 
-2. (Tocayos) Disponemos de los nombres de dos grupos de personas (dos arrays de `String`). Dentro de cada grupo todas las personas tienen nombres distintos, pero queremos saber cuántas personas del primer grupo tienen algún tocayo en el segundo grupo, es decir, el mismo nombre que alguna persona del segundo grupo. Escribir un programa que resuelva el problema (inicializa los dos arrays con los valores que quieras y diseña los métodos que consideres necesarios).
+9. (Tocayos) Disponemos de los nombres de dos grupos de personas (dos arrays de `String`). Dentro de cada grupo todas las personas tienen nombres distintos, pero queremos saber cuántas personas del primer grupo tienen algún tocayo en el segundo grupo, es decir, el mismo nombre que alguna persona del segundo grupo. Escribir un programa que resuelva el problema (inicializa los dos arrays con los valores que quieras y diseña los métodos que consideres necesarios).
 
-   Por ejemplo, si los nombres son {"miguel","**josé**","**ana**","maría"} y {"**ana**", "luján", "juan", "**josé**", "pepa", "ángela", "sofía", "andrés", "bartolo"} , el programa mostraría:
+​	Por ejemplo, si los nombres son {"miguel","**josé**","**ana**","maría"} y {"**ana**", "luján", "juan", "**josé**", "pepa", 	"ángela", "sofía", "andrés", "bartolo"} , el programa mostraría:
 
-   ```sh
-   josé tiene tocayo en el segundo grupo.
-   ana tiene tocayo en el segundo grupo.
-   TOTAL: 2 personas del primer grupo tienen tocayo.
-   ```
+```sh
+josé tiene tocayo en el segundo grupo.
+ana tiene tocayo en el segundo grupo.
+TOTAL: 2 personas del primer grupo tienen tocayo.
+```
 
-   Optimiza el algoritmo para que no tenga en cuenta si se escribe el nombre en mayúsculas, minúsculas o cualquier combinación.
+​	Optimiza el algoritmo para que no tenga en cuenta si se escribe el nombre en mayúsculas, minúsculas o 	cualquier combinación.
 
-3. (SumaDespuesImpar) Escribir un método que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar. Usar `main` para probar el método.
+10. (SumaDespuesImpar) Escribir un método que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar. Usar `main` para probar el método.
+11. (HayPares) Para determinar si existe algún valor par en un array se proponen varias soluciones. Indica cual/cuales son válidas para resolver el problema.
 
-3. (HayPares) Para determinar si existe algún valor par en un array se proponen varias soluciones. Indica cual/cuales son válidas para resolver el problema.
+```java
+public static boolean haypares1(int v[]) {
+   int i = 0;
 
-   ```java
-   public static boolean haypares1(int v[]) {
-   
-       int i = 0;
-   
-       while (i < v.length && v[i] % 2 != 0) {
-           i++;
-       }
-   
-       if (v[i] % 2 == 0) {
-           return true;
-       } else {
-           return false;
-       }
-   
+   while (i < v.length && v[i] % 2 != 0) {
+      i++;
    }
-   
-   public static boolean haypares2(int v[]) {
-   
-       int i = 0;
-   
-       while (i < v.length && v[i] % 2 != 0) {
-           i++;
-       }
-   
-       if (i < v.length) {
-           return true;
-       } else {
-           return false;
-       }
-   
-   }
-   
-   public static boolean haypares3(int v[]) {
-   
-       int i = 0;
-   
-       while (v[i] % 2 != 0 && i < v.length) {
-           i++;
-       }
-   
-       if (i < v.length) {
-           return true;
-       } else {
-           return false;
-       }
-   
-   }
-   
-   public static boolean haypares4(int v[]) {
-   
-       int i = 0;
-   
-       boolean encontrado = false;
-   
-       while (i <= v.length && !encontrado) {
-   
-           if (v[i] % 2 == 0) {
-               encontrado = true;
-           } else {
-               i++;
-           }
-   
-       }
-   
-       return encontrado;
-   
-   }
-   
-   public static boolean haypares5(int v[]) {
-   
-       int i = 0;
-   
-       boolean encontrado = false;
-   
-       while (i < v.length && !encontrado) {
-   
-           if (v[i] % 2 == 0) {
-               encontrado = true;
-           }
-   
-           i++;
-   
-       }
-   
-       return encontrado;
-   
-   }
-   
-   public static boolean haypares6(int v[]) {
-   
-       int i = 0;
-   
-       while (i < v.length) {
-   
-           if (v[i] % 2 == 0) {
-               return true;
-           } else {
-               return false;
-           }
-   
-       }
-   
-   }
-   
-   public static boolean haypares7(int v[]) {
-   
-       int i = 0;
-   
-       while (i < v.length) {
-   
-           if (v[i] % 2 == 0) {
-               return true;
-           }
-   
-           i++;
-   
-       }
-   
-       return false;
-   
-   }
-   
-4. (Capicúa) Escribir un método para determinar si un array de palabras (`String`) es capicúa, esto es, si la primera y última palabra del array son la misma, la segunda y la penúltima palabras también lo son, y así sucesivamente. Escribir el método main para probar el método anterior.
 
-5. (Subsecuencia) Escribir un método que, dado un array, determine la posición de la primera subsecuencia del array que comprenda al menos tres números enteros consecutivos en posiciones consecutivas del array. De no existir dicha secuencia devolverá -1. 
-
-   Por ejemplo: en el array {23, 8, 12, 6, 7, **9, 10, 11**, 2} hay 3 números consecutivos en tres posiciones consecutivas, a partir de la posición 5: {9,10,11}
-
-6. (MismosValores) Se desea comprobar si dos arrays de `double` contienen los mismos valores, aunque sea en orden distinto. Para ello se ha escrito el siguiente método, que aparece incompleto:
-
-   ```java
-   public static boolean mismosValores(double v1[], double v2[]) {
-       boolean encontrado = false;
-       int i = 0;
-       while (i < v1.length && !encontrado) {
-           boolean encontrado2 = false;
-           int j = 0;
-           while (j < v2.length && !encontrado2) {
-               if (v1[?] == v2[?]) {
-                   encontrado2 = true;
-                   i++;
-               } else {
-                   ?
-               }
-           }
-           if (encontrado2 == ?) {
-               encontrado = true;
-           }
-       }
-       return !encontrado;
+   if (v[i] % 2 == 0) {
+      return true;
+   } else {
+      return false;
    }
-   ```
-   
-   Completa el programa en los lugares donde aparece el símbolo :question:
+}
+
+public static boolean haypares2(int v[]) {
+   int i = 0;
+
+   while (i < v.length && v[i] % 2 != 0) {
+      i++;
+   }
+    
+   if (i < v.length) {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+public static boolean haypares3(int v[]) {
+   int i = 0;
+
+   while (v[i] % 2 != 0 && i < v.length) {
+      i++;
+   }
+
+   if (i < v.length) {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+public static boolean haypares4(int v[]) {
+   int i = 0;
+   boolean encontrado = false;
+
+   while (i <= v.length && !encontrado) {
+      if (v[i] % 2 == 0) {
+         encontrado = true;
+      } else {
+         i++;
+      }
+   }
+
+   return encontrado;
+}
+
+public static boolean haypares5(int v[]) {
+   int i = 0;
+   boolean encontrado = false;
+
+   while (i < v.length && !encontrado) {
+      if (v[i] % 2 == 0) {
+         encontrado = true;
+      }
+      i++;
+   }
+
+   return encontrado;
+}
+
+public static boolean haypares6(int v[]) {
+   int i = 0;
+
+   while (i < v.length) {
+      if (v[i] % 2 == 0) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+}
+
+public static boolean haypares7(int v[]) {
+   int i = 0;
+
+   while (i < v.length) {
+      if (v[i] % 2 == 0) {
+         return true;
+      }
+      i++;
+   }
+   return false;
+}
+```
+
+12. (Capicúa) Escribir un método para determinar si un array de palabras (`String`) es capicúa, esto es, si la primera y última palabra del array son la misma, la segunda y la penúltima palabras también lo son, y así sucesivamente. Escribir el método main para probar el método anterior.
+13. (Subsecuencia) Escribir un método que, dado un array, determine la posición de la primera subsecuencia del array que comprenda al menos tres números enteros consecutivos en posiciones consecutivas del array. De no existir dicha secuencia devolverá -1. 
+
+​		Por ejemplo: en el array {23, 8, 12, 6, 7, **9, 10, 11**, 2} hay 3 números consecutivos en tres posiciones consecutivas, a partir de la posición 5: {9,10,11}
+
+14. (MismosValores) Se desea comprobar si dos arrays de `double` contienen los mismos valores, aunque sea en orden distinto. Para ello se ha escrito el siguiente método, que aparece incompleto:
+
+```java
+public static boolean mismosValores(double v1[], double v2[]) {
+    boolean encontrado = false;
+    int i = 0;
+    while (i < v1.length && !encontrado) {
+        boolean encontrado2 = false;
+        int j = 0;
+        while (j < v2.length && !encontrado2) {
+            if (v1[?] == v2[?]) {
+                encontrado2 = true;
+                i++;
+            } else {
+                ?
+            }
+        }
+        if (encontrado2 == ?) {
+            encontrado = true;
+        }
+    }
+    return !encontrado;
+}
+```
+
+​	Completa el programa en los lugares donde aparece el símbolo :question:
+
+
+
+
 
 ## Matrices
 
-1. (Notas). Se dispone de una matriz que contiene las notas de una serie de alumnos en una serie de asignaturas. Cada fila corresponde a un alumno, mientras que cada columna corresponde a una asignatura. Desarrollar métodos para:
+15. (Notas). Se dispone de una matriz que contiene las notas de una serie de alumnos en una serie de asignaturas. Cada fila corresponde a un alumno, mientras que cada columna corresponde a una asignatura. Desarrollar métodos para:
 
-   1. Imprimir las notas alumno por alumno. 
-   2. Imprimir las notas asignatura por asignatura.
-   3. Imprimir la media de cada alumno.
-   4. Imprimir la media de cada asignatura.
-   5. Indicar cual es la asignatura más fácil, es decir la de mayor nota media.
-   6. ¿Hay algún alumno que suspenda todas las asignaturas?
-   7. ¿Hay alguna asignatura en la que suspendan todos los alumnos?
+1. Imprimir las notas alumno por alumno. 
+2. Imprimir las notas asignatura por asignatura.
+3. Imprimir la media de cada alumno.
+4. Imprimir la media de cada asignatura.
+5. Indicar cual es la asignatura más fácil, es decir la de mayor nota media.
+6. ¿Hay algún alumno que suspenda todas las asignaturas?
+7. ¿Hay alguna asignatura en la que suspendan todos los alumnos?
 
-   Generar la matriz (al menos 5x5) en el método main, rellenarla, y comprobar los métodos anteriores.
+Generar la matriz (al menos 5x5) en el método main, rellenarla, y comprobar los métodos anteriores.
 
-2. (Ventas). Una empresa comercializa 10 productos para lo cual tiene 5 distribuidores.
+16. (Ventas). Una empresa comercializa 10 productos para lo cual tiene 5 distribuidores.
 
-   Los datos de ventas los tenemos almacenados en una matriz de 5 filas x 10 columnas, `ventas`, con el número de unidades de cada producto que ha vendido cada distribuidor. Cada fila corresponde a las ventas de un distribuidor (la primera fila, del primer distribuidor, etc.), mientras que cada columna corresponde a un producto :
+​	Los datos de ventas los tenemos almacenados en una matriz de 5 filas x 10 columnas, `ventas`, con el 	número de unidades de cada producto que ha vendido cada distribuidor. Cada fila corresponde a las ventas de un distribuidor (la primera fila, del primer distribuidor, etc.), mientras que cada columna corresponde a un producto :
 
-   | 100  | 25   | 33   | 89   | 23   | 90   | 87   | 6    | 5    | 233  |
-   | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-   | 28   | 765  | 65   | 77   | 987  | 55   | 4    | 66   | 4    | 8    |
-   | ...  |      |      |      |      |      |      |      |      |      |
-   |      |      |      |      |      |      |      |      |      |      |
-   |      |      |      |      |      |      |      |      |      |      |
+| 100  | 25   | 33   | 89   | 23   | 90   | 87   | 6    | 5    | 233  |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 28   | 765  | 65   | 77   | 987  | 55   | 4    | 66   | 4    | 8    |
+| ...  |      |      |      |      |      |      |      |      |      |
+|      |      |      |      |      |      |      |      |      |      |
+|      |      |      |      |      |      |      |      |      |      |
 
-   El array `precio`, de 10 elementos*,* contiene el precio en € de cada uno de los 10 productos.
+​	El array `precio`, de 10 elementos*,* contiene el precio en € de cada uno de los 10 productos.
 
-   | 125.2 | 234.4 | 453.9 | ...  |      |      |      |      |      |      |
-   | ----- | ----- | ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 125.2 | 234.4 | 453.9 | ...  |      |      |      |      |      |      |
+| ----- | ----- | ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 
-   Escribe el programa y los métodos necesarios para averiguar:
+​	Escribe el programa y los métodos necesarios para averiguar:
 
-   1. Distribuidor que más artículos ha vendido.
-   2. El artículo que más se vende.
-   3. Sabiendo que los distribuidores que realizan ventas superiores a 30.000€ cobran una comisión del 5% de las ventas y los que superan los 70.000€ una comisión del 8%, emite un informe de los distribuidores que cobran comisión, indicando nº de distribuidor, importe de las ventas, porcentaje de comisión e importe de la comisión en €.
+1. Distribuidor que más artículos ha vendido.
+2. El artículo que más se vende.
+3. Sabiendo que los distribuidores que realizan ventas superiores a 30.000€ cobran una comisión del 5% de las ventas y los que superan los 70.000€ una comisión del 8%, emite un informe de los distribuidores que cobran comisión, indicando nº de distribuidor, importe de las ventas, porcentaje de comisión e importe de la comisión en €.
 
-3. (Utiles) Dada una matríz con el mismo número de filas y de columnas, diseñar los siguientes métodos:
+17. (Utiles) Dada una matríz con el mismo número de filas y de columnas, diseñar los siguientes métodos:
 
-   - `public static void mostrarDiagonal(int[][] m)` que muestre por pantalla los elementos de la diagonal principal.
+- `public static void mostrarDiagonal(int[][] m)` que muestre por pantalla los elementos de la diagonal principal.
 
-   - `public static int filaDelMayor (int[][] m)`, que devuelva la fila en que se encuentra el mayor elemento de la matriz.
+- `public static int filaDelMayor (int[][] m)`, que devuelva la fila en que se encuentra el mayor elemento de la matriz.
 
-   - `public static void intercambiarFilas(int[][] m, int f1, int f2)`, que intercambie los elementos de las filas indicadas.
+- `public static void intercambiarFilas(int[][] m, int f1, int f2)`, que intercambie los elementos de las filas indicadas.
 
-   - Escribir un método `public static boolean esSimetrica (int[][] m)` que devuelva true si la matriz m es simétrica. Una matriz es simétrica si tiene el mismo número de filas que de columnas y además `m[i][j] = m[j][i]` para todo par de índices `i,j`.
+- Escribir un método `public static boolean esSimetrica (int[][] m)` que devuelva true si la matriz m es simétrica. Una matriz es simétrica si tiene el mismo número de filas que de columnas y además `m[i][j] = m[j][i]` para todo par de índices `i,j`.
 
-     Por ejemplo, es simétrica:
+  Por ejemplo, es simétrica:
 
-     ```sh
-     1 5 3
-     5 4 7
-     3 7 5
-     ```
+  ```sh
+  1 5 3
+  5 4 7
+  3 7 5
+  ```
 
-4. (Tetris) Supongamos que estamos desarrollando un Tetris en Java y para representar la partida utilizamos una matriz bidimensional de enteros 15 filas por 8 columnas. Se utiliza el valor 0 para indicar que la celda está vacía y un valor distinto de cero para las celdas que contienen parte de una pieza (distintos valores para distintos colores):
+18. (Tetris) Supongamos que estamos desarrollando un Tetris en Java y para representar la partida utilizamos una matriz bidimensional de enteros 15 filas por 8 columnas. Se utiliza el valor 0 para indicar que la celda está vacía y un valor distinto de cero para las celdas que contienen parte de una pieza (distintos valores para distintos colores):
 
-   <img src="assets/tetris.png" alt="Tetris" style="zoom:75%;" />
+<img src="assets/tetris.png" alt="Tetris" style="zoom:75%;" />
 
-   Escribir un método que reciba la matriz y elimine las filas completas, haciendo caer las piezas que hay por encima de las celdas eliminadas tal y como se hace en el juego.
-   
-   > NOTA: Puede ser útil para ver resultados crear un método `public static void imprimePartida(int[][] partida)` que imprima el estado actual de la matriz `partida`
+​	Escribir un método que reciba la matriz y elimine las filas completas, haciendo caer las piezas que hay por encima de las celdas eliminadas tal y como se hace en el juego.
+
+> NOTA: Puede ser útil para ver resultados crear un método `public static void imprimePartida(int[][] partida)` que imprima el estado actual de la matriz `partida`
 
 # Recursividad
 
-1. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos diga si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo, "DABALEARROZALAZORRAELABAD" es un palíndromo.
+19. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos diga si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo, "DABALEARROZALAZORRAELABAD" es un palíndromo.
 
-    "La ruta nos aporto otro paso natural"
+​		"La ruta nos aporto otro paso natural"
 
-    "Nada, yo soy Adan"
+​		"Nada, yo soy Adan"
 
-    "A mama Roma le aviva el amor a papa y a papa Roma le aviva el amor a mama"
+​		"A mama Roma le aviva el amor a papa y a papa Roma le aviva el amor a mama"
 
-    "Ana, la tacaña catalana"
+​		"Ana, la tacaña catalana"
 
-    "Yo hago yoga hoy"
+​		"Yo hago yoga hoy"
 
-    > NOTA: ¿Te atreves a implementar una solución que permita la entrada con espacios? ¿Y permitiendo espacios y signos de puntuación?"
+> NOTA: ¿Te atreves a implementar una solución que permita la entrada con espacios? ¿Y permitiendo espacios y signos de puntuación?"
 
-2. Implemente, tanto de forma recursiva como de forma iterativa, una función que le dé la vuelta a una cadena de caracteres. 
+20. Implemente, tanto de forma recursiva como de forma iterativa, una función que le dé la vuelta a una cadena de caracteres. 
 
-   > NOTA: Obviamente, si la cadena es un palíndromo, la cadena y su inversa coincidirán.
+> NOTA: Obviamente, si la cadena es un palíndromo, la cadena y su inversa coincidirán.
 
-3. Implemente, tanto de forma recursiva como de forma iterativa, una función que permitan calcular el número de combinaciones de `n` elementos tomados de `m` en `m`. 
+21. Implemente, tanto de forma recursiva como de forma iterativa, una función que permitan calcular el número de combinaciones de `n` elementos tomados de `m` en `m`. 
 
-   Realice dos versiones de la implementación iterativa, una aplicando la fórmula y otra utilizando una matriz auxiliar (en la que se vaya construyendo el triángulo de Pascal).
+​	Realice dos versiones de la implementación iterativa, una aplicando la fórmula y otra utilizando una matriz auxiliar (en la que se vaya construyendo el triángulo de Pascal).
 
-4. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos devuelva el máximo común divisor de dos números enteros utilizando el algoritmo de Euclides. 
+22. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos devuelva el máximo común divisor de dos números enteros utilizando el algoritmo de Euclides. 
 
-   ```
-   ALGORITMO DE EUCLIDES
-   Dados dos números enteros positivos m y n, tal que m > n, para encontrar su máximo común divisor (es decir, el mayor entero positivo que divide a ambos): 
-   - Dividir m por n para obtener el resto r (0 ≤ r < n) 
-   - Si r = 0, el MCD es n. 
-   - Si no, el máximo común divisor es MCD(n,r). 
-   ```
-   
-5. La ordenación por mezcla (mergesort) es un método de ordenación que se basa en un principio muy simple: se ordenan las dos mitades de un vector y, una vez ordenadas, se mezclan. Escriba un programa que implemente este método de ordenación. 
+```
+ALGORITMO DE EUCLIDES
+Dados dos números enteros positivos m y n, tal que m > n, para encontrar su máximo común divisor (es decir, el mayor entero positivo que divide a ambos): 
+- Dividir m por n para obtener el resto r (0 ≤ r < n) 
+- Si r = 0, el MCD es n. 
+- Si no, el máximo común divisor es MCD(n,r). 
+```
 
-6. Diseñe e implemente un algoritmo que imprima todas las posibles descomposiciones de un número natural como suma de números menores que él (sumas con más de un sumando). 
+23. La ordenación por mezcla (mergesort) es un método de ordenación que se basa en un principio muy simple: se ordenan las dos mitades de un vector y, una vez ordenadas, se mezclan. Escriba un programa que implemente este método de ordenación. 
 
-7. Diseñe e implemente un método recursivo que nos permita obtener el determinante de una matriz cuadrada de dimensión `n`.
+24. Diseñe e implemente un algoritmo que imprima todas las posibles descomposiciones de un número natural como suma de números menores que él (sumas con más de un sumando). 
 
-8. Diseñe e implemente un programa que juegue al juego de cifras de  "Cifras y Letras ". El juego consiste en obtener, a partir de 6 números, un número lo más cercano posible a un número de tres cifras realizando operaciones aritméticas con los 6 números.
+25. Diseñe e implemente un método recursivo que nos permita obtener el determinante de una matriz cuadrada de dimensión `n`.
 
-9. Problema de las 8 reinas: Se trata de buscar la forma de colocar 8 reinas en un tablero de ajedrez de forma que ninguna de ellas amenace ni se vea amenazada por otra reina.
+26. Diseñe e implemente un programa que juegue al juego de cifras de  "Cifras y Letras ". El juego consiste en obtener, a partir de 6 números, un número lo más cercano posible a un número de tres cifras realizando operaciones aritméticas con los 6 números.
 
-    ```
-    Algoritmo: 
-    - Colocar la reina i en la primera casilla válida de la fila i 
-    - Si una reina no puede llegar a colocarse en ninguna casilla, se vuelve atrás y se cambia la posición de la reina de la fila i-1
-    - Intentar colocar las reinas restantes en las filas que quedan 
-    ```
+27. Problema de las 8 reinas: Se trata de buscar la forma de colocar 8 reinas en un tablero de ajedrez de forma que ninguna de ellas amenace ni se vea amenazada por otra reina.
 
-10. Salida de un laberinto: Se trata de encontrar un camino que nos permita salir de un laberinto definido en una matriz NxN. Para movernos por el laberinto, sólo podemos pasar de una casilla a otra que sea adyacente a la primera y no esté marcada como una casilla prohibida (esto es, las casillas prohibidas determinan las paredes que forman el laberinto). 
+```
+Algoritmo: 
+- Colocar la reina i en la primera casilla válida de la fila i 
+- Si una reina no puede llegar a colocarse en ninguna casilla, se vuelve atrás y se cambia la posición de la reina de la fila i-1
+- Intentar colocar las reinas restantes en las filas que quedan 
+```
 
-    ```
-    Algoritmo:
-    - Se comienza en la casilla (0,0) y se termina en la casilla (N-1, N-1) 
-    - Nos movemos a una celda adyacente si esto es posible. 
-    - Cuando llegamos a una situación en la que no podemos realizar ningún movimiento que nos lleve a una celda que no hayamos visitado ya, retrocedemos sobre nuestros pasos y buscamos un camino alternativo. 
-    ```
+28. Salida de un laberinto: Se trata de encontrar un camino que nos permita salir de un laberinto definido en una matriz NxN. Para movernos por el laberinto, sólo podemos pasar de una casilla a otra que sea adyacente a la primera y no esté marcada como una casilla prohibida (esto es, las casillas prohibidas determinan las paredes que forman el laberinto). 
+
+```
+Algoritmo:
+- Se comienza en la casilla (0,0) y se termina en la casilla (N-1, N-1) 
+- Nos movemos a una celda adyacente si esto es posible. 
+- Cuando llegamos a una situación en la que no podemos realizar ningún movimiento que nos lleve a una celda que no hayamos visitado ya, retrocedemos sobre nuestros pasos y buscamos un camino alternativo. 
+```
 
 # Fuentes de información
 
