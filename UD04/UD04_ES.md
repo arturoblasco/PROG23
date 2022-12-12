@@ -659,29 +659,31 @@ A menudo encontraréis que explicar de palabra la idea general de una estrategia
 
 <img src="/assets/matryoshka.png" style="zoom:80%;" />
 
-De hecho, tal vez sin darse cuenta de ello en, ya se ha usado recursividad para describir cómo resolver un problema. Para ver qué significa exactamente la definición formal apenas descrita, se repetirá el texto en cuestión, pero remarcando el aspecto recursivo de la descripción:
+De hecho, tal vez sin darse cuenta de ello, ya se ha usado recursividad para describir cómo resolver un problema. Para ver qué significa exactamente la definición formal apenas descrita, se repetirá el texto en cuestión, pero remarcando el aspecto recursivo de la descripción:
 
 "*Generalmente, la mejor estrategia para adivinar un número secreto entre 0 y N sería primero probar N/2. Si no se ha acertado, entonces si el número secreto es más alto se intenta adivinar entre (N/2 + 1) y N. Si era más bajo, se intenta adivinar el valor entre 0 y N-1. Para cada caso, se vuelve a probar el valor que hay en el centro del nuevo intervalo. Y así sucesivamente, hasta adivinarlo.*"
 
-O sea, **el proceso de adivinar un número se basa en el proceso de intentar adivinar un número!** Esto parece hacer trampas, ya es como usar la misma palabra que se quiere definir a su propia definición. Pero fíjese en un detalle muy importante. Los nuevos usos del proceso de "adivinar" son casos más simples, ya que primero se adivina entre N valores posibles, luego entre N/2 valores, después entre N/4, etc. Este hecho no es casual y de él depende poder definir un proceso recursivo de manera correcta.
+O sea, **el proceso de adivinar un número se basa en el proceso de intentar adivinar un número!** Esto parece hacer trampas, ya es como usar la misma palabra que se quiere definir a su propia definición. Pero fíjate en un detalle muy importante; los nuevos usos del proceso de "adivinar" son casos más simples, ya que primero se adivina entre N valores posibles, luego entre N/2 valores, después entre N/4, etc. Este hecho no es casual y de él depende poder definir un proceso recursivo de manera correcta.
 
 > Otro ejemplo de recursividad es la definición de las iniciales del sistema operativo GNU quieren decir "*GNU is Not Unix*"
 
 ## Implementación de la recursividad
 
-La implementación de la recursividad dentro del código fuente de un programa se hace a nivel de método.
+La implementación de la recursividad dentro del código fuente de un programa se realiza a nivel de método.
 
 > Un **método recursivo** es aquel que, dentro de su bloque de instrucciones, tiene alguna invocación a él mismo.
 
 El bloque de código de un método recursivo siempre se basa en una estructura de selección múltiple, donde cada rama es de alguno de los dos casos posibles descritos a continuación.
 
-- Por un lado, en el **caso base**, que contiene un bloque instrucciones dentro de las cuales no hay ninguna llamada al método mismo. Se ejecuta cuando se considera que, a partir de los parámetros de entrada, el problema ya es suficientemente simple como para ser resuelto directamente. En el caso de la búsqueda, sería cuando la posición intermedia es exactamente el valor que se está buscando, o bien cuando ya se puede decidir que el elemento a buscar no existe.
+- Por un lado, en el **caso base**, que contiene un bloque instrucciones dentro de las cuales no hay ninguna llamada al método mismo. Se ejecuta cuando se considera que, a partir de los parámetros de entrada, el problema ya es suficientemente simple como para ser resuelto directamente. 
 
-- Por otra parte, existe el **caso recursivo**, que contiene un bloque de instrucciones dentro de las cuales hay una llamada al método mismo, dado que se considera que aún no se puede resolver el problema fácilmente. Ahora bien, los valores usados como parámetros de esta nueva llamada deben ser diferentes a los originales. Concretamente, serán unos valores que tiendan a acercarse al caso base. En el caso de la búsqueda, se corresponde a la búsqueda sobre la mitad de los valores originales, ya sea hacia la mitad inferior o superior.
+  En el caso de la *búsqueda binaria*, sería cuando la posición intermedia es exactamente el valor que se está buscando, o bien cuando ya se puede decidir que el elemento a buscar no existe.
 
-  Este es un caso en el que el intervalo de posiciones donde se hará la nueva búsqueda se va acercando al caso base, ya que tarde o temprano, llamada tras llamada, el espacio de búsqueda se irá reduciendo hasta que, o bien se encuentra el elemento, o queda claro que no está.
+- Por otra parte, existe el **caso recursivo**, que contiene un bloque de instrucciones dentro de las cuales hay una llamada al método mismo, dado que se considera que aún no se puede resolver el problema fácilmente. Ahora bien, los valores usados como parámetros de esta nueva llamada deben ser diferentes a los originales. Concretamente, serán unos valores que tiendan a acercarse al caso base. 
 
-Dentro de la estructura de selección siempre debe haber al menos un caso base y uno recursivo. Normalmente, los algoritmos recursivos más sencillos tienen uno de cada. Es imprescindible que los casos recursivos siempre garanticen que sucesivas llamadas van aproximando los valores de los parámetros de entrada a algún caso base, ya que, de lo contrario, el programa nunca termina y se produce el mismo efecto que en un bucle infinito.
+  En el caso de la *búsqueda binaria*, se corresponde a la búsqueda sobre la mitad de los valores originales, ya sea hacia la mitad inferior o superior. Este es un caso en el que el intervalo de posiciones donde se hará la nueva búsqueda se va acercando al caso base, ya que tarde o temprano, llamada tras llamada, el espacio de búsqueda se irá reduciendo hasta que, o bien se encuentra el elemento, o queda claro que no está.
+
+> Dentro de la estructura de selección siempre debe haber al menos un caso base y uno recursivo. Normalmente, los algoritmos recursivos más sencillos tienen uno de cada. Es imprescindible que los casos recursivos siempre garanticen que sucesivas llamadas van aproximando los valores de los parámetros de entrada a algún caso base, ya que, de lo contrario, el programa nunca termina y se produce el mismo efecto que en un bucle infinito.
 
 ### Cálculo recursivo de la operación factorial
 
@@ -704,31 +706,31 @@ package UD04;
 
 public class Recursividad {
 
-    public static void main(String[] args) {
-        //factorial
-        System.out.println(factorial(4));
-        [...]      
-    }
+public static void main(String[] args) {
+	//factorial
+    System.out.println("FACTORIAL DE 4: " + factorial(4));
+    [...]      
+}
 
-    /**
-     * Método recursivo que calcula el factorial
-     */
-    public static int factorial(int n) {
-        if (n == 0) {
-            //Caso base: Se sabe el resultat directamente
-            System.out.println("Caso base: n es igual a 0");
-            return 1;
-        } else {
-            //Caso recursivo: Para calcularlo hay que invocar al método recursivo
-            //El valor del nuevo parámetro de entradad se ha de modificar, de
-            //manera que se vaya acercando al caso base
-            System.out.println("Caso recursivo " + (n - 1)
-                    + ": Se invoca al factorial(" + (n - 1) + ")");
-            int res = n * factorial(n - 1);
-            System.out.println("  cuyo resultado es: " + res);
-            return res;
-        }
+/**
+ * Método recursivo que calcula el factorial
+ */
+public static int factorial(int n) {
+    if (n == 0) {
+        //Caso base: Se sabe el resultat directamente
+        System.out.println("Caso base: n es igual a 0");
+        return 1;
+    } else {
+        //Caso recursivo: Para calcularlo hay que invocar al método recursivo
+        //El valor del nuevo parámetro de entradad se ha de modificar, de
+        //manera que se vaya acercando al caso base
+        System.out.println("Caso recursivo " + (n - 1)
+                + ": Se invoca al factorial(" + (n - 1) + ")");
+        int res = n * factorial(n - 1);
+        System.out.println("  cuyo resultado es: " + res);
+        return res;
     }
+}
 [...]
 ```
 
@@ -744,7 +746,7 @@ Caso base: n es igual a 0
   cuyo resultado es: 2
   cuyo resultado es: 6
   cuyo resultado es: 24
-24
+FACTORIAL DE 4: 24
 ```
 
 ### Cálculo recursivo de la búsqueda dicotómica
@@ -803,11 +805,25 @@ Busqueda del 5: -1
 
 Prácticamente cualquier problema que se puede resolver con un algoritmo recursivo también se puede resolver con sentencias de estructuras de repetición (de manera iterativa). Pero muy a menudo su implementación será mucho menos evidente y las interacciones entre instrucciones bastante más complejas que la opción recursiva (una vez se entiende este concepto, claro).
 
+#### Algoritmo ya existente
+
+Más allá de ser un ejercicio de algorítmica, resultaría mucho más adecuado utilizar la versión ya incorporada en la librería estándar del lenguaje de programación Java:
+
+```java
+import java.util.Arrays;
+[...]
+public int busquedaBinaria (int[] números, int número) {
+    return Arrays.binarySearch(números, número);
+}
+```
+
+
+
 ## Desbordamiento de pila (stack overflow)
 
 Las versiones recursivas de muchas rutinas pueden ejecutarse un poco más lentamente que sus equivalentes iterativos debido a la sobrecarga adicional de las llamadas a métodos adicionales. Demasiadas llamadas recursivas a un método podrían causar un **desbordamiento de la pila**.
 
-Como el almacenamiento para los parámetros y las variables locales está en la pila y cada llamada nueva crea una nueva copia de estas variables, es posible que la pila se haya agotado. Si esto ocurre, el sistema de tiempo de ejecución (run-time) de Java causará una excepción. Sin embargo, probablemente no tendrás que preocuparte por esto a menos que una rutina recursiva se vuelva loca.
+Como el almacenamiento para los parámetros y las variables locales están en la pila y cada llamada nueva crea una nueva copia de estas variables, es posible que la pila se haya agotado. Si esto ocurre, el sistema de tiempo de ejecución (run-time) de Java causará una excepción. Sin embargo, probablemente no tendrás que preocuparte por esto a menos que una rutina recursiva se vuelva *loca*.
 
 La principal ventaja de la recursividad es que algunos tipos de algoritmos se pueden implementar de forma más clara y más recursiva de lo que pueden ser iterativamente. Por ejemplo, el algoritmo de clasificación [Quicksort](https://es.wikipedia.org/wiki/Quicksort) es bastante difícil de implementar de forma iterativa. Además, algunos problemas, especialmente los relacionados con la **IA**, parecen prestarse a **soluciones recursivas**.
 
