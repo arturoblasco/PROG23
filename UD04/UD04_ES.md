@@ -811,7 +811,9 @@ Más allá de ser un ejercicio de algorítmica, resultaría mucho más adecuado 
 
 ```java
 import java.util.Arrays;
+
 [...]
+
 public int busquedaBinaria (int[] números, int número) {
     return Arrays.binarySearch(números, número);
 }
