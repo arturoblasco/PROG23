@@ -147,7 +147,7 @@ Boolean salida = "Java".equals("java"); // retorna false
 - `boolean equalsIgnoreCase(String otroString)`: Compares string to another string, ignoring case considerations.
 
 ```java
-Boolean salida= "Java".equalsIgnoreCase("Java"); // retorna true
+Boolean salida = "Java".equalsIgnoreCase("Java"); // retorna true
 Boolean salida = "Java".equalsIgnoreCase("java"); // retorna true
 ```
 

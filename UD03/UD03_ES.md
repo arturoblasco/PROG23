@@ -636,7 +636,7 @@ En ese momento el control del flujo del programa pasará a la siguiente instrucc
 Scanner sc = new Scanner(System.in);
 int numero;
 
-do {}
+do {
     System.out.println("Ingresa un numero: ");
     numero = sc.nextInt();
 }
