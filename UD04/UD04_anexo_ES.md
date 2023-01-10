@@ -61,9 +61,11 @@ class DemoString
     public static void main(String args[])
     {
         //Declaración de String de diferentes maneras
-        String str1=new String("En Java, los String son objetos");
-        String str2=new String("Se construyen de varias maneras");
-        String str3=new String(str2);
+        String str1 = new String("En Java, los String son objetos");
+        
+        
+        String str2 = new String("Se construyen de varias maneras");
+        String str3 = new String(str2);
 
         System.out.println(str1);
         System.out.println(str2);
@@ -184,6 +186,8 @@ String palabra1 = "HoLa";
 String palabra2 = palabra1.toLowerCase(); // retorna "hola"
 ```
 
+
+
 - `String toUpperCase()`: Convierte todos los caracteres de String a mayúsculas.
 
 ```java
@@ -223,82 +227,97 @@ String str2 = str.replaceAll("\\s", ""); //retorna Ejemploconespaciosenblancoyta
 >
 > Debes escapar de la barra invertida si deseas que `\s` alcance el motor de expresiones regulares, lo que da como resultado `\\s`).
 
+
+
 > Más información sobre expresiones regulares en java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Ejemplo de todos los métodos de `String`
 
 ```java
-// Código Java para ilustrar diferentes constructores y métodos
-// de la clase String.
+// Ilustrar diferentes constructores y métodos de la clase String.
 
 class DemoMetodosString {
-    public static void main (String[] args) {
-        String s= "JavadesdeCero";
-        // o String s= new String ("JavadesdeCero");
+  public static void main (String[] args) {
+    String s= "JavadesdeCero";
+    // o String s= new String ("JavadesdeCero");
 
-        // Devuelve la cantidad de caracteres en la Cadena.
-        System.out.println("String length = " + s.length());
+    // Devuelve la cantidad de caracteres en la Cadena.
+    System.out.println("String length = " + s.length());
 
-        // Devuelve el carácter en el índice i.
-        System.out.println("Character at 3rd position = " + s.charAt(3));
+    // Devuelve el carácter en el índice i.
+    System.out.println("Character at 3rd position = " + s.charAt(3));
 
-        // Devuelve la subcadena del carácter índice i-ésimo al final de la cadena
-        System.out.println("Substring " + s.substring(3));
+    // Devuelve la subcadena del carácter índice i-ésimo al final de la cadena
+    System.out.println("Substring " + s.substring(3));
 
-        // Devuelve la subcadena del índice i a j-1.
-        System.out.println("Substring  = " + s.substring(2,5));
+    // Devuelve la subcadena del índice i a j-1.
+    System.out.println("Substring  = " + s.substring(2,5));
 
-        // Concatena string2 hasta el final de string1.
-        String s1 = "Java";
-        String s2 = "desdeCero";
-        System.out.println("String concatenado  = " + s1.concat(s2));
+    // Concatena string2 hasta el final de string1.
+    String s1 = "Java";
+    String s2 = "desdeCero";
+    System.out.println("String concatenado  = " + s1.concat(s2));
 
-        // Devuelve el índice dentro de la cadena de
-        // la primera aparición de la cadena especificada.
-        String s4 = "Java desde Cero";
-        System.out.println("Índice de Cero: " + s4.indexOf("Cero"));
+    // Devuelve el índice dentro de la cadena de
+    // la primera aparición de la cadena especificada.
+    String s4 = "Java desde Cero";
+    System.out.println("Índice de Cero: " + s4.indexOf("Cero"));
 
-        // Devuelve el índice dentro de la cadena de
-        // la primera aparición de la cadena especificada,
-        // comenzando en el índice especificado.
-        System.out.println("Índice de a  = " + s4.indexOf('a',3));
+    // Devuelve el índice dentro de la cadena de
+    // la primera aparición de la cadena especificada,
+    // comenzando en el índice especificado.
+    System.out.println("Índice de a  = " + s4.indexOf('a',3));
 
-        // Comprobando la igualdad de cadenas
-        Boolean out = "Java".equals("java");
-        System.out.println("Comprobando la igualdad: " + out);
-        out = "Java".equals("Java");
-        System.out.println("Comprobando la igualdad: " + out);
+    // Comprobando la igualdad de cadenas
+    Boolean out = "Java".equals("java");
+    System.out.println("Comprobando la igualdad: " + out);
+    out = "Java".equals("Java");
+    System.out.println("Comprobando la igualdad: " + out);
 
-        out = "Java".equalsIgnoreCase("jaVA ");
-        System.out.println("Comprobando la igualdad: " + out);
+    out = "Java".equalsIgnoreCase("jaVA ");
+    System.out.println("Comprobando la igualdad: " + out);
 
-        int out1 = s1.compareTo(s2);
-        System.out.println("Si s1 = s2: " + out1);
+    int out1 = s1.compareTo(s2);
+    System.out.println("Si s1 = s2: " + out1);
 
-        // Conversión de cases
-        String palabra1 = "JavadesdeCero";
-        System.out.println("Cambiando a minúsculas: " + palabra1.toLowerCase());
+    // Conversión de cases
+    String palabra1 = "JavadesdeCero";
+    System.out.println("Cambiando a minúsculas: " + palabra1.toLowerCase());
 
-        // Conversión de cases
-        String palabra2 = "JavadesdeCero";
-        System.out.println("Cambiando a MAYÚSCULAS: " + palabra1.toUpperCase());
+      
+      
+    // Conversión de cases
+    String palabra2 = "JavadesdeCero";
+    System.out.println("Cambiando a MAYÚSCULAS: " + palabra1.toUpperCase());
 
-        // Recortando la palabra
-        String word4 = " JavadesdeCero ";
-        System.out.println("Recortando la palabra: " + word4.trim());
+    // Recortando la palabra
+    String word4 = " JavadesdeCero ";
+    System.out.println("Recortando la palabra: " + word4.trim());
 
-        // Reemplazar caracteres
-        String str1 = "YavadesdeCero";
-        System.out.println("String Original: " + str1);
-        String str2 = "YavadesdeCero".replace('Y' ,'J') ;
-        System.out.println("Reemplazando Y por J -> " + str2);
-        
-        // Reemplazar todos los carácteres
-        String strAll = "Guru99 is a site providing free tutorials";
-        System.out.println("String Original: " + strAll);
-		String strAll2 = strAll.replaceAll("\\s", "");
-		System.out.println("Eliminando todos los espacios en blanco -> " + strAll2);
-    }
+    // Reemplazar caracteres
+    String str1 = "YavadesdeCero";
+    System.out.println("String Original: " + str1);
+    String str2 = "YavadesdeCero".replace('Y' ,'J') ;
+    System.out.println("Reemplazando Y por J -> " + str2);
+
+    // Reemplazar todos los carácteres
+    String strAll = "Guru99 is a site providing free tutorials";
+    System.out.println("String Original: " + strAll);
+    String strAll2 = strAll.replaceAll("\\s", "");
+    System.out.println("Eliminando los espacios en blanco -> " + strAll2);
+  }
 }
 ```
 
@@ -322,7 +341,7 @@ Recortando la palabra: JavadesdeCero
 String Original: YavadesdeCero
 Reemplazando Y por J -> JavadesdeCero
 String Original: Guru99 is a site providing free tutorials
-Eliminando todos los espacios en blanco -> Guru99issueproporcionarTutorialesfreet
+Eliminando los espacios en blanco -> Guru99issueproporcionarTutorialesfreet
 ```
 
 ## Arrays de `String`
@@ -335,6 +354,9 @@ class StringArray {
     public static void main (String[] args) {
        String str[]={"Java", "desde", "Cero"};
 
+        
+        
+        
         System.out.println("Array Original: ");
         for (String s : str)
             System.out.print(s+ "");
