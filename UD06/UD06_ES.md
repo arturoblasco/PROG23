@@ -1,5 +1,6 @@
 ---
-title: UD06: Lectura y escritura de información
+unit: UD06
+title: Lectura y escritura de información
 language: ES
 author: Arturo BC [arturoblasco@iesmre.com]
 subject: Programación
@@ -13,15 +14,15 @@ typora-copy-images-to:${filename}/../assets
 [toc]
 # Streams (Flujos)
 
-Los programas Java realizan las operaciones de entrada y salida a través de lo que se denominan Streams (traducido, flujos). 
+Los programas Java realizan las operaciones de entrada y salida a través de lo que se denominan **Streams** (*traducido, **flujos***). 
 
-<img src="assets/stream.png" alt="image-20210828174745591" style="zoom:67%;" />
+<img src="assets/stream.png" alt="image-20210828174745591" style="zoom:55%;" />
 
 Un stream es una abstracción de todo aquello que produzca o consuma información. Podemos ver a este stream como una entidad lógica que, por otra parte, se encontrará vinculado con un dispositivo físico. La eficacia de esta forma de implementación radica en que las operaciones de entrada y salida que el programador necesita manejar son las mismas independientemente del dispositivo con el que estemos actuando. Será Java quien se encargue de manejar el dispositivo concreto, ya se trate del teclado, el monitor, un sistema de ficheros o un socket de red, etc., liberando a nuestro código de tener que saber con quién está interactuando.
 
 ## Clasificación de los Streams
 
-En Java los Streams se materializan en un conjunto de clases y subclases, contenidas en el paquete `java.io`. Todas las clases para manejar streams parten, de cuatro clases abstractas: 
+En Java los *streams* se materializan en un conjunto de clases y subclases, contenidas en el paquete `java.io`. Todas las clases para manejar streams parten, de cuatro clases abstractas: 
 
 - `InputStream`
 - `OutputStream`
@@ -32,6 +33,16 @@ En Java los Streams se materializan en un conjunto de clases y subclases, conten
 | ------------------ | ---------------------- | ------------------------- |
 | Para **lectura**   | InputStream            | Reader                    |
 | Para **escritura** | OutputStream           | Writer                    |
+
+
+
+
+
+
+
+
+
+
 
 ### Streams orientados a byte (byte streams)
 
@@ -108,6 +119,10 @@ Como hemos comentado, tanto en `Reader` como en `InputStream` encontramos un mé
 
 A pesar de llamarse igual, `InputStream.read()` devuelve el siguiente byte de datos leído del stream. El valor que devuelve está entre 0 y 255 (ó -1 si se ha llegado al final del stream). `Reader.read()`, sin embargo, devuelve un valor entre 0 y 65535 (ó -1), correspondiente al siguiente carácter simple leído del stream.
 
+
+
+
+
 ## Stream estándar
 
 Existen una serie de stream de uso común a los cuales se denomina stream estándar. El sistema se encarga de crear estos stream automáticamente. 
@@ -128,6 +143,8 @@ Existen una serie de stream de uso común a los cuales se denomina stream están
   - Se utiliza para enviar mensajes de error (por ejemplo a un fichero de log o a la consola)
 
 > Por defecto, `System.in`, `System.out` y `System.err` se encuentran asociados a la consola (teclado y pantalla), pero es posible redirigirlos a otras fuentes o destinos, como por ejemplo a un fichero.
+
+
 
 ## Utilización de Streams
 
