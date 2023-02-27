@@ -1,14 +1,15 @@
 ---
-    title: Ejercicios de la UD06
-    language: ES
-    author: Arturo BC [arturoblasco@iesmre.com]
-    subject: Programación
-    keywords: [PRG, 2022, Programacion, Java]
-    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-    header: ${title} - ${subject} (ver: ${today}) 
-    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-    typora-root-url:${filename}/../
-    typora-copy-images-to:${filename}/../assets
+unit: UD06
+title: Ejercicios 1
+language: ES
+author: Arturo BC [arturoblasco@iesmre.com]
+subject: Programación
+keywords: [PRG, 2022, Programacion, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${title} - ${subject} (ver: ${today}) 
+footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url:${filename}/../
+typora-copy-images-to:${filename}/../assets
 ---
 [toc]
 # Ejercicios
