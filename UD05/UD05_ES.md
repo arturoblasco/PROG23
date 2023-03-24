@@ -6,8 +6,8 @@ author: Arturo Blasco [arturoblasco@iesmre.com]
 subject: Programación
 keywords: [PRG, 2022, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today})
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
@@ -177,9 +177,9 @@ Los **modificadores** de clase son:
 
 Veamos qué significado tiene cada uno de ellos:
 
-- Modificador `public`. Indica que la clase es visible (se pueden crear objetos de esa clase) desde cualquier otra clase. Es decir, desde cualquier otra parte del programa. Si no se especifica este modificador, la clase sólo podrá ser utilizada desde clases que estén en el mismo paquete. El concepto de paquete lo veremos más adelante. **Sólo puede haber una clase public (clase principal) en un archivo `.java`**. El resto de clases que se definan en ese archivo no serán públicas.
-- Modificador `abstract`. Indica que la clase es abstracta. **Una clase abstracta no es instanciable**. Es decir, no es posible crear objetos de esa clase (habrá que utilizar clases que hereden de ella). En este momento es posible que te parezca que no tenga sentido que esto pueda suceder (si no puedes crear objetos de esa clase, ¿para qué la quieres?), pero puede resultar útil a la hora de crear una jerarquía de clases. Esto lo verás también más adelante al estudiar el concepto de herencia.
-- Modificador `final`. Indica que no podrás crear clases que hereden de ella. También volverás a este modificador cuando estudies el concepto de herencia. **Los modificadores final y abstract son excluyentes (sólo se puede utilizar uno de ellos)**.
+- Modificador `public`: indica que la clase es visible (se pueden crear objetos de esa clase) desde cualquier otra clase. Es decir, desde cualquier otra parte del programa. Si no se especifica este modificador, la clase sólo podrá ser utilizada desde clases que estén en el mismo paquete. El concepto de paquete lo veremos más adelante. **Sólo puede haber una clase public (clase principal) en un archivo `.java`**. El resto de clases que se definan en ese archivo no serán públicas.
+- Modificador `abstract`: indica que la clase es abstracta. **Una clase abstracta no es instanciable**. Es decir, no es posible crear objetos de esa clase (habrá que utilizar clases que hereden de ella). En este momento es posible que te parezca que no tenga sentido que esto pueda suceder (*si no puedes crear objetos de esa clase, ¿para qué la quieres?*), pero puede resultar útil a la hora de crear una jerarquía de clases. Esto lo verás también más adelante al estudiar el concepto de herencia.
+- Modificador `final`: indica que no podrás crear clases que hereden de ella. También volverás a este modificador cuando estudies el concepto de herencia. **Los modificadores final y abstract son excluyentes (sólo se puede utilizar uno de ellos)**.
 
 Todos estos modificadores y palabras reservadas las iremos viendo poco a poco, así que no te preocupes demasiado por intentar entender todas ellas en este momento.
 
@@ -198,7 +198,7 @@ Como ya has visto anteriormente, el cuerpo de una clase se encuentra encerrado e
 - **Atributos**, que especifican los *datos* que podrá contener un objeto de la clase.
 - **Métodos**, que implementan las *acciones* que se podrán realizar con un objeto de la clase.
 
-Una clase puede no contener en su declaración atributos o métodos, pero debe de contener al menos uno de los dos (**la clase no puede ser vacía**).
+Una clase puede no contener en su declaración atributos o métodos, pero debe de contener al menos uno de los dos (**la clase no puede ser vacía***).
 
 En el ejemplo anterior donde se definía una clase `Punto`, tendríamos los siguientes atributos:
 
@@ -224,7 +224,7 @@ Por otro lado, la clase `Punto` también definía una serie de métodos:
   ```
   
 - ```java
-  int a;int obtenerY() {
+  int obtenerY() {
       return y;
   }
   ```
@@ -255,8 +255,7 @@ Para poder definir miembros estáticos en Java se utiliza el modificador `static
 
 Los **atributos** constituyen la estructura interna de los objetos de una clase. Se trata del conjunto de datos que los objetos de una determinada clase almacenan cuando son creados. Es decir es como si fueran variables cuyo ámbito de existencia es el objeto dentro del cual han sido creadas. Fuera del objeto esas variables no tienen sentido y si el objeto deja de existir, esas variables también deberían hacerlo (*proceso de destrucción del objeto*). Los atributos a veces también son conocidos con el nombre de **variables miembro** o **variables de objeto**.
 
-Los atributos pueden ser de cualquier tipo de los que pueda ser cualquier otra variable en un programa en
-Java: desde tipos primitivos como `int`, `boolean` o `float` hasta tipos referenciados como `arrays`, `Strings` u `objetos`.
+Los atributos pueden ser de cualquier tipo de los que pueda ser cualquier otra variable en un programa en Java: desde tipos primitivos como `int`, `boolean` o `float` hasta tipos referenciados como `arrays`, `Strings` u `objetos`.
 
 Además del tipo y del nombre, la declaración de un atributo puede contener también algunos modificadores (como por ejemplo `public`, `private`, `protected` o `static`). Por ejemplo, en el caso de la clase `Punto` que habíamos definido en el aparado anterior *podrías* haber declarado sus atributos como:
 
@@ -267,7 +266,9 @@ public int y;
 
 De esta manera estarías indicando que ambos atributos son públicos, es decir, accesibles por cualquier parte del código programa que tenga acceso a un objeto de esa clase.
 
-> Como ya verás más adelante al estudiar el concepto de encapsulación, lo normal es declarar todos los atributos (o al menos la mayoría) como privados (`private`) de manera que si se desea acceder o manipular algún atributo se tenga que hacer a través de los métodos proporcionados por la clase.
+> Como ya verás más adelante al estudiar el concepto de *encapsulación*, lo normal es declarar todos los atributos (o al menos la mayoría) como privados (`private`); de manera que si se desea acceder o manipular algún atributo se tenga que hacer a través de los métodos proporcionados por la clase.
+
+
 
 ## Declaración de atributos
 
@@ -290,7 +291,7 @@ private Punto p1;
 
 Te suena bastante, ¿verdad? La declaración de los atributos en una clase es exactamente igual a la declaración de cualquier variable tal y como has estudiado en las unidades anteriores y similar a como se hace en cualquier lenguaje de programación. Es decir mediante la indicación del tipo y a continuación el nombre del atributo, pudiéndose declarar varios atributos del mismo tipo mediante una lista de nombres de atributos separada por comas (exactamente como ya has estudiado al declarar variables).
 
-La declaración de un atributo (o variable miembro o variable de objeto) consiste en la declaración de una variable que únicamente existe en el interior del objeto y por tanto su vida comenzará cuando el objeto comience a existir (el objeto sea creado). Esto significa que cada vez que se cree un objeto se crearán tantas variables como atributos contenga ese objeto en su interior (definidas en la clase, que es la plantilla o "molde" del objeto). Todas esas variables estarán encapsuladas dentro del objeto y sólo tendrán sentido dentro de él.
+La declaración de un *atributo* (*variable miembro* o *variable de objeto*) consiste en la declaración de una variable que únicamente existe en el interior del objeto y por tanto su vida comenzará cuando el objeto comience a existir (el objeto sea creado). Esto significa que cada vez que se cree un objeto se crearán tantas variables como atributos contenga ese objeto en su interior (definidas en la clase, que es la plantilla o "molde" del objeto). Todas esas variables estarán encapsuladas dentro del objeto y sólo tendrán sentido dentro de él.
 
 En el ejemplo que estamos utilizando de objetos de tipo `Punto` (instancias de la clase `Punto`), cada vez que se cree un nuevo `Punto` `p1`, se crearán sendos atributos `x`, `y` de tipo `int` que estarán en el interior de ese punto `p1`.
 
@@ -304,14 +305,14 @@ Dentro de la declaración de un atributo puedes encontrar tres partes:
 
 Como puedes observar, los atributos de una clase también pueden contener modificadores en su declaración (como sucedía al declarar la propia clase). Estos modificadores permiten indicar cierto comportamiento de una tributo a la hora de utilizarlo. Entre los modificadores de un atributo podemos distinguir:
 
-- **Modificadores de acceso**. Indican la forma de acceso al atributo desde otra clase. Son modificadores excluyentes entre sí. Sólo se puede poner uno.
-- **Modificadores de contenido**. No son excluyentes. Pueden aparecer varios a la vez. 
+- **Modificadores de acceso**: Indican la forma de acceso al atributo desde otra clase. Son modificadores excluyentes entre sí. Sólo se puede poner uno.
+- **Modificadores de contenido**: No son excluyentes. Pueden aparecer varios a la vez. 
 - **Otros modificadores**: `transient` y `volatile`. El primero se utiliza para indicar que un atributo es transitorio (no persistente) y el segundo es para indicar al compilador que no debe realizar optimizaciones sobre esa variable. Es más que probable que no necesites utilizarlos en este módulo.
 
 Aquí tienes la sintaxis completa de la declaración de un atributo teniendo en cuenta la lista de todos los modificadores e indicando cuáles son incompatibles unos con otros:
 
 ```java
-[private | protected | public] [static] [final] [transient] [volatile] <tipo><nombreAtributo>;
+[private | protected | public] [static] [final] [transient] [volatile] <tipo> <nombreAtributo>;
 ```
 
 Vamos a estudiar con detalle cada uno de ellos.
@@ -336,16 +337,20 @@ Puedes observar un resumen de los distintos niveles accesibilidad que permite ca
 
 > ¡Recuerda que **los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
 
+
+
+
+
 ## Modificadores de contenido
 
-Los modificadores de contenido no son excluyentes (pueden aparecer varios para un mismo atributo). Son los siguientes:
+Los modificadores de contenido **no son excluyentes** (pueden aparecer varios para un mismo atributo). Son los siguientes:
 
-- **Modificador `static`**. Hace que el atributo sea común para todos los objetos de una misma clase. Es decir, todos los objetos de la clase compartirán ese mismo atributo con el mismo valor. Es un caso de **miembro estático** o **miembro de clase**: un **atributo estático** o **atributo de clase** o **variable de clase**.
-- **Modificador `final`**. Indica que el atributo es una constante. Su valor no podrá ser modificado a lo largo de la vida del objeto. Por convenio, el nombre de los atributos constantes (`final`) se escribe con todas las letras en mayúsculas.
+- **Modificador `static`**: Hace que el atributo sea común para todos los objetos de una misma clase. Es decir, todos los objetos de la clase compartirán ese mismo atributo con el mismo valor. Es un caso de **miembro estático** o **miembro de clase**: un **atributo estático** o **atributo de clase** o **variable de clase**.
+- **Modificador `final`**: Indica que el atributo es una constante. Su valor no podrá ser modificado a lo largo de la vida del objeto. Por convenio, el nombre de los atributos constantes (`final`) se escribe con todas las letras en mayúsculas.
 
 En el siguiente apartado sobre atributos estáticos verás un ejemplo completo de un atributo estático (`static`). Veamos ahora un ejemplo de atributo constante (`final`).
 
-Imagina que estás diseñando un conjunto de clases para trabajar con expresiones geométricas (f*iguras, superficies, volúmenes, etc*.) y necesitas utilizar muy a menudo la constante pi con abundantes cifras significativas, por ejemplo, 3.14159265. Utilizar esa constante literal muy a menudo puede resultar tedioso además de poco operativo (imagina que el futuro hubiera que cambiar la cantidad de cifras significativas). La idea es declararla una sola vez, asociarle un nombre simbólico (un identificador) y utilizar ese identificador cada vez que se necesite la constante. En tal caso puede resultar muy útil declarar un atributo final con el valor 3.14159265 dentro de la clase en la que se considere oportuno utilizarla. El mejor identificador que podrías utilizar para ella será probablemente el propio nombre de la constante (y en mayúsculas, para seguir el convenio de nombres), es decir, `PI`.
+Imagina que estás diseñando un conjunto de clases para trabajar con expresiones geométricas (*figuras, superficies, volúmenes, etc*.) y necesitas utilizar muy a menudo la constante pi con abundantes cifras significativas, por ejemplo, 3.14159265. Utilizar esa constante literal muy a menudo puede resultar tedioso además de poco operativo (imagina que el futuro hubiera que cambiar la cantidad de cifras significativas). La idea es declararla una sola vez, asociarle un nombre simbólico (un identificador) y utilizar ese identificador cada vez que se necesite la constante. En tal caso puede resultar muy útil declarar un atributo final con el valor 3.14159265 dentro de la clase en la que se considere oportuno utilizarla. El mejor identificador que podrías utilizar para ella será probablemente el propio nombre de la constante (y en mayúsculas, para seguir el convenio de nombres), es decir, `PI`.
 
 Así podría quedar la declaración del atributo:
 
@@ -378,7 +383,7 @@ Volverás a este ejemplo para implementar esa otra parte cuando estudies los con
 
 # Métodos
 
-Como ya has visto anteriormente, los métodos son las herramientas que nos sirven para definir el comportamiento de un objeto en sus interacciones con otros objetos. Forman parte de la estructura interna del objeto junto con los atributos.
+Como ya has visto anteriormente, los métodos son las herramientas que nos **sirven para definir el comportamiento de un objeto** en sus interacciones con otros objetos. Forman parte de la estructura interna del objeto junto con los atributos.
 
 En el proceso de declaración de una clase que estás estudiando ya has visto cómo escribir la cabecera de la clase y cómo especificar sus atributos dentro del cuerpo de la clase. Tan solo falta ya declarar los métodos, que estarán también en el interior del cuerpo de la clase junto con los atributos.
 
@@ -436,10 +441,10 @@ La declaración de un método puede incluir los siguientes elementos:
 La sintaxis general de la cabecera de un método podría entonces quedar así:
 
 ```java
-[private | protected | public] [static] [abstract] [final] [native] [synchronized] <tipo><nombreMétodo> ( [<lista_parametros>] ) [throws <lista_excepciones>]
+[private | protected | public] [static] [abstract] [final] [native] [synchronized] <tipo> <nombreMétodo> ( [<lista_parametros>] ) [throws <lista_excepciones>]
 ```
 
-Como sucede con todos los identificadores en Java (variables, clases, objetos, métodos, etc.), puede usarse cualquier identificador que cumpla las normas. Ahora bien, para mejorar la legibilidad del código, se ha establecido el siguiente convenio para nombrar los métodos: utilizar un verbo en minúscula o bien un nombre formado por varias palabras que comience por un verbo en minúscula, seguido por adjetivos, nombres, etc. los cuales sí aparecerán en mayúsculas.
+Como sucede con todos los identificadores en Java (variables, clases, objetos, métodos, etc.) puede usarse cualquier identificador que cumpla las normas. Ahora bien, para mejorar la legibilidad del código, se ha establecido el siguiente convenio para nombrar los métodos: utilizar un verbo en minúscula o bien un nombre formado por varias palabras que comience por un verbo en minúscula, seguido por adjetivos, nombres, etc. los cuales sí aparecerán en mayúsculas.
 
 Algunos ejemplos de métodos que siguen este convenio podrían ser: `ejecutar`, `romper`, `mover`, `subir`, `responder`, `obtenerX`, `establecerValor`, `estaVacio`, `estaLleno`, `moverFicha`, `subirPalanca`, `responderRapido`, `girarRuedaIzquierda`, `abrirPuertaDelantera`, `cambiarMarcha`, etc.
 
@@ -455,9 +460,9 @@ En el ejemplo de la clase `Punto`, puedes observar cómo los métodos `obtenerX`
 
 ## Modificadores en la declaración de un método
 
-En la declaración de un método también pueden aparecer modificadores (como en la declaración de la clase o delos atributos). Un método puede tener los siguientes tipos de modificadores:
+En la declaración de un método también pueden aparecer modificadores (como en la declaración de la clase o de los atributos). Un método puede tener los siguientes tipos de modificadores:
 
-- **Modificadores de acceso**. Son los mismos que en el caso de los atributos (por omisión o de paquete (`package`), `public`, `private` y `protected`) y tienen el mismo cometido (acceso al método sólo por parte de clases del mismo paquete, o por cualquier parte del programa, o sólo para la propia clase, o también para las subclases).
+- **Modificadores de acceso**. Son los mismos que en el caso de los atributos (por omisión o de paquete `package`, `public`, `private` y `protected`) y tienen el mismo cometido (acceso al método sólo por parte de clases del mismo paquete, o por cualquier parte del programa, o sólo para la propia clase, o también para las subclases).
 - **Modificadores de contenido**. Son también los mismos que en el caso de los atributos (`static` y `final`) aunque su significado no es el mismo.
 - **Otros modificadores** (no son aplicables a los atributos, sólo a los métodos): `abstract`, `native`, `synchronized`.
 
@@ -475,21 +480,21 @@ Por último, si un método ha sido declarado como `synchronized`, el entorno de 
 
 Dada la cantidad de modificadores que has visto hasta el momento y su posible aplicación en la declaración de clases, atributos o métodos, veamos un resumen de todos los que has visto y en qué casos pueden aplicarse:
 
-|               modificador | Clase | Atributo | Método |
-| ------------------------: | :---: | :------: | :----: |
-| Sin modificador (package) |   ✔   |    ✔     |   ✔    |
-|                    public |   ✔   |    ✔     |   ✔    |
-|                   private |   ❌   |    ✔     |   ✔    |
-|                 protected |   ✔   |    ✔     |   ✔    |
-|                    static |   ❌   |    ✔     |   ✔    |
-|                     final |   ✔   |    ✔     |   ✔    |
-|              synchronized |   ❌   |    ❌     |   ✔    |
-|                    native |   ❌   |    ❌     |   ✔    |
-|                  abstract |   ✔   |    ❌     |   ✔    |
+|                 modificador | Clase | Atributo | Método |
+| --------------------------: | :---: | :------: | :----: |
+| *sin modificador* (package) |   ✔   |    ✔     |   ✔    |
+|                      public |   ✔   |    ✔     |   ✔    |
+|                     private |   ❌   |    ✔     |   ✔    |
+|                   protected |   ✔   |    ✔     |   ✔    |
+|                      static |   ❌   |    ✔     |   ✔    |
+|                       final |   ✔   |    ✔     |   ✔    |
+|                synchronized |   ❌   |    ❌     |   ✔    |
+|                      native |   ❌   |    ❌     |   ✔    |
+|                    abstract |   ✔   |    ❌     |   ✔    |
 
 ## Parámetros en un método
 
-La lista de parámetros de un método se coloca tras el nombre del método. Esta lista estará constituida por  pares de la forma `<tipoParametro> <nombreParametro>`. Cada uno de esos pares estará separado por comas y la lista completa estará encerrada entre paréntesis:
+La lista de parámetros de un método se coloca tras el nombre del método. Esta lista estará constituida por pares de la forma `<tipoParametro> <nombreParametro>`; cada uno de esos pares estará separado por comas y la lista completa estará encerrada entre paréntesis:
 
 ```java
 <tipo> nombreMetodo ( <tipo_1> <nombreParametro_1>, <tipo_2> <nombreParametro_2>, ..., <tipo_n><nombreParametro_n> )
@@ -508,7 +513,7 @@ A la hora de declarar un método, debes tener en cuenta:
 - No está permitido que el nombre de una variable local del método coincida con el nombre de un parámetro.
 - No puede haber dos parámetros con el mismo nombre. Se produciría ambigüedad.
 - Si el nombre de algún parámetro coincide con el nombre de un atributo de la clase, éste será ocultado por el parámetro. Es decir, al indicar ese nombre en el código del método estarás haciendo referencia al parámetro y no al atributo. Para poder acceder al atributo tendrás que hacer uso del operador de autorreferencia `this`, que verás un poco más adelante.
-- En Java el paso de parámetros es siempre por valor, excepto en el caso de los tipos referenciados (por ejemplo los objetos) en cuyo caso se está pasando efectivamente una referencia. La referencia (el objeto en sí mismo) no podrá ser cambiada pero sí elementos de su interior (atributos) a través de sus métodos o por acceso directo si se trata de un miembro público.
+- El paso de parámetros es siempre por valor, excepto en el caso de los tipos referenciados (por ejemplo los objetos) en cuyo caso se está pasando efectivamente una referencia. La referencia (el objeto en sí mismo) no podrá ser cambiada pero sí elementos de su interior (atributos) a través de sus métodos o por acceso directo si se trata de un miembro público.
 
 Es posible utilizar una construcción especial llamada `varargs` (argumentos variables) que permite que un método pueda tener un número variable de parámetros. Para utilizar este mecanismo se colocan unos puntos suspensivos (tres puntos: `...`) después del tipo del cual se puede tener una lista variable de argumentos, un espacio en blanco y a continuación el nombre del parámetro que aglutinará la lista de argumentos variables.
 
@@ -517,6 +522,7 @@ Es posible utilizar una construcción especial llamada `varargs` (argumentos var
 ```
 
 Es posible además mezclar el uso de `varargs` con parámetros fijos. En tal caso, la lista de parámetros variables debe aparecer al final (y sólo puede aparecer una).
+
 En realidad se trata una manera transparente de pasar un `array` con un número variable de elementos para no tener que hacerlo manualmente. Dentro del método habrá que ir recorriendo el `array` para ir obteniendo cada uno de los elementos de la lista de argumentos variables.
 
 ```java
@@ -530,6 +536,8 @@ void tablaMultiplicar(int n, int... nums) {
 }
 ...
 ```
+
+
 
 
 
@@ -555,19 +563,23 @@ Además de esos dos métodos, la clase también disponía de otros dos que sirve
 
 ```java
 void establecerX (int nuevoX){
-	x= nuevoX;
+	x = nuevoX;
 }
 ```
 
-En este caso se trata de pasar un valor al método (parámetro `vx` de tipo `int`) el cual será utilizado para modificar el contenido del atributo `x` del objeto. Como habrás podido comprobar, ahora no se devuelve ningún valor (el tipo devuelto es `void` y no hay sentencia `return`). En inglés se suele hablar de métodos de tipo `set`, que en inglés significa poner o fijar (establecer un valor). El método `establecerY` es prácticamente igual pero para establecer el valor del atributo `y`.
+En este caso se trata de pasar un valor al método (parámetro `nuevoX` de tipo `int`) el cual será utilizado para modificar el contenido del atributo `x` del objeto. Como habrás podido comprobar, ahora no se devuelve ningún valor (el tipo devuelto es `void` y no hay sentencia `return`). En inglés se suele hablar de métodos de tipo `set`, que en inglés significa poner o fijar (establecer un valor). El método `establecerY` es prácticamente igual pero para establecer el valor del atributo `y`.
 
 Normalmente el código en el interior de un método será algo más complejo y estará formado un conjunto de sentencias en las que se realizarán cálculos, se tomarán decisiones, se repetirán acciones, etc. Puedes ver un ejemplo más completo en el siguiente ejercicio.
+
+
+
+
 
 ## Sobrecarga de métodos
 
 En principio podrías pensar que un método puede aparecer una sola vez en la declaración de una clase (no se debería repetir el mismo nombre para varios métodos). Pero no tiene porqué siempre suceder así. Es posible tener varias versiones de un mismo método (varios métodos con el mismo nombre) gracias a la sobrecarga de métodos.
 
-El lenguaje Java soporta la característica conocida como sobrecarga de métodos. Ésta permite declarar en una misma clase varias versiones del mismo método con el mismo nombre. La forma que tendrá el compilador de distinguir entre varios métodos que tengan el mismo nombre será mediante la lista de parámetros del método: si el método tiene una lista de parámetros diferente, será considerado como un método diferente (aunque tenga el mismo nombre) y el analizador léxico no producirá un error de compilación al encontrar dos nombres de método iguales en la misma clase.
+El lenguaje Java soporta la característica conocida como sobrecarga de métodos. Ésta **permite declarar en una misma clase varias versiones del mismo método con el mismo nombre**. La forma que tendrá el compilador de distinguir entre varios métodos que tengan el mismo nombre será mediante la lista de parámetros del método: si el método tiene una lista de parámetros diferente, será considerado como un método diferente (aunque tenga el mismo nombre) y el analizador léxico no producirá un error de compilación al encontrar dos nombres de método iguales en la misma clase.
 
 Imagínate que estás desarrollando una clase para escribir sobre un lienzo que permite utilizar diferentes tipografías en función del tipo de información que se va a escribir. Es probable que necesitemos un método diferente según se vaya a pintar un número entero (`int`), un número real (`double`) o una cadena de caracteres (`String`). Una primera opción podría ser definir un nombre de método diferente dependiendo de lo que se vaya a escribir en el lienzo. Por ejemplo:
 
@@ -599,7 +611,7 @@ Del mismo modo que hemos visto la posibilidad de sobrecargar métodos (disponer 
 
 En algunos casos puede resultar útil para ayudar a mejorar la legibilidad del código, pues esos operadores resultan muy intuitivos y pueden dar una idea rápida de cuál es su funcionamiento.
 
-Un típico ejemplo podría ser el de la sobrecarga de operadores aritméticos como la suma (+) o el producto (\*) para operar con fracciones. Si se definen objetos de una clase `Fracción` (que contendrá los atributos `numerador` y `denominador`) podrían sobrecargarse los operadores aritméticos (habría que redefinir el operador suma (`+`) para la suma, el operador asterisco (`*`) para el producto, etc.) para esta clase y así podrían utilizarse para sumar o multiplicar objetos de tipo `Fraccion` mediante el algoritmo específico de suma o de producto del objeto `Fraccion` (pues esos operadores no están preparados en el lenguaje para operar con esos objetos).
+Un típico ejemplo podría ser el de la sobrecarga de operadores aritméticos como la suma (+) o el producto (\*) para operar con fracciones. Si se definen objetos de una clase `Fraccion` (que contendrá los atributos `numerador` y `denominador`) podrían sobrecargarse los operadores aritméticos (habría que redefinir el operador suma (`+`) para la suma, el operador asterisco (`*`) para el producto, etc.) para esta clase y así podrían utilizarse para sumar o multiplicar objetos de tipo `Fraccion` mediante el algoritmo específico de suma o de producto del objeto `Fraccion` (pues esos operadores no están preparados en el lenguaje para operar con esos objetos).
 
 En algunos lenguajes de programación como por ejemplo C++ o C# se permite la sobrecarga, pero no es algo soportado en todos los lenguajes. ¿Qué sucede en el caso concreto de Java?
 
@@ -618,7 +630,7 @@ Dado que en este módulo se está utilizando el lenguaje Java para aprender a pr
 
 ## La referencia `this`
 
-La palabra reservada `this` consiste en una referencia al objeto actual. El uso de este operador puede resultar muy útil a la hora de evitar la ambigüedad que puede producirse entre el nombre de un parámetro de un método y el nombre de un atributo cuando ambos tienen el mismo identificador (mismo nombre). En tales casos el parámetro "oculta" al atributo y no tendríamos acceso directo a él (al escribir el identificador estaríamos haciendo referencia al parámetro y no al atributo). En estos casos la referencia `this` nos permite acceder a estos atributos ocultados por los parámetros.
+La palabra reservada `this` consiste en una referencia al objeto actual. El uso de este operador puede resultar muy útil a la hora de **evitar la ambigüedad que puede producirse entre el nombre de un parámetro de un método y el nombre de un atributo** cuando ambos tienen el mismo identificador (mismo nombre). En tales casos el parámetro "oculta" al atributo y no tendríamos acceso directo a él (al escribir el identificador estaríamos haciendo referencia al parámetro y no al atributo). En estos casos la referencia `this` nos permite acceder a estos atributos ocultados por los parámetros.
 
 Dado que `this` es una referencia a la propia clase en la que te encuentras en ese momento, puedes acceder a sus atributos mediante el operador punto (`.`) como sucede con cualquier otra clase u objeto. Por tanto, en lugar deponer el nombre del atributo (que estos casos haría referencia al parámetro), podrías escribir `this.nombreAtributo`, de manera que el compilador sabrá que te estás refiriendo al atributo y se eliminará la ambigüedad.
 
@@ -629,17 +641,17 @@ class Punto{
     private int x,y;
 	
     void establecerX (int nuevaX){
-		x = 1; //<<<--- metodo
+		x = 1; 		//<<<--- metodo
         this.x = 1; //<<<--- clase
-        this.x=x;
-        this.x=nuevaX;
+        this.x = x;
+        this.x = nuevaX;
 	}
 }
 ```
 
 En este caso ha sido indispensable el uso de `this`, pues si no sería imposible saber en qué casos te estás refiriendo al parámetro `x` y en cuáles al atributo `x`. Para el compilador el identificador `x` será siempre el parámetro, pues ha "ocultado" al atributo.
 
-> En algunos casos puede resultar útil hacer uso de la referencia `this` aunque no sea necesario, pues puede ayudara mejorar la legibilidad del código.
+> En algunos casos puede resultar útil hacer uso de la referencia `this` aunque no sea necesario, pues puede ayudar a mejorar la legibilidad del código.
 
 ## Métodos estáticos
 
@@ -649,7 +661,7 @@ Los métodos estáticos no pueden manipular atributos de instancias (objetos) si
 
 Algunos ejemplos de operaciones que suelen realizarse desde métodos estáticos:
 
-- **Acceso a atributos específicos de clase**: incremento o decremento de contadores internos de la clase (`node instancias`), acceso a un posible atributo de nombre de la clase, etc.
+- **Acceso a atributos específicos de clase**: incremento o decremento de contadores internos de la clase (`no de instancias`), acceso a un posible atributo de nombre de la clase, etc.
 - **Operaciones genéricas relacionadas con la clase pero que no utilizan atributos de instancia**. Por ejemplo una clase `NIF` (o `DNI`) que permite trabajar con el `DNI` y la letra del `NIF` y que proporciona funciones adicionales para calcular la letra `NIF` de un número de `DNI` que se le pase como parámetro. Ese método puede ser interesante para ser usado desde fuera de la clase de manera independiente a la existencia de objetos de tipo `NIF`.
 
 En la biblioteca de Java es muy habitual encontrarse con clases que proporcionan métodos estáticos que pueden resultar muy útiles para cálculos auxiliares, conversiones de tipos, etc. Por ejemplo, la mayoría de las clases del paquete `java.lang` que representan tipos (`Integer`, `String`, `Float`, `Double`, `Boolean`, etc.) ofrecen métodos estáticos para hacer conversiones. Aquí tienes algunos ejemplos:
@@ -703,16 +715,12 @@ En el caso de la clase, ya estudiaste que los niveles de visibilidad podían ser
 - Privada al paquete (`package`)(sin modificador o modificador "por omisión"). En este caso, la clase sólo será visible a las demás clases del mismo paquete, pero no al resto del código del programa (otros paquetes).
 - (protected), lo podrán ver las clases del mismo paquete y también las clases herederas.
 
-En el caso de los miembros, disponías de otras dos posibilidades más de niveles de accesibilidad, teniendo un total de cuatro opciones a la hora de definir el control de acceso al miembro:
+En el caso de los miembros, disponías de una posibilidad más de niveles de accesibilidad, teniendo un total de cuatro opciones a la hora de definir el control de acceso al miembro:
 
 - Público (modificador `public`), igual que en el caso global de la clase y con el mismo significado (miembro visible desde cualquier parte del código).
 - Del paquete (sin modificador), también con el mismo significado que en el caso de la clase (miembro visible sólo desde clases del mismo paquete, ni siquiera será visible desde una subclase salvo si ésta está en el mismo paquete).
 - Privado (modificador `private`), donde sólo la propia clase tiene acceso al miembro.
 - Protegido (modificador `protected`), lo podrán ver las clases del mismo paquete y también las clases herederas.
-
-
-
-
 
 
 
@@ -738,10 +746,10 @@ public int obtenerY() {
 }
 // Métodos set
 public void establecerX(int x) {
-    this.x= x;
+    this.x = x;
 }
 public void establecerY(int y) {
-    this.y= y;
+    this.y = y;
 }
 ```
 
@@ -785,9 +793,9 @@ Coche cocheAntonio;
 String palabra;
 ```
 
-Esas variables (`p1`, `r1`, `r2`, `cocheAntonio`, `palabra`) en realidad son referencias (también conocidas como punteros o direcciones de memoria) que apuntan (hacen "referencia") a un objeto (una zona de memoria) de la clase indicada en la declaración.
+Esas variables (`p1`, `r1`, `r2`, `cocheAntonio`, `palabra`) en realidad son referencias (también conocidas como punteros o direcciones de memoria) que apuntan (*hacen "referencia"*) a un objeto (*una zona de memoria*) de la clase indicada en la declaración.
 
-Como ya estudiaste en la unidad dedicada a los objetos, un objeto recién declarado (referencia recién creada) no apunta a nada. Se dice que la referencia está vacía o que es una referencia nula (la variable objeto contiene el valor `null`). Es decir, la variable existe y está preparada para guardar una dirección de memoria que será la zona donde se encuentre el objeto al que hará referencia, pero el objeto aún no existe (no ha sido creado o instanciado). Por tanto se dice que apunta a un objeto nulo o inexistente.
+Como ya estudiaste en la unidad dedicada a los objetos, un objeto recién declarado (*referencia recién creada*) no apunta a nada. Se dice que la referencia está vacía o que es una referencia nula (la variable objeto contiene el valor `null`). Es decir, la variable existe y está preparada para guardar una dirección de memoria que será la zona donde se encuentre el objeto al que hará referencia, pero el objeto aún no existe (*no ha sido creado o instanciado*). Por tanto se dice que apunta a un objeto nulo o inexistente.
 
 Para que esa variable (referencia) apunte realmente a un objeto (contenga una referencia o dirección de memoria que apunte a una zona de memoria en la que se ha reservado espacio para un objeto) es necesario crear o instanciar el objeto. Para ello se utiliza el operador `new`.
 
@@ -859,7 +867,7 @@ Es decir, colocando el operador punto (`.`) a continuación del nombre del objet
 
 # Constructores
 
-Como ya has estudiado en unidades anteriores, en el ciclo de vida de un objeto se pueden distinguir las fases de:
+El ciclo de vida de un objeto se pueden distinguir las fases de:
 
 - Construcción del objeto.
 - Manipulación y utilización del objeto accediendo a sus miembros.
@@ -867,7 +875,7 @@ Como ya has estudiado en unidades anteriores, en el ciclo de vida de un objeto s
 
 Como has visto en el apartado anterior, durante la fase de construcción o instanciación de un objeto es cuando se reserva espacio en memoria para sus atributos y se inicializan algunos de ellos. Un constructor es un método especial con el mismo nombre de la clase y que se encarga de realizar este proceso.
 
-El proceso de declaración y creación de un objeto mediante el operador `new` ya ha sido estudiado en apartados anteriores. Sin embargo las clases que hasta ahora has creado no tenían constructor. Has estado utilizando los constructores por defecto que proporciona Java al compilar la clase. Ha llegado el momento de que empieces a implementar tus propios constructores.
+El proceso de declaración y creación de un objeto mediante el operador `new` ya ha sido estudiado en apartados anteriores. A lo largo de las unidades anteriores hemos creado clases que tenían constructor por defecto y también constructores implementados por nosotros mismos.
 
 > Los métodos constructores se encargan de llevar a cabo el proceso de creación o construcción de un objeto.
 
@@ -894,8 +902,6 @@ Algunas analogías que podrías imaginar para representar el constructor de una 
 - Un molde de un lingote de oro.
 - Una bolsa para hacer cubitos de hielo.
 
-Una vez que incluyas un constructor personalizado a una clase, el compilador ya no incluirá el constructor por defecto (sin parámetros) y por tanto si intentas usarlo se produciría un error de compilación. Si quieres que tu clase tenga también un constructor sin parámetros tendrás que escribir su código (ya no lo hará por ti el compilador).
-
 ## Creación de constructores
 
 Cuando se escribe el código de una clase normalmente se pretende que los objetos de esa clase se creen de una determinada manera. Para ello se definen uno o más constructores en la clase. En la definición de un constructor se indican:
@@ -909,6 +915,7 @@ Cuando se escribe el código de una clase normalmente se pretende que los objeto
 Como puedes observar, la estructura de los constructores es similar a la de cualquier método, con las excepciones de que no tiene tipo de dato devuelto (no devuelve ningún valor) y que el nombre del método constructor debe ser obligatoriamente el nombre de la clase.
 
 > Si defines constructores personalizados para una clase, el constructor *por defecto* (sin parámetros) para esa clase deja de ser generado por el compilador, de manera que tendrás que crearlo tú si quieres poder utilizarlo.
+>
 > Si se ha creado un constructor con parámetros y no se ha implementado el constructor *por defecto*, el intento de utilización del constructor *por defecto* producirá un error de compilación (el compilador no lo hará por nosotros).
 
 Un ejemplo de constructor para la clase Punto podría ser:
@@ -930,7 +937,13 @@ Un ejemplo de utilización del constructor que has creado para la clase `Punto` 
 
 ```java
 Punto p1;
-p1= new Punto(10, 7);
+p1 = new Punto(10, 7);
+```
+
+o declaración e instanciación en la misma línea de código:
+
+```java
+Punto p1 = new Punto(10, 7);
 ```
 
 En este caso no se estaría utilizando el constructor por defecto sino el constructor que acabas de implementar en el cual además de reservar memoria se asigna un valor a algunos de los atributos.
@@ -1005,7 +1018,7 @@ Ejemplo:
 
 # Introducción a la herencia
 
-La herencia es uno de los conceptos fundamentales que introduce la programación orientada a objetos. La idea fundamental es permitir crear nuevas clases aprovechando las características (atributos y métodos) de otras clases ya creadas evitando así tener que volver a definir esas características (reutilización).
+La herencia es uno de los conceptos fundamentales que introduce la programación orientada a objetos. La idea fundamental es permitir crear nuevas clases aprovechando las características (atributos y métodos) de otras clases ya creadas evitando así tener que volver a definir esas características (*reutilización*).
 
 A una clase que hereda de otra se le llama **subclase** o clase hija y aquella de la que se hereda es conocida como **superclase** o clase padre. También se puede hablar en general de clases descendientes o clases ascendientes. Al heredar, la subclase adquiere todas las características (atributos y métodos) de su superclase, aunque algunas de ellas pueden ser sobrescritas o modificadas dentro de la subclase (a eso se le suele llamar **especialización**).
 
@@ -1132,7 +1145,8 @@ import java.util.*;
 import java.util.regex.*;
 ```
 
-En este caso se importarán todas las clases del paquete `java.util` (clases `Date`, `Calendar`, `Timer`, etc.) y de su subpaquete `java.util.regex` (`Matcher` y `Pattern`), pero las de otros subpaquetes como `java.util.concurrent` o `java.util.jar`.
+En este caso se importarán todas las clases del paquete `java.util` (clases `Date`, `Calendar`, `Timer`, etc.) y de su subpaquete `java.util.regex` (`Matcher` y `Pattern`), pero no las de otros subpaquetes como `java.util.concurrent` o `java.util.jar`.
+
 Por último tan solo indicar que en el caso del paquete java.lang, no es necesario realizar importación. El compilador, dada la importancia de este paquete, permite el uso de sus clases sin necesidad de indicar su trayectoria (es como si todo archivo Java incluyera en su primera línea la sentencia `import java.lang.*`).
 
 ## Inclusión de una clase en un paquete
@@ -1169,8 +1183,6 @@ CLASSPATH=/users/chuidiang/MI_PROYECTO; export CLASSPATH
 java ClasePrincipal
 ```
 
-
-
 ## Proceso de creación de un paquete
 
 Para crear un paquete en Java te recomendamos seguir los siguientes pasos:
@@ -1185,7 +1197,7 @@ Este proceso ya lo has debido de llevar a cabo en unidades anteriores al compila
 
 ## Modificadores de acceso
 
-Imagina que quieres escribir una clase que represente un rectángulo en el plano. Para ello has pensado en los siguientes atributos:
+Imagina que quieres escribir una clase que represente un **rectángulo** en el plano. Para ello has pensado en los siguientes atributos:
 
 - Atributos `x1`, `y1`, que representan la coordenadas del vértice inferior izquierdo del rectángulo. Ambos de tipo `double` (números reales).
 - Atributos `x2`, `y2`, que representan las coordenadas del vértice superior derecho del rectángulo. También de tipo `double` (números reales).
@@ -1231,23 +1243,23 @@ No se desea que los atributos `nombre` y `numRectangulos` puedan ser visibles de
 **Respuesta**:
 Los atributos `numRectangulos`, `nombreFigura` y `PI` podrían ser estáticos pues se trata de valores más asociados a la propia clase que a cada uno de los objetos que se puedan ir creando. Además, en el caso de `PI` y `nombreFigura`, también podría ser un atributo `final`, pues se trata de valores únicos y constantes (3.1416 en el caso de `PI` y "Rectángulo" en el caso de `nombreFigura`).
 
-Dado que no se desea que se tenga accesibilidad a los atributos nombre y `numRectangulos` desde fuera de la clase podría utilizarse el atributo `private` para cada uno de ellos.
+Dado que no se desea que se tenga accesibilidad a los atributos `nombre` y `numRectangulos` desde fuera de la clase podría utilizarse el atributo `private` para cada uno de ellos.
 
 Por último hay que tener en cuenta que se desea que la clase sólo sea accesible desde el interior del paquete al que pertenece, por tanto habrá que utilizar el modificador por omisión o de paquete. Esto es, no incluir ningún modificador de acceso en la cabecera de la clase.
 
 Teniendo en cuenta todo lo anterior la clase podría quedar finalmente así:
 
 ```java
-class Rectangulo { // Sin modificador "public" para que sólo sea accesible desde el paquete
-    // Atributos de clase
-    private static int numRectangulos; // Número total de rectángulos creados
-    public static final String NOMBREFIGURA = "Rectángulo"; // Nombre de la clase
-    public static final double PI = 3.1416; // Constante PI
+class Rectangulo { // Sin modificador "public", accesible solo desde el paquete
+  // Atributos de clase
+  private static int numRectangulos; // Número total de rectángulos creados
+  public static final String NOMBREFIGURA = "Rectángulo"; // Nombre de la clase
+  public static final double PI = 3.1416; // Constante PI
     
-    // Atributos de objeto
-    private String nombre; // Nombre del rectángulo
-    public double x1, y1; // Vértice inferior izquierdo
-    public double x2, y2; // Vértice superior derecho
+  // Atributos de objeto
+  private String nombre; // Nombre del rectángulo
+  public double x1, y1; // Vértice inferior izquierdo
+  public double x2, y2; // Vértice superior derecho
 }
 ```
 
@@ -1259,28 +1271,28 @@ Vamos a seguir ampliando la clase en la que se representa un rectángulo en el p
 - Método `calcularSuperfice`, que calcula el área encerrada por el rectángulo.
 - Método `calcularPerímetro`, que calcula la longitud del perímetro del rectángulo.
 - Método `desplazar`, que mueve la ubicación del rectángulo en el plano en una cantidad `X` (para el `ejeX`) y otra cantidad `Y` (para el eje `Y`). Se trata simplemente de sumar el desplazamiento `X` a las coordenadas `x1` y `x2`, y el desplazamiento `Y` a las coordenadas `y1` e `y2`. Los parámetros de entrada de este método serán por tanto `X` e `Y`, de tipo `double`.
-- Método `obtenerNumRectangulos`, que devuelve el número de rectángulos creados hasta el momento.
+- Método `getNumRectangulos`, que devuelve el número de rectángulos creados hasta el momento.
 
 Incluye la implementación de cada uno de esos métodos en la clase `Rectangulo`.
 
 **Respuesta**:
-En el caso del método `obtenerNombre()`, se trata simplemente de devolver el valor del atributo nombre:
+En el caso del método `getNombre()`, se trata simplemente de devolver el valor del atributo nombre:
 
 ```java
-public String obtenerNombre () {
+public String getNombre () {
 	return nombre;
 }
 ```
 
-Para el implementar el método `establecerNombre` también es muy sencillo. Se trata de modificar el contenido del atributo nombre por el valor proporcionado a través de un parámetro de entrada: 
+Para el implementar el método `setNombre` también es muy sencillo. Se trata de modificar el contenido del atributo nombre por el valor proporcionado a través de un parámetro de entrada: 
 
 ```java
-public void establecerNombre (String nom) {
-	nombre = nom;
+public void setNombre (String nom) {
+	this.nombre = nom;
 }
 ```
 
-Los métodos de cálculo de `superficie` y `perímetro` no van a recibir ningún parámetro de entrada, tan solo deben realizar cálculos a partir de los atributos contenidos en el objeto para obtener los resultados perseguidos. Encada caso habrá que aplicar la expresión matemática apropiada:
+Los métodos de cálculo de `superficie` y `perímetro` no van a recibir ningún parámetro de entrada, tan solo deben realizar cálculos a partir de los atributos contenidos en el objeto para obtener los resultados perseguidos. En cada caso habrá que aplicar la expresión matemática apropiada:
 
 - En el caso de la `superficie`, habrá que calcular la longitud de la base y la altura del rectángulo a partir de las coordenadas de las esquinas inferior izquierda (`x1`, `y1`) y superior derecha (`x2`, `y2`) de la figura. La base sería la diferencia entre `x2` y `x1`, y la altura la diferencia entre `y2` e `y1`. A continuación tan solo tendrías que utilizar la consabida fórmula de "base por altura", es decir, una multiplicación.
 - En el caso del `perímetro` habrá también que calcular la longitud de la base y de la altura del rectángulo y a continuación sumar dos veces la longitud de la base y dos veces la longitud de la altura.
@@ -1319,22 +1331,22 @@ En el caso del método `desplazar()`, se trata de modificar:
 - Los contenidos de los atributos `y1` e `y2` sumándoles el parámetro `Y`.
 
 ```java
-public void desplazar (double X, double Y) {
-    // Desplazamiento en el eje X
-    x1 = x1 + X;
-    x2 = x2 + X;
-    // Desplazamiento en el eje X
-    y1 = y1 + Y;
-    y2 = y2 + Y;
+public void desplazar (double x, double y) {
+    // Desplazamiento en el eje x
+    this.x1 += x;
+    this.x2 += x;
+    // Desplazamiento en el eje y
+    this.y1 += y;
+    this.y2 += y;
 }
 ```
 
 En este caso no se devuelve ningún valor (tipo devuelto vacío: `void`).
 
-Por último, el método `obtenerNumRectangulos` simplemente debe devolver el valor del atributo `numRectangulos`. En este caso es razonable plantearse que este método podría ser más bien un método de clase (estático) más que un método de objeto, pues en realidad es una característica de la clase más que algún objeto en particular. Para ello tan solo tendrías que utilizar el modificador de acceso `static`:
+Por último, el método `getNumRectangulos` simplemente debe devolver el valor del atributo `numRectangulos`. En este caso es razonable plantearse que este método podría ser más bien un método de clase (estático) más que un método de objeto, pues en realidad es una característica de la clase más que algún objeto en particular. Para ello tan solo tendrías que utilizar el modificador de acceso `static`:
 
 ```java
-public static int obtenerNumRectangulos () {
+public static int getNumRectangulos () {
 	return numRectangulos;
 }
 ```
@@ -1388,7 +1400,7 @@ r1.y1= 0;
 r1.x2= 10;
 r1.y2= 10;
 area= r1.calcularSuperficie ();
-perímetro= r1.calcularPerimetro ();
+perimetro= r1.calcularPerimetro ();
 ```
 
 Por último faltaría mostrar en pantalla la información calculada, podemos añadir esta y más pruebas en un método `main` de la propia clase, o en el `main` de otra clase del mismo paquete, como prefieras.
@@ -1402,7 +1414,7 @@ Vamos a ampliar el ejemplo anterior creando una clase `RectanguloV2`, ampliando 
 3. **Un constructor con dos parámetros**, base y altura, que cree un rectángulo donde el vértice inferior izquierdo esté ubicado en la posición (0,0) y que tenga una base y una altura tal y como indican los dos parámetros proporcionados.
 
 **Respuesta**
-En el caso del primer constructor lo único que hay que hacer es "rellenar" los atributos `x1`, `y1`, `x2`, `y2` con los valores 0, 0, 1, 1:
+		En el primer constructor lo único que hay que hacer es "rellenar" los atributos `x1`, `y1`, `x2`, `y2` con los valores 0, 0, 1, 1:
 
 ```java
 public Rectangulov2 (){
@@ -1439,13 +1451,13 @@ Queda propuesto como ejercicio de ampliación la modificación de la clase `Rect
 
 ## Referencia `this`
 
-Añadir un método `obtenerNombrev2` de la clase `Rectangulov2` de ejercicios anteriores utilizando la referencia `this`.
+Añadir un método `setNombrev2` de la clase `Rectangulov2` de ejercicios anteriores utilizando la referencia `this`.
 
 **Respuesta**:
-Si utilizamos la referencia `this` en este método, entonces podremos utilizar como identificador del parámetro el mismo identificador que tiene el atributo (aunque no tiene porqué hacerse si no se desea):
+		Si utilizamos la referencia `this` en este método, entonces podremos utilizar como identificador del parámetro el mismo identificador que tiene el atributo (aunque no tiene porqué hacerse si no se desea):
 
 ```java
-public void establecerNombrev2 (String nombre) {
+public void setNombrev2 (String nombre) {
 	this.nombre = nombre;
 }
 ```
@@ -1455,7 +1467,7 @@ public void establecerNombrev2 (String nombre) {
 Añadir un constructor de copia al ejercicio de la clase `Rectangulov2` usando referencias `this`.
 
 **Respuesta**
-Se trata de añadir un nuevo constructor además de los tres que ya habíamos creado:
+		Se trata de añadir un nuevo constructor además de los tres que ya habíamos creado:
 
 ```java
 // Constructor copia
@@ -1471,8 +1483,8 @@ Para usar este constructor basta con haber creado anteriormente otro `Rectangulo
 
 ```java
 Rectangulo r1, r2;
-r1= new Rectangulo (0,0,2,2);
-r2= new Rectangulo (r1);
+r1 = new Rectangulo (0,0,2,2);
+r2 = new Rectangulo (r1);
 ```
 
 ## Ocultación de métodos
@@ -1486,14 +1498,14 @@ Vamos a intentar implementar una clase `DNI` que incluya todo lo que has visto h
   El formato del método será:
 
   - ```java
-    public int obtenerDNI()
+    public int getDNI()
     ```
 
   - ```java
-    public String obtenerNIF()
+    public String getNIF()
     ```
 
-- Para modificar el `DNI` se dispondrá de dos métodos establecer (`set`), que permitirán modificar el `DNI`. Uno en el que habrá que proporcionar el `NIF` completo (número y letra). Y otro en el que únicamente será necesario proporcionar el `DNI` (las siete u ocho cifras). Si el `DNI`/`NIF` es incorrecto se debería lanzar algún tipo de excepción. El formato de los métodos (sobrecargados) será:
+- Para modificar el `DNI` se dispondrá de dos métodos establecer (`set`), que permitirán modificar el `DNI`. Uno en el que habrá que proporcionar el `NIF` completo (número y letra). Y otro en el que únicamente será necesario proporcionar el `DNI` (las siete u ocho cifras). Si el `DNI`/`NIF` es incorrecto se debería lanzar algún tipo de excepción. El formato de los métodos (*sobrecargados*) será:
 
   - ```java
     public void establecer (String nif) throws ...
@@ -1536,87 +1548,87 @@ package UD05;
 
 class Rectangulo {
 
-    // Atributos de clase
-    private static int numRectangulos; // Número total de rectangulos creados
-    public static final String NOMBREFIGURA = "Rectángulo"; // Nombre de la clase
-    public static final double PI = 3.1416; // Constante PI            
+  // Atributos de clase
+  private static int numRectangulos; // Número total de rectangulos creados
+  public static final String NOMBREFIGURA = "Rectángulo"; // Nombre de la clase
+  public static final double PI = 3.1416; // Constante PI            
 
-    // Atributos de objeto
-    private String nombre;// Nombre del rectángulo
-    public double x1, y1;// Vértice inferior izquierdo
-    public double x2, y2;// Vértice superior derecho
+  // Atributos de objeto
+  private String nombre;// Nombre del rectángulo
+  public double x1, y1;// Vértice inferior izquierdo
+  public double x2, y2;// Vértice superior derecho
 
-    // Método obtenerNombre
-    public String obtenerNombre() {
-        return nombre;
-    }
+  // Método obtenerNombre
+  public String getNombre() {
+    return this.nombre;
+  }
 
-    // Método establecerNombre
-    public void establecerNombre(String nom) {
-        nombre = nom;
-    }
+  // Método establecerNombre
+  public void setNombre(String nom) {
+    this.nombre = nom;
+  }
 
-    // Método CalcularSuperficie
-    public double CalcularSuperficie() {
-        double area, base, altura;
-        // Cálculo de la base
-        base = x2 - x1;
-        // Cálculo de la altura
-        altura = y2 - y1;
-        // Cálculo del área
-        area = base * altura;
-        // Devolución del valor de retorno
-        return area;
-    }
+  // Método CalcularSuperficie
+  public double CalcularSuperficie() {
+    double area, base, altura;
+    // Cálculo de la base
+    base = x2 - x1;
+    // Cálculo de la altura
+    altura = y2 - y1;
+    // Cálculo del área
+    area = base * altura;
+    // Devolución del valor de retorno
+    return area;
+  }
 
-    // Método CalcularPerimetro
-    public double CalcularPerimetro() {
-        double perimetro, base, altura;
-        // Cálculo de la base
-        base = x2 - x1;
-        // Cálculo de la altura
-        altura = y2 - y1;
-        // Cálculo del perímetro
-        perimetro = 2 * base + 2 * altura;
-        // Devolución del valor de retorno
-        return perimetro;
-    }
+  // Método CalcularPerimetro
+  public double CalcularPerimetro() {
+    double perimetro, base, altura;
+    // Cálculo de la base
+    base = x2 - x1;
+    // Cálculo de la altura
+    altura = y2 - y1;
+    // Cálculo del perímetro
+    perimetro = 2 * base + 2 * altura;
+    // Devolución del valor de retorno
+    return perimetro;
+  }
 
-    // Método desplazar
-    public void desplazar(double X, double Y) {
-        // Desplazamiento en el eje X
-        x1 = x1 + X;
-        x2 = x2 + X;
-        // Desplazamiento en el eje X
-        y1 = y1 + Y;
-        y2 = y2 + Y;
-    }
+  // Método desplazar
+  public void desplazar(double x, double y) {
+    // Desplazamiento en el eje X
+    this.x1 += x;
+    this.x2 += y;
+    // Desplazamiento en el eje Y
+    this.y1 += y;
+    this.y2 += y;
+  }
 
-    // Método obtenerNumRectangulos
-    public static int obtenerNumRectangulos() {
-        return numRectangulos;
-    }
+  // Método obtenerNumRectangulos
+  public static int getNumRectangulos() {
+    return numRectangulos;
+  }
     
-    public static void main(String[] args) {
-        Rectangulo r1, r2;
-        r1 = new Rectangulo();
-        r2 = new Rectangulo();
-        r1.x1 = 0;
-        r1.y1 = 0;
-        r1.x2 = 10;
-        r1.y2 = 10;
-        r1.establecerNombre("rectangulo1");
-        System.out.printf("PRUEBA DE USO DE LA CLASE " + Rectangulo.NOMBREFIGURA + "\n");
-        System.out.printf("------------------------------------\n\n");
-        System.out.printf("r1.x1: %4.2f\nr1.y1: %4.2f\n", r1.x1, r1.y1);
-        System.out.printf("r1.x2: %4.2f\nr1.y2: %4.2f\n", r1.x2, r1.y2);
-        System.out.printf("Perimetro: %4.2f\nSuperficie: % 4.2f\n",
-                r1.CalcularPerimetro(), r1.CalcularSuperficie());
-        System.out.printf("Desplazamos X=3, Y=3\n");
-        r1.desplazar(-3, 3);
-        System.out.printf("r1.x1: %4.2f\nr1.y1: %4.2f\n", r1.x1, r1.y1);
-        System.out.printf("r1.x2: %4.2f\nr1.y2: %4.2f\n", r1.x2, r1.y2);
-    }
+  public static void main(String[] args) {
+    Rectangulo r1, r2;
+    r1 = new Rectangulo();
+    r2 = new Rectangulo();
+    r1.x1 = 0;
+    r1.y1 = 0;
+    r1.x2 = 10;
+    r1.y2 = 10;
+    r1.setNombre("rectangulo1");
+    System.out.printf("PRUEBA DE USO DE LA CLASE " + Rectangulo.NOMBREFIGURA + "\n");
+    System.out.printf("------------------------------------\n\n");
+    System.out.printf("r1.x1: %4.2f\nr1.y1: %4.2f\n", r1.x1, r1.y1);
+    System.out.printf("r1.x2: %4.2f\nr1.y2: %4.2f\n", r1.x2, r1.y2);
+    System.out.printf("Perimetro: %4.2f\nSuperficie: % 4.2f\n",
+            r1.CalcularPerimetro(), r1.CalcularSuperficie());
+    System.out.printf("Desplazamos X=3, Y=3\n");
+    r1.desplazar(-3, 3);
+    System.out.printf("r1.x1: %4.2f\nr1.y1: %4.2f\n", r1.x1, r1.y1);
+    System.out.printf("r1.x2: %4.2f\nr1.y2: %4.2f\n", r1.x2, r1.y2);
+  }
 }
 ```
 
@@ -1627,132 +1639,132 @@ package UD05;
 
 class Rectangulov2 {
 
-    // Atributos de clase
-    private static int numRectangulos; // Número total de rectangulos creados
-    public static final String NOMBREFIGURA = "Rectángulov2"; // Nombre de la clase
-    public static final double PI = 3.1416; // Constante PI            
+  // Atributos de clase
+  private static int numRectangulos; // Número total de rectangulos creados
+  public static final String NOMBREFIGURA = "Rectángulov2"; // Nombre de la clase
+  public static final double PI = 3.1416; // Constante PI            
 
-    // Atributos de objeto
-    private String nombre;// Nombre del rectángulo
-    public double x1, y1;// Vértice inferior izquierdo
-    public double x2, y2;// Vértice superior derecho
+  // Atributos de objeto
+  private String nombre;// Nombre del rectángulo
+  public double x1, y1;// Vértice inferior izquierdo
+  public double x2, y2;// Vértice superior derecho
 
-    // Método obtenerNombre
-    public String obtenerNombre() {
-        return nombre;
-    }
+  // Método obtenerNombre
+  public String getNombre() {
+    return this.nombre;
+  }
 
-    // Método establecerNombre
-    public void establecerNombre(String nom) {
-        nombre = nom;
-    }
+  // Método establecerNombre
+  public void setNombre(String nom) {
+    this.nombre = nom;
+  }
 
-    // Método CalcularSuperficie
-    public double CalcularSuperficie() {
-        double area, base, altura;
-        // Cálculo de la base
-        base = x2 - x1;
-        // Cálculo de la altura
-        altura = y2 - y1;
-        // Cálculo del área
-        area = base * altura;
-        // Devolución del valor de retorno
-        return area;
-    }
+  // Método CalcularSuperficie
+  public double CalcularSuperficie() {
+    double area, base, altura;
+    // Cálculo de la base
+    base = x2 - x1;
+    // Cálculo de la altura
+    altura = y2 - y1;
+    // Cálculo del área
+    area = base * altura;
+    // Devolución del valor de retorno
+    return area;
+  }
 
-    // Método CalcularPerimetro
-    public double CalcularPerimetro() {
-        double perimetro, base, altura;
-        // Cálculo de la base
-        base = x2 - x1;
-        // Cálculo de la altura
-        altura = y2 - y1;
-        // Cálculo del perímetro
-        perimetro = 2 * base + 2 * altura;
-        // Devolución del valor de retorno
-        return perimetro;
-    }
+  // Método CalcularPerimetro
+  public double CalcularPerimetro() {
+    double perimetro, base, altura;
+    // Cálculo de la base
+    base = x2 - x1;
+    // Cálculo de la altura
+    altura = y2 - y1;
+    // Cálculo del perímetro
+    perimetro = 2 * base + 2 * altura;
+    // Devolución del valor de retorno
+    return perimetro;
+  }
 
-    // Método desplazar
-    public void desplazar(double X, double Y) {
-        // Desplazamiento en el eje X
-        x1 = x1 + X;
-        x2 = x2 + X;
-        // Desplazamiento en el eje X
-        y1 = y1 + Y;
-        y2 = y2 + Y;
-    }
+  // Método desplazar
+  public void desplazar(double X, double Y) {
+    // Desplazamiento en el eje X
+    this.x1 += x;
+    this.x2 += y;
+    // Desplazamiento en el eje Y
+    this.y1 += y;
+    this.y2 += y;
+  }
 
-    // Método obtenerNumRectangulos
-    public static int obtenerNumRectangulos() {
-        return numRectangulos;
-    }
+  // Método obtenerNumRectangulos
+  public static int getNumRectangulos() {
+    return numRectangulos;
+  }
 
-    //Constructor por defecto
-    public Rectangulov2() {
-        x1 = 0.0;
-        y1 = 0.0;
-        x2 = 1.0;
-        y2 = 1.0;
-        numRectangulos++;
-    }
+  //Constructor por defecto
+  public Rectangulov2() {
+    x1 = 0.0;
+    y1 = 0.0;
+    x2 = 1.0;
+    y2 = 1.0;
+    numRectangulos++;
+  }
 
-    //constructor con los 4 vertices
-    public Rectangulov2(double x1, double y1, double x2, double y2) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
-        numRectangulos++;
-    }
+  //constructor con los 4 vertices
+  public Rectangulov2(double x1, double y1, double x2, double y2) {
+    this.x1 = x1;
+    this.y1 = y1;
+    this.x2 = x2;
+    this.y2 = y2;
+    numRectangulos++;
+  }
 
-    //constructor con base y altura
-    public Rectangulov2(double base, double altura) {
-        this.x1 = 0.0;
-        this.y1 = 0.0;
-        this.x2 = base;
-        this.y2 = altura;
-        numRectangulos++;
-    }
+  //constructor con base y altura
+  public Rectangulov2(double base, double altura) {
+    this.x1 = 0.0;
+    this.y1 = 0.0;
+    this.x2 = base;
+    this.y2 = altura;
+    numRectangulos++;
+  }
 
-    //referencia this
-    public void establecerNombrev2(String nombre) {
-        this.nombre = nombre;
-    }
+  //referencia this
+  public void establecerNombrev2(String nombre) {
+    this.nombre = nombre;
+  }
 
-    // Constructor copia
-    public Rectangulov2(Rectangulov2 r) {
-        this.nombre=r.nombre;//supongo que también quiero copiar el nombre
-        this.x1 = r.x1;
-        this.y1 = r.y1;
-        this.x2 = r.x2;
-        this.y2 = r.y2;
-        numRectangulos++;
-    }
+  // Constructor copia
+  public Rectangulov2(Rectangulov2 r) {
+    this.nombre=r.nombre; //también quiero copiar el nombre
+    this.x1 = r.x1;
+    this.y1 = r.y1;
+    this.x2 = r.x2;
+    this.y2 = r.y2;
+    numRectangulos++;
+  }
 
-    public static void main(String[] args) {
-        Rectangulov2 r1;
-        Rectangulov2 r2;
-        Rectangulov2 r3;
-        r1 = new Rectangulov2();
-        r2 = new Rectangulov2(4, 4, 8, 8);
-        r3 = new Rectangulov2(5, 5);
-        r1.establecerNombrev2("defecto");
-        r2.establecerNombrev2("4 vertices");
-        r3.establecerNombrev2("base y altura");
+  public static void main(String[] args) {
+    Rectangulov2 r1;
+    Rectangulov2 r2;
+    Rectangulov2 r3;
+    r1 = new Rectangulov2();
+    r2 = new Rectangulov2(4, 4, 8, 8);
+    r3 = new Rectangulov2(5, 5);
+    r1.setNombrev2("defecto");
+    r2.setNombrev2("4 vertices");
+    r3.setNombrev2("base y altura");
 
-        System.out.printf("PRUEBA DE USO DE LA CLASE " + Rectangulov2.NOMBREFIGURA + "\n");
-        System.out.printf("------------------------------------\n\n");
-        System.out.printf("r1.x1: %4.2f\nr1.y1: %4.2f\n", r1.x1, r1.y1);
-        System.out.printf("r1.x2: %4.2f\nr1.y2: %4.2f\n", r1.x2, r1.y2);
+    System.out.printf("PRUEBA DE USO DE LA CLASE " + Rectangulov2.NOMBREFIGURA + "\n");
+    System.out.printf("------------------------------------\n\n");
+    System.out.printf("r1.x1: %4.2f\nr1.y1: %4.2f\n", r1.x1, r1.y1);
+    System.out.printf("r1.x2: %4.2f\nr1.y2: %4.2f\n", r1.x2, r1.y2);
 
-        //Usamos el constructor de copia para realizar una copia del rectangulo
-        Rectangulov2 r4 = new Rectangulov2(r1);
-        System.out.println("r4 es una copia de r1");
+    //Usamos el constructor de copia para realizar una copia del rectangulo
+    Rectangulov2 r4 = new Rectangulov2(r1);
+    System.out.println("r4 es una copia de r1");
 
-        System.out.printf("r4.x1: %4.2f\nr4.y1: %4.2f\n", r4.x1, r4.y1);
-        System.out.printf("r4.x2: %4.2f\nr4.y2: %4.2f\n", r4.x2, r4.y2);
-    }
+    System.out.printf("r4.x1: %4.2f\nr4.y1: %4.2f\n", r4.x1, r4.y1);
+    System.out.printf("r4.x2: %4.2f\nr4.y2: %4.2f\n", r4.x2, r4.y2);
+  }
 }
 ```
 
@@ -1761,94 +1773,94 @@ class Rectangulov2 {
 ```java
 public class DNI {
 
-    // Atributos estáticos
-    // Cadena con las letras posibles del DNI ordenados para el cálculo de DNI
-    private static final String LETRAS_DNI = "TRWAGMYFPDXBNJZSQVHLCKE";
+  // Atributos estáticos
+  // Cadena con las letras posibles del DNI ordenados para el cálculo de DNI
+  private static final String LETRAS_DNI = "TRWAGMYFPDXBNJZSQVHLCKE";
 
-    // Atributos de objeto
-    private int numDNI;
+  // Atributos de objeto
+  private int numDNI;
 
-    // Métodos
-    public String obtenerNIF() {
-        // Variables locales
-        String cadenaNIF;
-        // NIF con letra para devolver
-        char letraNIF;
-        // Letra del número de NIF calculado
-        // Cálculo de la letra del NIF
-        letraNIF = calcularLetraNIF(numDNI);
-        // Construcción de la cadena del DNI: número + letra
-        cadenaNIF = Integer.toString(numDNI) + String.valueOf(letraNIF);
-        // Devolución del resultado
-        return cadenaNIF;
+  // Métodos
+  public String getNIF() {
+    // Variables locales
+    String cadenaNIF;
+    // NIF con letra para devolver
+    char letraNIF;
+    // Letra del número de NIF calculado
+    // Cálculo de la letra del NIF
+    letraNIF = calcularLetraNIF(numDNI);
+    // Construcción de la cadena del DNI: número + letra
+    cadenaNIF = Integer.toString(numDNI) + String.valueOf(letraNIF);
+    // Devolución del resultado
+    return cadenaNIF;
+  }
+
+  public int getDNI() {
+    return this.numDNI;
+  }
+
+  public void establecer(String nif) throws Exception {
+    if (DNI.validarNIF(nif)) { // Valor válido: lo almacenamos
+        this.numDNI = DNI.extraerNumeroNIF(nif);
+    } else { // Valor inválido: lanzamos una excepción
+        throw new Exception("NIF inválido: " + nif);
     }
+  }
 
-    public int obtenerDNI() {
-        return numDNI;
+  public void establecer(int dni) throws Exception {
+    // Comprobación de rangos
+    if (dni > 999999 && dni < 99999999) {
+        this.numDNI = dni; // Valor válido: lo almacenamos
+    } else { // Valor inválido: lanzamos una excepción
+        throw new Exception("DNI inválido: " + String.valueOf(dni));
     }
+  }
 
-    public void establecer(String nif) throws Exception {
-        if (DNI.validarNIF(nif)) { // Valor válido: lo almacenamos
-            this.numDNI = DNI.extraerNumeroNIF(nif);
-        } else { // Valor inválido: lanzamos una excepción
-            throw new Exception("NIF inválido: " + nif);
-        }
-    }
+  private static char calcularLetraNIF(int dni) {
+    char letra;
+    // Cálculo de la letra NIF
+    letra = LETRAS_DNI.charAt(dni % 23);
+    // Devolución de la letra NIF
+    return letra;
+  }
 
-    public void establecer(int dni) throws Exception {
-        // Comprobación de rangos
-        if (dni > 999999 && dni < 99999999) {
-            this.numDNI = dni; // Valor válido: lo almacenamos
-        } else { // Valor inválido: lanzamos una excepción
-            throw new Exception("DNI inválido: " + String.valueOf(dni));
-        }
-    }
+  private static char extraerLetraNIF(String nif) {
+    char letra = nif.charAt(nif.length() - 1);
+    return letra;
+  }
 
-    private static char calcularLetraNIF(int dni) {
-        char letra;
-        // Cálculo de la letra NIF
-        letra = LETRAS_DNI.charAt(dni % 23);
-        // Devolución de la letra NIF
-        return letra;
-    }
+  private static int extraerNumeroNIF(String nif) {
+    int numero = Integer.parseInt(nif.substring(0, nif.length() - 1));
+    return numero;
+  }
 
-    private static char extraerLetraNIF(String nif) {
-        char letra = nif.charAt(nif.length() - 1);
-        return letra;
-    }
-
-    private static int extraerNumeroNIF(String nif) {
-        int numero = Integer.parseInt(nif.substring(0, nif.length() - 1));
-        return numero;
-    }
-
-    private static boolean validarNIF(String nif) {
-        boolean valido = true;
-        // Suponemos el NIF válido mientras no se encuentre algún fallo
-        char letra_calculada;
-        char letra_leida;
-        int dni_leido;
-        if (nif == null) { // El parámetro debe ser un objeto no vacío
-            valido = false;
-        } else if (nif.length() < 8 || nif.length() > 9) {
-            // La cadena debe estar entre 8(7+1) y 9(8+1) caracteres 
-            valido = false;
+  private static boolean validarNIF(String nif) {
+    boolean valido = true;
+    // Suponemos el NIF válido mientras no se encuentre algún fallo
+    char letra_calculada;
+    char letra_leida;
+    int dni_leido;
+    if (nif == null) { // El parámetro debe ser un objeto no vacío
+        valido = false;
+    } else if (nif.length() < 8 || nif.length() > 9) {
+        // La cadena debe estar entre 8(7+1) y 9(8+1) caracteres 
+        valido = false;
+    } else {
+        letra_leida = DNI.extraerLetraNIF(nif);
+        // Extraemos la letra de NIF (letra) 
+        dni_leido = DNI.extraerNumeroNIF(nif); // Extraemos el número de DNI (int)
+        letra_calculada = DNI.calcularLetraNIF(dni_leido);
+        // Calculamos la letra de NIF a partir del número extraído
+        if (letra_leida == letra_calculada) {
+            // Comparamos la letra extraída con la calculada
+            // Todas las comprobaciones han resultado válidas. El NIF es válido.
+            valido = true;
         } else {
-            letra_leida = DNI.extraerLetraNIF(nif);
-            // Extraemos la letra de NIF (letra) 
-            dni_leido = DNI.extraerNumeroNIF(nif); // Extraemos el número de DNI (int)
-            letra_calculada = DNI.calcularLetraNIF(dni_leido);
-            // Calculamos la letra de NIF a partir del número extraído
-            if (letra_leida == letra_calculada) {
-                // Comparamos la letra extraída con la calculada
-                // Todas las comprobaciones han resultado válidas. El NIF es válido.
-                valido = true;
-            } else {
-                valido = false;
-            }
+            valido = false;
         }
-        return valido;
     }
+    return valido;
+  }
 }
 ```
 

@@ -1,13 +1,13 @@
 ---
 unit: UD05
-title: Anexo: Utilización avanzada de clases
+title: Anexo
 language: ES
 author: Arturo Blasco [arturoblasco@iesmre.com]
 subject: Programación
 keywords: [PRG, 2022, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today})
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
@@ -17,9 +17,9 @@ typora-copy-images-to:${filename}/../assets
 
 Los wrappers permiten "envolver" datos primitivos en objetos, también se llaman clases contenedoras. La diferencia entre un tipo primitivo y un wrapper es que este último es una clase y por tanto, cuando trabajamos con wrappers estamos trabajando con objetos. 
 
-> Como  son objetos debemos tener cuidado en el paso como parámetro en métodos ya que en el wrapper se realiza por referencia.
+> Como son objetos debemos tener cuidado en el paso como parámetro en métodos ya que en el wrapper se realiza por referencia.
 
-Una de las principales ventajas del uso de wrappers son la facilidad de conversión entre tipos primitivos y cadenas.
+Una de las principales ventajas del uso de wrappers son la **facilidad de conversión entre tipos primitivos y cadenas**.
 
 Hay una clase contenedora por cada uno de los tipos primitivos de Java. Los datos primitivos se escriben en minúsculas y los wrappers se escriben con la primera letra en mayúsculas.
 
@@ -52,9 +52,7 @@ Float f1 = new Float(3.14f);
 Float f2 = new Float ("3.14f");
 ```
 
-Antiguamente, una vez asignado un valor a un objeto o wrapper `Integer`, este no podía cambiarse. Actualmente e internamente realizar un apoyo en variables y wrapers internos para poder variar el valor de un wrapper.
-
-
+Antiguamente, una vez asignado un valor a un objeto o wrapper `Integer`, este no podía cambiarse. Actualmente e internamente se puede realizar un apoyo en variables y wrapers internos para poder variar el valor de un wrapper.
 
 Ejemplo:
 
@@ -90,8 +88,6 @@ Float f3 = Float.valueOf("3.14f");
 System.out.println(f3);
 ```
 
-
-
 Métodos `xxxValue()`.
 
 Los métodos `xxxValue()` permiten convertir un wrapper en un dato de tipo primitivo y no necesitan argumentos.
@@ -100,7 +96,7 @@ Ejemplo:
 
 ```java
 Integer i4 = 120; // Crea un nuevo objeto wrapper
-byte b = i4.byteValue(); // Convierte el valor de i2 a un primitivo byte 
+byte b = i4.byteValue(); // Convierte el valor de i4 a un primitivo byte 
 short s1 = i4.shortValue(); // Otro de los métodos de Integer
 double d = i4.doubleValue(); // Otro de los métodos xxxValue de Integer 
 System.out.println(s1); // Muestra 120 como resultado
@@ -131,20 +127,16 @@ Ejemplo:
 
 ```java
 Double d1 = new Double("3.14");
-System.out.println("d1 = " + d1.toString() ); // El resultado es d = 3.14 
+System.out.println("d1 = " + d1.toString() ); // El resultado es d1 = 3.14 
 String d2 = Double.toString(3.14); // d2 = "3.14"
-System.out.println("d2 = " + d2); // El resultado es d = 3.14 
-String s3 = "hex = " + Long.toString(254, 16); // s = "hex = fe" 
-System.out.println("s3 = " + s3); // El resultado es d = 3.14
+System.out.println("d2 = " + d2); // El resultado es d2 = 3.14 
+String s3 = Long.toString(254, 16); // s = "hex = fe" 
+System.out.println("s3 = " + s3); // El resultado es s3 = 3.14
 ```
 
 ## Métodos `toXxxxxString()` (Binario, Hexadecimal y Octal)
 
 Los métodos `toXxxxxString()` permiten a las clases contenedoras `Integer` y `Long` convertir números en base 10 a otras bases, retornando un `String` con el valor primitivo que se encuentra en el objeto contenedor.
-
-
-
-
 
 Ejemplo:
 
@@ -169,14 +161,14 @@ La clase Date es una utilidad contenida en el paquete `java.util` y permiten tra
 Ejemplo:
 
 ```java
-Date fecha = new Date(2021, 8, 19);
-System.out.println(fecha);           //Mon Sep 19 00:00:00 CEST 3921
+Date fecha = new Date(2022, 12, 19);
+System.out.println(fecha);           //Fri Jan 19 00:00:00 CET 3923
 System.out.println(fecha.getTime()); //61590146400000
 ```
 
 ## Clase `GregorianCalendar`
 
-Para utilizar fechas y horas se utiliza la clase `GregorianCalendar` que dispone de variable enteras como: `DAY_OF_WEEK`, `DAY_OF_MONTH`, `YEAR`, `MONTH`, `HOUR`, `MINUTE`, `SECOND`, `MILLISECOND`, `WEEK_OF_MONTH`, `WEEK_OF_YEAR`, … (Importamos Clase `java.util.Calendar` y `java.util.GregorianCalendar`)
+Para utilizar fechas y horas se utiliza la clase `GregorianCalendar` que dispone de variable enteras como: `DAY_OF_WEEK`, `DAY_OF_MONTH`, `YEAR`, `MONTH`, `HOUR`, `MINUTE`, `SECOND`, `MILLISECOND`, `WEEK_OF_MONTH`, `WEEK_OF_YEAR`, … (importamos clase `java.util.Calendar` y `java.util.GregorianCalendar`)
 
 Ejemplo 1:
 
@@ -220,7 +212,7 @@ Estas clases no tienen constructores públicos, y por tanto, no se puede usar `n
 
 No es válido llamar directamente al constructor usando `new`, ya que no tienen un constructor público.
 
-Ejemplo:
+Ejemplo erróneo:
 
 ```java
 LocalDate d = new LocalDate(); //NO compila
@@ -238,7 +230,7 @@ System.out.println(date.getYear()); //1989
 System.out.println(date.getMonth()); //NOVEMBER 
 System.out.println(date.getDayOfMonth()); //11
 date = LocalDate.now();
-System.out.println(date); //2021-08-19
+System.out.println(date); //2022-12-19
 ```
 
 ### `LocalTime`
@@ -257,11 +249,7 @@ System.out.println(time); //20:13:53.118044
 
 ### `LocalDateTime`
 
-`LocalDateTime`, es una clase compuesta, la cual combina las clases anteriormente  mencionadas `LocalDate` y `LocalTime`. Podemos construir un `LocalDateTime` haciendo uso de todos los campos (año, mes, día, hora, minuto, segundo, nanosegundo).
-
-
-
-
+`LocalDateTime`, es una clase compuesta, la cual combina las clases anteriormente mencionadas `LocalDate` y `LocalTime`. Podemos construir un `LocalDateTime` haciendo uso de todos los campos (año, mes, día, hora, minuto, segundo, nanosegundo).
 
 Ejemplo:
 
@@ -365,17 +353,9 @@ LocalDate mifecha = LocalDate.parse(fechaCadena, formato);
 System.out.println(formato.format(mifecha)); //16/08/2016
 ```
 
-> Ojo! a partir de Java 8 `y` es para el año de la era (BC AD), y para el año debemos usar `u`
+> Ojo! a partir de Java 8`y`es para el año de la era (BC AD), y para el año debemos usar `u`
 
 Más detalles sobre los formatos: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
-
-
-
-
-
-
-
-
 
 ## Manipulación
 
@@ -577,7 +557,7 @@ boolean isEqual = date1.isEqual(date2); //false
 
 ## Formatos
 
-Cuando se trabaja con fechas, en ocasiones se requiere de un formato personalizado.  Podemos usar el método `ofPattern(String pattern)`, para definir un formato en particular.
+Cuando se trabaja con fechas, en ocasiones se requiere de un formato personalizado. Podemos usar el método `ofPattern(String pattern)`, para definir un formato en particular.
 
 Para utilizar `DateTimeFormatter.ofPattern` debemos importar la clase con	`import java.time.format.DateTimeFormatter;`
 
@@ -630,7 +610,9 @@ if (lafecha.getDayOfWeek().equals(DayOfWeek.SATURDAY)) {
 
 La esencia de Casting permite convertir un dato de tipo primitivo en otro generalmente de más precisión.
 
-Entre objetos es posible realizar el casting. Tenemos una clase persona con una subclase empleado y este a su vez una subclase encargado.
+Entre objetos es posible realizar el casting. 
+
+En el siguiente ejemplo tenemos una clase persona con una subclase empleado y este a su vez una subclase encargado.
 
 ```mermaid
 classDiagram
@@ -640,7 +622,7 @@ Empleado <|-- Encargado
 
 Si creamos una instancia de tipo persona y le asignamos un objeto de tipo empleado o encargado, al ser una subclase no existe ningún tipo de problema, ya que todo encargado o empleado es persona.
 
-Por otro lado, si intentamos asignar valores a los atributos específicos de empleado o encargado nos encontramos con una pérdida de precisión puesto que no se pueden ejecutar todos los métodos de los que dispone un objeto de tipo empleado o encargado, ya que persona contiene menos métodos que la clase empleado o encargado. En este caso es necesario hacer un casting, sino el compilador dará error.
+Por otro lado, si intentamos asignar valores a los atributos específicos de empleado o encargado nos encontramos con una pérdida de precisión puesto que no se pueden ejecutar todos los métodos de los que dispone un objeto de tipo empleado o encargado, ya que persona contiene menos métodos que la clase empleado o encargado. En este caso es necesario hacer un **casting**, sino el compilador dará error.
 
 Ejemplo:
 
@@ -729,7 +711,7 @@ package UD05;
 
 public class Anexo3Casting {
 
-    public static void main(String[] args) {     
+    public static void main(String[] args) {
         // Casting Implicito
         Persona encargadoCarniceria = new Encargado("Rosa Ramos", 1200,
                 "Carniceria");
@@ -753,12 +735,12 @@ public class Anexo3Casting {
 
 Las reglas a la hora de realizar casting es que:
 
-- cuando se utiliza una clase más específicas (más abajo en la jerarquía) no hace falta casting. Es lo que llamamos **casting implícito**.
+- cuando se utiliza una clase más específica (más abajo en la jerarquía) no hace falta casting. Es lo que llamamos **casting implícito**.
 - cuando se utiliza una clase menos específica (más arriba en la jerarquía) hay que hacer un **casting explícito**.
 
-> **¿Porqué a la hora de imprimir el casting implicito la clase más genérica se imprime con el método más especializado?**
+> **¿Porqué a la hora de imprimir el casting implícito la clase más genérica se imprime con el método más especializado?**
 >
-> Debes entender que en realidad `encargadoCarniceria` es un `Encargado` que se *disfraza* de `Persona`, pero en realidad sus métodos son los especializados (el `toString()` más moderno sobrescribe al de sus padres. Recuerda que la anotación `@override` es opcional, y aunque no se indique el método sigue sobrescribiendo al de su padre)
+> Debes entender que en realidad `encargadoCarniceria` es un `Encargado` que se *disfraza* de `Persona`, pero en realidad sus métodos son los especializados (el `toString()` más moderno sobrescribe al de sus padres. Recuerda que la anotación `@override` es opcional, y aunque no se indique el método sigue sobrescribiendo al de su padre).
 >
 > Si por ejemplo usamos este fragmento:
 >

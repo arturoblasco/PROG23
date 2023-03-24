@@ -2,12 +2,12 @@
 unit: UD06
 title: Lectura y escritura de información
 language: ES
-author: Arturo BC [arturoblasco@iesmre.com]
+author: Arturo Blasco [arturoblasco@iesmre.com]
 subject: Programación
 keywords: [PRG, 2022, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
@@ -16,7 +16,7 @@ typora-copy-images-to:${filename}/../assets
 
 Los programas Java realizan las operaciones de entrada y salida a través de lo que se denominan **Streams** (*traducido, **flujos***). 
 
-<img src="assets/stream.png" alt="image-20210828174745591" style="zoom:55%;" />
+<img src="assets/stream.png" alt="image-20210828174745591" style="zoom:50%;" />
 
 Un stream es una abstracción de todo aquello que produzca o consuma información. Podemos ver a este stream como una entidad lógica que, por otra parte, se encontrará vinculado con un dispositivo físico. La eficacia de esta forma de implementación radica en que las operaciones de entrada y salida que el programador necesita manejar son las mismas independientemente del dispositivo con el que estemos actuando. Será Java quien se encargue de manejar el dispositivo concreto, ya se trate del teclado, el monitor, un sistema de ficheros o un socket de red, etc., liberando a nuestro código de tener que saber con quién está interactuando.
 
@@ -33,16 +33,6 @@ En Java los *streams* se materializan en un conjunto de clases y subclases, cont
 | ------------------ | ---------------------- | ------------------------- |
 | Para **lectura**   | InputStream            | Reader                    |
 | Para **escritura** | OutputStream           | Writer                    |
-
-
-
-
-
-
-
-
-
-
 
 ### Streams orientados a byte (byte streams)
 
@@ -108,8 +98,6 @@ A --> H(PrintWriter)
 D --> I(FileWriter)
 ```
 
-
-
 Como hemos comentado, tanto en `Reader` como en `InputStream` encontramos un método `read()`, en concreto public int `read()`. Observar la diferencia entre estos dos métodos nos ayudará a comprender la diferencia entre los flujos orientados a byte y los orientados a carácter. 
 
 | método                   | devuelve              |
@@ -128,19 +116,19 @@ A pesar de llamarse igual, `InputStream.read()` devuelve el siguiente byte de da
 Existen una serie de stream de uso común a los cuales se denomina stream estándar. El sistema se encarga de crear estos stream automáticamente. 
 
 - `System.in`
-  - Instancia de la clase `InputStream`: flujo de bytes de entrada
+  - Instancia de la clase `InputStream`: flujo de bytes de entrada.
   - Métodos:
-    - `read()` permite leer un byte de la entrada como entero
-    - `skip(n)` ignora `n` bytes de la entrada
-    - `available()` número de bytes disponibles para leer en la entrada
+    - `read()` permite leer un byte de la entrada como entero.
+    - `skip(n)` ignora `n` bytes de la entrada.
+    - `available()` número de bytes disponibles para leer en la entrada.
 - `System.out`
-  - Instancia de la clase `PrintStream`: flujo de bytes de salida
+  - Instancia de la clase `PrintStream`: flujo de bytes de salida.
   - Métodos
     - para impresión de datos: `print()`, `println()`
-    - `flush()` vacía el buffer de salida escribiendo su contenido
+    - `flush()` vacía el buffer de salida escribiendo su contenido.
 - `System.err`
   - Funcionamiento similar a `System.out`
-  - Se utiliza para enviar mensajes de error (por ejemplo a un fichero de log o a la consola)
+  - Se utiliza para enviar mensajes de error (por ejemplo a un fichero de log o a la consola).
 
 > Por defecto, `System.in`, `System.out` y `System.err` se encuentran asociados a la consola (teclado y pantalla), pero es posible redirigirlos a otras fuentes o destinos, como por ejemplo a un fichero.
 
@@ -150,38 +138,38 @@ Existen una serie de stream de uso común a los cuales se denomina stream están
 
 Para utilizar un stream hay que seguir una serie de pasos:
 
-- Lectura
-  - Abrir el stream asociado a una fuente de datos (creación del objeto stream)
-    - Teclado
-    - Fichero
-    - Socket remoto
-  - Mientras existan datos disponibles
-    - Leer datos
-  - Cerrar el stream (método close)
-- Escritura
-  - Abrir el stream asociado a una fuente de datos (creación del objeto stream)
-    - Pantalla
-    - Fichero
-    - Socket local
-  - Mientras existan datos disponibles
-    - Escribir datos
-  - Cerrar el stream (método close)
+- Lectura:
+  - Abrir el stream asociado a una fuente de datos (creación del objeto stream):
+    - Teclado.
+    - Fichero.
+    - Socket remoto.
+  - Mientras existan datos disponibles:
+    - Leer datos.
+  - Cerrar el stream (método `close`).
+- Escritura:
+  - Abrir el stream asociado a una fuente de datos (creación del objeto stream):
+    - Pantalla.
+    - Fichero.
+    - Socket local.
+  - Mientras existan datos disponibles:
+    - Escribir datos.
+  - Cerrar el stream (método `close`).
 
 > **Nota**: 
 >
-> - Los Stream estándar ya se encarga el sistema de abrirlos y cerrarlos
-> - Un fallo en cualquier punto del proceso produce una `IOException`
+> - Los Streams estándar ya se encarga el sistema de abrirlos y cerrarlos.
+> - Un fallo en cualquier punto del proceso produce una `IOException`.
 
-Consulta los ejemplos [P1_1_FlujoEstandarEntrada](#estandar-de-entrada) y [P1_2_FlujoEstandarSalida](#estandar-de-salida)
+Consulta los ejemplos [P1_1_FlujoEstandarEntrada](#estandar-de-entrada) y [P1_2_FlujoEstandarSalida](#estandar-de-salida).
 
 ## Las clases `InputStream` y `OutputStream`
 
-Como hemos dicho anteriormente, proporcionan métodos para leer y escribir, respectivamente, un byte de información, a través de sus métodos `read()` y `write()`
+Como hemos dicho anteriormente, proporcionan métodos para leer y escribir, respectivamente, un byte de información, a través de sus métodos `read()` y `write()`.
 
 | clase          | métodos         | descripción                                                  |
 | -------------- | --------------- | ------------------------------------------------------------ |
-| `InputStream`  | `int read()`    | Lee un byte de información y lo devuelve como un entero cuyo valor estará entre 0 y 255. Si se detecta el final de los datos de entrada, devuelve -1 |
-| `OutputStream` | `write (int b)` | Escribe un byte de información en el Stream. El parámetro es entero, pero si su valor es superior a 255 se escriben los 8 bits de menos peso (los más a la derecha) |
+| `InputStream`  | `int read()`    | Lee un byte de información y lo devuelve como un entero cuyo valor estará entre 0 y 255. Si se detecta el final de los datos de entrada, devuelve -1. |
+| `OutputStream` | `write (int b)` | Escribe un byte de información en el Stream. El parámetro es entero, pero si su valor es superior a 255 se escriben los 8 bits de menos peso (los más a la derecha). |
 
 ## `Reader` y `Writer`
 
@@ -189,12 +177,12 @@ Permiten, respectivamente, leer y escribir un carácter en el stream.
 
 | clase    | métodos         | descripción                                                  |
 | -------- | --------------- | ------------------------------------------------------------ |
-| `Reader` | `int read()`    | Lee un carácter unicode de información y lo devuelve como un entero cuyo valor estará entre 0 y 65565. Si se detecta el final de los datos de entrada, devuelve -1 |
+| `Reader` | `int read()`    | Lee un carácter unicode de información y lo devuelve como un entero cuyo valor estará entre 0 y 65565. Si se detecta el final de los datos de entrada, devuelve -1. |
 | `Writer` | `write (int c)` | Escribe un carácter unicode en el Stream. El parámetro es entero y corresponderá al código Unicode del carácter que se escribe. |
 
 ## `InputStreamReader` y `OutputStreamWriter`
 
-Son clases que actúan de puente entre streams orientados a bytes y streams orientados a carácter. Podemos, por ejemplo, crear un `InputStreamReader` asociado a un `InputStream` y leer caracteres del `InputStream` asociado, a través del `InputStreamReader`
+Son clases que actúan de puente entre streams orientados a bytes y streams orientados a carácter. Podemos, por ejemplo, crear un `InputStreamReader` asociado a un `InputStream` y leer caracteres del `InputStream` asociado, a través del `InputStreamReader`.
 
 | clase                | métodos                                                      | descripción                                                  |
 | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -205,36 +193,36 @@ Son clases que actúan de puente entre streams orientados a bytes y streams orie
 
 Las clases `BufferedReader`, `BufferedWritter`, `BufferedInputStream` y `BufferedOutputStream` permiten realizar buffering.
 
-Situadas "por delante" de un stream acumulan las operaciones de lectura y escritura en una memoria o buffer y cuando hay suficiente información las operaciones se realizan finalmente sobre el dispositivo físico.
+Situadas "*por delante*" de un stream acumulan las operaciones de lectura y escritura en una memoria o buffer y cuando hay suficiente información las operaciones se realizan finalmente sobre el dispositivo físico.
 
-Mantienen las mismas operaciones de lectura y escritura que sus clases padre pero, como hemos dicho, reducen el número de accesos al dispositivo físico por el uso de buffers
+Mantienen las mismas operaciones de lectura y escritura que sus clases padre pero, como hemos dicho, reducen el número de accesos al dispositivo físico por el uso de buffers.
 
 | clase                                        | métodos                                                      | descripción                                                  |
 | -------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `BufferedReader` `BufferedWriter`            | `String readLine()`<br>`void newLine()`<br>`write(String s)` | Además de los métodos heredados, encontramos otros que permiten leer Strings completos, escribir una línea completa de texto y hacer saltos de línea |
-| `BufferedInputStream` `BufferedOutputStream` |                                                              | Mantienen las mismas operaciones de lectura y escritura que sus clases padre pero, como hemos dicho, reducen el número de accesos al dispositivo físico por el uso de buffers |
+| `BufferedReader` `BufferedWriter`            | `String readLine()`<br>`void newLine()`<br>`write(String s)` | Además de los métodos heredados, encontramos otros que permiten leer Strings completos, escribir una línea completa de texto y hacer saltos de línea. |
+| `BufferedInputStream` `BufferedOutputStream` |                                                              | Mantienen las mismas operaciones de lectura y escritura que sus clases padre pero, como hemos dicho, reducen el número de accesos al dispositivo físico por el uso de buffers. |
 
 ## `DataInputStream` y `DataOutputStream`
 
-Realizan una transformación de la información antes de ser escrita o después de ser leída. Los bytes leídos o escritos se interpretan como datos correspondientes a los tipos primitivos de Java 
+Realizan una transformación de la información antes de ser escrita o después de ser leída. Los bytes leídos o escritos se interpretan como datos correspondientes a los tipos primitivos de Java.
 
 | clase                                     | métodos                                                      | descripción                                                  |
 | ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `DataInputStream`<br />`DataOutputStream` | `read()`,<br /> `write()`<br>`readInt()`, <br />`writeInt()`<br>`readDouble()`, <br />`writeDouble()`<br>`readUTF()`,<br />`writeUTF()`<br> … | Que permiten leer y escribir información correspondiente a los distintos tipos de datos de Java. |
+| `DataInputStream`<br />`DataOutputStream` | `read()`,<br />`write()`<br>`readInt()`, <br />`writeInt()`<br>`readDouble()`, <br />`writeDouble()`<br>`readUTF()`,<br />`writeUTF()`<br> … | Que permiten leer y escribir información correspondiente a los distintos tipos de datos de Java. |
 
 ## `PrintWriter`
 
 | clase         | métodos                     | descripción                                                  |
 | ------------- | --------------------------- | ------------------------------------------------------------ |
-| `PrintWriter` | `print()` <br />`println()` | Esta clase (a la que pertenece `System.out`) tiene los conocidos métodos `print` y `println`, que escriben en el stream de salida datos binarios representados en forma de cadenas de caracteres. |
+| `PrintWriter` | `print()` <br />`println()` | Esta clase (a la que pertenece `System.out`) tiene los métodos `print` y `println`, que escriben en el stream de salida datos binarios representados en forma de cadenas de caracteres. |
 
 ## Combinación de Streams
 
-En muchas ocasiones, una sola clase de las vistas no nos da la funcionalidad necesaria para poder hacer la tarea que se requiere. En tales casos es necesario combinar varios Streams de manera que unos actúan como origen de información de los otros, o unos escriben sobre los otros.
+En muchas ocasiones, una sola clase de las vistas no nos da la funcionalidad necesaria para poder hacer la tarea que se requiere. En tales casos es necesario combinar varios *Streams* de manera que unos actúan como origen de información de los otros, o unos escriben sobre los otros.
 
 En este caso tendríamos que combinar tres clases:
 
-![image-20220313205036000](/assets/image-20220313205036000.png)
+<img src="/assets/image-20220313205036000.png" alt="image-20220313205036000" style="zoom:50%;" />
 
 ```java
 BufferedReader b = new BufferedReader(new InputStreamReader(System.in));

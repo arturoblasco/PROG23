@@ -9,6 +9,9 @@
    viewBox="0 0 927 420"
    sodipodi:docname="stream.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -133,13 +136,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.53033009"
-     inkscape:cx="264.92934"
-     inkscape:cy="49.02607"
-     inkscape:window-width="1680"
-     inkscape:window-height="1013"
-     inkscape:window-x="0"
-     inkscape:window-y="15"
+     inkscape:zoom="1.0606602"
+     inkscape:cx="519.01637"
+     inkscape:cy="141.42136"
+     inkscape:window-width="1920"
+     inkscape:window-height="1003"
+     inkscape:window-x="1680"
+     inkscape:window-y="40"
      inkscape:window-maximized="1"
      inkscape:current-layer="g8" />
   <g
@@ -157,238 +160,305 @@
        inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <g
-       id="g23756"
-       transform="translate(30.29761,356.95852)"
+    <rect
+       style="opacity:0.707;fill:#414141;fill-opacity:1;stroke:none;stroke-width:2.02337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7673)"
+       id="rect6857-3"
+       width="121.20162"
+       height="60.317009"
+       x="750.66321"
+       y="101.00393"
+       ry="16.336002"
        inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96">
-      <rect
-         style="opacity:0.707;fill:#414141;fill-opacity:1;stroke:none;stroke-width:2.02337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7673)"
-         id="rect6857-3"
-         width="121.20162"
-         height="60.317009"
-         x="720.3656"
-         y="-255.95459"
-         ry="16.336002" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 132.88595,-247.8514 c 152.38376,-124.94177 346.33405,97.35442 482.62585,3.35071"
-         id="path860"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:13.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 132.88595,-229.8514 c 152.38376,-124.94177 346.33405,97.35442 482.62585,3.35071"
-         id="path860-6"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 132.88595,-209.8514 c 152.38376,-124.94177 346.33405,97.35442 482.62585,3.35071"
-         id="path860-3"
-         sodipodi:nodetypes="cc" />
-      <rect
-         style="opacity:0.707268;fill:#414141;fill-opacity:1;stroke-width:13.3;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter6349)"
-         id="rect1203"
-         width="109.97007"
-         height="109.97007"
-         x="35.093925"
-         y="-278.09787"
-         transform="matrix(0.94833656,0,0,0.85368894,7.6428086,-35.591187)" />
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#4a638d;stroke-width:2.06947;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1203-7"
-         width="104.28864"
-         height="93.880234"
-         x="35.233646"
-         y="-278.12241" />
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.666037;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1203-7-5"
-         width="19.253294"
-         height="52.672997"
-         x="611.54431"
-         y="-247.84398" />
-      <rect
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#4a638d;stroke-width:2.02337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect6857"
-         width="121.20162"
-         height="60.317009"
-         x="714.3656"
-         y="-259.95459"
-         ry="16.336002" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.919013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-         d="m 615.5118,-226.50069 82.75143,0.27236"
-         id="path7746" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.919013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-5)"
-         d="m 440.24366,-298.9863 -41.54886,39.12095"
-         id="path7746-2"
-         sodipodi:nodetypes="cc" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
-         x="378.80655"
-         y="-301.66046"
-         id="text11620"><tspan
-           sodipodi:role="line"
-           id="tspan11618"
-           x="378.80655"
-           y="-301.66046"
-           style="stroke-width:0.596872">un <tspan
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 163.18356,109.10712 c 152.38376,-124.94177 346.33405,97.35442 482.62585,3.35071"
+       id="path860"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:13.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 163.18356,127.10712 C 315.56732,2.16535 509.51761,224.46154 645.80941,130.45783"
+       id="path860-6"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 163.18356,147.10712 c 152.38376,-124.94177 346.33405,97.35442 482.62585,3.35071"
+       id="path860-3"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="opacity:0.707268;fill:#414141;fill-opacity:1;stroke-width:13.3;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter6349)"
+       id="rect1203"
+       width="109.97007"
+       height="109.97007"
+       x="35.093925"
+       y="-278.09787"
+       transform="matrix(0.94833656,0,0,0.85368894,37.940419,321.36733)"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#e2ac34;fill-opacity:1;stroke:#976517;stroke-width:2.06947;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1203-7"
+       width="104.28864"
+       height="93.880234"
+       x="65.531258"
+       y="78.836113"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.666037;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1203-7-5"
+       width="19.253294"
+       height="52.672997"
+       x="641.84192"
+       y="109.11454"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#e2ac34;fill-opacity:1;stroke:#976517;stroke-width:2.02337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6857"
+       width="121.20162"
+       height="60.317009"
+       x="744.66321"
+       y="97.003929"
+       ry="16.336002"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.919013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="m 645.80941,130.45783 82.75143,0.27236"
+       id="path7746"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.919013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-5)"
+       d="M 470.54127,57.97222 428.99241,97.09317"
+       id="path7746-2"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
+       x="409.10416"
+       y="55.298058"
+       id="text11620"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan11618"
+         x="409.10416"
+         y="55.298058"
+         style="stroke-width:0.596872">un <tspan
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
    id="tspan15377">stream </tspan>/ flujo</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
-         x="50.812168"
-         y="-224.5966"
-         id="text11620-7"><tspan
-           sodipodi:role="line"
-           id="tspan11618-0"
-           x="50.812168"
-           y="-224.5966"
-           style="stroke-width:0.596872">fuente</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
-         x="717.18036"
-         y="-224.90121"
-         id="text11620-7-3"><tspan
-           sodipodi:role="line"
-           id="tspan11618-0-6"
-           x="717.18036"
-           y="-224.90121"
-           style="stroke-width:0.596872">programa</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:17.3256px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.43314"
-         x="616.82861"
-         y="-236.21169"
-         id="text11620-9"><tspan
-           sodipodi:role="line"
-           id="tspan11618-1"
-           x="616.82861"
-           y="-236.21169"
-           style="stroke-width:0.43314">escrituras</tspan></text>
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 232.88594,-45.97117 c 152.38376,-124.94177 346.33405,97.354419 482.62585,3.35071"
-         id="path860-0"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:13.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 232.88594,-27.97117 c 152.38376,-124.94177 346.33405,97.354419 482.62585,3.35071"
-         id="path860-6-2"
-         sodipodi:nodetypes="cc" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="M 232.88594,-7.97117 C 385.2697,-132.91294 579.21999,89.383249 715.51179,-4.62046"
-         id="path860-3-3"
-         sodipodi:nodetypes="cc" />
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.666037;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1203-7-5-2"
-         width="19.253294"
-         height="52.672997"
-         x="216.88594"
-         y="-50.644165" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.919013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-1)"
-         d="m 147.51179,-24.62046 82.75143,0.27236"
-         id="path7746-8" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.919013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-5-7)"
-         d="m 534.38553,-98.297989 -41.54886,39.12095"
-         id="path7746-2-9"
-         sodipodi:nodetypes="cc" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
-         x="472.94843"
-         y="-100.97216"
-         id="text11620-73"><tspan
-           sodipodi:role="line"
-           id="tspan11618-6"
-           x="472.94843"
-           y="-100.97216"
-           style="stroke-width:0.596872">un <tspan
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
+       x="81.109779"
+       y="132.36192"
+       id="text11620-7"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan11618-0"
+         x="81.109779"
+         y="132.36192"
+         style="stroke-width:0.596872">fuente</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
+       x="747.47797"
+       y="132.05731"
+       id="text11620-7-3"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan11618-0-6"
+         x="747.47797"
+         y="132.05731"
+         style="stroke-width:0.596872">programa</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.3256px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.43314"
+       x="647.12622"
+       y="120.74683"
+       id="text11620-9"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan11618-1"
+         x="647.12622"
+         y="120.74683"
+         style="stroke-width:0.43314">escrituras</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 263.18355,310.98735 C 415.56731,186.04558 609.5176,408.34177 745.8094,314.33806"
+       id="path860-0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:13.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 263.18355,328.98735 C 415.56731,204.04558 609.5176,426.34177 745.8094,332.33806"
+       id="path860-6-2"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 263.18355,348.98735 C 415.56731,224.04558 609.5176,446.34177 745.8094,352.33806"
+       id="path860-3-3"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.666037;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1203-7-5-2"
+       width="19.253294"
+       height="52.672997"
+       x="247.18355"
+       y="306.31436"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.919013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-1)"
+       d="m 177.8094,332.33806 82.75143,0.27236"
+       id="path7746-8"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.919013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-5-7)"
+       d="m 564.68314,258.66053 -41.54886,39.12095"
+       id="path7746-2-9"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
+       x="503.24603"
+       y="255.98636"
+       id="text11620-73"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan11618-6"
+         x="503.24603"
+         y="255.98636"
+         style="stroke-width:0.596872">un <tspan
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
    id="tspan15377-1">stream </tspan>/ flujo</tspan></text>
-      <g
-         id="g21974"
-         transform="translate(680)">
-        <rect
-           style="opacity:0.707268;fill:#414141;fill-opacity:1;stroke-width:13.3;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter6349-2)"
-           id="rect1203-75"
-           width="109.97007"
-           height="109.97007"
-           x="35.093925"
-           y="-278.09787"
-           transform="matrix(0.94833656,0,0,0.85368894,7.6428086,166.28904)" />
-        <rect
-           style="fill:#ffffff;fill-opacity:1;stroke:#4a638d;stroke-width:2.06947;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="rect1203-7-9"
-           width="104.28864"
-           height="93.880234"
-           x="35.233635"
-           y="-76.242188" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
-           x="44.812157"
-           y="-22.71637"
-           id="text11620-7-2"><tspan
-             sodipodi:role="line"
-             id="tspan11618-0-9"
-             x="44.812157"
-             y="-22.71637"
-             style="stroke-width:0.596872">destino</tspan></text>
-      </g>
-      <g
-         id="g21980-4"
-         inkscape:transform-center-x="-5.5785499"
-         inkscape:transform-center-y="16.343027"
-         transform="translate(-688)">
-        <rect
-           style="opacity:0.707;fill:#414141;fill-opacity:1;stroke:none;stroke-width:2.02337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7673-0-7)"
-           id="rect6857-3-2-5"
-           width="121.20162"
-           height="60.317009"
-           x="720.3656"
-           y="-54.074371"
-           ry="16.336002" />
-        <rect
-           style="fill:#ffffff;fill-opacity:1;stroke:#4a638d;stroke-width:2.02337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="rect6857-2-0"
-           width="121.20162"
-           height="60.317009"
-           x="714.3656"
-           y="-58.074371"
-           ry="16.336002" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
-           x="717.18036"
-           y="-23.021004"
-           id="text11620-7-3-3-3"><tspan
-             sodipodi:role="line"
-             id="tspan11618-0-6-1-6"
-             x="717.18036"
-             y="-23.021004"
-             style="stroke-width:0.596872">programa</tspan></text>
-      </g>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:17.3256px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.43314"
-         x="158.82861"
-         y="-34.331451"
-         id="text11620-9-9"><tspan
-           sodipodi:role="line"
-           id="tspan11618-1-4"
-           x="158.82861"
-           y="-34.331451"
-           style="stroke-width:0.43314">lecturas</tspan></text>
-    </g>
+    <rect
+       style="opacity:0.707268;fill:#414141;fill-opacity:1;stroke-width:13.3;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter6349-2)"
+       id="rect1203-75"
+       width="109.97007"
+       height="109.97007"
+       x="35.093925"
+       y="-278.09787"
+       transform="matrix(0.94833656,0,0,0.85368894,717.94042,523.24756)"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#e2ac34;fill-opacity:1;stroke:#976517;stroke-width:2.06947;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1203-7-9"
+       width="104.28864"
+       height="93.880234"
+       x="745.53125"
+       y="280.71634"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
+       x="755.10974"
+       y="334.24216"
+       id="text11620-7-2"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan11618-0-9"
+         x="755.10974"
+         y="334.24216"
+         style="stroke-width:0.596872">destino</tspan></text>
+    <rect
+       style="opacity:0.707;fill:#414141;fill-opacity:1;stroke:none;stroke-width:2.02337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7673-0-7)"
+       id="rect6857-3-2-5"
+       width="121.20162"
+       height="60.317009"
+       x="62.663212"
+       y="302.88416"
+       ry="16.336002"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#e2ac34;fill-opacity:1;stroke:#976517;stroke-width:2.02337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6857-2-0"
+       width="121.20162"
+       height="60.317009"
+       x="56.663212"
+       y="298.88416"
+       ry="16.336002"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.8749px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.596872"
+       x="59.47797"
+       y="333.93753"
+       id="text11620-7-3-3-3"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan11618-0-6-1-6"
+         x="59.47797"
+         y="333.93753"
+         style="stroke-width:0.596872">programa</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.3256px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.43314"
+       x="189.12622"
+       y="322.62708"
+       id="text11620-9-9"
+       inkscape:export-filename="/media/abc/DADES1/5IES/1DAW-PROGRAMACIO/PR22/PROG22/UD06/assets/stream.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan11618-1-4"
+         x="189.12622"
+         y="322.62708"
+         style="stroke-width:0.43314">lecturas</tspan></text>
   </g>
 </svg>

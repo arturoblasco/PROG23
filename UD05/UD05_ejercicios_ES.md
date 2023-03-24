@@ -1,12 +1,13 @@
 ---
 unit: UD05
 title: Ejercicios
-author: Arturo BC [arturoblasco@iesmre.com]
+language: ES
+author: Arturo Blasco [arturoblasco@iesmre.com]
 subject: Programación
 keywords: [PRG, 2022, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today})
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
@@ -17,7 +18,7 @@ typora-copy-images-to:${filename}/../assets
 
 **Ejercicio 1.** Una empresa quiere hacer una gestión informatizada básica de sus empleados. Para ello, de cada empleado le interesa:
 
-- dombre (String)
+- nombre (String)
 - dni (String)
 - año de ingreso (número entero)
 - sueldo bruto anual (número real)
@@ -26,17 +27,17 @@ typora-copy-images-to:${filename}/../assets
 
 - Crear objetos de la clase: **Constructor** que reciba todos los datos del empleado a crear.
 
-- Consultar el valor de cada uno de sus atributos. (**Consultores** o **getters**)
+- Consultar el valor de cada uno de sus atributos: **Consultores** (o **getters**)
 
-- `public int antiguedad()`. Devuelve el número de años transcurridos desde el ingreso del empleado en la empresa. Si el año de ingreso fuera posterior al de la fecha actual, devolverá 0. Para obtener el año actual puedes usar:
+- `public int antiguedad()`: Devuelve el número de años transcurridos desde el ingreso del empleado en la empresa. Si el año de ingreso fuera posterior al de la fecha actual, devolverá 0. Para obtener el año actual puedes usar:
 
   - ```java
     int añoActual = Calendar.getInstance().get(Calendar.YEAR);
     ```
 
-- `public void incrementarSueldo(double porcentaje)`. Incrementa el sueldo del empleado en un porcentaje dado (expresado como una cantidad real entre 0 y 100).
+- `public void incrementarSueldo(double porcentaje)`: Incrementa el sueldo del empleado en un porcentaje dado (expresado como una cantidad real entre 0 y 100).
 
-- `public String toString()`. Devuelve un `String` con los datos del empleado, de la siguiente forma:
+- `public String toString()`: Devuelve un `String` con los datos del empleado, de la siguiente forma:
 
   ```sh
   Nombre: Juan González
@@ -45,7 +46,7 @@ typora-copy-images-to:${filename}/../assets
   Sueldo bruto anual: 20000 €
   ```
 
-- `public boolean equals(Object o)`. Método para comprobar si dos empleados son iguales. Dos empleados se consideran iguales si tienen el mismo DNI.
+- `public boolean equals(Object o)`: Método para comprobar si dos empleados son iguales. Dos empleados se consideran iguales si tienen el mismo DNI.
 
 - `public int compareTo(Empleado o)`. Se considera menor o mayor el empleado que tiene menor o mayor DNI (el mismo criterio que al comparar dos strings).
 
@@ -66,17 +67,17 @@ typora-copy-images-to:${filename}/../assets
 - Muestra el IRPF que correspondería a cada empleado. 
 - Para comprobar que las operaciones se realizan correctamente, muestra los datos de los empleados tras cada operación.
 
-**Ejercicio 4.** Diseñar una clase `Empresa`, que permita almacenar el nombre de la empresa y la información de los empleados de la misma (máximo 10 empleados) en un array. Para ello, se utilizarán tres atributos: nombre, plantilla (array de empleados) y `numEmpleados` (número de empleados que tiene la empresa) En esta clase, se deben implementar los métodos:
+**Ejercicio 4.** Diseñar una clase `Empresa`, que permita almacenar el nombre de la empresa y la información de los empleados de la misma (máximo 10 empleados) en un array. Para ello, se utilizarán tres atributos: nombre, plantilla (array de empleados) y `numEmpleados` (número de empleados que tiene la empresa). En esta clase, se deben implementar los métodos:
 
-- `public Empresa (String nombre)`. Constructor de la clase. Crea la empresa con el nombre indicado y sin empleados.
+- `public Empresa (String nombre)`. **Constructor** de la clase: Crea la empresa con el nombre indicado y sin empleados.
 
-- `public void contratar(Empleado e) throws PlantillaCompletaException`. Añade el empleado indicado a la plantilla de la empresa, siempre que quepa en el array. Si no cabe, se lanzará la excepción `PlantillaCompletaException`.
+- `public void contratar(Empleado e) throws PlantillaCompletaException`: Añade el empleado indicado a la plantilla de la empresa, siempre que quepa en el array. Si no cabe, se lanzará la excepción `PlantillaCompletaException`.
 
-- `public void despedir(Empleado e) throws ElementoNoEncontradoException`. Elimina el empleado indicado de la plantilla. Si no existe en la empresa, se lanza `ElementoNoEncontradoException`.
+- `public void despedir(Empleado e) throws ElementoNoEncontradoException`: Elimina el empleado indicado de la plantilla. Si no existe en la empresa, se lanza `ElementoNoEncontradoException`.
 
-- `public void subirTrienio (double porcentaje)` Subir el sueldo, en el porcentaje indicado, a todos los empleados cuya antigüedad sea exactamente tres años.
+- `public void subirTrienio (double porcentaje)`: Subir el sueldo, en el porcentaje indicado, a todos los empleados cuya antigüedad sea exactamente tres años.
 
-- `public String toString()`. Devuelve un `String` con el nombre de la empresa y la información de todos los empleados. La información de los distintos empleados debe estar separada por saltos de línea.
+- `public String toString()`: Devuelve un `String` con el nombre de la empresa y la información de todos los empleados. La información de los distintos empleados debe estar separada por saltos de línea.
 
 **Ejercicio 5.** Diseñar una clase Java `TestEmpresa` que permita probar la clase `Empresa` y sus métodos. Para ello, desarrolla el método `main` y en él …:
 
@@ -121,7 +122,7 @@ Se desea realizar una aplicación para gestionar el ingreso y el alta de pacient
 
 **Ejercicio 7.** Diseñar una clase Java `TestPaciente` que permita probar la clase `Paciente` y sus métodos. Para ello se desarrollará el método `main` en el que:
 
-- Se crearán dos pacientes: "Antonio" de 20 años y "Miguel" de 30 años.
+- Se crearán dos pacientes: *"Antonio" de 20 años* y *"Miguel" de 30 años*.
 - Imprimir el estado inicial de los dos pacientes.
 - Mostrar los datos del que se considere menor (según el criterio de `compareTo` de la clase `Paciente`).
 - Aplicar "mejoras" al paciente más grave hasta que los dos pacientes tengan el mismo estado.
@@ -129,21 +130,21 @@ Se desea realizar una aplicación para gestionar el ingreso y el alta de pacient
 
 **Ejercicio 8.** La clase **Hospital** contiene la información de las camas de un hospital, así como de los pacientes que las ocupan. Un Hospital tiene un número máximo de camas `MAXC` = 200 y para representarlas se utilizará un array (llamado `listaCamas`) de objetos de tipo Paciente junto con un atributo (`numLibres`) que indique el número de camas libres del hospital en un momento dado. El número de cada cama coincide con su posición en el array de pacientes (la posición 0 no se utiliza), de manera que `listaCamas[i]` es el Paciente que ocupa la cama `i` o es `null` si la cama está libre. Las operaciones de esta clase son:
 
-- `public Hospital()`. Constructor de un hospital. Cuando se crea un hospital, todas las camas están libres.
+- `public Hospital()`: Constructor de un hospital. Cuando se crea un hospital, todas las camas están libres.
 
-- `public int getNumLibres()`. Consultor del número de camas libres.
+- `public int getNumLibres()`: Consultor del número de camas libres.
 
-- `public boolean hayLibres()`. Devuelve true si en el hospital hay camas libres y devuelve false en caso contrario.
+- `public boolean hayLibres()`: Devuelve true si en el hospital hay camas libres y devuelve false en caso contrario.
 
-- `public int primeraLibre()`. Devuelve el número de la primera cama libre del array `listaCamas` si hay camas libres o devuelve un 0 si no las hay.
+- `public int primeraLibre()`: Devuelve el número de la primera cama libre del array `listaCamas` si hay camas libres o devuelve un 0 si no las hay.
 
-- `public void ingresarPaciente(String n, int e) throws HospitalLlenoException` Si hay camas libres, la primera de ellas (la de número menor) pasa a estar ocupada por el paciente de nombre `n` y edad `e`. Si no hay camas libres, lanza una excepción.
+- `public void ingresarPaciente(String n, int e) throws HospitalLlenoException`: Si hay camas libres, la primera de ellas (la de número menor) pasa a estar ocupada por el paciente de nombre `n` y edad `e`. Si no hay camas libres, lanza una excepción.
 
-- `private void darAltaPaciente(int i)`. La cama `i` del hospital pasa a estar libre. (Afectará al número de camas libres)
+- `private void darAltaPaciente(int i)`: La cama `i` del hospital pasa a estar libre. (Afectará al número de camas libres)
 
-- `public void darAltas()`. Se mejora el estado (método `mejorar()` de `Paciente`) de cada uno de los pacientes del hospital y a aquellos pacientes sanos (cuyo estado es 6) se les da el alta médica (invocando al método `darAltaPaciente`).
+- `public void darAltas()`: Se mejora el estado (método `mejorar()` de `Paciente`) de cada uno de los pacientes del hospital y a aquellos pacientes sanos (cuyo estado es 6) se les da el alta médica (invocando al método `darAltaPaciente`).
 
-- `public String toString()`. Devuelve un `String` con la información de las camas del hospital. Por ejemplo,
+- `public String toString()`: Devuelve un `String` con la información de las camas del hospital. Por ejemplo,
 
   ```sh
   1 María Medina 30 4
@@ -168,33 +169,34 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
 **Ejercicio 10.** La clase `Corredor` representa a un participante en la carrera. Sus atributos son el dorsal (entero), el nombre (string) y el tiempo en segundos (double) que le ha costado completar el recorrido. Los métodos con los que cuenta son:
 
-- `public Corredor(int d, String n)`. Constructor a partir del dorsal y el nombre. Por defecto el tiempo tardado es 0
+- `public Corredor(int d, String n)`: Constructor a partir del dorsal y el nombre. Por defecto el tiempo tardado es 0.
 
-- `public double getTiempo()`. Devuelve el tiempo tardado por el corredor
+- `public double getTiempo()`: Devuelve el tiempo tardado por el corredor.
 
-- `public int getDorsal()`. Devuelve el dorsal del corredor
+- `public int getDorsal()`: Devuelve el dorsal del corredor.
 
-- `public String getNombre()`. Devuelve el nombre del corredor
+- `public String getNombre()`: Devuelve el nombre del corredor.
 
-- `public void setTiempo(double t) throws IllegalArgumentException`. Establece el tiempo tardado por el corredor. Lanzará la excepción si el tiempo indicado es negativo.
+- `public void setTiempo(double t) throws IllegalArgumentException`: Establece el tiempo tardado por el corredor. Lanzará la excepción si el tiempo indicado es negativo.
 
-- `public void setTiempo(double t1, double t2) throws IllegalArgumentException`. Establece el tiempo tardado por el corredor. 
+- `public void setTiempo(double t1, double t2) throws IllegalArgumentException`: Establece el tiempo tardado por el corredor. 
 
   `t1` indica la hora de comienzo y `t2` la hora de finalización (expresadas en segundos). La diferencia en segundos entre los dos datos servirá para establecer el tiempo tardado por el `Corredor`.
 
-  Lanzará la excepción si el tiempo resultante es negativo
+  Lanzará la excepción si el tiempo resultante es negativo.
 
-- `public String toString()`. Devuelve un String con los datos del corredor, de la forma:
+- `public String toString()`: Devuelve un String con los datos del corredor, de la forma:
 
   ```sh
   (234) - Juan Ramirez - 2597 segundos
   ```
 
-- `public boolean equals(Object o)`. Devuelve true si los corredores tienen el mismo dorsal y false en caso contrario
+- `public boolean equals(Object o)`: Devuelve true si los corredores tienen el mismo dorsal y false en caso contrario.
 
-- `public int compareTo (Corredor o)`. Un corredor es menor que otro si tiene menor dorsal.
+- `public int compareTo (Corredor o)`: Un corredor es menor que otro si tiene menor dorsal.
 
-- `public static int generarDorsal()`. Devuelve un número de dorsal generado secuencialmente. Para ello la clase hará uso de un atributo `static int siguienteDorsal` que incrementará cada vez que se genere un nuevo dorsal.
+- `public static int generarDorsal()`: Devuelve un número de dorsal generado secuencialmente. Para ello la clase hará uso de un atributo `static int siguienteDorsal` que incrementará cada vez que se genere un nuevo dorsal.
+
 
 **Ejercicio 11.** Diseñar una clase Java `TestCorredor` que permita probar la clase Corredor y sus métodos. Para ello se desarrollará el método `main` en el que:
 
@@ -204,15 +206,15 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
 **Ejercicio 12.** La clase `ListaCorredores` permite representar a un conjunto de corredores. En la lista, como máximo habrá 200 corredores, aunque puede haber menos de ese número. Se utilizará un array, llamado lista, de 200 elementos junto con una propiedad `numCorredores` que permita saber cuentos corredores hay realmente. Métodos:
 
-- `public ListaCorredores()`. Construtor. Crea la lista de corredores, incicialmente vacía.
+- `public ListaCorredores()`: Constructor. Crea la lista de corredores, inicialmente vacía.
 
-- `public void añadir(Corredor c) throws ElementoDuplicadoException`. Añade un corredor al final de la lista de corredores, siempre y cuando el corredor no esté ya en la lista, en cuyo caso se lanzará `ElementoDuplicadoException`
+- `public void anyadir(Corredor c) throws ElementoDuplicadoException`: Añade un corredor al final de la lista de corredores, siempre y cuando el corredor no esté ya en la lista, en cuyo caso se lanzará `ElementoDuplicadoException`
 
-- `public void insertarOrdenado(Corredor c)`. Inserta un corredor en la posición adecuada de la lista de manera que esta se mantenga ordenada crecientemente por el tiempo de llegada. Para poder realizar la inserción debe averiguarse la posición que debe ocupar el nuevo elemento y, antes de añadirlo al array, desplazar el elemento que ocupa esa posición y todos los posteriores, una posición a la derecha.
+- `public void insertarOrdenado(Corredor c)`: Inserta un corredor en la posición adecuada de la lista de manera que esta se mantenga ordenada crecientemente por el tiempo de llegada. Para poder realizar la inserción debe averiguarse la posición que debe ocupar el nuevo elemento y, antes de añadirlo al array, desplazar el elemento que ocupa esa posición y todos los posteriores, una posición a la derecha.
 
-- `public Corredor quitar(int dorsal) throws ElementoNoEncontradoException`. Quita de la lista al corredor cuyo dorsal se indica. El array debe mantenerse compacto, es decir, todos los elementos posteriores al eliminado deben desplazarse una posición a la izquierda. El método devuelve el Corredor quitado de la lista. Si no se encuentra se lanza `ElementoNoEncontradoException`. 
+- `public Corredor quitar(int dorsal) throws ElementoNoEncontradoException`: Quita de la lista al corredor cuyo dorsal se indica. El array debe mantenerse compacto, es decir, todos los elementos posteriores al eliminado deben desplazarse una posición a la izquierda. El método devuelve el Corredor quitado de la lista. Si no se encuentra se lanza `ElementoNoEncontradoException`. 
 
-- `public String toString()` Devuelve un `String` con la información de la lista de corredores. Los minutos apareceran formateados con 2 decimales. Por ejemplo:
+- `public String toString()`: Devuelve un `String` con la información de la lista de corredores. Los minutos aparecerán formateados con 2 decimales. Por ejemplo:
 
   ```sh
   Posición: 0
@@ -234,7 +236,7 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
 En el método `main` realizar un programa que muestre un menú con las siguientes opciones:
 
-1. `Salida`: Para registrar que una corredor ha comenzado la contrarreloj y sale de la línea de salida. Solicita al usuario el nombre de un corredor y su dorsal, y lo añade a la lista de corredores que han salido.
+1. `Salida`: Para registrar que un corredor ha comenzado la contrarreloj y sale de la línea de salida. Solicita al usuario el nombre de un corredor y su dorsal, y lo añade a la lista de corredores que han salido.
 2. `Llegada`: Para registrar que un corredor ha llegado a la meta. Solicita al usuario el dorsal de un corredor y el tiempo de llegada (en segundos). Quita al corredor de la lista de corredores que `hanSalido`, le asigna el tiempo que ha tardado y lo inserta (ordenadamente) en la lista de corredores que `hanLlegado`
 3. `Clasificación`: Muestra la lista de corredores que `hanLlegado`. Dado que esta lista está ordenada por tiempo, mostrarla por pantalla nos da la clasificación.
 4. `Salir`: Sale del programa
@@ -255,13 +257,13 @@ De cada reserva se almacena:
 
 **Ejercicio 13.** Diseñar la clase `Reserva`, de manera que contemple la información descrita e implementar:
 
-- `public Reserva(String nif, String nombre, String tel, int codigo, int ejemplares)`. Constructor que recibe todos los datos de la reserva.
-- `public Reserva(String nif, String nombre, String tel, int codigo)`. Constructor que recibe los datos del cliente y el código del libro. Establece el número de ejemplares a uno. 
+- `public Reserva(String nif, String nombre, String tel, int codigo, int ejemplares)`: Constructor que recibe todos los datos de la reserva.
+- `public Reserva(String nif, String nombre, String tel, int codigo)`: Constructor que recibe los datos del cliente y el código del libro. Establece el número de ejemplares a uno. 
 - Consultores de todos los atributos.
-- `public void setEjemplares(int ejemplares)`. Modificador del número de ejemplares. Establece el número de ejemplares al valor indicado como parámetro. 
-- `public String toString()` que devuelva un `String` con los datos de la reserva
-- `public boolean equals(Object o)`. Dos reservas son iguales si son del mismo cliente y reservan el mismo libro.
-- `public int compareTo(Object o)`. Es menor la reserva cuyo código de libro es menor. El parámetro es de tipo `Object` así que revisa si debes hacer alguna "adaptación".
+- `public void setEjemplares(int ejemplares)`: Modificador del número de ejemplares. Establece el número de ejemplares al valor indicado como parámetro. 
+- `public String toString(): que devuelva un `String` con los datos de la reserva
+- `public boolean equals(Object o)`: Dos reservas son iguales si son del mismo cliente y reservan el mismo libro.
+- `public int compareTo(Object o)`: Es menor la reserva cuyo código de libro es menor. El parámetro es de tipo `Object` así que revisa si debes hacer alguna "adaptación".
 
 **Ejercicio 14.** Diseñar una clase Java `TestReservas` que permita probar la clase `Reserva` y sus métodos. Para ello se desarrollará el método `main` en el que:
 
@@ -300,7 +302,7 @@ Desarrollar los siguientes métodos:
 
 - Constructor que reciba todos los datos, excepto el código, que se generará automáticamente (nº consecutivo. Ayuda: utiliza una variable de clase (`static`))
 - Consultores de todos los atributos.
-- `public boolean equals(Object o)`. Dos mensajes son iguales si tienen el mismo código.
+- `public boolean equals(Object o)`: Dos mensajes son iguales si tienen el mismo código.
 - `public static boolean validarEMail(String email)`: Método estático que devuelve true o false indicando si la dirección de correo indicada es válida o no. Una dirección es válida si tiene la forma `direccion@subdominio.dominio`
 - `public String toString()`
 
