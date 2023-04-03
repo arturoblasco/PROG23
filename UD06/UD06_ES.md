@@ -230,7 +230,7 @@ BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
 
 # Ficheros
 
-En ocasiones necesitamos que los datos que introduce el usuario o que produce un programa persistan cuando éste finaliza, es decir, que se conserven cuando el programa termina su ejecución. Para ello es necesario el uso de una base de datos o de ficheros, que permitan guardar los datos en un almacenamiento secundario como un pendrive, disco duro, DVD, etc.
+En ocasiones necesitamos que los datos que introduce el usuario o que produce un programa persistan cuando éste finaliza; es decir, que se conserven cuando el programa termina su ejecución. Para ello es necesario el uso de una base de datos o de ficheros, que permitan guardar los datos en un almacenamiento secundario como un pendrive, disco duro, DVD, etc.
 En esta unidad se abordan distintos aspectos relacionados con el almacenamiento en ficheros: 
 
 - Introducción a conceptos básicos como los de registro y campo.
@@ -239,22 +239,22 @@ En esta unidad se abordan distintos aspectos relacionados con el almacenamiento 
 
 ## Registros y campos
 
-Llamamos campo a un dato en particular almacenado en una base de datos o en un fichero. Un campo puede ser en nombre de un cliente, la fecha de nacimiento de un alumno, el número de teléfono de un comercio. Los campos pueden ser de distintos tipos: alfanuméricos, numéricos, fechas, etc.
+Llamamos **campo** a un dato en particular almacenado en una base de datos o en un fichero. Un campo puede ser en nombre de un cliente, la fecha de nacimiento de un alumno, el número de teléfono de un comercio. Los campos pueden ser de distintos tipos: alfanuméricos, numéricos, fechas, etc.
 
-La agrupación de uno o más campos forman un registro. Un registro de alumno podría consistir, por ejemplo, de los siguientes campos
+La agrupación de uno o más campos forman un **registro**. Un registro de alumno podría consistir, por ejemplo, de los siguientes campos:
 
   1. Número de expediente.
-  2. Nombre y apellidos
-  3. Domicilio
+  2. Nombre y apellidos.
+  3. Domicilio.
   4. Grupo al que pertenece.
 
 Un fichero puede estar formado por registros, lo cual lo dotaría al archivo de estructura. En un fichero de alumnos tendríamos un registro por cada alumno. Los campos del registro serían cada uno de los datos que se almacena del alumno: Nº expediente, nombre, etc …
 
 En Java no existen específicamente los conceptos de campo y registro. Lo más similar que conocemos son las clases (similares a un registro) y, dentro de las clases, los atributos (similares a campos). 
 
-Tampoco en Java los ficheros están formados por registros. Java considera los archivos simplemente como flujos secuenciales de bytes. Cuando se abre un fichero se asocia a él un flujo (stream) a través del cual se lee o escribe en el fichero.
+Tampoco en Java los ficheros están formados por registros. Java considera los archivos simplemente como flujos secuenciales de bytes. Cuando se abre un fichero se asocia a él un flujo (*stream*) a través del cual se lee o escribe en el fichero.
 
-Fichero:
+Ejemplo de fichero:
 
   ```txt
   65255
@@ -271,7 +271,7 @@ Fichero:
   C/ Poeta …
   ```
 
- Registro:
+ Ejemplo de registro en el fichero anterior:
 
   ```txt
   24645
@@ -279,33 +279,33 @@ Fichero:
   C/ Tuej …
   ```
 
-Campo:
+Ejemplo de campo en el registro anterior:
 
   ```txt
   Armando García Ledesma
   ```
 
-## Ficheros de texto vs ficheros binarios.
+## Ficheros de texto VS ficheros binarios
 
 Desde un punto de vista a muy bajo nivel, un fichero es un conjunto de bits almacenados en memoria secundaria, accesibles a través de una ruta y un nombre de archivo. 
 
 Este punto de vista a bajo nivel es demasiado simple, pues cuando se recupera y trata la información que contiene el fichero, esos bits se agrupan en unidades mayores que las dotan de significado. Así, dependiendo de cuál es el contenido del fichero (de cómo se interpretan los bits que contiene el fichero), podemos distinguir dos tipos de ficheros:
 
-- Ficheros de texto (o de caracteres)
-- Ficheros binarios (o de bytes)
+- Ficheros de texto (o de caracteres).
+- Ficheros binarios (o de bytes).
 
-Un fichero de texto está formado únicamente por caracteres. Los bits que contiene se interpretan atendiendo a una tabla de caracteres, ya sea ASCII o Unicode. Este tipo de ficheros se pueden abrir con un editor de texto plano y son, en general, legibles. Por ejemplo, los ficheros .java que contienen los programas que elaboramos, son ficheros de texto.
+Un **fichero de texto** está formado únicamente por caracteres. Los bits que contiene se interpretan atendiendo a una tabla de caracteres, ya sea ASCII o Unicode. Este tipo de ficheros se pueden abrir con un editor de texto plano y son, en general, legibles. Por ejemplo, los ficheros .java que contienen los programas que elaboramos, son ficheros de texto.
 
-Por otro lado, los ficheros binarios contienen secuencias de bytes que se agrupan para representar otro tipo de información: números, sonidos, imágenes, etc. Un fichero binario se puede abrir también con un editor de texto plano pero, en este caso, el contenido será ininteligible. Existen muchos ejemplos de ficheros binarios: el archivo .exe que contiene la versión ejecutable de un programa es un fichero binario.
+Por otro lado, los **ficheros binarios** contienen secuencias de bytes que se agrupan para representar otro tipo de información: números, sonidos, imágenes, etc. Un fichero binario se puede abrir también con un editor de texto plano pero, en este caso, el contenido será ininteligible. Existen muchos ejemplos de ficheros binarios: el archivo .exe que contiene la versión ejecutable de un programa es un fichero binario.
 
 Las operaciones de lectura/escritura que utilizamos al acceder desde un programa a un fichero de texto están orientadas al carácter: leer o escribir un carácter, una secuencia de caracteres, una línea de texto, etc. En cambio las operaciones de lectura/escritura en ficheros binarios están orientadas a byte: se leen o escriben datos binarios, como enteros, bytes, double, etc.
 
-## Acceso secuencial vs acceso directo.
+## Acceso secuencial VS acceso directo
 
 Existen dos maneras de acceder a la información que contiene un fichero:
 
-- Acceso secuencial
-- Acceso directo (o aleatorio)
+- Acceso secuencial.
+- Acceso directo (o aleatorio).
 
 Con acceso secuencial, para poder leer el byte que se encuentra en determinada posición del archivo es necesario leer, previamente, todos los bytes anteriores. Al escribir, los datos se sitúan en el archivo uno a continuación del otro, en el mismo orden en que se introducen. Es decir, la nueva información se coloca en el archivo a continuación de la que ya hay. No es posible realizar modificaciones de los datos existentes, tan solo añadir al final.
 
@@ -313,7 +313,7 @@ Sin embargo, con el acceso directo, es posible acceder a determinada posición (
 
 No siempre es necesario realizar un acceso directo a un archivo. En muchas ocasiones el procesamiento que realizamos de sus datos consiste en la escritura o lectura de todo el archivo siguiendo el orden en que se encuentran. Para ello basta con un acceso secuencial.
 
-## Streams para trabajar con ficheros.
+## Streams para trabajar con ficheros
 
 Para trabajar con ficheros disponemos de las siguientes clases:
 
@@ -322,7 +322,7 @@ Para trabajar con ficheros disponemos de las siguientes clases:
 | Para **lectura**      | `FileInputStream`  | `FileReader`      |
 | Para **escritura**    | `FileOutputStream` | `FileWriter`      |
 
-- `FileReader` proporciona operaciones para leer de un fichero uno o varios caracteres
+- `FileReader` proporciona operaciones para leer de un fichero uno o varios caracteres.
 - `FileWriter` permite escribir en un fichero uno o varios caracteres o un String.
 - `FileInputStream` permite leer bytes de un fichero.
 - `FileOutputStream` permite escribir bytes de un fichero.
@@ -331,9 +331,9 @@ Para trabajar con ficheros disponemos de las siguientes clases:
 
 Observa los ejemplos [P2_1_CrearFichero](#crear-un-fichero) y [P2_2_SobrescribirFichero](#sobrescribir-un-fichero) 
 
-### Lectura y escritura de información estructurada.
+### Lectura y escritura de información estructurada
 
-Si observamos la documentación de las clases `FileInputStream` y `FileOutputStream` veremos que las operaciones de lectura y escritura son muy básicas y permiten únicamente leer o escribir uno o varios bytes. Es decir, son operaciones de muy bajo nivel. Si lo que queremos es escribir información binaria más compleja, como por ejemplo un dato de tipo `double` o `boolean` o `int`, tendríamos que hacerlo a través de un stream que permitiese ese tipo de operaciones y asociarlo al `FileOutputStream` o `FileOutputStream`. 
+Si observamos la documentación de las clases `FileInputStream` y `FileOutputStream` veremos que las operaciones de lectura y escritura son muy básicas y permiten únicamente leer o escribir uno o varios bytes. Es decir, son operaciones de muy bajo nivel. Si lo que queremos es escribir información binaria más compleja, como por ejemplo un dato de tipo `double`, `boolean` o `int`, tendríamos que hacerlo a través de un stream que permitiese ese tipo de operaciones y asociarlo al `FileInputStream` o `FileOutputStream`. 
 
 Podríamos, por ejemplo, asociar un `DataInputStream` a un `FileInputStream` para leer del fichero un dato de tipo `int`.
 
@@ -341,7 +341,7 @@ En ejemplos posteriores se ilustrará cómo asociar un stream a un `File…Strea
 
 Observa los ejemplos [P2_3_LecturaSecuencialTexto](#lectura-de-un-fichero-secuencial-de-texto), [P2_4_EscrituraSecuencialTexto](#escritura-de-un-fichero-secuencial-de-texto), [P2_6_escritura-de-un-fichero-secuencial-binario](#lectura-de-un-fichero-secuencial-de-texto) y [P2_7_LecturaSecuencialBinario](#lectura-de-un-fichero-secuencial-binario), 
 
-## Ficheros con buffering.
+## Ficheros con buffering
 
 Cualquier operación que implique acceder a memoria externa es muy costosa, por lo que es interesante intentar reducir al máximo las operaciones de lectura/escritura que realizamos sobre los ficheros, haciendo que cada operación lea o escriba muchos caracteres. Además, eso también permite operaciones de más alto nivel, como la de leer una línea completa y devolverla en forma de cadena.
 
@@ -353,7 +353,7 @@ Las clases `BufferedReader`, `BufferedWritter`, `BufferedInputStream` y `Buffere
 
 Observa el ejemplo [P2_5_Buffers](#usando-buffers-para-leer-y-escribir-de/en-fichero)
 
-## `try` vs `try with resources`
+## `try` VS `try with resources`
 
 En ocasiones el propio IDE nos sugiere que usemos el bloque `try with resources` en lugar de un simple `try`, así una sentencia como esta:
 
@@ -379,7 +379,7 @@ static String readFirstLineFromFile(String path) throws IOException {
 }	
 ```
 
-> La principal diferencia es que hasta java 7 sólo se podía hacer como en la primera versión. Además en la segunda versión nos "ahorramos" tener que cerrar los recursos, puesto que lo realizará automáticamente en caso de que se produzca algún error evitando así el enmascaramiento de excepciones. Por tanto, sigue siendo necesario cerrar el stream por ejemplo al usar un Buffer para que se vacíe totalmente en el fichero de destino.
+> La principal diferencia es que hasta Java 7 sólo se podía hacer como en la primera versión. Además en la segunda versión nos "ahorramos" tener que cerrar los recursos, puesto que lo realizará automáticamente en caso de que se produzca algún error evitando así el enmascaramiento de excepciones. Por tanto, sigue siendo necesario cerrar el stream por ejemplo al usar un *Buffer* para que se vacíe totalmente en el fichero de destino.
 
 # Serialización
 
@@ -409,34 +409,34 @@ Cuando queremos evitar que cualquier campo persista en un archivo, lo marcamos c
 
 > **NOTA**: El fichero con los objetos serializados almacena los datos en un formato propio de Java, por lo que no se puede leer fácilmente con un simple editor de texto (ni editar).
 
-Observa el package de ejemplo [UD06.P3_Serializacion](#ejemplo-de-serialización)
+Observa el package de ejemplo [UD06.P3_Serializacion](#ejemplo_serializacion)
 
 # Sockets
 
-Los sockets son un mecanismo que nos permite establecer un enlace  entre dos programas que se ejecutan independientes el uno del otro  (generalmente un programa cliente y un programa servidor) Java por medio de la librería `java.net` nos provee dos clases: `Socket` para implementar la conexión desde el lado del cliente y `ServerSocket` que nos permitirá manipular la conexión desde el lado del servidor.
+Los sockets son un mecanismo que nos permite establecer un enlace entre dos programas que se ejecutan independientes el uno del otro  (generalmente un programa cliente y un programa servidor). Java por medio de la librería `java.net` nos provee dos clases: `Socket` para implementar la conexión desde el lado del cliente y `ServerSocket` que nos permitirá manipular la conexión desde el lado del servidor.
 
 Cabe resaltar que tanto el cliente como el servidor no necesariamente deben estar implementados en Java, solo  deben conocer sus direcciones IP y el puerto por el cual se comunicarán.
 
-![](/assets/ClientSocket.png)
+<img src="/assets/ClientSocket.png" style="zoom:50%;" />
 
 Observa el package de ejemplo [UD06.P4_Sockets](#ejemplo de sockets)
 
 # Manejo de ficheros y carpetas
 
-## La clase File.
+## La clase File
 
-La clase `File` es una representación abstracta ficheros y carpetas. Cuando creamos en Java un objeto de la clase `File` en representación de un fichero o carpeta concretos, no creamos el fichero al que se representa. Es decir, el objeto `File` representa al archivo o carpeta de disco, pero no es el archivo o carpeta de disco.
+La clase `File` es una representación abstracta ficheros y carpetas. Cuando creamos en Java un objeto de la clase `File` en representación de un fichero o carpeta concretos, no creamos el fichero al que se representa; es decir, el objeto `File` representa al archivo o carpeta de disco, pero no es el archivo o carpeta de disco.
 
-La clase `File` dispone de métodos que permiten realizar determinadas operaciones sobre los ficheros. Podríamos, por ejemplo, crear un objeto de tipo `File` que represente a `c:\datos\libros.txt` y, a través de ese objeto `File`, realizar consultas relativas al fichero `libros.txt`, como su tamaño, atributos, etc, o realizar operaciones sobre él: borrarlo, renombrarlo, …
+La clase `File` dispone de métodos que permiten realizar determinadas operaciones sobre los ficheros. Podríamos, por ejemplo, crear un objeto de tipo `File` que represente a `c:\datos\libros.txt` o `/home/abc/datos/libros.txt` y, a través de ese objeto `File`, realizar consultas relativas al fichero `libros.txt`, como su tamaño, atributos, etc; o realizar operaciones sobre él: borrarlo, renombrarlo, …
 
-## Constructores:
+## Constructores
 
 La clase `File` tiene varios constructores, que permiten referirse, de varias formas, al archivo que queremos representar:
 
 | Método                                     | Descripción                                                  |
 | ------------------------------------------ | ------------------------------------------------------------ |
 | `public File (String ruta)`                | Crea el objeto `File` a partir de la ruta indicada. Si se trata de un archivo tendrá que indicar la ruta y el nombre. |
-| `public File (String ruta, String nombre)` | Permite indicar de forma separada la ruta del archivo y su nombre |
+| `public File (String ruta, String nombre)` | Permite indicar de forma separada la ruta del archivo y su nombre. |
 | `public File (File ruta, String nombre)`   | Permite indicar de forma separada la ruta del archivo y su nombre. En este caso la ruta está representada por otro objeto File. |
 | `public File (URI uri)`                    | Crea el objeto File a partir de un objeto [URI](https://es.wikipedia.org/wiki/Identificador_de_recursos_uniforme) (Uniform Resource Identifier). Un URI permite representar un elemento siguiendo una sintaxis concreta, un estándar. |
 
@@ -446,14 +446,14 @@ Aquí exponemos algunos métodos interesantes. Hay otros que puedes consultar en
 
 |                            | **Relacionados con el nombre del fichero**                   |
 | -------------------------- | ------------------------------------------------------------ |
-| `String getName()`         | Devuelve el nombre del fichero o directorio al que representa el objeto. (Solo el nombre, sin la ruta) |
-| `String getPath()`         | Devuelve la ruta del fichero o directorio. La ruta obtenida es dependiente del sistema, es decir, contendrá el carácter de separación de directorios que esté establecido por defecto. Este separador está definido en public `static final String separator` |
+| `String getName()`         | Devuelve el nombre del fichero o directorio al que representa el objeto (solo el nombre, sin la ruta). |
+| `String getPath()`         | Devuelve la ruta del fichero o directorio. La ruta obtenida es dependiente del sistema; es decir, contendrá el carácter de separación de directorios que esté establecido por defecto. Este separador está definido en public `static final String separator`. |
 | `String getAbsolutePath()` | Devuelve la ruta absoluta del fichero o directorio.          |
 | `String getParent()`       | Devuelve la ruta del directorio en que se encuentra el fichero o directorio representado. Devuelve null si no hay directorio padre. |
 
 |                                                              | **Para hacer comprobaciones**                                |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `boolean exists()`<br />`Boolean canWrite()`<br /> `Boolean canRead()` <br />`Boolean isFile()`<br /> `Boolean isDirectory()` | Permiten averiguar, respectivamente, si el fichero existe, si se puede escribir en el, si se puede leer de él, si se trata de un fichero o si se trata de un directorio |
+| `boolean exists()`<br />`boolean canWrite()`<br />`boolean canRead()` <br />`boolean isFile()`<br />`boolean isDirectory()` | Permiten averiguar si el fichero existe, <br />si se puede escribir en el, <br />si se puede leer de él,<br />si se trata de un fichero o <br />si se trata de un directorio |
 
 |                                                              | **Obtener información de un fichero**                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -462,18 +462,18 @@ Aquí exponemos algunos métodos interesantes. Hay otros que puedes consultar en
 
 |                                        | **Para trabajar con directorios**                            |
 | -------------------------------------- | ------------------------------------------------------------ |
-| `Boolean mkdir()`                      | Crea el directorio al cual representa el objeto File.        |
-| `Boolean mkdirs()`                     | Crea el directorio al cual representa el objeto File, incluyendo todos aquellos que sean necesarios y no existan. |
+| `boolean mkdir()`                      | Crea el directorio al cual representa el objeto File.        |
+| `boolean mkdirs()`                     | Crea el directorio al cual representa el objeto File, incluyendo todos aquellos que sean necesarios y no existan. |
 | `String[] list()`                      | Devuelve un array de `Strings` con los nombres de los ficheros y directorios que contiene el directorio al que representa el objeto File. |
 | `String[] list(FileNameFilter filtro)` | Devuelve un array de `Strings` con los nombres de los ficheros y directorios que contiene el directorio al que representa el objeto File y que cumplen con determinado filtro. |
 | `public File[] listFiles()`            | Devuelve un array de objetos `File` que representan a los archivos y carpetas contenidos en el directorio al que se refiere el objeto File. |
 
-|                                                              | **Para hacer cambios**                                       |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `Boolean renameTo(File nuevoNombre)`                         | Permite renombrar un archivo. Hay que tener en cuenta que la operación puede fracasar por muchas razones, y que será dependiente del sistema: Que no se pueda mover el fichero de un lugar a otro, que ya exista un fichero que coincide con el nuevo, etc. El método devuelve true solo si la operación se ha realizado con éxito. Existe un método move en la clase Files para mover archivos de una forma independiente del sistema. |
-| `Boolean delete()`                                           | Elimina el archivo o la carpeta a la que representa el objeto File. Si se trata de una carpeta tendrá que estar vacía. Devuelve true si la operación tiene éxito. |
-| `Boolean createNewFile()`                                    | Crea un archivo vacío. Devuelve true si la operación se realiza con éxito. |
-| `File createTempFile(String prefijo, String sufijo)`         | Crea un archivo vacío en la carpeta de archivos temporales. El nombre llevará el prefijo y sufijo indicados. Devuelve el objeto File que representa al nuevo archivo. |
+|                                                      | **Para hacer cambios**                                       |
+| ---------------------------------------------------- | ------------------------------------------------------------ |
+| `boolean renameTo(File nuevoNombre)`                 | Permite renombrar un archivo. Hay que tener en cuenta que la operación puede fracasar por muchas razones, y que será dependiente del sistema (por ejemplo: que no se pueda mover el fichero de un lugar a otro, que ya exista un fichero que coincide con el nuevo, etc). El método devuelve *true* solo si la operación se ha realizado con éxito. Existe un método move en la clase Files para mover archivos de una forma independiente del sistema. |
+| `boolean delete()`                                   | Elimina el archivo o la carpeta a la que representa el objeto File. Si se trata de una carpeta tendrá que estar vacía. Devuelve *true* si la operación tiene éxito. |
+| `boolean createNewFile()`                            | Crea un archivo vacío. Devuelve *true* si la operación se realiza con éxito. |
+| `File createTempFile(String prefijo, String sufijo)` | Crea un archivo vacío en la carpeta de archivos temporales. El nombre llevará el prefijo y sufijo indicados. Devuelve el objeto File que representa al nuevo archivo. |
 
 Observa el ejemplo [UD06.P5_1_Manejo](#ejemplo-de-manejo-de-ficheros-y-carpetas)
 
@@ -963,11 +963,11 @@ Para nuestro ejemplo de sockets implementaremos ambos (cliente y servidor) usand
 
 La secuencia de eventos en nuestro ejemplo será:
 
-- El servidor creará el socket y esperará a que el cliente se conecte o lo detengamos.
-- Por otro lado, el cliente abrirá la conexión con el servidor y le enviará una frase en minúsculas que escribirá el usuario y la enviará al servidor.
-- Una vez recibida la frase en minúsculas, el servidor la convertirá en mayúsculas y la devolverá al cliente.
-- El cliente mostrará la frase en mayúsculas recibida desde el sevidor y cerrará la conexión.
-- El servidor quedará a la espera de una nueva conexión de otro cliente.
+1. El servidor creará el socket y esperará a que el cliente se conecte o lo detengamos.
+2. Por otro lado, el cliente abrirá la conexión con el servidor y le enviará una frase en minúsculas que escribirá el usuario y la enviará al servidor.
+3. Una vez recibida la frase en minúsculas, el servidor la convertirá en mayúsculas y la devolverá al cliente.
+4. El cliente mostrará la frase en mayúsculas recibida desde el sevidor y cerrará la conexión.
+5. El servidor quedará a la espera de una nueva conexión de otro cliente.
 
 ### Servidor
 
@@ -979,31 +979,31 @@ import java.net.*;
 
 public class TCPServidor {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String FraseClient;
-        String FraseMajuscules;
-        ServerSocket serverSocket;
-        Socket clientSocket;
-        ObjectInputStream entrada;
-        ObjectOutputStream eixida;
-        serverSocket = new ServerSocket(10000);
-        System.out.println("Server iniciado y escuchando en el puerto 10000");
-        while (true) {
-            clientSocket = serverSocket.accept();
-            entrada = new ObjectInputStream(clientSocket.getInputStream());
-            FraseClient = (String) entrada.readObject();
+  public static void main(String[] args) throws IOException, ClassNotFoundException {
+    String FraseClient;
+    String FraseMajuscules;
+    ServerSocket serverSocket;
+    Socket clientSocket;
+    ObjectInputStream entrada;
+    ObjectOutputStream eixida;
+    serverSocket = new ServerSocket(10000);
+    System.out.println("Server iniciado y escuchando por el puerto 10000");
+    while (true) {
+        clientSocket = serverSocket.accept();
+        entrada = new ObjectInputStream(clientSocket.getInputStream());
+        FraseClient = (String) entrada.readObject();
 
-            System.out.println("La frase recibida es: " + FraseClient);
+        System.out.println("La frase recibida es: " + FraseClient);
 
-            eixida = new ObjectOutputStream(clientSocket.getOutputStream());
-            FraseMajuscules = FraseClient.toUpperCase();
-            System.out.println("El server devuelve la frase: " + FraseMajuscules);
-            eixida.writeObject(FraseMajuscules);
+        eixida = new ObjectOutputStream(clientSocket.getOutputStream());
+        FraseMajuscules = FraseClient.toUpperCase();
+        System.out.println("El server devuelve la frase: " + FraseMajuscules);
+        eixida.writeObject(FraseMajuscules);
 
-            clientSocket.close();
-            System.out.println("Server esperando una nueva conexión...");
-        }
+        clientSocket.close();
+        System.out.println("Server esperando una nueva conexión...");
     }
+  }
 }
 ```
 
@@ -1018,27 +1018,27 @@ import java.util.Scanner;
 
 public class TCPClient {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Socket socket;
-        ObjectInputStream entrada;
-        ObjectOutputStream eixida;
-        String frase;
+  public static void main(String[] args) throws IOException, ClassNotFoundException {
+    Socket socket;
+    ObjectInputStream entrada;
+    ObjectOutputStream eixida;
+    String frase;
 
-        socket = new Socket(InetAddress.getLocalHost(), 10000);
-        eixida = new ObjectOutputStream(socket.getOutputStream());
+    socket = new Socket(InetAddress.getLocalHost(), 10000);
+    eixida = new ObjectOutputStream(socket.getOutputStream());
 
-        System.out.println("Introduce la frase a enviar en minúsculas");
-        Scanner in = new Scanner(System.in);
-        frase = in.nextLine();
-        System.out.println("Se envia la frase " + frase);
-        eixida.writeObject(frase);
+    System.out.println("Introduce la frase a enviar en minúsculas");
+    Scanner in = new Scanner(System.in);
+    frase = in.nextLine();
+    System.out.println("Se envia la frase " + frase);
+    eixida.writeObject(frase);
 
-        entrada = new ObjectInputStream(socket.getInputStream());
-        System.out.println(
-                "La frase recibida es: " + (String) entrada.readObject());
+    entrada = new ObjectInputStream(socket.getInputStream());
+    System.out.println(
+            "La frase recibida es: " + (String) entrada.readObject());
 
-        socket.close();
-    }
+    socket.close();
+  }
 }
 ```
 

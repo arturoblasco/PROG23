@@ -16,7 +16,7 @@ typora-copy-images-to:${filename}/../assets
 
 ## Paquete: `UD06._1.gestorVuelos`
 
-Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y cancelación de vuelos en una agencia de viajes. Dicha agencia trabaja únicamente con la compañía aérea Iberia, que ofrece vuelos desde/hacia varias ciudades de Europa. Se deben definir las clases que siguen, teniendo en cuenta que sus atributos serán privados y sus métodos sólo los que se indican en cada clase.
+Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y cancelación de vuelos en una agencia de viajes. Dicha agencia trabaja únicamente con la compañía aérea *AirVostrum*, que ofrece vuelos desde/hacia varias ciudades de Europa. Se deben definir las clases que siguen, teniendo en cuenta que sus atributos serán privados y sus métodos sólo los que se indican en cada clase.
 
 1. Implementación de la clase `Vuelo`, que permite representar un vuelo mediante los atributos:  
 
@@ -29,28 +29,28 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
 
    En esta clase, se deben implementar los siguientes métodos:
 
-   - `public Vuelo(String id, String orig, String dest, LocalTime hsal, LocalTime hlleg)`. **Constructor** que crea un vuelo con identificador, ciudad de origen, ciudad de destino, hora de salida y hora de llegada indicados en los respectivos parámetros, y sin pasajeros.
+   - `public Vuelo(String id, String orig, String dest, LocalTime hsal, LocalTime hlleg)`: **Constructor** que crea un vuelo con identificador, ciudad de origen, ciudad de destino, hora de salida y hora de llegada indicados en los respectivos parámetros, y sin pasajeros.
 
-   - `public String getIdenificador()`. Devuelve el `identificador`
+   - `public String getIdenificador()`: Devuelve el `identificador`
 
-   - `public String getOrigen()`. Devuelve `origen`.
+   - `public String getOrigen()`: Devuelve `origen`.
 
-   - `public String getDestino()`. Devuelve `destino`.
+   - `public String getDestino()`: Devuelve `destino`.
 
-   - `public boolean hayLibres()`. Devuelve `true` si quedan asientos libres y `false` si no quedan.
+   - `public boolean hayLibres()`: Devuelve `true` si quedan asientos libres y `false` si no quedan.
 
-   - `public boolean equals(Object o)`. Dos vuelos son iguales si tienen el mismo identificador.
+   - `public boolean equals(Object o)`: Dos vuelos son iguales si tienen el mismo identificador.
 
-   - `public int reservarAsiento(String pas, char pref) throws VueloCompletoException`. Si el vuelo ya está completo se lanza una excepción. Si no está completo, se reserva al pasajero `pas` el primer asiento libre en `pref`. El carácter `pref` será '`P`' o '`V`' en función de que el pasajero desee un asiento de pasillo o de ventanilla. En caso de que no quede ningún asiento libre en la preferencia indicada (`pref`), se reservará el primer asiento libre de la otra preferencia. El método devolverá el número de asiento que se le ha reservado. Este método hace uso del método privado `asientoLibre`, que se explica a continuación.
+   - `public int reservarAsiento(String pas, char pref) throws VueloCompletoException`: Si el vuelo ya está completo se lanza una excepción. Si no está completo, se reserva al pasajero `pas` el primer asiento libre en `pref`. El carácter `pref` será '`V`' o '`P`' en función de que el pasajero desee un asiento de ventanilla o de pasillo. En caso de que no quede ningún asiento libre en la preferencia indicada (`pref`), se reservará el primer asiento libre de la otra preferencia. El método devolverá el número de asiento que se le ha reservado. Este método hace uso del método privado `asientoLibre`, que se explica a continuación.
 
-   - `private int asientoLibre(char pref)`. Dado un tipo de asiento `pref` (pasillo '`P`' o ventanilla '`V`'), devuelve el primer asiento libre (el de menor numero) que encuentre de ese tipo. O devuelve `0` si no quedan asientos libres de tipo `pref`.
+   - `private int asientoLibre(char pref)`: Dado un tipo de asiento `pref` (pasillo '`P`' o ventanilla '`V`'), devuelve el primer asiento libre (el de menor numero) que encuentre de ese tipo. O devuelve `0` si no quedan asientos libres de tipo `pref`.
 
-   - `public void cancelarReserva(int numasiento)`. Se cancela la reserva del asiento `numasiento`.
+   - `public void cancelarReserva(int numAsiento)`: Se cancela la reserva del asiento `numasiento`.
 
-   - `public String toString()`. Devuelve una `String` con los datos del vuelo y los nombres de los pasajeros, con el siguiente formato:
+   - `public String toString()`: Devuelve una `String` con los datos del vuelo y los nombres de los pasajeros, con el siguiente formato:
 
      ```
-     IB101 Valencia París 19:05:00 21:00:00
+     AV101 Valencia París 19:05:00 21:00:00
      Pasajeros:
      Asiento 1: Sonia Dominguez
      …
@@ -64,14 +64,14 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
      - Un asiento de ventanilla a "Miguel Fernández"
      - Un asiento de ventanilla a "Ana Folgado"
      - Un asiento de pasillo a "David Más"
-   - Mostrar el vuelo por pantalla
+   - Mostrar el vuelo por pantalla.
    - Cancelar la reserva del asiento que indique el usuario.
 
 3. Implementación de la clase `Compañía` para representar todos los vuelos de una compañía aérea. Una Compañía tiene un nombre y puede ofrecer, como mucho, 10 vuelos distintos. Para representarlos se utilizará `listaVuelos`, un array de objetos `Vuelo` junto con un atributo `numVuelos` que indique el número de vuelos que la compañía ofrece en un momento dado. Las operaciones de esta clase son:
 
-   - `public Compania(String n) throws FileNotFoundException`. Constructor de una compañía de nombre `n`. Cuando se crea una compañía, se invoca al método privado `leeVuelos()` para cargar la información de vuelos desde un fichero. Si el fichero no existe, se propaga la excepción `FileNotFoundException`
+   - `public Compania(String n) throws FileNotFoundException`: Constructor de una compañía de nombre `n`. Cuando se crea una compañía, se invoca al método privado `leeVuelos()` para cargar la información de vuelos desde un fichero. Si el fichero no existe, se propaga la excepción `FileNotFoundException`
 
-   - `private void leeVuelos() throws FileNotFoundException`. Lee desde un fichero toda la información de los vuelos que ofrece la compañía y los va almacenando en el array de vuelos `listaVuelos`. El nombre del fichero coincide con el nombre de la compañía y tiene extensión `.txt`. La información de cada vuelo se estructura en el fichero como sigue:
+   - `private void leeVuelos() throws FileNotFoundException`: Lee desde un fichero toda la información de los vuelos que ofrece la compañía y los va almacenando en el array de vuelos `listaVuelos`. El nombre del fichero coincide con el nombre de la compañía y tiene extensión `.txt`. La información de cada vuelo se estructura en el fichero como sigue:
 
      ```
      <Identificador>
@@ -87,20 +87,20 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
 
      Si el fichero no existe, se propaga la excepción `FileNotFoundException`.
 
-   - `public Vuelo buscarVuelo(String id) throws ElementoNoEncontradoException`. Dado un identificador de vuelo `id`, busca dicho vuelo en el array de vuelos `listaVuelos`. Si lo encuentra, lo devuelve. Si no, lanza `ElementoNoEncontradoException`.
+   - `public Vuelo buscarVuelo(String id) throws ElementoNoEncontradoException`: Dado un identificador de vuelo `id`, busca dicho vuelo en el array de vuelos `listaVuelos`. Si lo encuentra, lo devuelve. Si no, lanza `ElementoNoEncontradoException`.
 
-   - `public void mostrarVuelosIncompletos(String o, String d)`. Muestra por pantalla los vuelos con origen `o` y destino `d`, y que tengan asientos libres. Por ejemplo, vuelos con asientos libres de la compañía Iberia con origen Milán y destino Valencia:
+   - `public void mostrarVuelosIncompletos(String o, String d)`: Muestra por pantalla los vuelos con origen `o` y destino `d`, y que tengan asientos libres. Por ejemplo, vuelos con asientos libres de la compañía AirVostrum con origen Milán y destino Valencia:
 
      ```
-     Iberia IB201 Milán Valencia 14:25:00 16:20:00
-     Iberia IB202 Mílán Valencia 21:40:00 23:35:00
+     AirVostrum AV201 Milán València 14:25:00 16:20:00
+     AirVostrum AV202 Mílán València 21:40:00 23:35:00
      ```
 
 4. En la clase `GestorVuelos` se probará el comportamiento de las clases anteriores. En esta clase se debe implementar el método `main` en el que, por simplificar, se pide únicamente:
 
-   - la creación de la compañía aérea `Iberia`. Se dispone de un fichero de texto "`Iberia.txt`", con la información de los vuelos que ofrece.
-   - Reserva de un asiento de ventanilla en un vuelo de Valencia a París por parte de Manuel Soler Roca. Para ello:
-     - Mostraremos vuelos con origen Valencia y destino París, que no estén completos.
+   - La creación de la compañía aérea `AirVostrum`. Se dispone de un fichero de texto "`AirVostrum.txt`", con la información de los vuelos que ofrece.
+   - Reserva de un asiento de ventanilla en un vuelo de *València* a *Milán* por parte de *Manuel* *Soler Roca*. Para ello:
+     - Mostraremos vuelos con origen *València* y destino *Milán*, que no estén completos.
      - Pediremos al usuario el identificador del vuelo en que quiere hacer la reserva.
      - Buscaremos el vuelo que tiene el identificador indicado. Si existe realizaremos la reserva y mostraremos un mensaje por pantalla. En caso contrario mostraremos un mensaje de error por pantalla.
 
