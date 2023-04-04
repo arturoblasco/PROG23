@@ -124,7 +124,7 @@ De la clase `Exception` heredan otros dos tipos de clases:
 
    Tienen más que ver con las entradas-salidas de los programas. Un ejemplo podría ser que, por error, el usuario haya borrado una carpeta o fichero del que depende el propio programa.
 
-- La clase `RunTimeException`: que tratará excepciones NO verificadas y que dependerán más del programador. Ejemplos de este tipo de errores serían dividir un número entero entre cero, o guardar un String dentro de un valor entero.
+- La clase `RunTimeException`: que tratará excepciones NO verificadas y que dependerán más del programador. Ejemplos de este tipo de errores serían dividir un número entero entre cero, recorrer un array con más posiciones que en principio se declaró el array o guardar un String dentro de un valor entero.
 
 > Estos tipos de errores Java no obliga a evadir estos errores. En cambio, los errores que generan objetos de la clase IOException sí que estaremos obligados a evitar.
 
@@ -290,6 +290,74 @@ public class PruebaExcepciones {
 ```
 
 El método *leerArchivo2()* usa el método *leerArchivo()*. Como *leerArchivo()* tiene una excepción en su declaración, en *leerArchivo2()* vamos a intentar capturarla (catch). Además, como tenemos dos tipos de excepciones, vamos a tener de capturar estas dos. Se da el caso que FileNotFoundException hereda de IOException; por lo que sería correcto capturar solo la excepción IOException. Pero es recomendable capturar los dos tipos; y además con el orden de: la clase más cercana.
+
+## Creación de excepciones propias
+
+Si queremos crear nuestra propia excepción, deberá de heredar de Exception y crear dos constructores; uno vacío y otro que tendrá como parámetro un String.
+
+**Ejemplo**:
+
+```java
+static class LongitudMailErronea extends Exception {
+    public LongitudMailErronea(){}
+    public LongitudMailErronea(String msg_error){
+        super(msg_error);
+    }
+}
+```
+
+Después podremos utilizar esta clase desde el `throws` del método que necesite controlar esta excepción:
+
+```java
+static void examinaMail(String mail) throws LongitudMailErronea {
+    int arroba = 0;
+    boolean punto = false;
+
+    if (mail.length() <= 3){
+        throw new LongitudMailErronea();
+    } else {
+        for(int i=0; i < mail.length(); i++){
+            if (mail.charAt(i)=='@'){
+                arroba++;
+            }
+            if (mail.charAt(i)=='.'){
+                punto = true;
+            }
+        }
+        if (arroba==1 && punto==true){
+            System.out.println("Es correcto");
+        } else {
+            System.out.println("No es correcto");
+        }
+    }
+}
+```
+
+Ahora, desde donde llamo a este método
+
+```java
+import javax.swing.*;
+
+public class CompruebaMail{
+    public static void main(String[] arg){
+        String elMail = JOptionPane.showInputDialog("Introduce mail:");
+
+        try{
+            examinaMail(elMail);
+        } catch (Exception e){
+            System.out.println("La dirección de email no es correcta.");
+            //e.printStackTrace();
+        }
+    }
+...
+}
+```
+
+
+
+
+
+
 
 # Fuentes de información
 
