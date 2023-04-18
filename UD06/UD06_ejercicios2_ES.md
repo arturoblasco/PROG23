@@ -14,7 +14,7 @@ typora-copy-images-to:${filename}/../assets
 [toc]
 # **Ejercicios**
 
-1. (`CuentaLineas`) Escribe un programa que, sin utilizar la clase `Scanner`, muestre el número de lineas que contiene un fichero de texto. El nombre del fichero se solicitará al usuario al comienzo de la ejecución. 
+1. (`CuentaLineas`) Escribe un programa que, sin utilizar la clase `Scanner`, muestre el número de líneas que contiene un fichero de texto. El nombre del fichero se solicitará al usuario al comienzo de la ejecución. 
 
 2. (`CuentaPalabras`) Escribe un programa que, sin utilizar la clase `Scanner`, muestre el número de palabras que contiene un fichero de texto. El nombre del fichero se solicitará al usuario al comienzo de la ejecución. 
 
