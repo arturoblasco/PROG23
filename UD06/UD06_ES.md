@@ -110,7 +110,7 @@ A --> H(PrintWriter)
 D --> I(FileWriter)
 ```
 
-Como hemos comentado, tanto en `Reader` como en `InputStream` encontramos un método `read()`, en concreto **public int read()*. Observar la diferencia entre estos dos métodos nos ayudará a comprender la diferencia entre los flujos orientados a byte y los orientados a carácter. 
+Como hemos comentado, tanto en `Reader` como en `InputStream` encontramos un método `read()`, en concreto *public int read()*. Observar la diferencia entre estos dos métodos nos ayudará a comprender la diferencia entre los flujos orientados a byte y los orientados a carácter. 
 
 | método                   | devuelve              |
 | ------------------------ | --------------------- |
@@ -155,21 +155,35 @@ Existen una serie de stream de uso común a los cuales se denomina stream están
 Para utilizar un stream hay que seguir una serie de pasos:
 
 - Lectura:
-  - Abrir el stream asociado a una fuente de datos (creación del objeto stream):
-    - Teclado.
-    - Fichero.
-    - Socket remoto.
-  - Mientras existan datos disponibles:
-    - Leer datos.
-  - Cerrar el stream (método `close`).
+  
+  1. Abrir el stream asociado a una fuente de datos (creación del objeto stream):
+  
+     - Teclado.
+  
+     - Fichero.
+  
+     - Socket remoto.
+  
+  2. Mientras existan datos disponibles:
+  
+     - Leer datos.
+  
+  3. Cerrar el stream (método `close`).
+  
 - Escritura:
-  - Abrir el stream asociado a una fuente de datos (creación del objeto stream):
-    - Pantalla.
-    - Fichero.
-    - Socket local.
-  - Mientras existan datos disponibles:
-    - Escribir datos.
-  - Cerrar el stream (método `close`).
+  
+  1. Abrir el stream asociado a una fuente de datos (creación del objeto stream):
+  
+     - Pantalla.
+  
+     - Fichero.
+  
+     - Socket local.
+  
+  2. Mientras existan datos disponibles:
+     - Escribir datos.
+  
+  3. Cerrar el stream (método `close`).
 
 > **Nota**: 
 >
@@ -226,9 +240,9 @@ Mantienen las mismas operaciones de lectura y escritura que sus clases padre per
 
 Realizan una transformación de la información antes de ser escrita o después de ser leída. Los bytes leídos o escritos se interpretan como datos correspondientes a los tipos primitivos de Java.
 
-| clase                                     | métodos                                                      | descripción                                                  |
-| ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `DataInputStream`<br />`DataOutputStream` | `read()`,<br />`write()`<br>`readInt()`, <br />`writeInt()`<br>`readDouble()`, <br />`writeDouble()`<br>`readUTF()`,<br />`writeUTF()`<br> … | Que permiten leer y escribir información correspondiente a los distintos tipos de datos de Java. |
+| clase                                                 | métodos                                                      | descripción                                                  |
+| ----------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `DataInputStream`<br /><br /><br />`DataOutputStream` | `read()`,<br />`readInt()`, <br />`readDouble()`, <br />`readUTF()`<br /><br />`write()`,<br />`writeInt()`,<br />`writeDouble()`,<br>`writeUTF()`<br> … | Que permiten leer y escribir información correspondiente a los distintos tipos de datos de Java. |
 
 ## `PrintWriter`
 
@@ -246,7 +260,7 @@ Realizan una transformación de la información antes de ser escrita o después 
 
 ## Combinación de Streams
 
-En muchas ocasiones, una sola clase de las vistas no nos da la funcionalidad necesaria para poder hacer la tarea que se requiere. En tales casos es necesario combinar varios *Streams* de manera que unos actúan como origen de información de los otros, o unos escriben sobre los otros.
+En muchas ocasiones, una sola clase de las vistas no nos da la funcionalidad necesaria para poder hacer la tarea que se requiere. En tales casos es necesario combinar (anidar) varios *Streams* de manera que unos actúan como origen de información de los otros, o unos escriben sobre los otros.
 
 En este caso tendríamos que combinar tres clases:
 
@@ -354,7 +368,7 @@ Para trabajar con ficheros disponemos de las siguientes clases:
 | Para **lectura**      | `FileInputStream`  | `FileReader`      |
 | Para **escritura**    | `FileOutputStream` | `FileWriter`      |
 
-- `FileReader` . operaciones para leer de un fichero uno o varios caracteres.
+- `FileReader` permite leer de un fichero uno o varios caracteres.
 - `FileWriter` permite escribir en un fichero uno o varios caracteres o un String.
 - `FileInputStream` permite leer bytes de un fichero.
 - `FileOutputStream` permite escribir bytes de un fichero.
@@ -554,6 +568,10 @@ En el siguiente ejemplo se pide introducir texto hasta que se introduzca una lí
 
 El proceso debe de estar en un bloque `try..catch`.
 
+
+
+
+
 ```java
 package UD06.P1_Flujos;
 
@@ -570,7 +588,7 @@ public class P1_2_FlujoEstandarSalida {
         try {
             PrintWriter out = new PrintWriter(new FileWriter("test/salida.txt", true));
             BufferedReader br = new BufferedReader(
-                    new InputStreamReader(System.in));
+                    				new InputStreamReader(System.in));
             String s;
             while (!(s = br.readLine()).equals("salir")) {
                 out.println(s);
@@ -627,7 +645,7 @@ Es muy importante tener en cuenta que cuando se crea un `FileWriter` o un `FileO
 - … si el fichero no existe se crea.
 - … si el fichero existe, **su contenido se reemplaza** por el nuevo. El contenido previo que tuviera el fichero se pierde.	
 
-Vamos a ver una serie de ejemplos que muestren cómo leer y escribir secuencialmente sobre/en un fichero y también escribir en un fichero indicando que la información se añada a la que ya hay y no se reescriba el fichero. Para esto último usaremos el constructor que recibe el parámetro `append` y lo pasaremos a *true*.
+Vamos a ver una serie de ejemplos que muestren cómo leer y escribir secuencialmente sobre/en un fichero y también escribir en un fichero indicando que la información se añada a la que ya hay y no se reescriba el fichero. Para esto último usaremos el constructor de FileWriter que recibe dos parámetros; el primer parámetro es el nombre del fichero y el segundo parámetro, `append`, lo pasaremos con el valor *true*.
 
 El siguiente ejemplo muestra como añadir una línea al final de un fichero de texto.
 
@@ -651,6 +669,8 @@ public class P2_2_SobreescribirFichero {
 
 En este ejemplo se ha utilizado la nueva sintaxis disponible para los bloques `try-catch`: lo que se denomina "*try with resources*". Esta sintaxis permite crear un objeto en la cabecera del bloque `try`. El objeto creado se cerrará automáticamente al finalizar. El objeto debe pertenecer al interface `Closeable`, es decir, debe tener método `close()`.
 
+
+
 ### Operaciones con ficheros de acceso secuencial
 
 Como hemos comentado anteriormente el acceso secuencial a un fichero supone que para acceder a un byte es necesario leer previamente los anteriores. Suele utilizarse este tipo de acceso cuando es necesario leer un archivo de principio a fin. 
@@ -668,7 +688,7 @@ import java.io.*;
 
 public class P2_3_LecturaSecuencialTexto {
 
-    final static String VOCALES = "AEIOUaeiou";
+    final static String VOCALES = "aáàeééiíoóòuúüAÁÀEÉÈIÍOÓÒUÚÜ";
 
     public static void main(String[] args) {
         try (FileReader f = new FileReader(new File("texto.txt"));) {
@@ -682,9 +702,9 @@ public class P2_3_LecturaSecuencialTexto {
             }
             System.out.println("Numero de vocales: " + contadorVocales);
         } catch (FileNotFoundException e) {
-            System.out.println("Probrema al abrir el fichero");
+            System.out.println("ERROR: Probrema al abrir el fichero");
         } catch (IOException e) {
-            System.out.println("Problema al leer");
+            System.out.println("ERROR: Problema al leer");
         }
     }
 }
@@ -719,9 +739,9 @@ public class P2_4_EscrituraSecuencialTexto {
             }
             System.out.println("FIN");
         } catch (FileNotFoundException e) {
-            System.out.println("Probrema al abrir el fichero");
+            System.out.println("ERROR: Probrema al abrir el fichero");
         } catch (IOException e) {
-            System.out.println("Problema al escribir");
+            System.out.println("ERROR: Problema al escribir");
 
         }
     }
@@ -758,9 +778,9 @@ public class P2_5_Buffers {
             }
             System.out.println("FIN");
         } catch (FileNotFoundException e) {
-            System.out.println("Probrema al abrir el fichero");
+            System.out.println("ERROR: Probrema al abrir el fichero");
         } catch (IOException e) {
-            System.out.println("Problema al leer o escribir");
+            System.out.println("ERROR: Problema al leer o escribir");
         }
     }
 }
@@ -792,35 +812,36 @@ import java.util.Scanner;
 
 public class P2_6_EscrituraSecuencialBinario {
 
-    public static void main(String[] args) {
-        Scanner tec = new Scanner(System.in);
-        try (DataOutputStream fs = new DataOutputStream( new BufferedOutputStream(
-                                new FileOutputStream("jugadores.dat")));) {
-            for (int i = 1; i <= 5; i++) {
-                //Pedimos datos al usuario
-                System.out.println(" ---- Jugador " + i + " -----");
-                System.out.print("Nombre: ");
-                String nombre = tec.nextLine();
+  public static void main(String[] args) {
+     Scanner tec = new Scanner(System.in);
+     try (DataOutputStream fs = new DataOutputStream(
+                                  new BufferedOutputStream(
+                                    new FileOutputStream("jugadores.dat")));) {
+         for (int i = 1; i <= 5; i++) {
+            //Pedimos datos al usuario
+            System.out.println(" ---- Jugador " + i + " -----");
+            System.out.print("Nombre: ");
+            String nombre = tec.nextLine();
 
-                System.out.print("Nacimiento: ");
-                int anyo = tec.nextInt();
+            System.out.print("Nacimiento: ");
+            int anyo = tec.nextInt();
 
-                System.out.print("Estatura: ");
-                double est = tec.nextDouble();
-                //Vaciar salto linea
-                tec.nextLine();
+            System.out.print("Estatura: ");
+            double est = tec.nextDouble();
+            //Vaciar salto linea
+            tec.nextLine();
 
-                //Volcamos información al fichero
-                fs.writeUTF(nombre);
-                fs.writeInt(anyo);
-                fs.writeDouble(est);
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Probrema al abrir el fichero");
-        } catch (IOException e) {
-            System.out.println("Problema al leer o escribir");
-        }
-    }
+            //Volcamos información al fichero
+            fs.writeUTF(nombre);
+            fs.writeInt(anyo);
+            fs.writeDouble(est);
+         }
+      } catch (FileNotFoundException e) {
+          System.out.println("ERROR: Probrema al abrir el fichero");
+      } catch (IOException e) {
+          System.out.println("ERROR: Problema al leer o escribir");
+      }
+  }
 }
 ```
 
@@ -840,36 +861,53 @@ import java.util.Scanner;
 
 public class P2_7_LecturaSecuencialBinario {
 
-    public static void main(String[] args) {
-        Scanner tec = new Scanner(System.in);
-        try (DataInputStream fe = new DataInputStream(new BufferedInputStream(
-                 new FileInputStream("jugadores.dat")));) {
-            while (true) {
-                //Leemos nombre
-                System.out.println(fe.readUTF());
-                //leemos y desechamos resto de datos
-                fe.readInt();
-                fe.readDouble();
-            }
-        } catch (EOFException e) {
-            //Se lanzará cuando se llegue al final del fichero
-        } catch (FileNotFoundException e) {
-            System.out.println("Probrema al abrir el fichero");
-        } catch (IOException e) {
-            System.out.println("Problema al leer o escribir");
+  public static void main(String[] args) {
+     Scanner tec = new Scanner(System.in);
+     try (DataInputStream fe = new DataInputStream(
+     							new BufferedInputStream(
+                 				 new FileInputStream("jugadores.dat")));) {
+        while (true) {
+           //Leemos nombre
+           System.out.println(fe.readUTF());
+           //leemos y desechamos resto de datos
+           fe.readInt();
+           fe.readDouble();
         }
-    }
+     } catch (EOFException e) {
+          //Se lanzará cuando se llegue al final del fichero
+     } catch (FileNotFoundException e) {
+          System.out.println("ERROR: Probrema al abrir el fichero");
+     } catch (IOException e) {
+          System.out.println("ERROR: Problema al leer o escribir");
+     }
+  }
 }
 ```
 
 Observa que:
 
 - A pesar de que necesitamos solamente el nombre de cada jugador, es necesario leer también el año y la estatura. No es posible acceder al nombre del segundo jugador sin leer previamente todos los datos del primer jugador. 
-- La lectura se hace a través de un bucle infinito (`while (true)`), que finalizará cuando se llegue el final del fichero y al leer de nuevo se produzca la excepción `EOFException`
+- La lectura se hace a través de un bucle infinito (`while (true)`), que finalizará cuando se llegue el final del fichero y al leer de nuevo se produzca la excepción `EOFException`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Ejemplo de Serialización
 
-En el siguiente ejemplo usaremos una clase persona que definiremos de la siguiente manera
+En el siguiente ejemplo usaremos una clase persona que definiremos de la siguiente manera:
 
 ### Persona
 
@@ -880,43 +918,47 @@ import java.io.*;
 
 public class Persona implements Serializable {
 
-    private String nombre;
-    transient private int edad; //No se guardará al serializar
-    private double salario;
-    private Persona tutor;
+  private String nombre;
+  transient private int edad; //No se guardará al serializar
+  private double salario;
+  private Persona tutor;
 
-    public Persona(String nom, double salari) {
-        this.nombre = nom;
-        this.salario = salari;
-        edad = 0;
-        tutor = null;
-    }
+  public Persona(String nom, double salari) {
+     this.nombre = nom;
+     this.salario = salari;
+     edad = 0;
+     tutor = null;
+  }
 
-    public String getNombre() {
-        return nombre;
-    }
+  public String getNombre() {
+     return nombre;
+  }
 
-    public int getEdad() {
-        return edad;
-    }
+  public int getEdad() {
+     return edad;
+  }
 
-    public double getSalario() {
-        return salario;
-    }
+  public double getSalario() {
+     return salario;
+  }
 
-    public Persona getTutor() {
-        return tutor;
-    }
+  public Persona getTutor() {
+     return tutor;
+  }
 
-    public void incrementaEdad() {
-        edad++;
-    }
+  public void incrementaEdad() {
+     edad++;
+  }
 
-    public void asignaTutor(Persona p) {
-        tutor = p;
-    }
+  public void asignaTutor(Persona p) {
+     tutor = p;
+  }
 }
 ```
+
+
+
+
 
 Ahora detallamos la clase para serializar o guardar la información en un archivo:
 
@@ -927,27 +969,27 @@ import java.io.*;
 
 public class Guardar {
 
-    public static void main(String args[]) {
-        ObjectOutputStream salida;
-        Persona p1, p2, p3, p4;
+  public static void main(String args[]) {
+     ObjectOutputStream salida;
+     Persona p1, p2, p3, p4;
 
-        p1 = new Persona("Vicent", 1200.0);
-        p2 = new Persona("Mireia", 1800.0);
-        p3 = new Persona("Josep", 2100.0);
-        p4 = new Persona("Marta", 850.0);
+     p1 = new Persona("Vicent", 1200.0);
+     p2 = new Persona("Mireia", 1800.0);
+     p3 = new Persona("Josep", 2100.0);
+     p4 = new Persona("Marta", 850.0);
 
-        p1.asignaTutor(p2);
-        p2.asignaTutor(p3);
-        p3.asignaTutor(p4);
+     p1.asignaTutor(p2);
+     p2.asignaTutor(p3);
+     p3.asignaTutor(p4);
 
-        try {
-            salida = new ObjectOutputStream(new FileOutputStream("empleats.ser"));
-            salida.writeObject(p1);
-            salida.close();
-        } catch (IOException e) {
-            System.out.println("Algún problema guardando a disco.");
-        }
-    }
+     try {
+        salida = new ObjectOutputStream(new FileOutputStream("empleats.ser"));
+        salida.writeObject(p1);
+        salida.close();
+     } catch (IOException e) {
+        System.out.println("ERROR: Algún problema guardando a disco.");
+     }
+  }
 }
 ```
 
@@ -960,29 +1002,28 @@ import java.io.*;
 
 public class Leer {
 
-    public static void main(String args[]) {
-        ObjectInputStream entrada;
-        Persona p1, p2, p3, p4;
+  public static void main(String args[]) {
+     ObjectInputStream entrada;
+     Persona p1, p2, p3, p4;
 
-        try {
-            entrada = new ObjectInputStream(new FileInputStream("empleats.ser"));
-            p1 = (Persona) entrada.readObject();
-            entrada.close();
+     try {
+        entrada = new ObjectInputStream(new FileInputStream("empleats.ser"));
+        p1 = (Persona) entrada.readObject();
+        entrada.close();
 
-            p2 = p1.getTutor();
-            p3 = p2.getTutor();
-            p4 = p3.getTutor();
+        p2 = p1.getTutor();
+        p3 = p2.getTutor();
+        p4 = p3.getTutor();
 
-            System.out.println(p4.getNombre());
-            System.out.println(p4.getEdad());
-            System.out.println(p4.getSalario());
-
-        } catch (ClassNotFoundException e) {
-            System.out.println("Algun problema con las clases definidas.");
-        } catch (IOException e) {
-            System.out.println("Algun problema leyendo de disco.");
-        }
-    }
+        System.out.println(p4.getNombre());
+        System.out.println(p4.getEdad());
+        System.out.println(p4.getSalario());
+     } catch (ClassNotFoundException e) {
+        System.out.println("ERROR: Algún problema con las clases definidas.");
+     } catch (IOException e) {
+        System.out.println("ERROR: Algún problema leyendo de disco.");
+     }
+  }
 }
 ```
 
@@ -1036,6 +1077,8 @@ public class TCPServidor {
 }
 ```
 
+
+
 ### Cliente
 
 ```java
@@ -1071,9 +1114,11 @@ public class TCPClient {
 }
 ```
 
-## Ejemplo de manejo de ficheros y carpetas
 
-Veamos ahora un ejemplo para mostrar información y contenido de una carpeta:
+
+
+
+## Ejemplo de manejo de ficheros y carpetas
 
 ```java
 package UD06.P5_Manejo;
@@ -1083,48 +1128,43 @@ import java.util.*;
 
 public class P5_1_Manejo {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
+     Scanner tec = new Scanner(System.in);
+     System.out.println("Introduce ruta absoluta de una carpeta");
+     String nombreCarpeta = tec.nextLine();
+     //Creamos objeto File para representar a la carpeta
+     File car = new File(nombreCarpeta);
+     //Comprobamos si existe
+     if (car.exists()) {
+        //¿Es una carpeta?
+        if (car.isDirectory()) {
+           if (car.canRead()) 
+               System.out.println("Lectura permitida");
+           else
+               System.out.println("Lectura no permitida");
 
-        Scanner tec = new Scanner(System.in);
-        System.out.println("Introduce ruta absoluta de una carpeta");
-        String nombreCarpeta = tec.nextLine();
-        //Creamos objeto File para representar a la carpeta
-        File car = new File(nombreCarpeta);
-        //Comprobamos si existe
-        if (car.exists()) {
-            //¿Es una carpeta?
-            if (car.isDirectory()) {
-                if (car.canRead()) {
-                    System.out.println("Lectura permitida");
-                } else {
-                    System.out.println("Lectura no permitida");
-                }
+           if (car.canWrite())
+               System.out.println("Escritura permitida");
+           else
+               System.out.println("Escritura no permitida");
 
-                if (car.canWrite()) {
-                    System.out.println("Escritura permitida");
-                } else {
-                    System.out.println("Escritura no permitida");
-                }
+           if (car.isHidden())
+               System.out.println("Carpet aoculta");
+           else
+               System.out.println("Carpeta visible");
 
-                if (car.isHidden()) {
-                    System.out.println("Carpet aoculta");
-                } else {
-                    System.out.println("Carpeta visible");
-                }
-
-                System.out.println("---- Contenido de la carpeta ----");
-                File[] contenido = car.listFiles();
-                for (File f : contenido) {
-                    System.out.println(f.getName());
-                }
-            } else {
-                System.out.println(car.getAbsolutePath() + " No esunacarpeta");
-            }
+           System.out.println("---- Contenido de la carpeta ----");
+           File[] contenido = car.listFiles();
+           for (File f : contenido) {
+               System.out.println(f.getName());
+           }
         } else {
-            System.out.println(
-                    "No existe la carpeta/archivo " + car.getAbsolutePath());
+            System.out.println("ERROR: " + car.getAbsolutePath() + " No es una carpeta");
         }
-    }
+     } else {
+         System.out.println("ERROR: No existe la carpeta/archivo " + car.getAbsolutePath());
+     }
+  }
 }
 ```
 
