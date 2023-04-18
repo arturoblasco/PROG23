@@ -742,7 +742,6 @@ public class P2_4_EscrituraSecuencialTexto {
             System.out.println("ERROR: Probrema al abrir el fichero");
         } catch (IOException e) {
             System.out.println("ERROR: Problema al escribir");
-
         }
     }
 }
@@ -751,8 +750,12 @@ public class P2_4_EscrituraSecuencialTexto {
 Observa que:
 
 - Para escribir el fichero de texto usamos un `FileWriter`.
+
 - Tal y como se ha creado el stream, el fichero (si ya existe) se sobreescribirá.
+
 - El manejo de excepciones es como el del caso previo.
+
+  
 
 ### Usando Buffers para leer y escribir de/en fichero
 
