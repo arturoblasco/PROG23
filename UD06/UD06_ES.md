@@ -542,23 +542,23 @@ import java.io.IOException;
 
 public class P1_1_FlujoEstandarEntrada {
 
-    public static void main(String[] args) {
-        // Cadena donde iremos almacenando los caracteres que se escriban
-        StringBuilder str = new StringBuilder();
-        char c;
-        // Por si ocurre una excepción ponemos el bloque try-cath
-        try {
-            // Mientras la entrada de terclado no sea Intro
-            while ((c = (char) System.in.read()) != '\n') {
-                // Añadir el character leído a la cadena str
-                str.append(c);
-            }
-        } catch (IOException ex) {
-            System.out.println("Error: " + ex.getMessage());
-        }
-        // Escribir la cadena que se ha ido tecleando
-        System.out.println("Cadena introducida: " + str);
+  public static void main(String[] args) {
+    // Cadena donde iremos almacenando los caracteres que se escriban
+    StringBuilder str = new StringBuilder();
+    char c;
+    // Por si ocurre una excepción ponemos el bloque try-cath
+    try {
+       // Mientras la entrada de terclado no sea Intro
+       while ((c = (char) System.in.read()) != '\n') {
+          // Añadir el character leído a la cadena str
+          str.append(c);
+       }
+    } catch (IOException ex) {
+       System.out.println("Error: " + ex.getMessage());
     }
+    // Escribir la cadena que se ha ido tecleando
+    System.out.println("Cadena introducida: " + str);
+  }
 }
 ```
 
@@ -583,21 +583,21 @@ import java.io.PrintWriter;
 
 public class P1_2_FlujoEstandarSalida {
 
-    public static void main(String[] args) {
-        // Por si ocurre una excepción ponemos el bloque try-cath
-        try {
-            PrintWriter out = new PrintWriter(new FileWriter("test/salida.txt", true));
-            BufferedReader br = new BufferedReader(
-                    				new InputStreamReader(System.in));
-            String s;
-            while (!(s = br.readLine()).equals("salir")) {
-                out.println(s);
-            }
-            out.close();
-        } catch (IOException ex) {
-            System.out.println("Error: " + ex.getMessage());
+  public static void main(String[] args) {
+     // Por si ocurre una excepción ponemos el bloque try-cath
+     try {
+        PrintWriter out = new PrintWriter(new FileWriter("test/salida.txt", true));
+        BufferedReader br = new BufferedReader(
+                   				new InputStreamReader(System.in));
+        String s;
+        while (!(s = br.readLine()).equals("salir")) {
+           out.println(s);
         }
-    }
+        out.close();
+     } catch (IOException ex) {
+        System.out.println("Error: " + ex.getMessage());
+     }
+  }
 }
 ```
 

@@ -224,9 +224,9 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
 5. (leerByte) `System.in` (`InputStream`) está orientado a lectura de  bytes. Escribe un programa que lea un byte de teclado y muestre su valor (int) por pantalla. Pruébalo con un carácter “extraño”, por ejemplo ‘€’.
 
-6. (leerCaracter) `InputStreamReader` (`StreamReader`) está orientado a carácteres. Escribe un programa que lea un carácter de teclado usando un `InputStreamReader` y muestre su valor (`int`) por pantalla. Pruébalo con un carácter “extraño”, por ejemplo ‘€’. ¿Se obtiene el mismo resultado que en el ejercicio anterior?.
+6. (leerCaracter) `InputStreamReader` (`StreamReader`) está orientado a caracteres. Escribe un programa que lea un carácter de teclado usando un `InputStreamReader` y muestre su valor (`int`) por pantalla. Pruébalo con un carácter “extraño”, por ejemplo ‘€’. ¿Se obtiene el mismo resultado que en el ejercicio anterior?.
 
-# **Entrada "orientada a líneas".**
+# **Entrada "orientada a líneas"**
 
 En los ejercicios anteriores, las limitaciones de la clase utilizada (`InputStream`), nos obliga a incluir en el programa instrucciones que detecten que el usuario ha terminado su entrada (ha pulsado **INTRO**). La clase `BuffereReader` dispone del método `readLine()`, capaz de leer una línea completa (la propia instrucción detecta el final de la línea) y devolver un `String`.
 
@@ -238,7 +238,7 @@ En los ejercicios anteriores, las limitaciones de la clase utilizada (`InputStre
 
 9. (EscribirFichero1) Escribe un programa que, usando las clases `FileOutputStream` y `FileInputStream`, 
 
-   - escriba los caracteres de tu nombre en un fichero (`nombre.txt`).
+   - escriba los caracteres de tu nombre en un fichero y los vaya añadiendo (`nombres.log`).
 
    - lea el fichero creado y lo muestre por pantalla.
 
@@ -268,19 +268,19 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
     La entrada del usuario terminará cuando se introduzca un nombre vacío.
 
-    **Nota**: Utiliza la clase `Scanner` para leer desde teclado y los métodos `writeDouble`, `writeInt` y `writeUTF` de la clase `DataOutput/InputStream` para escribir en el fichero)
+    **Nota**: Utiliza la clase `Scanner` para leer desde teclado y los métodos `writeDouble`, `writeInt` y `writeUTF` de la clase `DataOutput/InputStream` para escribir en el fichero).
 
-    Al finalizar el programa, abre el fichero resultante con un editor de texto (notepad o wordpad) ¿La información que contiene es legible?.
+    Al finalizar el programa, abre el fichero resultante con un editor de texto ¿La información que contiene es legible?.
 
 15. (AñadirPersonas) Modifica el programa anterior para que el usuario, al comienzo del programa, pueda elegir si quiere añadir datos al fichero o sobre escribir la información que contiene.
 
-16. (MostrarPersonas) Realizar un programa que lea la información del fichero `personas.dat` y la muestre por pantalla. Para determinar que no quedan más datos en el fichero podemos capturar la excepción `EOFException` 
+16. (MostrarPersonas) Realizar un programa que lea la información del fichero `personas.dat` y la muestre por pantalla. Para determinar que no quedan más datos en el fichero podemos capturar la excepción `EOFException` .
 
 17. (CalculosPersonas) Realizar un programa, similar al anterior,  que lea la información del fichero `personas.dat` y muestre por pantalla la estatura que tienen de media las personas cuya edad está entre 20 y 30 años.
 
-# **Streams de objetos. Serialización.**
+# **Streams de objetos. Serialización**
 
-18. (GuardaLibros)
+18. (GuardaLibros):
 
     - (Autor) Crea la clase autor, con los atributos nombre, año de nacimiento y nacionalidad. Incorpora un constructor que reciba todos los datos y el método `toString()`.
     - (Libro) Crea la clase Libro, con los atributos titulo, año de edición y autor (Objeto de la clase autor). Incorpora un constructor que reciba todos los datos y el método `toString()`.
