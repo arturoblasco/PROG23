@@ -1,20 +1,20 @@
-```
---
+---
 unit: UD07
 title: Colecciones
 language: ES
-author: Arturo Blasco [arturoblasco@iesmre.com]
+author: Arturo BC
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
-IES: IES Mestre Ramon Esteve (Catadau) [www.iesmre.com]
-header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url:${filename}/../
-typora-copy-images-to:${filename}/../assets
+keywords: [PROG, 2022, Programación, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${unit}: ${title} - ${subject} (ver: ${today})
+footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url: ${filename}/../
+typora-copy-images-to: ${filename}/../assets
 ---
-```
 
 [toc]
+
+
 
 # Introducción
 
@@ -67,11 +67,11 @@ Las clases genéricas son equivalentes a los métodos genéricos pero a nivel de
  public class Util<T> {
 	T t1;
 	public void invertir(T[] array) {
-		for (int i = 0; i < array.length / 2; i++) {
-			t1 = array[i];
-			array[i] = array[array.length - i - 1];
-            array[array.length - i - 1] = t1;
-        }
+	  for (int i = 0; i < array.length / 2; i++) {
+		t1 = array[i];
+		array[i] = array[array.length - i - 1];
+        array[array.length - i - 1] = t1;
+      }
 	}
 }
 ```
@@ -83,7 +83,7 @@ Integer[] numeros = {0,1,2,3,4,5,6,7,8,9};
 Util<Integer> u = new Util<Integer>();
 u.invertir(numeros);
 for (int i=0; i<numeros.length; i++){
-	System.out.println(numeros[i]);  
+   System.out.println(numeros[i]); 
 }
 ```
 
@@ -99,145 +99,145 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
 - Dos o más parámetros de tipo (I):
 
-  ```java
-  public class Util<T,M>{
-      public static <T,M> int sumaDeLongitudes (T[] a, M[] b){
+   ```java
+   public class Util<T,M>{
+       public static <T,M> int sumaDeLongitudes (T[] a, M[] b){
           return a.length + b.length;
-      }
-  }
-  ```
+       }
+   }
+   ```
 
-  > Si el método genérico necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas. 
+   > Si el método genérico necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas. 
 
 ​		En el ejemplo anterior se suman las longitudes de dos arrays que no tienen que ser del mismo tipo.
 
 - Dos o más parámetros de tipo (II):
 
-  ```java
-  Integer[] a1 = {0,1,2,3,4};
-  Double[] a2 = {0d,1d,2d,3d,4d};
-  int resultado = Util.<Integer,Double>sumaDeLongitudes(a1,a2);
-  System.out.println(resultado);
-  ```
+   ```java
+   Integer[] a1 = {0,1,2,3,4};
+   Double[] a2 = {0d,1d,2d,3d,4d};
+   int resultado = Util.<Integer,Double>sumaDeLongitudes(a1,a2);
+   System.out.println(resultado);
+   ```
 
-  > Usar un método o una clase con dos o más parámetros genéricos es sencillo, a la hora de invocar al método o crear la clase, se indican los tipos base separados por coma.
+   > Usar un método o una clase con dos o más parámetros genéricos es sencillo, a la hora de invocar al método o crear la clase, se indican los tipos base separados por coma.
 
 - Dos o más parámetros de tipo (III):
 
-  ```java
-  public class Terna <A,B,C>{
-    A a;
-    B b;
-    C c;
-    public terna(A a, B b, C c){
-      this.a=a;
-      this.b=b;
-      this.c=c;
-    }
-    public A getA(){return a;}
-    public B getB(){return b;}
-    public C getC(){return c;}
-  }
-  ```
+   ```java
+   public class Terna <A,B,C>{
+     A a;
+     B b;
+     C c;
+     public Terna(A a, B b, C c){
+       this.a=a;
+       this.b=b;
+       this.c=c;
+     }
+     public A getA(){return a;}
+     public B getB(){return b;}
+     public C getC(){return c;}
+   }
+   ```
 
-  > Si una clase genérica necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas.
-	En el ejemplo anterior se muestra una clase que almacena una terna de elementos de diferente tipo base que están relacionados entre sí.
+   > Si una clase genérica necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas.
+   > En el ejemplo anterior se muestra una clase que almacena una terna de elementos de diferente tipo base que están relacionados entre sí.
 
 - Métodos con tipos adicionales:
 
-  ```java
-  class Util<A,B>{
-    A a;
-    Util (A a){
-      this.a = a;
-    }
-    public <B> void Salida(B b){
-      System.out.println(a.toString() + b.toString());
-    }
-  }
-  ```
+   ```java
+   class Util<A,B>{
+     A a;
+     Util (A a){
+       this.a = a;
+     }
+     public <B> void Salida(B b){
+       System.out.println(a.toString() + b.toString());
+     }
+   }
+   ```
 
-  > Una clase genérica puede tener unos parámetros genéricos, pero si en uno de sus métodos necesitamos otros parámetros genéricos distintos, no hay problema, podemos combinarlos.
+   > Una clase genérica puede tener unos parámetros genéricos, pero si en uno de sus métodos necesitamos otros parámetros genéricos distintos, no hay problema, podemos combinarlos.
 
 - Inferencia de tipos (I):
 
-  ```java
-  Integer[] a1 = {0,1,2,3,4};
-  Double[] a2 = {0d,1d,2d,3d,4d};
-  util.<Integer,Double>sumaDeLongitudes(a1,a2);
-  util.sumaDeLongitudes(a1,a2);  //no es necesario indicar el tipo para instanciar
-  ```
+   ```java
+   Integer[] a1 = {0,1,2,3,4};
+   Double[] a2 = {0d,1d,2d,3d,4d};
+   util.<Integer,Double>sumaDeLongitudes(a1,a2);
+   util.sumaDeLongitudes(a1,a2);  //no es necesario indicar el tipo para instanciar
+   ```
 
-  > No siempre es necesario indicar los tipos a la hora de instanciar un método genérico. A partir de Java 7, es capaz de determinar los tipos a partir de los parámetros.
+   > No siempre es necesario indicar los tipos a la hora de instanciar un método genérico. A partir de Java 7, es capaz de determinar los tipos a partir de los parámetros.
 
-	Las dos expresiones de arriba serian válidas y funcionarían. Si no es capaz de inferirlos, nos dará un error a la hora de compilar.
+   Las dos expresiones de arriba serian válidas y funcionarían. Si no es capaz de inferirlos, nos dará un error a la hora de compilar.
 
 - Inferencia de tipos (II):
 
-  ```java
-  Integer a1 = 0;
-  Double d1 = 1.3d;
-  Float f1 = 1.4f;
-  Terna <Integer,Double,Float> t = new Terna<>(a1,d1,f1);
-  ```
+   ```java
+   Integer a1 = 0;
+   Double d1 = 1.3d;
+   Float f1 = 1.4f;
+   Terna <Integer,Double,Float> t = new Terna<>(a1,d1,f1);
+   ```
 
-  > A partir de Java 7 es posible usar el operador diamante <> para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. **Cuidado, esto solo es posible a partir de Java 7**.
+   > A partir de Java 7 es posible usar el operador diamante <> para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. **Cuidado, esto solo es posible a partir de Java 7**.
 
 - Limitación de tipos:
 
-  ```java
-  public class Util {
-      public static <T extends Number> Double Sumar (T t1, T t2){
-          return new Double(t1.doubleValue() + t2.doubleValue());
-      }
-  }
-  ```
+   ```java
+   public class Util {
+       public static <T extends Number> Double Sumar (T t1, T t2){
+           return new Double(t1.doubleValue() + t2.doubleValue());
+       }
+   }
+   ```
 
-  > Se pueden limitar el conjunto de tipos que se pueden usar con una clase o método genérico usando el operador `extends`. El operador `extends` permite indicar que la clase que se pasa como parámetro genérico tiene que derivar de una clase específica.
+   > Se pueden limitar el conjunto de tipos que se pueden usar con una clase o método genérico usando el operador `extends`. El operador `extends` permite indicar que la clase que se pasa como parámetro genérico tiene que derivar de una clase específica.
 
-	En el ejemplo, no se admitirá ninguna clase que no derive de `Number`, pudiendo así realizar operaciones matemáticas.
+   En el ejemplo, no se admitirá ninguna clase que no derive de `Number`, pudiendo así realizar operaciones matemáticas.
 
 - Paso de clases genéricas por parámetro:
 
-  ```java
-  public class Ejemplo <A> {
-    public A a;
-  }
-  ...
-  void test (Ejemplo<Integer> e) {
-    ...
-  }
-  ```
+   ```java
+   public class Ejemplo <A> {
+     public A a;
+   }
+   ...
+   void test (Ejemplo<Integer> e) {
+     ...
+   }
+   ```
 
-  > Cuando un método tiene como parámetro una clase genérica (como en el caso del método test del ejemplo), se puede especificar cual debe ser el tipo base usado en la instancia de la clase genérica que se le pasa como argumento. Esto permite, entre otras cosas, crear diferentes versiones de un mismo método (sobrecarga), dependiendo del tipo base usado en la instancia de la clase genérica se ejecutará una versión u otra.
+   > Cuando un método tiene como parámetro una clase genérica (como en el caso del método test del ejemplo), se puede especificar cual debe ser el tipo base usado en la instancia de la clase genérica que se le pasa como argumento. Esto permite, entre otras cosas, crear diferentes versiones de un mismo método (sobrecarga), dependiendo del tipo base usado en la instancia de la clase genérica se ejecutará una versión u otra.
 
 - Paso de clases genéricas por parámetro. Wildcards (I):
 
-  ```java
-  public class Ejemplo <A> {
+   ```java
+   public class Ejemplo <A> {
       public A a;
-  }
-  ...
-  void test (Ejemplo<?> e) {
+   }
+   ...
+   void test (Ejemplo<?> e) {
       ...
-  }
-  ```
+   }
+   ```
 
-  > Cuando un método admite como parámetro una clase genérica en la que no importa el tipo de objeto sobre la que se ha creado, podemos usar el interrogante para indicar "*cualquier tipo*".
+   > Cuando un método admite como parámetro una clase genérica en la que no importa el tipo de objeto sobre la que se ha creado, podemos usar el interrogante para indicar "*cualquier tipo*".
 
 - Paso de clases genéricas por parámetro. Wildcards (II):
 
-  ```java
-  public class Ejemplo <A> {
+   ```java
+   public class Ejemplo <A> {
       public A a;
-  }
-  ...
-  void test (Ejemplo<? extends Number> e) {
+   }
+   ...
+   void test (Ejemplo<? extends Number> e) {
       ...
-  }
-  ```
+   }
+   ```
 
-  > También es posible limitar el conjunto de tipos que una clase genérica puede usar, a través del operador `extends`. El ejemplo anterior es como decir "*cualquier tipo que derive de Number*"
+   > También es posible limitar el conjunto de tipos que una clase genérica puede usar, a través del operador `extends`. El ejemplo anterior es como decir "*cualquier tipo que derive de Number*".
 
 # Colecciones
 
@@ -272,15 +272,15 @@ Más adelante veremos cómo se usan estos métodos, será cuando veamos las impl
 
 ¿Con qué relacionarías los conjuntos? Seguro que con las matemáticas. Los conjuntos son un tipo de colección que no admite duplicados, derivados del concepto matemático de conjunto.
 
-[![image-20220415115522363](https://github.com/martinezpenya/PRG-CFGS-2223/raw/main/assets/hash.png)](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/assets/hash.png)
+![](/assets/hash.png)
 
 La interfaz `java.util.Set` define cómo deben ser los conjuntos, y implementa la interfaz `Collection`, aunque no añade ninguna operación nueva. Las implementaciones (clases genéricas que implementan la interfaz `Set`) más usadas son las siguientes:
 
 - `java.util.HashSet`. Conjunto que almacena los objetos usando tablas hash (estructura de datos formada básicamente por un array donde la posición de los datos va determinada por una función hash, permitiendo localizar la información de forma extraordinariamente rápida. Los datos están ordenados en la tabla en base a un resumen numérico de los mismos (en hexadecimal generalmente) obtenido a partir de un algoritmo para cálculo de resúmenes, denominadas funciones hash. El resumen no tiene significado para un ser humano, se trata simplemente de un mecanismo para obtener un número asociado a un conjunto de datos. El inconveniente de estas tablas es que los datos se ordenan por el resumen obtenido, y no por el valor almacenado. El resumen, de un buen algoritmo hash, no se parece en nada al contenido almacenado) lo cual acelera enormemente el acceso a los objetos almacenados.
 
-  **Inconvenientes**: necesitan bastante memoria y no almacenan los objetos de forma ordenada (al contrario pueden aparecer completamente desordenados).
+   **Inconvenientes**: necesitan bastante memoria y no almacenan los objetos de forma ordenada (al contrario pueden aparecer completamente desordenados).
 
-- `java.util.LinkedHashSet`. Conjunto que almacena objetos combinando tablas hash, para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero, manteniendo un orden, que generalmente es el del momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada nodo en la que existe un campo, generalmente llamado siguiente, que contiene la dirección de memoria del siguiente nodo (con el siguiente dato)) para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias. **Inconvenientes**: necesitan bastante memoria y es algo más lenta que `HashSet` .
+- `java.util.LinkedHashSet`. Conjunto que almacena objetos combinando tablas hash, para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero, manteniendo un orden, que generalmente es el del momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada nodo en la que existe un campo, generalmente llamado siguiente, que contiene la dirección de memoria del siguiente nodo (con el siguiente dato) para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias. **Inconvenientes**: necesitan bastante memoria y es algo más lenta que `HashSet` .
 
 - `java.util.TreeSet`. Conjunto que almacena los objetos usando unas estructuras conocidas como árboles rojo‐negro. Son más lentas que los dos tipos anteriores. pero tienen una gran ventaja: los datos almacenados se ordenan por valor. Es decir, que aunque se inserten los elementos de forma desordenada, internamente se ordenan dependiendo del valor de cada uno.
 
@@ -289,16 +289,16 @@ Poco a poco, iremos viendo que son las listas enlazadas y los árboles (no profu
 Para crear un conjunto, simplemente creamos el `HashSet` indicando el tipo de objeto que va a almacenar, dado que es una clase genérica que puede trabajar con cualquier tipo de dato debemos crearlo como sigue (no olvides hacer la importación de `java.util.HashSet` primero):
 
 ```java
-HashSet<Integer> conjunto=new HashSet<Integer>();
-HashSet<Integer> conjunto=new HashSet<>(); //a partir de Java 7
+HashSet<Integer> conjunto = new HashSet<Integer>();
+HashSet<Integer> conjunto = new HashSet<>(); //a partir de Java 7
 ```
 
 Después podremos ir almacenando objetos dentro del conjunto usando el método `add` (definido por la interfaz `Set`). Los objetos que se pueden insertar serán siempre del tipo especificado al crear el conjunto:
 
 ```java
-Integer n=new Integer(10);
+Integer n = new Integer(10);
 if (!conjunto.add(n)){
-	System.out.println("Número ya en la lista.");
+   System.out.println("Número ya en la lista.");
 }
 ```
 
@@ -306,21 +306,21 @@ Si el elemento ya está en el conjunto, el método `add` retornará `false` indi
 
 ### Acceso
 
-Y ahora te preguntarás, ¿cómo accedo a los elementos almacenados en un conjunto? Para obtener los elementos almacenados en un conjunto hay que usar iteradores, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los iteradores se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura for especial, denominada bucle " for-each " o bucle "para cada". En el siguiente código se usa un bucle foreach, en él la variable i va tomando todos los valores almacenados en el conjunto hasta que llega al último:
+Y ahora te preguntarás, ¿cómo accedo a los elementos almacenados en un conjunto? Para obtener los elementos almacenados en un conjunto hay que usar iteradores, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los iteradores se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura *for* especial, denominada bucle "*for-each*" o bucle "*para cada*". En el siguiente código se usa un bucle *foreach*, en él la variable *i* va tomando todos los valores almacenados en el conjunto hasta que llega al último:
 
 ```java
 for (Integer i: conjunto) {
-	System.out.println("Elemento almacenado:"+i);
+   System.out.println("Elemento almacenado: " + i);
 }
 ```
 
-Como ves la estructura `for-each` es muy sencilla: la palabra `for` seguida de "(`tipo variable:colección`)" y el cuerpo del bucle; `tipo` es el tipo del objeto sobre el que se ha creado la colección, `variable` pues es la variable donde se almacenará cada elemento de la colección y `coleccion` la colección en sí. Los bucles `for-each` se pueden usar para todas las colecciones.
+Como ves la estructura `for-each` es muy sencilla: la palabra `for` seguida de "(`tipo variable:colección`)" y el cuerpo del bucle; `tipo` es el tipo del objeto sobre el que se ha creado la colección, `variable` es la variable donde se almacenará cada elemento de la colección y `coleccion` la colección en sí. Los bucles `for-each` se pueden usar para todas las colecciones.
 
 ### `LinkedHashSet` y `TreeSet`
 
 ¿En qué se diferencian las estructuras `LinkedHashSet` y `TreeSet` de la estructura `HashSet`? Ya se comento antes, y es básicamente en su funcionamiento interno.
 
-[![image-20220415120805066](https://github.com/martinezpenya/PRG-CFGS-2223/raw/main/assets/nodo.png)](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/assets/nodo.png)
+![nodo](/assets/nodo.png)
 
 La estructura `LinkedHashSet` es una estructura que internamente funciona como una lista enlazada, aunque usa también tablas hash para poder acceder rápidamente a los elementos. Una lista enlazada es una estructura similar a la representada en la imagen de la derecha, la cual está compuesta por nodos (elementos que forman la lista) que van enlazándose entre sí. Un nodo contiene dos cosas: el dato u objeto almacenado en la lista y el siguiente nodo de la lista. Si no hay siguiente nodo, se indica poniendo nulo (null) en la variable que contiene el siguiente nodo.
 
@@ -334,7 +334,7 @@ Los nodos se diferencian en dos tipos: nodos padre y nodos hijo; un nodo padre p
 
 En la figura de abajo se puede apreciar un árbol donde cada nodo puede tener dos hijos, denominados izquierdo (izq) y derecho (dch). Puesto que un nodo hijo puede también ser padre a su vez, los árboles se suelen visualizar para su estudio por niveles para entenderlos mejor, donde cada nivel contiene hijos de los nodos del nivel anterior, excepto el primer nivel (que no tiene padre).
 
-[![image-20220415120905478](https://github.com/martinezpenya/PRG-CFGS-2223/raw/main/assets/arbol.png)](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/assets/arbol.png)
+![arbol](/assets/arbol.png)
 
 Los árboles son estructuras complejas de manejar y que permiten operaciones muy sofisticadas. Los árboles usados en los `TreeSet`, los árboles rojo‐negro, son árboles auto-ordenados, es decir, que al insertar un elemento, este queda ordenado por su valor de forma que al recorrer el árbol, pasando por todos los nodos, los elementos salen ordenados. El ejemplo mostrado en la imagen es simplemente un árbol binario, el más simple de todos.
 
@@ -342,41 +342,41 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
 
 - Conjunto `TreeSet` ([Ejemplo01](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo01)):
 
-  ```java
-  TreeSet<Integer> t = new TreeSet<>();
-  t.add(4);
-  t.add(3);
-  t.add(1);
-  t.add(99);
-  for (Integer i : t) {
-      System.out.print(i + " ");
-  }
-  ```
+   ```java
+   TreeSet<Integer> t = new TreeSet<>();
+   t.add(4);
+   t.add(3);
+   t.add(1);
+   t.add(99);
+   for (Integer i : t) {
+       System.out.print(i + " ");
+   }
+   ```
 
-  Resultado mostrado por pantalla (el resultado sale ordenado por valor):
+   Resultado mostrado por pantalla (el resultado sale ordenado por valor):
 
-  ```java
-  1 3 4 99
-  ```
+   ```java
+   1 3 4 99
+   ```
 
 - Conjunto `LinkedHashSet` ([Ejemplo02](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo02)):
 
-  ```java
-  LinkedHashSet<Integer> t = new LinkedHashSet<>();
-  t.add(4);
-  t.add(3);
-  t.add(1);
-  t.add(99);
-  for (Integer i : t) {
-      System.out.print(i + " ");
-  }
-  ```
+   ```java
+   LinkedHashSet<Integer> t = new LinkedHashSet<>();
+   t.add(4);
+   t.add(3);
+   t.add(1);
+   t.add(99);
+   for (Integer i : t) {
+       System.out.print(i + " ");
+   }
+   ```
 
-  Resultado mostrado por pantalla (los valores salen ordenados según el momento de inserción en el conjunto):
+   Resultado mostrado por pantalla (los valores salen ordenados según el momento de inserción en el conjunto):
 
-  ```java
-  4 3 1 99
-  ```
+   ```java
+   4 3 1 99
+   ```
 
 ### Operar con elementos
 
@@ -384,7 +384,7 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
 
 Partimos del siguiente ejemplo, en el que hay dos colecciones de diferente tipo, cada una con 4 números enteros:
 
-[![image-20220415121135397](https://github.com/martinezpenya/PRG-CFGS-2223/raw/main/assets/conjunto.png)](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/assets/conjunto.png)
+<img src="/assets/conjunto.png" alt="conjunto" style="zoom: 30%;" />
 
 ```java
 TreeSet<Integer> conjuntoA= new TreeSet<Integer>();
@@ -397,49 +397,49 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
 - **Unión**. Añadir todos los elementos del conjunto B en el conjunto A.
 
-  ```java
-   A.addAll(B)
-  ```
+   ```java
+    A.addAll(B)
+   ```
 
-  [![image-20220415121303990](https://github.com/martinezpenya/PRG-CFGS-2223/raw/main/assets/union.png)](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/assets/union.png)
+   <img src="/assets/union.png" style="zoom:30%;" />
 
-  Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están:
+   Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están:
 
-  ```java
-  5, 7, 9, 10, 19 y 20.
-  ```
+   ```java
+   5, 7, 9, 10, 19 y 20.
+   ```
 
 - **Diferencia**. Eliminar los elementos del conjunto B que puedan estar en el conjunto A.
 
-  ```java
-   A.removeAll(B)
-  ```
+   ```java
+    A.removeAll(B)
+   ```
 
-  [![image-20220415121500468](https://github.com/martinezpenya/PRG-CFGS-2223/raw/main/assets/diferencia.png)](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/assets/diferencia.png)
+   <img src="/assets/diferencia.png" alt="diferencia" style="zoom:30%;" />
 
-  Todos los elementos del conjunto A, que no estén en el conjunto B:
+   Todos los elementos del conjunto A, que no estén en el conjunto B:
 
-  ```java
-  9, 19.
-  ```
+   ```java
+   9, 19.
+   ```
 
 - **Intersección**. Retiene los elementos comunes a ambos conjuntos.
 
-  ```
-   A.retainAll(B)
-  ```
+   ```
+    A.retainAll(B)
+   ```
 
-  [![image-20220415121631282](https://github.com/martinezpenya/PRG-CFGS-2223/raw/main/assets/interseccion.png)](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/assets/interseccion.png)
+   <img src="/assets/interseccion.png" alt="interserccion" style="zoom:30%;" />
 
-  Todos los elementos del conjunto A, que también están en el conjunto B:
+   Todos los elementos del conjunto A, que también están en el conjunto B:
 
-  ```java
-  5 y 7.
-  ```
+   ```java
+   5 y 7.
+   ```
 
 > Recuerda, estas operaciones son comunes a todas las colecciones.
 
-Consulta el [Ejemplo03](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo03)
+Consulta el [Ejemplo03](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo03).
 
 ### Ordenación
 
@@ -473,9 +473,9 @@ Una vez creado el comparador simplemente tenemos que pasarlo como parámetro en 
 TreeSet<Objeto> ts=new TreeSet<Objeto>(new ComparadorDeObjetos());
 ```
 
-Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo en el punto [Comparadores](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Comparadores)
+Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo en el punto [Comparadores](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Comparadores).
 
-Para entender mejor los Sets revisa el [Ejemplo04](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo04)
+Para entender mejor los Sets revisa el [Ejemplo04](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo04).
 
 ## Listas
 
@@ -503,7 +503,7 @@ Ten en cuenta que los elementos de una lista empiezan a numerarse por 0. Es deci
 
 Y, ¿cómo se usan las listas? Pues para usar una lista haremos uso de sus implementaciones `LinkedList` y `ArrayList`. Veamos un ejemplo de su uso y después obtendrás respuesta a esta pregunta.
 
-[![image-20220415124954132](https://github.com/martinezpenya/PRG-CFGS-2223/raw/main/assets/listas.png)](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/assets/listas.png)
+![listas](/assets/listas.png)
 
 Supongo que intuirás como se usan, pero nunca viene mal un ejemplo sencillo, que nos aclare las ideas. El siguiente ejemplo muestra como usar un `LinkedList` pero valdría también para `ArrayList` (no olvides importar las clases `java.util.LinkedList` y `java.util.ArrayList` según sea necesario). En este ejemplo se usan los métodos de acceso posicional a la lista:
 
@@ -532,7 +532,7 @@ En el ejemplo anterior, se emplea tanto el método `indexOf` para obtener la pos
 al.addAll(0, t.subList(1, t.size()));
 ```
 
-> OJO: `subList` ==> Returns a view of the portion of this list between the specified `fromIndex`, inclusive, and `toIndex`, exclusive. ([API de Java](https://docs.oracle.com/javase/8/docs/api/java/util/List.html#subList-int-int-))
+> OJO: `subList` ==> Returns a view of the portion of this list between the specified `fromIndex`, inclusive, and `toIndex`, exclusive. ([API de Java](https://docs.oracle.com/javase/8/docs/api/java/util/List.html#subList-int-int-)).
 
 Este ejemplo es especial porque usa sublistas. Se usa el método `size` para obtener el tamaño de la lista. Después el método `subList` para extraer una sublista de la lista (que incluía en origen los números 2, 3 y 5), desde la posición 1 hasta el final de la lista (lo cual dejaría fuera al primer elemento). Y por último, se usa el método `addAll` para añadir todos los elementos de la sublista al `ArrayList` anterior. Y quedaria:
 
@@ -548,7 +548,7 @@ al.subList(0, 2).clear();
 
 Lo mismo ocurre al añadir un elemento, se añade en la sublista y en la lista original.
 
-Puedes consultar el código en el [Ejemplo05](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo05)
+Puedes consultar el código en el [Ejemplo05](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo05).
 
 ### `LinkedList` y `ArrayList`
 
@@ -615,7 +615,7 @@ El resultado de ejecutar el código anterior es que se muestran los números 44 
 
 > "*Controlar la complejidad es la esencia de la programación*." **[Brian Kernighan](https://es.wikipedia.org/wiki/Brian_Kernighan)**
 
-Consulta el [Ejemplo06](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo06)
+Consulta el [Ejemplo06](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo06).
 
 ## Conjuntos de pares [clave/valor]
 
@@ -642,7 +642,7 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 | `boolean isEmpty();`                   | Retornará true si el mapa está vacío, false en cualquier otro caso. |
 | `void clear();`                        | Vacía el mapa.                                               |
 
-Revisa el [Ejemplo07](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo07)
+Revisa el [Ejemplo07](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo07).
 
 # Iteradores
 
@@ -789,7 +789,7 @@ El funcionamiento del método `compareTo` es el mismo que el método `compare` d
 
 Ordenar ahora la lista de artículos es sencillo, fíjate que fácil: `Collections.sort(articulos);`
 
-Consulta el código de [Ejemplo10](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo10) y [Ejemplo11](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo11)
+Consulta el código de [Ejemplo10](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo10) y [Ejemplo11](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo11).
 
 # Extras
 
