@@ -1,5 +1,5 @@
 4
-Donetes 1.75 3
-Donuts 2.5 5
+Donete 1.75 3
+Donut 2.5 5
 Oreo 3.5 8
 Monster 3.3 7
