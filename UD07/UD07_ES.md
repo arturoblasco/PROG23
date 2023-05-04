@@ -79,11 +79,11 @@ Las clases genéricas son equivalentes a los métodos genéricos pero a nivel de
 En el ejemplo anterior, la clase `Util` contiene el método `invertir` cuya función es invertir el orden de los elementos de cualquier `array`, sea del tipo que sea. Para usar esa clase genérica hay que crear un objeto o instancia de dicha clase especificando el tipo base entre los símbolos menor que ("`<`") y mayor que ("`>`"), justo detrás del nombre e de la clase. Veamos un ejemplo:
 
 ```java
-Integer[] numeros = {0,1,2,3,4,5,6,7,8,9};
+Integer[] numeros = {0,1,2,3,4,5,6,7,8,9}; //el array del tipo clase wrapper
 Util<Integer> u = new Util<Integer>();
 u.invertir(numeros);
 for (int i=0; i<numeros.length; i++){
-   System.out.println(numeros[i]); 
+   System.out.println(numeros[i]);
 }
 ```
 
@@ -159,7 +159,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
    > Una clase genérica puede tener unos parámetros genéricos, pero si en uno de sus métodos necesitamos otros parámetros genéricos distintos, no hay problema, podemos combinarlos.
 
-- Inferencia de tipos (I):
+- Inferencia (*deducción*) de tipos (I):
 
    ```java
    Integer[] a1 = {0,1,2,3,4};
@@ -209,7 +209,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
    }
    ```
 
-   > Cuando un método tiene como parámetro una clase genérica (como en el caso del método test del ejemplo), se puede especificar cual debe ser el tipo base usado en la instancia de la clase genérica que se le pasa como argumento. Esto permite, entre otras cosas, crear diferentes versiones de un mismo método (sobrecarga), dependiendo del tipo base usado en la instancia de la clase genérica se ejecutará una versión u otra.
+   > Cuando un método tiene como parámetro una clase genérica (como en el caso del método test del ejemplo), se puede especificar cuál debe ser el tipo base usado en la instancia de la clase genérica que se le pasa como argumento. Esto permite, entre otras cosas, crear diferentes versiones de un mismo método (sobrecarga), dependiendo del tipo base usado en la instancia de la clase genérica se ejecutará una versión u otra.
 
 - Paso de clases genéricas por parámetro. Wildcards (I):
 
@@ -253,14 +253,14 @@ Las colecciones son en general elementos de programación que están disponibles
 
 Las colecciones en Java parten de una serie de interfaces básicas. Cada interfaz define un modelo de colección y las operaciones que se pueden llevar a cabo sobre los datos almacenados, por lo que es necesario conocerlas. La interfaz inicial, a través de la cual se han construido el resto de colecciones, es la interfaz `java.util.Collection`, que define las operaciones comunes a todas las colecciones derivadas. A continuación se muestran las operaciones más importantes definidas por esta interfaz, ten en cuenta que `Collection` es una interfaz genérica donde `<E>` es el parámetro de tipo (podría ser cualquier clase):
 
-- **Método `int size()`** : retorna el número de elementos de la colección.
-- **Método `boolean isEmpty()`** : retornará verdadero si la colección está vacía.
+- **Método `int size()`**: retorna el número de elementos de la colección.
+- **Método `boolean isEmpty()`**: retornará verdadero si la colección está vacía.
 - **Método `boolean contains (Object element)`**: retornará verdadero si la colección tiene el elemento pasado como parámetro.
-- **Método `boolean add(E element)`** : permitirá añadir elementos a la colección.
-- **Método `boolean remove(Object element)`** : permitirá eliminar elementos de la colección.
+- **Método `boolean add(E element)`**: permitirá añadir elementos a la colección.
+- **Método `boolean remove(Object element)`**: permitirá eliminar elementos de la colección.
 - **Método `Iterator<E> iterator()`**: permitirá crear un iterador para recorrer los elementos de la colección. Esto se ve más adelante, no te preocupes.
 - **Método `Object[] toArray()`**: permite pasar la colección a un array de objetos tipo Object.
-- **Método `boolean containsAll(Collection<?> c)`**: permite comprobar si una colección contiene los elementos existentes en otra colección, si es así, retorna verdadero.
+- **Método `boolean containsAll(Collection<?> c)`**: permite comprobar si una colección contiene los elementos existentes en otra colección. Si es así, retorna verdadero.
 - **Método `boolean addAll(Collection<?> extends E> c)`**: permite añadir todos los elementos de una colección a otra colección, siempre que sean del mismo tipo (o deriven del mismo tipo base).
 - **Método `boolean removeAll(Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se eliminan, el resto se quedan.
 - **Método `boolean retainAll(Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se dejan, el resto se eliminan.
@@ -359,7 +359,7 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
    1 3 4 99
    ```
 
-- Conjunto `LinkedHashSet` ([Ejemplo02](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo02)):
+- Conjunto `LinkedHashSet` ([Ejemplo02](#Ejemplo02)):
 
    ```java
    LinkedHashSet<Integer> t = new LinkedHashSet<>();
@@ -404,6 +404,12 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
     A.addAll(B)
    ```
 
+   
+
+   
+
+   
+
    <img src="./assets/union.png" style="zoom:30%;" />
 
    Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están:
@@ -442,7 +448,13 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
 > Recuerda, estas operaciones son comunes a todas las colecciones.
 
-Consulta el [Ejemplo03](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo03).
+Consulta el [Ejemplo03](#Ejemplo03).
+
+
+
+
+
+​	
 
 ### Ordenación
 
@@ -478,7 +490,7 @@ TreeSet<Objeto> ts = new TreeSet<Objeto>(new ComparadorDeObjetos());
 
 Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo en el punto [Comparadores](#Comparadores).
 
-Para entender mejor los Sets revisa el [Ejemplo04](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo04).
+Para entender mejor los Sets revisa el [Ejemplo04](#Ejemplo04).
 
 ## Listas
 
@@ -556,7 +568,7 @@ al.subList(0, 2).clear();
 
 Lo mismo ocurre al añadir un elemento, se añade en la sublista y en la lista original.
 
-Puedes consultar el código en el [Ejemplo05](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo05).
+Puedes consultar el código en el [Ejemplo05](#Ejemplo05).
 
 ### `LinkedList` y `ArrayList`
 
@@ -622,7 +634,7 @@ El resultado de ejecutar el código anterior es que se muestran los números 44 
 
 > "*Controlar la complejidad es la esencia de la programación*." **[Brian Kernighan](https://es.wikipedia.org/wiki/Brian_Kernighan)**
 
-Consulta el [Ejemplo06](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo06).
+Consulta el [Ejemplo06](#Ejemplo06).
 
 ## Conjuntos de pares [clave/valor]
 
@@ -649,7 +661,7 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 | `boolean isEmpty();`                   | Retornará true si el mapa está vacío, false en cualquier otro caso. |
 | `void clear();`                        | Vacía el mapa.                                               |
 
-Revisa el [Ejemplo07](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo07).
+Revisa el [Ejemplo07](#Ejemplo07).
 
 # Iteradores
 
@@ -660,81 +672,81 @@ Los iteradores permiten recorrer las colecciones de dos formas: bucles `for‐ea
 Veamos un ejemplo (en el ejemplo `t` es una colección cualquiera):
 
 ```java
-Iterator<Integer> it=t.iterator();
+Iterator<Integer> it = t.iterator();
 ```
 
-Fíjate que se ha especificado un parámetro para el tipo de dato genérico en el iterador (poniendo `<Integer>` después de `Iterator`). Esto es porque los iteradores son también clases genéricas, y es necesario especificar el tipo base que contendrá el iterador. Sino se especifica el tipo base del iterador, igualmente nos permitiría recorrer la colección, pero retornará objetos tipo Object (clase de la que derivan todas las clases), con lo que nos veremos obligados a forzar la conversión de tipo.
+Fíjate que se ha especificado un parámetro para el tipo de dato genérico en el iterador (poniendo `<Integer>` después de `Iterator`). Esto es porque los iteradores son también clases genéricas, y es necesario especificar el tipo base que contendrá el iterador. Si no se especifica el tipo base del iterador, igualmente nos permitiría recorrer la colección, pero retornará objetos tipo Object (clase de la que derivan todas las clases), con lo que nos veremos obligados a forzar la conversión de tipo.
 
 Para recorrer y gestionar la colección, el iterador ofrece tres métodos básicos:
 
 - `boolean hasNext()`. Retornará true si le quedan más elementos a la colección por visitar. False en caso contrario.
 - `E next()`. Retornará el siguiente elemento de la colección, si no existe siguiente elemento, lanzará una excepción ( `NoSuchElementException` para ser exactos), con lo que conviene chequear primero si el siguiente elemento existe.
-- `remove()`. Elimina de la colección el último elemento retornado en la última invocación de next (no es necesario pasarselo por parámetro). Cuidado, si next no ha sido invocado todavía, saltará una incomoda excepción.
+- `remove()`. Elimina de la colección el último elemento retornado en la última invocación de next (no es necesario pasárselo por parámetro). Cuidado, si next no ha sido invocado todavía, saltará una incómoda excepción.
 
 ¿Cómo recorreríamos una colección con estos métodos? Pues de una forma muy sencilla, un simple bucle mientras (`while`) con la condición `hasNext()` nos permite hacerlo:
 
 ```java
-while (it.hasNext()) // Mientras haya siguiente elemento, seguiremos en el bucle.
-{
-	Integer n=it.next(); // Escogemos el siguiente elemento.
-	if (n%2==0) it.remove(); //Si es par, eliminamos el elemento de la lista.
+while (it.hasNext()) { // Mientras haya siguiente elemento, seguiremos en el bucle.
+	Integer n = it.next(); // Escogemos el siguiente elemento.
+	if (n%2 == 0)
+        it.remove(); //Si es par, eliminamos el elemento de la lista.
 }
 ```
 
-¿Qué elementos contendría la lista después de ejecutar el bucle? Efectivamente, solo los números impares.
+¿Qué elementos contendría la lista después de ejecutar el bucle? Efectivamente, solo números impares.
 
-> Las listas permiten acceso posicional a través de los métodos `get` y `set`, y acceso secuencial a través de iteradores, ¿cuál es para tí la forma más cómoda de recorrer todos los elementos? ¿Un acceso posicional a través un bucle `for (i=0;i<lista.size();i++)` o un acceso secuencial usando un bucle `while (iterador.hasNext())`?
+> Las listas permiten acceso posicional a través de los métodos `get` y `set`, y acceso secuencial a través de iteradores, ¿cuál es para tí la forma más cómoda de recorrer todos los elementos? ¿Un acceso posicional a través un bucle `for (i=0; i<lista.size(); i++)` o un acceso secuencial usando un bucle `while (iterador.hasNext())`?
 
-¿Qué inconvenientes tiene usar los iteradores sin especificar el tipo de objeto? En el siguiente ejemplo, se genera una lista con los números del 0 al 10. De la lista, se eliminan aquellos que son pares y solo se dejan los impares. En el primer ejemplo se especifica el tipo de objeto del iterador, en el segundo ejemplo no, observa el uso de la conversión de tipos en la línea 7.
+¿Qué inconvenientes tiene usar los iteradores sin especificar el tipo de objeto? En el siguiente ejemplo, se genera una lista con los números del 0 al 10. De la lista, se eliminan aquellos que son pares y solo se dejan los impares. En el primer ejemplo se especifica el tipo de objeto del iterador, en el segundo ejemplo no; observa el uso de la conversión de tipos en la línea 7.
 
-Ejemplo indicando el tipo de objeto de iterador.
+Ejemplo indicando el tipo de objeto de iterador:
 
 ```java
-ArrayList<Integer> lista=new ArrayList<Integer>();
-for (int i=0;i<10;i++){
-	lista.add(i);  
+ArrayList<Integer> lista = new ArrayList<Integer>();
+for (int i=0; i<10; i++){
+	lista.add(i); 
 }
 //lista: [0,1,2,3,4,5,6,7,8,9]
-Iterator<Integer> it=lista.iterator();
+Iterator<Integer> it = lista.iterator();
 while (it.hasNext()) {
-	Integer n=it.next();
-	if (n%2==0){
-    	it.remove();  
+	Integer n = it.next();
+	if (n%2 == 0){
+    	it.remove();
     }
 }
 //lista: [1,3,5,7,9]
 ```
 
-Ejemplo no indicando el tipo de objeto del iterador,
+Ejemplo no indicando el tipo de objeto del iterador:
 
 ```java
-ArrayList <Integer> lista=new ArrayList<Integer>();
-for (int i=0;i<10;i++){
-	lista.add(i);  
+ArrayList <Integer> lista = new ArrayList<Integer>();
+for (int i=0; i<10; i++){
+	lista.add(i); 
 }
-Iterator it=lista.iterator();
+Iterator it = lista.iterator();
 while (it.hasNext()) {
-	Integer n=(Integer)it.next();
- 	if (n%2==0){
-    	it.remove();   
+	Integer n = (Integer)it.next();
+ 	if (n%2 == 0){
+    	it.remove();
     }
 }
 ```
 
 Un iterador es seguro porque esta pensado para no sobrepasar los límites de la colección, ocultando operaciones más complicadas que pueden repercutir en errores de software. Pero realmente se convierte en inseguro cuando es necesario hacer la operación de conversión de tipos. Si la colección no contiene los objetos esperados, al intentar hacer la conversión, saltará una incómoda excepción.
 
-Usar genéricos aporta grandes ventajas, pero usándolos adecuadamente.
+Usar genéricos aporta grandes ventajas, pero usándolos adecuadamente. 
 
 Para recorrer los mapas con iteradores, hay que hacer un pequeño truco. Usamos el método `entrySet` que ofrecen los mapas para generar un conjunto con las entradas (pares de llave‐valor), o bien, el método `keySet` para generar un conjunto con las llaves existentes en el mapa. Veamos como sería para el segundo caso, el más sencillo:
 
 ```java
-HashMap<Integer,Integer> mapa=new HashMap<>();
-for (int i=0;i<10;i++){
+HashMap<Integer,Integer> mapa = new HashMap<>();
+for (int i=0; i<10; i++){
 	mapa.put(i, i); // Insertamos datos de prueba en el mapa.   
 }
 for (Integer llave:mapa.keySet()){
     // Recorremos el conjunto generado por keySet, contendrá las llaves.
-	Integer valor=mapa.get(llave); //Para cada llave, accedemos a su valor si es necesario.
+	Integer valor = mapa.get(llave); //Para cada llave, accedemos a su valor si es necesario.
 }
 ```
 
@@ -744,7 +756,7 @@ Lo único que tienes que tener en cuenta es que el conjunto generado por `keySet
 >
 > *Los problemas son debidos a que el método `remove` del iterador elimina el elemento de dos sitios: de la colección y del iterador en sí (que mantiene interiormente información del orden de los elementos). Si usas el método `remove` de la colección, la información solo se elimina de un lugar, de la colección.*
 
-Consulta el [Ejemplo08](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo08) y el [Ejemplo09](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo09) (que es la versión del [Ejemplo06](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo06) con iteradores).
+Consulta el [Ejemplo08](#Ejemplo08) y el [Ejemplo09](#Ejemplo09) (que es la versión del [Ejemplo06](#Ejemplo06) con iteradores).
 
 # Comparadores
 
@@ -769,13 +781,13 @@ class comparadorArticulos implements Comparator<Articulo>{
 }
 ```
 
-Una vez creada esta clase, ordenar los elementos es muy sencillo, simplemente se pasa como segundo parámetro del método `sort` una instancia del comparador creado:
+Una vez creada esta clase, ordenar los elementos es muy sencillo; simplemente se pasa como segundo parámetro del método `sort` una instancia del comparador creado:
 
 ```java
 Collections.sort(articulos, new comparadorArticulos());
 ```
 
-La segunda forma es quizás más sencilla cuando se trata de objetos cuya ordenación no existe de forma natural, pero requiere modificar la clase `Articulo`. Consiste en hacer que los objetos que se meten en la lista o array implementen la interfaz `java.util.Comparable`. Todos los objetos que implementan la interfaz `Comparable` son "ordenables" y se puede invocar el método `sort` sin indicar un comparador para ordenarlos. La interfaz `comparable` solo requiere implementar el método `compareTo`:
+La segunda forma es quizás más sencilla cuando se trata de objetos cuya ordenación no existe de forma natural, pero requiere modificar la clase `Articulo`. Consiste en hacer que los objetos que se insertan en la lista o array implementen la interfaz `java.util.Comparable`. Todos los objetos que implementan la interfaz `Comparable` son "*ordenables*" y se puede invocar el método `sort` sin indicar un comparador para ordenarlos. La interfaz `comparable` solo requiere implementar el método `compareTo`:
 
 ```java
 class Articulo implements Comparable<Articulo>{
@@ -790,41 +802,44 @@ class Articulo implements Comparable<Articulo>{
 }
 ```
 
-Del ejemplo anterior se pueden denotar dos cosas importantes: que la interfaz `Comparable` es genérica y que para que funcione sin problemas es conveniente indicar el tipo base sobre el que se permite la comparación (en este caso, el objeto `Articulo` debe compararse consigo mismo), y que el método `compareTo` solo admite un parámetro, dado que comparará el objeto con el que se pasa por parámetro.
+Del ejemplo anterior se pueden denotar dos cosas importantes:
+
+1) Que la interfaz `Comparable` es genérica y que para que funcione sin problemas es conveniente indicar el tipo base sobre el que se permite la comparación (en este caso, el objeto `Articulo` debe compararse consigo mismo), y
+2) Que el método `compareTo` solo admite un parámetro, dado que comparará el objeto con el que se pasa por parámetro.
 
 El funcionamiento del método `compareTo` es el mismo que el método `compare` de la interfaz `Comparator`: si la clase que se pasa por parámetro es igual al objeto, se tendría que retornar 0; si es menor o anterior, se debería retornar un número menor que cero; si es mayor o posterior, se debería retornar un número mayor que 0.
 
 Ordenar ahora la lista de artículos es sencillo, fíjate que fácil: `Collections.sort(articulos);`
 
-Consulta el código de [Ejemplo10](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo10) y [Ejemplo11](https://github.com/martinezpenya/PRG-CFGS-2223/blob/main/UD07/UD07_ES.md#Ejemplo11).
+Consulta el código de [Ejemplo10](#Ejemplo10) y [Ejemplo11](#Ejemplo11).
 
 # Extras
 
-¿Qué más ofrece las clases `java.util.Collections` y `java.util.Arrays` de Java? Una vez vista la ordenación, quizás lo más complicado, veamos algunas operaciones adicionales. En los ejemplos, la variable `array` es un array y la variable `lista` es una lista de cualquier tipo de elemento:
+¿Qué más ofrece las clases `java.util.Collections` y `java.util.Arrays`? En los ejemplos, la variable `array` es un array y la variable `lista` es una lista de cualquier tipo de elemento:
 
-| Operación                        | Descripción                                                  | Ejemplos                                                     |
-| -------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Desordenar una lista.**        | Desordena una lista, este método no está disponible para arrays. | `Collections.shuffle (lista);`                               |
-| **Rellenar una lista o array.**  | Rellena una lista o array copiando el mismo valor en todos los elementos del array o lista. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);` `Arrays.fill (array,elemento);` |
-| **Búsqueda binaria.**            | Permite realizar búsquedas rápidas en un una lista o array ordenados. Es necesario que la lista o array estén ordenados, sino lo están, la búsqueda no tendrá éxito. | `Collections.binarySearch(lista,elemento);` `Arrays.binarySearch(array, elemento);` |
-| **Convertir un array a lista.**  | Permite rápidamente convertir un array a una lista de elementos, extremadamente útil. No se especifica el tipo de lista retornado (no es `ArrayList` ni `LinkedList`), solo se especifica que retorna una lista que implementa la interfaz `java.util.List`. | `List lista = Arrays.asList(array);` Si el tipo de dato almacenado en el array es conocido (`Integer` por ejemplo), es conveniente especificar el tipo de objeto de la lista: `List<Integer> lista = Arrays.asList(array);` |
-| **Convertir una lista a array.** | Permite convertir una lista en array. Esto se puede realizar en todas las colecciones, y no es un método de la clase `Collections`, sino propio de la interfaz `Collection`. Es conveniente que sepas de su existencia. | Para este ejemplo, supondremos que los elementos de la lista son números, dado que hay que crear un array del tipo almacenado en la lista, y del tamaño de la lista: `Integer[] array=new Integer[lista.size()];` `lista.toArray(array);` |
-| **Dar la vuelta.**               | Da la vuelta a una lista, poniéndola en orden inverso al que tiene. | `Collections.reverse(lista);`                                |
-| **Imprimir un array o lista**    |                                                              | lista.toString() Arrays.toString(array)                      |
+| Operación                       | Descripción                                                  | Ejemplos                                                     |
+| ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Desordenar una lista**        | Desordena una lista (no está para arrays).                   | `Collections.shuffle (lista);`                               |
+| **Rellenar una lista o array**  | Rellena una lista o array copiando el mismo valor en  todos los elementos del array o lista. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);`<br />`Arrays.fill (array,elemento);` |
+| **Búsqueda binaria**            | Realiza búsquedas rápidas en una lista o array ordenados. Necesario que estén ordenados, si no lo están, la búsqueda no tendrá éxito. | `Collections.binarySearch(lista,elemento);`<br />`Arrays.binarySearch(array, elemento);` |
+| **Convertir un array a lista**  | Convierte un array a una lista de elementos. Muy útil. No se especifica el tipo de lista retornado (ni `ArrayList` ni `LinkedList`), solo se especifica que retorna una lista que implementa  la  interfaz `java.util.List`. | `List lista = Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer> lista = Arrays.asList(array);` |
+| **Convertir una lista a array** | Convierte una lista en array. Esto se puede realizar en todas las colecciones, y no es un método de la clase `Collections`, sino de la interfaz `Collection`. | Para este ejemplo, supondremos que los  elementos de la lista son números, dado que hay que crear un array del tipo  almacenado en la lista, y del tamaño de la  lista: <br />`Integer[] array = new Integer[lista.size()];`<br />`lista.toArray(array);` |
+| **Dar la vuelta**               | Da la vuelta a una lista, poniéndola en orden inverso al que tiene. | `Collections.reverse(lista);`                                |
+| **Imprimir un array o lista**   |                                                              | `lista.toString()`<br />`Arrays.toString(array)`             |
 
 Otra operación que ya se ha visto en algún ejemplo anterior es la de dividir una cadena en partes. Cuando una cadena está formada internamente por trozos de texto claramente delimitados por un separador (una coma, un punto y coma o cualquier otro), es posible dividir la cadena y obtener cada uno de los trozos de texto por separado en un array de cadenas.
 
-Para poder realizar esta operación, usaremos el método `split` de la clase `String`. El delimitador o separador es una expresión regular, único argumento del método `split`, y puede ser obviamente todo lo complejo que sea necesario:
+Para poder realizar esta operación, usaremos el método `split` de la clase `String` . El delimitador o separador es una expresión regular, único argumento del método `split`, y puede ser obviamente todo lo complejo que sea necesario:
 
 ```java
-String texto="Z,B,A,X,M,O,P,U";
-String[] partes=texto.split(",");
+String texto = "Z,B,A,X,M,O,P,U";
+String[] partes = texto.split(",");
 //partes={"Z", "B", "A", "X", "M", "O", "P", "U"}
 Arrays.sort(partes);//lo ordenamos
 //partes={"A", "B", "M", "O", "P", "U", "X", "Z"}
 ```
 
-En el ejemplo anterior la cadena texto contiene una serie de letras separadas por comas. La cadena se ha dividido con el método `split` , y se ha guardado cada carácter por separado en un `array`. Después se ha ordenado el `array`. ¡Increíble lo que se puede llegar a hacer con solo tres líneas de código!
+En el ejemplo anterior la cadena texto contiene una serie de letras separadas por comas. La cadena se ha dividido con el método `split` y se ha guardado cada carácter por separado en un `array`. Después se ha ordenado el `array`. ¡Increíble lo que se puede llegar a hacer con solo tres líneas de código!
 
 # Ejemplos UD07
 
@@ -896,37 +911,32 @@ public class Ejemplo03 {
 
     public static void main(String[] args) {
         TreeSet<Integer> conjuntoA = new TreeSet<>();
-        conjuntoA.add(4);
+        conjuntoA.add(9);
+        conjuntoA.add(19);
         conjuntoA.add(5);
-        conjuntoA.add(3);
-        conjuntoA.add(1);
-      	conjuntoA.add(2);  // Elementos del conjunto A: 4, 5, 3, 1 y 2
+        conjuntoA.add(7); // Elementos del conjunto A: 9, 19, 5 y 7
         LinkedHashSet<Integer> conjuntoB = new LinkedHashSet<>();
-        conjuntoB.add(8);
-        conjuntoB.add(7);
-        conjuntoB.add(9);
-        conjuntoB.add(4);
-        conjuntoB.add(6);
-        conjuntoB.add(5);  // Elementos del conjunto B: 8, 7, 9, 4, 6 y 5
+        conjuntoB.add(10);
+        conjuntoB.add(20);
+        conjuntoB.add(5);
+        conjuntoB.add(7); // Elementos del conjunto B: 10, 20, 5 y 7
 
         conjuntoA.addAll(conjuntoB);
-        imprimirColeccion(conjuntoA); // 1, 2, 3, 4, 5, 6, 7, 8 y 9
+        imprimirColeccion(conjuntoA); //5 7 9 10 19 20
 
         conjuntoA.removeAll(conjuntoB);
-        imprimirColeccion(conjuntoA); // 1, 2 y 3
+        imprimirColeccion(conjuntoA); //9 19
 
         //recolocamos todo como al principio
-        conjuntoA.add(4);
         conjuntoA.add(5);
-        conjuntoB.add(4);
-        conjuntoB.add(5);       
-        conjuntoB.add(6);
+        conjuntoA.add(7);
+        conjuntoB.add(10);
+        conjuntoB.add(20);
+        conjuntoB.add(5);
         conjuntoB.add(7);
-        conjuntoB.add(8);
-        conjuntoB.add(9);
 
         conjuntoA.retainAll(conjuntoB);
-        imprimirColeccion(conjuntoA); // 4 y 5
+        imprimirColeccion(conjuntoA); //5 7
         
     }
 }
@@ -934,11 +944,11 @@ public class Ejemplo03 {
 
 ## Ejemplo04
 
-Realiza un pequeño programa que pregunte al usuario 5 números enteros diferentes (almacenándolos en un `HashSet`), y que después calcule la suma de los mismos (usando un bucle `for‐each`).
+Realiza un pequeño programa que pregunte al usuario 5 números diferentes (almacenándolos en un `HashSet`), y que después calcule la suma de los mismos (usando un bucle `for‐each`).
 
 **Respuesta:**
 
-Una solución posible podría ser la siguiente: Fíjate en la solución y verás que el uso de conjuntos ha simplificado enormemente el ejercicio, permitiendo al programador/programadora centrarse en otros aspectos:
+Una solución posible podría ser la siguiente. Fíjate en la solución y verás que el uso de conjuntos ha simplificado enormemente el ejercicio, permitiendo al programador o la programadora centrarse en otros aspectos:
 
 ```java
 package UD07.P2_HashSet;
@@ -1022,8 +1032,9 @@ Tenemos la clase `Producto` con:
 - Un constructor sin parámetros.
 - Métodos `get` y `set` asociados a los atributos.
 
+`Producto.java`
+
 ```java
-Producto.java
 package UD07.P2_3_Listas;
 
 public class Producto {
@@ -1069,8 +1080,9 @@ public class Producto {
 
 En el programa principal creamos una lista de productos y realizamos operaciones sobre ella:
 
+`Ejemplo06.java`
+
 ```java
-Ejemplo06.java
 package UD07.P2_3_Listas;
 
 import java.util.ArrayList;
@@ -1105,7 +1117,7 @@ public class Ejemplo06 {
         System.out.println(" - Lista con " + lista.size() + " elementos");
        
         for (Producto p : lista) {
-            System.out.println(p.getNombre() + ": " + p.getCantidad());
+            System.out.println(p.getNombre() + " : " + p.getCantidad());
         }
 
         p5.setCantidad(99); //cambiamos la cantidad al producto, cambiará la lista?
@@ -1118,7 +1130,7 @@ public class Ejemplo06 {
         System.out.println(" - Lista con " + lista.size() + " elementos");
 
         for (Producto p : lista) {
-            System.out.println(p.getNombre() + ": " + p.getCantidad());
+            System.out.println(p.getNombre() + " : " + p.getCantidad());
         }
         
         //Eliminar todos los valores del ArrayList
@@ -1126,6 +1138,7 @@ public class Ejemplo06 {
         System.out.println(" - Lista final con " + lista.size() + " elementos");
     }
 }
+
 ```
 
 ## Ejemplo07
@@ -1375,7 +1388,7 @@ public class Principal {
 
 Observa que la salida muestra los elementos correctamente ordenados, aunque se insertaron de manera "aleatoria":
 
-```java
+```sh
 Objeto{a=4, b=5}
 Objeto{a=2, b=3}
 Objeto{a=1, b=2}
@@ -1446,7 +1459,7 @@ public class Principal {
 
 Fíjate que la salida sigue mostrando los elementos correctamente ordenados, aunque se insertaron de manera "aleatoria":
 
-```java
+```sh
 Objeto{a=4, b=5}
 Objeto{a=2, b=3}
 Objeto{a=1, b=2}
@@ -1456,24 +1469,37 @@ Objeto{a=0, b=1}
 # Píldoras informáticas relacionadas
 
 - [Curso Java. Programación genérica. ArrayList I. Vídeo 161](https://youtu.be/uUWEfmaFOkE)
-- [Curso Java. Programación genérica ArrayList II. Vídeo 162](https://youtu.be/wFzjvb0w-8Q)
-- [Curso Java Programación genérica. ArrayList III Iteradores. Vídeo 163](https://youtu.be/5NOV_Yuk8Ps)
-- [Curso Java. Programación genérica. Qué es Por qué utilizarla. Vídeo 164](https://youtu.be/MFu8a_LpnIc)
+- [Curso Java. Programación genérica  ArrayList II. Vídeo 162](https://youtu.be/wFzjvb0w-8Q)
+
+- [Curso Java  Programación genérica. ArrayList III  Iteradores. Vídeo 163](https://youtu.be/5NOV_Yuk8Ps)
+
+- [Curso Java. Programación genérica. Qué es  Por qué utilizarla. Vídeo 164](https://youtu.be/MFu8a_LpnIc)
+
 - [Curso Java. Colecciones I. Vídeo 179](https://youtu.be/bTu-fz1JmWQ)
+
 - [Curso Java. Colecciones II. Vídeo 180](https://youtu.be/rqHBXAZ9F9k)
+
 - [Curso Java. Colecciones III. Métodos equals y hashCode. Vídeo 181](https://youtu.be/b1htaYhRawk)
-- [Curso Java. Colecciones IV. Métodos equals y hashCode II. Vídeo 182](https://youtu.be/nJBNMN4Dwss)
-- [Curso Java. Colecciones V Iteradores. Vídeo 183](https://youtu.be/BuLEYAd6TBg)
-- [Curso Java. Colecciones VI LinkedList I. Vídeo 184](https://youtu.be/kP5f5x2n8dw)
+
+- [Curso Java. Colecciones IV. Métodos  equals y hashCode II. Vídeo 182](https://youtu.be/nJBNMN4Dwss)
+
+- [Curso Java. Colecciones V  Iteradores. Vídeo 183](https://youtu.be/BuLEYAd6TBg)
+
+- [Curso Java. Colecciones VI  LinkedList I. Vídeo 184](https://youtu.be/kP5f5x2n8dw)
+
 - [Curso Java. Colecciones VII. LinkedList II. Vídeo 185](https://youtu.be/q5a_QAWB7jU)
-- [Curso Java. Colecciones VIII TreeSet I. Vídeo 186](https://youtu.be/UY_iH4ia0a4)
+
+- [Curso Java. Colecciones VIII  TreeSet I. Vídeo 186](https://youtu.be/UY_iH4ia0a4)
+
 - [Curso Java. Colecciones IX. TreeSet II. Vídeo 187](https://youtu.be/R3I9dkj2G7I)
-- [Curso Java. Colecciones X TreeSet III. Vídeo 188](https://youtu.be/vJQG6tbJWLQ)
-- [Curso Java. Colecciones XI Mapas. Vídeo 189](https://youtu.be/ltwlQKMn1hk)
+
+- [Curso Java. Colecciones X  TreeSet III. Vídeo 188](https://youtu.be/vJQG6tbJWLQ)
+
+- [Curso Java. Colecciones XI  Mapas. Vídeo 189](https://youtu.be/ltwlQKMn1hk)
 
 # Fuentes de información
 
-- [Wikipedia](https://es.wikipedia.org/)
+- [Wikipedia](https://es.wikipedia.org)
 - [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
 - Apuntes IES Henri Matisse (Javi García Jimenez?)
 - Apuntes AulaCampus
