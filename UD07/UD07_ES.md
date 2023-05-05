@@ -59,7 +59,7 @@ Todavía no conoces mucho de las estructuras, y probablemente todo te suena raro
 
 ## Clases y métodos genéricos
 
-¿Cree es qué el código es más legible al utilizar genéricos o que se complica? La verdad es que al principio cuesta, pero después, el código se entiende mejor que si se empieza a insertar conversiones de tipo.
+¿Crees que el código es más legible al utilizar genéricos o que se complica? La verdad es que al principio cuesta, pero después, el código se entiende mejor que si se empieza a insertar conversiones de tipo.
 
 Las clases genéricas son equivalentes a los métodos genéricos pero a nivel de clase, permiten definir un parámetro de tipo genérico que se podrá usar a lo largo de toda la clase, facilitando así crear clases genéricas que son capaces de trabajar con diferentes tipos de datos base. Para crear una clase genérica se especifican los parámetros de tipo al lado del nombre de la clase:
 
@@ -742,7 +742,7 @@ Para recorrer los mapas con iteradores, hay que hacer un pequeño truco. Usamos 
 ```java
 HashMap<Integer,Integer> mapa = new HashMap<>();
 for (int i=0; i<10; i++){
-	mapa.put(i, i); // Insertamos datos de prueba en el mapa.   
+	mapa.put(i, i); // Insertamos datos de prueba en el mapa.
 }
 for (Integer llave:mapa.keySet()){
     // Recorremos el conjunto generado por keySet, contendrá las llaves.
@@ -820,7 +820,7 @@ Consulta el código de [Ejemplo10](#Ejemplo10) y [Ejemplo11](#Ejemplo11).
 | Operación                       | Descripción                                                  | Ejemplos                                                     |
 | ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Desordenar una lista**        | Desordena una lista (no está para arrays).                   | `Collections.shuffle (lista);`                               |
-| **Rellenar una lista o array**  | Rellena una lista o array copiando el mismo valor en  todos los elementos del array o lista. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);`<br />`Arrays.fill (array,elemento);` |
+| **Rellenar una lista o array**  | Rellena una lista o array copiando el mismo valor en todos los elementos del array o lista. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);`<br />`Arrays.fill (array,elemento);` |
 | **Búsqueda binaria**            | Realiza búsquedas rápidas en una lista o array ordenados. Necesario que estén ordenados, si no lo están, la búsqueda no tendrá éxito. | `Collections.binarySearch(lista,elemento);`<br />`Arrays.binarySearch(array, elemento);` |
 | **Convertir un array a lista**  | Convierte un array a una lista de elementos. Muy útil. No se especifica el tipo de lista retornado (ni `ArrayList` ni `LinkedList`), solo se especifica que retorna una lista que implementa  la  interfaz `java.util.List`. | `List lista = Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer> lista = Arrays.asList(array);` |
 | **Convertir una lista a array** | Convierte una lista en array. Esto se puede realizar en todas las colecciones, y no es un método de la clase `Collections`, sino de la interfaz `Collection`. | Para este ejemplo, supondremos que los  elementos de la lista son números, dado que hay que crear un array del tipo  almacenado en la lista, y del tamaño de la  lista: <br />`Integer[] array = new Integer[lista.size()];`<br />`lista.toArray(array);` |
