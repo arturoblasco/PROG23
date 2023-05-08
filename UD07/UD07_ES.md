@@ -122,14 +122,6 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
    > Usar un método o una clase con dos o más parámetros genéricos es sencillo, a la hora de invocar al método o crear la clase, se indican los tipos base separados por coma.
 
-
-
-
-
-
-
-
-
 - Dos o más parámetros de tipo (III):
 
    ```java
@@ -179,8 +171,6 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
    > No siempre es necesario indicar los tipos a la hora de instanciar un método genérico. A partir de Java 7, es capaz de determinar los tipos a partir de los parámetros.
 
    Las dos expresiones de arriba serian válidas y funcionarían. Si no es capaz de inferirlos, nos dará un error a la hora de compilar.
-
-
 
 - Inferencia de tipos (II):
 
@@ -330,12 +320,6 @@ for (Integer i: conjunto) {
 
 Como ves la estructura `for-each` es muy sencilla: la palabra `for` seguida de "(`tipo variable:colección`)" y el cuerpo del bucle; `tipo` es el tipo del objeto sobre el que se ha creado la colección, `variable` es la variable donde se almacenará cada elemento de la colección y `coleccion` la colección en sí. Los bucles `for-each` se pueden usar para todas las colecciones.
 
-
-
-
-
-
-
 ### `LinkedHashSet` y `TreeSet`
 
 ¿En qué se diferencian las estructuras `LinkedHashSet` y `TreeSet` de la estructura `HashSet`? Ya se comentó antes, y es básicamente en su funcionamiento interno.
@@ -379,6 +363,22 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
    1 3 4 99
    ```
 
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
 - Conjunto `LinkedHashSet` ([Ejemplo02](#Ejemplo02)):
 
    ```java
@@ -420,13 +420,19 @@ B.add(8); B.add(7); B.add(9); B.add(4); B.add(6); B.add(5);
 
 En el ejemplo anterior, el literal de número se convierte automáticamente a la clase envoltorio `Integer` sin tener que hacer nada, lo cual es una ventaja. Veamos las formas de combinar ambas colecciones:
 
+
+
+
+
+
+
 - **Unión**. Añadir todos los elementos del conjunto B en el conjunto A.
 
    ```java
     A.addAll(B)
    ```
 
-   <img src="./assets/union.png" style="zoom:30%;" />
+   <img src="./assets/union.png" style="zoom:28%;" />
 
    Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están:
 
@@ -440,7 +446,7 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
     A.removeAll(B)
    ```
 
-   <img src="./assets/diferencia.png" alt="diferencia" style="zoom:30%;" />
+   <img src="./assets/diferencia.png" alt="diferencia" style="zoom:28%;" />
 
    Todos los elementos del conjunto A, que no estén en el conjunto B:
 
@@ -448,15 +454,13 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
    1, 2, 3.
    ```
 
-
-
 - **Intersección**. Retiene los elementos comunes a ambos conjuntos.
 
    ```java
     A.retainAll(B)
    ```
 
-   <img src="./assets/interseccion.png" alt="interserccion" style="zoom:30%;" />
+   <img src="./assets/interseccion.png" alt="interserccion" style="zoom:28%;" />
 
    Todos los elementos del conjunto A, que también están en el conjunto B:
 
@@ -468,9 +472,11 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
 Consulta el [Ejemplo03](#Ejemplo03).
 
+
+
 ### Ordenación
 
-Por defecto, los `TreeSet` ordenan sus elementos de forma ascendente, pero, ¿se podría cambiar el orden de ordenación? Los `TreeSet` tienen un conjunto de operaciones adicionales, además de las que incluye por el hecho de ser un conjunto, que permite entre otras cosas, cambiar la forma de ordenar los elementos. Esto es especialmente útil cuando el tipo de objeto que se almacena no es un simple número, sino algo más complejo (un artículo por ejemplo). `TreeSet` es capaz de ordenar tipos básicos (números, cadenas y fechas) pero otro tipo de objetos no puede ordenarlos con tanta facilidad.
+Por defecto, los `TreeSet` ordenan sus elementos de forma ascendente, pero, ¿se podría cambiar el orden de ordenación? Los `TreeSet` tienen un conjunto de operaciones adicionales, además de las que incluye de ser un conjunto, que permite entre otras cosas, cambiar la forma de ordenar los elementos. Esto es especialmente útil cuando el tipo de objeto que se almacena no es un simple número, sino algo más complejo (un artículo por ejemplo). `TreeSet` es capaz de ordenar tipos básicos (números, cadenas y fechas) pero otro tipo de objetos no puede ordenarlos con tanta facilidad.
 
 Para indicar a un `TreeSet` cómo tiene que ordenar los elementos, debemos decirle cuándo un elemento va antes o después que otro, y cuándo son iguales. Para ello, utilizamos la interfaz genérica `java.util.Comparator`, usada en general en algoritmos de ordenación, como veremos más adelante.
 
