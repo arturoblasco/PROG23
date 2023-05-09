@@ -508,7 +508,7 @@ TreeSet<Objeto> ts = new TreeSet<Objeto>(new ComparadorDeObjetos());
 
 Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo en el punto [Comparadores](#Comparadores).
 
-Para entender mejor los Sets revisa el [Ejemplo04](#Ejemplo04).
+Para entender mejor los Sets revisa el [Ejemplo04](#Ejemplo04) y  [Ejemplo05](#Ejemplo05).
 
 ## Listas
 
@@ -586,7 +586,7 @@ al.subList(0, 2).clear();
 
 Lo mismo ocurre al añadir un elemento, se añade en la sublista y en la lista original.
 
-Puedes consultar el código en el [Ejemplo05](#Ejemplo05).
+Puedes consultar el código en el [Ejemplo06](#Ejemplo06).
 
 ### `LinkedList` y `ArrayList`
 
@@ -652,7 +652,7 @@ El resultado de ejecutar el código anterior es que se muestran los números 44 
 
 > "*Controlar la complejidad es la esencia de la programación*." **[Brian Kernighan](https://es.wikipedia.org/wiki/Brian_Kernighan)**
 
-Consulta el [Ejemplo06](#Ejemplo06).
+Consulta el [Ejemplo07](#Ejemplo07).
 
 ## Conjuntos de pares [clave/valor]
 
@@ -679,7 +679,7 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 | `boolean isEmpty();`                   | Retornará true si el mapa está vacío, false en cualquier otro caso. |
 | `void clear();`                        | Vacía el mapa.                                               |
 
-Revisa el [Ejemplo07](#Ejemplo07).
+Revisa el [Ejemplo08](#Ejemplo08).
 
 # Iteradores
 
@@ -774,7 +774,7 @@ Lo único que tienes que tener en cuenta es que el conjunto generado por `keySet
 >
 > *Los problemas son debidos a que el método `remove` del iterador elimina el elemento de dos sitios: de la colección y del iterador en sí (que mantiene interiormente información del orden de los elementos). Si usas el método `remove` de la colección, la información solo se elimina de un lugar, de la colección.*
 
-Consulta el [Ejemplo08](#Ejemplo08) y el [Ejemplo09](#Ejemplo09) (que es la versión del [Ejemplo06](#Ejemplo06) con iteradores).
+Consulta el [Ejemplo09](#Ejemplo09) y el [Ejemplo10](#Ejemplo109) (que es la versión del [Ejemplo07](#Ejemplo07) con iteradores).
 
 # Comparadores
 
@@ -829,7 +829,7 @@ El funcionamiento del método `compareTo` es el mismo que el método `compare` d
 
 Ordenar ahora la lista de artículos es sencillo, fíjate que fácil: `Collections.sort(articulos);`
 
-Consulta el código de [Ejemplo10](#Ejemplo10) y [Ejemplo11](#Ejemplo11).
+Consulta el código de [Ejemplo11](#Ejemplo11) y [Ejemplo12](#Ejemplo12).
 
 # Extras
 
@@ -870,16 +870,16 @@ import java.util.TreeSet;
 
 public class Ejemplo01 {
 
-    public static void main(String[] args) {
-        TreeSet<Integer> t = new TreeSet<>();
-        t.add(4);
-        t.add(3);
-        t.add(1);
-        t.add(99);
-        for (Integer i : t) {
-            System.out.print(i + " ");
-        }
+  public static void main(String[] args) {
+    TreeSet<Integer> t = new TreeSet<>();
+    t.add(4);
+    t.add(3);
+    t.add(1);
+    t.add(99);
+    for (Integer i : t) {
+       System.out.print(i + " ");
     }
+  }
 }
 ```
 
@@ -893,14 +893,14 @@ import java.util.LinkedHashSet;
 public class Ejemplo02 {
 
   public static void main(String[] args) {
-      LinkedHashSet<Integer> t = new LinkedHashSet<>();
-      t.add(4);
-      t.add(3);
-      t.add(1);
-      t.add(99);
-      for (Integer i : t) {
-         System.out.print(i + " ");
-      }
+    LinkedHashSet<Integer> t = new LinkedHashSet<>();
+    t.add(4);
+    t.add(3);
+    t.add(1);
+    t.add(99);
+    for (Integer i : t) {
+       System.out.print(i + " ");
+    }
   }
 }
 ```
@@ -918,39 +918,39 @@ public class Ejemplo03 {
 
   private static void imprimirColeccion(Collection<?> c) {
     for (Object i : c) {
-      System.out.print(i.toString() + " ");
+       System.out.print(i.toString() + " ");
     }
     System.out.println("");
   }
 
   public static void main(String[] args) {
-      TreeSet<Integer> conjuntoA = new TreeSet<>();
-      conjuntoA.add(9);
-      conjuntoA.add(19);
-      conjuntoA.add(5);
-      conjuntoA.add(7); // Elementos del conjunto A: 9, 19, 5 y 7
-      LinkedHashSet<Integer> conjuntoB = new LinkedHashSet<>();
-      conjuntoB.add(10);
-      conjuntoB.add(20);
-      conjuntoB.add(5);
-      conjuntoB.add(7); // Elementos del conjunto B: 10, 20, 5 y 7
+    TreeSet<Integer> conjuntoA = new TreeSet<>();
+    conjuntoA.add(9);
+    conjuntoA.add(19);
+    conjuntoA.add(5);
+    conjuntoA.add(7); // Elementos del conjunto A: 9, 19, 5 y 7
+    LinkedHashSet<Integer> conjuntoB = new LinkedHashSet<>();
+    conjuntoB.add(10);
+    conjuntoB.add(20);
+    conjuntoB.add(5);
+    conjuntoB.add(7); // Elementos del conjunto B: 10, 20, 5 y 7
 
-      conjuntoA.addAll(conjuntoB);
-      imprimirColeccion(conjuntoA); //5 7 9 10 19 20
+    conjuntoA.addAll(conjuntoB);
+    imprimirColeccion(conjuntoA); //5 7 9 10 19 20
 
-      conjuntoA.removeAll(conjuntoB);
-      imprimirColeccion(conjuntoA); //9 19
+    conjuntoA.removeAll(conjuntoB);
+    imprimirColeccion(conjuntoA); //9 19
 
-      //recolocamos todo como al principio
-      conjuntoA.add(5);
-      conjuntoA.add(7);
-      conjuntoB.add(10);
-      conjuntoB.add(20);
-      conjuntoB.add(5);
-      conjuntoB.add(7);
+    //recolocamos todo como al principio
+    conjuntoA.add(5);
+    conjuntoA.add(7);
+    conjuntoB.add(10);
+    conjuntoB.add(20);
+    conjuntoB.add(5);
+    conjuntoB.add(7);
 
-      conjuntoA.retainAll(conjuntoB);
-      imprimirColeccion(conjuntoA); //5 7       
+    conjuntoA.retainAll(conjuntoB);
+    imprimirColeccion(conjuntoA); //5 7       
   }
 }
 ```
@@ -972,31 +972,116 @@ import java.util.Scanner;
 public class EjemploHashSet {
 
   public static void main(String[] args) {
-     HashSet<Integer> conjunto = new HashSet<Integer>();
-     Scanner teclado = new Scanner(System.in);
-     int numero;
-     do {
-       try {
-          System.out.print("Introduce un número " + (conjunto.size() + 1) + ": ");
-          numero = teclado.nextInt();
-          if (!conjunto.add(numero)) {
-             System.out.println("Número ya en la lista. Debes introducir otro.");
-          }
-       } catch (NumberFormatException e) {
-          System.out.println("Número erróneo.");
-       }
-     } while (conjunto.size() < 5);
-     // Calcular la suma
-     Integer suma = 0;
-     for (Integer i : conjunto) {
-        suma = suma + i;
+    HashSet<Integer> conjunto = new HashSet<Integer>();
+    Scanner teclado = new Scanner(System.in);
+    int numero;
+    do {
+      try {
+        System.out.print("Introduce un número " + (conjunto.size() + 1) + ": ");
+        numero = teclado.nextInt();
+        if (!conjunto.add(numero)) {
+          System.out.println("Número ya en la lista. Introducir otro.");
+        }
+      } catch (NumberFormatException e) {
+        System.out.println("Número erróneo.");
      }
-     System.out.println("La suma es: " + suma);
+   } while (conjunto.size() < 5);
+   // Calcular la suma
+   Integer suma = 0;
+   for (Integer i : conjunto) {
+      suma = suma + i;
+   }
+   System.out.println("La suma es: " + suma);
   }
 }
 ```
 
 ## Ejemplo05
+
+```java
+package UD07.P2_Comparator;
+
+import java.io.*;
+import java.util.*;
+
+class Estudiante {
+  private int id;
+  private String nombre;
+   
+  public Estudiante(int valor, String nombre) {
+    this.id = valor;
+    this.nombre = nombre;
+  }
+    
+  public String getNombre() {
+    return this.nombre;
+  }
+    
+  public int getId() {
+    return this.id;
+  }
+}
+ 
+// Comparador mediante atributo entero
+static class MarcaComparator implements Comparator<Estudiante> {
+  public int compare(Estudiante e1, Estudiante e2) {
+    return e1.getId()-e2.getId();
+  }
+}
+// Comparador mediante atributo String 
+static class NombreComparator implements Comparator<Estudiante> {
+  public int compare(Estudiante e1, Estudiante e2) {
+    return e1.getNombre().compareTo(e2.getNombre());
+  }
+}
+ 
+class EjemploComparador {
+ 
+  public static void main (String[] args){
+    // Crear TreeSet con Comparador con objeto Estudiante
+    TreeSet<Estudiante> setId = new TreeSet<Estudiante>(new MarcaComparator());
+         
+    setId.add(new students(450,"Laura"));
+    setId.add(new students(341,"Esther"));
+    setId.add(new students(134,"Daniel"));
+    setId.add(new students(590,"Jorge"));
+         
+    System.out.println("Ordenación por marca:");
+    for(Estudiante elemento : setId) {
+       System.out.print(elemento.getNombre()+"\t"+elemento.getId());
+       System.out.println();
+    }  
+         
+    TreeSet<Estudiante> setNombre= new TreeSet<Estudiante>(new NombreComparator());
+         
+    setNombre.add(new Estudiante(450,"Laura"));
+    setNombre.add(new Estudiante(341,"Esther"));
+    setNombre.add(new Estudiante(134,"Daniel"));
+    setNombre.add(new Estudiante(590,"Jorge"));
+        
+    System.out.println("Ordenación por nombre:");
+    for(students elemento : setNombre) {
+       System.out.print(elemento.getNombre() +"\t"+ elemento.getId());
+       System.out.println();
+    }
+  }
+}
+```
+
+```sh
+Ordenación por marca:
+Daniel	134
+Esther	341
+Laura	450
+Jorge	590
+Ordenación por nombre:
+Daniel	134
+Esther	341
+Jorge	590
+Laura	450
+```
+
+## Ejemplo06
 
 ```java
 package UD07.P2_3_Listas;
@@ -1008,24 +1093,24 @@ import java.util.LinkedList;
 public class Ejemplo05 {
     
   private static void imprimirColeccion(Collection<?> c) {
-     for (Object i : c) {
-        System.out.print(i.toString() + " ");
-     }
-     System.out.println("");
+    for (Object i : c) {
+       System.out.print(i.toString() + " ");
+    }
+    System.out.println("");
   }
   public static void main(String[] args) {
-    LinkedList<Integer> t = new LinkedList<>(); // Declaración y creación del LinkedList de enteros.
-    t.add(1); // Añade un elemento al final de la lista.
-    t.add(3); // Añade otro elemento al final de la lista.
-    t.add(1, 2); // Añade en la posición 1 el elemento 2.
-    t.add(t.get(1) + t.get(2)); // Suma los valores contenidos en la posición 1 y 2, y lo agrega al final.
-    t.remove(0); // Elimina el primer elementos de la lista.
+    LinkedList<Integer> t = new LinkedList<>(); //Declaración+creación LinkedList
+    t.add(1); //Añade un elemento al final de la lista
+    t.add(3); //Añade otro elemento al final de la lista
+    t.add(1, 2); //Añade en la posición 1 el elemento 2
+    t.add(t.get(1) + t.get(2)); //Suma contendio de posición 1 y 2, y agrega al final
+    t.remove(0); //Elimina el primer elementos de la lista
     imprimirColeccion(t); //2 3 5 
 
-    ArrayList<Integer> al = new ArrayList<>(); // Declaración y creación del ArrayList de enteros.
+    ArrayList<Integer> al = new ArrayList<>(); //Declaración+creación ArrayList
     al.add(10);
-    al.add(11); // Añadimos dos elementos a la lista.
-    al.set(al.indexOf(11), 12); // Sustituimos el 11 por el 12, primero lo buscamos y luego lo reemplazamos.
+    al.add(11); //Añadimos dos elementos a la lista.
+    al.set(al.indexOf(11), 12); //Sustituimos el 11 por el 12, primero lo buscamos y luego lo reemplazamos.
 
     al.addAll(0, t.subList(1, t.size()));
     imprimirColeccion(al); //3 5 10 12 
@@ -1036,7 +1121,7 @@ public class Ejemplo05 {
 }
 ```
 
-## Ejemplo06
+## Ejemplo07
 
 Tenemos la clase `Producto` con:
 
@@ -1154,7 +1239,7 @@ public class Ejemplo06 {
 
 ```
 
-## Ejemplo07
+## Ejemplo08
 
 ```java
 package UD07.P2_4_Maps;
@@ -1195,7 +1280,7 @@ public class Ejemplo07 {
 }
 ```
 
-## Ejemplo08
+## Ejemplo09
 
 Ejemplo que crea, rellena y recorre un `ArrayList` de dos formas diferentes. Cabe destacar que, por defecto, el método `System.out.println()` invoca al método `toString()` de los elementos que se le pasen como argumento, por lo que realmente no es necesario utilizar `toString()` dentro de `println()`.
 
@@ -1252,7 +1337,7 @@ public class Ejemplo08 {
 }
 ```
 
-## Ejemplo09
+## Ejemplo10
 
 ```java
 package UD07.P3.Iterators;
@@ -1320,7 +1405,7 @@ public class Ejemplo09 {
 }
 ```
 
-## Ejemplo10
+## Ejemplo11
 
 Ejercicio resuelto `Comparator1`. Imagínate que Objeto es una clase como la siguiente:
 
@@ -1408,7 +1493,7 @@ Objeto{a=1, b=2}
 Objeto{a=0, b=1}
 ```
 
-## Ejemplo11
+## Ejemplo12
 
 Ejercicio resuelto `Comparator2`. Ahora convertiremos la clase `Objeto` para que directamente implemente la interfaz `Comparable`:
 
