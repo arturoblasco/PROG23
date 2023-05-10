@@ -762,9 +762,10 @@ HashMap<Integer,Integer> mapa = new HashMap<>();
 for (int i=0; i<10; i++){
 	mapa.put(i, i); // Insertamos datos de prueba en el mapa.
 }
-for (Integer llave:mapa.keySet()){
+for (Integer elemento : mapa.keySet()){
     // Recorremos el conjunto generado por keySet, contendrá las llaves.
-	Integer valor = mapa.get(llave); //Para cada llave, accedemos a su valor si es necesario.
+	Integer valor = mapa.get(elemento); //Para cada llave, accedemos a su valor si es necesario.
+    System.out.println(valor);
 }
 ```
 
@@ -783,12 +784,12 @@ En Java hay dos mecanismos para cambiar la forma en la que los elementos se orde
 ```java
 class Articulo {
 	public String codArticulo; // Código de artículo
-	public String descripcion; // Descripción del artículo.
-	public int cantidad; // Cantidad a proveer del artículo.
+	public String descripcion; // Descripción del artículo
+	public int cantidad; // Cantidad a proveer del artículo
 }
 ```
 
-La primera forma de ordenar consiste en crear una clase que implemente la interfaz `java.util.Comparator`, y por ende, el método `compare` definido en dicha interfaz. Esto se explicó en el apartado de conjuntos, al explicar el `TreeSet`, así que no vamos a profundizar en ello. No obstante, el comparador para ese caso podría ser así:
+A) La primera forma de ordenar consiste en crear una clase que implemente la interfaz `java.util.Comparator`, y por ende, el método `compare` definido en dicha interfaz. Esto se explicó en el apartado de conjuntos, al explicar el `TreeSet`, así que no vamos a profundizar en ello. No obstante, el comparador para ese caso podría ser así:
 
 ```java
 class comparadorArticulos implements Comparator<Articulo>{
@@ -805,7 +806,7 @@ Una vez creada esta clase, ordenar los elementos es muy sencillo; simplemente se
 Collections.sort(articulos, new comparadorArticulos());
 ```
 
-La segunda forma es quizás más sencilla cuando se trata de objetos cuya ordenación no existe de forma natural, pero requiere modificar la clase `Articulo`. Consiste en hacer que los objetos que se insertan en la lista o array implementen la interfaz `java.util.Comparable`. Todos los objetos que implementan la interfaz `Comparable` son "*ordenables*" y se puede invocar el método `sort` sin indicar un comparador para ordenarlos. La interfaz `comparable` solo requiere implementar el método `compareTo`:
+B) La segunda forma es quizás más sencilla cuando se trata de objetos cuya ordenación no existe de forma natural, pero requiere modificar la clase `Articulo`. Consiste en hacer que los objetos que se insertan en la lista o array implementen la interfaz `java.util.Comparable`. Todos los objetos que implementan la interfaz `Comparable` son "*ordenables*" y se puede invocar el método `sort` sin indicar un comparador para ordenarlos. La interfaz `comparable` solo requiere implementar el método `compareTo`:
 
 ```java
 class Articulo implements Comparable<Articulo>{
@@ -840,7 +841,7 @@ Consulta el código de [Ejemplo11](#Ejemplo11) y [Ejemplo12](#Ejemplo12).
 | **Desordenar una lista**        | Desordena una lista (no está para arrays).                   | `Collections.shuffle (lista);`                               |
 | **Rellenar una lista o array**  | Rellena una lista o array copiando el mismo valor en todos los elementos. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);`<br />`Arrays.fill (array,elemento);` |
 | **Búsqueda binaria**            | Realiza búsquedas rápidas en una lista o array ordenados. Necesario que estén ordenados, si no lo están, la búsqueda no tendrá éxito. | `Collections.binarySearch(lista,elemento);`<br />`Arrays.binarySearch(array, elemento);` |
-| **Convertir un array a lista**  | Convierte un array a una lista de elementos. No se especifica el tipo de lista retornado (ni `ArrayList` ni `LinkedList`), solo que retorna una lista que implementa  la  interfaz `java.util.List`. | `List lista = Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer> lista = Arrays.asList(array);` |
+| **Convertir un array a lista**  | Convierte un array a una lista de elementos. No se especifica el tipo de lista retornado (ni `ArrayList` ni `LinkedList`), solo que retorna una lista que implementa la interfaz `java.util.List`. | `List lista = Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer> lista = Arrays.asList(array);` |
 | **Convertir una lista a array** | Convierte una lista en array. Esto se puede realizar en todas las colecciones, y no es un método de la clase `Collections`, sino de la interfaz `Collection`. | Para este ejemplo, supondremos que los  elementos de la lista son números, dado que hay que crear un array del tipo  almacenado en la lista, y del tamaño de la  lista: <br />`Integer[] array = new Integer[lista.size()];`<br />`lista.toArray(array);` |
 | **Dar la vuelta**               | Da la vuelta a una lista, poniéndola en orden inverso al que tiene. | `Collections.reverse(lista);`                                |
 | **Imprimir un array o lista**   |                                                              | `lista.toString()`<br />`Arrays.toString(array)`             |
@@ -1023,7 +1024,7 @@ class Estudiante {
 }
  
 // Comparador mediante atributo entero
-static class MarcaComparator implements Comparator<Estudiante> {
+static class IdComparator implements Comparator<Estudiante> {
   public int compare(Estudiante e1, Estudiante e2) {
     return e1.getId()-e2.getId();
   }
@@ -1039,7 +1040,7 @@ class EjemploComparador {
  
   public static void main (String[] args){
     // Crear TreeSet con Comparador con objeto Estudiante
-    TreeSet<Estudiante> setId = new TreeSet<Estudiante>(new MarcaComparator());
+    TreeSet<Estudiante> setId = new TreeSet<Estudiante>(new IdComparator());
          
     setId.add(new students(450,"Laura"));
     setId.add(new students(341,"Esther"));
@@ -1090,7 +1091,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public class Ejemplo05 {
+public class Ejemplo06 {
     
   private static void imprimirColeccion(Collection<?> c) {
     for (Object i : c) {
@@ -1185,7 +1186,7 @@ package UD07.P2_3_Listas;
 
 import java.util.ArrayList;
 
-public class Ejemplo06 {
+public class Ejemplo07 {
 
   public static void main(String[] args) {
 
@@ -1246,7 +1247,7 @@ package UD07.P2_4_Maps;
 
 import java.util.HashMap;
 
-public class Ejemplo07 {
+public class Ejemplo08 {
 
   public static void main(String[] args) {
      HashMap<String, Integer> hashMap = new HashMap<>();
@@ -1273,8 +1274,8 @@ public class Ejemplo07 {
      hashMap.put("O", 0);
      hashMap.put("U", 0);
      //Recorremos el mapa y lo imprimimos
-     for (HashMap.Entry<String, Integer> entry : hashMap.entrySet()) {
-       System.out.printf("Clave: %s. Valor: %d\n", entry.getKey(), entry.getValue());
+     for (HashMap.Entry<String, Integer> elemento : hashMap.entrySet()) {
+       System.out.printf("Clave: %s. Valor: %d\n", elemento.getKey(), elemento.getValue());
      }
   }
 }
@@ -1290,7 +1291,7 @@ package UD07.P3.Iterators;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Ejemplo08 {
+public class Ejemplo09 {
 
   public static void main(String[] args) {
     //creamos la lista
@@ -1330,8 +1331,8 @@ public class Ejemplo08 {
 
     System.out.println();
 
-    for (Object s : l) {
-       System.out.print(s);
+    for (Object elemento : l) {
+       System.out.print(elemento);
     }//imprime; unodosdos2trescuatro
   }
 }
@@ -1346,7 +1347,7 @@ import UD07.P2_3_Listas.Producto;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Ejemplo09 {
+public class Ejemplo10 {
 
   public static void main(String[] args) {
 
@@ -1465,7 +1466,7 @@ package UD07.P4.Comparator1;
 
 import java.util.TreeSet;
 
-public class Principal {
+public class Ejemplo11 {
 
   public static void main(String[] args) {
      TreeSet<Objeto> ts = new TreeSet<Objeto>(new ComparadorDeObjetos());
@@ -1477,8 +1478,8 @@ public class Principal {
      ts.add(new Objeto(4, 5));
      ts.add(new Objeto(2, 3));
 
-     for (Objeto o : ts) {
-        System.out.println(o);
+     for (Objeto elemento : ts) {
+        System.out.println(elemento);
      }
   }
 }
@@ -1538,7 +1539,7 @@ package UD07.P4.Comparator2;
 
 import java.util.TreeSet;
 
-public class Principal {
+public class Ejemplo12 {
 
   public static void main(String[] args) {
      TreeSet<Objeto> ts = new TreeSet<Objeto>();
@@ -1548,8 +1549,8 @@ public class Principal {
      ts.add(new Objeto(4, 5));
      ts.add(new Objeto(2, 3));
 
-     for (Objeto o : ts) {
-        System.out.println(o);
+     for (Objeto elemento : ts) {
+        System.out.println(elemento);
      }
   }
 }
