@@ -20,7 +20,7 @@ Por tanto, a la hora de diseñar un conjunto de clases para modelar el conjunto 
 
 En algunos casos es posible que no exista relación alguna entre unas clases y otras, pero lo más habitual es que sí exista: una clase puede ser una **especialización** (relación entre dos clases donde una de ellas, la subclase, es una versión más especializada que la otra, la superclase, compartiendo características en común pero añadiendo ciertas características específicas que la especializan). El punto de vista inverso sería la **generalización** (relación entre dos clases donde una de ellas, la superclase, es una versión más genérica que la otra, la subclase, compartiendo características en común pero sin las propiedades específicas que caracterizan a la subclase). Es decir, que entre unas clases y otras habrá que definir cuál es su relación (si es que existe alguna).
 
-Se pueden distinguir diversos tipos de relaciones entre clases:
+Se pueden distinguir diversos **tipos de relaciones** entre clases:
 
 - **Clientela**. Cuando una clase utiliza objetos de otra clase (por ejemplo al pasarlos como parámetros a través de un método).
 - **Composición**. Cuando alguno de los atributos de una clase es un objeto de otra clase.
@@ -41,7 +41,7 @@ A lo largo de la unidad, irás viendo distintas posibilidades de implementación
 
 ## Composición
 
-Cuando en un sistema de información, una determinada entidad `A` contiene a otra `B` como una de sus partes, se suele decir que se está produciendo una relación de composición. Es decir, el objeto de la clase `A` contiene a uno o varios objetos de la clase `B`.
+Cuando en un sistema de información, una determinada **entidad `A` contiene a otra `B`** como una de sus partes, se suele decir que se está produciendo una relación de composición. Es decir, el objeto de la clase `A` contiene a uno o varios objetos de la clase `B`.
 
 Por ejemplo, si describes una entidad `País` compuesta por una serie de atributos, entre los cuales se encuentra una lista de comunidades autónomas, podrías decir que los objetos de la clase `País` contienen varios objetos de la clase `ComunidadAutonoma`. Por otro lado, los objetos de la clase `ComunidadAutonoma` podrían contener como atributos objetos de la clase `Provincia`, la cual a su vez también podría contener objetos de la clase `Municipio`.
 
@@ -49,7 +49,7 @@ Como puedes observar, la composición puede encadenarse todas las veces que sea 
 
 > La composición se da cuando una clase contiene algún atributo que es una referencia a un objeto de otra clase.
 
-Una forma sencilla de plantearte si la relación que existe entre dos clases A y B es de composición podría ser mediante la expresión idiomática "*tiene un*": "*la clase A tiene uno o varios objetos de la clase B*", o visto de otro modo: "*Objetos de la clase B pueden formar parte de la clase A*". 
+Una forma sencilla de plantearte si la relación que existe entre dos clases A y B es de composición podría ser mediante la expresión idiomática "***tiene un***": "*la clase A tiene uno o varios objetos de la clase B*", o visto de otro modo: "*Objetos de la clase B pueden formar parte de la clase A*". 
 
 Algunos ejemplos de composición podrían ser:
 
@@ -81,7 +81,7 @@ Algunos ejemplos de herencia podrían ser:
 - Un rectángulo es una figura geométrica en el plano (heredará métodos como el cálculo de la superficie o de su perímetro).
 - Un cocodrilo es un reptil (heredará atributos como por ejemplo el número de dientes).
 
-En este caso la expresión idiomática que puedes usar para plantearte si el tipo de relación entre dos clases A y B es de herencia podría ser "*es un*": "*la clase B es un tipo específico de la clase A*" (especialización), o visto de otro modo: "*la clase A es un caso general de la clase B*" (generalización).
+En este caso la expresión idiomática que puedes usar para plantearte si el tipo de relación entre dos clases A y B es de herencia podría ser "***es un***": "*la clase B es un tipo específico de la clase A*" (especialización), o visto de otro modo: "*la clase A es un caso general de la clase B*" (generalización).
 
 Recuperando algunos ejemplos de clases que ya has utilizado en otras unidades:
 
@@ -474,7 +474,7 @@ La clase `Object`representa la superclase que se encuentra en la cúspide de la 
 
 En determinados casos podrías considerar la posibilidad de que se necesite heredar de más de una clase, para así disponer de los miembros de dos (o más) clases disjuntas (que no derivan una de la otra). La herencia múltiple permite hacer eso: recoger las distintas características (atributos y métodos) de clases diferentes formando una nueva clase derivada de varias clases base.
 
-El problema en estos casos es la posibilidad que existe de que se produzcan ambigüedades, así, si tuviéramos miembros con el mismo identificador en clases base diferentes, en tal caso, ¿qué miembro se hereda? Para evitar esto, los compiladores suelen solicitar que ante casos de ambigüedad, se especifique de manera explícita la clase de la cual se quiere utilizar un determinado miembro que pueda ser ambiguo.
+El problema en estos casos es la posibilidad que existe de que se produzcan ambigüedades; así, si tuviéramos miembros con el mismo identificador en clases base diferentes, en tal caso, ¿qué miembro se hereda? Para evitar esto, los compiladores suelen solicitar que ante casos de ambigüedad, se especifique de manera explícita la clase de la cual se quiere utilizar un determinado miembro que pueda ser ambiguo.
 
 Ahora bien, la posibilidad de herencia múltiple no está disponible en todos los lenguajes orientados a objetos, ¿lo estará en Java? La respuesta es negativa.
 
@@ -800,22 +800,22 @@ class DeDos implements Series {
   int valor;
     
   DeDos(){
-    iniciar=0;
-    valor=0;
+    iniciar = 0;
+    valor = 0;
   }
     
   public int getSiguiente() {
-    valor+=2;
+    valor += 2;
     return valor;
   }
     
   public void reiniciar() {
-    valor=iniciar;
+    valor = iniciar;
   }
     
   public void setComenzar(int x) {
-    iniciar=x;
-    valor=x;
+    iniciar = x;
+    valor = x;
   }
 }
 ```
@@ -828,17 +828,17 @@ Aquí hay una clase que demuestra `DeDos`:
 class SeriesDemo {
   public static void main(String[] args) {
     DeDos ob=new DeDos();
-    for (int i=0;i<5;i++){
+    for (int i=0; i<5; i++){
       System.out.println("Siguiente valor es: "+ob.getSiguiente());
     }
     System.out.println("\nReiniciando");
     ob.reiniciar();
-    for (int i=0;i<5;i++){
+    for (int i=0; i<5; i++){
       System.out.println("Siguiente valor es: "+ob.getSiguiente());
     }
     System.out.println("\nIniciando en 100");
     ob.setComenzar(100);
-    for (int i=0;i<5;i++){
+    for (int i=0; i<5; i++){
       System.out.println("Siguiente valor es: "+ob.getSiguiente());
     }
   }
@@ -874,23 +874,24 @@ class DeDos implements Series {
   int iniciar;
   int valor;
   int anterior;
+    
   DeDos(){
-    iniciar=0;
-    valor=0;
+    iniciar = 0;
+    valor = 0;
   }
   public int getSiguiente() {
-    anterior=valor;
-    valor+=2;
+    anterior = valor;
+    valor += 2;
     return valor;
   }
   public void reiniciar() {
-    valor=iniciar;
-    anterior=valor-2;
+    valor = iniciar;
+    anterior = valor-2;
   }
   public void setComenzar(int x) {
-    iniciar=x;
-    valor=x;
-    anterior=x-2;
+    iniciar = x;
+    valor = x;
+    anterior = x-2;
   }
   //Añadiendo un método que no está definido en Series
   int getAnterior(){
@@ -908,19 +909,19 @@ public class DeTres implements Series{
   int iniciar;
   int valor;
   DeTres(){
-    iniciar=0;
-    valor=0;
+    iniciar = 0;
+    valor = 0;
   }
   public int getSiguiente() {
-    valor+=3;
+    valor += 3;
     return valor;
   }
   public void reiniciar() {
-    valor=iniciar;
+    valor = iniciar;
   }
   public void setComenzar(int x) {
-    iniciar=x;
-    valor=x;
+    iniciar = x;
+    valor = x;
   }
 }
 ```
@@ -1232,16 +1233,16 @@ En la siguiente presentación puedes observar detalladamente el proceso completo
 
 ## Ejemplo 2.2.1
 
-Dada la clase `Rectangulo`, escribe sus nuevos métodos `obtenerVertice1` y `obtenerVertice2` para que devuelvan los vértices inferior izquierdo y superior derecho del rectángulo (objetos de tipo `Punto`), teniendo en cuenta su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
+Dada la clase `Rectangulo`, escribe sus nuevos métodos `getVertice1` y `getVertice2` para que devuelvan los vértices inferior izquierdo y superior derecho del rectángulo (objetos de tipo `Punto`), teniendo en cuenta su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 
 Los métodos de obtención de vértices devolverán objetos de la clase Punto:
 
 ```java
-public Punto obtenerVertice1 (){
+public Punto getVertice1 (){
   return vertice1;
 }
 
-public Punto obtenerVertice2 (){
+public Punto getVertice2 (){
   return vertice2;
 }
 ```
@@ -1279,17 +1280,17 @@ class Rectangulo {
   /*
   * Así no!
   *
-  *public Punto obtenerVertice1mal() {
+  *public Punto getVertice1mal() {
   *    return vertice1;
   *}
   *
-  *public Punto obtenerVertice2mal() {
+  *public Punto getVertice2mal() {
   *    return vertice2;
   *}  
   */
     
   //Mejor de este modo
-  public Punto obtenerVertice1() {
+  public Punto getVertice1() {
     // Creación de un nuevo punto extrayendo sus atributos
     double x, y;
     Punto p;
@@ -1299,14 +1300,15 @@ class Rectangulo {
     return p;
   }
 
-  //O mejor así:
-  public Punto obtenerVertice2() {
+  // O mejor así:
+  public Punto getVertice2() {
     // Utilizando el constructor copia de Punto (si es que está definido)
-    //Punto p;
-    //p = new Punto(this.vertice2); // Uso del constructor copia
-    //return p;
+    // Punto p;
+    // p = new Punto(this.vertice2); 
+    // return p;
 
-    //o más corto:
+    // o más corto:
+    // Uso del constructor copia
     return new Punto(this.vertice2);
   }
 
@@ -1348,7 +1350,7 @@ Intenta rescribir los constructores de la clase `Rectangulo` teniendo en cuenta 
 
 Durante el proceso de creación de un objeto (constructor) de la clase contenedora (en este caso `Rectangulo`) hay que tener en cuenta también la creación (llamada a constructores) de aquellos objetos que son contenidos (en este caso objetos de la clase Punto).
 
-En el caso del primer constructor, habrá que crear dos puntos con las coordenadas (0,0) y (1,1) y asignarlos a los atributos correspondientes (`vertice1` y `vertice2`):
+1. En el caso del primer constructor, habrá que crear dos puntos con las coordenadas (0,0) y (1,1) y asignarlos a los atributos correspondientes (`vertice1` y `vertice2`):
 
 ```java
 public Rectangulo (){
@@ -1357,7 +1359,7 @@ public Rectangulo (){
 }
 ```
 
-Para el segundo constructor habrá que crear dos puntos con las coordenadas x1, y1, x2, y2 que han sido pasadas como parámetros:
+2. Para el segundo constructor habrá que crear dos puntos con las coordenadas x1, y1, x2, y2 que han sido pasadas como parámetros:
 
 ```java
 public Rectangulo (double x1, double y1, double x2, double y2){
@@ -1366,18 +1368,7 @@ public Rectangulo (double x1, double y1, double x2, double y2){
 }
 ```
 
-En el caso del tercer constructor puedes utilizar directamente los dos puntos que se pasan como parámetros para construir los vértices del rectángulo.
-
-Ahora bien, esto podría ocasionar un efecto colateral no deseado si esos objetos de tipo Punto son modificados en el futuro desde el código cliente del constructor (no sabes si esos puntos fueron creados especialmente para ser usados por el rectángulo o si pertenecen a otro objeto que podría modificarlos más tarde).
-
-Por tanto, para este caso quizá fuera recomendable crear dos nuevos puntos a imagen y semejanza de los puntos que se han pasado como parámetros. Para ello tendrías dos opciones:
-
-1. Llamar al constructor de la clase Punto con los valores de los atributos (x, y).
-2. Llamar al constructor copia de la clase Punto, si es que se dispone de él.
-
-Aquí tienes las dos posibles versiones:
-
-Constructor que "extrae" los atributos de los parámetros y crea nuevos objetos:
+3. En el caso del tercer constructor puedes utilizar directamente los dos puntos que se pasan como parámetros para construir los vértices del rectángulo.
 
 ```java
 public Rectangulo (Punto vertice1, Punto vertice2) {
@@ -1386,7 +1377,11 @@ public Rectangulo (Punto vertice1, Punto vertice2) {
 }
 ```
 
-Constructor que crea los nuevos objetos mediante el constructor copia de los parámetros:
+Ahora bien, esto podría ocasionar un efecto colateral no deseado si esos objetos de tipo Punto son modificados en el futuro desde el código cliente del constructor (no sabes si esos puntos fueron creados especialmente para ser usados por el rectángulo o si pertenecen a otro objeto que podría modificarlos más tarde).
+
+Por tanto, para este caso quizá fuera recomendable crear dos nuevos puntos a imagen y semejanza de los puntos que se han pasado como parámetros. Para ello tendrías dos opciones:
+
+​	a) Llamar al constructor de la clase Punto con los valores de los atributos (x, y).
 
 ```java
 public Rectangulo(Punto vertice1, Punto vertice2) {
@@ -1395,7 +1390,7 @@ public Rectangulo(Punto vertice1, Punto vertice2) {
 }
 ```
 
-En este segundo caso puedes observar la utilidad de los constructores de copia a la hora de tener que clonar objetos (algo muy habitual en las inicializaciones).
+​	b) Llamar al constructor copia de la clase Punto, si es que se dispone de él.
 
 ```java
 public Rectangulo (Punto vertice1, Punto vertice2) {
@@ -1404,7 +1399,7 @@ public Rectangulo (Punto vertice1, Punto vertice2) {
 }
 ```
 
-Para el caso del constructor que recibe como parámetros la base y la altura, habrá que crear sendos vértices con valores (0,0) y (0 + base, 0 + altura), o lo que es lo mismo: (0,0) y (base, altura).
+4. Para el cuarto caso, el caso del constructor que recibe como parámetros la base y la altura, habrá que crear sendos vértices con valores (0,0) y (0 + base, 0 + altura), o lo que es lo mismo: (0,0) y (base, altura).
 
 ```java
 public Rectangulo(double base, double altura) {
@@ -1413,12 +1408,12 @@ public Rectangulo(double base, double altura) {
 }
 ```
 
-Quedaría finalmente por implementar el constructor copia:
+5. Quedaría finalmente por implementar el constructor copia, quinto caso:
 
 ```java
 public Rectangulo (Rectangulo r) {
-  this.vertice1 = new Punto (r.obtenerVertice1());
-  this.vertice2 = new Punto (r.obtenerVertice2());
+  this.vertice1 = new Punto (r.getVertice1());
+  this.vertice2 = new Punto (r.getVertice2());
 }
 ```
 
