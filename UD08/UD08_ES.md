@@ -244,7 +244,7 @@ Las clases internas se utilizan en algunos casos para:
 - Incrementar el nivel de encapsulación y ocultamiento.
 - Proporcionar un código fuente más legible y fácil de mantener (el código de las clases internas y anidadas está más cerca de donde es usado).
 
-En Java es posible definir clases internas y anidadas, permitiendo todas esas posibilidades. Aunque para lo ejemplos con los que vas a trabajar no las vas a necesitar por ahora.
+En Java es posible definir clases internas y anidadas, permitiendo todas esas posibilidades. Aunque para los ejemplos con los que vas a trabajar no las vas a necesitar por ahora.
 
 # Herencia
 
@@ -254,7 +254,7 @@ La clase de la que se hereda suele ser llamada *clase base*, *clase madre* o *su
 
 Una clase derivada puede ser a su vez clase madre de otra que herede de ella y así sucesivamente dando lugar a una jerarquía de clases, excepto aquellas que estén en la parte de arriba de la jerarquía (sólo serán clases madre) o en la parte de abajo (sólo serán clases hijas). 
 
-Una clase hija no tiene acceso a los miembros privados de su clase madre, tan solo a los públicos (como cualquier parte del código tendría) y los protegidos (a los que sólo tienen acceso las clases derivadas y las del mismo paquete). Aquellos miembros que sean privados en la clase base también habrán sido heredados, pero el acceso a ellos estará restringido al propio funcionamiento de la superclase y sólo se podrá acceder a ellos si la superclase ha dejado algún medio indirecto para hacerlo (por ejemplo a través de algún método). 
+Una clase hija no tiene acceso a los miembros privados de su clase madre, tan solo a los públicos (como cualquier parte del código tendría) y a los protegidos (a los que sólo tienen acceso las clases derivadas y las del mismo paquete). Aquellos miembros que sean privados en la clase base también habrán sido heredados, pero el acceso a ellos estará restringido al propio funcionamiento de la superclase y sólo se podrá acceder a ellos si la superclase ha dejado algún medio indirecto para hacerlo (por ejemplo a través de algún método). 
 
 Todos los miembros de la superclase, tanto atributos como métodos, son heredados por la subclase. Algunos de estos miembros heredados podrán ser redefinidos o sobrescritos (overriden) y también podrán añadirse nuevos miembros. De alguna manera podría decirse que estás "ampliando" la clase base con características adicionales o modificando algunas de ellas (proceso de especialización).
 
@@ -328,7 +328,7 @@ public class Persona {
 }
 ```
 
-Al definir la clase `Alumno` como heredera de `Persona`, no habrías tenido acceso a esos atributos, pudiendo ocasionar un grave problema de operatividad al intentar manipular esa información. Por tanto, en estos casos lo más recomendable habría sido declarar esos atributos como `protected` of bien sin modificador (para que también tengan acceso a ellos otras clases del mismo paquete, si es que se considera oportuno):
+Al definir la clase `Alumno` como heredera de `Persona`, no habrías tenido acceso a esos atributos, pudiendo ocasionar un grave problema de operatividad al intentar manipular esa información. Por tanto, en estos casos lo más recomendable habría sido declarar esos atributos como `protected` o bien sin modificador (para que también tengan acceso a ellos otras clases del mismo paquete, si es que se considera oportuno):
 
 ```java
 public class Persona {
@@ -356,7 +356,7 @@ Revisa con cuidado el [Ejemplo 3.3.1](#ejemplo-3.3.1).
 
 Del mismo modo que se heredan los atributos, también se heredan los métodos, convirtiéndose a partir de ese momento en otros métodos más de la clase derivada, junto a los que hayan sido definidos específicamente.
 
-En el ejemplo de la clase `Persona`, si dispusiéramos de métodos get y set para cada uno de sus tres atributos (`nombre`, `apellidos`, `fechaNacim`), tendrías seis métodos que podrían ser heredados por sus clases derivadas. Podrías decir entonces que la clase Alumno, derivada de Persona, tiene diez métodos:
+En el ejemplo de la clase `Persona`, si dispusiéramos de métodos *get* y *set* para cada uno de sus tres atributos (`nombre`, `apellidos`, `fechaNacim`), tendrías seis métodos que podrían ser heredados por sus clases derivadas. Podrías decir entonces que la clase Alumno, derivada de Persona, tiene diez métodos:
 
 - Seis por ser Persona (`getNombre`, `getApellidos`, `getFechaNacim`, `setNombre`, `setApellidos`, `setFechaNacim`).
 - Oros cuatro más por ser Alumno (`getGrupo`, `setGrupo`, `getNotaMedia`, `setNotaMedia`).
@@ -369,11 +369,11 @@ Revisa con cuidado el [Ejemplo 3.3.2](#ejemplo-3.3.2).
 
 Una clase puede redefinir algunos de los métodos que ha heredado de su clase base. En tal caso, el nuevo método (especializado) sustituye al heredado. Este procedimiento también es conocido como de sobrescritura de métodos.
 
-En cualquier caso, aunque un método sea sobrescrito o redefinido, aún es posible acceder a él a través de la referencia super, aunque sólo se podrá acceder a métodos de la clase madre y no a métodos de clases superiores en la jerarquía de herencia.
+En cualquier caso, aunque un método sea sobrescrito o redefinido, aún es posible acceder a él a través de la referencia ***super***, aunque sólo se podrá acceder a métodos de la clase madre y no a métodos de clases superiores en la jerarquía de herencia.
 
 Los métodos redefinidos pueden ampliar su accesibilidad con respecto a la que ofrezca el método original de la superclase, pero nunca restringirla. Por ejemplo, si un método es declarado como protected o de paquete en la clase base, podría ser redefinido como public en una clase derivada. Los métodos estáticos o de clase no pueden ser sobrescritos. Los originales de la clase base permanecen inalterables a través de toda la jerarquía de herencia.
 
-En el ejemplo de la clase Alumno, podrían redefinirse algunos de los métodos heredados. Por ejemplo, imagina que el método getApellidos devuelva la cadena "Alumno: " junto con los apellidos del alumno. En tal caso habría que rescribir ese método para realizara esa modificación:
+En el ejemplo de la clase `Alumno`, podrían redefinirse algunos de los métodos heredados. Por ejemplo, imagina que el método `getApellidos` devuelva la cadena "Alumno: " junto con los apellidos del alumno. En tal caso habría que rescribir ese método para realizara esa modificación:
 
 ```java
 public String getApellidos () {
@@ -396,17 +396,17 @@ Revisa con cuidado el [Ejemplo 3.4](#ejemplo-3.4).
 
 Hasta ahora, has visto que para redefinir o sustituir un método de una superclase es suficiente con crear otro método en la subclase que tenga el mismo nombre que el método que se desea sobrescribir. Pero, en otras ocasiones, puede que lo que necesites no sea sustituir completamente el comportamiento del método de la superclase, sino simplemente ampliarlo.
 
-Para poder hacer esto necesitas poder preservar el comportamiento antiguo (el de la superclase) y añadir el nuevo (el de la subclase). Para ello, puedes invocar desde el método "ampliador" de la clase derivada al método "ampliado" de la clase superior (teniendo ambos métodos el mismo nombre). ¿Cómo se puede conseguir eso? Puedes hacerlo mediante el uso de la referencia *super*.
+Para poder hacer esto necesitas poder preservar el comportamiento antiguo (el de la superclase) y añadir el nuevo (el de la subclase). Para ello, puedes invocar desde el método "ampliador" de la clase derivada al método "ampliado" de la clase superior (teniendo ambos métodos el mismo nombre). ¿Cómo se puede conseguir eso? Puedes hacerlo mediante el uso de la referencia ***super***.
 
-La palabra reservada ***super*** es una referencia a la clase madre de la clase en la que te encuentres en cada momento (es algo similar a this, que representaba una referencia a la clase actual). De esta manera, podrías invocar a cualquier método de tu superclase (si es que se tiene acceso a él).
+La palabra reservada ***super*** es una referencia a la clase madre de la clase en la que te encuentres en cada momento (es algo similar a *this*, que representaba una referencia a la clase actual). De esta manera, podrías invocar a cualquier método de tu superclase (si es que se tiene acceso a él).
 
 Por ejemplo, imagina que la clase Persona dispone de un método que permite mostrar el contenido de algunos datos personales de los objetos de este tipo (nombre, apellidos, etc.). Por otro lado, la clase Alumno también necesita un método similar, pero que muestre también su información especializada (grupo, nota media, etc.). ¿Cómo podrías aprovechar el método de la superclase para no tener que volver a escribir su contenido en la subclase?
 
 Podría hacerse de una manera tan sencilla como la siguiente:
 
 ```java
-public void mostrar () {
-  super.mostrar();  // Llamada al método "mostrar" de la superclase
+public void mostrarDatos () {
+  super.mostrarDatos();  // Llamada al método "mostrar" de la superclase
   // A continuación mostramos la información "especializada" de esta subclase
   System.out.printf ("Grupo: %s\n", this.grupo);
   System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
@@ -419,9 +419,9 @@ Revisa con cuidado el [Ejemplo 3.5](#ejemplo-3.5).
 
 ## Constructores y herencia
 
-Recuerda que cuando estudiaste los constructores viste que un constructor de una clase puede llamar a otro constructor de la misma clase, previamente definido, a través de la referencia this. En estos casos, la utilización de this sólo podía hacerse en la primera línea de código del constructor. 
+Recuerda que cuando estudiaste los constructores viste que un constructor de una clase puede llamar a otro constructor de la misma clase, previamente definido, a través de la referencia *this*. En estos casos, la utilización de this sólo podía hacerse en la primera línea de código del constructor. 
 
-Como ya has visto, un constructor de una clase derivada puede hacer algo parecido para llamar al constructor de su clase base mediante el uso de la palabra super. De esta manera, el constructor de una clase derivada puede llamar primero al constructor de su superclase para que inicialice los atributos heredados y posteriormente se inicializarán los atributos específicos de la clase: los no heredados. Nuevamente, esta llamada también debe ser la primera sentencia de un constructor (con la única excepción de que exista una llamada a otro constructor de la clase mediante this). 
+Como ya has visto, un constructor de una clase derivada puede hacer algo parecido para llamar al constructor de su clase base mediante el uso de la palabra *super*. De esta manera, el constructor de una clase derivada puede llamar primero al constructor de su superclase para que inicialice los atributos heredados y posteriormente se inicializarán los atributos específicos de la clase: los no heredados. Nuevamente, esta llamada también debe ser la primera sentencia de un constructor (con la única excepción de que exista una llamada a otro constructor de la clase mediante this). 
 
 Si no se incluye una llamada a `super()` dentro del constructor, el compilador incluye automáticamente una llamada al constructor por defecto de clase base (llamada a `super()`). Esto da lugar a una llamada en cadena de constructores de superclase hasta llegar a la clase más alta de la jerarquía (que en Java es la clase `Object`).
 
@@ -433,9 +433,9 @@ Si la clase Persona tuviera un constructor de este tipo:
 
 ```java
 public Persona (String nombre, String apellidos, LocalDate fechaNacim) {
-  this.nombe= nombre;
-  this.apellidos= apellidos;
-  this.fechaNacim= new LocalDate (fechaNacim);
+  this.nombe = nombre;
+  this.apellidos = apellidos;
+  this.fechaNacim = new LocalDate (fechaNacim);
 }
 ```
 
@@ -444,8 +444,8 @@ Podrías llamarlo desde un constructor de una clase derivada (por ejemplo Alumno
 ```java
 public Alumno (String nombre, String apellidos, LocalDate fechaNacim, String grupo, double notaMedia) {
   super (nombre, apellidos, fechaNacim);
-  this.grupo= grupo;
-  this.notaMedia= notaMedia;
+  this.grupo = grupo;
+  this.notaMedia = notaMedia;
 }
 ```
 
@@ -522,7 +522,7 @@ Por otro lado, una clase también puede contener métodos totalmente implementad
 
 Cuando trabajes con clases abstractas debes tener en cuenta:
 
-- Una clase abstracta sólo puede usarse para crear nuevas clases derivadas. No se puede hacer un new de una clase abstracta. Se produciría un error de compilación.
+- Una clase abstracta sólo puede usarse para crear nuevas clases derivadas. No se puede hacer un *new* de una clase abstracta. Se produciría un error de compilación.
 - Una clase abstracta puede contener métodos totalmente definidos (no abstractos) y métodos sin definir (métodos abstractos).
 
 Revisa con cuidado el [Ejemplo 4.1](#ejemplo-4.1).
@@ -536,8 +536,6 @@ Un método se declara como abstracto mediante el uso del modificador `abstract` 
 ```java
 [modificador_acceso] abstract <tipo> <nombreMetodo> ([parámetros]) [excepciones];
 ```
-
-Estos métodos tendrán que ser obligatoriamente redefinidos (en realidad "definidos", pues aún no tienen contenido) en las clases derivadas. Si en una clase derivada se deja algún método abstracto sin implementar, esa clase derivada será también una clase abstracta.
 
 > Cuando una clase contiene un método abstracto tiene que declararse como abstracta obligatoriamente.
 
@@ -1481,7 +1479,7 @@ public class Profesor extends Persona {
 
 ## Ejemplo 3.2
 
-Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected para sus atributos del mismo modo que se ha hecho para su superclase `Persona`
+Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected para sus atributos del mismo modo que se ha hecho para su superclase `Persona`.
 1. Clase `Alumno`. Se trata simplemente de añadir el modificador de acceso protected a los nuevos atributos que añade la clase.
 
    ```java
@@ -1808,7 +1806,7 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
 Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar para la clase Persona, que muestre el contenido de los atributos (datos personales) de un objeto de la clase Persona. A continuación, define sendos métodos mostrar especializados para las clases Alumno y Profesor que "amplíen" la funcionalidad del método mostrar original de la clase Persona.
 1. Método mostrar de la clase `Persona`.
    ```java
-   public void mostrar() {
+   public void mostrarDatos() {
      SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
      String Stringfecha= formatoFecha.format(this.fechaNacim.getTime());
    
@@ -1818,25 +1816,26 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
    }
    ```
 
-2. Método mostrar de la clase `Profesor`. Llamamos al método mostrar de su clase madre (`Persona`) y luego añadimos la funcionalidad específica para la subclase `Profesor`:
-    ```java
-   public void mostrar() {
-     super.mostrar(); // Llamada al método "mostrar" de la superclase
+2. Método mostrar de la clase `Alumno`. Llamamos al método mostrar de su clase madre (`Persona`) y luego añadimos la funcionalidad específica para la subclase `Alumno`:
+
+   ```java
+   public void mostrarDatos() {
+     super.mostrarDatos();
+     // A continuación mostramos la información "especializada" de esta subclase
+     System.out.printf ("Grupo: %s\n", this.grupo);
+     System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
+   }
+   ```
+
+3. Método mostrar de la clase `Profesor`. Llamamos al método mostrar de su clase madre (`Persona`) y luego añadimos la funcionalidad específica para la subclase `Profesor`:
+
+   ```java
+   public void mostrarDatos() {
+     super.mostrarDatos(); // Llamada al método "mostrarDatos" de la superclase
    
      // A continuación mostramos la información "especializada" de esta subclase
      System.out.printf ("Especialidad: %s\n", this.especialidad);
      System.out.printf ("Salario: %7.2f euros\n", this.salario);
-   }
-   ```
-   
-3. Método mostrar de la clase `Alumno`. Llamamos al método mostrar de su clase madre (`Persona`) y luego añadimos la funcionalidad específica para la subclase `Alumno`:
-
-   ```java
-   public void mostrar() {
-     super.mostrar();
-     // A continuación mostramos la información "especializada" de esta subclase
-     System.out.printf ("Grupo: %s\n", this.grupo);
-     System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
    }
    ```
 
@@ -1847,8 +1846,8 @@ Escribe un constructor para la clase `Profesor` que realice una llamada al const
 ```java
 public Profesor (String nombre, String apellidos, GregorianCalendar fechaNacim, String especialidad, double salario) {
   super (nombre, apellidos, fechaNacim);
-  this.especialidad= especialidad;
-  this.salario= salario;
+  this.especialidad = especialidad;
+  this.salario = salario;
 }
 ```
 
@@ -1901,7 +1900,7 @@ Existen una gran cantidad de clases abstractas en la API de Java. Aquí tienes u
 
 ## Ejemplo 4.2
 
-Basándote en la jerarquía de clases `Persona`, `Alumno`, `Profesor`, crea un método abstracto llamado `mostrar` para la clase `Persona`. Dependiendo del tipo de persona (`alumno` o `profesor`) el método mostrar tendrá que mostrar unos u otros datos personales (habrá que hacer implementaciones específicas en cada clase derivada).
+Basándote en la jerarquía de clases `Persona`, `Alumno`, `Profesor`, crea un método abstracto llamado `mostrarDatos` para la clase `Persona`. Dependiendo del tipo de persona (`alumno` o `profesor`) el método mostrar tendrá que mostrar unos u otros datos personales (habrá que hacer implementaciones específicas en cada clase derivada).
 
 Una vez hecho esto, implementa completamente las tres clases (con todos sus atributos y métodos) y utilízalas en un pequeño programa de ejemplo que cree un objeto de tipo `Alumno` y otro de tipo `Profesor`, los rellene con información y muestre esa información en la pantalla a través del método mostrar.
 
@@ -1918,14 +1917,13 @@ public abstract class Persona {
   ...
 ```
 
-En el caso de la clase `Alumno` habrá que hacer una implementación específica del método mostrar y
-lo mismo para el caso de la clase `Profesor`.
+En el caso de la clase `Alumno` habrá que hacer una implementación específica del método mostrarDatos y lo mismo para el caso de la clase `Profesor`.
 
-1. Método mostrar para la clase `Alumno`.
+1. Método mostrarDatos para la clase `Alumno`.
 
    ```java
    @Override
-   public void mostrar() {
+   public void mostrarDatos() {
      DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
      String stringfecha = formato.format(this.fechaNacim);
      System.out.printf("Nombre: %s\n", this.nombre);
@@ -1937,11 +1935,11 @@ lo mismo para el caso de la clase `Profesor`.
    }
    ```
 
-2. Método mostrar para la clase `Profesor`.
+2. Método mostrarDatos para la clase `Profesor`.
 
    ```java
    @Override
-   public void mostrar() {
+   public void mostrarDatos() {
      DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
      String stringfecha = formato.format(this.fechaNacim);
      System.out.printf("Nombre: %s\n", this.nombre);
@@ -1972,8 +1970,8 @@ lo mismo para el caso de la clase `Profesor`.
        alumno = new Alumno("Juan", "Torres", LocalDate.of(1990, 10, 6), "1DAW", 7.5);
        profesor = new Profesor("Antonio", "Campos", LocalDate.of(1970, 8, 15), "Informatica", 2000);
        // Utilización del método mostrar
-       alumno.mostrar();
-       profesor.mostrar();
+       alumno.mostrarDatos();
+       profesor.mostrarDatos();
      }
    }
    ```

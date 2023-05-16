@@ -15,8 +15,8 @@ public class Punto {
     }
 
     public Punto(Punto p1){
-        this.x = p1.x;
-        this.y = p1.y;
+        this.x = p1.getX();
+        this.y = p1.getY();
     }
 
     public double getX(){
