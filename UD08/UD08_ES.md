@@ -138,7 +138,7 @@ class Rectangulo {
 
 Ahora los métodos de esta clase deberán tener en cuenta que ya no hay cuatro atributos de tipo `double`, sino dos atributos de tipo `Punto` (cada uno de los cuales contendrá en su interior dos atributos de tipo `double`).
 
-Revisa con cuidado el [Ejemplo 2.1](#ejemplo-2.1)
+Revisa con cuidado el [Ejemplo 2.1](#ejemplo-2.1).
 
 ##  Uso de la composición
 
@@ -165,7 +165,13 @@ Por último, debes tener en cuenta que es posible que en algunos casos sí se ne
 
 Para entender estas situaciones un poco mejor, podemos volver a la clase `Rectangulo` y observar sus nuevos métodos de tipo get.
 
-Revisa con cuidado el [Ejemplo 2.2.1](#ejemplo-2.2.1)
+Revisa con cuidado el [Ejemplo 2.2.1](#ejemplo-2.2.1).
+
+
+
+
+
+
 
 ### Llamadas a constructores
 
@@ -185,7 +191,13 @@ Se trata de un efecto similar al que sucedía en los métodos de tipo *get*, per
 
 Para entender mejor estos posibles efectos podemos continuar con el ejemplo de la clase `Rectangulo` que contiene en su interior dos objetos de la clase `Punto`. En los constructores del rectángulo habrá que incluir todo lo necesario para crear dos instancias de la clase `Punto` evitando las referencias a parámetros (haciendo copias).
 
-Revisa con cuidado el [Ejemplo 2.2.2](#ejemplo-2.2.2)
+Revisa con cuidado el [Ejemplo 2.2.2](#ejemplo-2.2.2).
+
+
+
+
+
+
 
 ## Clases anidadas o internas
 
@@ -287,7 +299,7 @@ public class Alumno extends Persona {
 
 A partir de ahora, un objeto de la clase `Alumno` contendrá los atributos `grupo` y `notaMedia` (propios de la clase `Alumno`), pero también `nombre`, `apellidos` y `fechaNacim` (propios de su clase base `Persona` y que por tanto ha heredado).
 
-Revisa con cuidado el [Ejemplo 3.1](#ejemplo-3.1)
+Revisa con cuidado el [Ejemplo 3.1](#ejemplo-3.1).
 
 ## Acceso a miembros heredados
 
@@ -316,7 +328,7 @@ public class Persona {
 }
 ```
 
-Al definir la clase `Alumno` como heredera de `Persona`, no habrías tenido acceso a esos atributos, pudiendo ocasionar un grave problema de operatividad al intentar manipular esa información. Por tanto, en estos casos lo más recomendable habría sido declarar esos atributos como `protected` o bien sin modificador (para que también tengan acceso a ellos otras clases del mismo paquete, si es que se considera oportuno):
+Al definir la clase `Alumno` como heredera de `Persona`, no habrías tenido acceso a esos atributos, pudiendo ocasionar un grave problema de operatividad al intentar manipular esa información. Por tanto, en estos casos lo más recomendable habría sido declarar esos atributos como `protected` of bien sin modificador (para que también tengan acceso a ellos otras clases del mismo paquete, si es que se considera oportuno):
 
 ```java
 public class Persona {
@@ -328,7 +340,7 @@ public class Persona {
 
 > Sólo en aquellos casos en los que se desea explícitamente que un miembro de una clase no pueda ser accesible desde una clase derivada debería utilizarse el modificador private. En el resto de casos es recomendable utilizar protected, o bien no indicar modificador (acceso a nivel de paquete).
 
-Revisa con cuidado el [Ejemplo 3.2](#ejemplo-3.2)
+Revisa con cuidado el [Ejemplo 3.2](#ejemplo-3.2).
 
 ## Utilización de miembros heredados
 
@@ -338,7 +350,7 @@ Los atributos heredados por una clase son, a efectos prácticos, iguales que aqu
 
 En el ejemplo anterior la clase `Persona` disponía de tres atributos y la clase `Alumno`, que heredaba de ella, añadía dos atributos más. Desde un punto de vista funcional podrías considerar que la clase `Alumno` tiene cinco atributos: tres por ser `Persona` (nombre, apellidos, fecha de nacimiento) y otros dos más por ser `Alumno` (grupo y nota media).
 
-Revisa con cuidado el [Ejemplo 3.3.1](#ejemplo-3.3.1)
+Revisa con cuidado el [Ejemplo 3.3.1](#ejemplo-3.3.1).
 
 ### Métodos
 
@@ -351,7 +363,7 @@ En el ejemplo de la clase `Persona`, si dispusiéramos de métodos get y set par
 
 Sin embargo, sólo tendrías que definir esos cuatro últimos (los específicos) pues los genéricos ya los has heredado de la superclase.
 
-Revisa con cuidado el [Ejemplo 3.3.2](#ejemplo-3.3.2)
+Revisa con cuidado el [Ejemplo 3.3.2](#ejemplo-3.3.2).
 
 ## Redefinición de métodos heredados
 
@@ -378,7 +390,7 @@ public String getApellidos (){
 }
 ```
 
-Revisa con cuidado el [Ejemplo 3.4](#ejemplo-3.4)
+Revisa con cuidado el [Ejemplo 3.4](#ejemplo-3.4).
 
 ## Ampliación de métodos heredados
 
@@ -403,7 +415,7 @@ public void mostrar () {
 
 Este tipo de ampliaciones de métodos resultan especialmente útiles por ejemplo en el caso de los constructores, donde se podría ir llamando a los constructores de cada superclase encadenadamente hasta el constructor de la clase en la cúspide de la jerarquía (el constructor de la clase `Object`).
 
-Revisa con cuidado el [Ejemplo 3.5](#ejemplo-3.5)
+Revisa con cuidado el [Ejemplo 3.5](#ejemplo-3.5).
 
 ## Constructores y herencia
 
@@ -439,7 +451,7 @@ public Alumno (String nombre, String apellidos, LocalDate fechaNacim, String gru
 
 En realidad se trata de otro recurso más para optimizar la reutilización de código, en este caso el del constructor, que aunque no es heredado, sí puedes invocarlo para no tener que reescribirlo.
 
-Revisa con cuidado el [Ejemplo 3.6](#ejemplo-3.6)
+Revisa con cuidado el [Ejemplo 3.6](#ejemplo-3.6).
 
 ## Creación y utilización de clases derivadas
 
@@ -478,7 +490,7 @@ El problema en estos casos es la posibilidad que existe de que se produzcan ambi
 
 Ahora bien, la posibilidad de herencia múltiple no está disponible en todos los lenguajes orientados a objetos, ¿lo estará en Java? La respuesta es negativa.
 
-<img src="/assets/ud08_001.png" alt="ud08_001" style="zoom:115%;" />
+<img src="/assets/ud08_001.png" alt="ud08_001" style="zoom:50%;" />
 
 > En Java no existe la herencia múltiple de clases.
 
@@ -513,7 +525,7 @@ Cuando trabajes con clases abstractas debes tener en cuenta:
 - Una clase abstracta sólo puede usarse para crear nuevas clases derivadas. No se puede hacer un new de una clase abstracta. Se produciría un error de compilación.
 - Una clase abstracta puede contener métodos totalmente definidos (no abstractos) y métodos sin definir (métodos abstractos).
 
-Revisa con cuidado el [Ejemplo 4.1](#ejemplo-4.1)
+Revisa con cuidado el [Ejemplo 4.1](#ejemplo-4.1).
 
 ## Métodos abstractos
 
@@ -537,7 +549,7 @@ Debes tener en cuenta al trabajar con métodos abstractos:
 - Un método abstracto no puede ser privado (no se podría implementar, dado que las clases derivadas no tendrían acceso a él).
 - Los métodos abstractos no pueden ser estáticos, pues los métodos estáticos no pueden ser redefinidos (y los métodos abstractos necesitan ser redefinidos).
 
-Revisa con cuidado el [Ejemplo 4.2](#ejemplo-4.2)
+Revisa con cuidado el [Ejemplo 4.2](#ejemplo-4.2).
 
 ## Clases y métodos finales
 
@@ -629,7 +641,9 @@ Una interfaz consiste principalmente en una lista de declaraciones de métodos s
 
 Imagina que estás diseñando una aplicación que trabaja con clases que representan distintos tipos de animales. Algunas de las acciones que quieres que lleven a cabo están relacionadas con el hecho de que algunos animales sean depredadores (por ejemplo: observar una presa, perseguirla, comérsela, etc.) o sean presas (observar, huir, esconderse, etc.). Si creas la clase `León`, esta clase podría implementar una interfaz `Depredador`, mientras que otras clases como `Gacela` implementarían las acciones de la interfaz `Presa`. Por otro lado, podrías tener también el caso de la clase `Rana`, que implementaría las acciones de la interfaz `Depredador` (pues es cazador de pequeños insectos), pero también la de `Presa` (pues puede ser cazado y necesita las acciones necesarias para protegerse).
 
-<img src="./assets/ud08_003.png" style="zoom:85%;" />
+<img src="./assets/ud08_003.png" style="zoom:65%;" />
+
+
 
 ## Concepto de interfaz
 
@@ -646,6 +660,14 @@ Imagínate por ejemplo la clase `Coche`, subclase de `Vehículo`. Los coches son
 Según esta concepción, podrías hacerte la siguiente pregunta: ¿podrá una clase implementar varias interfaces? La respuesta en este caso sí es afirmativa.
 
 > Una clase puede adoptar distintos modelos de comportamiento establecidos en diferentes interfaces. **Es decir una clase puede implementar varias interfaces.**
+
+
+
+
+
+
+
+
 
 ### ¿Clase abstracta o interfaz?
 
@@ -680,7 +702,7 @@ La declaración de una interfaz en Java es similar a la declaración de una clas
 - Todos los atributos son de tipo `final` y `public` (tampoco es necesario especificarlo), es decir, constantes y públicos. Hay que darles un valor inicial.
 - Todos los métodos son abstractos también de manera implícita (tampoco hay que indicarlo). No tienen cuerpo, tan solo la cabecera.
 
-<img src="/assets/ud08_004.png" alt="image-20220417120658591" style="zoom:80%;" />
+<img src="/assets/ud08_004.png" alt="image-20220417120658591" style="zoom:60%;" />
 
 Como puedes observar, una interfaz consiste esencialmente en una lista de atributos finales (constantes) y métodos abstractos (sin implementar). Su sintaxis quedaría entonces:
 
@@ -707,7 +729,7 @@ public interface Depredador {
 
 Serán las clases que implementen esta interfaz (`León`, `Leopardo`, `Cocodrilo`, `Rana`, `Lagarto`, `Hombre`, etc.) las que definan cada uno de los métodos por dentro.
 
-Revisa con cuidado el [Ejemplo 5.2](#ejemplo-5.2)
+Revisa con cuidado el [Ejemplo 5.2](#ejemplo-5.2).
 
 ## Implementación de interfaces
 
@@ -768,7 +790,7 @@ class Rana extends Anfibio implements Depredador, Presa {
 
 Y en su interior habría que implementar aquellos métodos que contengan ambas interfaces, tanto las de Depredador (localizar, cazar, etc.) como las de Presa (observar, huir, etc.).
 
-Revisa con cuidado el [Ejemplo 5.3](#ejemplo-5.3)
+Revisa con cuidado el [Ejemplo 5.3](#ejemplo-5.3).
 
 ### Un ejemplo de implementación de interfaces: la interfaz Series
 
@@ -941,7 +963,7 @@ De esta manera la clase X podría a la vez:
 
 En el ejemplo que hemos visto de las interfaces `Depredador` y `Presa`, tendrías un ejemplo de esto: la clase `Rana`, que es subclase de `Anfibio`, implementa una serie de comportamientos propios de un `Depredador` y, a la vez, otros más propios de una `Presa`. Esos comportamientos (métodos) no forman parte de la superclase `Anfibio`, sino de las interfaces. Si se decide que la clase `Rana` debe de llevar a cabo algunos otros comportamientos adicionales, podrían añadirse a una nueva interfaz y la clase `Rana` implementaría una tercera interfaz.
 
-![image-20220419104220551](/assets/ud08_005.png)
+<img src="/assets/ud08_005.png" alt="image-20220419104220551" style="zoom:65%;" />
 
 De este modo, con el mecanismo "**una herencia pero varias interfaces**", podrían conseguirse resultados similares a los obtenidos con la herencia múltiple.
 
@@ -979,7 +1001,7 @@ public interface InterfazCompleja extends InterfazUno, InterfazDos {
 } 
 ```
 
-Revisa con cuidado el [Ejemplo 5.5](#ejemplo-5.5) y también el [Ejemplo 5.6](#ejemplo-5.6)
+Revisa con cuidado el [Ejemplo 5.5](#ejemplo-5.5) y también el [Ejemplo 5.6](#ejemplo-5.6).
 
 # Polimorfismo
 
@@ -1045,7 +1067,7 @@ En el ejemplo anterior de la clase X y sus subclases A y B, la llamada al métod
 obj.m() // Esta llamada será resuelta en tiempo de ejecución (ligadura dinámica)
 ```
 
-Revisa con cuidado el [Ejemplo 6.2](#ejemplo-6.2)
+Revisa con cuidado el [Ejemplo 6.2](#ejemplo-6.2).
 
 ## Limitaciones de la ligadura dinámica
 
@@ -1057,7 +1079,13 @@ Veamos un ejemplo: si dispones de una clase `Profesor` que es subclase de `Perso
 
 En el ejemplo de las clases `Persona`, `Profesor` y `Alumno`, el polimorfismo nos permitiría declarar variables de tipo `Persona` y más tarde hacer con ellas referencia a objetos de tipo `Profesor` o `Alumno`, pero no deberíamos intentar acceder con esa variable a métodos que sean específicos de la clase `Profesor` o de la clase `Alumno`, tan solo a métodos que sabemos que van a existir seguro en ambos tipos de objetos (métodos de la superclase `Persona`).
 
-Revisa con cuidado el [Ejemplo 6.3](#ejemplo-6.3)
+Revisa con cuidado el [Ejemplo 6.3](#ejemplo-6.3).
+
+
+
+
+
+
 
 ## Interfaces y polimorfismo
 

@@ -11,8 +11,8 @@ footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
-
 [toc]
+
 
 # Ejercicios Herencia
 
@@ -27,54 +27,54 @@ typora-copy-images-to:${filename}/../assets
    - En las aulas normales, el `código` y la `superficie` y la `capacidad`.
    - En las aulas de música e informática el texto irá precedido por "Aula de música" o "Aula de informática", según corresponda.
 
-2. Un salón de **VideoJuegos** dispone de ordenadores en las que los clientes pueden jugar. Además de jugar en el establecimiento, la empresa alquila y vende juegos.
+2. Un salón de **VideoJuegos** dispone de ordenadores en los que los clientes pueden jugar. Además de jugar en el establecimiento, la empresa alquila y vende juegos.
 
    1. Diseñar la clase `Juego` siguiendo las siguientes especificaciones: 
       - Atributos protected: `titulo` (String), `fabricante` (String), `año` (int).
-      - Constructor `public Juego(String t, String f, int a)`
-      - Consultores de todos los atributos
-      - `public String toString()`, que devuelve un String con los datos del Juego 
+      - Constructor `public Juego(String t, String f, int a)`.
+      - Consultores de todos los atributos.
+      - `public String toString()`, que devuelve un String con los datos del Juego.
       - `public boolean equals(Object o)`: Dos juegos son iguales si tienen el mismo título, fabricante y año.
       - `public int compareTo(Object o)`: Un juego es menor que otro si su título es menor. A igual título, si su fabricante es menor. A igual título y fabricante, si su año es menor.
    2. Diseñar las clases `JuegoEnAlquiler` y `JuegoEnVenta` (y otras si se considera oportuno), sabiendo que, además de los atributos descritos anteriormente, tienen.
-      - `precio`
-      - `nº de copias disponibles`
-      - `JuegoEnAlquiler`
-        - tiene un atributo que indica el número de días que se alquila. (Por el precio indicado, hay juegos que se alquilan por un dia, otros por 2, etc...)
-        - Constructor que recibe todos sus datos
+      - `precio`.
+      - `nº de copias disponibles`.
+      - `JuegoEnAlquiler`.
+        - tiene un atributo que indica el número de días que se alquila. (Por el precio indicado, hay juegos que se alquilan por un día, otros por 2, etc...).
+        - Constructor que recibe todos sus datos.
         - tiene un método `alquilar` que decrementa el número de copias disponibles.
         - tiene un método `devolver` que incrementa el número de copias disponibles.
-        - `toString()` devuelve todos los datos del `JuegoEnAlquiler`
+        - `toString()` devuelve todos los datos del `JuegoEnAlquiler`.
       - `JuegoEnVenta`
-        - `Constructor` que recibe todos sus datos 
+        - `Constructor` que recibe todos sus datos.
         - tiene un método `vender`, que decrementa el número de copias disponibles.
-        - `toString()` devuelve todos los datos del `JuegoEnVenta`
+        - `toString()` devuelve todos los datos del `JuegoEnVenta`.
    
 3. La **Fabrica Nacional de Moneda y Timbre** quiere almacenar cierta información técnica del dinero (billetes y monedas) que emite. En concreto, le interesa:
 
-   - `Valor`: Valor de la moneda o billete, en euros. (`double`)
-   - `Año de emisión`: Año en que fué emitida la moneda o billete. (`int`)
+   - `Valor`: Valor de la moneda o billete, en euros. (`double`).
+   - `Año de emisión`: Año en que fue emitida la moneda o billete. (`int`).
    - De las monedas, 
-     - `Diámetro`: Diámetro de la moneda, en milímetros. (`double`)
-     - `Peso`: Peso de la moneda, en gramos (`double`)
+     - `Diámetro`: Diámetro de la moneda, en milímetros. (`double`).
+     - `Peso`: Peso de la moneda, en gramos (`double`).
    - De los billetes.
-     - `Altura del billete`, en mm (`double`)
+     - `Altura del billete`, en mm (`double`).
      - `Anchura del billete`, en mm (`double`).
 
    a) Diseñar la clase abstracta `Dinero` y sus subclases `Moneda` y `Billete`, desarrollando:
 
-   - Constructores que reciban los datos necesarios para inicializar los atributos de la clase correspondiente
+   - Constructores que reciban los datos necesarios para inicializar los atributos de la clase correspondiente.
    - `equals`: Dos monedas o billetes son iguales si tienen el mismo año de emisión y valor.
    - `compareTo`: Es menor (mayor) el de menor (mayor) año, a igual año es menor (mayor) el de menor (mayor) valor.
-   - `toString`: Que muestre todos los datos del billete o moneda. Los billetes irán precedidos por el texto "BILLETE" y las monedas por el texto "MONEDA" 
+   - `toString`: Que muestre todos los datos del billete o moneda. Los billetes irán precedidos por el texto "BILLETE" y las monedas por el texto "MONEDA".
 
    b) Diseñar la clase `TestDinero` para probar las clases desarrolladas: Crear objetos de las clases `Moneda` y `Billete` y mostrarlos por pantalla.
 
-4. Un **centro comercial** quiere mostrar cierta información sobre los televisores que vende. Los televisores pueden ser de dos tipos: de tubo o LCD. En concreto, de cada televisor le interesa mostrar
+4. Un **centro comercial** quiere mostrar cierta información sobre los televisores que vende. Los televisores pueden ser de dos tipos: de tubo o LCD. En concreto, de cada televisor le interesa mostrar:
 
-   - Marca (`String`)
-   - Modelo (`String`)
-   - Precio en euros
+   - Marca (`String`).
+   - Modelo (`String`).
+   - Precio en euros.
    - Pulgadas de la pantalla (`double`).
    - Resolución: La resolución se mide de forma distinta en los televisores de tubo que en los televisores LCD.
      - En los TV de tubo se mide en lineas.
@@ -111,15 +111,15 @@ typora-copy-images-to:${filename}/../assets
       - Si un método es abstracto en una clase, no puede ser abstracto en las subclases.
 
    7. - Si un método se define final se tiene que reescribir en las subclases.
-      - Si un método se define final no se puede reescribir en las subclases
+      - Si un método se define final no se puede reescribir en las subclases.
 
-   8. - Una clase puede tener un método final y no ser una clase final
-      - Si una clase tiene un método final tiene que ser una clase final
+   8. - Una clase puede tener un método final y no ser una clase final.
+      - Si una clase tiene un método final tiene que ser una clase final.
    9. - Si una clase se define final no se pueden definir subclases de ella.
       - Si una clase se define final no se puede instanciar.
    10. - Un método definido final y abstract resultaría inútil, puesto que nunca se podría implementar en las subclases.
        - Un método definido final y abstract podría resultar útil.
-   11. - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella..
+   11. - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella.
        - Una clase definida final y abstract podría resultar útil.
    
 6. Dada las siguientes **definiciónes de clases**:
@@ -235,15 +235,15 @@ typora-copy-images-to:${filename}/../assets
    ```java
    public static void main(String[] args){
    	Montador m1 = new Carpintero();
-   	-Montador m2 = new Albañil();
+   	Montador m2 = new Albañil();
    	Obrero o1 = new Carpintero();
    	Obrero o2 = new Albañil();
-   	-o1.montar("Mesa");((Carpintero)o1).montar("mesa");
-    	-o2.levantarMuro();//((Albañil)o2).levantarMuro();
-   	-m1.saludar();//podemos hacer casting?
-   	m1.montar("Silla");//llamaremos a montar de Carpintero
+   	o1.montar("Mesa");
+    	o2.levantarMuro();
+   	m1.saludar();
+   	m1.montar("Silla");
    	((Albañil)o2).levantarMuro();
-   	((Albañil)o1).levantarMuro();//?
+   	((Albañil)o1).levantarMuro();
    }
    ```
 
@@ -584,8 +584,8 @@ Implementa también una clase Programa para hacer algunas pruebas: Instancia var
 
 Implementa una **interface** llamada **iFigura2D** que declare los métodos:
 
-- double perimetro(): Para devolver el perímetro de la figura
-- double area(): Para devolver el área de la figura
+- double perimetro(): Para devolver el perímetro de la figura.
+- double area(): Para devolver el área de la figura.
 - void escalar(double escala): Para escalar la figura (aumentar o disminuir su tamaño). Solo hay que multiplicar los atributos de la figura por la escala (> 0).
 - void imprimir(): Para mostrar la información de la figura (atributos, perímetro y área) en una sola línea.
 
