@@ -167,6 +167,12 @@ Para entender estas situaciones un poco mejor, podemos volver a la clase `Rectan
 
 Revisa con cuidado el [Ejemplo 2.2.1](#ejemplo-2.2.1).
 
+
+
+
+
+
+
 ### Llamadas a constructores
 
 Otro factor que debes considerar, a la hora de escribir clases que contengan como atributos objetos de otras clases, es su comportamiento a la hora de instanciarse. Durante el proceso de creación de un objeto (constructor) de la clase contenedora habrá que tener en cuenta también la creación (llamadas a constructores) de aquellos objetos que son contenidos.
@@ -186,8 +192,6 @@ Se trata de un efecto similar al que sucedía en los métodos de tipo *get*, per
 Para entender mejor estos posibles efectos podemos continuar con el ejemplo de la clase `Rectangulo` que contiene en su interior dos objetos de la clase `Punto`. En los constructores del rectángulo habrá que incluir todo lo necesario para crear dos instancias de la clase `Punto` evitando las referencias a parámetros (haciendo copias).
 
 Revisa con cuidado el [Ejemplo 2.2.2](#ejemplo-2.2.2).
-
-
 
 
 
@@ -502,7 +506,7 @@ En determinadas ocasiones, es posible que necesites definir una clase que repres
 
 Imagina una aplicación para un centro educativo que utilice las clases de ejemplo Alumno y Profesor, ambas subclases de Persona. Es más que probable que esa aplicación nunca llegue a necesitar objetos de la clase Persona, pues serían demasiado genéricos como para poder ser utilizados (no contendrían suficiente información específica). Podrías llegar entonces a la conclusión de que la clase Persona ha resultado de utilidad como clase base para construir otras clases que hereden de ella, pero no como una clase instanciable de la cual vayan a existir objetos. A este tipo de clases se les llama clases abstractas.
 
-> En algunos casos puede resultar útil disponer de clases que nunca serán instanciadas, sino que proporcionan un marco o modelo a seguir por sus clases derivadas dentro de una jerarquía de herencia. Son las clases abstractas.
+> En algunos casos puede resultar útil disponer de clases que **nunca serán instanciadas**, sino que **proporcionan un** marco o **modelo a seguir por sus clases derivadas** dentro de una jerarquía de herencia. Son las clases abstractas.
 
 La posibilidad de declarar clases abstractas es una de las características más útiles de los lenguajes orientados a objetos, pues permiten dar unas líneas generales de cómo es una clase sin tener que implementar todos sus métodos o implementando solamente algunos de ellos. Esto resulta especialmente útil cuando las distintas clases derivadas deban proporcionar los mismos métodos indicados en la clase base abstracta, pero su implementación sea específica para cada subclase. 
 
@@ -553,7 +557,7 @@ Revisa con cuidado el [Ejemplo 4.2](#ejemplo-4.2).
 
 ## Clases y métodos finales
 
-En unidades anteriores has visto el modificador `final`, aunque sólo lo has utilizado por ahora para atributos y variables (por ejemplo para declarar atributos constantes, que una vez que toman un valor ya no pueden ser modificados). Pero este modificador también puede ser utilizado con clases y con métodos (con un comportamiento que no es exactamente igual, aunque puede encontrarse cierta analogía: **no se permite heredar o no se permite redefinir**).
+En unidades anteriores has visto el modificador **final**, aunque sólo lo has utilizado por ahora para atributos y variables (por ejemplo para declarar atributos constantes, que una vez que toman un valor ya no pueden ser modificados). Pero este modificador también puede ser utilizado con clases y con métodos (con un comportamiento que no es exactamente igual, aunque puede encontrarse cierta analogía: **no se permite heredar o no se permite redefinir**).
 
 Una clase declarada como `final` no puede ser heredada, es decir, no puede tener clases derivadas. La jerarquía de clases a la que pertenece acaba en ella (no tendrá clases hijas):
 
@@ -601,6 +605,10 @@ Veamos un ejemplo de cada posibilidad:
      ...
    }
    ```
+
+   
+
+   
 
 3. Modificador de un método.
 
@@ -979,6 +987,8 @@ devuelto).
 
 
 
+
+
 ##  Herencia de interfaces
 
 Las interfaces, al igual que las clases, también permiten la herencia. Para indicar que una interfaz hereda de otra se indica nuevamente con la palabra reservada `extends`. **Pero en este caso sí se permite la herencia múltiple de interfaces.** Si se hereda de más de una interfaz se indica con la lista de interfaces separadas por comas.
@@ -1217,6 +1227,14 @@ package UD08._01_Ejemplo_2_1;
 }
 ```
 
+
+
+
+
+
+
+
+
 Clase `Rectangulo`:
 
 ```java
@@ -1251,17 +1269,29 @@ En la siguiente presentación puedes observar detalladamente el proceso completo
 
 <img src="/assets/ud08_006.png" alt="ud08_006" style="zoom:70%;" />
 
+
+
+
+
+
+
 2. Atributos de un objeto `Rectangulo` compuesto por objetos de tipo `Punto`
 
-<img src="/assets/ud08_003.png" alt="image-20220419185525220" style="zoom:75%;" />
+<img src="/assets/ud08_003.png" alt="image-20220419185525220" style="zoom:60%;" />
 
 3. Clase `Rectangulo`
 
-   <img src="/assets/ud08_007.png" alt="ud08_007" style="zoom:75%;" />
+   <img src="/assets/ud08_007.png" alt="ud08_007" style="zoom:60%;" />
 
 4. Método `calcularSuperficie`
 
-   <img src="/assets/ud08_008.png" alt="ud08_008" style="zoom:75%;" />
+   <img src="/assets/ud08_008.png" alt="ud08_008" style="zoom:60%;" />
+
+
+
+
+
+
 
 ## Ejemplo 2.2.1
 
@@ -1910,14 +1940,14 @@ Existen una gran cantidad de clases abstractas en la API de Java. Aquí tienes u
 
 ## Ejemplo 4.2
 
-Basándote en la jerarquía de clases `Persona`, `Alumno`, `Profesor`, crea un método abstracto llamado `mostrarDatos` para la clase `Persona`. Dependiendo del tipo de persona (`alumno` o `profesor`) el método mostrar tendrá que mostrar unos u otros datos personales (habrá que hacer implementaciones específicas en cada clase derivada).
+Basándote en la jerarquía de clases `Persona`, `Alumno`, `Profesor`, crea un método abstracto llamado `mostrarDatos` para la clase `Persona`. Dependiendo del tipo de persona (`alumno` o `profesor`) el método `mostrarDatos` tendrá que mostrar unos u otros datos personales (habrá que hacer implementaciones específicas en cada clase derivada).
 
 Una vez hecho esto, implementa completamente las tres clases (con todos sus atributos y métodos) y utilízalas en un pequeño programa de ejemplo que cree un objeto de tipo `Alumno` y otro de tipo `Profesor`, los rellene con información y muestre esa información en la pantalla a través del método mostrar.
 
-Dado que el método mostrar no va a ser implementado en la clase Persona, será declarado como abstracto y no se incluirá su implementación:
+Dado que el método `mostrarDatos` no va a ser implementado en la clase Persona, será declarado como abstracto y no se incluirá su implementación:
 
 ```java
-protected abstract void mostrar ();
+protected abstract void mostrarDatos ();
 ```
 
 Recuerda que el simple hecho de que la clase `Persona` contenga un método abstracto hace que la clase sea abstracta (y deberá indicarse como tal en su declaración): 
@@ -1936,12 +1966,13 @@ En el caso de la clase `Alumno` habrá que hacer una implementación específica
    public void mostrarDatos() {
      DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
      String stringFecha = formatoFecha.format(this.fechaNacimiento);
-     System.out.printf("Nombre: %s\n", this.nombre);
-     System.out.printf("Apellidos: %s\n", this.apellidos);
-     System.out.printf("Fecha de nacimiento: %s\n", stringFecha);
+   
+     System.out.printf ("%-18s%s\n", "Nombre:", this.nombre);
+     System.out.printf ("%-18s%s\n", "Apellidos:", this.apellidos);
+     System.out.printf ("%-18s%s\n", "Fecha nacimiento:", stringFecha);
      // A continuación mostramos la información "especializada" de esta subclase
-     System.out.printf("Grupo: %s\n", this.grupo);
-     System.out.printf("Nota media: %5.2f\n", this.notaMedia);
+     System.out.printf ("%-18s%s\n", "Grupo:", this.grupo);
+     System.out.printf ("%-18s%-5.2f\n", "Nota media:", this.notaMedia);    
    }
    ```
 
@@ -1952,12 +1983,13 @@ En el caso de la clase `Alumno` habrá que hacer una implementación específica
    public void mostrarDatos() {
      DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
      String stringFecha = formatoFecha.format(this.fechaNacimiento);
-     System.out.printf("Nombre: %s\n", this.nombre);
-     System.out.printf("Apellidos: %s\n", this.apellidos);
-     System.out.printf("Fecha de nacimiento: %s\n", stringFecha);
+   
+     System.out.printf ("%-18s%s\n", "Nombre:", this.nombre);
+     System.out.printf ("%-18s%s\n", "Apellidos:", this.apellidos);
+     System.out.printf ("%-18s%s\n", "Fecha nacimiento:", stringFecha);
      // A continuación mostramos la información "especializada" de esta subclase
-     System.out.printf("Especialidad: %s\n", this.especialidad);
-     System.out.printf("Salario: %7.2f euros\n", this.salario);
+     System.out.printf ("%-18s%s\n", "Especialidad:", this.especialidad);
+     System.out.printf ("%-18s%-7.2f €\n", "Salario:", this.salario);    
    }
    ```
 
@@ -1978,7 +2010,7 @@ En el caso de la clase `Alumno` habrá que hacer una implementación específica
        Profesor profesor;
        // Creación de objetos (llamada a constructores)
        alumno = new Alumno("Juan", "Torres", LocalDate.of(1990, 10, 6), "1DAW", 7.5);
-       profesor = new Profesor("Antonio", "Campos", LocalDate.of(1970, 8, 15), "Informatica", 2000);
+       profesor = new Profesor("Antonio", "Campos", LocalDate.of(1970, 8, 15), "Informatica", 1750);
        // Utilización del método mostrar
        alumno.mostrarDatos();
        profesor.mostrarDatos();
@@ -1987,16 +2019,16 @@ En el caso de la clase `Alumno` habrá que hacer una implementación específica
    ```
    La salida debe ser algo parecido a esto:
    ```sh
-   Nombre: Juan
-   Apellidos: Torres
-   Fecha de nacimiento: 6/10/1990
-   Grupo: 1DAW
-   Nota media: 7,50
-   Nombre: Antonio
-   Apellidos: Campos
-   Fecha de nacimiento: 15/08/1970
-   Especialidad: Informatica
-   Salario: 2000,00 euros
+   Nombre: 		  Juan
+   Apellidos: 		  Torres
+   Fecha nacimiento: 6/10/1990
+   Grupo: 		      1DAW
+   Nota media:       7,50
+   Nombre:           Antonio
+   Apellidos:        Campos
+   Fecha nacimiento: 15/08/1970
+   Especialidad:     Informatica
+   Salario:          1750,00 €
    ```
 
 ## Ejemplo 5.2
