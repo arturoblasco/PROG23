@@ -167,12 +167,6 @@ Para entender estas situaciones un poco mejor, podemos volver a la clase `Rectan
 
 Revisa con cuidado el [Ejemplo 2.2.1](#ejemplo-2.2.1).
 
-
-
-
-
-
-
 ### Llamadas a constructores
 
 Otro factor que debes considerar, a la hora de escribir clases que contengan como atributos objetos de otras clases, es su comportamiento a la hora de instanciarse. Durante el proceso de creación de un objeto (constructor) de la clase contenedora habrá que tener en cuenta también la creación (llamadas a constructores) de aquellos objetos que son contenidos.
@@ -192,6 +186,8 @@ Se trata de un efecto similar al que sucedía en los métodos de tipo *get*, per
 Para entender mejor estos posibles efectos podemos continuar con el ejemplo de la clase `Rectangulo` que contiene en su interior dos objetos de la clase `Punto`. En los constructores del rectángulo habrá que incluir todo lo necesario para crear dos instancias de la clase `Punto` evitando las referencias a parámetros (haciendo copias).
 
 Revisa con cuidado el [Ejemplo 2.2.2](#ejemplo-2.2.2).
+
+
 
 
 
@@ -316,7 +312,7 @@ Aquí tienes de nuevo el resumen:
 | Sin modificador (`package`) |      ✔      |       ✔       |    ❌     |      ❌       |
 |                   `private` |      ✔      |       ❌       |    ❌     |      ❌       |
 
-> ¡Recuerda que **los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
+> ¡**Los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
 
 Si en el ejemplo anterior de la clase `Persona` se hubieran definido sus atributos como private:
 
@@ -367,7 +363,7 @@ Revisa con cuidado el [Ejemplo 3.3.2](#ejemplo-3.3.2).
 
 ## Redefinición de métodos heredados
 
-Una clase puede redefinir algunos de los métodos que ha heredado de su clase base. En tal caso, el nuevo método (especializado) sustituye al heredado. Este procedimiento también es conocido como de sobrescritura de métodos.
+Una clase puede redefinir algunos de los métodos que ha heredado de su clase base. El nuevo método (especializado) sustituye al heredado. Esto se conoce como sobrescritura de métodos.
 
 En cualquier caso, aunque un método sea sobrescrito o redefinido, aún es posible acceder a él a través de la referencia ***super***, aunque sólo se podrá acceder a métodos de la clase madre y no a métodos de clases superiores en la jerarquía de herencia.
 
@@ -381,7 +377,7 @@ public String getApellidos () {
 }
 ```
 
-Cuando sobrescribas un método heredado en Java puedes incluir la anotación `@Override`. Esto indicará al compilador que tu intención es sobrescribir el método de la clase madre. De este modo, si te equivocas (por ejemplo, al escribir el nombre del método) y no lo estás realmente sobrescribiendo, el compilador producirá un error y así podrás darte cuenta del fallo. En cualquier caso, no es necesario indicar `@Override`, pero puede resultar de ayuda a la hora de localizar este tipo de errores (crees que has sobrescrito un método heredado y al confundirte en una letra estás realmente creando un nuevo método diferente). En el caso del ejemplo anterior quedaría:
+Cuando sobrescribas un método heredado en Java puedes (**no es necesario)** incluir la anotación `@Override`. Esto indicará al compilador que tu intención es sobrescribir el método de la clase madre. De este modo, si te equivocas (por ejemplo, al escribir el nombre del método) y no lo estás realmente sobrescribiendo, el compilador producirá un error y así podrás darte cuenta del fallo. En el caso del ejemplo anterior quedaría:
 
 ```java
 @Override
@@ -391,6 +387,8 @@ public String getApellidos (){
 ```
 
 Revisa con cuidado el [Ejemplo 3.4](#ejemplo-3.4).
+
+
 
 ## Ampliación de métodos heredados
 
@@ -458,6 +456,10 @@ Revisa con cuidado el [Ejemplo 3.6](#ejemplo-3.6).
 Ya has visto cómo crear una clase derivada, cómo acceder a los miembros heredados de las clases superiores, cómo redefinir algunos de ellos e incluso cómo invocar a un constructor de la superclase. Ahora se trata de poner en práctica todo lo que has aprendido para que puedas crear tus propias jerarquías de clases, o basarte en clases que ya existan en Java para heredar de ellas, y las utilices de manera adecuada para que tus aplicaciones sean más fáciles de escribir y mantener.
 
 La idea de la herencia no es complicar los programas, sino todo lo contrario: simplificarlos al máximo. Procurar que haya que escribir la menor cantidad posible de código repetitivo e intentar facilitar en lo posible la realización de cambios (bien para corregir errores bien para incrementar la funcionalidad).
+
+
+
+
 
 ## La clase `Object` en Java
 
@@ -592,10 +594,10 @@ Veamos un ejemplo de cada posibilidad:
    ```java
    public class ClaseEjemplo {
      // Valor constante conocido en tiempo de compilación
-     final double PI= 3.14159265;
+     final double PI = 3.14159265;
     
      // Valor constante conocido solamente en tiempo de ejecución
-     final int SEMILLA= (int) Math.random()*10+1;
+     final int SEMILLA = (int) Math.random()*10+1;
      ...
    }
    ```
@@ -612,10 +614,10 @@ Veamos un ejemplo de cada posibilidad:
 
    ```java
    // Referencia constante: siempre se apuntará al mismo objeto Alumno recién creado, aunque este objeto pueda sufrir modificaciones.
-   final Alumno PRIMER_ALUMNO= new Alumno ("Pepe", "Torres", 9.55); // Ref. constante
+   final Alumno PRIMER_ALUMNO = new Alumno ("Pepe", "Torres", 9.55); // Ref. constante
    
    // Si la variable no es una referencia (tipo primitivo), sería una constante más (como un atributo constante).
-   final int NUMERO_DIEZ= 10; // Valor constante (dentro del ámbito de vida de la variable)
+   final int NUMERO_DIEZ = 10; // Valor constante (dentro del ámbito de vida de la variable)
    ```
 
 5. Modificador en un parámetro de un método.
@@ -975,6 +977,8 @@ devuelto).
 
 > La utilización de nombres idénticos en diferentes interfaces que pueden ser implementadas a la vez por una misma clase puede causar, además del problema de la colisión de nombres, dificultades de legibilidad en el código, pudiendo dar lugar a confusiones. Si es posible intenta evitar que se produzcan este tipo de situaciones.
 
+
+
 ##  Herencia de interfaces
 
 Las interfaces, al igual que las clases, también permiten la herencia. Para indicar que una interfaz hereda de otra se indica nuevamente con la palabra reservada `extends`. **Pero en este caso sí se permite la herencia múltiple de interfaces.** Si se hereda de más de una interfaz se indica con la lista de interfaces separadas por comas.
@@ -1105,11 +1109,11 @@ Con este tipo de referencia podrías luego apuntar a objetos tanto de tipo Profe
 
 ```java
 // En algunas circunstancias podría suceder esto:
-obj= new Alumno (nombre, apellidos, fecha, grupo, nota); // Polimorfismo con interfaces
+obj = new Alumno (nombre, apellidos, fecha, grupo, nota); // Polimorfismo con interfaces
 ...
  
 // En otras circunstancias podría suceder esto:
-obj= new Profesor (nombre, apellidos, fecha, especialidad, salario); // Polimorfismo con interfaces
+obj = new Profesor (nombre, apellidos, fecha, especialidad, salario); // Polimorfismo con interfaces
 ...
 ```
 
@@ -1118,8 +1122,10 @@ Y más adelante hacer uso de la ligadura dinámica:
 ```java
 // Llamadas sólo a métodos de la interfaz
 String contenido;
-contenido= obj.devolverContenidoString(); // Ligadura dinámica con interfaces
+contenido = obj.devolverContenidoString(); // Ligadura dinámica con interfaces
 ```
+
+
 
 ## Conversión de objetos
 
@@ -1144,7 +1150,7 @@ A continuación declaras una variable referencia a la clase `Animal` (superclase
 
 ```java
 Animal obj; // Referencia a objetos de la clase Animal
-obj= new Besugo(); // Referencia a objetos clase Animal, pero apunta realmente a objeto clase Besugo (polimorfismo)
+obj = new Besugo(); // Referencia a objetos clase Animal, pero apunta realmente a objeto clase Besugo (polimorfismo)
 ```
 
 El objeto que acabas de crear como instancia de la clase `Besugo` (subclase de `Animal`) contiene más información que la que la referencia `obj` te permite en principio acceder sin que el compilador genere un error (pues es de clase `Animal`). En concreto los objetos de la clase `Besugo` disponen de `nombre` y `peso`, mientras que los objetos de la clase `Animal` sólo de `nombre`. Para acceder a esa información adicional de la clase especializada (`peso`) tendrás que realizar una conversión explícita (casting):
@@ -1158,7 +1164,7 @@ Sin embargo si se hubiera tratado de una instancia de la clase `Animal` y hubier
 
 ```java
 Animal obj; // Referencia a objetos de la clase Animal
-obj= new Animal (); // Referencia a objetos de la clase Animal, y apunta realmente a un objeto de la clase Animal
+obj = new Animal (); // Referencia a objetos de la clase Animal, y apunta realmente a un objeto de la clase Animal
 
 // Casting del tipo Animal al tipo Besugo (puede dar problemas porque el objeto es realmente del tipo Animal):
 // Funciona (la clase Animal tiene nombre)
@@ -1380,8 +1386,8 @@ Durante el proceso de creación de un objeto (constructor) de la clase contenedo
 
 ```java
 public Rectangulo (){
-  this.vertice1= new Punto (0,0);
-  this.vertice2= new Punto (1,1);
+  this.vertice1 = new Punto (0,0);
+  this.vertice2 = new Punto (1,1);
 }
 ```
 
@@ -1389,8 +1395,8 @@ public Rectangulo (){
 
 ```java
 public Rectangulo (double x1, double y1, double x2, double y2){
-  this.vertice1= new Punto (x1, y1);
-  this.vertice2= new Punto (x2, y2);
+  this.vertice1 = new Punto (x1, y1);
+  this.vertice2 = new Punto (x2, y2);
 }
 ```
 
@@ -1527,8 +1533,8 @@ POSIBLE SOLUCIÓN
        return apellidos;
      }
    
-     public LocalDate getFechaNacim() {
-       return this.fechaNacim;
+     public LocalDate getFechaNacimiento() {
+       return this.fechaNacimiento;
      }
    
      public String getGrupo() {
@@ -1548,8 +1554,8 @@ POSIBLE SOLUCIÓN
        this.apellidos = apellidos;
      }
    
-     public void setFechaNacim(LocalDate fechaNacim) {
-       this.fechaNacim = fechaNacim;
+     public void setFechaNacimiento(LocalDate fechaNacimiento) {
+       this.fechaNacimiento = fechaNacimiento;
      }
    
      public void setGrupo(String grupo) {
@@ -1585,8 +1591,8 @@ POSIBLE SOLUCIÓN
        return apellidos;
      }
    
-     public LocalDate getFechaNacim() {
-       return this.fechaNacim;
+     public LocalDate getFechaNacimiento() {
+       return this.fechaNacimiento;
      }
    
     public String getEspecialidad() {
@@ -1606,8 +1612,8 @@ POSIBLE SOLUCIÓN
        this.apellidos = apellidos;
      }
    
-     public void setFechaNacim(LocalDate fechaNacim) {
-       this.fechaNacim = fechaNacim;
+     public void setFechaNacimiento(LocalDate fechaNacimiento) {
+       this.fechaNacimiento = fechaNacimiento;
      }
    
      public void setSalario(double salario) {
@@ -1626,6 +1632,8 @@ Una conclusión que puedes extraer de este código es que has tenido que escribi
 
 Aquí tienes un ejemplo de cómo podrías haber definido la clase Persona para que luego se hubieran podido heredar de ella sus métodos (y no sólo sus atributos):
 
+SOLUCIÓN IMPLEMENTADA CORRECTAMENTE (I)
+
 ```java
 package UD08._06_Ejemplo_3_3;
 
@@ -1635,7 +1643,7 @@ public class Persona {
 
   protected String nombre;
   protected String apellidos;
-  protected LocalDate fechaNacim;
+  protected LocalDate fechaNacimiento;
 
   // Métodos getXXXXX
   public String getNombre() {
@@ -1646,8 +1654,8 @@ public class Persona {
     return apellidos;
   }
 
-  public LocalDate getFechaNacim() {
-    return this.fechaNacim;
+  public LocalDate getFechaNacimiento() {
+    return this.fechaNacimiento;
   }
 
   // Métodos setXXXXX
@@ -1659,8 +1667,8 @@ public class Persona {
     this.apellidos = apellidos;
   }
 
-  public void setFechaNacim(LocalDate fechaNacim) {
-    this.fechaNacim = fechaNacim;
+  public void setFechaNacimiento(LocalDate fechaNacimiento) {
+    this.fechaNacimiento = fechaNacimiento;
   }
  }
 
@@ -1669,6 +1677,8 @@ public class Persona {
 ## Ejemplo 3.3.2
 
 Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriormente, implementa métodos `get` y `set` en la clase `Persona` para trabajar con sus tres atributos y en las clases `Alumno` y `Profesor` para manipular sus cinco atributos (tres heredados más dos específicos), teniendo en cuenta que los métodos que ya hayas definido para `Persona` van a ser heredados en `Alumno` y en `Profesor`.
+
+SOLUCIÓN IMPLEMENTADA CORRECTAMENTE (II)
 
 1. Clase `Persona`.
 
@@ -1681,7 +1691,7 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    
      protected String nombre;
      protected String apellidos;
-     protected LocalDate fechaNacim;
+     protected LocalDate fechaNacimiento;
    
      // Métodos getXXXXX
      public String getNombre() {
@@ -1692,8 +1702,8 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
        return apellidos;
      }
    
-     public LocalDate getFechaNacim() {
-       return this.fechaNacim;
+     public LocalDate getFechaNacimiento() {
+       return this.fechaNacimiento;
      }
    
      // Métodos setXXXXX
@@ -1705,8 +1715,8 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
        this.apellidos = apellidos;
      }
    
-     public void setFechaNacim(LocalDate fechaNacim) {
-       this.fechaNacim = fechaNacim;
+     public void setFechaNacimiento(LocalDate fechaNacimiento) {
+       this.fechaNacimiento = fechaNacimiento;
      }
    }
    ```
@@ -1807,12 +1817,12 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
 1. Método mostrar de la clase `Persona`.
    ```java
    public void mostrarDatos() {
-     SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-     String Stringfecha= formatoFecha.format(this.fechaNacim.getTime());
+     DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+     String stringFecha = formatoFecha.format(this.fechaNacimiento);
    
-     System.out.printf ("Nombre: %s\n", this.nombre);
-     System.out.printf ("Apellidos: %s\n", this.apellidos);
-     System.out.printf ("Fecha de nacimiento: %s\n", Stringfecha);
+     System.out.printf ("%-18s%s\n", "Nombre:", this.nombre);
+     System.out.printf ("%-18s%s\n", "Apellidos:", this.apellidos);
+     System.out.printf ("%-18s%s\n", "Fecha nacimiento:", stringFecha);
    }
    ```
 
@@ -1820,10 +1830,10 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
 
    ```java
    public void mostrarDatos() {
-     super.mostrarDatos();
+     super.mostrarDatos();  // Llamada al método "mostrarDatos" de la superclase
      // A continuación mostramos la información "especializada" de esta subclase
-     System.out.printf ("Grupo: %s\n", this.grupo);
-     System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
+     System.out.printf ("%-18s%s\n", "Grupo:", this.grupo);
+     System.out.printf ("%-18s%-5.2f\n", "Nota media:", this.notaMedia);
    }
    ```
 
@@ -1831,11 +1841,10 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
 
    ```java
    public void mostrarDatos() {
-     super.mostrarDatos(); // Llamada al método "mostrarDatos" de la superclase
+     super.mostrarDatos();
    
-     // A continuación mostramos la información "especializada" de esta subclase
-     System.out.printf ("Especialidad: %s\n", this.especialidad);
-     System.out.printf ("Salario: %7.2f euros\n", this.salario);
+     System.out.printf ("%-18s%s\n", "Especialidad:", this.especialidad);
+     System.out.printf ("%-18s%-7.2f €\n", "Salario:", this.salario);
    }
    ```
 
@@ -1844,8 +1853,9 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
 Escribe un constructor para la clase `Profesor` que realice una llamada al constructor de su clase base para inicializar sus atributos heredados. Los atributos específicos (no heredados) sí deberán ser inicializados en el propio constructor de la clase `Profesor`.
 
 ```java
-public Profesor (String nombre, String apellidos, GregorianCalendar fechaNacim, String especialidad, double salario) {
-  super (nombre, apellidos, fechaNacim);
+public Profesor (String nombre, String apellidos, LocalDate fechaNacimiento, 
+                 String especialidad, double salario) {
+  super (nombre, apellidos, fechaNacimiento);
   this.especialidad = especialidad;
   this.salario = salario;
 }
@@ -1854,9 +1864,9 @@ public Profesor (String nombre, String apellidos, GregorianCalendar fechaNacim, 
 Puedes hacer lo mismo para la clase `Alumno`.
 
 ```java
-public Alumno(String nombre, String apellidos,
-    LocalDate fechaNacim, String grupo, double notaMedia) {
-  super(nombre, apellidos, fechaNacim);
+public Alumno(String nombre, String apellidos, LocalDate fechaNacimiento, 
+              String grupo, double notaMedia) {
+  super(nombre, apellidos, fechaNacimiento);
   this.grupo = grupo;
   this.notaMedia = notaMedia;
 }
@@ -1872,7 +1882,7 @@ En este caso lo único que habría que hacer es añadir el modificador `abstract
 public abstract class Persona {
   protected String nombre;
   protected String apellidos;
-  protected LocalDate fechaNacim;
+  protected LocalDate fechaNacimiento;
   ...
 }
 ```
@@ -1924,11 +1934,11 @@ En el caso de la clase `Alumno` habrá que hacer una implementación específica
    ```java
    @Override
    public void mostrarDatos() {
-     DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
-     String stringfecha = formato.format(this.fechaNacim);
+     DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+     String stringFecha = formatoFecha.format(this.fechaNacimiento);
      System.out.printf("Nombre: %s\n", this.nombre);
      System.out.printf("Apellidos: %s\n", this.apellidos);
-     System.out.printf("Fecha de nacimiento: %s\n", stringfecha);
+     System.out.printf("Fecha de nacimiento: %s\n", stringFecha);
      // A continuación mostramos la información "especializada" de esta subclase
      System.out.printf("Grupo: %s\n", this.grupo);
      System.out.printf("Nota media: %5.2f\n", this.notaMedia);
@@ -1940,11 +1950,11 @@ En el caso de la clase `Alumno` habrá que hacer una implementación específica
    ```java
    @Override
    public void mostrarDatos() {
-     DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
-     String stringfecha = formato.format(this.fechaNacim);
+     DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+     String stringFecha = formatoFecha.format(this.fechaNacimiento);
      System.out.printf("Nombre: %s\n", this.nombre);
      System.out.printf("Apellidos: %s\n", this.apellidos);
-     System.out.printf("Fecha de nacimiento: %s\n", stringfecha);
+     System.out.printf("Fecha de nacimiento: %s\n", stringFecha);
      // A continuación mostramos la información "especializada" de esta subclase
      System.out.printf("Especialidad: %s\n", this.especialidad);
      System.out.printf("Salario: %7.2f euros\n", this.salario);
@@ -2045,8 +2055,8 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
      // Creamos la HashMap que va a ser devuelta
      HashMap contenido = new HashMap();
      // Añadimos los atributos de la clase
-     DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
-     String stringFecha = formato.format(this.fechaNacim);
+     DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+     String stringFecha = formatoFecha.format(this.fechaNacimiento);
      contenido.put("nombre", this.nombre);
      contenido.put("apellidos", this.apellidos);
      contenido.put("fechaNacim", stringFecha);
@@ -2248,8 +2258,8 @@ Así, por ejemplo:
 
 ```java
 public interface DiasSemana {
-  int LUNES = 1, MARTES=2, MIERCOLES=3, JUEVES=4;
-  int VIERNES=5, SABADO=6, DOMINGO=7;
+  int LUNES = 1, MARTES = 2, MIERCOLES = 3, JUEVES = 4;
+  int VIERNES = 5, SABADO = 6, DOMINGO = 7;
   String[] NOMBRES_DIAS = {"", "lunes", "martes", "miércoles", 
              "jueves", "viernes", "sábado", "domingo"};
 }
