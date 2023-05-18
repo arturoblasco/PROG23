@@ -639,13 +639,13 @@ Veamos un ejemplo de cada posibilidad:
 
 # Interfaces
 
-Has visto cómo la herencia permite definir especializaciones (o extensiones) de una clase base que ya existe sin tener que volver a repetir de todo el código de ésta. Este mecanismo da la oportunidad de que la nueva clase especializada (o extendida) disponga de toda la interfaz que tiene su clase base.
+Has visto cómo la herencia permite definir especializaciones (o extensiones) de una clase base que ya existe sin tener que volver a repetir todo el código de ésta. Este mecanismo da la oportunidad de que la nueva clase especializada (o extendida) disponga de toda la interfaz que tiene su clase base.
 
 También has estudiado cómo los métodos abstractos permiten establecer una interfaz para marcar las líneas generales de un comportamiento común de superclase que deberían compartir de todas las subclases.
 
-Si llevamos al límite esta idea de interfaz, podrías llegar a tener una clase abstracta donde todos sus métodos fueran abstractos. De este modo estarías dando únicamente el marco de comportamiento, sin ningún método implementado, de las posibles subclases que heredarán de esa clase abstracta. La idea de una interfaz (o interface) es precisamente ésa: disponer de un mecanismo que permita especificar cuál debe ser el comportamiento que deben tener todos los objetos que formen parte de una determinada clasificación (no necesariamente jerárquica).
+Si llevamos al límite esta idea de interfaz, podrías llegar a tener una clase abstracta donde todos sus métodos fueran abstractos. De este modo estarías dando únicamente el marco de comportamiento, sin ningún método implementado, de las posibles subclases que heredarán de esa clase abstracta. La idea de una *interfaz* (o *interface*) es precisamente ésa: disponer de un mecanismo que permita especificar cuál debe ser el comportamiento que deben tener todos los objetos que formen parte de una determinada clasificación (no necesariamente jerárquica).
 
-Una interfaz consiste principalmente en una lista de declaraciones de métodos sin implementar, que caracterizan un determinado comportamiento. Si se desea que una clase tenga ese comportamiento, tendrá que implementar esos métodos establecidos en la interfaz. En este caso no se trata de una relación de herencia (la clase A es una especialización de la clase B, o la subclase A es del tipo de la superclase B), sino más bien una relación "de implementación de comportamientos" (la clase A implementa los métodos establecidos en la interfaz B, o los comportamientos indicados por B son llevados a cabo por A; pero no que A sea de clase B).
+Una **interfaz** consiste principalmente en una **lista de declaraciones de métodos sin implementar, que caracterizan un determinado comportamiento**. Si se desea que una clase tenga ese comportamiento, tendrá que implementar esos métodos establecidos en la interfaz. En este caso no se trata de una relación de herencia (la clase B es una especialización de la clase A, o la subclase B es del tipo de la superclase A), sino más bien una relación "*de implementación de comportamientos*" (la clase B implementa los métodos establecidos en la interfaz A, o los comportamientos indicados por A son llevados a cabo por B; pero no que B sea de clase A).
 
 Imagina que estás diseñando una aplicación que trabaja con clases que representan distintos tipos de animales. Algunas de las acciones que quieres que lleven a cabo están relacionadas con el hecho de que algunos animales sean depredadores (por ejemplo: observar una presa, perseguirla, comérsela, etc.) o sean presas (observar, huir, esconderse, etc.). Si creas la clase `León`, esta clase podría implementar una interfaz `Depredador`, mientras que otras clases como `Gacela` implementarían las acciones de la interfaz `Presa`. Por otro lado, podrías tener también el caso de la clase `Rana`, que implementaría las acciones de la interfaz `Depredador` (pues es cazador de pequeños insectos), pero también la de `Presa` (pues puede ser cazado y necesita las acciones necesarias para protegerse).
 
@@ -716,8 +716,8 @@ Como puedes observar, una interfaz consiste esencialmente en una lista de atribu
 
 ```java
 [public] interface <NombreInterfaz> {
-  [public] [final] <tipo1> <atributo1>=<valor1>;
-  [public] [final] <tipo2> <atributo2>=<valor2>;
+  [public] [final] <tipo1> <atributo1> = <valor1>;
+  [public] [final] <tipo2> <atributo2> = <valor2>;
   ...
   [public] [abstract] <tipo_devuelto1> <nombreMetodo1> ([lista_parámetros]);
   [public] [abstract] <tipo_devuelto2> <nombreMetodo2> ([lista_parámetros]);
@@ -743,7 +743,7 @@ Revisa con cuidado el [Ejemplo 5.2](#ejemplo-5.2).
 
 Como ya has visto, todas las clases que implementan una determinada interfaz están obligadas a proporcionar una definición (implementación) de los métodos de esa interfaz, adoptando el modelo de comportamiento propuesto por ésta.
 
-Dada una interfaz, cualquier clase puede especificar dicha interfaz mediante el mecanismo denominado implementación de interfaces. Para ello se utiliza la palabra reservada implements:
+Dada una interfaz, cualquier clase puede especificar dicha interfaz mediante el mecanismo denominado implementación de interfaces. Para ello se utiliza la palabra reservada *implements*:
 
 ```java
 class NombreClase implements NombreInterfaz {
@@ -813,7 +813,7 @@ Aquí hay un ejemplo de una definición de interfaz. Especifica la interfaz a un
 ```java
 public interface Series {
   int getSiguiente(); //Retorna el siguiente número de la serie
-  void reiniciar(); //Reinicia
+  void reiniciar();   //Reinicia
   void setComenzar(int x); //Establece un valor inicial
 }
 ```
@@ -850,26 +850,26 @@ class DeDos implements Series {
 }
 ```
 
-Observe que los métodos `getSiguiente()`, `reiniciar()` y `setComenzar()` se declaran utilizando el especificador de acceso público (`public`). Esto es necesario. Siempre que implemente un método definido por una interfaz, debe implementarse como público porque todos los miembros de una interfaz son implícitamente públicos.
+Observa que los métodos `getSiguiente()`, `reiniciar()` y `setComenzar()` se declaran utilizando el especificador de acceso público (`public`). Esto es necesario. Siempre que implementes un método definido por una interfaz, debe implementarse como público porque todos los miembros de una interfaz son implícitamente públicos.
 
 Aquí hay una clase que demuestra `DeDos`:
 
 ```java
 class SeriesDemo {
   public static void main(String[] args) {
-    DeDos ob=new DeDos();
+    DeDos ob = new DeDos();
     for (int i=0; i<5; i++){
-      System.out.println("Siguiente valor es: "+ob.getSiguiente());
+      System.out.println("Siguiente valor es: " + ob.getSiguiente());
     }
     System.out.println("\nReiniciando");
     ob.reiniciar();
     for (int i=0; i<5; i++){
-      System.out.println("Siguiente valor es: "+ob.getSiguiente());
+      System.out.println("Siguiente valor es: " + ob.getSiguiente());
     }
     System.out.println("\nIniciando en 100");
     ob.setComenzar(100);
     for (int i=0; i<5; i++){
-      System.out.println("Siguiente valor es: "+ob.getSiguiente());
+      System.out.println("Siguiente valor es: " + ob.getSiguiente());
     }
   }
 }
