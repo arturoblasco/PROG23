@@ -376,18 +376,18 @@ El diagrama UML sería:
    Astro : -double masa
    Astro: -double temperatura_media
    Astro: -double gravedad
-   Astro: +muestra()
+   Astro: +mostrarDatos()
    <<abstract>> Astro
    class Planeta{
      -double distancia_al_sol
      -double orbita_al_sol
      -ArrayList<Satelite> satelites
-     +muestra()
+     +mostrarDatos()
    }
    class Satelite{
     -double distancia_al_planeta
     -double orbita_planetaria
-    +muestra()
+    +mostrarDatos()
    }
 ```
 
@@ -430,7 +430,9 @@ El diagrama UML sería:
     Mascota: +void cumpleaños()
     Mascota: + void morir()
     Mascota: + void habla()
-    
+    <<abstract>> Mascota
+ 
+ 
     class Ave{
       - String pico
       - boolean vuela
