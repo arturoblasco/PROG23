@@ -29,26 +29,29 @@ typora-copy-images-to:${filename}/../assets
 
 2. Un salón de **VideoJuegos** dispone de ordenadores en los que los clientes pueden jugar. Además de jugar en el establecimiento, la empresa alquila y vende juegos.
 
-   1. Diseñar la clase `Juego` siguiendo las siguientes especificaciones: 
-      - Atributos protected: `titulo` (String), `fabricante` (String), `año` (int).
-      - Constructor `public Juego(String t, String f, int a)`.
-      - Consultores de todos los atributos.
-      - `public String toString()`, que devuelve un String con los datos del Juego.
-      - `public boolean equals(Object o)`: Dos juegos son iguales si tienen el mismo título, fabricante y año.
-      - `public int compareTo(Object o)`: Un juego es menor que otro si su título es menor. A igual título, si su fabricante es menor. A igual título y fabricante, si su año es menor.
-   2. Diseñar las clases `JuegoEnAlquiler` y `JuegoEnVenta` (y otras si se considera oportuno), sabiendo que, además de los atributos descritos anteriormente, tienen.
-      - `precio`.
-      - `nº de copias disponibles`.
-      - `JuegoEnAlquiler`.
-        - tiene un atributo que indica el número de días que se alquila. (Por el precio indicado, hay juegos que se alquilan por un día, otros por 2, etc...).
-        - Constructor que recibe todos sus datos.
-        - tiene un método `alquilar` que decrementa el número de copias disponibles.
-        - tiene un método `devolver` que incrementa el número de copias disponibles.
-        - `toString()` devuelve todos los datos del `JuegoEnAlquiler`.
-      - `JuegoEnVenta`
-        - `Constructor` que recibe todos sus datos.
-        - tiene un método `vender`, que decrementa el número de copias disponibles.
-        - `toString()` devuelve todos los datos del `JuegoEnVenta`.
+   2.1. Diseñar la clase `Juego` siguiendo las siguientes especificaciones: 
+   
+   - Atributos protected: `titulo` (String), `fabricante` (String), `año` (int).
+   - Constructor `public Juego(String t, String f, int a)`.
+   - Consultores de todos los atributos.
+   - `public String toString()`, que devuelve un String con los datos del Juego.
+   - `public boolean equals(Object o)`: Dos juegos son iguales si tienen el mismo título, fabricante y año.
+   - `public int compareTo(Object o)`: Un juego es menor que otro si su título es menor. A igual título, si su fabricante es menor. A igual título y fabricante, si su año es menor.
+   
+   2.2. Diseñar las clases `JuegoEnAlquiler` y `JuegoEnVenta` (y otras si se considera oportuno), sabiendo que, además de los atributos descritos anteriormente, tienen.
+   
+   - `precio`.
+   - `nº de copias disponibles`.
+   - `JuegoEnAlquiler`.
+     - tiene un atributo que indica el número de días que se alquila. (Por el precio indicado, hay juegos que se alquilan por un día, otros por 2, etc...).
+     - Constructor que recibe todos sus datos.
+     - tiene un método `alquilar` que decrementa el número de copias disponibles.
+     - tiene un método `devolver` que incrementa el número de copias disponibles.
+     - `toString()` devuelve todos los datos del `JuegoEnAlquiler`.
+   - `JuegoEnVenta`
+     - `Constructor` que recibe todos sus datos.
+     - tiene un método `vender`, que decrementa el número de copias disponibles.
+     - `toString()` devuelve todos los datos del `JuegoEnVenta`.
    
 3. La **Fabrica Nacional de Moneda y Timbre** quiere almacenar cierta información técnica del dinero (billetes y monedas) que emite. En concreto, le interesa:
 
@@ -92,35 +95,49 @@ typora-copy-images-to:${filename}/../assets
 
 5. De cada pareja de afirmaciones **indica cual es la verdaderas**:
 
-   1. - Se dice que instanciamos una clase cuando creamos objetos de dicha clase.
-      - Se dice que instanciamos una clase cuando creamos una subclase de dicha clase.
+   a) Se dice que instanciamos una clase cuando creamos objetos de dicha clase.
+   
+   b) Se dice que instanciamos una clase cuando creamos una subclase de dicha clase.
+   
+   c) Si una clase es abstracta no se puede instanciar.
 
-   2. - Si una clase es abstracta no se puede instanciar.
-      - Si una clase es abstracta no se puede heredar de ella.
+   d) Si una clase es abstracta no se puede heredar de ella.
+   
+   e) Una clase abstracta tiene que tener métodos abstractos.
+   
+   f) Una clase puede ser abstracta y no tener métodos abstractos.
 
-   3. - Una clase abstracta tiene que tener métodos abstractos.
-      - Una clase puede ser abstracta y no tener métodos abstractos.
+   g) Si una clase tiene métodos abstractos tiene que ser abstracta.
+   
+   h) Una clase puede tener métodos abstractos y no ser abstracta.
+   
+   i) Si una clase es abstracta sus subclases no pueden ser abstractas.
 
-   4. - Si una clase tiene métodos abstractos tiene que ser abstracta.
-      - Una clase puede tener métodos abstractos y no ser abstracta.
-
-   5. - Si una clase es abstracta sus subclases no pueden ser abstractas.
-      - Una clase abstracta puede tener subclases que también sean abstractas.
-
-   6. - Si un método es abstracto en una clase, tiene que ser no abstracto en la subclase, o bien, la subclase tiene que ser también abstracta.
-      - Si un método es abstracto en una clase, no puede ser abstracto en las subclases.
-
-   7. - Si un método se define final se tiene que reescribir en las subclases.
-      - Si un método se define final no se puede reescribir en las subclases.
-
-   8. - Una clase puede tener un método final y no ser una clase final.
-      - Si una clase tiene un método final tiene que ser una clase final.
-   9. - Si una clase se define final no se pueden definir subclases de ella.
-      - Si una clase se define final no se puede instanciar.
-   10. - Un método definido final y abstract resultaría inútil, puesto que nunca se podría implementar en las subclases.
-       - Un método definido final y abstract podría resultar útil.
-   11. - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella.
-       - Una clase definida final y abstract podría resultar útil.
+   j) Una clase abstracta puede tener subclases que también sean abstractas.
+   
+   k) Si un método es abstracto en una clase, tiene que ser no abstracto en la subclase, o bien, la subclase tiene que ser también abstracta.
+   
+   l) Si un método es abstracto en una clase, no puede ser abstracto en las subclases.
+   
+   m) Si un método se define final se tiene que reescribir en las subclases.
+   
+   n) Si un método se define final no se puede reescribir en las subclases.
+   
+   o) Una clase puede tener un método final y no ser una clase final.
+   
+   p) Si una clase tiene un método final tiene que ser una clase final.
+   
+   q) Si una clase se define final no se pueden definir subclases de ella.
+   
+   r) Si una clase se define final no se puede instanciar.
+   
+   s) Un método definido final y abstract resultaría inútil, puesto que nunca se podría implementar en las subclases.
+   
+   t) Un método definido final y abstract podría resultar útil.
+   
+   u) Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella.
+   
+   v)Una clase definida final y abstract podría resultar útil.
    
 6. Dada las siguientes **definiciónes de clases**:
 
@@ -189,12 +206,17 @@ typora-copy-images-to:${filename}/../assets
 
    **Responde** a las siguientes cuestiones justificando las respuestas. 
 
-   1. ¿Es necesario el uso de `this` en el contructor de la clase `Estudiante`?
-   1. ¿Es necesario el uso de `super` en el método `toString` de la clase `Estudiante`?
-   1. Si quitásemos el constructor de la clase `Estudiante` ¿daría un error de compilación?
-   1. En el método `toString` de la clase `Empleado` ¿por qué es incorrecto el acceso que se hace al atributo `nombre`? ¿Cómo se tendría que definir `nombre` en la clase `Persona` para evitar el error?
-   1. ¿Qué consecuencia tiene que algunos métodos de la clase `Persona` se hayan definido `final`?
-   1. Si el método `toString` no se hubiera definido en ninguna de las tres clases ¿daría error el `sout` del método `main`?
+   a) ¿Es necesario el uso de `this` en el constructor de la clase `Estudiante`?
+   
+   b) ¿Es necesario el uso de `super` en el método `toString` de la clase `Estudiante`?
+   
+   c) Si quitásemos el constructor de la clase `Estudiante` ¿daría un error de compilación?
+   
+   d) En el método `toString` de la clase `Empleado` ¿por qué es incorrecto el acceso que se hace al atributo `nombre`? ¿Cómo se tendría que definir `nombre` en la clase `Persona` para evitar el error?
+   
+   e) ¿Qué consecuencia tiene que algunos métodos de la clase `Persona` se hayan definido `final`?
+   
+   f) Si el método `toString` no se hubiera definido en ninguna de las tres clases ¿daría error el `sout` del método `main`?
 
 # Ejercicios Polimorfismo
 
