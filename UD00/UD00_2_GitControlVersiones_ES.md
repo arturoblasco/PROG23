@@ -4,17 +4,13 @@ title: Control de versiones Git
 language: ES
 author: Arturo BC
 subject: Programación
-keywords: [Markdown, PROG, 2022, Programación]
+keywords: [Markdown, PROG, 2023, Programación]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${unit}: ${title} - ${subject} (ver: ${today})
 footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url: ${filename}/../
 typora-copy-images-to: ${filename}/../assets
 ---
-
-
-
-
 
 [toc]
 
@@ -25,31 +21,31 @@ typora-copy-images-to: ${filename}/../assets
 
 Establecer el nombre de usuario:
 
-```
+```sh
 git config --global user.name "Your-Full-Name"
 ```
 
 Establecer el correo del usuario:
 
-```
+```sh
 git config --global user.email "your-email-address"
 ```
 
 Activar el coloreado de la salida:
 
-```
+```sh
 git config --global color.ui auto
 ```
 
 Mostrar el estado original en los conflictos
 
-```
+```sh
 git config --global merge.conflictstyle diff3
 ```
 
 Mostrar la configuración
 
-```
+```sh
 git config --list
 ```
 
@@ -114,7 +110,7 @@ Cada commit tiene asociado un código hash de 40 caracteres hexadecimales que lo
 
 ### Mostrar el estado de un repositorio (`git status`)
 
-`git status` muestra el estado de los cambios en el repositorio desde la última versión guardada. En particular, muestra los cheros con cambios en el directorio de trabajo que no se han añadido a la zona de intercambio temporal y los cheros en la zona de intercambio temporal que no se han añadido al repositorio.
+`git status` muestra el estado de los cambios en el repositorio desde la última versión guardada. En particular, muestra los ficheros con cambios en el directorio de trabajo que no se han añadido a la zona de intercambio temporal y los ficheros en la zona de intercambio temporal que no se han añadido al repositorio.
 
 ### Mostrar el historial de versiones de un repositorio (`git log`)
 
@@ -143,31 +139,33 @@ Cada commit tiene asociado un código hash de 40 caracteres hexadecimales que lo
 
 `git checkout <commit> -- <file>` actualiza el fichero `<file>` a la versión correspondiente al commit `<commit>`.
 
-Suele utilizarse para eliminar los cambios en un chero que no han sido guardados aún en la zona de intercambio temporal, mediante el comando `git checkout HEAD -- <file>`
+Suele utilizarse para eliminar los cambios en un fichero que no han sido guardados aún en la zona de intercambio temporal, mediante el comando `git checkout HEAD -- <file>`
 
 ### Eliminar cambios de la zona de intercambio temporal (`git reset`)
 
-`git reset <fichero>` elimina los cambios del chero `<fichero>` de la zona de intercambio temporal, pero preserva los cambios en el directorio de trabajo.
+`git reset <fichero>` elimina los cambios del fichero `<fichero>` de la zona de intercambio temporal, pero preserva los cambios en el directorio de trabajo.
 
-Para eliminar por completo los cambios de un chero que han sido guardados en la zona de intercambio temporal hay que aplicar este comando y después `git checkout HEAD -- <fichero>`.
+Para eliminar por completo los cambios de un fichero que han sido guardados en la zona de intercambio temporal hay que aplicar este comando y después `git checkout HEAD -- <fichero>`.
 
 ### Eliminar cambios de un commit (`git reset`)
 
-- `git reset --hard <commit>` elimina todos los cambios desde el commit `<commit>` y actualiza el `HEAD` este commit. ¡Ojo! Usar con cuidado este comando pues los cambios posteriores al commit indicado se pierden por completo.
+- `git reset --hard <commit>` elimina todos los cambios desde el commit `<commit>` y actualiza el `HEAD` este commit. 
 
-  Suele usarse para eliminar todos los cambios en el directorio de trabajo desde el último commit mediante el comando `git reset --hard` `HEAD`.
+  **¡Ojo!** Usar con cuidado este comando pues los cambios posteriores al commit indicado se pierden por completo.
 
-- `git reset <commit>` actualiza el HEAD al commit `<commit>`, es decir, elimina todos los commits posteriores a este commit, pero no elimina los cambios del directorio de trabajo.
+  Suele usarse para eliminar todos los cambios en el directorio de trabajo desde el último commit mediante el comando `git reset --hard HEAD`.
+
+- `git reset <commit>` actualiza el HEAD al commit `<commit>`; es decir, elimina todos los commits posteriores a este commit, pero no elimina los cambios del directorio de trabajo.
 
 ## Ramas
 
-Inicialmente cualquier repositorio tiene una única rama llamada master donde se van sucediendo todos los commits de manera lineal.
+Inicialmente cualquier repositorio tiene una única rama llamada **master** (o **main**) donde se van sucediendo todos los commits de manera lineal.
 
-Una de las característica más útiles de Git es que permite la creación de ramas para trabajar en distintas versiones de un proyecto a la vez.
+Una de las características más útiles de Git es que permite la creación de ramas para trabajar en distintas versiones de un proyecto a la vez.
 
-Esto es muy útil si, por ejemplo, se quieren añadir nuevas funcionalidades al proyecto sin que inter eran con lo desarrollado hasta ahora.
+Esto es muy útil si, por ejemplo, se quieren añadir nuevas funcionalidades al proyecto sin que interfieran con lo desarrollado hasta ahora.
 
-Cuando se termina el desarrollo de las nuevas funcionalidades las ramas se pueden fusionar para incorporar lo cambios al proyecto principal.
+Cuando se termina el desarrollo de las nuevas funcionalidades las ramas **se pueden fusionar** para incorporar los cambios al proyecto principal.
 
 ### Creación de ramas (`git branch`)
 
@@ -203,7 +201,7 @@ Para fusionar dos ramas es necesario que no haya conflictos entre los cambios re
 
 Si en ambas versiones se han hecho cambios sobre la misma parte de un fichero, entonces se produce un conflicto y es necesario resolverlo antes de poder fusionar las ramas.
 
-La resolución debe hacerse manualmente observando los cambios que inter eren y decidiendo cuales deben prevalecer, aunque existen herramientas como `KDif3` o `meld` que facilitan el proceso.
+La resolución debe hacerse manualmente observando los cambios que interfieren y decidiendo cuáles deben prevalecer, aunque existen herramientas como `KDif3` o `meld` que facilitan el proceso.
 
 ### Reorganización de ramas (`git rebase`)
 
@@ -211,7 +209,9 @@ La resolución debe hacerse manualmente observando los cambios que inter eren y 
 
 ### Eliminación de ramas (git branch -d)
 
-`git branch -d <rama>` elimina la rama de nombre `<rama>` siempre y cuando haya sido fusionada previamente. `git branch -D <rama>` elimina la rama de nombre `<rama>` incluso si no ha sido fusionada. Si la rama no ha sido fusionada previamente se perderán todos los cambios de esa rama.
+`git branch -d <rama>` elimina la rama de nombre `<rama>` siempre y cuando haya sido fusionada previamente. 
+
+`git branch -D <rama>` elimina la rama de nombre `<rama>` incluso si no ha sido fusionada. Si la rama no ha sido fusionada previamente se perderán todos los cambios de esa rama.
 
 ### Repositorios remotos
 
@@ -237,13 +237,13 @@ Seguir el manual de [github](https://docs.github.com/es/authentication/connectin
 
 ### Generar la clave (Linux):
 
-```
+```sh
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 o:
 
-```
+```sh
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
@@ -257,11 +257,11 @@ Siguiendo los pasos de la [documentación](https://docs.github.com/es/authentica
 
 Algunas redes bloquean el acceso al puerto `22` (como por ejemplo la red del instituto), por ello `github` tiene habilitada la posibilidad de acceder a `ssh` a través del puerto `443` (típicamente `https`). Para configurar nuestro equipo y acceder a `github` mediante `ssh` con nuestro usuario y nuestra clave debemos configurar el archivo `~/.ssh/config` con el siguiente contenido:
 
-```
+```sh
 Host github.com
 Hostname ssh.github.com
 Port 443
-User martinezpenya
+User arturobc
 IdentityFile ~/.ssh/pubuntu_github_ssh_key
 ```
 

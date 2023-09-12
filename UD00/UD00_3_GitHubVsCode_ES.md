@@ -14,7 +14,7 @@ typora-copy-images-to: ${filename}/../assets
 [toc]
 # `VsCode` integrado en `GitHub`
 
-## Localizar repositorio.
+## Localizar repositorio
 
 Primero localizamos el repositorio con el que queremos colaborar:
 
@@ -28,7 +28,7 @@ Primero localizamos el repositorio con el que queremos colaborar:
 
 
 
-## Abrir `VSCode` integrado.
+## Abrir `VSCode` integrado
 
 Github cuenta con un editor online muy potente basado en `VSCode`.
 
@@ -44,7 +44,7 @@ Visualizaremos la estructura de carpetas y archivos en un editor `VSCode` integr
 
 
 
-## Modificar un archivo.
+## Modificar un archivo
 
 Una vez detectada la errata dentro del código [markdown](https://markdown.es/) que es muy fácil de interpretar (a poco que le dediquéis unos minutos) podemos modificar el archivo en cuestión, y a su lado aparecerá una **M** porqué el archivo está modificado.
 
@@ -124,3 +124,133 @@ Siguiendo los pasos de la práctica anterior,:
     <li>deberemos realizar un pull-request a nuestro compañero y que él lo acepte.</li></ol>
 
 Debes adjuntar a la tarea de AULES un pdf de nombre actividad02tunombre con los pasos a seguir una vez recibido el *pull-request* para aceptarlo y que se integre en nuestro repositorio, y mostrar además donde aparece el nombre del usuario que ha colaborado con nostros en el repositorio.
+
+
+
+## Repositorio Local + VsCode + Repositorio remoto
+
+En la siguiente práctica vamos a configurar el espació de trabajo en el que estaremos a lo largo de este curso/módulo de Programación.
+
+La idea va a consistir en:
+
+1. crear un proyecto Java en VS Code, 
+2. en el que crearemos un repositorio local.
+3. por otra parte, crearemos un repositorio remoto en GitHub (será privado y daremos acceso al profesor/a).
+4. enlazaremos nuestro Git local con nuestro Git remoto (en GitHub); así, podremos ir subiendo todos nuestros programas.
+
+Empecemos:
+
+1. Abrimos VS Code. Accedemos a la pestaña de JAVA PROJECTS, pulsamos el icono de `+` y elegimos la primera opción `No build tools`.
+
+   <img src="/assets/vscode_tarea3_01.png" style="zoom:80%;" />
+
+   Se abre otra ventana flotante en la que elegimos el lugar donde va a ir nuestro proyecto; crearemos en nuestra raíz `~` la carpeta `pr` y pulsamos botón  `Select the project location`.
+
+   <img src="/assets/vscode_tarea3_02.png" style="zoom: 67%;" />
+
+   Escribimos el nombre del proyecto `exercicisJava`.
+
+   <img src="/assets/vscode_tarea3_03.png" style="zoom:67%;" />
+
+   > Podemos observar la estructura de nuestro primer proyecto Java.
+   >
+   > Observamos en primer lugar la carpeta `src` que será la que contenga todos nuestros ficheros fuente `.java`. A la derecha podemos observar el contenido del fichero App.java.
+   >
+   > La carpeta `bin` contendrá los ficheros ejecutables `.class` que se generen de la compilación de nuestros ficheros `.java`.
+   >
+   > <img src="/assets/vscode_tarea3_04.png" style="zoom:80%;" />
+
+2. Des de un terminal, accedemos dentro de la carpeta de nuestro recién creado proyecto `~\pr\exercicisJava`. 
+
+   ```sh
+   cd ~\pr\exercicisJava
+   ```
+
+   <img src="/assets/vscode_tarea3_05a.png" style="zoom:67%;" />
+
+   Inicializamos ahí dentro, con la orden `git init`, nuestro repositorio local Git.
+
+   ```sh
+   git init
+   ```
+
+   <img src="/assets/vscode_tarea3_05b.png" style="zoom:67%;" />
+
+   Si vemos la estructura de la carpeta del proyecto vemos una carpeta oculta `.git`.
+
+   <img src="/assets/vscode_tarea3_05c.png" style="zoom:67%;" />
+
+   Si realizamos un `git status` observamos que todavía no hemos introducido las carpetas contenidas en el proyecto en nuestro repositorio. 
+
+   ```sh
+   git status
+   ```
+
+   <img src="/assets/vscode_tarea3_06.png" style="zoom:67%;" />
+
+   Para ello: `git add .` y a continuación `git commit -m "1) cargar proyecto inicial"`.
+
+   ```sh
+   git add .
+   ```
+
+   ```sh
+   git commit -m "1) carga proyecto inicial"
+   ```
+
+   <img src="/assets/vscode_tarea3_07.png" style="zoom:67%;" />
+
+   Se puede comprobar con `git status` que, en este momento, no existe ninguna modificación en el área de trabajo que no se encuentre en el repositorio.
+
+   <img src="/assets/vscode_tarea3_08.png" style="zoom:67%;" />
+
+   Se puede observar este primer commit con `git log`.
+
+   ```sh
+   git log
+   ```
+
+   <img src="/assets/vscode_tarea3_09.png" style="zoom:67%;" />
+
+   
+
+3. Es hora de crear nuestro repositorio remoto en GitHub:
+
+   <img src="/assets/vscode_tarea3_10.png" style="zoom:50%;" />
+
+   El nombre de nuestro repositorio `exercicisJava`; descripción `1º CFGS DAW - Programación - Ejercicios de Java`, por ejemplo, acceso `Private` y NO crearemos el fichero README ni .gitignore (por ahora).
+
+   <img src="/assets/vscode_tarea3_11.png" style="zoom:80%;" />
+
+   ​		Si vemos el resultado de crear el anterior repositorio, entre otras opciones de terminar encontramos:	
+
+   <img src="/assets/vscode_tarea3_12.png" style="zoom: 67%;" />
+
+   ​		Vamos a terminar ejecutando esta orden en nuestro terminal (DENTRO de nuestra carpeta de proyecto Java / repositorio local Git):
+
+   ```sh
+   git remote add origin git@github.com:arturoblasco/exercicisJava.git
+   ```
+
+   ![](/assets/vscode_tarea3_13.png)
+
+   ​	
+
+   
+
+4. Para terminar, enlazamos el repositorio local de Git con el repositorio remoto en GitHub:
+
+   ```sh
+   git push origin master
+   ```
+
+<img src="/assets/vscode_tarea3_14.png" style="zoom:67%;" />
+
+​	Si vemos en nuestro repositorio de GitHub la sincronización ha sido realizada:
+
+<img src="/assets/vscode_tarea3_15.png" style="zoom:67%;" />
+
+​		Para terminar, ponemos al profesor/a del módulo de Programación como colaborador de nuestro repositorio:
+
+<img src="/assets/vscode_tarea3_16.png" style="zoom:67%;" />
+

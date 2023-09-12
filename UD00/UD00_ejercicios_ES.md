@@ -4,7 +4,7 @@ title: Ejercicios
 language: ES
 author: Arturo BC
 subject: Programación
-keywords: [Markdown, PROG, 2022, Programación]
+keywords: [Markdown, PROG, 2023, Programación]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${unit}: ${title} - ${subject} (ver: ${today})
 footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
@@ -121,8 +121,6 @@ Esta es la carpeta donde se registrarán todos los cambios que vayamos realizand
 ```sh
 ls -la
 ```
-
-<img src="assets/git-lsla.png" />
 
 Comprueba el contenido de esta nueva carpeta, ¿por qué **.git** tiene un punto delante?
 
