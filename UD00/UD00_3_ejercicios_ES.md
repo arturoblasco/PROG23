@@ -12,6 +12,10 @@ typora-root-url: ${filename}/../
 typora-copy-images-to: ${filename}/../assets
 ---
 
+
+
+
+
 [toc]
 # Áreas de un repositorio GIT
 
@@ -21,15 +25,19 @@ En esta actividad deberás buscar información y explicar las 3 áreas de un pro
 - **Área de preparación (*Staging area*)**
 - **Repositorio (*Directorio .git*)**
 
-![Áreas de GIT](assets/git-areas.png)
+<img src="assets/git-areas.png" alt="Áreas de GIT" style="zoom:80%;" />
 
 
-
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*actividad01tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
 
 
 
 # Configurar nuestro git
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea01tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
 
 Antes de comenzar a utilizar git, debemos configurarlo con los valores que tendrá a partir de ahora (*nombre, correo electrónico, ...*).
 
@@ -110,7 +118,7 @@ git init
 
 Puedes observar por el texto <code>Initializade empty Git repository in ...</code> que se acaba de crear un repositorio local:
 
-<img src="assets/git-init.png" />
+<img src="assets/git-init.png" style="zoom:80%;" />
 
 
 
@@ -134,15 +142,15 @@ Creamos un fichero (con el editor **nano**, por ejemplo):
 nano README.md
 ```
 
-<img src="assets/nano-readme.png" style="zoom:90%;" />
+<img src="assets/nano-readme.png" style="zoom: 80%;" />
 
 Acto seguido, añadimos a dicho archivo una línea con nuestro *nombre* y *apellidos*. Guardamos archivo (en nano con **Ctrl+X**):
 
-<img src="assets/nano-guardar1.png" style="zoom:93%;" />
+<img src="assets/nano-guardar1.png" style="zoom: 80%;" />
 
 Guardar con el mismo nombre (pulsa **INTRO**):
 
-<img src="assets/nano-guardar2.png" style="zoom:89%;" />
+<img src="assets/nano-guardar2.png" style="zoom: 80%;" />
 
 
 
@@ -175,6 +183,12 @@ La segunda vez añadimos una tercera línea con el *nombre del IES* y luego volv
 
 
 
+
+
+
+
+
+
 ## Por último vemos cambios realizados
 
 Para ver los commit realizados ejecutamos:
@@ -184,7 +198,7 @@ git  log
 git  log  --oneline
 ```
 
-![git log](assets/git-log.png)
+<img src="assets/git-log.png" alt="git log" style="zoom:80%;" />
 
 Deberían aparecer 3 commits.
 
@@ -192,9 +206,13 @@ Deberían aparecer 3 commits.
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad02tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
-
 # Revisar commits realizados
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea02tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
 
 En esta actividad, haremos uso del comando `git checkout` para movernos por los distintos commits.
 
@@ -210,7 +228,7 @@ La opción `--all`,  nos muestra todos los commits.
 
 Debería aparecerte algo semejante a la siguiente imagen:
 
-![git log](assets/git-log.png)
+<img src="assets/git-log.png" alt="git log" style="zoom:80%;" />
 
 La primera columna es un **hash**, un identificador.
 
@@ -228,7 +246,7 @@ Realiza los siguientes pasos y crea las capturas correspondientes:
 
 
 
-## Ver el contenido de README.md` en commit actual
+## Ver el contenido de README.md en commit actual
 
 Para ello:
 
@@ -252,13 +270,11 @@ git  checkout  5e178c8
 
 Te aparecerá un mensaje que contiene "*Te encuentras en estado 'detached HEAD'*....". Esto indica que la referencia HEAD no está al final de la rama. No te preocupes por ello.
 
-Ahora veamos el contenido del archivo `README.md`.
+Ahora veamos el contenido del archivo `README.md`, Debe aparecer sólo una línea con tu nombre (el contenido que tenía el archivo en ese commit):
 
 ```sh
 cat README.md
 ```
-
-Debe aparecer sólo una línea con tu nombre. Es el contenido que tenía dicho archivo en ese commit.
 
 
 
@@ -272,9 +288,9 @@ git  log  --oneline --all
 
 Debería aparecer algo semejante a la siguiente imagen:
 
-![git log](assets/git-log2.png)
+<img src="assets/git-log2.png" alt="git log" style="zoom:80%;" />
 
-Fíjate donde apunta la referencia HEAD en este momento. 
+Fíjate dónde apunta la referencia HEAD en este momento. 
 
 > Algo que quizás te haya pasado desapercibido pero que es extremadamente **IMPORTANTE** es que cada vez que nos movemos de un commit a otro, el contenido del directorio de trabajo cambia. Esto lo hace git de forma automática.
 
@@ -334,9 +350,17 @@ Haz una captura de pantalla.
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad03tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
+
 
 # Etiquetar commits y ver diferencias
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea03tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
 
 En esta actividad vamos a ver 3 comandos:
 
@@ -368,7 +392,7 @@ El tercer commit será la versión 2 de nuestro proyecto. La etiqueta será `v2`
 
 > En la captura se muestra un error que más tarde corregiremos en la etiqueta de la v2.
 
-![git tag](assets/git-tag.png)
+<img src="assets/git-tag.png" alt="git tag" style="zoom:80%;" />
 
 Para etiquetar utilizamos el comando
 
@@ -397,7 +421,7 @@ git tag -d nombre_etiqueta
 
 Por ejemplo, en el caso anterior nos hemos equivocado en el mensaje de v2, así que:
 
-![git tag](assets/git-tag2.png)
+<img src="assets/git-tag2.png" alt="git tag" style="zoom:80%;" />
 
 
 
@@ -427,7 +451,7 @@ git checkout master
 
 ## Examinar cambios de un commit respecto al anterior
 
-<img src="assets/git-log-tags.png" alt="git log" style="zoom:108%;" />
+<img src="assets/git-log-tags.png" alt="git log" style="zoom: 80%;" />
 
 Para ver los cambios introducidos respecto al commit anterior hacemos:
 
@@ -444,7 +468,7 @@ git show 3842
 git show v2
 ```
 
-![git show](assets/git-show.png)
+<img src="assets/git-show.png" alt="git show" style="zoom:80%;" />
 
 Como podemos observar, se añadió una línea, la que contiene el IES.
 
@@ -460,7 +484,7 @@ git show 15cb
 
 Debe aparecer añadida la línea con la fecha.
 
-<img src="assets/git-show2.png" alt="git show" style="zoom:105%;" />
+<img src="assets/git-show2.png" alt="git show" style="zoom: 80%;" />
 
 Y para ver el cambio realizado en el commit primero respecto al repositorio vacío:
 
@@ -470,7 +494,7 @@ git show v1
 
 Debe aparecer añadida la línea con el nombre.
 
-<img src="assets/git-show3.png" alt="git show" style="zoom:108%;" />
+<img src="assets/git-show3.png" alt="git show" style="zoom: 80%;" />
 
 
 
@@ -490,7 +514,7 @@ Por ejemplo, para ver los cambios entre la versión 1 y la versión 2, hacemos
 git diff v1..v2
 ```
 
-<img src="assets/git-diff.png" alt="git diff" style="zoom:108%;" />
+<img src="assets/git-diff.png" alt="git diff" style="zoom: 80%;" />
 
 Podemos ver que se han añadido 2 líneas desde el commit v1.
 
@@ -513,9 +537,15 @@ Ejecuta dicho comando y haz una captura de pantalla. Explica brevemente la difer
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad04tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
-
 # Crear repositorio remoto y subir commits locales
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea04tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
 
 En esta actividad crearemos un repositorio vacío en GitHub y subiremos el contenido de nuestro repositorio local.
 
@@ -527,13 +557,13 @@ Accedemos a nuestra cuenta de GitHub.
 
 En la **esquina superior derecha**, pulsamos en el signo **+** y luego en **New repository**
 
-![github nuevo repo](assets/github-nuevo-repo.png)
+<img src="assets/github-nuevo-repo.png" alt="github nuevo repo" style="zoom:75%;" />
 
 Escogemos el nombre del repositorio. No tiene porqué coincidir con el nombre del repositorio local, aunque es lo aconsejable para no hacernos un lío.
 
 En lugar de *pruebasPROG* pon tu nombre.
 
-![github nuevo repo](assets/github-nuevo-repo2.png)
+<img src="assets/github-nuevo-repo2.png" alt="github nuevo repo" style="zoom:75%;" />
 
 > Puedes elegir a tu gusto si el repositorio es público o privado, esto no afectará al resto de secciones.
 
@@ -543,7 +573,7 @@ En una actividad posterior crearemos conflictos y veremos como resolverlos. Pero
 
 Pulsaremos en **Create Repository** y nos aparecerá una página como la siguiente:
 
-![github nuevo repo](assets/github-nuevo-repo3.png)
+<img src="assets/github-nuevo-repo3.png" alt="github nuevo repo" style="zoom:75%;" />
 
 Ahí podemos ver la URL del repositorio remoto. Hay 2 formas de acceso:
 
@@ -574,7 +604,7 @@ Para ver si se ha añadido bien:
 git remote -v
 ```
 
-![github remote](assets/git-remote.png)
+<img src="assets/git-remote.png" alt="github remote" style="zoom:80%;" />
 
 Deben aparecer 2 entradas, una para bajada (fetch) y otra para subida (push)
 
@@ -598,9 +628,13 @@ El identificador **origin** es el nombre que dimos a nuestro vínculo. El identi
 
 Es una convención ampliamente seguida, así que respétala.
 
-![github repo](assets/git-push1.png)
+<img src="assets/git-push1.png" alt="github repo" style="zoom:80%;" />
 
 > Si hemos realizado correctamente la configuración de git en nuestro PC se deberían enviar los cambios de nuestro PC al repositorio remoto sin pedir contraseña ya que estamos usando la llave que tenemos configurada en nuestro sistema.
+
+
+
+
 
 
 
@@ -622,7 +656,7 @@ Es una convención ampliamente seguida, así que respétala.
 
 Volvemos a la página de GitHub y la actualizamos. Nos aparecerá algo semejante a esto:
 
-![github repo](assets/github-repo.png) 
+<img src="assets/github-repo.png" alt="github repo" style="zoom:75%;" /> 
 
 GitHub ofrece muchas funcionalidades.
 
@@ -637,12 +671,7 @@ git push --tags
 ```
 Así que ejecutaremos dicho comando desde nuestro repositorio local. Refrescaremos la página. Et voilà ! 
 
-
-![github repo](assets/github-repo2.png)
-
-
-
-
+<img src="assets/github-repo2.png" alt="github repo" style="zoom:75%;" />
 
 ## Examinando commits y releases en GitHub
 
@@ -655,9 +684,17 @@ Así que ejecutaremos dicho comando desde nuestro repositorio local. Refrescarem
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad05tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
+
 
 # Deshacer cambios en repositorio local
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea05tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
 
 En esta actividad, veremos qué podemos hacer cuando cometemos errores.
 
@@ -690,7 +727,7 @@ Es decir vamos a ver las diferencias que existen en nuestro directorio de trabaj
 > NOTA: Si quisiesemos ver las diferencias de nuestro directorio de trabajo respecto al commit de la Versión 1, haríamos `git diff v1`.
 > Observa que estamos viendo las diferencias hacia al pasado. Esta forma de uso de git diff es diferente a la que vimos en la última actividad, en la cual veíamos las diferencias hacia el futuro.
 
-![git diff HEAD](assets/git-diff-head.png)
+<img src="assets/git-diff-head.png" alt="git diff HEAD" style="zoom:80%;" />
 
 
 Se ve claramente que hemos eliminado las 2 últimas líneas. 
@@ -701,8 +738,7 @@ Para volver el estado de este archivo y de CUALQUIER OTRO de nuestro directorio 
 git reset --hard
 ```
 
-
-![git reset --hard](assets/git-reset--hard.png)
+<img src="assets/git-reset--hard.png" alt="git reset --hard" style="zoom:80%;" />
 
 
 
@@ -754,7 +790,7 @@ Y además hemos hecho
 git commit -m "Borras líneas de README.md"
 ```
 
-![git reset 1](assets/git-reset-commit-1.png)
+<img src="assets/git-reset-commit-1.png" alt="git reset 1" style="zoom:80%;" />
 
 Pues en este caso también podemos usar el comando `git reset --hard` de la siguiente forma:
 
@@ -762,8 +798,7 @@ Pues en este caso también podemos usar el comando `git reset --hard` de la sigu
 git reset --hard HEAD~1
 ```
 
-
-![git reset 2](assets/git-reset-commit-2.png)
+<img src="assets/git-reset-commit-2.png" alt="git reset 2" style="zoom:80%;" />
 
 
 **HEAD~1** significa el commit anterior al actual. Es decir **un commit hacia atrás**.
@@ -779,9 +814,15 @@ git reset --hard HEAD~1
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad06tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
-
 # Archivo `.gitignore`
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea06tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
 
 En esta actividad empezaremos a trabajar con algo más real. Por ejemplo, una sencilla aplicación de Java. Esta actividad también es práctica.
 
@@ -790,7 +831,7 @@ Vamos a seguir utilizando el repositorio que estabamos usando en las actividades
 git log  --oneline --all
 ```
 
-![git log](assets/git-log3.png)
+<img src="assets/git-log3.png" alt="git log" style="zoom:80%;" />
 
 
 
@@ -800,7 +841,7 @@ Para ello abriremos nuestro IDE favorito (en mi caso Visual Studo Code) crearemo
 
 Nuestra estructura de carpetas debería ser algo similar a esto:
 
-![gradle init](assets/vscode_abc03.png)
+<img src="assets/vscode_abc03.png" alt="gradle init" style="zoom:75%;" />
 
 
 
@@ -815,7 +856,7 @@ Esto es porque <code>git diff HEAD</code> funciona siempre teniendo en cuenta lo
 
 **Los archivos nuevos son archivos sin seguimiento**. En este caso debemos usar **`git status`** para ver esta circunstancia.
 
-![archivos sin seguimiento](assets/archivos-sin-seguimiento.png)
+<img src="assets/archivos-sin-seguimiento.png" alt="archivos sin seguimiento" style="zoom:80%;" />
 
 Ahora debemos añadir todos estos archivos al área de preparación (*Staging Area*) y luego realizar un commit.
 
@@ -864,7 +905,7 @@ git status
 
 veremos que no nos aparecen las carpetas `dist`, `build` ni `nbproject/private`, ni ninguno de los archivos omitidos en `.gitignore`.
 
-![gitignore](assets/gitignore.png)
+<img src="assets/gitignore.png" alt="gitignore" style="zoom:80%;" />
 
 
 Ahora ya podemos ejecutar
@@ -877,11 +918,25 @@ git  commit  -m  "Código fuente inicial"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Subir cambios de repositorio local a repositorio remoto
 
 Ya sólo nos queda subir los cambios realizados al repositorio remoto con **git push**
 
-![git push](assets/git-push.png)
+<img src="assets/git-push.png" alt="git push" style="zoom:80%;" />
 
 Para hacer algo más interesante este apartado, vamos a crear una etiqueta en el commit actual y subirla a github para que éste cree una nueva *release*.
 
@@ -890,7 +945,7 @@ git  tag  v3
 git  push --tags
 ```
 
-![git push --tags](assets/git-push-tags.png)
+<img src="assets/git-push-tags.png" alt="git push --tags" style="zoom:80%;" />
 
 En este caso, podríamos también haber ejecutado:
 
@@ -901,7 +956,7 @@ git push origin v3
 
 Y la historia de nuestro repositorio local nos quedaría así de bonita:
 
-![git colorido](assets/git-colorido.png)
+<img src="assets/git-colorido.png" alt="git colorido" style="zoom:80%;" />
 
 Accede a tu repositorio en GitHub y haz una captura de pantalla de las *Tags*.
 
@@ -914,9 +969,15 @@ Haz otra captura de los archivos y carpetas de código subidas a GitHub. No debe
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad07tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
-
 # Usando un par de claves SSH
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea07tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
 
 > GitHub ya no permite las conexiones por HTTP, solo por SSH, y esto ya lo hicimos al comenzar los ejercicios, así que te puedes saltar el paso 8 e ir directamente al punto 9. Lo dejo aquí como referencia y consulta.
 
@@ -938,7 +999,7 @@ Es muy sencillo. Como usuario normal (sin ser root) ejecutamos el comando
 ssh-keygen
 ```
 
-<img src="assets/ssh-keygen.png" alt="ssh-keygen" style="zoom:80%;" />
+<img src="assets/ssh-keygen.png" alt="ssh-keygen" style="zoom:60%;" />
 
 Pulsamos Intro a todo. Salvo que ya exista un par de claves previo. En ese caso nos preguntará si deseamos sobreescribir (Override (y/n)? ) En este caso, en esta pregunta respondemos y . Luego todo Intro.
 
@@ -951,7 +1012,7 @@ El primero archivo corresponde a la clave privada y el segundo a la clave públi
 
 Copiamos el contenido de la clave pública en un editor de texto. Nos hará falta más adelante.
 
-![id_rsa.pub](assets/id_rsa.pub.png)
+<img src="assets/id_rsa.pub.png" alt="id_rsa.pub" style="zoom:60%;" />
 
 Debe copiarse  *ssh-rsa  ....  jose@lenovo* 
 
@@ -963,20 +1024,20 @@ En vuestro caso, en lugar de jose@lenovo aparecerá otro usuario y pc.
 
 Iniciamos sesión de GitHub y en el menú general (esquina superior derecha) seleccionamos la opción **Settings**.
 
-![github settings](assets/github-settings.png)
+<img src="assets/github-settings.png" alt="github settings" style="zoom:75%;" />
 
 Luego, en la parte izquierda, elegimos la opción **SSH y GPG keys**
 
-![github ssh gpg](assets/github-ssh-gpg.png)
+<img src="assets/github-ssh-gpg.png" alt="github ssh gpg" style="zoom:75%;" />
 
 
 A continuación, a la derecha, pulsamos en el botón **New SSH key**
 
-![github new ssh key](assets/github-new-ssh-key.png)
+<img src="assets/github-new-ssh-key.png" alt="github new ssh key" style="zoom:75%;" />
 
 Luego ponemos un nombre a la clave, por ejemplo pc-casa. Y copiamos el contenido de la clave pública. Finalmente, pulsamos en el botón **Add SSH key**	
 
-![github add ssh key](assets/github-add-ssh-key.png)
+<img src="assets/github-add-ssh-key.png" alt="github add ssh key" style="zoom:75%;" />
 
 La clave anterior puede usarse para cualquiera de nuestros repositorios. Para hacer uso de ella, lo único que necesitamos es la URL en formato SSH de cada repositorio.
 
@@ -987,7 +1048,7 @@ La clave anterior puede usarse para cualquiera de nuestros repositorios. Para ha
 
 Si, por cualquier motivo, alguien accediera a nuestro PC y cogiera la clave privada, bastaría con eliminar esta clave pública de GitHub y al ladrón no le serviría de nada nuestra clave privada.
 
-![github list ssh keys](assets/github-list-ssh-keys.png)
+<img src="assets/github-list-ssh-keys.png" alt="github list ssh keys" style="zoom:75%;" />
 
 
 
@@ -999,7 +1060,7 @@ Botón **Clone or download**, **Use SSH**
 
 Copiamos URL en formato SSH. Su formato es relativamente fácil de memorizar. Siempre git@githbub.com seguido de dos puntos **:**  y luego el **nombre de usuario / nombre de repositorio**.
 
-![github use ssh](assets/github-use-ssh.png)
+<img src="assets/github-use-ssh.png" alt="github use ssh" style="zoom:75%;" />
 
 
 
@@ -1013,7 +1074,7 @@ git  remote  remove  origin
 git  remote  add  origin   git@github.com:tu_usuario/tu_repositorio
 ```
 
-![git remote remove add](assets/git-remote-remove-add.png)
+<img src="assets/git-remote-remove-add.png" alt="git remote remove add" style="zoom:65%;" />
 
 
 
@@ -1040,7 +1101,7 @@ git push -u origin master
 
 Al ejecutar el último comando, se realizará una conexión SSH con GitHub.
 
-![confirmación ssh](assets/ssh-confirmacion.png)
+<img src="assets/ssh-confirmacion.png" alt="confirmación ssh" style="zoom:75%;" />
 
 Cuando se realiza una conexión SSH con una nueva clave, la primera vez se pide confirmación y deberás escribir **yes**. Después de ello, quedará registrado el host remoto en el archivo **.ssh/known_hosts**. Las siguientes veces ya no se pide confirmación, siempre que el archivo `.ssh/known_hosts` contenga dichos registros.
 
@@ -1048,9 +1109,15 @@ Cuando se realiza una conexión SSH con una nueva clave, la primera vez se pide 
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad08tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
-
 # Resolviendo conflictos
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea08tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
 
 En esta actividad veremos qué se entiende por conflicto, cuándo se produce y cómo resolverlo.
 
@@ -1067,7 +1134,7 @@ Para ver esto, vamos a hacer un commit en nuestro repositorio en GitHub, y luego
 En GitHub vamos a modificar el archivo `README.md` y registrar el cambio (commit).
 
 Para ello, entramos en nuestro repositorio remoto, pulsamos sobre el archivo `README.md`y luego pulsamos sobre el lápiz para editar.
-![readme edit](assets/readme-edit.png)
+<img src="assets/readme-edit.png" alt="readme edit" style="zoom:75%;" />
 
 > Recientemente (mediados de agosto de 2021) gitHub añadió una funcionalidad interesante a todos sus repositorios, y es la **posibilidad de abrir el editor vsCode online** para cualquier repositorio simplemente usando la *hotkey* `.`.
 >
@@ -1075,15 +1142,14 @@ Para ello, entramos en nuestro repositorio remoto, pulsamos sobre el archivo `RE
 
 **Insertamos una primera línea con título # y modificamos la línea de la fecha**.
 
-![github readme](assets/github-readme.png)
+<img src="assets/github-readme.png" alt="github readme" style="zoom:75%;" />
 
 
 Registramos commit. Para ello pulsamos en **Commit changes**
 
 Si lo deseamos, podemos poner un mensaje al commit y un descripción, aunque no es obligatorio. GitHub pone una por defecto.
 
-
-![github commit changes](assets/github-commit-changes.png)
+<img src="assets/github-commit-changes.png" alt="github commit changes" style="zoom:75%;" />
 
 
 
@@ -1097,7 +1163,7 @@ En este caso añadiremos una línea al final del archivo y modificaremos la lín
 nano  README.md
 ```
 
-![readme](assets/readme.png)
+<img src="assets/readme.png" alt="readme" style="zoom: 80%;" />
 
 Guardamos los cambios y registramos commit.
 
@@ -1106,7 +1172,7 @@ git add README.md
 git commit -m "Actualización de README.md"
 ```
 
-![readme-commit](assets/readme-commit.png)
+<img src="assets/readme-commit.png" alt="readme-commit" style="zoom:80%;" />
 
 
 
@@ -1118,7 +1184,7 @@ Al intentar subir nuestro commit local al repositorio remoto,  se rechazará.
 git push
 ```
 
-![git push conflicto](assets/git-push-conflicto.png)
+<img src="assets/git-push-conflicto.png" alt="git push conflicto" style="zoom:67%;" />
 
 **Esto no es un conflicto. Simplemente nos dice que debemos actualizar antes nuestro repositorio local con el contenido del repositorio remoto**.
 
@@ -1140,7 +1206,7 @@ para **bajar los commits del repositorio remoto** que no tenemos en local.
 
 Así que se realiza la fusión, pero nos avisa que hay conflicto en dicho archivo. Deberemos resolverlo manualmente.
 
-![git pull conflicto](assets/git-pull-conflicto.png)
+<img src="assets/git-pull-conflicto.png" alt="git pull conflicto" style="zoom:67%;" />
 
 
 
@@ -1157,13 +1223,13 @@ Para arreglar el conflicto, abrimos el archivo en cuestión y en la línea o lí
  línea o líneas en commit remoto
  >>>>>>>
 ```
-![readme conflicto](assets/readme-conflicto.png)
+<img src="assets/readme-conflicto.png" alt="readme conflicto" style="zoom: 80%;" />
 
 **Resolver el conflicto consiste en elegir una de las 2 opciones y eliminar las marcas anteriores**. 
 Aunque también podemos no elegir ninguna de las opciones y escribir otra en su lugar.
 Esto es lo que yo he hecho aquí al poner fecha *11 agosto 2022*.
 
-![readme corregido](assets/readme-corregido.png)
+<img src="assets/readme-corregido.png" alt="readme corregido" style="zoom:80%;" />
 
 A continuación, guardamos los cambios. Y registramos un nuevo commit.
 
@@ -1172,7 +1238,7 @@ git add README.md
 git commit  -m "Arreglado conflicto en README.md"
 ```
 
-![conflicto](assets/conflicto.png)
+<img src="assets/conflicto.png" alt="conflicto" style="zoom:80%;" />
 
 Ahora ya podremos subir nuestro commit con el conflicto solucionado.
 
@@ -1180,7 +1246,7 @@ Ahora ya podremos subir nuestro commit con el conflicto solucionado.
 git push origin master
 ````
 
-![git push sin conflicto](assets/git-push-sin-conflicto.png)
+<img src="assets/git-push-sin-conflicto.png" alt="git push sin conflicto" style="zoom: 80%;" />
 
 
 > NOTA: Para evitar situaciones como la anterior, es aconsejable **no realizar modificaciones en GitHub**, y si las hemos realizado o hemos subido commits desde otro repositorio local, lo primero que deberíamos hacer es `git pull`,  resolver los conflictos que puedan darse, realizar los commits locales que deseemos y finalmente subir commits a GitHub. 
@@ -1191,9 +1257,17 @@ git push origin master
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad09tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
+
 
 # Creación de ramas
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea09tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
 
 En esta actividad vamos a empezar a trabajar con ramas. En concreto veremos cómo **crear nuevas ramas**.
 
@@ -1222,7 +1296,7 @@ git log --oneline --all --graph
 
 La opción **`--graph`** nos permite ver las ramas de forma "gráfica".
 
-![git log graph 1](assets/git-log-graph1.png)
+<img src="assets/git-log-graph1.png" alt="git log graph 1" style="zoom:80%;" />
 
 Podemos ver también "otra rama" sin nombre con el commit `19ea Update README.md`. En realidad éste es el commit que editamos en *GitHub* en una actividad anterior y que tuvimos que fusionar en la rama local *master*, antes de volver a subirlo a GitHub.
 
@@ -1245,11 +1319,11 @@ git checkout -b rama1 v1
 
 En dicha `rama1`, creamos un nuevo commit:
 
-![git nueva rama1](assets/git-nueva-rama1.png)	
+<img src="assets/git-nueva-rama1.png" alt="git nueva rama1" style="zoom:80%;" />	
 
  El resultado es:
 
-![git log graph 2](assets/git-log-graph2.png)
+<img src="assets/git-log-graph2.png" alt="git log graph 2" style="zoom:80%;" />
 
 Ahora hagamos otra rama llamada `rama2` a partir del commit `v1`, de una forma un poco distinta.
 
@@ -1259,7 +1333,7 @@ Imaginemos que, por despiste, nos hemos movido al commit `v1` con:
 git checkout v1
 ````
 
-![git checkout v1](assets/git-checkout-v1.png)	
+<img src="assets/git-checkout-v1.png" alt="git checkout v1" style="zoom:67%;" />	
 
 Como se nos informa en el mensaje, ahora mismo estamos trabajando en modo *despegado* (detached HEAD). Esto nos permite realizar los cambios que deseemos creando commits sin afectar a la rama master.
 
@@ -1267,7 +1341,7 @@ Lo aconsejable es ejecutar ahora el comando `git checkout -b rama2`, porque desp
 
 No obstante, vamos a simular que se nos olvida ejecutar el comando anterior. Empezamos a realizar commits. En este caso para simplificar, solo realizaremos un commit.
 
-![nuevo arhivo en rama2](assets/nuevo-archivo-rama2.png)	
+<img src="assets/nuevo-archivo-rama2.png" alt="nuevo arhivo en rama2" style="zoom:80%;" />	
 
 Esto nos crea un nuevo commit. Ejecutamos una vez más
 
@@ -1275,7 +1349,7 @@ Esto nos crea un nuevo commit. Ejecutamos una vez más
 git log --oneline --all --graph
 ```
 
-![git log graph 3](assets/git-log-graph3.png)	
+<img src="assets/git-log-graph3.png" alt="git log graph 3" style="zoom:80%;" />	
 
 Como se muestra en la captura, no existe ningún apuntador en forma de rama, así que si ahora, por ejemplo, ejecutásemos `git checkout master`, perderíamos todos los commits realizados (en este caso sólo uno, pero podrían ser muchos más).
 
@@ -1285,7 +1359,7 @@ Si no deseamos perder dichos commits, debemos ejecutar:
 git checkout -b rama2
 ````
 
-![git log graph 4](assets/git-log-graph4.png)	
+<img src="assets/git-log-graph4.png" alt="git log graph 4" style="zoom:80%;" />	
 
 Después de esto, ya podremos cambiar de rama con `git checkout` sin miedo a perder los commits realizados anteriormente. 
 
@@ -1309,7 +1383,7 @@ git branch licencia master
 git branch autor    master
 ```
 
-![git branch nuevas ramas](assets/git-branch-nuevas-ramas.png)
+<img src="assets/git-branch-nuevas-ramas.png" alt="git branch nuevas ramas" style="zoom:80%;" />
 
 Para empezar a trabajar con alguna de ellas, deberemos ejecutar `git checkout ...` Por ejemplo:
 
@@ -1319,7 +1393,7 @@ git checkout licencia
 
 Con `git log --oneline --all --graph` podemos ver que el apuntador **`HEAD`** ahora apunta a la rama `licencia`.
 
-![git log graph licencia](assets/git-log-graph-licencia.png)	
+<img src="assets/git-log-graph-licencia.png" alt="git log graph licencia" style="zoom:80%;" />	
 
 En esta rama crearemos un archivo nuevo llamado `LICENSE`.
 
@@ -1367,7 +1441,7 @@ git commit -m "Nuevo archivo AUTHOR y editado README.md"
 
 El resultado de `git log --oneline --all --graph` es:
 
-![git log graph 5](assets/git-log-graph5.png)
+<img src="assets/git-log-graph5.png" alt="git log graph 5" style="zoom:80%;" />
 
 ​	
 
@@ -1377,23 +1451,31 @@ Para subir todos los cambios realizados en <u>todas las ramas</u>:
 
 **`git push origin --all`**
 
-![git push all](assets/git-push-all-origin.png)
+<img src="assets/git-push-all-origin.png" alt="git push all" style="zoom:67%;" />
 
 El resultado es que todos los apuntadores a ramas remotas se actualizan (aparecen en color rojo en la siguiente captura)
 
-![git log graph 6](assets/git-log-graph6.png)	
+<img src="assets/git-log-graph6.png" alt="git log graph 6" style="zoom:80%;" />	
 
 En **GitHub**, dentro del repositorio correspondiente, podemos ver un gráfico de las ramas pulsando en la pestaña **`Insights`** y luego en la opción **`Network`** (en la parte izquierda de la nueva página) 
 
-![github insights network](assets/github-insights-network.png)	
+<img src="assets/github-insights-network.png" alt="github insights network" style="zoom:75%;" />	
 
 > *NOTA: No borrar los repositorio local ni repositorio remoto. Los volveremos a utilizar en la siguiente actividad.*
 
 
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad10tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
+
 
 # Fusión y eliminación de ramas
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea10tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
 
 Esta actividad es una continuación de la anterior. En ella veremos cómo realizar **fusión de ramas** (**merge**) y como eliminar apuntadores a ramas antiguas.
 
@@ -1434,11 +1516,7 @@ git branch -D rama2
 
 De esta manera perdemos todas las modificaciones que hubiésemos realizado en dicha rama.
 
-![borrar rama2 local](assets/borrar-rama2-local.png)
-
-
-
-
+<img src="assets/borrar-rama2-local.png" alt="borrar rama2 local" style="zoom:80%;" />
 
 
 
@@ -1471,7 +1549,7 @@ Antes, fijémonos en la estructura de las ramas. Hacemos
 git log --oneline --all --graph
 ```
 
-![git log graph 7](assets/git-log-graph7.png)	
+<img src="assets/git-log-graph7.png" alt="git log graph 7" style="zoom:80%;" />	
 
 Observa que fusionar la rama `licencia` en la rama `master` es equivalente a mover los apuntadores `HEAD` y `master` hacia arriba, es decir, hacerlos coincidir con el apuntador `licencia`.
 
@@ -1482,11 +1560,11 @@ Para fusionar esta rama hacemos
 git merge licencia
 ```
 
-![fast-forward](assets/ff.png)
+<img src="assets/ff.png" alt="fast-forward" style="zoom: 80%;" />
 
 Observa como queda tras la fusión. Únicamente se han movido los apuntadores `HEAD` y `master`.
 
-![git log graph 8](assets/git-log-graph8.png)	
+<img src="assets/git-log-graph8.png" alt="git log graph 8" style="zoom:80%;" />	
 
 > **NOTA**: No te preocupes ahora mismo por los apuntadores remotos (los que aparecen en color rojo). Más adelante los sincronizaremos con el repositorio remoto.
 
@@ -1508,7 +1586,7 @@ git merge autor
 
 Cuando aparezca el editor con el mensaje asociado, aceptaremos el mensaje o lo editaremos a nuestro gusto.
 
-![3 way autor](assets/3-way-autor.png)
+<img src="assets/3-way-autor.png" alt="3 way autor" style="zoom:80%;" />
 
 En este caso no llegó a producirse el conflicto. Se resolvió automáticamente a favor del contenido de la rama `autor`.
 Por tanto el autor en el archivo `README.md` aparecerá todo en mayúsculas.
@@ -1516,7 +1594,7 @@ Por tanto el autor en el archivo `README.md` aparecerá todo en mayúsculas.
 Fíjate como se ha creado un nuevo commit resultado de unir la rama `autor` y la rama `master`. 
 Esto siempre sucede en la fusión de 3 vías.
 
-![git log graph 9](assets/git-log-graph9.png) 	
+<img src="assets/git-log-graph9.png" alt="git log graph 9" style="zoom:80%;" /> 	
 
 
 ### Fusionamos rama rama1
@@ -1534,7 +1612,7 @@ git merge rama1
 
 Cuando aparezca el editor con el mensaje asociado, aceptaremos el mensaje o lo editaremos a nuestro gusto.
 
-![3 way rama1](assets/3-way-rama1.png)
+<img src="assets/3-way-rama1.png" alt="3 way rama1" style="zoom:80%;" />
 
 
 ## Subiendo cambios a repositorio remoto
@@ -1545,7 +1623,7 @@ Para subir al repositorio remoto todos los cambios realizados en nuestro reposit
 git push origin --all
 ```
 
-![git push all](assets/git-push-all2.png)
+<img src="assets/git-push-all2.png" alt="git push all" style="zoom:80%;" />
 
 
 
@@ -1560,7 +1638,7 @@ git branch -d rama1
 
 Los apuntadores a `licencia` y `autor` no los eliminaremos, por si en el futuro deseamos seguir trabajando en dichas ramas.
 	
-![borrar rama1 local](assets/borrar-rama1-local.png)
+<img src="assets/borrar-rama1-local.png" alt="borrar rama1 local" style="zoom:80%;" />
 
 
 
@@ -1573,14 +1651,20 @@ git push origin --delete rama1
 git push origin --delete rama2
 ```
 
-![borrar ramas remotas](assets/borrar-ramas-remotas.png)
+<img src="assets/borrar-ramas-remotas.png" alt="borrar ramas remotas" style="zoom:80%;" />
 
 Los apuntadores a `origin/licencia` y `origin/autor` no los eliminaremos, por si en el futuro deseamos seguir trabajando en dichas ramas.
 
 Para ver el estado ejecutamos `git log ...`
 Observa como las ramas están actualizadas y sincronizadas con el repositorio remoto.
 
-![git log graph 10](assets/git-log-graph10.png)
+<img src="assets/git-log-graph10.png" alt="git log graph 10" style="zoom:80%;" />
+
+
+
+
+
+
 
 
 
@@ -1588,9 +1672,15 @@ Observa como las ramas están actualizadas y sincronizadas con el repositorio re
 
 Para ver un gráfico de las ramas en el repositorio remoto pulsamos en **Insights**, **Network**.
 
-<img src="assets/github-insights-network2.png" alt="github insights network" style="zoom:67%;" />
+<img src="assets/github-insights-network2.png" alt="github insights network" style="zoom: 75%;" />
 
 ## Tarea propuesta para el alumno/a
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea12tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
 
 Como tarea, se propone
 
@@ -1600,4 +1690,170 @@ Como tarea, se propone
 
 > *NOTA: No borrar los repositorio local ni repositorio remoto. Los volveremos a utilizar en la siguiente actividad.*
 
-**Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre *<u>actividad11tunombre</u>*  con las capturas de pantalla y explicaciones pertinentes.**
+
+
+# Pull-request
+
+> *################################################################*
+>
+> **Subir a la plataforma *<u>AULES</u>* un documento PDF de nombre <u>*tarea13tunombre*</u> con las capturas de pantalla y explicaciones pertinentes.**
+>
+> *################################################################*
+
+
+
+##  pull-request
+
+Sigue los pasos de esta práctica guiada para sugerir una modificación de cualquiera de los archivos de los repositorios del profesor [arturoblasco](https://github.com/arturoblasco). 
+
+<ol>
+    <li>Adjunta la captura de pantalla similar a esta donde se vé que has solicitado el pull request y que estás esperando a que se integre en el repositorio original. </li>
+    <li>Explica qué significan cada uno de los 5 apartados señalados en la captura:</li></ol>
+
+<img src="assets/vscode_10_pullrequest3.png" alt="Screenshot_20220106_180847" style="zoom:65%;" />
+
+
+
+## pull-request 2
+
+Siguiendo los pasos de la práctica anterior:
+
+<ol><li>crearemos un repositorio en el que un compañero propondrá un pull-request que nosotros deberemos integrar en nuestro repositorio original y viceversa. </li>
+    <li>deberemos realizar un pull-request a nuestro compañero y que él lo acepte.</li></ol>
+
+
+Debes adjuntar a la tarea los pasos a seguir una vez recibido el *pull-request* para aceptarlo y que se integre en nuestro repositorio, y mostrar además donde aparece el nombre del usuario que ha colaborado con nostros en el repositorio.
+
+
+
+# Repositorio Local + VsCode + Repositorio remoto
+
+En la siguiente práctica guiada vamos a configurar el espació de trabajo en el que trabajaremos a lo largo de este curso/módulo de Programación.
+
+La idea va a consistir en:
+
+- En local:
+   1. en VS Code crear un proyecto Java, 
+   2. en el que crearemos un repositorio local.
+
+- En remoto: 
+   3. crearemos un repositorio remoto en GitHub (será privado y daremos acceso al profesor/a).
+
+4. enlazaremos nuestro Git local con nuestro Git remoto (en GitHub); así, podremos ir subiendo todos nuestros programas.
+5. poner a nuestr@ profesor@ del módulo como colaborador@ de nuestro repositorio remoto.
+
+Empecemos:
+
+1. Abrimos *VS Code*. Accedemos a la pestaña de *JAVA PROJECTS*, pulsamos el icono de `+` y elegimos la primera opción `No build tools`.
+
+   <img src="/assets/vscode_tarea3_01.png" style="zoom:70%;" />
+
+   Se abre otra ventana flotante en la que elegimos el lugar donde va a estar alojado nuestro proyecto; para ello, crearemos en nuestra raíz `~` la carpeta `pr` y pulsamos botón  `Select the project location`.
+
+   <img src="/assets/vscode_tarea3_02.png" style="zoom: 50%;" />
+
+   Escribimos el nombre del proyecto `exercicisJava`.
+
+   <img src="/assets/vscode_tarea3_03.png" style="zoom:67%;" />
+
+   > Podemos observar la estructura de nuestro primer proyecto Java con su primer programa (sabes cuál puede ser?? sí, es nuestro querido *Hola Mundo* :smile: ).
+   >
+   > Observamos en primer lugar la carpeta `src` que será la que contenga todos nuestros ficheros fuente `.java`. A la derecha podemos observar el contenido del fichero `App.java`.
+   >
+   > La carpeta `bin` contendrá los ficheros ejecutables `.class` que se generen de la compilación de nuestros ficheros `.java`.
+   >
+   > <img src="/assets/vscode_tarea3_04.png" style="zoom:65%;" />
+
+2. Des de un terminal, accedemos dentro de la carpeta de nuestro recién creado proyecto `~\pr\exercicisJava`. 
+
+   ```sh
+   cd ~\pr\exercicisJava
+   ```
+
+   <img src="/assets/vscode_tarea3_05a.png" style="zoom:67%;" />
+
+   Inicializamos ahí dentro, con la orden `git init`, nuestro repositorio local Git.
+
+   ```sh
+   git init
+   ```
+
+   <img src="/assets/vscode_tarea3_05b.png" style="zoom:67%;" />
+
+   Si observamos la estructura de la carpeta del proyecto vemos una carpeta oculta `.git`.
+
+   <img src="/assets/vscode_tarea3_05c.png" style="zoom:67%;" />
+
+   Si realizamos un `git status` se observa que todavía no hemos introducido las carpetas contenidas en el proyecto en nuestro repositorio. 
+
+   ```sh
+   git status
+   ```
+
+   <img src="/assets/vscode_tarea3_06.png" style="zoom:67%;" />
+
+   Para ello: `git add .` y a continuación `git commit -m "1) cargar proyecto inicial"`.
+
+   ```sh
+   git add .
+   ```
+
+   ```sh
+   git commit -m "1) carga proyecto inicial"
+   ```
+
+   <img src="/assets/vscode_tarea3_07.png" style="zoom:67%;" />
+
+   Se puede comprobar con `git status` que, en este momento, no existe ninguna modificación en el área de trabajo que no se encuentre en el repositorio.
+
+   <img src="/assets/vscode_tarea3_08.png" style="zoom:67%;" />
+
+   Se puede observar este primer commit con `git log`.
+
+   ```sh
+   git log
+   ```
+
+   <img src="/assets/vscode_tarea3_09.png" style="zoom:67%;" />
+
+   
+
+3. Es hora de crear nuestro repositorio remoto en GitHub:
+
+   <img src="/assets/vscode_tarea3_10.png" style="zoom:50%;" />
+
+   El nombre de nuestro repositorio `exercicisJava`; descripción `1º CFGS DAW - Programación - Ejercicios de Java`, por ejemplo, acceso `Private` y, por el momento, NO crearemos el fichero *README* y .*gitignore* ni elegimos ningún tipo de licencia.
+
+   <img src="/assets/vscode_tarea3_11.png" style="zoom:75%;" />
+
+   ​		Después de crear el anterior repositorio, entre otras opciones de terminar, encontramos:	
+
+   <img src="/assets/vscode_tarea3_12.png" style="zoom: 67%;" />
+
+   ​		Vamos a terminar ejecutando esta orden en nuestro terminal (DENTRO de nuestra carpeta de proyecto Java / repositorio local Git) en la que copiamos el repositorio remoto en local:
+
+   ```sh
+   git remote add origin git@github.com:arturoblasco/exercicisJava.git
+   ```
+
+   ![](/assets/vscode_tarea3_13.png)
+
+   ​	
+
+   
+
+4. Para terminar, enlazamos el repositorio local de Git con el repositorio remoto en GitHub para "subir" nuestro proyecto local al repositorio remoto:
+
+   ```sh
+   git push origin master
+   ```
+
+<img src="/assets/vscode_tarea3_14.png" style="zoom:67%;" />
+
+​	Si vemos en nuestro repositorio de GitHub la sincronización ha sido realizada:
+
+<img src="/assets/vscode_tarea3_15.png" style="zoom:67%;" />
+
+5. Para terminar, ponemos al profesor/a del módulo de Programación como colaborador de nuestro repositorio:
+
+<img src="/assets/vscode_tarea3_16.png" style="zoom:67%;" />
