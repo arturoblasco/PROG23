@@ -1,0 +1,17 @@
+<meta name="unit" content="${unit}">
+<meta name="title" content="${title}">
+<meta name="currentPath" content="${currentPath}">
+<div id='_export_cover' style="height:85vh;">
+<div id='_export_unit' style="margin-top: 20%; color: #639df3; text-align: center;font-size: 3rem;"></div>
+<div id='_export_title' style="color: #003380; text-align: center;font-size: 3rem;"></div>
+<img id="imgcover" style="display: block;margin-left: auto;margin-right: auto;width: 75%;"/></div>
+<script>
+    var $cover = document.querySelector("#_export_cover");
+    var unit = document.querySelector("meta[name='unit']").getAttribute("content");
+    var title = document.querySelector("meta[name='title']").getAttribute("content");
+    var currentPath = document.querySelector("meta[name='currentPath']").getAttribute("content");
+    document.body.insertBefore($cover, document.body.childNodes[0])
+    $cover.querySelector("#_export_unit").textContent = unit;
+    $cover.querySelector("#_export_title").textContent = title;
+    document.getElementById("imgcover").src=currentPath+'/../assets/cover.png';
+</script>
