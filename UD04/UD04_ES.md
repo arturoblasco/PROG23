@@ -4,7 +4,7 @@ title: Estructuras de datos: Arrays y matrices. Recursividad.
 language: ES
 author: Arturo BC [arturoblasco@iesmre.es]
 subject: Programación
-keywords: [PRG, 2023, Programacion, Java]
+keywords: [PRG, 2022, Programacion, Java]
 IES: IES Mestre Ramon Esteve (Catadau) [www.iesmre.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
@@ -365,15 +365,9 @@ public static int ultimoDiaSinLluvia(double lluvia[]){
 
 ### Búsqueda en un array ordenado: búsqueda binaria
 
-Supón que una amiga apunta un número entre el 0 y el 99 en una hoja de papel y vosotros debéis adivinarlo. Cada vez que conteste, le dirá si el valor que ha dicho es mayor o menor que el que ha de adivinar. ¿*Qué estrategia seguiría para lograrlo*? Hay que pensar un algoritmo a seguir para resolver este problema.
-
-Una aproximación muy ingenua podría ser ir diciendo todos los valores uno por uno, empezando por 0. Está claro que cuando llegue al 99 lo habréis adivinado. En el mejor caso, si había escrito el 0, acertará en la primera, mientras que en el peor caso, si había escrito el 99, necesitaréis 100 intentos. Si estaba por medio, tal vez con 40-70 basta. Este sería un algoritmo eficaz (*hace lo que tiene que hacer*), pero no muy eficiente (*lo hace de la mejor manera posible*). Ir probando valores al azar en lugar de hacer esto tampoco mejora gran cosa el proceso, y viene a ser lo mismo.
-
-Si alguna vez habéis jugado a este juego, lo que habréis hecho es ser un poco más astutos y empezar por algún valor del medio. En este caso, por ejemplo, podría ser el 50. Entonces, en caso de fallar, una vez está seguro de si el valor secreto es mayor o menor que su respuesta, en el intento siguiente probar un valor más alto o más bajo , e ir haciendo esto repetidas veces.
-
 Vamos a suponer que una amiga apunta un número entre el 0 y el 99 en una hoja de papel y vosotros debéis adivinarlo. Cada vez que conteste, le dirá si el valor que ha dicho es mayor o menor que el que debemos de adivinar. ¿Qué estrategia seguirías para lograrlo? Hay que pensar un algoritmo a seguir para resolver este problema.
 
-Suponga que una amiga apunta un número entre el 0 y el 99 en una hoja de papel y vosotros debéis adivinarlo. Cada vez que conteste, le dirá si el valor que ha dicho es mayor o menor que el que ha de adivinar. ¿*Qué estrategia seguiría para lograrlo*? Hay que pensar un algoritmo a seguir para resolver este problema.
+Una aproximación muy ingenua podría ser ir diciendo todos los valores uno por uno, empezando por 0. Está claro que cuando llegue al 99 lo habréis adivinado. En el mejor caso, si había escrito el 0, acertará en la primera, mientras que en el peor caso, si había escrito el 99, necesitaréis 100 intentos. Si estaba por medio, tal vez con 40-70 basta. Este sería un algoritmo eficaz (*hace lo que tiene que hacer*), pero no muy eficiente (*lo hace de la mejor manera posible*). Ir probando valores al azar en lugar de hacer esto tampoco mejora gran cosa el proceso, y viene a ser lo mismo.
 
 Una aproximación muy ingenua podría ser ir diciendo todos los valores uno por uno, empezando por 0. Está claro que cuando llegue al 99 lo habréis adivinado. En el mejor caso, si había escrito el 0, acertará en la primera, mientras que en el peor caso, si había escrito el 99, necesitaréis 100 intentos. Si estaba por medio, tal vez con 40-70 basta. Este sería un algoritmo eficaz (*hace lo que tiene que hacer*), pero no muy eficiente (*lo hace de la mejor manera posible*). Ir probando valores al azar en lugar de hacer esto tampoco mejora gran cosa el proceso, y viene a ser lo mismo.
 
@@ -669,8 +663,6 @@ A menudo encontraréis que explicar de palabra la idea general de una estrategia
 > La **recursividad** es una forma de describir un proceso para resolver un problema de manera que, a lo largo de esta descripción, se usa el proceso mismo que se está describiendo, pero aplicado a un caso más simple.
 
 <img src="/assets/matryoshka.png" style="zoom:80%;" />
-
-De hecho, tal vez sin darse cuenta de ello en, ya se ha usado recursividad para describir cómo resolver un problema. Para ver qué significa exactamente la definición formal apenas descrita, se repetirá el texto en cuestión, pero remarcando el aspecto recursivo de la descripción:
 
 De hecho, tal vez sin darse cuenta de ello, ya se ha usado recursividad para describir cómo resolver un problema. Para ver qué significa exactamente la definición formal apenas descrita, se repetirá el texto en cuestión, pero remarcando el aspecto recursivo de la descripción:
 
