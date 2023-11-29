@@ -4,7 +4,7 @@ title: Desarrollo de clases
 language: ES
 author: Arturo Blasco [arturoblasco@iesmre.com]
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
+keywords: [PRG, 2023, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${unit}: ${title} - ${subject} (ver: ${today})
 footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
