@@ -146,221 +146,80 @@ Ejercicio 11. (**HayPares**) Para determinar si existe algún valor par en un ar
 ```java
 public static boolean haypares1(int v[]) {
    int i = 0;
-
-<<<<<<< HEAD
-3. (*SumaDespuesImpar*) Escribir un método que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar. Usar `main` para probar el método.
-
-3. (*HayPares*) Para determinar si existe algún valor par en un array se proponen varias soluciones. Indica cual/cuales son válidas para resolver el problema.
-
-   ```java
-   public static boolean haypares1(int v[]) {
-       int i = 0;
-   
-       while (i < v.length && v[i] % 2 != 0)
-           i++;
-   
-       if (v[i] % 2 == 0)
-           return true;
-       else
-           return false;
-   }
-   
-   public static boolean haypares2(int v[]) {
-       int i = 0;
-   
-       while (i < v.length && v[i] % 2 != 0) 
-           i++;
-   
-       if (i < v.length) 
-           return true;
-       else
-           return false;
-   }
-   
-   public static boolean haypares3(int v[]) {
-       int i = 0;
-   
-       while (v[i] % 2 != 0 && i < v.length) 
-           i++;
-   
-       if (i < v.length) 
-           return true;
-       else
-           return false;
-   }
-   
-   public static boolean haypares4(int v[]) {
-       int i = 0;
-   
-       boolean encontrado = false;
-   
-       while (i <= v.length && !encontrado) {
-           if (v[i] % 2 == 0) 
-               encontrado = true;
-           else
-               i++;
-       }
-   
-       return encontrado;
-   }
-   
-   public static boolean haypares5(int v[]) {
-       int i = 0;
-   
-       boolean encontrado = false;
-   
-       while (i < v.length && !encontrado){
-           if (v[i] % 2 == 0) 
-               encontrado = true;
-           i++;
-       }
-   
-       return encontrado;
-   }
-   
-   public static boolean haypares6(int v[]) {
-       int i = 0;
-   
-       while (i < v.length) {
-           if (v[i] % 2 == 0) 
-               return true;
-           else
-               return false;
-       }
-   }
-   
-   public static boolean haypares7(int v[]) {
-       int i = 0;
-   
-       while (i < v.length) {
-           if (v[i] % 2 == 0) 
-               return true;
-           i++;
-       }
-   
-       return false;
-   }
-   
-4. (*Capicúa*) Escribir un método para determinar si un array de palabras (`String`) es capicúa, esto es, si la primera y última palabra del array son la misma, la segunda y la penúltima palabras también lo son, y así sucesivamente. Escribir el método main para probar el método anterior.
-
-5. (*Subsecuencia*) Escribir un método que, dado un array, determine la posición de la primera subsecuencia del array que comprenda al menos tres números enteros consecutivos en posiciones consecutivas del array. De no existir dicha secuencia devolverá -1. 
-
-   Por ejemplo: en el array {23, 8, 12, 6, 7, **9, 10, 11**, 2} hay 3 números consecutivos en tres posiciones consecutivas, a partir de la posición 5: {9,10,11}
-
-6. (*MismosValores*) Se desea comprobar si dos arrays de `double` contienen los mismos valores, aunque sea en orden distinto. Para ello se ha escrito el siguiente método, que aparece incompleto:
-
-   ```java
-   public static boolean mismosValores(double v1[], double v2[]) {
-       boolean encontrado = false;
-       int i = 0;
-       while (i < v1.length && !encontrado) {
-           boolean encontrado2 = false;
-           int j = 0;
-           while (j < v2.length && !encontrado2) {
-               if (v1[?] == v2[?]) {
-                   encontrado2 = true;
-                   i++;
-               } else {
-                   ?
-               }
-           }
-           if (encontrado2 == ?) {
-               encontrado = true;
-           }
-       }
-       return !encontrado;
-=======
    while (i < v.length && v[i] % 2 != 0) {
-      i++;
+       i++;
    }
-
-   if (v[i] % 2 == 0) {
-      return true;
-   } else {
-      return false;
-   }
+   if (v[i] % 2 == 0)
+       return true;
+   else
+       return false;
 }
 
 public static boolean haypares2(int v[]) {
    int i = 0;
-
    while (i < v.length && v[i] % 2 != 0) {
-      i++;
-   }
-    
-   if (i < v.length) {
-      return true;
-   } else {
-      return false;
-   }
+       i++;
+	}
+   if (i < v.length) 
+       return true;
+   else
+       return false;
 }
-
+   
 public static boolean haypares3(int v[]) {
    int i = 0;
-
    while (v[i] % 2 != 0 && i < v.length) {
-      i++;
+       i++;
    }
-
-   if (i < v.length) {
-      return true;
-   } else {
-      return false;
-   }
+   if (i < v.length) 
+       return true;
+   else
+       return false;
 }
-
+   
 public static boolean haypares4(int v[]) {
    int i = 0;
    boolean encontrado = false;
-
    while (i <= v.length && !encontrado) {
-      if (v[i] % 2 == 0) {
-         encontrado = true;
-      } else {
-         i++;
-      }
+       if (v[i] % 2 == 0) 
+           encontrado = true;
+       else
+           i++;
    }
-
    return encontrado;
 }
 
 public static boolean haypares5(int v[]) {
    int i = 0;
    boolean encontrado = false;
-
-   while (i < v.length && !encontrado) {
-      if (v[i] % 2 == 0) {
-         encontrado = true;
-      }
-      i++;
+   while (i < v.length && !encontrado){
+       if (v[i] % 2 == 0) 
+           encontrado = true;
+       i++;
    }
-
    return encontrado;
 }
 
 public static boolean haypares6(int v[]) {
    int i = 0;
-
    while (i < v.length) {
-      if (v[i] % 2 == 0) {
-         return true;
-      } else {
-         return false;
-      }
+       if (v[i] % 2 == 0) 
+           return true;
+       else
+           return false;
    }
 }
-
+   
 public static boolean haypares7(int v[]) {
    int i = 0;
-
    while (i < v.length) {
-      if (v[i] % 2 == 0) {
-         return true;
-      }
-      i++;
->>>>>>> d12078c6860bb3275cec46f51c4188d252643636
+       if (v[i] % 2 == 0) 
+           return true;
+       i++;
    }
    return false;
+}
+
 }
 ```
 
