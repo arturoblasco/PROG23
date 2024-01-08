@@ -4,14 +4,21 @@ title: Anexo
 language: ES
 author: Arturo Blasco [arturoblasco@iesmre.com]
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
+keywords: [PRG, 2023, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${unit}: ${title} - ${subject} (ver: ${today})
 footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
-[toc]
+
+
+
+
+
+[TOC]
+
+
 
 # Wrappers (Envoltorios)
 
@@ -48,11 +55,14 @@ Ejemplo:
 ```java
 Integer i1 = new Integer(42);
 Integer i2 = new Integer ("42");
+
 Float f1 = new Float(3.14f);
 Float f2 = new Float ("3.14f");
 ```
 
 Antiguamente, una vez asignado un valor a un objeto o wrapper `Integer`, este no podía cambiarse. Actualmente e internamente se puede realizar un apoyo en variables y wrapers internos para poder variar el valor de un wrapper.
+
+
 
 Ejemplo:
 
@@ -88,7 +98,11 @@ Float f3 = Float.valueOf("3.14f");
 System.out.println(f3);
 ```
 
-Métodos `xxxValue()`.
+
+
+
+
+**Métodos `xxxValue()`**
 
 Los métodos `xxxValue()` permiten convertir un wrapper en un dato de tipo primitivo y no necesitan argumentos.
 
@@ -114,7 +128,8 @@ Ejemplo:
 
 ```java
 double d4 = Double.parseDouble("3.14"); // Convierte un String a primitivo 
-System.out.println("d4 = " + d4);	// El resultado será d4 = 3.14 
+System.out.println("d4 = " + d4);	// El resultado es d4 = 3.14 
+
 long l2 = Long.parseLong("101010", 2);	// un String binario a primitivo
 System.out.println("l2 = " + l2);	// El resultado es L2 42
 ```
@@ -128,10 +143,12 @@ Ejemplo:
 ```java
 Double d1 = new Double("3.14");
 System.out.println("d1 = " + d1.toString() ); // El resultado es d1 = 3.14 
+
 String d2 = Double.toString(3.14); // d2 = "3.14"
 System.out.println("d2 = " + d2); // El resultado es d2 = 3.14 
+
 String s3 = Long.toString(254, 16); // s = "hex = fe" 
-System.out.println("s3 = " + s3); // El resultado es s3 = 3.14
+System.out.println("s3 = " + s3); // El resultado es s3 = fe
 ```
 
 ## Métodos `toXxxxxString()` (Binario, Hexadecimal y Octal)
@@ -141,9 +158,9 @@ Los métodos `toXxxxxString()` permiten a las clases contenedoras `Integer` y `L
 Ejemplo:
 
 ```java
-String s4 = Integer.toHexString(254); // Convierte 254 a hex 
-System.out.println("254 es " + s4); // Resultado: "254 es fe" 
-String s5 = Long.toOctalString(254); // Convierte 254 a octal
+String s4 = Integer.toHexString(254);   // Convierte 254 a hex 
+System.out.println("254 es " + s4);     // Resultado: "254 es fe" 
+String s5 = Long.toOctalString(254);    // Convierte 254 a octal
 System.out.println("254(oct) = " + s5); // Resultado: "254(oct) = 376"
 ```
 
@@ -156,7 +173,7 @@ Para resumir, los métodos esenciales para las conversiones son:
 
 # Clase `Date`
 
-La clase Date es una utilidad contenida en el paquete `java.util` y permiten trabajar con fechas y horas. La fechas y hora se almacenan en un entero de tipo `Long` que almacena los milisegundos transcurridos desde el 1 de Enero de de 1970 que se obtienen con `getTime()`. (Importamos `java.util.Date`).
+La clase `Date` es una utilidad contenida en el paquete `java.util` y permiten trabajar con fechas y horas. La fecha y hora se almacenan en un entero de tipo `Long` que almacena los milisegundos transcurridos desde el 1 de Enero de de 1970 que se obtienen con `getTime()`. Importamos `java.util.Date`.
 
 Ejemplo:
 
@@ -168,12 +185,12 @@ System.out.println(fecha.getTime()); //61590146400000
 
 ## Clase `GregorianCalendar`
 
-Para utilizar fechas y horas se utiliza la clase `GregorianCalendar` que dispone de variable enteras como: `DAY_OF_WEEK`, `DAY_OF_MONTH`, `YEAR`, `MONTH`, `HOUR`, `MINUTE`, `SECOND`, `MILLISECOND`, `WEEK_OF_MONTH`, `WEEK_OF_YEAR`, … (importamos clase `java.util.Calendar` y `java.util.GregorianCalendar`)
+Para utilizar fechas y horas se utiliza la clase `GregorianCalendar` que dispone de variables enteras como: `DAY_OF_WEEK`, `DAY_OF_MONTH`, `YEAR`, `MONTH`, `HOUR`, `MINUTE`, `SECOND`, `MILLISECOND`, `WEEK_OF_MONTH`, `WEEK_OF_YEAR`, … (importamos clase `java.util.Calendar` y `java.util.GregorianCalendar`)
 
 Ejemplo 1:
 
 ```java
-Calendar calendar = new GregorianCalendar(2021, 8, 19);
+Calendar calendar = new Calendar(2021, 8, 19);
 System.out.println(calendar.getTime()); //Sun Sep 19 00:00:00 CEST 2021
 ```
 
@@ -182,8 +199,8 @@ Ejemplo 2:
 ```java
 Date d = new Date();
 GregorianCalendar c = new GregorianCalendar(); 
-System.out.println("Fecha: "+d);  //Fecha: Thu Aug 19 20:06:14 CEST 2021
-System.out.println("Info: "+c); //Info:
+System.out.println("Fecha: " + d); //Fecha: Thu Aug 19 20:06:14 CEST 2023
+System.out.println("Info: " + c);  //Info:
 //java.util.GregorianCalendar[time=1629396374723,areFieldsSet=true
 //,areAllFieldsSet=true
 //,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Madrid",offset=3600000
@@ -201,7 +218,7 @@ System.out.print(c.get(Calendar.DAY_OF_MONTH));
 System.out.print("/"); 
 System.out.print(c.get(Calendar.MONTH)+1); 
 System.out.print("/"); 
-System.out.println(c.get(Calendar.YEAR)+1); //19/8/2022
+System.out.println(c.get(Calendar.YEAR)+1); //19/8/2023
 ```
 
 ## Paquete `java.time`
@@ -215,12 +232,12 @@ No es válido llamar directamente al constructor usando `new`, ya que no tienen 
 Ejemplo erróneo:
 
 ```java
-LocalDate d = new LocalDate(); //NO compila
+LocalDate d = new LocalDate(); // ERROR -> NO compila
 ```
 
 ### `LocalDate`
 
-`LocalDate` representa una fecha determinada. Haciendo uso del método `of()`, esta clase puede crear un `LocalDate` teniendo en cuenta el año, mes y día. Finalmente, para capturar el `LocalDate` actual se puede usar el método `now()`:
+`LocalDate` representa una fecha determinada. Haciendo uso del método `of()`, esta clase puede crear un `LocalDate` teniendo en cuenta el año, mes y día. Finalmente, para capturar el `LocalDate` **actual** se puede usar el método `now()`:
 
 Ejemplo:
 
@@ -238,13 +255,13 @@ System.out.println(date); //2022-12-19
 `LocalTime`, representa un tiempo determinado. Haciendo uso del método `of()`, esta clase puede crear un `LocalTime` teniendo en cuenta la hora, minuto, segundo y nanosegundo. Finalmente, para capturar el `LocalTime` actual se puede usar el método `now()`.
 
 ```java
-LocalTime time = LocalTime.of(5, 30, 45, 35); //05:30:45:35 
-System.out.println(time.getHour()); //5 
-System.out.println(time.getMinute()); //30 
-System.out.println(time.getSecond()); //45 
-System.out.println(time.getNano()); //35
+LocalTime time = LocalTime.of(5, 30, 45, 35); // 05:30:45:35 
+System.out.println(time.getHour());   // 5 
+System.out.println(time.getMinute()); // 30 
+System.out.println(time.getSecond()); // 45 
+System.out.println(time.getNano());   // 35
 time = LocalTime.now();
-System.out.println(time); //20:13:53.118044
+System.out.println(time); // 20:13:53.118044
 ```
 
 ### `LocalDateTime`
@@ -652,6 +669,7 @@ public class Persona {
     }
 }
 ```
+
 ```java
 package UD05;
 
@@ -679,6 +697,7 @@ public class Empleado extends Persona {
     }
 }
 ```
+
 ```java
 package UD05;
 
@@ -706,6 +725,7 @@ public class Encargado extends Empleado {
     }
 }
 ```
+
 ```java
 package UD05;
 
@@ -759,7 +779,6 @@ Las reglas a la hora de realizar casting es que:
 > Object oDavid = David;
 > System.out.println(oDavid);
 > ```
->
 
 # Acceso a métodos de la superclase
 
