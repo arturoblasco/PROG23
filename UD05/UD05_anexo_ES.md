@@ -425,6 +425,9 @@ Más detalles sobre los formatos: https://docs.oracle.com/javase/8/docs/api/java
    ```
 
 
+
+
+
 ## Operaciones
 
 1. Operaciones con `LocalDate`
