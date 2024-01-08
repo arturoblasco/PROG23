@@ -11,14 +11,7 @@ footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
-
-
-
-
-
-[TOC]
-
-
+[toc]
 
 # Wrappers (Envoltorios)
 
@@ -62,8 +55,6 @@ Float f2 = new Float ("3.14f");
 
 Antiguamente, una vez asignado un valor a un objeto o wrapper `Integer`, este no podía cambiarse. Actualmente e internamente se puede realizar un apoyo en variables y wrapers internos para poder variar el valor de un wrapper.
 
-
-
 Ejemplo:
 
 ```java
@@ -98,10 +89,6 @@ Float f3 = Float.valueOf("3.14f");
 System.out.println(f3);
 ```
 
-
-
-
-
 **Métodos `xxxValue()`**
 
 Los métodos `xxxValue()` permiten convertir un wrapper en un dato de tipo primitivo y no necesitan argumentos.
@@ -128,7 +115,7 @@ Ejemplo:
 
 ```java
 double d4 = Double.parseDouble("3.14"); // Convierte un String a primitivo 
-System.out.println("d4 = " + d4);	// El resultado es d4 = 3.14 
+System.out.println("d4 = " + d4);	// El resultado será d4 = 3.14 
 
 long l2 = Long.parseLong("101010", 2);	// un String binario a primitivo
 System.out.println("l2 = " + l2);	// El resultado es L2 42
@@ -148,7 +135,7 @@ String d2 = Double.toString(3.14); // d2 = "3.14"
 System.out.println("d2 = " + d2); // El resultado es d2 = 3.14 
 
 String s3 = Long.toString(254, 16); // s = "hex = fe" 
-System.out.println("s3 = " + s3); // El resultado es s3 = fe
+System.out.println("s3 = " + s3); // El resultado es s3 = 3.14
 ```
 
 ## Métodos `toXxxxxString()` (Binario, Hexadecimal y Octal)
@@ -158,9 +145,9 @@ Los métodos `toXxxxxString()` permiten a las clases contenedoras `Integer` y `L
 Ejemplo:
 
 ```java
-String s4 = Integer.toHexString(254);   // Convierte 254 a hex 
-System.out.println("254 es " + s4);     // Resultado: "254 es fe" 
-String s5 = Long.toOctalString(254);    // Convierte 254 a octal
+String s4 = Integer.toHexString(254); // Convierte 254 a hex 
+System.out.println("254 es " + s4); // Resultado: "254 es fe" 
+String s5 = Long.toOctalString(254); // Convierte 254 a octal
 System.out.println("254(oct) = " + s5); // Resultado: "254(oct) = 376"
 ```
 
@@ -669,7 +656,6 @@ public class Persona {
     }
 }
 ```
-
 ```java
 package UD05;
 
@@ -697,7 +683,6 @@ public class Empleado extends Persona {
     }
 }
 ```
-
 ```java
 package UD05;
 
@@ -725,7 +710,6 @@ public class Encargado extends Empleado {
     }
 }
 ```
-
 ```java
 package UD05;
 
@@ -779,6 +763,7 @@ Las reglas a la hora de realizar casting es que:
 > Object oDavid = David;
 > System.out.println(oDavid);
 > ```
+>
 
 # Acceso a métodos de la superclase
 
