@@ -11,7 +11,13 @@ footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
-[toc]
+
+
+
+
+[TOC]
+
+
 
 # Introducción
 
@@ -1865,6 +1871,177 @@ public class DNI {
 ```
 
 
+
+
+
+
+
+## `Casting`
+
+```java
+package UD05;
+
+public class Casting {
+
+  public static void main(String[] args) {
+    // Casting Implicito
+    Persona encargadoCarn = new Encargado("Rosa Ramos", 1200, "Carniceria");
+
+    // No tenemos disponibles los métodos de la clase Encargado:
+    //EncargadaCarniceria.setSueldoBase(1200);
+    //EncargadaCarniceria.setSeccion("Carniceria");
+    //Pero al imprimir se imprime con el método más específico (luego lo vemos)
+    System.out.println(encargadoCarn);
+
+    // Casting Explicito
+    Encargado miEncargado = (Encargado) encargadoCarn;
+    //Tenemos disponibles los métodos de la clase Encargado:       
+    miEncargado.setSueldoBase(1200);
+    miEncargado.setSeccion("Carniceria");
+    //Al imprimir se imprime con el método más específico de nuevo.
+    System.out.println(miEncargado);
+  }
+}
+```
+
+### `Persona`
+
+```java
+package UD05;
+
+// Clase Persona que solo dispone de nombre
+public class Persona {
+
+  String nombre;
+
+  public Persona(String nombre) {
+     this.nombre = nombre;
+  }
+
+  public void setNombre(String nom) {
+     nombre = nom;
+  }
+
+  public String getNombre() {
+     return nombre;
+  }
+
+  @Override
+  public String toString() {
+     return "Nombre: " + nombre;
+  }
+}
+```
+
+
+
+### `Empleado`
+
+```java
+package UD05;
+
+// Clase Empleado que hereda de Persona y añade atributo sueldoBase
+public class Empleado extends Persona {
+  double sueldoBase;
+
+  public Empleado(String nombre, double sueldoBase) {
+     super(nombre);
+     this.sueldoBase = sueldoBase;
+  }
+
+  public double getSueldo() {
+     return sueldoBase;
+  }
+
+  public void setSueldoBase(double sueldoBase) {
+     this.sueldoBase = sueldoBase;
+  }
+
+  @Override
+  public String toString() {
+     return super.toString() + "\nSueldo Base: " + sueldoBase;
+  }
+}
+```
+
+### `Encargado`
+
+```java
+package UD05;
+
+// Clase Encargado que hereda de Empleado y añade atributo seccion
+public class Encargado extends Empleado {
+  String seccion;
+
+  public Encargado(String nombre, double sueldoBase, String seccion) {
+     super(nombre, sueldoBase);
+     this.seccion = seccion;
+  }
+
+  public String getSeccion() {
+     return seccion;
+  }
+
+  public void setSeccion(String seccion) {
+     this.seccion = seccion;
+  }
+
+  @Override
+  public String toString() {
+     return super.toString() + "\nSección:" + seccion ;
+  }
+}
+```
+
+
+
+## `ClasesAnidadas`
+
+```java
+package UD05;
+
+class Pc {
+
+  double precio;
+
+  public String toString() {
+     return "El precio del PC es " + this.precio;
+  }
+
+  class Monitor {
+
+    String marca;
+
+    public String toString() {
+       return "El monitor es de la marca " + this.marca;
+    }
+  }
+
+  class Cpu {
+
+    String marca;
+
+    public String toString() {
+       return "La CPU es de la marca " + this.marca;
+    }
+  }
+}
+
+public class ClasesAnidadas {
+
+  public static void main(String[] args) {
+     Pc miPc = new Pc();
+     Pc.Monitor miMonitor = miPc.new Monitor();
+     Pc.Cpu miCpu = miPc.new Cpu();
+     miPc.precio = 1250.75;
+     miMonitor.marca = "Asus";
+     miCpu.marca = "Acer";
+     System.out.println(miPc); //El precio del PC es 1250.75
+     System.out.println(miMonitor); //El monitor es de la marca Asus
+     System.out.println(miCpu); //La CPU es de la marca Acer
+  }
+}
+```
 
 # Píldoras informáticas relacionadas
 
