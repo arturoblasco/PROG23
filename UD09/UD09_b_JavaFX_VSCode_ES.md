@@ -1,6 +1,6 @@
 ﻿---
 unit: UD09
-title: JavaFX en NetBeans
+title: JavaFX en Visual Studio Code
 language: ES
 author: Arturo Blasco Cervera
 subject: Programación

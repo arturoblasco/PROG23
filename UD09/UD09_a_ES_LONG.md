@@ -1,10 +1,11 @@
 ---
-title: UD09: Interfaz gráfica
+unit: UD09
+title: Interfaz gráfica
 language: ES
-author: David Martínez Peña [www.martinezpenya.es]
+author: Arturo Blasco Cervera
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet) [www.ieseduardoprimo.es]
+keywords: [PRG, 2024, Programacion, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../

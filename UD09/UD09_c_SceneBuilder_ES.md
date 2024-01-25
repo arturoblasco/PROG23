@@ -1,10 +1,11 @@
 ﻿---
+unit: UD09
 title: Scene Builder & ScenicView
 language: ES
-author: David Martínez [www.martinezpenya.es]
+author: Arturo Blasco Cervera
 subject: Programación
-keywords: [PRG, 2023, Programacion, Java]
-IES: IES Eduardo Primo (Carlet) [www.ieseduardoprimo.es]
+keywords: [PRG, 2024, Programacion, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
@@ -14,23 +15,23 @@ typora-copy-images-to:${filename}/../assets
 
 # Introducción
 
-La aplicación `SceneBuilder` permite diseñar, mediante un interfaz gráfico, las estructuras de las ventanas de las aplicaciones que queramos desarrollar usando `JavaFX`. En este punto veremos los fundamentos básicos para empezar a usar esta herramienta de manera integrada con el entorno de desarrollo NetBeans.
+La aplicación `SceneBuilder` permite diseñar, mediante un interfaz gráfico, las estructuras de las ventanas de las aplicaciones que queramos desarrollar usando `JavaFX`. En este punto veremos los fundamentos básicos para empezar a usar esta herramienta de manera integrada con el entorno de desarrollo Visual Studio Code.
 
 Descarga e instala Scene Builder desde http://gluonhq.com/open-source/scene-builder/
 
-<img src="/assets/SceneBuilder1.png" style="zoom:50%;" />
+<img src="/assets/SceneBuilder1.png" style="zoom:40%;" />
 
-# Configurar en NetBeans la localización de SceneBuilder
+# Configurar en VS Code la ruta de SceneBuilder
 
-Con el fin de que cuando se abra un archivo `FXML` desde `NetBeans` se muestre directamente con la herramienta `SceneBuider`, se debe indicar en la configuración de NetBeans en qué carpeta se encuentra `SceneBuider`.
+Con el fin de que cuando se abra un archivo `FXML` desde `Visual Studio Code` se muestre directamente con la herramienta `SceneBuider`, se debe indicar en la configuración de Visual Studio Code en qué carpeta se encuentra `SceneBuider`.
 
-En el artículo Using [Scene Builder with NetBeans IDE](https://docs.oracle.com/javase/8/scene-builder-2/work-with-java-ides/sb-with-nb.htm#CHEEHIDG) de la web de Oracle se puede obtener también información sobre los pasos a seguir.
+`En el artículo Using [Scene Builder with NetBeans IDE](https://docs.oracle.com/javase/8/scene-builder-2/work-with-java-ides/sb-with-nb.htm#CHEEHIDG) de la web de Oracle se puede obtener también información sobre los pasos a seguir.`
 
-SceneBuilder se encuentra instalada por defecto en la carpeta `C:\Users\TU_USUARIO\AppData\Local\SceneBuilder\SceneBuilder.exe` (en Windows), tambien es posible usar esta aplicación en Mac o Linux. Lo más importante es que conozcas la ubicación del ejecutable.
+En Windows: SceneBuilder se encuentra instalada por defecto en la carpeta `C:\Users\TU_USUARIO\AppData\Local\SceneBuilder\SceneBuilder.exe`, también es posible usar esta aplicación en Mac o Linux. Lo más importante es que conozcas la ubicación del ejecutable.
 
 <img src="/assets/SceneBuilder2.png" style="zoom:50%;" />
 
-Puedes acceder a las opciones de configuración de NetBeans en el menú `Tools` -> `Options`. Ahí accede a la sección `Java` y la pestaña `JavaFX`:
+Puedes acceder a las opciones de configuración de VS Code en el menú `Tools` -> `Options`. Ahí accede a la sección `Java` y la pestaña `JavaFX`:
 
 <img src="/assets/Screenshot_20230416_091258.png" alt="Ubiación del SceneBuilder" style="zoom:50%;" />
 

@@ -1,10 +1,11 @@
 ﻿---
+unit: UD09
 title: Calculadora en JavaFX
 language: ES
-author: David Martínez [www.martinezpenya.es]
+author: Arturo Blasco Cervera
 subject: Programación
-keywords: [PRG, 2023, Programacion, Java]
-IES: IES Eduardo Primo (Carlet) [www.ieseduardoprimo.es]
+keywords: [PRG, 2024, Programacion, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
@@ -35,7 +36,7 @@ Ahora añadimos al proyecto la librería de `JavaFX19` que hemos creado en otros
 
 En este momento nuestro proyecto debería tener este aspecto:
 
-![Proyecto inicial](/assets/CALCULADORA_01.png)
+<img src="/assets/CALCULADORA_01.png" alt="Proyecto inicial" style="zoom:67%;" />
 
 Desactivamos la opción de compilar al guardar del proyecto y añadimos las propiedades correctas a las `VM options` del proyecto. Tal y como hemos visto en otros documentos de la unidad.
 
@@ -96,11 +97,11 @@ Si tenemos correctamente configurado el **SceneBuilder**, tal y como hemos visto
 
 Ahora deberías crear una ventana similar a esta:
 
-![view](/assets/CALCULADORA_02.png)
+<img src="/assets/CALCULADORA_02.png" alt="view" style="zoom:67%;" />
 
 Este ejemplo tiene la siguiente jerarquía:
 
-![Jerarquía](/assets/CALCULADORA_03.png)
+<img src="/assets/CALCULADORA_03.png" alt="Jerarquía" style="zoom:67%;" />
 
 Recuerda dar nombre a todos los componentes en la pestaña `code` al campo `fx:id`. 
 
@@ -112,7 +113,7 @@ Desactiva el `txtResultado`, para que no sea editable.
 
 Crea los contenedores y ajusta sus alineaciones, así como los márgenes y espaciadores de los elementos que contienen, de manera que si amplias la ventana al máximo quede algo similar a esto:
 
-![Ventana ampliada](/assets/CALCULADORA_04.png)
+<img src="/assets/CALCULADORA_04.png" alt="Ventana ampliada" style="zoom:67%;" />
 
 También debes añadir la acciones `ON ACTION` dentro de la pestaña `code` para los botones:
 
@@ -241,7 +242,7 @@ La primera vez que ejecutemos el proyecto nos pedirá asignar la clase `main` qu
 
 Si todo ha ido bien debería aparecer nuestra calculadora en pantalla:
 
-![CalculadoraNBFX](/assets/CALCULADORA_05.png)
+<img src="/assets/CALCULADORA_05.png" alt="CalculadoraNBFX" style="zoom:67%;" />
 
 # Píldoras informáticas relacionadas
 
