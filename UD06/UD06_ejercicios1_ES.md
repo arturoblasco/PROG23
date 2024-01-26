@@ -4,7 +4,7 @@ title: Ejercicios 1
 language: ES
 author: Arturo BC [arturoblasco@iesmre.com]
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
+keywords: [PRG, 2023, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver: ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}

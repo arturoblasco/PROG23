@@ -4,14 +4,17 @@ title: Lectura y escritura de información
 language: ES
 author: Arturo Blasco [arturoblasco@iesmre.com]
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
+keywords: [PRG, 2023, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${unit}: ${title} - ${subject} (ver: ${today})
 footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
-[toc]
+
+
+[TOC]
+
 # Streams (Flujos)
 
 Los programas Java realizan las operaciones de entrada y salida a través de lo que se denominan **streams** (*traducido, **flujos***). 
@@ -19,6 +22,8 @@ Los programas Java realizan las operaciones de entrada y salida a través de lo 
 <img src="assets/stream.png" alt="image-20210828174745591" style="zoom:50%;" />
 
 Un stream es una abstracción de todo aquello que produzca o consuma información. Podemos ver a este *stream* como una entidad lógica que, por otra parte, se encontrará vinculado con un dispositivo físico. La eficacia de esta forma de implementación radica en que las operaciones de entrada y salida que el programador necesita manejar son las mismas independientemente del dispositivo con el que estemos actuando. Será Java quien se encargue de manejar el dispositivo concreto, ya se trate del teclado, el monitor, un sistema de ficheros o un *socket* de red, etc., liberando a nuestro código de tener que saber con quién está interactuando.
+
+
 
 ## Clasificación de los Streams
 
@@ -33,6 +38,8 @@ En Java los *streams* se materializan en un conjunto de clases y subclases, cont
 | ------------------ | ------------------------- | ---------------------- |
 | Para **lectura**   | Reader                    | InputStream            |
 | Para **escritura** | Writer                    | OutputStream           |
+
+
 
 
 
@@ -73,7 +80,7 @@ A(OutputStream) --> B(FileOutputStream)
 A --> C(PipedOutputStream)
 A --> D(FilterOutputStream)
 A --> E(ByteArrayInputStream)
-A --> H(ObjectInputStream)
+A --> H(ObjectOutputStream)
 D --> J(DataOutputStream)
 D --> K(BufferedOutputStream)
 D --> L(PushbackOutputStream)
@@ -83,7 +90,7 @@ D --> L(PushbackOutputStream)
 
 Proporciona un medio conveniente para el manejo de entradas y salidas de caracteres. Dichos flujos usan codificación Unicode y, por tanto, se pueden internacionalizar. 
 
-Una observación: Este es un modo que Java nos proporciona para manejar caracteres pero al nivel más bajo todas las operaciones de I/O son orientadas a byte. Al igual que la anterior el flujo de caracteres también viene gobernado por dos clases abstractas: `Reader` y `Writer`. Dichas clases manejan flujos de caracteres Unicode. Y también de ellas derivan subclases concretas que implementan los métodos definidos en ellas siendo los más destacados los métodos `read()` y `write()` que, en este caso, leen y escriben caracteres de datos respectivamente.
+> **Una observación**: Este es un modo que Java nos proporciona para manejar caracteres, pero al nivel más bajo todas las operaciones de I/O son orientadas a byte. Al igual que el anterior, el flujo de caracteres también viene gobernado por dos clases abstractas: `Reader` y `Writer`. Dichas clases manejan flujos de caracteres Unicode; y también de ellas derivan subclases concretas que implementan los métodos definidos en ellas siendo los más destacados los métodos `read()` y `write()` que, en este caso, leen y escriben caracteres de datos respectivamente.
 
 ```mermaid
 graph LR
@@ -127,28 +134,24 @@ A pesar de llamarse igual, `InputStream.read()` devuelve el siguiente byte de da
 
 ## Stream estándar
 
-Existen una serie de stream de uso común a los cuales se denomina stream estándar. El sistema se encarga de crear estos stream automáticamente. 
+Existen una serie de *stream* de uso común a los cuales se denomina *stream estándar*. El sistema se encarga de crear estos stream automáticamente. 
 
-- `System.in`
+- **`System.in`**
   - Instancia de la clase `InputStream`: flujo de bytes de entrada.
   - Métodos:
     - `read()` permite leer un byte de la entrada como entero.
     - `skip(n)` ignora `n` bytes de la entrada.
     - `available()` número de bytes disponibles para leer en la entrada.
-- `System.out`
+- **`System.out`**
   - Instancia de la clase `PrintStream`: flujo de bytes de salida.
-  - Métodos
-    - para impresión de datos: `print()`, `println()`
+  - Métodos:
+    - para impresión de datos: `print()`, `println()`.
     - `flush()` vacía el buffer de salida escribiendo su contenido.
-- `System.err`
-  - Funcionamiento similar a `System.out`
+- **`System.err`**
+  - Funcionamiento similar a `System.out`.
   - Se utiliza para enviar mensajes de error (por ejemplo a un fichero de log o a la consola).
 
 > Por defecto, `System.in`, `System.out` y `System.err` se encuentran asociados a la consola (teclado y pantalla), pero es posible redirigirlos a otras fuentes o destinos, como por ejemplo a un fichero.
-
-
-
-
 
 ## Utilización de Streams
 
@@ -180,6 +183,10 @@ Para utilizar un stream hay que seguir una serie de pasos:
   
      - Socket local.
   
+  
+  
+  
+  
   2. Mientras existan datos disponibles:
      - Escribir datos.
   
@@ -187,7 +194,7 @@ Para utilizar un stream hay que seguir una serie de pasos:
 
 > **Nota**: 
 >
-> - Los Streams estándar ya se encarga el sistema de abrirlos y cerrarlos.
+> - Los *streams estándar* ya se encarga el sistema de abrirlos y cerrarlos.
 > - Un fallo en cualquier punto del proceso produce una `IOException`.
 
 
@@ -201,6 +208,8 @@ Como hemos dicho anteriormente, proporcionan métodos para leer y escribir, resp
 | `InputStream`  | `int read()`    | Lee un byte de información y lo devuelve como un entero cuyo valor estará entre 0 y 255.<br />Si se detecta el final de los datos de entrada devuelve -1. |
 | `OutputStream` | `write (int b)` | Escribe un byte de información en el *stream*. El parámetro es entero, pero si su valor es superior a 255 se escriben los 8 bits de menos peso (los más a la derecha). |
 
+
+
 ## Las clases `Reader` y `Writer`
 
 Permiten, respectivamente, leer y escribir un carácter en el stream.
@@ -209,8 +218,6 @@ Permiten, respectivamente, leer y escribir un carácter en el stream.
 | -------- | --------------- | ------------------------------------------------------------ |
 | `Reader` | `int read()`    | Lee un carácter unicode de información y lo devuelve como un entero cuyo valor estará entre 0 y 65565.<br />Si se detecta el final de los datos de entrada devuelve -1. |
 | `Writer` | `write (int c)` | Escribe un carácter unicode en el *stream*. El parámetro es entero y corresponderá al código Unicode del carácter que se escribe. |
-
-
 
 
 
@@ -225,16 +232,16 @@ Son clases que actúan de puente entre *streams* orientados a bytes y *streams* 
 
 ## Buffering
 
-Las clases `BufferedReader`, `BufferedWritter`, `BufferedInputStream` y `BufferedOutputStream` permiten realizar buffering.
+Las clases `BufferedReader`, `BufferedWritter`, `BufferedInputStream` y `BufferedOutputStream` permiten realizar *buffering*.
 
 Situadas "*por delante*" de un stream acumulan las operaciones de lectura y escritura en una memoria o buffer y cuando hay suficiente información las operaciones se realizan finalmente sobre el dispositivo físico.
 
-Mantienen las mismas operaciones de lectura y escritura que sus clases padre pero, como hemos dicho, reducen el número de accesos al dispositivo físico por el uso de buffers.
+Mantienen las mismas operaciones de lectura y escritura que sus clases padre pero, como hemos dicho, reducen el número de accesos al dispositivo físico por el uso de *buffers*.
 
-| clase                                               | métodos                                                      | descripción                                                  |
-| --------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `BufferedReader` <br /><br /><br />`BufferedWriter` | `String readLine()`<br><br /><br />`void write(String s)`<br><br />`void newLine()` | Además de los métodos heredados, encontramos otros que permiten leer Strings completos, escribir una línea completa de texto y hacer saltos de línea. |
-| `BufferedInputStream` `BufferedOutputStream`        |                                                              | Mantienen las mismas operaciones de lectura y escritura que sus clases padre pero, como hemos dicho, reducen el número de accesos al dispositivo físico por el uso de buffers. |
+| clase                                                        | métodos                                                      | descripción                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `BufferedReader` <br /><br /><br />`BufferedWriter`<br /><br /><br /><br /> | `String readLine()`<br><br /><br />`void write(String s)`<br><br />`void newLine()` | Además de los métodos heredados, encontramos otros que permiten leer Strings completos, escribir una línea completa de texto y hacer saltos de línea.<br /><br /><br /><br /><br /> |
+| `BufferedInputStream` <br /><br />`BufferedOutputStream`     |                                                              | Mantienen las mismas operaciones de lectura y escritura que sus clases padre pero, como hemos dicho, reducen el número de accesos al dispositivo físico por el uso de buffers. |
 
 ## `DataInputStream` y `DataOutputStream`
 
@@ -272,12 +279,13 @@ BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
 
 
 
-Consulta los ejemplos [P1_1_FlujoEstandarEntrada](#estandar-de-entrada) y [P1_2_FlujoEstandarSalida](#estandar-de-salida).
+Consulta los ejemplos [P1_1_FlujoEstandarEntrada](#Estándar de entrada) y [P1_2_FlujoEstandarSalida](#Estándar de salida).
 
 # Ficheros
 
 En ocasiones necesitamos que los datos que introduce el usuario o que produce un programa persistan cuando éste finaliza; es decir, que se conserven cuando el programa termina su ejecución. Para ello es necesario el uso de una base de datos o de ficheros, que permitan guardar los datos en un almacenamiento secundario como un pendrive, disco duro, DVD, etc.
-En esta unidad se abordan distintos aspectos relacionados con el almacenamiento en ficheros: 
+
+Abordaremos distintos aspectos relacionados con el almacenamiento en ficheros: 
 
 - Introducción a conceptos básicos como los de registro y campo.
 - Clasificación de los ficheros según el contenido y forma de acceso.
@@ -285,16 +293,15 @@ En esta unidad se abordan distintos aspectos relacionados con el almacenamiento 
 
 ## Registros y campos
 
-Llamamos **campo** a un dato en particular almacenado en una base de datos o en un fichero. Un campo puede ser en nombre de un cliente, la fecha de nacimiento de un alumno, el número de teléfono de un comercio. Los campos pueden ser de distintos tipos: alfanuméricos, numéricos, fechas, etc.
+Llamamos **campo** a un dato en particular almacenado en una base de datos o fichero. Un campo puede ser el nombre de un cliente, la fecha de nacimiento de un alumno, el número de teléfono de un comercio. Los campos pueden ser de distintos tipos: alfanuméricos, numéricos, fechas, etc.
 
 La agrupación de uno o más campos forman un **registro**. Un registro de alumno podría consistir, por ejemplo, de los siguientes campos:
 
   1. Número de expediente.
   2. Nombre y apellidos.
   3. Domicilio.
-  4. Grupo al que pertenece.
 
-Un fichero puede estar formado por registros, lo cual dotaría al archivo de estructura. En un fichero de alumnos tendríamos un registro por cada alumno. Los campos del registro serían cada uno de los datos que se almacena del alumno: Nº expediente, nombre, etc …
+Un fichero puede estar formado por registros, lo cual dotaría al archivo de estructura. En un fichero de alumnos tendríamos un registro por cada alumno. Los campos del registro serían cada uno de los datos que se almacena del alumno: nº expediente, nombre, etc …
 
 En Java no existen específicamente los conceptos de campo y registro. Lo más similar que conocemos son las clases (similares a un registro) y, dentro de las clases, los atributos (similares a campos). 
 
@@ -312,12 +319,13 @@ Ejemplo de fichero:
   24645
   Armando García Ledesma
   C/ Tuej …
-  54654
-  Tomás Ferrando Tamarit
-  C/ Poeta …
   ```
 
- Ejemplo de registro en el fichero anterior:
+
+
+
+
+Ejemplo de registro en el fichero anterior:
 
   ```txt
   24645
@@ -340,9 +348,9 @@ Este punto de vista a bajo nivel es demasiado simple, pues cuando se recupera y 
 - Ficheros de texto (o de caracteres).
 - Ficheros binarios (o de bytes).
 
-Un **fichero de texto** está formado únicamente por caracteres. Los bits que contiene se interpretan atendiendo a una tabla de caracteres, ya sea ASCII o Unicode. Este tipo de ficheros se pueden abrir con un editor de texto plano y son, en general, legibles. Por ejemplo, los ficheros .java que contienen los programas que elaboramos, son ficheros de texto.
+Un **fichero de texto** está formado únicamente por caracteres. Los bits que contiene se interpretan atendiendo a una tabla de caracteres, ya sea ASCII o Unicode. Este tipo de ficheros se pueden abrir con un editor de texto plano y son, en general, legibles. Por ejemplo, los ficheros `.java` que contienen los programas que elaboramos, son ficheros de texto.
 
-Por otro lado, los **ficheros binarios** contienen secuencias de bytes que se agrupan para representar otro tipo de información: números, sonidos, imágenes, etc. Un fichero binario se puede abrir también con un editor de texto plano pero, en este caso, el contenido será ininteligible. Existen muchos ejemplos de ficheros binarios: el archivo .exe que contiene la versión ejecutable de un programa es un fichero binario.
+Por otro lado, los **ficheros binarios** contienen secuencias de bytes que se agrupan para representar otro tipo de información: números, sonidos, imágenes, etc. Un fichero binario se puede abrir también con un editor de texto plano pero, en este caso, el contenido será ininteligible. Existen muchos ejemplos de ficheros binarios: el archivo `.exe` que contiene la versión ejecutable de un programa es un fichero binario.
 
 Las operaciones de lectura/escritura que utilizamos al acceder desde un programa a un fichero de texto están orientadas al carácter: leer o escribir un carácter, una secuencia de caracteres, una línea de texto, etc. En cambio las operaciones de lectura/escritura en ficheros binarios están orientadas a byte: se leen o escriben datos binarios, como enteros, bytes, double, etc.
 
@@ -353,7 +361,7 @@ Existen dos maneras de acceder a la información que contiene un fichero:
 - Acceso secuencial.
 - Acceso directo (o aleatorio).
 
-Con acceso secuencial, para poder leer el byte que se encuentra en determinada posición del archivo es necesario leer, previamente, todos los bytes anteriores. Al escribir, los datos se sitúan en el archivo uno a continuación del otro, en el mismo orden en que se introducen. Es decir, la nueva información se coloca en el archivo a continuación de la que ya hay. No es posible realizar modificaciones de los datos existentes, tan solo añadir al final.
+Con acceso secuencial, para poder leer el byte que se encuentra en determinada posición del archivo es necesario leer, previamente, todos los bytes anteriores. Al escribir, los datos se sitúan en el archivo uno a continuación del otro, en el mismo orden en que se introducen. Es decir, la nueva información se coloca en el archivo a continuación de la que ya existe. No es posible realizar modificaciones de los datos existentes, tan solo añadir al final.
 
 Sin embargo, con el acceso directo, es posible acceder a determinada posición (dirección) del fichero de manera directa y, posteriormente, hacer la operación de lectura o escritura deseada.
 
@@ -554,7 +562,7 @@ public class P1_1_FlujoEstandarEntrada {
           str.append(c);
        }
     } catch (IOException ex) {
-       System.out.println("Error: " + ex.getMessage());
+       System.out.println("ERROR: " + ex.getMessage());
     }
     // Escribir la cadena que se ha ido tecleando
     System.out.println("Cadena introducida: " + str);
@@ -562,15 +570,27 @@ public class P1_1_FlujoEstandarEntrada {
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Estándar de salida
 
 En el siguiente ejemplo se pide introducir texto hasta que se introduzca una línea con el texto "salir". Dicho texto se almacenará en un fichero `salida.txt`.
 
 El proceso debe de estar en un bloque `try..catch`.
-
-
-
-
 
 ```java
 package UD06.P1_Flujos;
@@ -584,19 +604,18 @@ import java.io.PrintWriter;
 public class P1_2_FlujoEstandarSalida {
 
   public static void main(String[] args) {
-     // Por si ocurre una excepción ponemos el bloque try-cath
-     try {
-        PrintWriter out = new PrintWriter(new FileWriter("test/salida.txt", true));
-        BufferedReader br = new BufferedReader(
+    try {
+      PrintWriter out = new PrintWriter(new FileWriter("salida.txt", true));
+      BufferedReader br = new BufferedReader(
                    				new InputStreamReader(System.in));
-        String s;
-        while (!(s = br.readLine()).equals("salir")) {
-           out.println(s);
-        }
-        out.close();
-     } catch (IOException ex) {
-        System.out.println("Error: " + ex.getMessage());
-     }
+      String s;
+      while (!(s = br.readLine()).equals("salir")) {
+         out.println(s);
+      }
+      out.close();
+    } catch (IOException ex) {
+      System.out.println("Error: " + ex.getMessage());
+    }
   }
 }
 ```
@@ -640,10 +659,10 @@ Al finalizar su uso, y tan pronto como sea posible, hay que cerrar los streams (
 
 ### Sobrescribir un fichero
 
-Es muy importante tener en cuenta que cuando se crea un `FileWriter` o un `FileOutputStream` y se escribe en él, …
+Es muy importante tener en cuenta que cuando se crea un `FileWriter` o un `FileOutputStream` y se escribe en él:
 
-- … si el fichero no existe se crea.
-- … si el fichero existe, **su contenido se reemplaza** por el nuevo. El contenido previo que tuviera el fichero se pierde.	
+- si el fichero no existe se crea.
+- si el fichero existe, **su contenido se reemplaza** por el nuevo. El contenido previo que tuviera el fichero se pierde.	
 
 Vamos a ver una serie de ejemplos que muestren cómo leer y escribir secuencialmente sobre/en un fichero y también escribir en un fichero indicando que la información se añada a la que ya hay y no se reescriba el fichero. Para esto último usaremos el constructor de FileWriter que recibe dos parámetros; el primer parámetro es el nombre del fichero y el segundo parámetro, `append`, lo pasaremos con el valor *true*.
 
@@ -659,7 +678,7 @@ public class P2_2_SobreescribirFichero {
     public static void main(String[] args) {
         try (FileWriter f = new FileWriter("texto.txt", true);) {
             f.write("Este texto se añade en el fichero\n\r");
-
+            
         } catch (IOException e) {
             System.out.println("Problema al abrir o escribir ");
         }
@@ -667,7 +686,9 @@ public class P2_2_SobreescribirFichero {
 }
 ```
 
-En este ejemplo se ha utilizado la nueva sintaxis disponible para los bloques `try-catch`: lo que se denomina "*try with resources*". Esta sintaxis permite crear un objeto en la cabecera del bloque `try`. El objeto creado se cerrará automáticamente al finalizar. El objeto debe pertenecer al interface `Closeable`, es decir, debe tener método `close()`.
+> En este ejemplo se ha utilizado la nueva sintaxis disponible para los bloques try-catch: lo que se denomina **`try with resource`**. Esta sintaxis permite crear un objeto en la cabecera del bloque try. El objeto creado se cerrará automáticamente al finalizar. El objeto debe pertenecer al interface Closeable, es decir, debe tener método close().
+
+
 
 
 
@@ -894,20 +915,6 @@ Observa que:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Ejemplo de Serialización
 
 En el siguiente ejemplo usaremos una clase persona que definiremos de la siguiente manera:
@@ -961,8 +968,6 @@ public class Persona implements Serializable {
 
 
 
-
-
 Ahora detallamos la clase para serializar o guardar la información en un archivo:
 
 ```java
@@ -995,6 +1000,12 @@ public class Guardar {
   }
 }
 ```
+
+
+
+
+
+
 
 Y por último la clase para Leer la información una vez guardada:
 
@@ -1116,8 +1127,6 @@ public class TCPClient {
   }
 }
 ```
-
-
 
 
 
