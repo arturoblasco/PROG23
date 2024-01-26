@@ -69,7 +69,7 @@ public class HolaMundo extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(createContent(), 400, 400));
+        stage.setScene(new Scene(createContent(), 300, 200));
         stage.show();
     }
 
@@ -79,9 +79,9 @@ public class HolaMundo extends Application {
 }
 ```
 
-El resultado de ejecutar el código se ve en la siguiente figura.
+El resultado de ejecutar el código se ve en la siguiente figura:
 
-<img src="/assets/HolaMundo.png" style="zoom: 50%;" />
+<img src="/assets/HolaMundo.png" style="zoom: 60%;" />
 
 Notas importantes:
 
@@ -190,7 +190,7 @@ Un evento notifica que ha ocurrido algo importante. Los eventos suelen ser lo "p
 
 El mecanismo de notificación de eventos lo realiza la plataforma JavaFX automáticamente. Por lo tanto, solo consideraremos cómo disparar (`fire`) eventos, escuchar (`listen`) eventos y cómo manejarlos (`handle`).
 
-Primero, vamos a crear un evento personalizado.
+Primero, vamos a crear un evento personalizado:
 
 **`E03_EventoUsuario.java`**
 
@@ -200,20 +200,20 @@ import javafx.event.EventType;
 
 public class E03_EventoUsuario extends Event {
 
-    public static final EventType<E03_EventoUsuario> ANY = new EventType<>(Event.ANY, "ANY");
+  public static final EventType<E03_EventoUsuario> ANY = new EventType<>(Event.ANY, "ANY");
 
-    public static final EventType<E03_EventoUsuario> LOGIN_SUCCEEDED = new EventType<>(ANY, "LOGIN_SUCCEEDED");
+  public static final EventType<E03_EventoUsuario> LOGIN_SUCCEEDED = new EventType<>(ANY, "LOGIN_SUCCEEDED");
 
-    public static final EventType<E03_EventoUsuario> LOGIN_FAILED = new EventType<>(ANY, "LOGIN_FAILED");
+  public static final EventType<E03_EventoUsuario> LOGIN_FAILED = new EventType<>(ANY, "LOGIN_FAILED");
 
-    public E03_EventoUsuario(EventType<? extends Event> eventType) {
-        super(eventType);
-    }
-    // cualquier otro atributo importante como la fecha, la hora...
+  public E03_EventoUsuario(EventType<? extends Event> eventType) {
+     super(eventType);
+  }
+  // cualquier otro atributo importante como la fecha, la hora...
 }
 ```
 
-Dado que los tipos de eventos son fijos, generalmente se crean dentro del mismo archivo de origen que el evento. Podemos ver que hay 2 tipos específicos de eventos: `LOGIN_SUCCEEDED`y `LOGIN_FAILED`. Podemos escuchar estos tipos específicos de eventos:
+Dado que los tipos de eventos son fijos, generalmente se crean dentro del mismo archivo de origen que el evento. Podemos ver que hay 2 tipos específicos de eventos: `LOGIN_SUCCEEDED` y `LOGIN_FAILED`. Podemos escuchar estos tipos específicos de eventos:
 
 ```java
 Node node = ...
@@ -284,7 +284,7 @@ Para demostrar esto, considere el siguiente programa que muestra las dimensiones
 
 Sin embargo, los valores de ancho y alto están disponibles una vez que se muestra la ventana. El programa registra un controlador de eventos para el evento `OnShown` y prepara la misma salida.
 
-Observa el siguiente ejemplo
+Observa el siguiente ejemplo:
 
 **`E04_StartVsShown.java`**
 
@@ -1185,7 +1185,7 @@ La filosofía del diseño de JavaFX es la misma que la filosofía de Swing. Sele
 
 ### Código completo
 
-El código se puede probar con un par de archivos .java. Hay un POJO para la clase `Cliente` utilizado por el `TableView`
+El código se puede probar con un par de archivos .java. Hay un POJO para la clase `Cliente` utilizado por el `TableView`.
 
 **`Cliente.java`**
 

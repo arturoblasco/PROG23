@@ -26,25 +26,25 @@ Implementa las aplicaciones gráficas siguiendo las especificaciones de diseño 
 
 1. Crea con JavaFX la siguiente pantalla.
 
-   ![Ejercicio 1](/assets/ej1_javafx.png)
+   <img src="/assets/ej1_javafx.png" alt="Ejercicio 1" style="zoom:80%;" />
 
 Cuando el usuario escriba números (controlarlo con excepciones) y pulse en sumar, debe mostrar en el `txtResultado` el resultado final.
 
 2. Crea con `JavaFX` la siguiente pantalla.
 
-   ![Ejercicio 2](/assets/ej2_javafx.png)
+   <img src="/assets/ej2_javafx.png" alt="Ejercicio 2" style="zoom:90%;" />
 
 Cuando el usuario escriba números (controlarlo con excepciones) y según que operación elija, deberá hacer la operación y mostrarlo en el txtResultado. Tener en cuenta que la división, debemos controlar que el segundo operando no debe ser 0. El proyecto debe seguir el modelo MVC.
 
 3. Crea la siguiente pantalla con `JavaFX`.
 
-![Ejercicio 3](/assets/ej3_javafx.png)
+<img src="/assets/ej3_javafx.png" alt="Ejercicio 3" style="zoom:80%;" />
 
 Al pulsar en el botón de agregar persona, creara un objeto `Persona` y lo insertara en la tabla.
 
 4. Dado el ejercicio anterior, agrega lo siguiente.
 
-![Ejercicio 4](/assets/ej4_javafx.png)
+<img src="/assets/ej4_javafx.png" alt="Ejercicio 4" style="zoom:80%;" />
 
 Al seleccionar en un registro, mostrara los datos en los txt.
 
@@ -54,21 +54,21 @@ Al pulsar el botón Eliminar, el registro seleccionado se eliminara de la tabla.
 
 5. Dado el ejercicio anterior, modifica la ventana.
 
-![Ejercicio 5](/assets/ej5_2_javafx.png)
+<img src="/assets/ej5_2_javafx.png" alt="Ejercicio 5" style="zoom:80%;" />
 
 Al pulsar el botón de agregar Persona, se mostrara la siguiente ventana.
 
-![Ejercicio 5b](/assets/ej5_1_javafx.png)
+<img src="/assets/ej5_1_javafx.png" alt="Ejercicio 5b" style="zoom:80%;" />
 
 Cuando rellenamos los datos, cerrara la ventana y añadirá la persona a la tabla.
 
 6. Dado el ejercicio anterior, modifica la ventana.
 
-![Ejercicio 6](/assets/ej6_javafx.png)
+<img src="/assets/ej6_javafx.png" alt="Ejercicio 6" style="zoom:80%;" />
 
 Al pulsar el botón de agregar Persona, se mostrara la siguiente ventana.
 
-![Ejercicio 6b](/assets/ej6_1_javafx.png)
+<img src="/assets/ej6_1_javafx.png" alt="Ejercicio 6b" style="zoom:80%;" />
 
 Cuando rellenamos los datos, cerrara la ventana y añadirá la persona a la tabla.
 
@@ -78,7 +78,7 @@ Cuando pulsemos eliminar, eliminar el objeto de la tabla.
 
 7. Dado el ejercicio anterior, modifica la ventana (se mantiene el dialogo de persona).
 
-![Ejercicio 7](/assets/ej7_javafx.png)
+<img src="/assets/ej7_javafx.png" alt="Ejercicio 7" style="zoom:80%;" />
 
 Cuando escribamos en el txt de arriba, filtrara los nombre de las personas que contengan el texto que tu indiques.
 
