@@ -361,9 +361,9 @@ Existen dos maneras de acceder a la información que contiene un fichero:
 - Acceso secuencial.
 - Acceso directo (o aleatorio).
 
-Con acceso secuencial, para poder leer el byte que se encuentra en determinada posición del archivo es necesario leer, previamente, todos los bytes anteriores. Al escribir, los datos se sitúan en el archivo uno a continuación del otro, en el mismo orden en que se introducen. Es decir, la nueva información se coloca en el archivo a continuación de la que ya existe. No es posible realizar modificaciones de los datos existentes, tan solo añadir al final.
+Con **acceso secuencial**, para poder leer el byte que se encuentra en determinada posición del archivo es necesario leer, previamente, todos los bytes anteriores. Al escribir, los datos se sitúan en el archivo uno a continuación del otro, en el mismo orden en que se introducen. Es decir, la nueva información se coloca en el archivo a continuación de la que ya existe. No es posible realizar modificaciones de los datos existentes, tan solo añadir al final.
 
-Sin embargo, con el acceso directo, es posible acceder a determinada posición (dirección) del fichero de manera directa y, posteriormente, hacer la operación de lectura o escritura deseada.
+Sin embargo, con el **acceso directo**, es posible acceder a determinada posición (dirección) del fichero de manera directa y, posteriormente, hacer la operación de lectura o escritura deseada.
 
 No siempre es necesario realizar un acceso directo a un archivo. En muchas ocasiones el procesamiento que realizamos de sus datos consiste en la escritura o lectura de todo el archivo siguiendo el orden en que se encuentran. Para ello basta con un acceso secuencial.
 
@@ -393,7 +393,7 @@ Podríamos, por ejemplo, asociar un `DataInputStream` a un `FileInputStream` par
 
 En ejemplos posteriores se ilustrará cómo asociar un stream a un `File…Stream`.
 
-Observa los ejemplos [P2_3_LecturaSecuencialTexto](#lectura-de-un-fichero-secuencial-de-texto), [P2_4_EscrituraSecuencialTexto](#escritura-de-un-fichero-secuencial-de-texto), [P2_6_escritura-de-un-fichero-secuencial-binario](#lectura-de-un-fichero-secuencial-de-texto) y [P2_7_LecturaSecuencialBinario](#lectura-de-un-fichero-secuencial-binario), 
+Observa los ejemplos [P2_3_LecturaSecuencialTexto](#lectura-de-un-fichero-secuencial-de-texto), [P2_4_EscrituraSecuencialTexto](#escritura-de-un-fichero-secuencial-de-texto), [P2_6_escritura-de-un-fichero-secuencial-binario](#Escritura de un fichero secuencial binario) y [P2_7_LecturaSecuencialBinario](#lectura-de-un-fichero-secuencial-binario), 
 
 ## Ficheros con buffering
 
@@ -624,7 +624,7 @@ public class P1_2_FlujoEstandarSalida {
 
 ### Crear un fichero
 
-En el siguiente ejemplo vemos cómo crear un fichero de texto y escribir una frase en el.
+En el siguiente ejemplo vemos cómo crear un fichero de texto y escribir una frase en él.
 
 ```java
 package UD06.P2_Ficheros;

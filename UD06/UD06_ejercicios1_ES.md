@@ -11,7 +11,14 @@ footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
-[toc]
+
+
+
+
+
+
+[TOC]
+
 # Ejercicios
 
 ## Paquete: `UD06.Pr01.gestorVuelos`
@@ -31,7 +38,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
 
    - `public Vuelo(String id, String orig, String dest, LocalTime hsal, LocalTime hlleg)`: **Constructor** que crea un vuelo con identificador, ciudad de origen, ciudad de destino, hora de salida y hora de llegada indicados en los respectivos parámetros, y sin pasajeros.
 
-   - `public String getIdenificador()`: Devuelve el `identificador`
+   - `public String getIdentificador()`: Devuelve el `identificador`
 
    - `public String getOrigen()`: Devuelve `origen`.
 
