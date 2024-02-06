@@ -1,6 +1,6 @@
 ---
 unit: UD06
-title: Ejercicios 1
+title: Ejercicios
 language: ES
 author: Arturo BC [arturoblasco@iesmre.com]
 subject: Programación
