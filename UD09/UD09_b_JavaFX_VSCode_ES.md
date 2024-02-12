@@ -15,56 +15,34 @@ typora-copy-images-to:${filename}/../assets
 
 # Introducción
 
-Vamos a ver cómo crear una aplicación `JavaFX` en NetBeans. Necesitamos:
+Vamos a ver cómo crear una aplicación `JavaFX` en Visual Studio Code. Necesitamos:
 
-- Apache Netbeans 16 o posterior
-- OpenJDK 17 (seguramente funcionará con una posterior)
+- Visual Studio Code.
+- OpenJDK 17 (seguramente funcionará con una posterior).
 
-# Proyectos JavaFX con el IDE NetBeans
+# Proyectos JavaFX con el Visual Studio Code
 
-Sigue estos pasos para crear un proyecto `JavaFX` utilizando las herramientas IDE para compilarlo y ejecutarlo.
-
-- Descargar el SDK (versión 19) de `JavaFX` <https://gluonhq.com/products/javafx/> apropiado para tu sistema operativo.
-- Descomprímelo en la ubicación deseada, por ejemplo, `/Users/your-user/Downloads/javafx-sdk-19`. Es **IMPORTANTÍSIMO** que recuerdes la ruta (`path`) hasta esta librería.
-
-## Cree una nueva  biblioteca global
-
-- En `Tools` -> `Library` -> `New Library` (abajo a la izquierda)
-- Nómbrala `JavaFX19` (por ejemplo) que incluya los archivos jar en la carpeta lib de JavaFX 19.
-
-<img src="/assets/NB01.png" alt="Libreria JavaFX19" style="zoom:50%;" />
-
-> **Nota importante**: asegúrate de no añadir excepción al ejecutar el proyecto.
+Sigue estos pasos para crear un proyecto `JavaFX` utilizando las herramientas IDE para compilarlo y ejecutarlo ([enlace en la web oficial Visual Studio Code](https://code.visualstudio.com/docs/java/java-gui)).
 
 ## Crea un proyecto de Java
 
-Proporciona un nombre para el proyecto, como `HolaFX`, y una ubicación. Se abrirá un proyecto predeterminado. 
+Puedes crear una nueva aplicación JavaFX con solo unos pocos pasos en VS Code:
 
-![Nuevo Proyecto](/assets/NB02.png)
+- paso 1: instala el [paquete de extensión para Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) (*Extension Pack for Java*, que ya debemos tenerlo instalado).
+- paso 2: en Visual Studio Code, abre la paleta de comandos ( *Ctrl* + *Shift* + *P* ) y luego selecciona el comando **Java: Create Java Project...** .
+- paso 3: selecciona la opción **JavaFX** en la lista, sigue el asistente, que te ayudará a crear un nuevo proyecto JavaFX a través de *Maven Archetype*.
 
-> **Advertencia**: no intente crear un proyecto `JavaFX`. Las tareas `JavaFX` `Ant` de la versión actual de Apache NetBeans aún no están listas para `JavaFX` 19, a menos que tenga un JDK personalizado que incluya `JavaFX`.
+<img src="/assets/09_vs02.png" alt="Nuevo Proyecto" style="zoom: 50%;" />
 
-## Establecer JDK
+## Ejecutar la aplicación JavaFX
 
-Asegúrate de que su proyecto esté configurado para ejecutarse con JDK 19 o posterior. Abrimos las propiedades del proyecto (botón derecho sobre el nombre del proyecto) y `Properties` -> `Libraries` -> (campo) `Java Platform` y configúralo en tu JDK preferido.
+> **nota**: la siguiente guía solo funciona para proyectos administrados por *Maven*. El proyecto generado requiere al menos *JDK 11* para ejecutarlo. Asegúrate de tener *JDK 11* instalado localmente y establecer la ruta de instalación en la configuración [`java.configuration.runtimes`](https://github.com/redhat-developer/vscode-java#project-jdks).
 
-![Seleccionar JDK](/assets/NB03.png)
+Para ejecutar la aplicación JavaFX, puedes abrir **Maven** Explorer, expandir `hellofx`> `Plugins`> `javafx` y ejecutar el objetivo de Maven: `javafx:run`.
 
-## Configurar el proyecto.
+> **nota** : asegúrate de haber instalado la extensión [Maven para Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven) . Si no puedes encontrar el explorador **Maven**, abre la paleta de comandos ( Ctrl+Shift+P ) y luego selecciona el comando **Explorador: centrarse en la vista Maven** .
 
-Añadir la biblioteca:
 
-Iremos a `Properties` -> `Libraries` -> Selecciona `Classpath` -> + -> `Add Library` y añadimos la biblioteca `JavaFX`.
-
-![JavaFX19 como libreria](/assets/NB04.png)
-
-Ir a `Propiedades` -> `Generar` -> `Compilar` y asegúrese de anular la selección de la opción `Compilar al guardar`.
-
-![Desactivar Compile on Save](/assets/NB05.png)
-
-> **Advertencia**: si NetBeans se compila cada vez que se guarda, también agregará las clases a la ruta del módulo, evitando cualquier cambio adicional en la ruta del módulo. Se recomienda agregar la libreria al Modulepath accediendo a `Properties` -> `Library` -> `Run` -> `Modulepath`.
->
-> <img src="/assets/NB05b.png" alt="Modulepath" style="zoom:67%;" />
 
 Una vez que se establece el `classpath`, el IDE reconocerá las clases `JavaFX`.
 
@@ -72,7 +50,7 @@ Por ejemplo, vamos comenzar:
 
 1. heredando la clase principal de la clase `Application`.
 2. tendremos que importar las clases de la librería.
-3. implementar el método abstracto, añadir el `lauch()` al `main()` y añadir los imports necesarios.
+3. implementar el método abstracto, añadir el `launch()` al `main()` y añadir los imports necesarios.
 
 ```java
 package holafx;
@@ -103,55 +81,7 @@ public class HolaFX extends Application {
 }
 ```
 
-##  Agregar clases `JavaFX`
 
-Cuando queramos trabajar con el modelo MVC (en los primeros ejemplos no lo haremos), podremos añadir un archivo FXML con su controlador y una hoja de estilo.
-
-Botón derecho sobre el Package -> `new` - > `Other` -> `JavaFX` -> `Empty FXML`
-
-| New -> Other...                                              | Empty FXML                                       |
-| ------------------------------------------------------------ | ------------------------------------------------ |
-| <img src="/assets/NB06.png" alt="image-20230415115340403"  /> | <img src="/assets/NB07.png" alt="empty FXML"  /> |
-
-> Nota: Si no aparece new `Empty FXML` file, accede a `Tools` -> `Options` -> `Java` -> `JavaFX` o prueba a cambiar la versión de tu JDK.
-
-Indicamos el nombre de la Vista:
-
-<img src="/assets/NB08.png" alt="Nombre de la vista FXML" style="zoom:50%;" />
-
-Elegimos crear un nuevo Controlador y también CSS:
-
-| Controlador                                                  | CSS                                             |
-| ------------------------------------------------------------ | ----------------------------------------------- |
-| <img src="/assets/NB09.png" alt="Screenshot_20230415_122118"  /> | ![Screenshot_20230415_122308](/assets/NB10.png) |
-
-> Advertencia: si ejecuta ahora el proyecto, se compilará pero obtendrá este error: `Error: JavaFX runtime components are missing, and are required to run this application.`
->
-> Este error se muestra porque Java 19 verifica si la clase principal extiende de `javafx.application.Application`. Si ese es el caso, es necesario tener el módulo `javafx.graphics` en la ruta del módulo.
-
-## Añadir opciones a la VM
-
-Para resolver el problema, Ir a `Properties` -> `Run` del proyecto y añadir estas opciones en el campo VM:
-
-- Para Linux y Mac: 
-
-  ```sh
-  --module-path /path/to/javafx-sdk-19/lib --add-modules javafx.controls,javafx.fxml
-  ```
-
-- Para Windows:
-
-  ```sh
-  --module-path "\path\to\javafx-sdk-19\lib" --add-modules javafx.controls,javafx.fxml
-  ```
-
-Donde /path/to debes sustituirlo por tu ruta a la librería, por ejemplo: 
-
-```sh
---module-path /media/DADES/PRG_2223/javafx-sdk-19.0.2.1/lib/ --add-modules javafx.controls,javafx.fxml
-```
-
-> **IMPORTANTE**: un espacio en blanco detrás de la coma hará que el error continúe.
 
 ## Prueba final de la aplicación
 

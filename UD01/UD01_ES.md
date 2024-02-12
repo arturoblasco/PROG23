@@ -1330,6 +1330,34 @@ Una vez realizado los dos pasos anteriores ya podremos realizar las dos tareas (
 
 <img src="/assets/java_vscode08.png" style="zoom: 65%;" />
 
+## otras extensiones
+
+En Visual Studio Code existen numerosas extensiones que nos pueden ayudar en, dependiendo el lenguaje que utilicemos, muchos aspectos; como autorelleno, colores, idioma, etc.
+
+Aquí van algunas extensiones que podremos tener:
+
+- Spanish Language Pack for Visual Studio
+
+- Prettier - Code formatter
+
+- Polacode
+
+- Material Icon Theme
+
+- Error Lens
+
+- Atom One Dark Theme
+
+   ------
+
+- Debugger for Java
+
+- Language Supoort for Java (TM)
+
+- Project Manager for Java
+
+- Test Runner for Java
+
 # Ejemplo UD01
 
 ```java

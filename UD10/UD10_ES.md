@@ -1,10 +1,10 @@
 ﻿---
 title: UD10: Acceso a Bases de Datos
 language: ES
-author: David Martínez Peña [www.martinezpenya.es]
+author: Arturo Blasco Cervera
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet) [www.ieseduardoprimo.es]
+keywords: [PRG, 2023, Programacion, Java]
+IES: IES Mestre Ramon Esteve (Catadau) [www.iesmre.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
@@ -75,7 +75,7 @@ try {
 
 Hay que tener en cuenta que las clases y métodos utilizados para conectarse a una base de datos (explicados más adelante) funcionan con todos los drivers disponibles para Java (JDBC es solo uno, hay muchos más). Esto es posible ya que el estándar de Java solo los define como interfaces (interface) y cada librería driver los implementa (define las clases y su código). Por ello es necesario utilizar Class.forName(…) para indicarle a Java qué driver vamos a utilizar.
 
-![img](/assets/lu8009ml6n_tmp_323050a8fd0104b9.png)
+<img src="/assets/lu8009ml6n_tmp_323050a8fd0104b9.png" alt="img" style="zoom:45%;" />
 
 Este nivel de asbtracción facilita el desarrollo de proyectos ya que si necesitáramos utilizar otro sistema de base de datos (que no fuera MySQL) solo necesitaríamos cambiar la línea de código que carga el driver y poco más. Si cada sistema de base de datos necesitara que utilizáramos distintas clases y métodos todo sería mucho más complicado.
 
@@ -84,12 +84,12 @@ Las cuatro clases fundamentales que toda aplicación Java necesita para conectar
 
 ##  Clase `DriverManager`
 
-La clase ***java.sql.DriverManager*** es la capa gestora del driver JDBC. Se encarga de manejar el Driver apropiado y **permite crear conexiones con una base d****e datos** mediante el método estático **getConnection(…)** que tiene dos variantes:
+La clase ***java.sql.DriverManager*** es la capa gestora del driver JDBC. Se encarga de manejar el Driver apropiado y **permite crear conexiones con una base de datos** mediante el método estático **getConnection(…)** que tiene dos variantes:
 
 
-​	DriveManager.getConnection(String url)
+​	DriveManager.getConnection(String url).
 
-​	DriveManager.getConnection(String url, String user, String password)
+​	DriveManager.getConnection(String url, String user, String password).
 
 
 Este método intentará establecer una conexión con la base de datos según la URL indicada. Opcionalmente se le puede pasar el usuario y contraseña como argumento (también se puede indicar en la propia URL). Si la conexión es satisfactoria devolverá un objeto **Connection**.
@@ -116,13 +116,13 @@ Un objeto **java.sql.Connection representa una** **sesión de** **conexión con 
 El método más relevante es **createStatement()** que devuelve un objeto Statement asociado a dicha conexión que permite ejecutar sentencias SQL. El método createStatement() puede lanzar excepciones de tipo **SQLException**.
 
 
-​	Statement stmt = conn.createStatement();
+​	`Statement stmt = conn.createStatement();`
 
 
 Cuando ya no la necesitemos es aconsejable **cerrar** **la conexión con close()** para liberar recursos.
 
 
-​	conn.close();
+​	`conn.close();`
 
 
 ##  Clase `Statement`
@@ -203,7 +203,7 @@ Por ello el método *createStatement()* está sobrecargado (existen varias versi
 - **Statement createStatement(int resultSetType, int resultSetConcurrency)**: Devuelve un objeto Statement cuyos objetos ResultSet serán del tipo y concurrencia especificados. Los valores válidos son constantes definidas en ResultSet.
 
 
-El **a****rgumento** **resultSetType** indica el tipo de ResultSet:
+El **argumento resultSetType** indica el tipo de ResultSet:
 
 - **ResultSet.TYPE_FORWARD_ONLY**: ResultSet por defecto, forward-only y no-actualizable.
   - Solo permite movimiento hacia delante con next().
@@ -235,12 +235,12 @@ Además de este método de desplazamiento básico, existen otros de desplazamien
 Algunos de estos métodos son:
 
 - **void** **beforeFirst():** Mueve el cursor antes de la primera fila.
-- **boolean** **f****irst():** Mueve el cursor a la primera fila.
-- **boolean** **n****ext():** Mueve el cursor a la siguiente fila. Permitido en todos los tipos de ResultSet.
-- **boolean** **previous****():** Mueve el cursor a la fila anterior.
+- **boolean** **first():** Mueve el cursor a la primera fila.
+- **boolean** **next():** Mueve el cursor a la siguiente fila. Permitido en todos los tipos de ResultSet.
+- **boolean** **previous():** Mueve el cursor a la fila anterior.
 - **boolean** **last():** Mueve el cursor a la última fila.
 - **void** **afterLast()**. Mover el cursor después de la última fila.
-- **boolean absolute(int** **row****)**: Posiciona el cursor en el número de registro indicado. Hay que tener en cuenta que el primer registro es el 1, no el cero. Por ejemplo absolute(7) desplazará el cursor al séptimo registro. Si  valor es negativo se posiciona en el número de registro indicado pero empezando a contar desde el final (el último es el -1). Por ejemplo si tiene 10 registros y llamamos absolute(-2) se desplazará al registro n.º 9.
+- **boolean absolute(int row)**: Posiciona el cursor en el número de registro indicado. Hay que tener en cuenta que el primer registro es el 1, no el cero. Por ejemplo absolute(7) desplazará el cursor al séptimo registro. Si  valor es negativo se posiciona en el número de registro indicado pero empezando a contar desde el final (el último es el -1). Por ejemplo si tiene 10 registros y llamamos absolute(-2) se desplazará al registro n.º 9.
 - **boolean relative(int registros)**: Desplaza el cursor un número relativo de registros, que puede ser positivo o negativo. Por ejemplo si el cursor esrá en el registro 5 y llamamos a relative(10) se desplazará al registro 15. Si luego llamamos a relative(-4) se desplazará al registro 11.
 
 
@@ -404,77 +404,42 @@ rs.deleteRow();
 
 Veamos un ejemplo completo de conexión y acceso a una base de datos utilizando todos los elementos mencionados en este apartado.
 
-
-
-
+```php
 try {
+	// Cargamos la clase que implementa el Driver
+	Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 
-​	// Cargamos la clase que implementa el Driver
+	// Creamos una nueva conexión a la base de datos 'prueba'
+	String url = "jdbc:mysql://localhost:3306/prueba?serverTimezone=UTC";
 
-​	Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+	Connection conn = DriverManager.getConnection(url,"root","");
 
-​	
+	// Obtenemos un Statement de la conexión
+	Statement st = conn.createStatement();
 
-​	// Creamos una nueva conexión a la base de datos 'prueba'
+	// Ejecutamos una consulta SELECT para obtener la tabla vendedores
+	String sql = "SELECT * FROM vendedores";
 
-​	String url = "jdbc:mysql://localhost:3306/prueba?serverTimezone=UTC";
+	ResultSet rs = st.executeQuery(sql);
 
-​	Connection conn = DriverManager.getConnection(url,"root","");
+	// Recorremos todo el ResultSet y mostramos sus datos
 
-​	
-
-​	// Obtenemos un Statement de la conexión
-
-​	Statement st = conn.createStatement();
-
-​	
-
-​	// Ejecutamos una consulta SELECT para obtener la tabla vendedores
-
-​	String sql = "SELECT * FROM vendedores";
-
-​	ResultSet rs = st.executeQuery(sql);
-
-​	
-
-​	// Recorremos todo el ResultSet y mostramos sus datos
-
-​	while(rs.next()) {
-
-​		int id        = rs.getInt("id");
-
-​		String nombre = rs.getString("nombre");
-
-​		Date fecha    = rs.getDate("fecha_ingreso");
-
-​		float salario = rs.getFloat("salario");
-
-​		System.out.println(id + " " + nombre + " " + fecha + " " + salario);
-
-​	}
-
-​            
-
-​	// Cerramos el statement y la conexión
-
-​	st.close();
-
-​	conn.close();
-
-
-
-
+	while(rs.next()) {
+        int id        = rs.getInt("id");
+        String nombre = rs.getString("nombre");
+        Date fecha    = rs.getDate("fecha_ingreso");
+        float salario = rs.getFloat("salario");
+        System.out.println(id + " " + nombre + " " + fecha + " " + salario);
+	}
+	// Cerramos el statement y la conexión
+    st.close();
+    conn.close();
 } catch (SQLException e) {
-
-​	e.printStackTrace();
-
+	e.printStackTrace();
 } catch (Exception e) {
-
-​	e.printStackTrace();
-
+	e.printStackTrace();
 }
-
-
+```
 
 
 

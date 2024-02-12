@@ -463,11 +463,11 @@ Cuando queremos evitar que cualquier campo persista en un archivo, lo marcamos c
 
 > **NOTA**: El fichero con los objetos serializados almacena los datos en un formato propio de Java, por lo que no se puede leer fácilmente con un simple editor de texto (ni editar).
 
-Observa el package de ejemplo [UD06.P3_Serializacion](#ejemplo_serializacion)
+Observa el package de ejemplo [UD06.P3_Serializacion](#Ejemplo de Serialización)
 
 # Sockets
 
-Los sockets son un mecanismo que nos permite establecer un enlace entre dos programas que se ejecutan independientes el uno del otro  (generalmente un programa cliente y un programa servidor). Java por medio de la librería `java.net` nos provee dos clases: `Socket` para implementar la conexión desde el lado del cliente y `ServerSocket` que nos permitirá manipular la conexión desde el lado del servidor.
+Los sockets son un mecanismo que nos permite establecer un enlace entre dos programas que se ejecutan independientes el uno del otro  (generalmente un programa cliente y un programa servidor). Java, por medio de la librería `java.net`, nos provee dos clases: `Socket` para implementar la conexión desde el lado del cliente y `ServerSocket` que nos permitirá manipular la conexión desde el lado del servidor.
 
 Cabe resaltar que tanto el cliente como el servidor no necesariamente deben estar implementados en Java, solo  deben conocer sus direcciones IP y el puerto por el cual se comunicarán.
 
@@ -991,7 +991,7 @@ public class Guardar {
      p3.asignaTutor(p4);
 
      try {
-        salida = new ObjectOutputStream(new FileOutputStream("empleats.ser"));
+        salida = new ObjectOutputStream(new FileOutputStream("empleados.ser"));
         salida.writeObject(p1);
         salida.close();
      } catch (IOException e) {
@@ -1021,7 +1021,7 @@ public class Leer {
      Persona p1, p2, p3, p4;
 
      try {
-        entrada = new ObjectInputStream(new FileInputStream("empleats.ser"));
+        entrada = new ObjectInputStream(new FileInputStream("empleados.ser"));
         p1 = (Persona) entrada.readObject();
         entrada.close();
 
@@ -1041,16 +1041,71 @@ public class Leer {
 }
 ```
 
+Si quisiéramos leer, todos los objectos (Persona), del documento:
+
+```java
+package UD06.P3_Serializacion;
+
+import java.io.*;
+
+public class Leer {
+
+  public static void main(String[] args) {
+    ObjectInputStream entrada;
+
+    try {
+      entrada = new ObjectInputStream(new FileInputStream("empleados.ser"));
+
+      // Utilizar un bucle para leer todos los objetos hasta el final del archivo
+      while (true) {
+        try {
+          // Leer el objeto serializado
+          Persona personaLeida = (Persona) entrada.readObject();
+
+          // Imprimir la información leída
+          System.out.println("Nombre: " + personaLeida.getNombre());
+          System.out.println("Salario: " + personaLeida.getSalario());
+          if (personaLeida.getTutor() != null) {
+            System.out.println("Tutor: " + personaLeida.getTutor().getNombre());
+          } else {
+            System.out.println("No tiene tutor.");
+          }
+          System.out.println("------------------");
+
+        } catch (EOFException e) {
+          // EOFException indica el final del archivo
+          break;
+        } catch (ClassNotFoundException e) {
+          System.out.println("ERROR: Problema leyendo el objeto desde el archivo.");
+          e.printStackTrace();
+        }
+      }
+
+      // Cerrar el flujo de entrada
+      entrada.close();
+
+    } catch (IOException e) {
+      System.out.println("ERROR: Algún problema leyendo desde el archivo.");
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+
+
+
+
 ## Ejemplo de Sockets
 
-Para nuestro ejemplo de sockets implementaremos ambos (cliente y servidor) usando Java y se comunicarán usando el puerto 10000 (es bueno elegir los puertos en el rango de 1024 hasta 65535).
+Para nuestro ejemplo de sockets implementaremos ambos (cliente y servidor) usando Java y se comunicarán usando el puerto 10000 (*elegir puertos en el rango de 1024 hasta 65535*).
 
 La secuencia de eventos en nuestro ejemplo será:
 
 1. El servidor creará el socket y esperará a que el cliente se conecte o lo detengamos.
 2. Por otro lado, el cliente abrirá la conexión con el servidor y le enviará una frase en minúsculas que escribirá el usuario y la enviará al servidor.
 3. Una vez recibida la frase en minúsculas, el servidor la convertirá en mayúsculas y la devolverá al cliente.
-4. El cliente mostrará la frase en mayúsculas recibida desde el sevidor y cerrará la conexión.
+4. El cliente mostrará la frase en mayúsculas recibida desde el servidor y cerrará la conexión.
 5. El servidor quedará a la espera de una nueva conexión de otro cliente.
 
 ### Servidor
@@ -1071,7 +1126,7 @@ public class TCPServidor {
     ObjectInputStream entrada;
     ObjectOutputStream eixida;
     serverSocket = new ServerSocket(10000);
-    System.out.println("Server iniciado y escuchando por el puerto 10000");
+    System.out.println("Servidor iniciado y escuchando por el puerto 10000");
     while (true) {
         clientSocket = serverSocket.accept();
         entrada = new ObjectInputStream(clientSocket.getInputStream());
@@ -1081,7 +1136,7 @@ public class TCPServidor {
 
         eixida = new ObjectOutputStream(clientSocket.getOutputStream());
         FraseMajuscules = FraseClient.toUpperCase();
-        System.out.println("El server devuelve la frase: " + FraseMajuscules);
+        System.out.println("El servidor devuelve la frase: " + FraseMajuscules);
         eixida.writeObject(FraseMajuscules);
 
         clientSocket.close();

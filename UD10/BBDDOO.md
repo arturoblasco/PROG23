@@ -1,74 +1,39 @@
 # Aplicacions amb BD orientades a objectes
 
-POO i gestors de base de dades
-Si bé les BD relacionals són les més populars i les que tenen més acceptació,
-la seva utilització dins una aplicació orientada a objectes implica un procés de
-traducció del diagrama UML original a un model relacional, totalment basat
-en taules. En aquesta traducció es perden moltes de les funcionalitats bàsiques
-de l’orientació a objectes, que s’han de simular d’alguna manera: referències a
-objectes, classes associatives, llistes d’objectes, herència, etc. Quan el diagrama
-és de certa complexitat, la traducció pot esdevenir molt complicada.
-Per resoldre aquest problema hi ha les BD orientades a objectes (BDOO). Aques-
-tes, en lloc d’organitzar les dades en taules, les organitzen exactament tal com ho
-fa un diagrama UML, mitjançant la definició del conjunt de classes i relacions
-entre elles. Per tant, no cal fer cap traducció.
-Per evitar confusions, fem servir el terme BDR per referir-nos explícitament
-a una BD relacional i el terme BDOO per referir-nos a una BD orientada a
-objectes, de manera que ambdós quedin diferenciats.
-Actualment, l’aplicació de BDOO es limita a àmbits molt concrets, especialment
-els vinculats a àrees científiques. La seva implantació en aplicacions comercials
-d’àmbit general és molt baixa. Un dels problemes principals de les BDOO és
-que els fabricants tendeixen a crear solucions incompatibles, que no obeeixen cap
-especificació concreta. Al contrari que en el cas de les BDR, és molt possible que
-una aplicació client feta pel producte d’un fabricant concret no funcioni sobre una
-BDOO d’un altre fabricant. De fet, a les BDOO que suporten Java no s’accedeix
-mitjançant JDBC, ja que aquest mecanisme és específic per a BDR, sinó que
-normalment s’hi accedeix usant biblioteques específiques per a cada fabricant.
-El Java té una especificació
-per a BDOO anomenada
-JDO (Java data objects).
-3.1 Els llenguatges ODL i OQL
-De la mateixa manera que hi ha l’SQL com a llenguatge estàndard per accedir
-a una BDR independentment del fabricant, hi ha un llenguatge per accedir a
-les dades d’una BDOO: el llenguatge de consultes a objectes (object query
-language, OQL). Addicionalment, hi ha el llenguatge de descripció d’objectes
-(object description language, ODL), que serveix per especificar el format d’una
-BDOO: quina mena d’objectes pot contenir i les seves relacions. Malauradament,
-si bé aquests llenguatges estan especificats, i com ja s’ha dit, no es pot comptar
-amb el fet que qualsevol fabricant realment els suporti. De cap manera arriben al
+POO i gestors de base de dades. Si bé les BD relacionals són les més populars i les que tenen més acceptació, la seva utilització dins una aplicació orientada a objectes implica un procés de traducció del diagrama UML original a un model relacional, totalment basat en taules. En aquesta traducció es perden moltes de les funcionalitats bàsiques de l’orientació a objectes, que s’han de simular d’alguna manera: referències a objectes, classes associatives, llistes d’objectes, herència, etc. Quan el diagrama és de certa complexitat, la traducció pot esdevenir molt complicada.
+Per resoldre aquest problema hi ha les BD orientades a objectes (BDOO). Aquestes, en lloc d’organitzar les dades en taules, les organitzen exactament tal com ho fa un diagrama UML, mitjançant la definició del conjunt de classes i relacions entre elles. Per tant, no cal fer cap traducció.
+Per evitar confusions, fem servir el terme BDR per referir-nos explícitament a una BD relacional i el terme BDOO per referir-nos a una BD orientada a objectes, de manera que ambdós quedin diferenciats.
+Actualment, l’aplicació de BDOO es limita a àmbits molt concrets, especialment els vinculats a àrees científiques. La seva implantació en aplicacions comercials d’àmbit general és molt baixa. Un dels problemes principals de les BDOO és que els fabricants tendeixen a crear solucions incompatibles, que no obeeixen cap especificació concreta. Al contrari que en el cas de les BDR, és molt possible que una aplicació client feta pel producte d’un fabricant concret no funcioni sobre una BDOO d’un altre fabricant. De fet, a les BDOO que suporten Java no s’accedeix mitjançant JDBC, ja que aquest mecanisme és específic per a BDR, sinó que normalment s’hi accedeix usant biblioteques específiques per a cada fabricant.
+El Java té una especificació per a BDOO anomenada JDO (Java data objects).
+
+## Els llenguatges ODL i OQL
+
+De la mateixa manera que hi ha l’SQL com a llenguatge estàndard per accedir a una BDR independentment del fabricant, hi ha un llenguatge per accedir a les dades d’una BDOO: el llenguatge de consultes a objectes (object query language, OQL). Addicionalment, hi ha el llenguatge de descripció d’objectes (object description language, ODL), que serveix per especificar el format d’una BDOO: quina mena d’objectes pot contenir i les seves relacions. Malauradament, si bé aquests llenguatges estan especificats, i com ja s’ha dit, no es pot comptar amb el fet que qualsevol fabricant realment els suporti. De cap manera arriben al
 grau d’acceptació de l’SQL.
-Programació orientada a objectes
- 74
- POO i gestors de base de dades
-Si retornem a un model
-orientat a objectes, amb
-referències, no cal l’atribut
-“id”.
-3.1.1 El llenguatge ODL
-El llenguatge ODL s’utilitza per definir classes d’objectes persistents dins una
-BDOO, de manera que els seus objectes es puguin emmagatzemar. Dins la
-declaració de cada classe s’inclou:
-• El nom de la classe.
-• Declaracions opcionals de claus primàries.
-• La declaració de l’extensió: el nom del conjunt d’instàncies existents.
-• Declaracions d’elements: atributs, relacions o mètodes.
+
+Si retornem a un model orientat a objectes, amb referències, no cal l’atribut “id”.
+### El llenguatge ODL
+
+El llenguatge ODL s’utilitza per definir classes d’objectes persistents dins una BDOO, de manera que els seus objectes es puguin emmagatzemar. Dins la declaració de cada classe s’inclou:
+
+- El nom de la classe.
+- Declaracions opcionals de claus primàries.
+- La declaració de l’extensió: el nom del conjunt d’instàncies existents.
+- Declaracions d’elements: atributs, relacions o mètodes.
+
 La sintaxi és la següent (entre claudàtors s’indiquen camps opcionals):
-1
-2
-3
-4
-5
-6
-7
-8
+
+```php
 class nomClasse [(key nomAtribut)] {
-attribute tipusAtribut nomAtribut;
-...
-relationship tipus<nomClasseDestinació> nomRelacio;
-...
-tipusRetorn nomMetode(params) [raises (tipusExcepcio)]
-...
+    attribute tipusAtribut nomAtribut;
+    ...
+    relationship tipus<nomClasseDestinació> nomRelacio;
+    ...
+    tipusRetorn nomMetode(params) [raises (tipusExcepcio)]
+    ...
 }
+```
+
 Com es pot apreciar, simplement és un canvi de sintaxi respecte al llenguatge Java
 pròpiament, però la majoria d’elements d’una classe són clarament identificables.
 L’única diferència és la declaració explícita de les relacions en forma de la paraula
@@ -89,52 +54,46 @@ la més usada és Set<nomClasseDestinació>.
 Tot seguit es mostra com es podria representar dues classes interdependents
 anomenades Client i Encarrec, que emmagatzemen dades a una aplicació de
 gestió de clients, mitjançant ODL.
-Programació orientada a objectes
- 75
-1
- class Client (key id) {
-2
- attribute int id;
-3
- attribute String nom;
-4
- attribute String adreçaPostal;
-5
- attribute String adreçaMail;
-6
- attribute String telefon;
-7
-8
- relationship Set<Encarrec> encarrecs;
-9
-10
- String getId();
-11
- ...
-12
- }
-13
-14
+
+class Client (key id) {
+
+attribute int id;
+
+attribute String nom;
+
+attribute String adreçaPostal;
+
+attribute String adreçaMail;
+
+attribute String telefon;
+
+relationship Set<Encarrec> encarrecs;
+
+String getId();
+
+...
+}
+
  class Encarrec (key id)
  {
-15
+
  attribute int id;
-16
+
  attribute Date data;
-17
+
  ...
-18
+
  }
 L’herència entre classes s’inicia en la seva declaració mitjançant la paraula clau
 extends seguit del nom de la superclasse:
-1
-2
-3
+
 class nomClasse extends nomSuperClasse {
 ...
 }
+
 POO i gestors de base de dades
-3.1.2 El llenguatge OQL
+### 3.1.2 El llenguatge OQL
+
 El llenguatge OQL es limita a permetre consultes sobre una BDOO. El seu
 operador principal és SELECT, el qual té una gran similitud amb l’equivalent SQL.
 Tot i així, té algunes particularitats degudes a la manera com s’estructuren les
