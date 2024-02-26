@@ -4,7 +4,7 @@ title: Colecciones
 language: ES
 author: Arturo BC
 subject: Programación
-keywords: [PROG, 2022, Programación, Java]
+keywords: [PROG, 2023, Programación, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${unit}: ${title} - ${subject} (ver: ${today})
 footer: ${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
@@ -12,9 +12,11 @@ typora-root-url: ${filename}/../
 typora-copy-images-to: ${filename}/../assets
 ---
 
-[toc]
 
 
+
+
+[TOC]
 
 # Introducción
 
@@ -38,49 +40,52 @@ Un listado de números que aumenta o decrece en tamaño es una de las cosas que 
 
 Pasaremos por alto las clases y los objetos, pues ya los has visto con anterioridad, pero debes saber que las clases en sí mismas son la evolución de un tipo de estructuras de datos conocidas como datos compuestos (también llamadas registros). Las clases, además de aportar la ventaja de agrupar datos relacionados entre sí en una misma estructura (característica aportada por los datos compuestos), permiten agregar métodos que manejen dichos datos, ofreciendo una herramienta de programación sin igual. Pero todo esto ya lo sabías.
 
-Las estructuras de almacenamiento, en general, se pueden clasificar de varias formas. 
+Las **estructuras** de almacenamiento, en general, se pueden clasificar de varias formas, atendiendo a: 
 
-Por ejemplo, atendiendo a **si pueden almacenar datos de diferente tipo, o si solo pueden almacenar datos de un solo tipo**, se pueden distinguir:
+| si pueden almacenar datos de diferente tipo o no             |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| con capacidad de almacenar varios datos **del mismo tipo**: varios números, varios caracteres, etc. | los **arrays**, las **listas**, los **conjuntos**, las **cadenas de caracteres** |
+| con capacidad de almacenar varios datos **de distinto tipo:** números, fechas, cadenas de caracteres, etc. | las **clases**                                               |
 
-- **Estructuras con capacidad de almacenar varios datos del mismo tipo**: varios números, varios caracteres, etc. Ejemplos de estas estructuras son los arrays, las cadenas de caracteres, las listas y los conjuntos.
-- **Estructuras con capacidad de almacenar varios datos de distinto tipo**: números, fechas, cadenas de caracteres, etc., todo junto dentro de una misma estructura. Ejemplos de este tipo de estructuras son las clases.
+| **en función de si pueden o no cambiar de tamaño** de forma dinámica |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| cuyo **tamaño** se establece en **el momento de la creación** o definición y su tamaño no puede variar después. | los **arrays**, las **matrices** (arrays multidimensionales) |
+| cuyo **tamaño es variable** (conocidas como estructuras dinámicas). Su tamaño crece o decrece según las necesidades de forma dinámica. | las **listas**, **árboles**, **conjuntos** y el caso de algunos tipos de cadenas de caracteres. |
 
-Otra forma de clasificar las estructuras de almacenamiento va **en función de si pueden o no cambiar de tamaño** de forma dinámica:
-
-- **Estructuras cuyo tamaño se establece en el momento de la creación o definición y su tamaño no puede variar después**. Ejemplos de estas estructuras son los arrays y las matrices (arrays multidimensionales).
-- **Estructuras cuyo tamaño es variable (conocidas como estructuras dinámicas). Su tamaño crece o decrece según las necesidades de forma dinámica**. Es el caso de las listas, árboles, conjuntos y, como veremos también, el caso de algunos tipos de cadenas de caracteres.
-
-Por último, atendiendo a **la forma en la que los datos se ordenan** dentro de la estructura, podemos diferenciar varios tipos de estructuras:
-
-- **Estructuras que no se ordenan de por sí**, y debe ser el programador el encargado de ordenar los datos si fuera necesario. Un ejemplo de estas estructuras son los arrays.
-- **Estructuras ordenadas**. Se trata de estructuras que al incorporar un dato nuevo a todos los datos existentes, este se almacena en una posición concreta que irá en función del orden. El orden establecido en la estructura puede variar dependiendo de las necesidades del programa: alfabético, orden numérico de mayor a menor, momento de inserción, etc.
+| atendiendo a **la forma en la que los datos se ordenan** dentro de la estructura |                            |
+| ------------------------------------------------------------ | -------------------------- |
+| que **no se ordenan de por sí**, y debe ser el programador el encargado de ordenar los datos si fuera necesario | los **arrays**             |
+| **ordenadas**: al incorporar un dato nuevo a todos los datos existentes, este se almacena en una posición concreta que irá en función del orden. El orden establecido en la estructura puede variar dependiendo de las necesidades del programa: alfabético, orden numérico de mayor a menor, momento de inserción, etc. | **ArrayList**, **TreeSet** |
 
 Todavía no conoces mucho de las estructuras, y probablemente todo te suena raro y extraño. No te preocupes, poco a poco irás descubriéndolas. Verás que son sencillas de utilizar y muy cómodas.
 
 ## Clases y métodos genéricos
 
-¿Crees que el código es más legible al utilizar genéricos o que se complica? La verdad es que al principio cuesta, pero después, el código se entiende mejor que si se empieza a insertar conversiones de tipo.
+¿*Crees que el código es más legible al utilizar genéricos o que se complica*? La verdad es que al principio cuesta, pero después, el código se entiende mejor que si se empieza a insertar conversiones de tipo.
 
 Las clases genéricas son equivalentes a los métodos genéricos pero a nivel de clase, permiten definir un parámetro de tipo genérico que se podrá usar a lo largo de toda la clase, facilitando así crear clases genéricas que son capaces de trabajar con diferentes tipos de datos base. Para crear una clase genérica se especifican los parámetros de tipo al lado del nombre de la clase:
 
 ```java
  public class Util<T> {
-	T t1;
-	public void invertir(T[] array) {
-	  for (int i = 0; i < array.length / 2; i++) {
-		t1 = array[i];
-		array[i] = array[array.length - i - 1];
-        array[array.length - i - 1] = t1;
-      }
+	T temp;
+     
+	public void invertir (T[] array) {
+	   for (int i = 0; i < array.length / 2; i++) {
+	  	  temp = array[i];
+		  array[i] = array[array.length - i - 1];
+          array[array.length - i - 1] = temp;
+       }
 	}
 }
 ```
 
-En el ejemplo anterior, la clase `Util` contiene el método `invertir` cuya función es invertir el orden de los elementos de cualquier `array`, sea del tipo que sea. Para usar esa clase genérica hay que crear un objeto o instancia de dicha clase especificando el tipo base entre los símbolos menor que ("`<`") y mayor que ("`>`"), justo detrás del nombre e de la clase. Veamos un ejemplo:
+En el ejemplo anterior, la clase `Util` contiene el método `invertir` cuya función es invertir el orden de los elementos de cualquier `array`, sea del tipo que sea. Para usar esa clase genérica hay que crear un objeto o instancia de dicha clase especificando el tipo base entre los símbolos menor que ("`<`") y mayor que ("`>`"), justo detrás del nombre de la clase. Veamos un ejemplo:
 
 ```java
-Integer[] numeros = {0,1,2,3,4,5,6,7,8,9}; //el array del tipo clase wrapper
+Integer[] numeros = {0,1,2,3,4,5,6,7,8,9}; //el array clase wrapper
+
 Util<Integer> u = new Util<Integer>();
+
 u.invertir(numeros);
 for (int i=0; i<numeros.length; i++){
    System.out.println(numeros[i]);
@@ -93,12 +98,18 @@ Simplemente, a la hora de crear una instancia de una clase genérica, hay que es
 
 Los genéricos los vamos a usar ampliamente a partir de ahora, aplicados a un montón de clases genéricas que tiene Java y que son de gran utilidad, por lo que es conveniente que aprendas bien a usar una clase genérica.
 
-> Los parámetros de tipo de las clases genéricas solo pueden ser clases, no pueden ser jamás tipos de datos primitivos como `int`, `short`, `double`, etc. En su lugar, debemos usar sus clases envoltorio (*wrappers*) `Integer`, `Short`, `Double`, etc.
+> Los parámetros de tipo de las clases genéricas solo pueden ser clases:
+>
+> :no_entry: no pueden ser jamás tipos de datos primitivos como `int`, `short`, `double`, etc.
+>
+> :white_check_mark: debemos usar sus clases envoltorio (*wrappers*) `Integer`, `Short`, `Double`, etc.
 
 Todavía hay un montón de cosas más sobre los métodos y las clases genéricas que deberías saber. A continuación se muestran algunos usos interesantes de los genéricos:
 
 - Dos o más parámetros de tipo (I):
 
+   Si el método genérico necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas. 
+   
    ```java
    public class Util<T,M>{
        public static <T,M> int sumaDeLongitudes (T[] a, M[] b){
@@ -106,33 +117,35 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
        }
    }
    ```
+   
 
-   > Si el método genérico necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas. 
-
-​		En el ejemplo anterior se suman las longitudes de dos arrays que no tienen que ser del mismo tipo.
+​	En el ejemplo anterior se suman las longitudes de dos arrays que no tienen que ser del mismo tipo.
 
 - Dos o más parámetros de tipo (II):
 
+   Usar un método o una clase con dos o más parámetros genéricos es sencillo, a la hora de invocar al método o crear la clase, se indican los tipos base separados por coma.
+
    ```java
    Integer[] a1 = {0,1,2,3,4};
-   Double[] a2 = {0d,1d,2d,3d,4d};
+   Double[]  a2 = {0d,1d,2d,3d,4d};
    int resultado = Util.<Integer,Double>sumaDeLongitudes(a1,a2);
    System.out.println(resultado);
    ```
 
-   > Usar un método o una clase con dos o más parámetros genéricos es sencillo, a la hora de invocar al método o crear la clase, se indican los tipos base separados por coma.
-
 - Dos o más parámetros de tipo (III):
 
+   Si una clase genérica necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas.
+   En el ejemplo anterior se muestra una clase que almacena una terna de elementos de diferente tipo base que están relacionados entre sí.
+
    ```java
-   public class Terna <A,B,C>{
+   public class Terna<A,B,C>{
      A a;
      B b;
      C c;
      public Terna(A a, B b, C c){
-       this.a=a;
-       this.b=b;
-       this.c=c;
+       this.a = a;
+       this.b = b;
+       this.c = c;
      }
      public A getA(){return a;}
      public B getB(){return b;}
@@ -140,10 +153,9 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
    }
    ```
 
-   > Si una clase genérica necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas.
-   > En el ejemplo anterior se muestra una clase que almacena una terna de elementos de diferente tipo base que están relacionados entre sí.
-
 - Métodos con tipos adicionales:
+
+   Una clase genérica puede tener unos parámetros genéricos, pero si en uno de sus métodos necesitamos otros parámetros genéricos distintos, no hay problema, podemos combinarlos.
 
    ```java
    class Util<A,B>{
@@ -152,38 +164,38 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
        this.a = a;
      }
      public <B> void Salida(B b){
-       System.out.println(a.toString() + b.toString());
+       System.out.println ( a.toString() + b.toString() );
      }
    }
    ```
 
-   > Una clase genérica puede tener unos parámetros genéricos, pero si en uno de sus métodos necesitamos otros parámetros genéricos distintos, no hay problema, podemos combinarlos.
-
 - Inferencia (*deducción*) de tipos (I):
+
+   No siempre es necesario indicar los tipos a la hora de instanciar un método genérico. A partir de Java 7, es capaz de determinar los tipos a partir de los parámetros.
 
    ```java
    Integer[] a1 = {0,1,2,3,4};
-   Double[] a2 = {0d,1d,2d,3d,4d};
+   Double[]  a2 = {0d,1d,2d,3d,4d};
    util.<Integer,Double>sumaDeLongitudes(a1,a2);
    util.sumaDeLongitudes(a1,a2);  //no es necesario indicar el tipo para instanciar
    ```
-
-   > No siempre es necesario indicar los tipos a la hora de instanciar un método genérico. A partir de Java 7, es capaz de determinar los tipos a partir de los parámetros.
 
    Las dos expresiones de arriba serian válidas y funcionarían. Si no es capaz de inferirlos, nos dará un error a la hora de compilar.
 
 - Inferencia de tipos (II):
 
+   A partir de Java 7 es posible usar el operador diamante `< >` para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. **Cuidado, esto solo es posible a partir de Java 7**.
+
    ```java
    Integer a1 = 0;
-   Double d1 = 1.3d;
-   Float f1 = 1.4f;
+   Double  d1 = 1.3d;
+   Float   f1 = 1.4f;
    Terna <Integer,Double,Float> t = new Terna<>(a1,d1,f1);
    ```
 
-   > A partir de Java 7 es posible usar el operador diamante <> para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. **Cuidado, esto solo es posible a partir de Java 7**.
-
 - Limitación de tipos:
+
+   Se pueden limitar el conjunto de tipos que se pueden usar con una clase o método genérico usando el operador `extends`. El operador `extends` permite indicar que la clase que se pasa como parámetro genérico tiene que derivar de una clase específica.
 
    ```java
    public class Util {
@@ -193,11 +205,11 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
    }
    ```
 
-   > Se pueden limitar el conjunto de tipos que se pueden usar con una clase o método genérico usando el operador `extends`. El operador `extends` permite indicar que la clase que se pasa como parámetro genérico tiene que derivar de una clase específica.
-
    En el ejemplo, no se admitirá ninguna clase que no derive de `Number`, pudiendo así realizar operaciones matemáticas.
 
 - Paso de clases genéricas por parámetro:
+
+   Cuando un método tiene como parámetro una clase genérica (como en el caso del método test del ejemplo), se puede especificar cuál debe ser el tipo base usado en la instancia de la clase genérica que se le pasa como argumento. Esto permite, entre otras cosas, crear diferentes versiones de un mismo método (sobrecarga), dependiendo del tipo base usado en la instancia de la clase genérica se ejecutará una versión u otra.
 
    ```java
    public class Ejemplo <A> {
@@ -209,9 +221,9 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
    }
    ```
 
-   > Cuando un método tiene como parámetro una clase genérica (como en el caso del método test del ejemplo), se puede especificar cuál debe ser el tipo base usado en la instancia de la clase genérica que se le pasa como argumento. Esto permite, entre otras cosas, crear diferentes versiones de un mismo método (sobrecarga), dependiendo del tipo base usado en la instancia de la clase genérica se ejecutará una versión u otra.
-
 - Paso de clases genéricas por parámetro. Wildcards (I):
+
+   Cuando un método admite como parámetro una clase genérica en la que no importa el tipo de objeto sobre la que se ha creado, podemos usar el interrogante para indicar "*cualquier tipo*".
 
    ```java
    public class Ejemplo <A> {
@@ -223,10 +235,10 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
    }
    ```
 
-   > Cuando un método admite como parámetro una clase genérica en la que no importa el tipo de objeto sobre la que se ha creado, podemos usar el interrogante para indicar "*cualquier tipo*".
-
 - Paso de clases genéricas por parámetro. Wildcards (II):
 
+   También es posible limitar el conjunto de tipos que una clase genérica puede usar, a través del operador `extends`. El ejemplo anterior es como decir "*cualquier tipo que derive de Number*".
+   
    ```java
    public class Ejemplo <A> {
       public A a;
@@ -236,14 +248,14 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
       ...
    }
    ```
-
-   > También es posible limitar el conjunto de tipos que una clase genérica puede usar, a través del operador `extends`. El ejemplo anterior es como decir "*cualquier tipo que derive de Number*".
+   
+   
 
 # Colecciones
 
 ## Introducción
 
-¿Qué consideras una colección? Pues seguramente al pensar en el término se te viene a la cabeza una colección de libros o algo parecido, y la idea no va muy desencaminada. **Una colección a nivel de software es un grupo de elementos almacenados de forma conjunta en una misma estructura**. Eso son las colecciones.
+¿*Qué consideras una colección*? Pues seguramente al pensar en el término se te viene a la cabeza una colección de libros, o algo parecido, y la idea no va muy desencaminada. **Una colección a nivel de software es un grupo de elementos almacenados de forma conjunta en una misma estructura**.
 
 Las colecciones definen un conjunto de interfaces, clases genéricas y algoritmos que permiten manejar grupos de objetos, todo ello enfocado a potenciar la reusabilidad del software y facilitar las tareas de programación. Te parecerá increíble el tiempo que se ahorra empleando colecciones y cómo se reduce la complejidad del software usándolas adecuadamente. Las colecciones permiten almacenar y manipular grupos de objetos que, a priori, están relacionados entre sí (aunque no es obligatorio que estén relacionados, lo lógico es que si se almacenan juntos es porque tienen alguna relación entre sí), pudiendo trabajar con cualquier tipo de objeto (de ahí que se empleen los genéricos en las colecciones).
 
@@ -251,44 +263,46 @@ Además las colecciones permiten realizar algunas operaciones útiles sobre los 
 
 Las colecciones son en general elementos de programación que están disponibles en muchos lenguajes de programación. En algunos lenguajes de programación su uso es algo más complejo (como es el caso de C++), pero en Java su uso es bastante sencillo.
 
-Las colecciones en Java parten de una serie de interfaces básicas. Cada interfaz define un modelo de colección y las operaciones que se pueden llevar a cabo sobre los datos almacenados, por lo que es necesario conocerlas. La interfaz inicial, a través de la cual se han construido el resto de colecciones, es la interfaz `java.util.Collection`, que define las operaciones comunes a todas las colecciones derivadas. A continuación se muestran las operaciones más importantes definidas por esta interfaz, ten en cuenta que `Collection` es una interfaz genérica donde `<E>` es el parámetro de tipo (podría ser cualquier clase):
+Las colecciones en Java parten de una serie de interfaces básicas. Cada interfaz define un modelo de colección y las operaciones que se pueden llevar a cabo sobre los datos almacenados, por lo que es necesario conocerlas. La interfaz inicial, a través de la cual se han construido el resto de colecciones, es la interfaz **`java.util.Collection`**, que define las operaciones comunes a todas las colecciones derivadas.
+
+A continuación se muestran las operaciones más importantes definidas por esta interfaz, ten en cuenta que **`Collection`** es una interfaz genérica donde `<E>` es el parámetro de tipo (podría ser cualquier clase):
 
 - **Método `int size()`**: retorna el número de elementos de la colección.
 - **Método `boolean isEmpty()`**: retornará verdadero si la colección está vacía.
 - **Método `boolean contains (Object element)`**: retornará verdadero si la colección tiene el elemento pasado como parámetro.
-- **Método `boolean add(E element)`**: permitirá añadir elementos a la colección.
-- **Método `boolean remove(Object element)`**: permitirá eliminar elementos de la colección.
-- **Método `Iterator<E> iterator()`**: permitirá crear un iterador para recorrer los elementos de la colección. Esto se ve más adelante, no te preocupes.
+- **Método `boolean add (E element)`**: permitirá añadir elementos a la colección.
+- **Método `boolean remove (Object element)`**: permitirá eliminar elementos de la colección.
+- **Método `Iterator<E> iterator()`**: permitirá crear un *iterador* para recorrer los elementos de la colección (esto se ve más adelante, no te preocupes).
 - **Método `Object[] toArray()`**: permite pasar la colección a un array de objetos tipo Object.
-- **Método `boolean containsAll(Collection<?> c)`**: permite comprobar si una colección contiene los elementos existentes en otra colección. Si es así, retorna verdadero.
-- **Método `boolean addAll(Collection<?> extends E> c)`**: permite añadir todos los elementos de una colección a otra colección, siempre que sean del mismo tipo (o deriven del mismo tipo base).
-- **Método `boolean removeAll(Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se eliminan, el resto se quedan.
-- **Método `boolean retainAll(Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se dejan, el resto se eliminan.
+- **Método `boolean containsAll (Collection<?> c)`**: permite comprobar si una colección contiene los elementos existentes en otra colección. Si es así, retorna verdadero.
+- **Método `boolean addAll (Collection<? extends E> c)`**: permite añadir todos los elementos de una colección a otra colección, siempre que sean del mismo tipo (o deriven del mismo tipo base).
+- **Método `boolean removeAll (Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se eliminan, el resto se quedan.
+- **Método `boolean retainAll (Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se dejan, el resto se eliminan.
 - **Método `void clear()`**: vaciar la colección.
 
 Más adelante veremos cómo se usan estos métodos, será cuando veamos las implementaciones (clases genéricas que implementan alguna de las interfaces derivadas de la interfaz `Collection`).
 
 ## Conjuntos (sets)
 
-¿Con qué relacionarías los conjuntos? Seguro que con las matemáticas. Los conjuntos son un tipo de colección que no admite duplicados, derivados del concepto matemático de conjunto.
+¿*Con qué relacionarías los conjuntos*? Seguro que con las matemáticas. Los conjuntos son un tipo de colección que no admite duplicados, derivados del concepto matemático de conjunto.
 
 <img src="/assets/hash.png" style="zoom:75%;" />
 
-La interfaz `java.util.Set` define cómo deben ser los conjuntos, y implementa la interfaz `Collection`, aunque no añade ninguna operación nueva. Las implementaciones (clases genéricas que implementan la interfaz `Set`) más usadas son las siguientes:
+La interfaz **`java.util.Set`** define cómo deben ser los conjuntos, y implementa la interfaz `Collection`, aunque no añade ninguna operación nueva. Las implementaciones (clases genéricas que implementan la interfaz `Set`) más usadas son las siguientes:
 
-- `java.util.HashSet`. Conjunto que almacena los objetos usando tablas hash (estructura de datos formada básicamente por un array donde la posición de los datos va determinada por una función hash, permitiendo localizar la información de forma extraordinariamente rápida). Los datos están ordenados en la tabla en base a un resumen numérico de los mismos (en hexadecimal generalmente) obtenido a partir de un algoritmo para cálculo de resúmenes, denominadas funciones hash. El resumen no tiene significado para un ser humano, se trata simplemente de un mecanismo para obtener un número asociado a un conjunto de datos. El inconveniente de estas tablas es que los datos se ordenan por el resumen obtenido, y no por el valor almacenado. El resumen, de un buen algoritmo hash, no se parece en nada al contenido almacenado) lo cual acelera enormemente el acceso a los objetos almacenados.
+- **`java.util.HashSet`**. Conjunto que almacena los objetos usando tablas hash (estructura de datos formada básicamente por un array donde la posición de los datos va determinada por una función hash, permitiendo localizar la información de forma extraordinariamente rápida). Los datos están ordenados en la tabla en base a un resumen numérico de los mismos (en hexadecimal generalmente) obtenido a partir de un algoritmo para cálculo de resúmenes, denominadas funciones *hash*. El resumen no tiene significado para un ser humano, se trata simplemente de un mecanismo para obtener un número asociado a un conjunto de datos. El inconveniente de estas tablas es que los datos se ordenan por el resumen obtenido, y no por el valor almacenado. El resumen, de un buen algoritmo hash, no se parece en nada al contenido almacenado) lo cual acelera enormemente el acceso a los objetos almacenados.
 
    **Inconvenientes**: necesitan bastante memoria y no almacenan los objetos de forma ordenada (al contrario pueden aparecer completamente desordenados).
 
-- `java.util.LinkedHashSet`. Conjunto que almacena objetos combinando tablas hash, para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero, manteniendo un orden, que generalmente es el del momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada nodo en la que existe un campo, generalmente llamado siguiente, que contiene la dirección de memoria del siguiente nodo (con el siguiente dato) para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias. 
+- **`java.util.LinkedHashSet`**. Conjunto que almacena objetos combinando tablas *hash*, para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero), manteniendo un orden, que generalmente es el del momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada **nodo** en la que existe un campo, generalmente llamado **siguiente**, que contiene la dirección de memoria del siguiente nodo para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias. 
 
    **Inconvenientes**: necesitan bastante memoria y es algo más lenta que `HashSet` .
 
-- `java.util.TreeSet`. Conjunto que almacena los objetos usando unas estructuras conocidas como árboles rojo‐negro. Son más lentas que los dos tipos anteriores.
+- **`java.util.TreeSet`**. Conjunto que almacena los objetos usando unas estructuras conocidas como árboles rojo‐negro. Son más lentas que los dos tipos anteriores.
 
-   **Ventaja**: los datos almacenados se ordenan por valor. Es decir, que aunque se inserten los elementos de forma desordenada, internamente se ordenan dependiendo del valor de cada uno.
+   **Ventaja**: los datos almacenados se ordenan por valor (aunque se inserten los elementos de forma desordenada, internamente se ordenan dependiendo del valor de cada uno).
 
-Poco a poco, iremos viendo qué son las listas enlazadas y los árboles (no profundizaremos en los árboles rojo‐negro, pero sí veremos las estructuras tipo árbol en general). Veamos un ejemplo de uso básico de la estructura `HashSet` y después, profundizaremos en los `LinkedHashSet` y los `TreeSet` .
+Iremos viendo qué son las listas enlazadas y los árboles (no profundizaremos en los árboles rojo‐negro, pero sí veremos las estructuras tipo árbol en general). Veamos un ejemplo de uso básico de la estructura `HashSet` y después veremos  `LinkedHashSet` y  `TreeSet` .
 
 Para crear un conjunto, simplemente creamos el `HashSet` indicando el tipo de objeto que va a almacenar, dado que es una clase genérica que puede trabajar con cualquier tipo de dato debemos crearlo como sigue (no olvides hacer la importación de `java.util.HashSet` primero):
 
@@ -322,21 +336,21 @@ Como ves la estructura `for-each` es muy sencilla: la palabra `for` seguida de "
 
 ### `LinkedHashSet` y `TreeSet`
 
-¿En qué se diferencian las estructuras `LinkedHashSet` y `TreeSet` de la estructura `HashSet`? Ya se comentó antes, y es básicamente en su funcionamiento interno.
+¿*En qué se diferencian las estructuras `LinkedHashSet` y `TreeSet` de la estructura `HashSet`*? Ya se comentó antes, y es básicamente en su funcionamiento interno.
 
 <img src="./assets/nodo.png" alt="nodo" style="zoom:75%;" />
 
-La estructura `LinkedHashSet` es una estructura que internamente funciona como una lista enlazada, aunque usa también tablas hash para poder acceder rápidamente a los elementos. Una lista enlazada es una estructura similar a la representada en la imagen anterior, la cual está compuesta por nodos (elementos que forman la lista) que van enlazándose entre sí. Un nodo contiene dos cosas: el dato u objeto almacenado en la lista y el siguiente nodo de la lista. Si no hay siguiente nodo, se indica poniendo nulo (null) en la variable que contiene el siguiente nodo.
+La estructura **`LinkedHashSet`** es una estructura que internamente funciona como una lista enlazada, aunque usa también tablas hash para poder acceder rápidamente a los elementos. Una lista enlazada es una estructura similar a la representada en la imagen anterior, la cual está compuesta por nodos (elementos que forman la lista) que van enlazándose entre sí. Un nodo contiene dos cosas: el dato u objeto almacenado en la lista y el siguiente nodo de la lista. Si no hay siguiente nodo, se indica poniendo nulo (null) en la variable que contiene el siguiente nodo.
 
-Las listas enlazadas tienen un montón de operaciones asociadas en las que no vamos a profundizar: eliminación de un nodo de la lista, inserción de un nodo al final, al principio o entre dos nodos, etc.
+Las listas enlazadas tienen operaciones asociadas en las que no veremos: eliminación de un nodo de la lista, inserción de un nodo al final, al principio o entre dos nodos, etc.
 
 Gracias a las colecciones podremos utilizar listas enlazadas sin tener que complicarnos en detalles de programación.
 
-La estructura `TreeSet`, en cambio, utiliza internamente árboles. Los árboles son como las listas pero mucho más complejos. En vez de tener un único elemento siguiente, pueden tener dos o más elementos siguientes, formando estructuras organizadas y jerárquicas.
+La estructura **`TreeSet`**, en cambio, utiliza internamente árboles. Los árboles son como las listas pero mucho más complejos. En vez de tener un único elemento siguiente, pueden tener dos o más elementos siguientes, formando estructuras organizadas y jerárquicas.
 
 Los nodos se diferencian en dos tipos: nodos padre y nodos hijo; un nodo padre puede tener varios nodos hijo asociados (depende del tipo de árbol), dando lugar a una estructura que parece un árbol invertido (de ahí su nombre).
 
-En la figura de abajo se puede apreciar un árbol donde cada nodo puede tener dos hijos, denominados izquierdo (izq) y derecho (dch). Puesto que un nodo hijo puede también ser padre a su vez, los árboles se suelen visualizar para su estudio por niveles para entenderlos mejor, donde cada nivel contiene hijos de los nodos del nivel anterior, excepto el primer nivel (que no tiene padre).
+En la figura de abajo se puede apreciar un árbol donde cada nodo puede tener dos hijos, denominados izquierdo (*izq*) y derecho (*dch*). Puesto que un nodo hijo puede también ser padre a su vez, los árboles se suelen visualizar para su estudio por niveles para entenderlos mejor, donde cada nivel contiene hijos de los nodos del nivel anterior, excepto el primer nivel (que no tiene padre).
 
 <img src="./assets/arbol.png" alt="arbol" style="zoom:75%;" />
 
@@ -359,25 +373,9 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
 
    Resultado mostrado por pantalla (el resultado sale ordenado por valor):
 
-   ```java
+   ```sh
    1 3 4 99
    ```
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
 
 - Conjunto `LinkedHashSet` ([Ejemplo02](#Ejemplo02)):
 
@@ -394,19 +392,27 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
 
    Resultado mostrado por pantalla (los valores salen ordenados según el momento de inserción en el conjunto):
 
-   ```java
+   ```shell
    4 3 1 99
    ```
 
+
+
+
+
+
+
+
+
+
+
 ### Operar con elementos
 
-¿Cómo podría copiar los elementos de un conjunto a otro conjunto? ¿Hay que usar un bucle *for* y recorrer toda la lista para ello? ¡Qué va! Para facilitar esta tarea, los conjuntos, y las colecciones en general, facilitan un montón de operaciones para poder combinar los datos de varias colecciones. 
-
-
+¿Cómo podría copiar los elementos de un conjunto a otro conjunto? ¿Hay que usar un bucle *for* y recorrer toda la lista para ello? ¡Qué va! Para facilitar esta tarea, los conjuntos, y las colecciones en general, facilitan un montón de operaciones para poder combinar los datos de varias colecciones.
 
 Partimos del siguiente ejemplo, en el que hay dos colecciones de diferente tipo, una con 5 números enteros (colección A) y la otra con 6 números (colección B):
 
-<img src="./assets/conjunto.png" alt="conjunto" style="zoom: 30%;" />
+<img src="./assets/conjunto.png" alt="conjunto" style="zoom: 22%;" />
 
 ```java
 TreeSet<Integer> A = new TreeSet<Integer>();
@@ -420,19 +426,13 @@ B.add(8); B.add(7); B.add(9); B.add(4); B.add(6); B.add(5);
 
 En el ejemplo anterior, el literal de número se convierte automáticamente a la clase envoltorio `Integer` sin tener que hacer nada, lo cual es una ventaja. Veamos las formas de combinar ambas colecciones:
 
-
-
-
-
-
-
 - **Unión**. Añadir todos los elementos del conjunto B en el conjunto A.
 
    ```java
     A.addAll(B)
    ```
 
-   <img src="./assets/union.png" style="zoom:28%;" />
+   <img src="./assets/union.png" style="zoom:22%;" />
 
    Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están:
 
@@ -446,7 +446,7 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
     A.removeAll(B)
    ```
 
-   <img src="./assets/diferencia.png" alt="diferencia" style="zoom:28%;" />
+   <img src="./assets/diferencia.png" alt="diferencia" style="zoom:22%;" />
 
    Todos los elementos del conjunto A, que no estén en el conjunto B:
 
@@ -460,7 +460,7 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
     A.retainAll(B)
    ```
 
-   <img src="./assets/interseccion.png" alt="interserccion" style="zoom:28%;" />
+   <img src="./assets/interseccion.png" alt="interserccion" style="zoom:22%;" />
 
    Todos los elementos del conjunto A, que también están en el conjunto B:
 
@@ -471,8 +471,6 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 > Recuerda, estas operaciones son comunes a todas las colecciones.
 
 Consulta el [Ejemplo03](#Ejemplo03).
-
-
 
 ### Ordenación
 
@@ -570,7 +568,7 @@ Veamos ahora un ejemplo algo más difícil:
 al.addAll(0, ll.subList(1, ll.size()));
 ```
 
-> **OJO**: `subList` ==> Returns a view of the portion of this list between the specified `fromIndex`, inclusive, and `toIndex`, exclusive. ([API de Java](https://docs.oracle.com/javase/8/docs/api/java/util/List.html#subList-int-int-)).
+> **cuidado**: `subList` ==> Returns a view of the portion of this list between the specified `fromIndex`, inclusive, and `toIndex`, exclusive ([API de Java](https://docs.oracle.com/javase/8/docs/api/java/util/List.html#subList-int-int-)).
 
 Este ejemplo es especial porque usa sublistas. Se usa el método `size` para obtener el tamaño de la lista. Después el método `subList` para extraer una sublista de la lista (que incluía en origen los números 2, 3 y 5), desde la posición 1 hasta el final de la lista (lo cual dejaría fuera al primer elemento). Y por último, se usa el método `addAll` para añadir todos los elementos de la sublista al `ArrayList` anterior desde su posición 0. Y quedaría:
 
