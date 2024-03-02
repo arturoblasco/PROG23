@@ -182,6 +182,12 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
    Las dos expresiones de arriba serian válidas y funcionarían. Si no es capaz de inferirlos, nos dará un error a la hora de compilar.
 
+
+
+
+
+
+
 - Inferencia de tipos (II):
 
    A partir de Java 7 es posible usar el operador diamante `< >` para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. **Cuidado, esto solo es posible a partir de Java 7**.
@@ -200,7 +206,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
    ```java
    public class Util {
        public static <T extends Number> Double Sumar (T t1, T t2){
-           return new Double(t1.doubleValue() + t2.doubleValue());
+           return t1.doubleValue() + t2.doubleValue();
        }
    }
    ```
@@ -235,10 +241,12 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
    }
    ```
 
+   
+
 - Paso de clases genéricas por parámetro. Wildcards (II):
 
    También es posible limitar el conjunto de tipos que una clase genérica puede usar, a través del operador `extends`. El ejemplo anterior es como decir "*cualquier tipo que derive de Number*".
-   
+
    ```java
    public class Ejemplo <A> {
       public A a;
@@ -248,7 +256,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
       ...
    }
    ```
-   
+
    
 
 # Colecciones
@@ -265,46 +273,66 @@ Las colecciones son en general elementos de programación que están disponibles
 
 Las colecciones en Java parten de una serie de interfaces básicas. Cada interfaz define un modelo de colección y las operaciones que se pueden llevar a cabo sobre los datos almacenados, por lo que es necesario conocerlas. La interfaz inicial, a través de la cual se han construido el resto de colecciones, es la interfaz **`java.util.Collection`**, que define las operaciones comunes a todas las colecciones derivadas.
 
-A continuación se muestran las operaciones más importantes definidas por esta interfaz, ten en cuenta que **`Collection`** es una interfaz genérica donde `<E>` es el parámetro de tipo (podría ser cualquier clase):
+A continuación se muestran las operaciones/**métodos** más importantes definidas por esta interfaz, ten en cuenta que **`Collection`** es una interfaz genérica donde `<E>` es el parámetro de tipo (podría ser cualquier clase):
 
-- **Método `int size()`**: retorna el número de elementos de la colección.
-- **Método `boolean isEmpty()`**: retornará verdadero si la colección está vacía.
-- **Método `boolean contains (Object element)`**: retornará verdadero si la colección tiene el elemento pasado como parámetro.
-- **Método `boolean add (E element)`**: permitirá añadir elementos a la colección.
-- **Método `boolean remove (Object element)`**: permitirá eliminar elementos de la colección.
-- **Método `Iterator<E> iterator()`**: permitirá crear un *iterador* para recorrer los elementos de la colección (esto se ve más adelante, no te preocupes).
-- **Método `Object[] toArray()`**: permite pasar la colección a un array de objetos tipo Object.
-- **Método `boolean containsAll (Collection<?> c)`**: permite comprobar si una colección contiene los elementos existentes en otra colección. Si es así, retorna verdadero.
-- **Método `boolean addAll (Collection<? extends E> c)`**: permite añadir todos los elementos de una colección a otra colección, siempre que sean del mismo tipo (o deriven del mismo tipo base).
-- **Método `boolean removeAll (Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se eliminan, el resto se quedan.
-- **Método `boolean retainAll (Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se dejan, el resto se eliminan.
-- **Método `void clear()`**: vaciar la colección.
+- **`int size()`**: retorna el número de elementos de la colección.
+- **`boolean isEmpty()`**: retornará verdadero si la colección está vacía.
+- **`boolean contains (Object element)`**: retornará verdadero si la colección tiene el elemento pasado como parámetro.
+- **`boolean add (E element)`**: permitirá añadir elementos a la colección.
+- **`boolean remove (Object element)`**: permitirá eliminar elementos de la colección.
+- **`Iterator<E> iterator()`**: permitirá crear un *iterador* para recorrer los elementos de la colección (esto se ve más adelante, no te preocupes).
+- **`Object[] toArray()`**: permite pasar la colección a un array de objetos tipo Object.
+- **`boolean containsAll (Collection<?> c)`**: permite comprobar si una colección contiene los elementos existentes en otra colección. Si es así, retorna verdadero.
+- **`boolean addAll (Collection<? extends E> c)`**: permite añadir todos los elementos de una colección a otra colección, siempre que sean del mismo tipo (o deriven del mismo tipo base).
+- **`boolean removeAll (Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se eliminan, el resto se quedan.
+- **`boolean retainAll (Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se dejan, el resto se eliminan.
+- **`void clear()`**: vaciar la colección.
 
 Más adelante veremos cómo se usan estos métodos, será cuando veamos las implementaciones (clases genéricas que implementan alguna de las interfaces derivadas de la interfaz `Collection`).
 
+<img src="/assets/collection.png" style="zoom:75%;" />
+
 ## Conjuntos (sets)
 
-¿*Con qué relacionarías los conjuntos*? Seguro que con las matemáticas. Los conjuntos son un tipo de colección que no admite duplicados, derivados del concepto matemático de conjunto.
+¿*Con qué relacionarías los conjuntos*? Seguro que con las matemáticas. Los conjuntos son un tipo de colección que **no admite duplicados**, derivados del concepto matemático de conjunto.
+
+La interfaz **`java.util.Set`** define cómo deben ser los conjuntos, y implementa la interfaz **`Collection`**, aunque no añade ninguna operación nueva. 
+
+Las implementaciones (**clases genéricas** que implementan la interfaz **`Set`**) más usadas son las siguientes:
+
+- **`java.util.HashSet`** : Conjunto que almacena los objetos usando tablas hash (estructura de datos formada básicamente por un array donde la posición de los datos va determinada por una función hash, permitiendo localizar la información de forma extraordinariamente rápida). Los datos están ordenados en la tabla en base a un resumen numérico de los mismos (en hexadecimal generalmente) obtenido a partir de un algoritmo para cálculo de resúmenes, denominadas funciones *hash*. El resumen no tiene significado para un ser humano, se trata simplemente de un mecanismo para obtener un número asociado a un conjunto de datos. 
+
+   **Inconvenientes**: necesitan bastante memoria y no almacenan los objetos de forma ordenada, al contrario pueden aparecer completamente desordenados (se ordenan por el resumen obtenido, y no por el valor almacenado).
 
 <img src="/assets/hash.png" style="zoom:75%;" />
 
-La interfaz **`java.util.Set`** define cómo deben ser los conjuntos, y implementa la interfaz `Collection`, aunque no añade ninguna operación nueva. Las implementaciones (clases genéricas que implementan la interfaz `Set`) más usadas son las siguientes:
-
-- **`java.util.HashSet`**. Conjunto que almacena los objetos usando tablas hash (estructura de datos formada básicamente por un array donde la posición de los datos va determinada por una función hash, permitiendo localizar la información de forma extraordinariamente rápida). Los datos están ordenados en la tabla en base a un resumen numérico de los mismos (en hexadecimal generalmente) obtenido a partir de un algoritmo para cálculo de resúmenes, denominadas funciones *hash*. El resumen no tiene significado para un ser humano, se trata simplemente de un mecanismo para obtener un número asociado a un conjunto de datos. El inconveniente de estas tablas es que los datos se ordenan por el resumen obtenido, y no por el valor almacenado. El resumen, de un buen algoritmo hash, no se parece en nada al contenido almacenado) lo cual acelera enormemente el acceso a los objetos almacenados.
-
-   **Inconvenientes**: necesitan bastante memoria y no almacenan los objetos de forma ordenada (al contrario pueden aparecer completamente desordenados).
-
-- **`java.util.LinkedHashSet`**. Conjunto que almacena objetos combinando tablas *hash*, para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero), manteniendo un orden, que generalmente es el del momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada **nodo** en la que existe un campo, generalmente llamado **siguiente**, que contiene la dirección de memoria del siguiente nodo para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias. 
+- **`java.util.LinkedHashSet`** : Conjunto que almacena objetos combinando tablas *hash*, para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero), manteniendo un orden, que generalmente es el del momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada **nodo** en la que existe un campo, generalmente llamado **siguiente**, que contiene la dirección de memoria del siguiente nodo para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias. 
 
    **Inconvenientes**: necesitan bastante memoria y es algo más lenta que `HashSet` .
 
-- **`java.util.TreeSet`**. Conjunto que almacena los objetos usando unas estructuras conocidas como árboles rojo‐negro. Son más lentas que los dos tipos anteriores.
+   <img src="./assets/nodo.png" alt="nodo" style="zoom:85%;" />
+
+- **`java.util.TreeSet`** : Conjunto que almacena los objetos usando unas estructuras conocidas como árboles rojo‐negro. Son más lentas que los dos tipos anteriores.
 
    **Ventaja**: los datos almacenados se ordenan por valor (aunque se inserten los elementos de forma desordenada, internamente se ordenan dependiendo del valor de cada uno).
 
+   <img src="./assets/arbol.png" alt="arbol" style="zoom:75%;" />
+
 Iremos viendo qué son las listas enlazadas y los árboles (no profundizaremos en los árboles rojo‐negro, pero sí veremos las estructuras tipo árbol en general). Veamos un ejemplo de uso básico de la estructura `HashSet` y después veremos  `LinkedHashSet` y  `TreeSet` .
 
-Para crear un conjunto, simplemente creamos el `HashSet` indicando el tipo de objeto que va a almacenar, dado que es una clase genérica que puede trabajar con cualquier tipo de dato debemos crearlo como sigue (no olvides hacer la importación de `java.util.HashSet` primero):
+
+
+
+
+
+
+
+
+### `HashSet`
+
+Para crear un conjunto simplemente creamos el `HashSet` indicando el tipo de objeto que va a almacenar, dado que es una clase genérica que puede trabajar con cualquier tipo de dato, debemos crearlo como sigue (no olvides hacer la importación de `java.util.HashSet` primero):
+
+**Declaración e instanciación**
 
 ```java
 HashSet<Integer> conjunto = new HashSet<Integer>();
@@ -322,9 +350,9 @@ if (!conjunto.add(n)){
 
 Si el elemento ya está en el conjunto, el método `add` retornará `false` indicando que no se pueden insertar duplicados. Si todo va bien, retornará `true`.
 
-### Acceso
+**Acceso**
 
-Y ahora te preguntarás, ¿cómo accedo a los elementos almacenados en un conjunto? Para obtener los elementos almacenados en un conjunto hay que usar iteradores, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los iteradores se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura "for especial", denominada bucle "*for-each*" o bucle "*para cada*". En el siguiente código se usa un bucle *foreach*, en él la variable *i* va tomando todos los valores almacenados en el conjunto hasta que llega al último:
+Y ahora te preguntarás, ¿*cómo accedo a los elementos almacenados en un conjunto*? Para obtener los elementos almacenados en un conjunto hay que usar *iteradores*, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los *iteradores* se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura "for especial", denominada bucle "*for-each*" o bucle "*para cada*". En el siguiente código se usa un bucle *foreach*, en él la variable *i* va tomando todos los valores almacenados en el conjunto hasta que llega al último:
 
 ```java
 for (Integer i: conjunto) {
@@ -338,23 +366,19 @@ Como ves la estructura `for-each` es muy sencilla: la palabra `for` seguida de "
 
 ¿*En qué se diferencian las estructuras `LinkedHashSet` y `TreeSet` de la estructura `HashSet`*? Ya se comentó antes, y es básicamente en su funcionamiento interno.
 
-<img src="./assets/nodo.png" alt="nodo" style="zoom:75%;" />
+- La estructura **`LinkedHashSet`** es una estructura que internamente funciona como una lista enlazada, aunque usa también tablas hash para poder acceder rápidamente a los elementos. Una lista enlazada es una estructura similar a la representada en la imagen anterior, la cual está compuesta por nodos (elementos que forman la lista) que van enlazándose entre sí. Un nodo contiene dos cosas: el dato u objeto almacenado en la lista y el siguiente nodo de la lista. Si no hay siguiente nodo, se indica poniendo nulo (null) en la variable que contiene el siguiente nodo.
 
-La estructura **`LinkedHashSet`** es una estructura que internamente funciona como una lista enlazada, aunque usa también tablas hash para poder acceder rápidamente a los elementos. Una lista enlazada es una estructura similar a la representada en la imagen anterior, la cual está compuesta por nodos (elementos que forman la lista) que van enlazándose entre sí. Un nodo contiene dos cosas: el dato u objeto almacenado en la lista y el siguiente nodo de la lista. Si no hay siguiente nodo, se indica poniendo nulo (null) en la variable que contiene el siguiente nodo.
+   Las listas enlazadas tienen operaciones asociadas en las que no veremos: eliminación de un nodo de la lista, inserción de un nodo al final, al principio o entre dos nodos, etc.
 
-Las listas enlazadas tienen operaciones asociadas en las que no veremos: eliminación de un nodo de la lista, inserción de un nodo al final, al principio o entre dos nodos, etc.
+   Gracias a las colecciones podremos utilizar listas enlazadas sin tener que complicarnos en detalles de programación.
 
-Gracias a las colecciones podremos utilizar listas enlazadas sin tener que complicarnos en detalles de programación.
+- La estructura **`TreeSet`**, en cambio, utiliza internamente árboles. Los árboles son como las listas pero mucho más complejos. En vez de tener un único elemento siguiente, pueden tener dos o más elementos siguientes, formando estructuras organizadas y jerárquicas.
 
-La estructura **`TreeSet`**, en cambio, utiliza internamente árboles. Los árboles son como las listas pero mucho más complejos. En vez de tener un único elemento siguiente, pueden tener dos o más elementos siguientes, formando estructuras organizadas y jerárquicas.
+   Los nodos se diferencian en dos tipos: nodos padre y nodos hijo; un nodo padre puede tener varios nodos hijo asociados (depende del tipo de árbol), dando lugar a una estructura que parece un árbol invertido (de ahí su nombre).
 
-Los nodos se diferencian en dos tipos: nodos padre y nodos hijo; un nodo padre puede tener varios nodos hijo asociados (depende del tipo de árbol), dando lugar a una estructura que parece un árbol invertido (de ahí su nombre).
+   En la figura de abajo se puede apreciar un árbol donde cada nodo puede tener dos hijos, denominados izquierdo (*izq*) y derecho (*dch*). Puesto que un nodo hijo puede también ser padre a su vez, los árboles se suelen visualizar para su estudio por niveles para entenderlos mejor, donde cada nivel contiene hijos de los nodos del nivel anterior, excepto el primer nivel (que no tiene padre).
 
-En la figura de abajo se puede apreciar un árbol donde cada nodo puede tener dos hijos, denominados izquierdo (*izq*) y derecho (*dch*). Puesto que un nodo hijo puede también ser padre a su vez, los árboles se suelen visualizar para su estudio por niveles para entenderlos mejor, donde cada nivel contiene hijos de los nodos del nivel anterior, excepto el primer nivel (que no tiene padre).
-
-<img src="./assets/arbol.png" alt="arbol" style="zoom:75%;" />
-
-Los árboles son estructuras complejas de manejar y que permiten operaciones muy sofisticadas. Los árboles usados en los `TreeSet`, los árboles rojo‐negro, son árboles auto-ordenados, es decir, que al insertar un elemento, éste queda ordenado por su valor de forma que al recorrer el árbol, pasando por todos los nodos, los elementos salen ordenados. El ejemplo mostrado en la imagen es simplemente un árbol binario, el más simple de todos.
+   Los árboles son estructuras complejas de manejar y que permiten operaciones muy sofisticadas. Los árboles usados en los `TreeSet`, los árboles rojo‐negro, son árboles auto-ordenados, es decir, que al insertar un elemento, éste queda ordenado por su valor de forma que al recorrer el árbol, pasando por todos los nodos, los elementos salen ordenados. El ejemplo mostrado en la imagen es simplemente un árbol binario, el más simple de todos.
 
 Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en un árbol a nivel interno (inserción de nodos, eliminación de nodos, búsqueda de un valor, etc.). Nos aprovecharemos de las colecciones para hacer uso de su potencial. En la siguiente tabla tienes un uso comparado de `TreeSet` y `LinkedHashSet`. Su creación es similar a como se hace con `HashSet`, simplemente sustituyendo el nombre de la clase `HashSet` por una de las otras. Ni `TreeSet` , ni `LinkedHashSet` admiten duplicados, y se usan los mismos métodos ya vistos antes, los existentes en la interfaz `Set` (que es la interfaz que implementan).
 
@@ -377,6 +401,8 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
    1 3 4 99
    ```
 
+   
+
 - Conjunto `LinkedHashSet` ([Ejemplo02](#Ejemplo02)):
 
    ```java
@@ -395,14 +421,6 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
    ```shell
    4 3 1 99
    ```
-
-
-
-
-
-
-
-
 
 
 
@@ -468,9 +486,9 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
    4, 5.
    ```
 
-> Recuerda, estas operaciones son comunes a todas las colecciones.
-
 Consulta el [Ejemplo03](#Ejemplo03).
+
+> **Recuerda**: estas operaciones son comunes a todas las colecciones.
 
 ### Ordenación
 
