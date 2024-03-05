@@ -30,7 +30,7 @@ Los datos compuestos son un tipo de estructura de datos, y en realidad ya los ha
 
 Esas soluciones consisten básicamente en la capacidad de poder manejar varios datos del mismo o diferente tipo de forma dinámica y flexible.
 
-## Estructuras de almacenamiento
+## estructuras de almacenamiento
 
 ¿Cómo almacenarías en memoria un listado de números del que tienes que extraer el valor máximo?
 
@@ -59,7 +59,7 @@ Las **estructuras** de almacenamiento, en general, se pueden clasificar de varia
 
 Todavía no conoces mucho de las estructuras, y probablemente todo te suena raro y extraño. No te preocupes, poco a poco irás descubriéndolas. Verás que son sencillas de utilizar y muy cómodas.
 
-## Clases y métodos genéricos
+## clases y métodos genéricos
 
 ¿*Crees que el código es más legible al utilizar genéricos o que se complica*? La verdad es que al principio cuesta, pero después, el código se entiende mejor que si se empieza a insertar conversiones de tipo.
 
@@ -261,7 +261,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
 # Colecciones
 
-## Introducción
+## introducción
 
 ¿*Qué consideras una colección*? Pues seguramente al pensar en el término se te viene a la cabeza una colección de libros, o algo parecido, y la idea no va muy desencaminada. **Una colección a nivel de software es un grupo de elementos almacenados de forma conjunta en una misma estructura**.
 
@@ -292,7 +292,11 @@ Más adelante veremos cómo se usan estos métodos, será cuando veamos las impl
 
 <img src="/assets/collection.png" style="zoom:75%;" />
 
-## Conjuntos (sets)
+
+
+
+
+## conjuntos (sets)
 
 ¿*Con qué relacionarías los conjuntos*? Seguro que con las matemáticas. Los conjuntos son un tipo de colección que **no admite duplicados**, derivados del concepto matemático de conjunto.
 
@@ -304,7 +308,7 @@ Las implementaciones (**clases genéricas** que implementan la interfaz **`Set`*
 
    **Inconvenientes**: necesitan bastante memoria y no almacenan los objetos de forma ordenada, al contrario pueden aparecer completamente desordenados (se ordenan por el resumen obtenido, y no por el valor almacenado).
 
-<img src="/assets/hash.png" style="zoom:75%;" />
+<img src="/assets/hash.png" style="zoom:65%;" />
 
 - **`java.util.LinkedHashSet`** : Conjunto que almacena objetos combinando tablas *hash*, para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero), manteniendo un orden, que generalmente es el del momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada **nodo** en la que existe un campo, generalmente llamado **siguiente**, que contiene la dirección de memoria del siguiente nodo para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias. 
 
@@ -316,7 +320,7 @@ Las implementaciones (**clases genéricas** que implementan la interfaz **`Set`*
 
    **Ventaja**: los datos almacenados se ordenan por valor (aunque se inserten los elementos de forma desordenada, internamente se ordenan dependiendo del valor de cada uno).
 
-   <img src="./assets/arbol.png" alt="arbol" style="zoom:75%;" />
+   <img src="./assets/arbol.png" alt="arbol" style="zoom:70%;" />
 
 Iremos viendo qué son las listas enlazadas y los árboles (no profundizaremos en los árboles rojo‐negro, pero sí veremos las estructuras tipo árbol en general). Veamos un ejemplo de uso básico de la estructura `HashSet` y después veremos  `LinkedHashSet` y  `TreeSet` .
 
@@ -366,9 +370,9 @@ Como ves la estructura `for-each` es muy sencilla: la palabra `for` seguida de "
 
 ¿*En qué se diferencian las estructuras `LinkedHashSet` y `TreeSet` de la estructura `HashSet`*? Ya se comentó antes, y es básicamente en su funcionamiento interno.
 
-- La estructura **`LinkedHashSet`** es una estructura que internamente funciona como una lista enlazada, aunque usa también tablas hash para poder acceder rápidamente a los elementos. Una lista enlazada es una estructura similar a la representada en la imagen anterior, la cual está compuesta por nodos (elementos que forman la lista) que van enlazándose entre sí. Un nodo contiene dos cosas: el dato u objeto almacenado en la lista y el siguiente nodo de la lista. Si no hay siguiente nodo, se indica poniendo nulo (null) en la variable que contiene el siguiente nodo.
+- La estructura **`LinkedHashSet`** es una estructura que internamente funciona como una lista enlazada, aunque usa también tablas hash para poder acceder rápidamente a los elementos. Una lista enlazada  está compuesta por nodos (elementos que forman la lista) que van enlazándose entre sí. Un nodo contiene dos cosas: el dato u objeto almacenado en la lista y el siguiente nodo de la lista. Si no hay siguiente nodo, se indica poniendo nulo (null) en la variable que contiene el siguiente nodo.
 
-   Las listas enlazadas tienen operaciones asociadas en las que no veremos: eliminación de un nodo de la lista, inserción de un nodo al final, al principio o entre dos nodos, etc.
+   Las listas enlazadas tienen operaciones asociadas que no veremos: eliminación de un nodo de la lista, inserción de un nodo al final, al principio o entre dos nodos, etc.
 
    Gracias a las colecciones podremos utilizar listas enlazadas sin tener que complicarnos en detalles de programación.
 
@@ -376,11 +380,11 @@ Como ves la estructura `for-each` es muy sencilla: la palabra `for` seguida de "
 
    Los nodos se diferencian en dos tipos: nodos padre y nodos hijo; un nodo padre puede tener varios nodos hijo asociados (depende del tipo de árbol), dando lugar a una estructura que parece un árbol invertido (de ahí su nombre).
 
-   En la figura de abajo se puede apreciar un árbol donde cada nodo puede tener dos hijos, denominados izquierdo (*izq*) y derecho (*dch*). Puesto que un nodo hijo puede también ser padre a su vez, los árboles se suelen visualizar para su estudio por niveles para entenderlos mejor, donde cada nivel contiene hijos de los nodos del nivel anterior, excepto el primer nivel (que no tiene padre).
+   Puesto que un nodo hijo puede también ser padre a su vez, los árboles se suelen visualizar para su estudio por niveles para entenderlos mejor, donde cada nivel contiene hijos de los nodos del nivel anterior, excepto el primer nivel (que no tiene padre).
 
    Los árboles son estructuras complejas de manejar y que permiten operaciones muy sofisticadas. Los árboles usados en los `TreeSet`, los árboles rojo‐negro, son árboles auto-ordenados, es decir, que al insertar un elemento, éste queda ordenado por su valor de forma que al recorrer el árbol, pasando por todos los nodos, los elementos salen ordenados. El ejemplo mostrado en la imagen es simplemente un árbol binario, el más simple de todos.
 
-Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en un árbol a nivel interno (inserción de nodos, eliminación de nodos, búsqueda de un valor, etc.). Nos aprovecharemos de las colecciones para hacer uso de su potencial. En la siguiente tabla tienes un uso comparado de `TreeSet` y `LinkedHashSet`. Su creación es similar a como se hace con `HashSet`, simplemente sustituyendo el nombre de la clase `HashSet` por una de las otras. Ni `TreeSet` , ni `LinkedHashSet` admiten duplicados, y se usan los mismos métodos ya vistos antes, los existentes en la interfaz `Set` (que es la interfaz que implementan).
+Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en un árbol a nivel interno (inserción de nodos, eliminación de nodos, búsqueda de un valor, etc.). Nos aprovecharemos de las colecciones para hacer uso de su potencial. Su creación es similar a como se hace con `HashSet`, simplemente sustituyendo el nombre de la clase `HashSet` por una de las otras. Ni `TreeSet` , ni `LinkedHashSet` admiten duplicados, y se usan los mismos métodos ya vistos antes, los existentes en la interfaz `Set` (que es la interfaz que implementan).
 
 - Conjunto `TreeSet` ([Ejemplo01](#Ejemplo01)):
 
@@ -401,7 +405,12 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
    1 3 4 99
    ```
 
-   
+
+
+
+
+
+
 
 - Conjunto `LinkedHashSet` ([Ejemplo02](#Ejemplo02)):
 
@@ -424,25 +433,25 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
 
 
 
-### Operar con elementos
+### operar con elementos
 
-¿Cómo podría copiar los elementos de un conjunto a otro conjunto? ¿Hay que usar un bucle *for* y recorrer toda la lista para ello? ¡Qué va! Para facilitar esta tarea, los conjuntos, y las colecciones en general, facilitan un montón de operaciones para poder combinar los datos de varias colecciones.
+¿*Cómo podría copiar los elementos de un conjunto a otro conjunto*? ¿*Hay que usar un bucle for y recorrer toda la lista para ello*? ¡Qué va! Para facilitar esta tarea, los conjuntos, y las colecciones en general, facilitan un montón de operaciones para poder combinar los datos de varias colecciones.
 
 Partimos del siguiente ejemplo, en el que hay dos colecciones de diferente tipo, una con 5 números enteros (colección A) y la otra con 6 números (colección B):
 
-<img src="./assets/conjunto.png" alt="conjunto" style="zoom: 22%;" />
+<img src="./assets/conjunto.png" alt="conjunto" style="zoom: 20%;" />
 
 ```java
 TreeSet<Integer> A = new TreeSet<Integer>();
 A.add(4); A.add(5); A.add(3); A.add(1); A.add(2); 
-// Elementos del conjunto A: 4, 5, 3, 1 y 2
+// Elementos del conjunto A: 1, 2, 3, 4 y 5
 
 LinkedHashSet<Integer> B = new LinkedHashSet<Integer>();
 B.add(8); B.add(7); B.add(9); B.add(4); B.add(6); B.add(5); 
 // Elementos del conjunto B: 8, 7, 9, 4, 6 y 5
 ```
 
-En el ejemplo anterior, el literal de número se convierte automáticamente a la clase envoltorio `Integer` sin tener que hacer nada, lo cual es una ventaja. Veamos las formas de combinar ambas colecciones:
+El literal de número se convierte automáticamente a la clase envoltorio `Integer` sin tener que hacer nada, lo cual es una ventaja. Veamos las formas de combinar ambas colecciones:
 
 - **Unión**. Añadir todos los elementos del conjunto B en el conjunto A.
 
@@ -450,13 +459,9 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
     A.addAll(B)
    ```
 
-   <img src="./assets/union.png" style="zoom:22%;" />
+   <img src="./assets/union.png" style="zoom:20%;" />
 
-   Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están:
-
-   ```java
-1, 2, 3, 4, 5, 6, 7, 8, 9.
-   ```
+   Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están:  1, 2, 3, 4, 5, 6, 7, 8, 9.
 
 - **Diferencia**. Eliminar los elementos del conjunto B que puedan estar en el conjunto A.
 
@@ -466,11 +471,7 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
    <img src="./assets/diferencia.png" alt="diferencia" style="zoom:22%;" />
 
-   Todos los elementos del conjunto A, que no estén en el conjunto B:
-
-   ```java
-   1, 2, 3.
-   ```
+   Todos los elementos del conjunto A, que no estén en el conjunto B:  1, 2, 3.
 
 - **Intersección**. Retiene los elementos comunes a ambos conjuntos.
 
@@ -480,17 +481,14 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
    <img src="./assets/interseccion.png" alt="interserccion" style="zoom:22%;" />
 
-   Todos los elementos del conjunto A, que también están en el conjunto B:
+   Todos los elementos del conjunto A, que también están en el conjunto B:  4, 5.
 
-   ```java
-   4, 5.
-   ```
 
 Consulta el [Ejemplo03](#Ejemplo03).
 
 > **Recuerda**: estas operaciones son comunes a todas las colecciones.
 
-### Ordenación
+### ordenación
 
 Por defecto, los `TreeSet` ordenan sus elementos de forma ascendente, pero, ¿se podría cambiar el orden de ordenación? Los `TreeSet` tienen un conjunto de operaciones adicionales, además de las que incluye de ser un conjunto, que permite entre otras cosas, cambiar la forma de ordenar los elementos. Esto es especialmente útil cuando el tipo de objeto que se almacena no es un simple número, sino algo más complejo (un artículo por ejemplo). `TreeSet` es capaz de ordenar tipos básicos (números, cadenas y fechas) pero otro tipo de objetos no puede ordenarlos con tanta facilidad.
 
@@ -526,56 +524,68 @@ Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo e
 
 Para entender mejor los Sets revisa el [Ejemplo04](#Ejemplo04) y  [Ejemplo05](#Ejemplo05).
 
-## Listas
 
-¿En qué se diferencia una lista de un conjunto? Las listas son elementos de programación un poco más avanzados que los conjuntos. Su ventaja es que amplían el conjunto de operaciones de las colecciones añadiendo operaciones extra. Veamos algunas de ellas:
+
+
+
+## listas
+
+¿*En qué se diferencia una lista de un conjunto*? Las listas son elementos de programación un poco más avanzados que los conjuntos. Su ventaja es que amplían el conjunto de operaciones de las colecciones añadiendo operaciones extra. Veamos algunas de ellas:
 
 - Sí **pueden almacenar duplicados**. Si no queremos duplicados, hay que verificar manualmente que el elemento no esté en la lista antes de su inserción.
 - **Acceso posicional**. Podemos acceder a un elemento indicando su posición en la lista.
 - **Búsqueda**. Es posible buscar elementos en la lista y obtener su posición. En los conjuntos, al ser colecciones sin aportar nada nuevo, solo se podía comprobar si un conjunto contenía o no un elemento, retornando verdadero o falso. Las listas mejoran este aspecto.
 - **Extracción de sublistas**. Es posible obtener una lista que contenga solo una parte de los elementos de forma muy sencilla.
 
-En Java, para las listas se dispone de una interfaz llamada `java.util.List`, y dos implementaciones (`java.util.LinkedList` y `java.util.ArrayList`), con diferencias significativas entre ellas. Los métodos de la interfaz `List`, que obviamente estarán en todas las implementaciones, y que permiten las operaciones anteriores son:
+En Java, para las listas se dispone de una interfaz llamada **`java.util.List`**, y dos implementaciones (**`java.util.LinkedList`** y **`java.util.ArrayList`**), con diferencias significativas entre ellas. Los métodos de la interfaz **`List`**, que obviamente estarán en todas las implementaciones, y que permiten las operaciones anteriores son:
 
-- **`E get(int index)`**. El método `get` permite obtener un elemento partiendo de su posición (index).
-- **`E set(int index, E element)`**. El método `set` permite cambiar el elemento almacenado en una posición de la lista (index), por otro (element).
-- **`void add(int index, E element)`**. Se añade otra versión del método `add`, en la cual se puede insertar un elemento (element) en la lista en una posición concreta (index), desplazando los existentes.
-- **`E remove(int index)`**. Se añade otra versión del método `remove`, esta versión permite eliminar un elemento indicando su posición en la lista.
-- **`boolean addAll(int index, Collection<? extends E> c)`**. Se añade otra versión del método `addAll` , que permite insertar una colección pasada por parámetro en una posición de la lista, desplazando el resto de elementos.
-- **`int indexOf(Object o)`**. El método `indexOf` permite conocer la posición (índice) de un elemento, si dicho elemento no está en la lista retornará `‐1`.
-- **`int lastIndexOf(Object o)`**. El método `lastIndexOf` nos permite obtener la última ocurrencia del objeto en la lista (dado que la lista sí puede almacenar duplicados).
-- **`List<E> subList(int from, int to)`**. El método `subList` genera una sublista (una vista parcial de la lista) con los elementos comprendidos entre la posición inicial (incluida) y la posición final (no incluida).
+- **`E get(int index)`** : el método `get` permite obtener un elemento partiendo de su posición (index).
+- **`E set(int index, E element)`** : el método `set` permite cambiar el elemento almacenado en una posición de la lista (index), por otro (element).
+- **`void add(int index, E element)`** : se añade otra versión del método `add`, en la cual se puede insertar un elemento (element) en la lista en una posición concreta (index), desplazando los existentes.
+- **`E remove(int index)`** : se añade otra versión del método `remove`, esta versión permite eliminar un elemento indicando su posición en la lista.
+- **`boolean addAll(int index, Collection<? extends E> c)`** : se añade otra versión del método `addAll` , que permite insertar una colección pasada por parámetro en una posición de la lista, desplazando el resto de elementos.
+- **`int indexOf(Object o)`** : el método `indexOf` permite conocer la posición (índice) de un elemento, si dicho elemento no está en la lista retornará `‐1`.
+- **`int lastIndexOf(Object o)`** : el método `lastIndexOf` nos permite obtener la última ocurrencia del objeto en la lista (dado que la lista sí puede almacenar duplicados).
+- **`List<E> subList(int from, int to)`** : el método `subList` genera una sublista (una vista parcial de la lista) con los elementos comprendidos entre la posición inicial (incluida) y la posición final (no incluida).
 
-> ​	Ten en cuenta que los elementos de una lista empiezan a numerarse por 0. Es decir, que el primer elemento de la lista es el 0.
+> Ten en cuenta que los elementos de una lista empiezan a numerarse por 0. Es decir, que el primer elemento de la lista es el 0.
 >
 > Ten en cuenta también que `List` es una interfaz genérica, por lo que `<E>` corresponde con el tipo base usado como parámetro genérico al crear la lista.
 
-### Uso
+### uso
 
-Y, ¿cómo se usan las listas? Pues para usar una lista haremos uso de sus implementaciones `LinkedList` y `ArrayList`. Veamos un ejemplo de su uso y después obtendrás respuesta a esta pregunta.
+Y, ¿*cómo se usan las listas*? Pues para usar una lista haremos uso de sus implementaciones **`LinkedList`** y **`ArrayList`**. Veamos un ejemplo de su uso y después obtendrás respuesta a esta pregunta.
 
 ![listas](./assets/listas.png)
 
 Supongo que intuirás cómo se usan, pero nunca viene mal un ejemplo sencillo, que nos aclare las ideas. El siguiente ejemplo muestra cómo usar un `LinkedList` pero valdría también para `ArrayList` (no olvides importar las clases `java.util.LinkedList` y `java.util.ArrayList` según sea necesario). En este ejemplo se usan los métodos de acceso posicional a la lista:
 
 ```java
-LinkedList<Integer> ll = new LinkedList<>(); // Declaración y creación del LinkedList de enteros.
-ll.add(1); // Añade un elemento al final de la lista.
-ll.add(3); // Añade otro elemento al final de la lista.
-ll.add(1,2); // Añade en la posición 1 el elemento 2.
-ll.add(ll.get(1) + ll.get(2)); // Suma los valores contenidos en la posición 1 y 2, y lo agrega al final.
-ll.remove(0); // Elimina el primer elementos de la lista.
+LinkedList<Integer> ll = new LinkedList<>(); // declaración y creación del LinkedList de enteros.
+ll.add(1); // añade un elemento al final de la lista.
+ll.add(3); // añade otro elemento al final de la lista.
+ll.add(1,2); // añade en la posición 1 el elemento 2.
+ll.add(ll.get(1) + ll.get(2)); // suma los valores contenidos en la posición 1 y 2, y lo agrega al final.
+ll.remove(0); // elimina el primer elementos de la lista.
 ```
 
-En el ejemplo anterior, se realizan muchas operaciones, ¿cuál será el contenido de la lista al final? Pues será 2, 3 y 5. En el ejemplo cabe destacar el uso del bucle `for-each` , recuerda que se puede usar en cualquier colección.
+En el ejemplo anterior, se realizan muchas operaciones, ¿cuál será el contenido de la lista al final?
+
+```java
+// recorrer la colección:
+for (Integer elemento: ll){
+    System.out.print(elemento + " ");
+}
+// devuelve: 2 3 5
+```
 
 Veamos otro ejemplo, esta vez con `ArrayList`, de cómo obtener la posición de un elemento en la lista:
 
 ```java
-ArrayList<Integer> al = new ArrayList<>(); // Declaración y creación del ArrayList de enteros.
+ArrayList<Integer> al = new ArrayList<>(); // declaración y creación del ArrayList de enteros.
 al.add(10); 
-al.add(11); // Añadimos dos elementos a la lista.
-al.set(al.indexOf(11), 12); // Sustituimos el 11 por el 12, primero lo buscamos y luego lo reemplazamos.
+al.add(11); // añadimos dos elementos a la lista.
+al.set(al.indexOf(11), 12); // sustituimos el 11 por el 12, primero lo buscamos y luego lo reemplazamos.
 ```
 
 En el ejemplo anterior, se emplea tanto el método `indexOf` para obtener la posición de un elemento, como el método `set` para reemplazar el valor en una posición, una combinación muy habitual. El ejemplo anterior generará un `ArrayList` que contendrá dos números, el 10 y el 12. 
@@ -606,29 +616,29 @@ Puedes consultar el código en el [Ejemplo06](#Ejemplo06).
 
 ### `LinkedList` y `ArrayList`
 
-¿Y en qué se diferencia un `LinkedList` de un `ArrayList` ?
+¿*Y en qué se diferencia un* `LinkedList` *de un* `ArrayList` ?
 
 Los **`LinkedList`** utilizan listas doblemente enlazadas, que son listas enlazadas (como se vio en un apartado anterior), pero que permiten ir hacia atrás en la lista de elementos. Los elementos de la lista se encapsulan en los llamados nodos.
 
 Los nodos van enlazados unos a otros para no perder el orden y no limitar el tamaño de almacenamiento. Tener un doble enlace significa que en cada nodo se almacena la información de cuál es el siguiente nodo y además, de cuál es el nodo anterior. Si un nodo no tiene nodo siguiente o nodo anterior, se almacena null (o nulo) para ambos casos.
 
-No es el caso de los **`ArrayList`**. Estos se implementan utilizando arrays que se van redimensionando conforme se necesita más espacio o menos. La redimensión es transparente a nosotros, no nos enteramos cuando se produce, pero eso redunda en una diferencia de rendimiento notable dependiendo del uso. Los **ArrayList** son más rápidos en cuanto a acceso a los elementos, acceder a un elemento según su posición es más rápido en un array que en una lista doblemente enlazada (hay que recorrer la lista). En cambio, eliminar un elemento implica muchas más operaciones en un array que en una lista enlazada de cualquier tipo.
+No es el caso de los **`ArrayList`**. Estos se implementan utilizando arrays que se van redimensionando conforme se necesita más espacio o menos. La redimensión es transparente a nosotros, no nos enteramos cuándo se produce, pero eso redunda en una diferencia de rendimiento notable dependiendo del uso. Los **ArrayList** son más rápidos en cuanto a acceso a los elementos, acceder a un elemento según su posición es más rápido en un array que en una lista doblemente enlazada (hay que recorrer la lista). En cambio, eliminar un elemento implica muchas más operaciones en un array que en una lista enlazada de cualquier tipo.
 
-¿Y esto qué quiere decir? Que si se van a realizar muchas operaciones de eliminación de elementos sobre la lista, conviene usar una lista enlazada (`LinkedList`), pero si no se van a realizar muchas eliminaciones, sino que solamente se van a insertar y consultar elementos por posición, conviene usar una lista basada en arrays redimensionados (`ArrayList` ).
+¿*Y esto qué quiere decir*? Que si se van a realizar muchas operaciones de eliminación de elementos sobre la lista, conviene usar una lista enlazada (`LinkedList`), pero si no se van a realizar muchas eliminaciones, sino que solamente se van a insertar y consultar elementos por posición, conviene usar una lista basada en arrays redimensionados (`ArrayList` ).
 
 `LinkedList` tiene otras ventajas que nos puede llevar a su uso. Implementa las interfaces `java.util.Queue` y `java.util.Deque`. Dichas interfaces permiten hacer uso de las listas como si fueran una cola de prioridad o una pila, respectivamente.
 
-Las colas, también conocidas como colas de prioridad, son una lista pero que aportan métodos para trabajar de forma diferente. ¿Tú sabes lo que es hacer cola para que te atiendan en una ventanilla? Pues igual. Se trata de que el primero que llega es el primero en ser atendido (`FIFO`, *First In First Out* en inglés). Simplemente se aportan tres métodos nuevos: meter en el final de la lista (`add` y `offer`), sacar y eliminar el elemento más antiguo (`poll`), y examinar el elemento al principio de la lista sin eliminarlo (`peek`). Dichos métodos están disponibles en las listas enlazadas `LinkedList` :
+Las **colas**, también conocidas como colas de prioridad, son una lista pero que aportan métodos para trabajar de forma diferente. ¿*Tú sabes lo que es hacer cola para que te atiendan en una ventanilla*? Pues igual. Se trata de que el primero que llega es el primero en ser atendido (`FIFO`, *First In First Out* en inglés). Simplemente se aportan tres métodos nuevos: meter en el final de la lista (`add` y `offer`), sacar y eliminar el elemento más antiguo (`poll`), y examinar el elemento al principio de la lista sin eliminarlo (`peek`). Dichos métodos están disponibles en las listas enlazadas `LinkedList` :
 
-- **`boolean add(E e)`** y **`boolean offer(E e)`**, retornarán true si se ha podido insertar el elemento al final de la `LinkedList`.
-- **`E poll()`** retornará el primer elemento de la `LinkedList` y lo eliminará de la misma. Al insertar al final, los elementos más antiguos siempre están al principio. Retornará null si la lista está vacía.
-- **`E peek()`** retornará el primer elemento de la `LinkedList` pero no lo eliminará, permite examinarlo. Retornará null si la lista está vacía.
+- **`boolean add(E e)`** y **`boolean offer(E e)`** : retornarán true si se ha podido insertar el elemento al final de la `LinkedList`.
+- **`E poll()`** : retornará el primer elemento de la `LinkedList` y lo eliminará de la misma. Al insertar al final, los elementos más antiguos siempre están al principio. Retornará null si la lista está vacía.
+- **`E peek()`** : retornará el primer elemento de la `LinkedList` pero no lo eliminará, permite examinarlo. Retornará null si la lista está vacía.
 
-Las pilas, mucho menos usadas, son todo lo contrario a las listas. Una pila es igual que una montaña de hojas en blanco, para añadir hojas nuevas se ponen encima del resto, y para retirar una se coge la primera que hay encima de todas. En las pilas el último en llegar es el primero en ser atendido (`LIFO`, *Last In First Out* en inglés). Para ello se proveen de tres métodos: meter al principio de la pila (`push`), sacar y eliminar del principio de la pila (`pop`), y examinar el primer elemento de la pila (`peek`, igual que si usara la lista como una cola). Las pilas se usan menos y haremos menos hincapié en ellas. Simplemente ten en mente que, tanto las colas como las pilas, son una lista enlazada sobre la que se hacen operaciones especiales.
+Las **pilas**, mucho menos usadas, son todo lo contrario a las listas. Una pila es igual que una montaña de hojas en blanco, para añadir hojas nuevas se ponen encima del resto, y para retirar una se coge la primera que hay encima de todas. En las pilas el último en llegar es el primero en ser atendido (`LIFO`, *Last In First Out* en inglés). Para ello se proveen de tres métodos: meter al principio de la pila (`push`), sacar y eliminar del principio de la pila (`pop`), y examinar el primer elemento de la pila (`peek`, igual que si usara la lista como una cola). Las pilas se usan menos y haremos menos hincapié en ellas. Simplemente ten en mente que, tanto las colas como las pilas, son una lista enlazada sobre la que se hacen operaciones especiales.
 
-### A tener en cuenta
+### a tener en cuenta
 
-A la hora de usar las listas, hay que tener en cuenta un par de detalles, ¿sabes cuáles? Es sencillo, pero importante.
+A la hora de usar las listas, hay que tener en cuenta un par de detalles, ¿*sabes cuáles*? Es sencillo, pero importante.
 
 No es lo mismo usar las colecciones (listas y conjuntos) con objetos inmutables (`Strings`, `Integer`, etc.) que con objetos mutables. Los objetos inmutables no pueden ser modificados después de su creación, por lo que cuando se incorporan a la lista, a través de los métodos `add` , se pasan por copia (es decir, se realiza una copia de los mismos). En cambio los objetos mutables (como las clases que tú puedes crear), no se copian, y eso puede producir efectos no deseados.
 
@@ -646,22 +656,23 @@ class Test {
 La clase de antes es mutable, por lo que no se pasa por copia a la lista. Ahora imagina el siguiente código en el que se crea una lista que usa este tipo de objeto, y en el que se insertan dos objetos:
 
 ```java
-Test p1 = new Test(11); // Se crea un objeto Test donde el entero que contiene vale 11.
-Test p2 = new Test(12); // Se crea otro objeto Test donde el entero que contiene vale 12.
-LinkedList<Test> lista = new LinkedList<Test>(); // Creamos una lista enlazada para objetos tipo Test.
-lista.add(p1); // Añadimos el primero objeto test.
-lista.add(p2); // Añadimos el segundo objeto test.
+Test p1 = new Test(11); // se crea un objeto Test donde el entero que contiene vale 11.
+Test p2 = new Test(12); // se crea otro objeto Test donde el entero que contiene vale 12.
+LinkedList<Test> lista = new LinkedList<Test>(); // creamos una lista enlazada para objetos tipo Test.
+lista.add(p1); // añadimos el primero objeto test.
+lista.add(p2); // añadimos el segundo objeto test.
 for (Test p:lista){
-	System.out.println(p.num); // Mostramos la lista de objetos.
+	System.out.println(p.num); // mostramos la lista de objetos.
 }
 ```
 
-¿Qué mostraría por pantalla el código anterior? Simplemente mostraría los números 11 y 12. Ahora bien, ¿qué pasa si modificamos el valor de uno de los números de los objetos test? ¿Qué se mostrará al ejecutar el siguiente código?
+¿*Qué mostraría por pantalla el código anterior*? Simplemente mostraría los números 11 y 12. Ahora bien, ¿*qué pasa si modificamos el valor de uno de los números de los objetos test*? ¿*Qué se mostrará al ejecutar el siguiente código*?
 
 ```java
 p1.num = 44;
-for (Test p:lista)
+for (Test p:lista){
     System.out.println(p.num);
+}
 ```
 
 El resultado de ejecutar el código anterior es que se muestran los números 44 y 12. El número ha sido modificado y no hemos tenido que volver a insertar el elemento en la lista para que en la lista se cambie también. Esto es porque en la lista no se almacena una copia del objeto Test, sino un apuntador a dicho objeto (solo hay una copia del objeto a la que se hace referencia desde distintos lugares).
@@ -670,11 +681,15 @@ El resultado de ejecutar el código anterior es que se muestran los números 44 
 
 Consulta el [Ejemplo07](#Ejemplo07).
 
-## Conjuntos de pares [clave/valor]
 
-¿Cómo almacenarías los datos de un diccionario? Tenemos por un lado cada palabra y por otro su significado. Para resolver este problema existen precisamente los arrays asociativos. Un tipo de array asociativo son los **mapas** o diccionarios, que permiten almacenar pares de valores conocidos como clave y valor. La clave se utiliza para acceder al valor, como una entrada de un diccionario permite acceder a su definición.
 
-En Java existe la interfaz `java.util.Map` que define los métodos que deben tener los mapas, y existen tres implementaciones principales de dicha interfaz: `java.util.HashMap`, `java.util.TreeMap` y `java.util.LinkedHashMap`. ¿Te suenan? Claro que sí. Cada una de ellas, respectivamente, tiene características similares a `HashSet` , `TreeSet` y `LinkedHashSet` , tanto en funcionamiento interno como en rendimiento.
+
+
+## mapas - conjuntos de pares [clave/valor]
+
+¿*Cómo almacenarías los datos de un diccionario*? Tenemos por un lado cada palabra y por otro su significado. Para resolver este problema existen precisamente los arrays asociativos. Un tipo de array asociativo son los **mapas** o diccionarios, que permiten almacenar pares de valores conocidos como clave y valor. La clave se utiliza para acceder al valor, como una entrada de un diccionario permite acceder a su definición.
+
+En Java existe la interfaz `java.util.Map` que define los métodos que deben tener los mapas, y existen tres implementaciones principales de dicha interfaz: `java.util.HashMap`, `java.util.TreeMap` y `java.util.LinkedHashMap`. ¿*Te suenan*? Claro que sí. Cada una de ellas, respectivamente, tiene características similares a `HashSet` , `TreeSet` y `LinkedHashSet` , tanto en funcionamiento interno como en rendimiento.
 
 Los mapas utilizan clases genéricas para dar extensibilidad y flexibilidad, y permiten definir un tipo base para la clave, y otro tipo diferente para el valor. Veamos un ejemplo de cómo crear un mapa, que es extensible a los otros dos tipos de mapas:
 
@@ -699,39 +714,39 @@ Revisa el [Ejemplo08](#Ejemplo08).
 
 # Iteradores
 
-¿Qué son los iteradores realmente? Son un mecanismo que nos permite recorrer todos los elementos de una colección de forma sencilla, de forma secuencial, y de forma segura. Los mapas, como no derivan de la interfaz `Collection` realmente, no tienen iteradores, pero como veremos, existe un truco interesante.
+¿*Qué son los iteradores realmente*? Son un mecanismo que nos permite recorrer todos los elementos de una colección de forma sencilla, de forma secuencial, y de forma segura. Los mapas, como no derivan de la interfaz `Collection` realmente, no tienen iteradores, pero como veremos, existe un truco interesante.
 
-Los iteradores permiten recorrer las colecciones de dos formas: bucles `for‐each` (existentes en Java a partir de la versión 1.5) y a través de un bucle normal creando un iterador. Como los bucles `for-each` ya los hemos visto antes (y ha quedado patente su simplicidad), nos vamos a centrar en el otro método, especialmente útil en versiones antiguas de Java. Ahora la pregunta es, ¿cómo se crea un iterador? Pues invocando el método "`iterator()`" de cualquier colección.
+Los iteradores permiten recorrer las colecciones de dos formas: *bucles* `for‐each` (existentes en Java a partir de la versión 1.5) y a través de un bucle normal creando un *iterador*. Como los bucles `for-each` ya los hemos visto antes (y ha quedado patente su simplicidad), nos vamos a centrar en el otro método, especialmente útil en versiones antiguas de Java. Ahora la pregunta es, ¿*cómo se crea un iterador*? Pues invocando el método "`iterator()`" de cualquier colección.
 
-Veamos un ejemplo (en el ejemplo `t` es una colección cualquiera):
+Veamos un ejemplo (en el ejemplo `c` es una colección cualquiera):
 
 ```java
-Iterator<Integer> it = t.iterator();
+Iterator<Integer> it = c.iterator();
 ```
 
 Fíjate que se ha especificado un parámetro para el tipo de dato genérico en el iterador (poniendo `<Integer>` después de `Iterator`). Esto es porque los iteradores son también clases genéricas, y es necesario especificar el tipo base que contendrá el iterador. Si no se especifica el tipo base del iterador, igualmente nos permitiría recorrer la colección, pero retornará objetos tipo Object (clase de la que derivan todas las clases), con lo que nos veremos obligados a forzar la conversión de tipo.
 
 Para recorrer y gestionar la colección, el iterador ofrece tres métodos básicos:
 
-- `boolean hasNext()`. Retornará true si le quedan más elementos a la colección por visitar. False en caso contrario.
-- `E next()`. Retornará el siguiente elemento de la colección, si no existe siguiente elemento, lanzará una excepción ( `NoSuchElementException` para ser exactos), con lo que conviene chequear primero si el siguiente elemento existe.
-- `remove()`. Elimina de la colección el último elemento retornado en la última invocación de next (no es necesario pasárselo por parámetro). Cuidado, si next no ha sido invocado todavía, saltará una incómoda excepción.
+- `boolean hasNext()` : retornará *true* si le quedan más elementos a la colección por visitar, *false* en caso contrario.
+- `E next()` : retornará el siguiente elemento de la colección, si no existe siguiente elemento, lanzará una excepción ( `NoSuchElementException` para ser exactos), con lo que conviene chequear primero si el siguiente elemento existe.
+- `remove()` : elimina de la colección el último elemento retornado en la última invocación de `next` (no es necesario pasárselo por parámetro). Cuidado, si `next` no ha sido invocado todavía, saltará una incómoda excepción.
 
-¿Cómo recorreríamos una colección con estos métodos? Pues de una forma muy sencilla, un simple bucle mientras (`while`) con la condición `hasNext()` nos permite hacerlo:
+¿*Cómo recorreríamos una colección con estos métodos*? Pues de una forma muy sencilla, un simple bucle mientras (`while`) con la condición `hasNext()` nos permite hacerlo:
 
 ```java
-while (it.hasNext()) { // Mientras haya siguiente elemento, seguiremos en el bucle.
-	Integer n = it.next(); // Escogemos el siguiente elemento.
-	if (n%2 == 0)
-        it.remove(); //Si es par, eliminamos el elemento de la lista.
+while (it.hasNext()) { // mientras haya siguiente elemento, seguiremos en el bucle
+   Integer n = it.next(); // escogemos el siguiente elemento
+   if (n%2 == 0)
+      it.remove(); // si es par, eliminamos el elemento de la lista
 }
 ```
 
-¿Qué elementos contendría la lista después de ejecutar el bucle? Efectivamente, solo números impares.
+¿*Qué elementos contendría la lista después de ejecutar el bucle*? Efectivamente, solo números impares.
 
-> Las listas permiten acceso posicional a través de los métodos `get` y `set`, y acceso secuencial a través de iteradores, ¿cuál es para tí la forma más cómoda de recorrer todos los elementos? ¿Un acceso posicional a través un bucle `for (i=0; i<lista.size(); i++)` o un acceso secuencial usando un bucle `while (iterador.hasNext())`?
+> Las listas permiten acceso posicional a través de los métodos `get` y `set`, y acceso secuencial a través de iteradores, ¿*cuál es para tí la forma más cómoda de recorrer todos los elementos, un acceso posicional a través un bucle `for (i=0; i<lista.size(); i++)` o un acceso secuencial usando un bucle `while (iterador.hasNext())`*?
 
-¿Qué inconvenientes tiene usar los iteradores sin especificar el tipo de objeto? En el siguiente ejemplo, se genera una lista con los números del 0 al 10. De la lista, se eliminan aquellos que son pares y solo se dejan los impares. En el primer ejemplo se especifica el tipo de objeto del iterador, en el segundo ejemplo no; observa el uso de la conversión de tipos en la línea 7.
+¿*Qué inconvenientes tiene usar los iteradores sin especificar el tipo de objeto*? En el siguiente ejemplo, se genera una lista con los números del 0 al 10. De la lista, se eliminan aquellos que son pares y solo se dejan los impares. En el primer ejemplo se especifica el tipo de objeto del iterador, en el segundo ejemplo no; observa el uso de la conversión de tipos en la línea 7.
 
 Ejemplo indicando el tipo de objeto de iterador:
 
@@ -787,7 +802,7 @@ for (Integer elemento : mapa.keySet()){
 
 Lo único que tienes que tener en cuenta es que el conjunto generado por `keySet` no tendrá obviamente el método `add` para añadir elementos al mismo, dado que eso tendrás que hacerlo a través del mapa.
 
-> Si usas iteradores, y piensas eliminar elementos de la colección (e incluso de un mapa), debes usar el método `remove` del iterador y no el de la colección. Si eliminas los elementos utilizando el método `remove` de la colección, mientras estás dentro de un bucle de iteración, o dentro de un bucle `for‐each`, los fallos que pueden producirse en tu programa son impredecibles. ¿Logras adivinar porqué se pueden producir dichos problemas?
+> Si usas iteradores, y piensas eliminar elementos de la colección (e incluso de un mapa), debes usar el método `remove` del iterador y no el de la colección. Si eliminas los elementos utilizando el método `remove` de la colección, mientras estás dentro de un bucle de iteración, o dentro de un bucle `for‐each`, los fallos que pueden producirse en tu programa son impredecibles. ¿*Logras adivinar porqué se pueden producir dichos problemas*?
 >
 > *Los problemas son debidos a que el método `remove` del iterador elimina el elemento de dos sitios: de la colección y del iterador en sí (que mantiene interiormente información del orden de los elementos). Si usas el método `remove` de la colección, la información solo se elimina de un lugar, de la colección.*
 
@@ -799,13 +814,13 @@ En Java hay dos mecanismos para cambiar la forma en la que los elementos se orde
 
 ```java
 class Articulo {
-	public String codArticulo; // Código de artículo
-	public String descripcion; // Descripción del artículo
-	public int cantidad; // Cantidad a proveer del artículo
+	public String codArticulo; // código de artículo
+	public String descripcion; // descripción del artículo
+	public int cantidad; // cantidad a proveer del artículo
 }
 ```
 
-A) La primera forma de ordenar consiste en crear una clase que implemente la interfaz `java.util.Comparator`, y por ende, el método `compare` definido en dicha interfaz. Esto se explicó en el apartado de conjuntos, al explicar el `TreeSet`, así que no vamos a profundizar en ello. No obstante, el comparador para ese caso podría ser así:
+**A)** La primera forma de ordenar consiste en crear una clase que implemente la interfaz `java.util.Comparator`, y por ende, el método `compare` definido en dicha interfaz. Esto se explicó en el apartado de conjuntos, al explicar el `TreeSet`, así que no vamos a profundizar en ello. No obstante, el comparador para ese caso podría ser así:
 
 ```java
 class comparadorArticulos implements Comparator<Articulo>{
@@ -822,7 +837,7 @@ Una vez creada esta clase, ordenar los elementos es muy sencillo; simplemente se
 Collections.sort(articulos, new comparadorArticulos());
 ```
 
-B) La segunda forma es quizás más sencilla cuando se trata de objetos cuya ordenación no existe de forma natural, pero requiere modificar la clase `Articulo`. Consiste en hacer que los objetos que se insertan en la lista o array implementen la interfaz `java.util.Comparable`. Todos los objetos que implementan la interfaz `Comparable` son "*ordenables*" y se puede invocar el método `sort` sin indicar un comparador para ordenarlos. La interfaz `comparable` solo requiere implementar el método `compareTo`:
+**B)** La segunda forma es quizás **más sencilla** cuando se trata de objetos cuya ordenación no existe de forma natural, pero requiere modificar la clase `Articulo`. Consiste en hacer que los objetos que se insertan en la lista o array implementen la interfaz `java.util.Comparable`. Todos los objetos que implementan la interfaz `Comparable` son "*ordenables*" y se puede invocar el método `sort` sin indicar un comparador para ordenarlos. La interfaz `comparable` solo requiere implementar el método `compareTo`:
 
 ```java
 class Articulo implements Comparable<Articulo>{
@@ -839,8 +854,8 @@ class Articulo implements Comparable<Articulo>{
 
 Del ejemplo anterior se pueden denotar dos cosas importantes:
 
-1) Que la interfaz `Comparable` es genérica y que para que funcione sin problemas es conveniente indicar el tipo base sobre el que se permite la comparación (en este caso, el objeto `Articulo` debe compararse consigo mismo), y
-2) Que el método `compareTo` solo admite un parámetro, dado que comparará el objeto con el que se pasa por parámetro.
+1) que la interfaz `Comparable` es genérica y que para que funcione sin problemas es conveniente indicar el tipo base sobre el que se permite la comparación (en este caso, el objeto `Articulo` debe compararse consigo mismo), y
+2) que el método `compareTo` solo admite un parámetro, dado que comparará el objeto con el que se pasa por parámetro.
 
 El funcionamiento del método `compareTo` es el mismo que el método `compare` de la interfaz `Comparator`: si la clase que se pasa por parámetro es igual al objeto, se tendría que retornar 0; si es menor o anterior, se debería retornar un número menor que cero; si es mayor o posterior, se debería retornar un número mayor que 0.
 
@@ -850,17 +865,17 @@ Consulta el código de [Ejemplo11](#Ejemplo11) y [Ejemplo12](#Ejemplo12).
 
 # Extras
 
-¿Qué más ofrece las clases `java.util.Collections` y `java.util.Arrays`? En los ejemplos, la variable `array` es un array y la variable `lista` es una lista de cualquier tipo de elemento:
+| Operación                   | Descripción                                                  | Ejemplos                                                     |
+| --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Desordenar lista**        | Desordena una lista (no está para arrays).                   | `Collections.shuffle (lista);`                               |
+| **Rellenar lista o array**  | Rellena una lista o array copiando el mismo valor en todos los elementos. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);`<br />`Arrays.fill (array,elemento);` |
+| **Búsqueda binaria**        | Realiza búsquedas rápidas en una lista o array ordenados. Necesario que estén ordenados, si no lo están, la búsqueda no tendrá éxito. | `Collections.binarySearch(lista,elemento);`<br />`Arrays.binarySearch(array, elemento);` |
+| **Convertir array a lista** | Convierte un array a una lista de elementos. No se especifica el tipo de lista retornado (ni `ArrayList` ni `LinkedList`), solo que retorna una lista que implementa la interfaz `java.util.List`. | `List lista = Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer> lista = Arrays.asList(array);` |
+| **Convertir lista a array** | Convierte una lista en array (posible en todas las colecciones). No es un método de la clase `Collections`, sino de la interfaz `Collection`. | Para este ejemplo los  elementos de la lista son números, dado que hay que crear un array del tipo almacenado en la lista, y del tamaño de la  lista: <br />`Integer[] array = new Integer[lista.size()];`<br />`lista.toArray(array);` |
+| **Dar la vuelta**           | Invierte el orden a la lista.                                | `Collections.reverse(lista);`                                |
+| **Imprimir array o lista**  |                                                              | `lista.toString()`<br />`Arrays.toString(array)`             |
 
-| Operación                       | Descripción                                                  | Ejemplos                                                     |
-| ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Desordenar una lista**        | Desordena una lista (no está para arrays).                   | `Collections.shuffle (lista);`                               |
-| **Rellenar una lista o array**  | Rellena una lista o array copiando el mismo valor en todos los elementos. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);`<br />`Arrays.fill (array,elemento);` |
-| **Búsqueda binaria**            | Realiza búsquedas rápidas en una lista o array ordenados. Necesario que estén ordenados, si no lo están, la búsqueda no tendrá éxito. | `Collections.binarySearch(lista,elemento);`<br />`Arrays.binarySearch(array, elemento);` |
-| **Convertir un array a lista**  | Convierte un array a una lista de elementos. No se especifica el tipo de lista retornado (ni `ArrayList` ni `LinkedList`), solo que retorna una lista que implementa la interfaz `java.util.List`. | `List lista = Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer> lista = Arrays.asList(array);` |
-| **Convertir una lista a array** | Convierte una lista en array. Esto se puede realizar en todas las colecciones, y no es un método de la clase `Collections`, sino de la interfaz `Collection`. | Para este ejemplo, supondremos que los  elementos de la lista son números, dado que hay que crear un array del tipo  almacenado en la lista, y del tamaño de la  lista: <br />`Integer[] array = new Integer[lista.size()];`<br />`lista.toArray(array);` |
-| **Dar la vuelta**               | Da la vuelta a una lista, poniéndola en orden inverso al que tiene. | `Collections.reverse(lista);`                                |
-| **Imprimir un array o lista**   |                                                              | `lista.toString()`<br />`Arrays.toString(array)`             |
+
 
 Otra operación que ya se ha visto en algún ejemplo anterior es la de dividir una cadena en partes. Cuando una cadena está formada internamente por trozos de texto claramente delimitados por un separador (una coma, un punto y coma o cualquier otro), es posible dividir la cadena y obtener cada uno de los trozos de texto por separado en un array de cadenas.
 
@@ -878,7 +893,7 @@ En el ejemplo anterior la cadena texto contiene una serie de letras separadas po
 
 # Ejemplos UD07
 
-## Ejemplo01
+## ejemplo01
 
 ```java
 package UD07.P2_2_Sets;
@@ -900,7 +915,7 @@ public class Ejemplo01 {
 }
 ```
 
-## Ejemplo02
+## ejemplo02
 
 ```java
 package UD07.P2_2_Sets;
@@ -922,7 +937,7 @@ public class Ejemplo02 {
 }
 ```
 
-## Ejemplo03
+## ejemplo03
 
 ```java
 package UD07.P2_2_Sets;
@@ -972,7 +987,7 @@ public class Ejemplo03 {
 }
 ```
 
-## Ejemplo04
+## ejemplo04
 
 Realiza un pequeño programa que pregunte al usuario 5 números diferentes (almacenándolos en un `HashSet`), y que después calcule la suma de los mismos (usando un bucle `for‐each`).
 
@@ -1013,7 +1028,7 @@ public class EjemploHashSet {
 }
 ```
 
-## Ejemplo05
+## ejemplo05
 
 ```java
 package UD07.P2_Comparator;
@@ -1058,10 +1073,10 @@ class EjemploComparador {
     // Crear TreeSet con Comparador con objeto Estudiante
     TreeSet<Estudiante> setId = new TreeSet<Estudiante>(new IdComparator());
          
-    setId.add(new students(450,"Laura"));
-    setId.add(new students(341,"Esther"));
-    setId.add(new students(134,"Daniel"));
-    setId.add(new students(590,"Jorge"));
+    setId.add(new Estudiante(450,"Laura"));
+    setId.add(new Estudiante(341,"Esther"));
+    setId.add(new Estudiante(134,"Daniel"));
+    setId.add(new Estudiante(590,"Jorge"));
          
     System.out.println("Ordenación por marca:");
     for(Estudiante elemento : setId) {
@@ -1098,7 +1113,7 @@ Jorge	590
 Laura	450
 ```
 
-## Ejemplo06
+## ejemplo06
 
 ```java
 package UD07.P2_3_Listas;
@@ -1116,18 +1131,18 @@ public class Ejemplo06 {
     System.out.println("");
   }
   public static void main(String[] args) {
-    LinkedList<Integer> t = new LinkedList<>(); //Declaración+creación LinkedList
-    t.add(1); //Añade un elemento al final de la lista
-    t.add(3); //Añade otro elemento al final de la lista
-    t.add(1, 2); //Añade en la posición 1 el elemento 2
-    t.add(t.get(1) + t.get(2)); //Suma contendio de posición 1 y 2, y agrega al final
-    t.remove(0); //Elimina el primer elementos de la lista
+    LinkedList<Integer> t = new LinkedList<>(); //declaración+creación LinkedList
+    t.add(1); //añade un elemento al final de la lista
+    t.add(3); //añade otro elemento al final de la lista
+    t.add(1, 2); //añade en la posición 1 el elemento 2
+    t.add(t.get(1) + t.get(2)); //suma contendio de posición 1 y 2, y agrega al final
+    t.remove(0); //elimina el primer elementos de la lista
     imprimirColeccion(t); //2 3 5 
 
-    ArrayList<Integer> al = new ArrayList<>(); //Declaración+creación ArrayList
+    ArrayList<Integer> al = new ArrayList<>(); //declaración+creación ArrayList
     al.add(10);
-    al.add(11); //Añadimos dos elementos a la lista.
-    al.set(al.indexOf(11), 12); //Sustituimos el 11 por el 12, primero lo buscamos y luego lo reemplazamos.
+    al.add(11); //añadimos dos elementos a la lista.
+    al.set(al.indexOf(11), 12); //sustituimos el 11 por el 12, primero lo buscamos y luego lo reemplazamos.
 
     al.addAll(0, t.subList(1, t.size()));
     imprimirColeccion(al); //3 5 10 12 
@@ -1138,7 +1153,7 @@ public class Ejemplo06 {
 }
 ```
 
-## Ejemplo07
+## ejemplo07
 
 Tenemos la clase `Producto` con:
 
@@ -1256,7 +1271,7 @@ public class Ejemplo07 {
 
 ```
 
-## Ejemplo08
+## ejemplo08
 
 ```java
 package UD07.P2_4_Maps;
@@ -1297,7 +1312,7 @@ public class Ejemplo08 {
 }
 ```
 
-## Ejemplo09
+## ejemplo09
 
 Ejemplo que crea, rellena y recorre un `ArrayList` de dos formas diferentes. Cabe destacar que, por defecto, el método `System.out.println()` invoca al método `toString()` de los elementos que se le pasen como argumento, por lo que realmente no es necesario utilizar `toString()` dentro de `println()`.
 
@@ -1354,7 +1369,7 @@ public class Ejemplo09 {
 }
 ```
 
-## Ejemplo10
+## ejemplo10
 
 ```java
 package UD07.P3.Iterators;
@@ -1422,7 +1437,7 @@ public class Ejemplo10 {
 }
 ```
 
-## Ejemplo11
+## ejemplo11
 
 Ejercicio resuelto `Comparator1`. Imagínate que Objeto es una clase como la siguiente:
 
@@ -1510,7 +1525,7 @@ Objeto{a=1, b=2}
 Objeto{a=0, b=1}
 ```
 
-## Ejemplo12
+## ejemplo12
 
 Ejercicio resuelto `Comparator2`. Ahora convertiremos la clase `Objeto` para que directamente implemente la interfaz `Comparable`:
 
