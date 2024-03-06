@@ -4,7 +4,7 @@ title: Ejercicios
 language: ES
 author: Arturo Blasco
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
+keywords: [PRG, 2023, Programacion, Java]
 IES: IES Mestre Ramon Esteve (Catadau) [www.iesmre.com]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
@@ -14,7 +14,7 @@ typora-copy-images-to:${filename}/../assets
 [toc]
 
 
-# Ejercicios Herencia
+# ejercicios Herencia
 
 **Ejercicio01**. Diseñar una jerarquía de clases para modelizar las **aulas de un centro de estudios**.
 
@@ -223,7 +223,7 @@ class Test{
 
 ​	f) Si el método `toString` no se hubiera definido en ninguna de las tres clases ¿daría error el `sout` del método `main`?
 
-# Ejercicios Polimorfismo
+# ejercicios Polimorfismo
 
 **Ejercicio07**. Dada la siguiente **jerarquía de clases**:
 
@@ -433,7 +433,7 @@ El producto tendrá como propiedades la marca, el tipo de vino, los grados de al
 
 
 
-# Actividades
+# actividades
 
 **Ejercicio10**. Realizar una aplicación para la gestión de la información de las personas vinculadas a una `Facultad`, que se pueden clasificar en tres tipos: estudiantes, profesores y personal de servicio.
 A continuación, se detalla qué tipo de información debe gestionar esta aplicación:
@@ -461,7 +461,7 @@ En el método `main` crear un array de `personas`. Crear diferentes instancias d
 
 **Ejercicio13**. Realiza una clase `Huevo` con un atributo `tamaño` (`S`, `M`, `L`, `XL`) con el método `toString`. La clase `Huevo` está compuesta por dos clases internas, una `Clara` y otra `Yema`. Ambas clases tienen un atributo `color` y el método `toString`. Realiza un método `main` en el que se cree un objeto de tipo `Huevo`, `Clara` y `Yema`, se le asigne valor a sus atributos y se muestren los valores.
 
-# Ejercicios Lionel
+# ejercicios Lionel
 
 ## Astros
 
@@ -750,7 +750,7 @@ Crea una clase ProgramaFiguras con un *main* en el que realizar las siguientes p
 
 ​	g) Muestra de nuevo la información de todas las figuras.
 
-# Fuentes de información
+# fuentes de información
 
 - [Wikipedia](https://es.wikipedia.org)
 - [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
