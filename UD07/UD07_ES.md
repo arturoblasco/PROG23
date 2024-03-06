@@ -163,7 +163,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
      Util (A a){
        this.a = a;
      }
-     public <B> void Salida(B b){
+     public <B> void salida(B b){
        System.out.println ( a.toString() + b.toString() );
      }
    }
@@ -205,7 +205,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
    ```java
    public class Util {
-       public static <T extends Number> Double Sumar (T t1, T t2){
+       public static <T extends Number> Double sumar (T t1, T t2){
            return t1.doubleValue() + t2.doubleValue();
        }
    }
@@ -412,6 +412,10 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
 
 
 
+
+
+
+
 - Conjunto `LinkedHashSet` ([Ejemplo02](#Ejemplo02)):
 
    ```java
@@ -442,12 +446,12 @@ Partimos del siguiente ejemplo, en el que hay dos colecciones de diferente tipo,
 <img src="./assets/conjunto.png" alt="conjunto" style="zoom: 20%;" />
 
 ```java
-TreeSet<Integer> A = new TreeSet<Integer>();
-A.add(4); A.add(5); A.add(3); A.add(1); A.add(2); 
+TreeSet<Integer> setA = new TreeSet<Integer>();
+setA.add(4); setA.add(5); setA.add(3); setA.add(1); setA.add(2); 
 // Elementos del conjunto A: 1, 2, 3, 4 y 5
 
-LinkedHashSet<Integer> B = new LinkedHashSet<Integer>();
-B.add(8); B.add(7); B.add(9); B.add(4); B.add(6); B.add(5); 
+LinkedHashSet<Integer> setB = new LinkedHashSet<Integer>();
+setB.add(8); setB.add(7); setB.add(9); setB.add(4); setB.add(6); setB.add(5); 
 // Elementos del conjunto B: 8, 7, 9, 4, 6 y 5
 ```
 
@@ -456,7 +460,7 @@ El literal de número se convierte automáticamente a la clase envoltorio `Integ
 - **Unión**. Añadir todos los elementos del conjunto B en el conjunto A.
 
    ```java
-    A.addAll(B)
+    setA.addAll(setB)
    ```
 
    <img src="./assets/union.png" style="zoom:20%;" />
@@ -466,7 +470,7 @@ El literal de número se convierte automáticamente a la clase envoltorio `Integ
 - **Diferencia**. Eliminar los elementos del conjunto B que puedan estar en el conjunto A.
 
    ```java
-    A.removeAll(B)
+    setA.removeAll(setB)
    ```
 
    <img src="./assets/diferencia.png" alt="diferencia" style="zoom:22%;" />
@@ -476,7 +480,7 @@ El literal de número se convierte automáticamente a la clase envoltorio `Integ
 - **Intersección**. Retiene los elementos comunes a ambos conjuntos.
 
    ```java
-    A.retainAll(B)
+    setA.retainAll(setB)
    ```
 
    <img src="./assets/interseccion.png" alt="interserccion" style="zoom:22%;" />

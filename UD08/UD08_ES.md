@@ -4,15 +4,20 @@ title: Composición, Herencia y Polimorfismo
 language: ES
 author: Arturo Blasco
 subject: Programación
-keywords: [PRG, 2022, Programacion, Java]
+keywords: [PRG, 2023, Programacion, Java]
 IES: IES Mestre Ramon Esteve (Catadau) [www.iesmre.com]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
-[toc]
-# Relaciones entre clases
+
+
+
+
+[TOC]
+
+# relaciones entre clases
 
 Cuando estudiaste el concepto de clase, ésta fue descrita como una especie de mecanismo de definición (plantillas), en el que se basaría el entorno de ejecución a la hora de construir un objeto: un mecanismo de definición de objetos.
 
@@ -39,7 +44,7 @@ Podría decirse que tanto la composición como la anidación son casos particula
 
 A lo largo de la unidad, irás viendo distintas posibilidades de implementación de clases haciendo uso de todas estas relaciones, centrándonos especialmente en el caso de la herencia, que es la que permite establecer las relaciones más complejas.
 
-## Composición
+## composición
 
 Cuando en un sistema de información, una determinada **entidad `A` contiene a otra `B`** como una de sus partes, se suele decir que se está produciendo una relación de composición. Es decir, el objeto de la clase `A` contiene a uno o varios objetos de la clase `B`.
 
@@ -66,7 +71,7 @@ Recuperando algunos de los ejemplos de clases que has utilizado en otras unidade
 >
 > No. Aunque claramente existe algún tipo de relación entre ambas, no parece que sea la de composición. No parece que se cumpla la expresión "tiene un": "Un loro tiene un ave". Se cumpliría más bien una expresión del tipo "es un": "Un loro es un ave". Algunos objetos que cumplirían la relación de composición podrían ser `Pico` o `Alas`, pues "un loro tiene un pico y dos alas", del mismo modo que "un ave tiene pico y dos alas". Este tipo de relación parece más de herencia (un loro es un tipo de ave).
 
-## Herencia
+## herencia
 
 El mecanismo que permite crear clases basándose en otras que ya existen es conocido como herencia. Como ya has visto en unidades anteriores, Java implementa la herencia mediante la utilización de la palabra reservada `extends`.
 
@@ -94,7 +99,7 @@ Todas las clases tienen una clase madre, que a su vez también posee una supercl
 
 > Cuando escribas una clase en Java, puedes hacer que herede de una determinada clase madre (mediante el uso de `extends`) o bien no indicar ninguna herencia. En tal caso, aunque no indiques explícitamente ningún tipo de herencia, el compilador asumirá entonces de manera implícita que tu clase hereda de la clase `Object`, que define e implementa el comportamiento común a todas las clases.
 
-## ¿Herencia o composición?
+## ¿herencia o composición?
 
 Cuando escribas tus propias clases, debes intentar tener claro en qué casos utilizar la composición y cuándo la herencia:
 
@@ -111,9 +116,9 @@ Parece que en este caso habría resultado mejor establecer una relación de *com
 
 Parece que en este caso la composición refleja con mayor fidelidad la relación que existe entre ambas clases. Normalmente suele ser suficiente con plantearse las preguntas "¿B es un tipo de A?" o "¿B contiene elementos de tipo A?".
 
-# Composición
+# composición
 
-## Sintaxis de la composición
+## sintaxis de la composición
 
 Para indicar que una clase contiene objetos de otra clase no es necesaria ninguna sintaxis especial. Cada uno de esos objetos no es más que un atributo y, por tanto, debe ser declarado como tal:
 
@@ -140,9 +145,9 @@ Ahora los métodos de esta clase deberán tener en cuenta que ya no hay cuatro a
 
 Revisa con cuidado el [Ejemplo 2.1](#ejemplo-2.1).
 
-##  Uso de la composición
+##  uso de la composición
 
-### Preservación de la ocultación
+### preservación de la ocultación
 
 Como ya has observado, la relación de composición no tiene más misterio a la hora de implementarse que simplemente declarar atributos de las clases que necesites dentro de la clase que estés diseñando.
 
@@ -167,13 +172,7 @@ Para entender estas situaciones un poco mejor, podemos volver a la clase `Rectan
 
 Revisa con cuidado el [Ejemplo 2.2.1](#ejemplo-2.2.1).
 
-
-
-
-
-
-
-### Llamadas a constructores
+### llamadas a constructores
 
 Otro factor que debes considerar, a la hora de escribir clases que contengan como atributos objetos de otras clases, es su comportamiento a la hora de instanciarse. Durante el proceso de creación de un objeto (constructor) de la clase contenedora habrá que tener en cuenta también la creación (llamadas a constructores) de aquellos objetos que son contenidos.
 
@@ -193,13 +192,7 @@ Para entender mejor estos posibles efectos podemos continuar con el ejemplo de l
 
 Revisa con cuidado el [Ejemplo 2.2.2](#ejemplo-2.2.2).
 
-
-
-
-
-
-
-## Clases anidadas o internas
+## clases anidadas o internas
 
 En algunos lenguajes, es posible definir una clase dentro de otra clase (clases internas):
 
@@ -246,7 +239,7 @@ Las clases internas se utilizan en algunos casos para:
 
 En Java es posible definir clases internas y anidadas, permitiendo todas esas posibilidades. Aunque para los ejemplos con los que vas a trabajar no las vas a necesitar por ahora.
 
-# Herencia
+# herencia
 
 Como ya has estudiado, la herencia es el mecanismo que permite definir una nueva clase a partir de otra, pudiendo añadir nuevas características, sin tener que volver a escribir todo el código de la clase base.
 
@@ -260,7 +253,7 @@ Todos los miembros de la superclase, tanto atributos como métodos, son heredado
 
 > Una clase derivada **extiende** la funcionalidad de la clase base sin tener que volver a escribir el código de la clase base.
 
-## Sintaxis de la herencia
+## sintaxis de la herencia
 
 En Java la herencia se indica mediante la palabra reservada `extends`:
 
@@ -301,7 +294,7 @@ A partir de ahora, un objeto de la clase `Alumno` contendrá los atributos `grup
 
 Revisa con cuidado el [Ejemplo 3.1](#ejemplo-3.1).
 
-## Acceso a miembros heredados
+## acceso a miembros heredados
 
 Como ya has visto anteriormente, no es posible acceder a miembros privados de una superclase. Para poder acceder a ellos podrías pensar en hacerlos públicos, pero entonces estarías dando la opción de acceder a ellos a cualquier objeto externo y es probable que tampoco sea eso lo deseable. Para ello se inventó el modificador protected (protegido) que permite el acceso desde clases heredadas, pero no desde fuera de las clases (estrictamente hablando, desde fuera del paquete), que serían como miembros privados.
 
@@ -342,9 +335,9 @@ public class Persona {
 
 Revisa con cuidado el [Ejemplo 3.2](#ejemplo-3.2).
 
-## Utilización de miembros heredados
+## utilización de miembros heredados
 
-### Atributos
+### atributos
 
 Los atributos heredados por una clase son, a efectos prácticos, iguales que aquellos que sean definidos específicamente en la nueva clase derivada.
 
@@ -352,7 +345,7 @@ En el ejemplo anterior la clase `Persona` disponía de tres atributos y la clase
 
 Revisa con cuidado el [Ejemplo 3.3.1](#ejemplo-3.3.1).
 
-### Métodos
+### métodos
 
 Del mismo modo que se heredan los atributos, también se heredan los métodos, convirtiéndose a partir de ese momento en otros métodos más de la clase derivada, junto a los que hayan sido definidos específicamente.
 
@@ -365,7 +358,7 @@ Sin embargo, sólo tendrías que definir esos cuatro últimos (los específicos)
 
 Revisa con cuidado el [Ejemplo 3.3.2](#ejemplo-3.3.2).
 
-## Redefinición de métodos heredados
+## redefinición de métodos heredados
 
 Una clase puede redefinir algunos de los métodos que ha heredado de su clase base. El nuevo método (especializado) sustituye al heredado. Esto se conoce como sobrescritura de métodos.
 
@@ -392,9 +385,7 @@ public String getApellidos (){
 
 Revisa con cuidado el [Ejemplo 3.4](#ejemplo-3.4).
 
-
-
-## Ampliación de métodos heredados
+## ampliación de métodos heredados
 
 Hasta ahora, has visto que para redefinir o sustituir un método de una superclase es suficiente con crear otro método en la subclase que tenga el mismo nombre que el método que se desea sobrescribir. Pero, en otras ocasiones, puede que lo que necesites no sea sustituir completamente el comportamiento del método de la superclase, sino simplemente ampliarlo.
 
@@ -419,7 +410,7 @@ Este tipo de ampliaciones de métodos resultan especialmente útiles por ejemplo
 
 Revisa con cuidado el [Ejemplo 3.5](#ejemplo-3.5).
 
-## Constructores y herencia
+## constructores y herencia
 
 Recuerda que cuando estudiaste los constructores viste que un constructor de una clase puede llamar a otro constructor de la misma clase, previamente definido, a través de la referencia *this*. En estos casos, la utilización de this sólo podía hacerse en la primera línea de código del constructor. 
 
@@ -455,17 +446,13 @@ En realidad se trata de otro recurso más para optimizar la reutilización de c�
 
 Revisa con cuidado el [Ejemplo 3.6](#ejemplo-3.6).
 
-## Creación y utilización de clases derivadas
+## creación y utilización de clases derivadas
 
 Ya has visto cómo crear una clase derivada, cómo acceder a los miembros heredados de las clases superiores, cómo redefinir algunos de ellos e incluso cómo invocar a un constructor de la superclase. Ahora se trata de poner en práctica todo lo que has aprendido para que puedas crear tus propias jerarquías de clases, o basarte en clases que ya existan en Java para heredar de ellas, y las utilices de manera adecuada para que tus aplicaciones sean más fáciles de escribir y mantener.
 
 La idea de la herencia no es complicar los programas, sino todo lo contrario: simplificarlos al máximo. Procurar que haya que escribir la menor cantidad posible de código repetitivo e intentar facilitar en lo posible la realización de cambios (bien para corregir errores bien para incrementar la funcionalidad).
 
-
-
-
-
-## La clase `Object` en Java
+## la clase `Object` en Java
 
 Todas las clases en Java son descendentes (directos o indirectos) de la clase Object. Esta clase define los estados y comportamientos básicos que deben tener todos los objetos. Entre estos comportamientos, se encuentran:
 
@@ -488,7 +475,7 @@ Principales métodos de la clase `Object`:
 
 La clase `Object`representa la superclase que se encuentra en la cúspide de la jerarquía de herencia en Java. Cualquier clase (incluso las que tú implementes) acaban heredando de ella.
 
-## Herencia múltiple
+## herencia múltiple
 
 En determinados casos podrías considerar la posibilidad de que se necesite heredar de más de una clase, para así disponer de los miembros de dos (o más) clases disjuntas (que no derivan una de la otra). La herencia múltiple permite hacer eso: recoger las distintas características (atributos y métodos) de clases diferentes formando una nueva clase derivada de varias clases base.
 
@@ -496,11 +483,11 @@ El problema en estos casos es la posibilidad que existe de que se produzcan ambi
 
 Ahora bien, la posibilidad de herencia múltiple no está disponible en todos los lenguajes orientados a objetos, ¿lo estará en Java? La respuesta es negativa.
 
-<img src="/assets/ud08_001.png" alt="ud08_001" style="zoom:50%;" />
+<img src="/assets/ud08_001.png" alt="ud08_001" style="zoom:45%;" />
 
 > En Java no existe la herencia múltiple de clases.
 
-# Clases Abstractas
+# clases Abstractas
 
 En determinadas ocasiones, es posible que necesites definir una clase que represente un concepto lo suficientemente abstracto como para que nunca vayan a existir instancias de ella (objetos). ¿Tendría eso sentido? ¿Qué utilidad podría tener?
 
@@ -512,7 +499,7 @@ La posibilidad de declarar clases abstractas es una de las características más
 
 Imagina que estás trabajando en un entorno de manipulación de objetos gráficos y necesitas trabajar con líneas, círculos, rectángulos, etc. Estos objetos tendrán en común algunos atributos que representen su estado (ubicación, color del contorno, color de relleno, etc.) y algunos métodos que modelen su comportamiento (dibujar, rellenar con un color, escalar, desplazar, rotar, etc.). Algunos de ellos serán comunes para todos ellos (por ejemplo la ubicación o el desplazamiento) y sin embargo otros (como por ejemplo dibujar) necesitarán una implementación específica dependiendo del tipo de objeto. Pero, en cualquier caso, todos ellos necesitan esos métodos (tanto un círculo como un rectángulo necesitan el método dibujar, aunque se lleven a cabo de manera diferente). En este caso resultaría muy útil disponer de una clase abstracta objeto gráfico donde se definirían las líneas generales (algunos atributos concretos comunes, algunos métodos concretos comunes implementados y algunos métodos genéricos comunes sin implementar) de un objeto gráfico y más adelante, según se vayan definiendo clases especializadas (líneas, círculos, rectángulos), se irán concretando en cada subclase aquellos métodos que se dejaron sin implementar en la clase abstracta.
 
-## Declaración de una clase abstracta
+## declaración de una clase abstracta
 
 Ya has visto que una clase abstracta es una clase que no se puede instanciar, es decir, que no se pueden crear objetos a partir de ella. La idea es permitir que otras clases deriven de ella, proporcionando un modelo genérico y algunos métodos de utilidad general. Las clases abstractas se declaran mediante el modificador `abstract`:
 
@@ -533,7 +520,7 @@ Cuando trabajes con clases abstractas debes tener en cuenta:
 
 Revisa con cuidado el [Ejemplo 4.1](#ejemplo-4.1).
 
-## Métodos abstractos
+## métodos abstractos
 
 Un método abstracto es un método declarado en una clase para el cual esa clase no proporciona la implementación. Si una clase dispone de al menos un método abstracto se dice que es una clase abstracta. Toda clase que herede (sea subclase) de una clase abstracta debe implementar todos los métodos abstractos de su superclase o bien volverlos a declarar como abstractos (y por tanto también sería abstracta). Para declarar un método abstracto en Java se utiliza el modificador `abstract`) es un método cuya implementación no se define, sino que se declara únicamente su interfaz (cabecera) para que su cuerpo sea implementado más adelante en una clase derivada.
 
@@ -555,7 +542,7 @@ Debes tener en cuenta al trabajar con métodos abstractos:
 
 Revisa con cuidado el [Ejemplo 4.2](#ejemplo-4.2).
 
-## Clases y métodos finales
+## clases y métodos finales
 
 En unidades anteriores has visto el modificador **final**, aunque sólo lo has utilizado por ahora para atributos y variables (por ejemplo para declarar atributos constantes, que una vez que toman un valor ya no pueden ser modificados). Pero este modificador también puede ser utilizado con clases y con métodos (con un comportamiento que no es exactamente igual, aunque puede encontrarse cierta analogía: **no se permite heredar o no se permite redefinir**).
 
@@ -584,7 +571,14 @@ Distintos contextos en los que puede aparecer el modificador `final`:
 | Como modificador al declarar una variable referencia. | Una vez que la variable tome un valor referencia (un objeto), no se podrá cambiar. La variable siempre apuntará al mismo objeto, lo cual no quiere decir que ese objeto no pueda ser modificado internamente a través de sus métodos. Pero la variable no podrá apuntar a otro objeto diferente. |
 | Como modificador en un parámetro de un método         | El valor del parámetro (ya sea un tipo primitivo o una referencia) no podrá modificarse dentro del código del método. |
 
+
+
+
+
+
+
 Veamos un ejemplo de cada posibilidad:
+
 1. Modificador de una clase.
 
    ```java
@@ -605,10 +599,6 @@ Veamos un ejemplo de cada posibilidad:
      ...
    }
    ```
-
-   
-
-   
 
 3. Modificador de un método.
 
@@ -637,7 +627,7 @@ Veamos un ejemplo de cada posibilidad:
    }
    ```
 
-# Interfaces
+# interfaces
 
 Has visto cómo la herencia permite definir especializaciones (o extensiones) de una clase base que ya existe sin tener que volver a repetir todo el código de ésta. Este mecanismo da la oportunidad de que la nueva clase especializada (o extendida) disponga de toda la interfaz que tiene su clase base.
 
@@ -653,7 +643,7 @@ Imagina que estás diseñando una aplicación que trabaja con clases que represe
 
 
 
-## Concepto de interfaz
+## concepto de interfaz
 
 Una interfaz en Java consiste esencialmente en una lista de declaraciones de métodos sin implementar, junto con un conjunto de constantes.
 
@@ -677,7 +667,7 @@ Según esta concepción, podrías hacerte la siguiente pregunta: ¿podrá una cl
 
 
 
-### ¿Clase abstracta o interfaz?
+### ¿clase abstracta o interfaz?
 
 Observando el concepto de interfaz que se acaba de proponer, podría caerse en la tentación de pensar que es prácticamente lo mismo que una clase abstracta en la que todos sus métodos sean abstractos.
 
@@ -700,7 +690,7 @@ A partir de ahora podemos hablar de otra posible relación entre clases: la de c
 
 > Si sólo vas a proporcionar una lista de métodos abstractos (interfaz), sin definiciones de métodos ni atributos de objeto, suele ser recomendable definir una interfaz antes que clase abstracta. Es más, cuando vayas a definir una supuesta clase base, puedes comenzar declarándola como interfaz y sólo cuando veas que necesitas definir métodos o variables miembro, puedes entonces convertirla en clase abstracta (no instanciable) o incluso en una clase instanciable.
 
-## Definición de interfaces
+## definición de interfaces
 
 La declaración de una interfaz en Java es similar a la declaración de una clase, aunque con algunas variaciones:
 
@@ -710,7 +700,7 @@ La declaración de una interfaz en Java es similar a la declaración de una clas
 - Todos los atributos son de tipo `final` y `public` (tampoco es necesario especificarlo), es decir, constantes y públicos. Hay que darles un valor inicial.
 - Todos los métodos son abstractos también de manera implícita (tampoco hay que indicarlo). No tienen cuerpo, tan solo la cabecera.
 
-<img src="/assets/ud08_004.png" alt="image-20220417120658591" style="zoom:60%;" />
+<img src="/assets/ud08_004.png" alt="image-20220417120658591" style="zoom:50%;" />
 
 Como puedes observar, una interfaz consiste esencialmente en una lista de atributos finales (constantes) y métodos abstractos (sin implementar). Su sintaxis quedaría entonces:
 
@@ -739,7 +729,7 @@ Serán las clases que implementen esta interfaz (`León`, `Leopardo`, `Cocodrilo
 
 Revisa con cuidado el [Ejemplo 5.2](#ejemplo-5.2).
 
-## Implementación de interfaces
+## implementación de interfaces
 
 Como ya has visto, todas las clases que implementan una determinada interfaz están obligadas a proporcionar una definición (implementación) de los métodos de esa interfaz, adoptando el modelo de comportamiento propuesto por ésta.
 
@@ -800,7 +790,7 @@ Y en su interior habría que implementar aquellos métodos que contengan ambas i
 
 Revisa con cuidado el [Ejemplo 5.3](#ejemplo-5.3).
 
-### Un ejemplo de implementación de interfaces: la interfaz Series
+### un ejemplo de implementación de interfaces: la interfaz Series
 
 En la forma tradicional de una interfaz, los métodos se declaran utilizando solo su tipo de devolución y firma. Son, esencialmente, métodos abstractos. Por lo tanto, cada clase que incluye dicha interfaz debe implementar todos sus métodos.
 
@@ -956,7 +946,7 @@ public class DeTres implements Series{
 }
 ```
 
-## Simulación de la herencia múltiple mediante el uso de interfaces
+## simulación de la herencia múltiple mediante el uso de interfaces
 
 Una interfaz no tiene espacio de almacenamiento asociado (no se van a declarar objetos de un tipo de interfaz), es decir, no tiene implementación.
 
@@ -989,7 +979,7 @@ devuelto).
 
 
 
-##  Herencia de interfaces
+##  herencia de interfaces
 
 Las interfaces, al igual que las clases, también permiten la herencia. Para indicar que una interfaz hereda de otra se indica nuevamente con la palabra reservada `extends`. **Pero en este caso sí se permite la herencia múltiple de interfaces.** Si se hereda de más de una interfaz se indica con la lista de interfaces separadas por comas.
 
@@ -1015,7 +1005,7 @@ public interface InterfazCompleja extends InterfazUno, InterfazDos {
 
 Revisa con cuidado el [Ejemplo 5.5](#ejemplo-5.5) y también el [Ejemplo 5.6](#ejemplo-5.6).
 
-# Polimorfismo
+# polimorfismo
 
 El polimorfismo es otro de los grandes pilares sobre los que se sustenta la Programación Orientada a Objetos (junto con la encapsulación y la herencia). Se trata nuevamente de otra forma más de establecer diferencias entre interfaz e implementación, es decir, entre el qué y el cómo. 
 
@@ -1025,7 +1015,7 @@ Por otro lado la **herencia** te ha proporcionado la posibilidad de tratar a los
 
 El **polimorfismo** te va a permitir mejorar la organización y la legibilidad del código así como la posibilidad de desarrollar aplicaciones que sean más fáciles de ampliar a la hora de incorporar nuevas funcionalidades. Si la implementación y la utilización de las clases es lo suficientemente genérica y extensible será más sencillo poder volver a este código para incluir nuevos requerimientos.
 
-## Concepto de polimorfismo
+## concepto de polimorfismo
 
 El polimorfismo consiste en la capacidad de poder utilizar una referencia a un objeto de una determinada clase como si fuera de otra clase (en concreto una subclase). Es una manera de decir que una clase podría tener varias (poli) formas (morfismo).
 
@@ -1066,7 +1056,7 @@ obj.m()
 
 Imagina que estás trabajando con las clases `Alumno` y `Profesor` y que en determinada zona del código podrías tener objetos, tanto de un tipo como de otro, pero eso sólo se sabrá según vaya discurriendo la ejecución del programa. En algunos casos, es posible que un determinado objeto pudiera ser de la clase `Alumno` y en otros de la clase `Profesor`, pero en cualquier caso serán objetos de la clase `Persona`. Eso significa que la llamada a un método de la clase `Persona` (por ejemplo `devolverContenidoString`) en realidad será en unos casos a un método (con el mismo nombre) de la clase `Alumno` y, en otros, a un método (con el mismo nombre también) de la clase `Profesor`. Esto será posible hacerlo gracias a la ligadura dinámica.
 
-##  Ligadura dinámica
+##  ligadura dinámica
 
 La conexión que tiene lugar durante una llamada a un método suele ser llamada ligadura (conexión o vinculación que tiene lugar durante una llamada a un método para saber qué código debe ser ejecutado. Puede ser estática o dinámica, vinculación o enlace (en inglés *binding*). Si esta vinculación se lleva a cabo durante el proceso de compilación, se le suele llamar ligadura estática (la vinculación que se produce en la llamada a un método con la clase a la que pertenece ese método se realiza en tiempo de compilación. Es decir, que antes de generar el código ejecutable se conoce exactamente el método (a qué clase pertenece) que será llamado. También conocido como vinculación temprana). En los lenguajes tradicionales, no orientados a objetos, ésta es la única forma de poder resolver la ligadura (en tiempo de compilación). Sin embargo, en los lenguajes orientados a objetos existe otra posibilidad: la ligadura dinámica (la vinculación que se produce en la llamada a un método con la clase a la que pertenece ese método se realiza en tiempo de ejecución. Es decir, que al generar el código ejecutable no se conoce exactamente el método (a qué clase pertenece) que será llamado. Sólo se sabrá cuando el programa esté en ejecución. También conocida como vinculación tardía, enlace tardío o late binding.
 
@@ -1081,7 +1071,7 @@ obj.m() // Esta llamada será resuelta en tiempo de ejecución (ligadura dinámi
 
 Revisa con cuidado el [Ejemplo 6.2](#ejemplo-6.2).
 
-## Limitaciones de la ligadura dinámica
+## limitaciones de la ligadura dinámica
 
 Como has podido comprobar, el polimorfismo se basa en la utilización de referencias de un tipo más "amplio" (superclases) que los objetos a los que luego realmente van a apuntar (subclases). Ahora bien, existe una importante restricción en el uso de esta capacidad, pues el tipo de referencia limita cuáles son los métodos que se pueden utilizar y los atributos a los que se pueden acceder.
 
@@ -1099,7 +1089,7 @@ Revisa con cuidado el [Ejemplo 6.3](#ejemplo-6.3).
 
 
 
-## Interfaces y polimorfismo
+## interfaces y polimorfismo
 
 Es posible también llevar a cabo el polimorfismo mediante el uso de interfaces. Un objeto puede tener una referencia cuyo tipo sea una interfaz, pero para que el compilador te lo permita, la clase cuyo constructor se utilice para crear el objeto deberá implementar esa interfaz (bien por si misma o bien porque la implemente alguna superclase). Un objeto cuya referencia sea de tipo interfaz sólo puede utilizar aquellos métodos definidos en la interfaz, es decir, que no podrán utilizarse los atributos y métodos específicos de su clase, tan solo los de la interfaz.
 
@@ -1137,7 +1127,7 @@ contenido = obj.devolverContenidoString(); // Ligadura dinámica con interfaces
 
 
 
-## Conversión de objetos
+## conversión de objetos
 
 Como ya has visto, en principio no se puede acceder a los miembros específicos de una subclase a través de una referencia a una superclase. Si deseas tener acceso a todos los métodos y atributos específicos del objeto subclase tendrás que realizar una conversión explícita (casting) que convierta la referencia más general (superclase) en la del tipo específico del objeto (subclase).
 
@@ -1184,9 +1174,9 @@ System.out.printf ("obj.nombre=%s\n", ((Besugo) obj).nombre);
 System.out.printf ("obj.peso=%f\n", ((Besugo) obj).peso);
 ```
 
-# Ejemplos UD08
+# ejemplos UD08
 
-## Ejemplo 2.1
+## ejemplo 2.1
 
 Intenta rescribir los siguientes los métodos de la clase `Rectangulo` teniendo en cuenta ahora su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 
@@ -1293,7 +1283,7 @@ En la siguiente presentación puedes observar detalladamente el proceso completo
 
 
 
-## Ejemplo 2.2.1
+## ejemplo 2.2.1
 
 Dada la clase `Rectangulo`, escribe sus nuevos métodos `getVertice1` y `getVertice2` para que devuelvan los vértices inferior izquierdo y superior derecho del rectángulo (objetos de tipo `Punto`), teniendo en cuenta su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 
@@ -1399,7 +1389,7 @@ class Rectangulo {
 
 De esta manera, se devuelve un punto totalmente nuevo que podrá ser manipulado sin ningún temor por parte del código cliente de la clase pues es una copia para él.
 
-## Ejemplo 2.2.2
+## ejemplo 2.2.2
 
 Intenta rescribir los constructores de la clase `Rectangulo` teniendo en cuenta ahora su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 1. Un constructor sin parámetros (para sustituir al constructor por defecto) que haga que los valores iniciales de las esquinas del rectángulo sean (0,0) y (1,1).
@@ -1499,7 +1489,7 @@ public static void main(String[] args) {
 }
 ```
 
-## Ejemplo 3.1
+## ejemplo 3.1
 
 Imagina que también necesitas una clase Profesor, que contará con atributos como nombre, apellidos, fecha de nacimiento, salario y especialidad. ¿Cómo crearías esa nueva clase y qué atributos le añadirías?
 
@@ -1513,7 +1503,7 @@ public class Profesor extends Persona {
 }
 ```
 
-## Ejemplo 3.2
+## ejemplo 3.2
 
 Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected para sus atributos del mismo modo que se ha hecho para su superclase `Persona`.
 1. Clase `Alumno`. Se trata simplemente de añadir el modificador de acceso protected a los nuevos atributos que añade la clase.
@@ -1536,7 +1526,7 @@ Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected p
    }
    ```
 
-## Ejemplo 3.3.1
+## ejemplo 3.3.1
 
 Dadas las clases Alumno y Profesor que has utilizado anteriormente, implementa métodos get y set en las clases Alumno y Profesor para trabajar con sus cinco atributos (tres heredados más dos específicos).
 
@@ -1704,7 +1694,7 @@ public class Persona {
 
 ```
 
-## Ejemplo 3.3.2
+## ejemplo 3.3.2
 
 Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriormente, implementa métodos `get` y `set` en la clase `Persona` para trabajar con sus tres atributos y en las clases `Alumno` y `Profesor` para manipular sus cinco atributos (tres heredados más dos específicos), teniendo en cuenta que los métodos que ya hayas definido para `Persona` van a ser heredados en `Alumno` y en `Profesor`.
 
@@ -1813,7 +1803,7 @@ SOLUCIÓN IMPLEMENTADA CORRECTAMENTE (II)
    }
    ```
 
-## Ejemplo 3.4
+## ejemplo 3.4
 
 Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriormente, redefine el método `getNombre` para que devuelva la cadena "Alumno: ", junto con el nombre del alumno, si se trata de un objeto de la clase Alumno o bien "Profesor: ", junto con el nombre del profesor, si se trata de un objeto de la clase Profesor.
 
@@ -1841,7 +1831,7 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    }
    ```
 
-## Ejemplo 3.5
+## ejemplo 3.5
 
 Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar para la clase Persona, que muestre el contenido de los atributos (datos personales) de un objeto de la clase Persona. A continuación, define sendos métodos mostrar especializados para las clases Alumno y Profesor que "amplíen" la funcionalidad del método mostrar original de la clase Persona.
 1. Método mostrar de la clase `Persona`.
@@ -1878,7 +1868,7 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
    }
    ```
 
-## Ejemplo 3.6
+## ejemplo 3.6
 
 Escribe un constructor para la clase `Profesor` que realice una llamada al constructor de su clase base para inicializar sus atributos heredados. Los atributos específicos (no heredados) sí deberán ser inicializados en el propio constructor de la clase `Profesor`.
 
@@ -1902,7 +1892,7 @@ public Alumno(String nombre, String apellidos, LocalDate fechaNacimiento,
 }
 ```
 
-## Ejemplo 4.1
+## ejemplo 4.1
 
 Basándote en la jerarquía de clases de ejemplo (`Persona`, `Alumno`, `Profesor`), que ya has utilizado en otras ocasiones, modifica lo que consideres oportuno para que `Persona` sea, a partir de ahora, una clase abstracta (no instanciable) y las otras dos clases sigan siendo clases derivadas de ella, pero sí instanciables.
 
@@ -1938,7 +1928,7 @@ Existen una gran cantidad de clases abstractas en la API de Java. Aquí tienes u
 
    Que hereda de `AbstractList` y de la que hereda la clase `LinkedList`
 
-## Ejemplo 4.2
+## ejemplo 4.2
 
 Basándote en la jerarquía de clases `Persona`, `Alumno`, `Profesor`, crea un método abstracto llamado `mostrarDatos` para la clase `Persona`. Dependiendo del tipo de persona (`alumno` o `profesor`) el método `mostrarDatos` tendrá que mostrar unos u otros datos personales (habrá que hacer implementaciones específicas en cada clase derivada).
 
@@ -2031,7 +2021,7 @@ En el caso de la clase `Alumno` habrá que hacer una implementación específica
    Salario:          1750,00 €
    ```
 
-## Ejemplo 5.2
+## ejemplo 5.2
 
 Crea una interfaz en Java cuyo nombre sea `Imprimible` y que contenga algunos métodos útiles para mostrar el contenido de una clase:
 
@@ -2058,7 +2048,7 @@ Crea una interfaz en Java cuyo nombre sea `Imprimible` y que contenga algunos m�
    ```
    El cómo se implementarán cada uno de esos métodos dependerá exclusivamente de cada clase que decida implementar esta interfaz.
 
-## Ejemplo 5.3
+## ejemplo 5.3
 
 Haz que las clases `Alumno` y `Profesor` implementen la interfaz `Imprimible` que se ha escrito en el ejercicio anterior.
 
@@ -2184,7 +2174,7 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
     }
     ```
 
-## Ejemplo 5.4
+## ejemplo 5.4
 
 ¿Puede una clase implementar varias interfaces diferentes a la vez?
 
@@ -2197,7 +2187,7 @@ Las clases `Kangaroo` y `Lion` implementan varias clases:
 - `Kangaroo`: `Herbivore`, `TwoLeggedMammal` y `Animal`
 - `Lion`: `Animal`, `FourLeggedMammal`, `Hunter` y `Carnivore`
 
-## Ejemplo 5.5
+## ejemplo 5.5
 
 ¿Puede una interfaz heredar de varias interfaces diferentes a la vez?
 
@@ -2210,7 +2200,7 @@ Las interfaces `Human` y `Omnivore` heredan de varias interfaces:
 - `Human`: de `TwoLeggedMammal`, `Omnivore`, `Mammal` y `Hunter`
 - `Omnivore`: `Herbivore` y `Carnivore`
 
-## Ejemplo 5.6
+## ejemplo 5.6
 
 Supongamos una situación en la que nos interesa dejar constancia de que ciertas clases deben implementar una funcionalidad teórica determinada, diferente en cada clase afectada. Estamos hablando, pues, de la definición de un método teórico que algunas clases deberán implementar.
 
@@ -2303,7 +2293,7 @@ Esta definición nos permite utilizar las constantes declaradas en cualquier cla
 System.out.println (DiasSemana.NOMBRES_DIAS[LUNES]);
 ```
 
-### Ejemplo de diseño de interfaz e implementación en una clase
+### ejemplo de diseño de interfaz e implementación en una clase
 
 Se presentan un par de interfaces que incorporan datos (de tipo primitivo y de referencia en clase) y métodos y una clase que las implementa. En la declaración de la clase se ve que sólo implementa la interfaz `B`, pero como esta interfaz deriva de la interfaz `A` resulta que la clase está implementando las dos interfaces.
 
@@ -2368,7 +2358,7 @@ El ejemplo sirve para ilustrar algunos puntos:
 - Si hubiéramos intentado modificar los datos `VALOR_B` o `ULTIMA_CREACION` no habríamos podido porque es final, pero en cambio sí podemos modificar el contenido del objeto `Date` apuntado por `ULTIMA_CREACION`, que corresponde al momento temporal de la última creación de un objeto ya cada nueva creación se actualiza su contenido.
 - En las dos últimas instrucciones del método `main()` vemos que podemos declarar variables `pa` y `pb` de las interfaces y utilizarlas para hacer referencia a objetos de la clase `EjemploInterfaz()`.
 
-## Ejemplo 6.2
+## ejemplo 6.2
 
 Imagínate una clase que represente a instrumento musical genérico (`Instrumento`) y dos subclases que representen tipos de instrumentos específicos (por ejemplo `Flauta` y `Piano`). Todas las clases tendrán un método `tocarNota`, que será específico para cada subclase.
 
@@ -2472,7 +2462,7 @@ Finalmente, a la hora de invocar el método `tocarNota`, no sabremos a qué vers
 instrumento1.tocarNota("do"); // Ejemplo de ligadura dinámica (tiempo de ejecución)
 ```
 
-## Ejemplo 6.3
+## ejemplo 6.3
 
 Haz un pequeño programa en Java en el que se declare una variable de tipo `Persona`, se pidan algunos datos sobre esa persona (nombre, apellidos y si es alumno o si es profesor), y se muestren nuevamente esos datos en pantalla, teniendo en cuenta que esa variable no puede ser instanciada como un objeto de tipo `Persona` (es una clase abstracta) y que tendrás que instanciarla como `Alumno` o como `Profesor`. Recuerda que para poder recuperar sus datos necesitarás hacer uso de la ligadura dinámica y que tan solo deberías acceder a métodos que sean de la superclase.
 
@@ -2554,7 +2544,7 @@ public class EjemploUso {
 }
 ```
 
-# Píldoras informáticas relacionadas
+# píldoras informáticas relacionadas
 
 - [Curso Java. Herencia I. Vídeo 40](https://youtu.be/wqoyQ3BxK4A)
 - [Curso Java. Herencia II. Vídeo 41](https://youtu.be/rEOFpdI3HY0)
@@ -2572,7 +2562,7 @@ public class EjemploUso {
 - [Curso Java. Interfaces y clases internas. Clases internas II. Vídeo 54](https://youtu.be/dA5pIY4Na_0)
 
 
-# Fuentes de información
+# fuentes de información
 
 - [Wikipedia](https://es.wikipedia.org)
 - [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)

@@ -21,7 +21,7 @@
 
 # Ejercicios
 
-(1) (**package Varios**) Diseñar la clase Varios con los siguientes métodos **estáticos** que se harán apoyándose en alguna clase de las vistas al estudiar las colecciones de Java:
+(**ejercicio 1**: package **Varios**) Diseñar la clase Varios con los siguientes métodos **estáticos** que se harán apoyándose en alguna clase de las vistas al estudiar las colecciones de Java:
 
 - **`int[] quitarDuplicados (int[] v)`**, que dado un array de enteros devuelva otro array con los mismos valores que el original pero sin duplicados.
 - **`int[] union1(int[] v1, int[] v2)`**, que dados dos arrays v1 y v2 devuelva otro array con los elementos que están en v1 o que están en v2, sin que ningún elemento se repita.
@@ -30,94 +30,102 @@
 - **`int[] diferencia1 (int v1[], int v2[])`**, que dados dos arrays v1 y v2 devuelva otro array con los elementos que de v1 que no están en v2. En caso de haber elementos duplicados en v1 estos se mantendrán en el resultado.
 - **`int[] diferencia2 (int v1[], int v2[])`**, que dados dos arrays v1 y v2 devuelva otro array con los elementos de v1 que no están en v2. El array resultante no tendrá elementos duplicados.
 
-(2) (**package Biblioteca**) Se quiere hacer una aplicación en la que los usuarios van a hacer búsquedas de libros para saber si se  encuentran en los fondos de la biblioteca. El funcionamiento básico sería algo así: Al iniciarse la aplicación todo el catálogo de libros se cargaría en memoria y a partir de ese momento los usuarios pueden realizar búsquedas por título, que interesa que sean lo más rápidas posibles. Nunca se insertan nuevos libros durante la ejecución de la aplicación.
+(**ejercicio 2**: package **Biblioteca**) Se quiere hacer una aplicación en la que los usuarios van a hacer búsquedas de libros para saber si se  encuentran en los fondos de la biblioteca. El funcionamiento básico sería algo así: Al iniciarse la aplicación todo el catálogo de libros se cargaría en memoria y a partir de ese momento los usuarios pueden realizar búsquedas por título, que interesa que sean lo más rápidas posibles. Nunca se insertan nuevos libros durante la ejecución de la aplicación.
 
-- Diseña la clase `Libro` con los métodos que consideres oportunos y los siguientes atributos:
+ a) Diseña la clase **`Libro`** con los métodos que consideres oportunos y los siguientes atributos:
 
-  - `Titulo` (String): Es el dato que identifica al libro.
-  - `Autor` (String): Autor del libro.
-  - `Estantería` (String): Estantería de la biblioteca en la que se encuentra el libro.
+- `Titulo` (String): es el dato que identifica al libro.
+- `Autor` (String): autor del libro.
+- `Estantería` (String): estantería de la biblioteca en la que se encuentra el libro.
 
-- Diseña la clase `CatalogoLibros` como una colección de libros. Utiliza el tipo de colección que crees que más se ajusta a los requisitos de la aplicación justificando la elección. Implementa los siguients métodos:
+b) Diseña la clase **`CatalogoLibros`** como una colección de libros. Utiliza el tipo de colección que crees que más se ajusta a los requisitos de la aplicación justificando la elección. Implementa los siguients métodos:
 
-  - `public CatalogoLibros(Libro v[])`: Constructor. Para simplificar, inicializa el catálogo y lo rellena con los libros del array v, en lugar de obtenerlos de un fichero.
+- `public CatalogoLibros(Libro v[])`: constructor. Para simplificar, inicializa el catálogo y lo rellena con los libros del array v, en lugar de obtenerlos de un fichero.
 
-  - `public String buscar(Libro l)`: Dado un libro, lo busca en el Catálogo y devuelve la estantería en la que se encuentra el libro o null si el libro no está en el Catálogo.
-
-
+- `public String buscar(Libro l)`: dado un libro, lo busca en el Catálogo y devuelve la estantería en la que se encuentra el libro o null si el libro no está en el Catálogo.
 
 
 
 
 
-(3) (**package Academia**) Se quiere diseñar una clase Academia. De una Academia se conoce  su nombre, dirección y las Aulas que tiene (Necesitas también generar la clase Aula).  
+
+
+(**ejercicio 3**: package **Academia**) Se quiere diseñar una clase `Academia`. De una Academia se conoce  su *nombre*, *dirección* y las *Aulas* que tiene (necesitas también generar la clase `Aula`).  
 
   Definir la clase Academia utilizando una **Collection** para almacenar las aulas. El tipo de colección a utilizar se decidirá teniendo en cuenta que éstas se quieren mantener ordenadas según el criterio del método compareTo de la clase Aula. Implementar los atributos, el constructor, y los siguientes métodos:
 
   - `void ampliar (Aula a)`, que añade un aula a la academia.
-  - `void quitar (Aula a)`, que elimina un aula de la academia.
-  - `int getNumAulas()`, que devuelva el número de aulas que tiene.  
-  - método `toString()`, que muestre todas las aulas de la academia.
 
-(4) (**paquete ListaEspera**) Deseamos mantener la lista de espera de pacientes de un hospital. Se quiere poder:
+  - `void quitar (Aula a)`, que elimina un aula de la academia.
+
+  - `int getNumAulas()`, que devuelva el número de aulas que tiene.  
+
+  - `toString()`, que muestre todas las aulas de la academia.
+
+    
+
+(**ejercicio 4**: paquete **ListaEspera**) Deseamos mantener la lista de espera de pacientes de un hospital. Se quiere poder:
 
 - Añadir pacientes a la lista.
 - Mantener los pacientes por orden de inserción en la lista de espera.
 - Obtener el paciente más prioritario (al que hay que atender de la lista de espera), es decir, el que más tiempo lleva esperando, el que antes entró en el hospital.
 
-​	a. Diseña la clase `Paciente` con los atributos nombre y gravedad. La gravedad es un valor aleatorio (entre 1: más grave y 5: menos grave) generado al crear el paciente.
+   a) Diseña la clase `Paciente` con los atributos nombre y gravedad. La gravedad es un valor aleatorio (entre 1: más grave y 5: menos grave) generado al crear el paciente.
 
-​	b. Realiza la implementación de la clase `ListaEspera` con la estructura de datos elegida. Añade los métodos para insertar un paciente, obtener de la lista de espera al más prioritario y eliminar de la lista de espera al más prioritario. ¿Qué tipo de estructura de datos utilizaríamos para almacenar los pacientes, un `List`, `Set` o `Map`? Justifica la respuesta (puntos a favor de la que elijes y en contra de las que descartas).
+   b) Realiza la implementación de la clase `ListaEspera` con la estructura de datos elegida. Añade los métodos para insertar un paciente, obtener de la lista de espera al más prioritario y eliminar de la lista de espera al más prioritario. 
 
-​	c. Implementa una `ListaEsperaPorGravedad`, en la que se atienda primero a los pacientes más graves, independientemente de si llegaron antes o después.  
+​	¿*Qué tipo de estructura de datos utilizaríamos para almacenar los pacientes, un `List`, `Set` o `Map`*? Justifica la respuesta mediante un comentario arriba de la implementación de esta clase (puntos a favor de la que elijes y en contra de las que descartas).
 
-(5) (**paquete DiccionarioIngEsp**) 
+ c) Implementa una `ListaEsperaPorGravedad`, en la que se atienda primero a los pacientes más graves, independientemente de si llegaron antes o después.  
 
-- Diseñar la clase `DiccionarioBilingüe` para almacenar pares formados por:
 
-  1. Palabra en castellano.
 
-  1. Colección de traducciones a ingles.
+(**ejercicio 5**: paquete **DiccionarioIngEsp**) 
 
-  La clase dispondrá de los siguientes métodos:
+  a) Diseñar la clase `DiccionarioBilingüe` para almacenar pares formados por:
 
-  - Constructor: crea el diccionario vacio.
+- Palabra en castellano.
+- Colección de traducciones a ingles.
 
-  - `anyadirTraduccion(String cast, String ingl)`: Añade la pareja (cast, ingl) al diccionario de forma que:
-    - Si la palabra cast no estaba en el diccionario la añade, junto con su traducción.
-    - Si la palabra cast estaba ya en el diccionario pero no aparecía como traducción la palabra *ing,* añade *ing* a su colección de traducciones.
-    - Si la palabra cast estaba y la traducción *ing* también, no se realizarán cambios.
-    - El método devuelve true si se han realizado cambios en el diccionario y false en caso contrario.
+  b) La clase dispondrá de los siguientes métodos:
 
-  - `QuitarTraduccion(String cast, String ingl)`: Quita la traducción *ingl* a la palabra *cast.* Si la palabra en castellano se queda sin traducciones, se elimina del dicicionario. Si se han producido cambios se devuelve true y en caso contrario false.
+- constructor: crea el diccionario vacio.
 
-  - `traduccionesDe(String cast)`: Devuelve una colección con las traducciones de la palabra indicada o null si la palabra no está en el diccionario.
+- `anyadirTraduccion(String cast, String ingl)`: añade la pareja (cast, ingl) al diccionario de forma que:
+  - Si la palabra cast no estaba en el diccionario la añade, junto con su traducción.
+  - Si la palabra cast estaba ya en el diccionario pero no aparecía como traducción la palabra *ing,* añade *ing* a su colección de traducciones.
+  - Si la palabra cast estaba y la traducción *ing* también, no se realizarán cambios.
+  - El método devuelve true si se han realizado cambios en el diccionario y false en caso contrario.
 
-  - `toString()`: Devuelve un String con las palabras del diccionario y sus traducciones.  
+- `quitarTraduccion(String cast, String ingl)`: quita la traducción *ingl* a la palabra *cast.* Si la palabra en castellano se queda sin traducciones, se elimina del dicicionario. Si se han producido cambios se devuelve true y en caso contrario false.
 
-- (clase  `RepeticionPalabras`) Escribe un programa que abra el fichero de texto que indique el usuario y muestre cuántas veces se repite cada palabra que contiene. Ayudarse de un Map. ¿Se podría resolver con un Set? ¿Y con un List?
-- (clase `TraductorSimple`) Escribir un programa que solicite al usuario una frase y la muestre traducida a inglés, palabra a palabra. Para ello, se dispone de un fichero palabras.txt que contiene parejas (palabra en español, palabra en inglés) separadas por un tabulador. Cada pareja se encuentra en una línea del fichero. El proceso será el siguiente:
+- `traduccionesDe(String cast)`: devuelve una colección con las traducciones de la palabra indicada o null si la palabra no está en el diccionario.
+
+- `toString()`: devuelve un String con las palabras del diccionario y sus traducciones.  
+
+- clase  `RepeticionPalabras` : escribe un programa que abra el fichero de texto que indique el usuario y muestre cuántas veces se repite cada palabra que contiene. Ayudarse de un Map. ¿Se podría resolver con un Set? ¿Y con un List?
+- clase `TraductorSimple` : escribir un programa que solicite al usuario una frase y la muestre traducida a inglés, palabra a palabra. Para ello, se dispone de un fichero palabras.txt que contiene parejas (palabra en español, palabra en inglés) separadas por un tabulador. Cada pareja se encuentra en una línea del fichero. El proceso será el siguiente:
   - Leer el fichero y cargar sus datos en una estructura de datos adecuada. Tener en cuenta que nos interesará buscar una palabra en castellano y obtener su correspondencia en inglés.
   - Solicitar al usuario una frase. Traducir, usando la estructura de datos anterior, cada palabra de la frase y formar con ellas la frase traducida.
   - Mostrar la frase traducida al usuario.
 
-(6) (**paquete  `ListaAdmitidos`**) Una serie de personas han solicitado realizar un curso de inglés. De las que han sido admitidas se quiere almacenar su nif, su nombre y su nivel en un `HashSet`. En el `HashSet` se almacenarán objetos de la clase Inscripción
+  
+
+(**ejercicio 6**: paquete  **`ListaAdmitidos`**) Una serie de personas han solicitado realizar un curso de inglés. De las que han sido admitidas se quiere almacenar su *nif*, su *nombre* y su *nivel* en un `HashSet`. En el `HashSet` se almacenarán objetos de la clase `Inscripción`.
 
 - Implementa la clase `Incripción` para representar el nif, nombre y nivel de un solicitante. Además de los atributos implementa aquellos métodos que consideres necesarios.
 
-- Escribe un programa (clase `ComprobarAdmision`) que  
+- Escribe un programa (clase `ComprobarAdmision`) que:  
 
   - Defina un `HashSet` de Inscripciones, llamado `admitidas`.
 
   - Añada varias inscripciones (invéntate los datos).
 
   - Permita al usuario introducir un dni para comprobar si la persona indicada ha sido admitida. Indicarle si aparece o no en la lista y, en caso afirmativo, mostrar el nombre y el nivel en que ha sido admitido.
+  
+  
 
-(7) (**clase `PalabrasOrdenadas`**) Escribe un programa que, dado un fichero de texto cuya ubicación indica el usuario, muestre sus palabras ordenadas ascendentemente y, después, descendentemente. Cada palabra se mostrará una sola vez, aunque en el texto aparezca varias. 
-
-
-
-
+(**ejercicio 7**: clase **`PalabrasOrdenadas`**) Escribe un programa que, dado un fichero de texto cuya ubicación indica el usuario, muestre sus palabras ordenadas ascendentemente y, después, descendentemente. Cada palabra se mostrará una sola vez, aunque en el texto aparezca varias. 
 
 
 
@@ -125,7 +133,7 @@
 
 
 
-(8) (**paquete `EquipoDeFutbol`**) Crear una clase **Futbolista** con los siguientes atributos y métodos:
+(**ejercicio 8**: paquete **`EquipoDeFutbol`**) Crear una clase **Futbolista** con los siguientes atributos y métodos:
 
 - Atributos:
 
@@ -143,16 +151,16 @@
 
 - Métodos:
 
-   - Getters y setters
-   - `toString()`: imprimirá la información asociada al Futbolista
+   - getters y setters.
+   - `toString()`: imprimirá la información asociada al Futbolista.
 
-Además Futbolista implementará la interfaz **Deportista**. Esta interfaz poseerá los siguientes métodos:
+b) Además Futbolista implementará la interfaz **Deportista**. Esta interfaz poseerá los siguientes métodos:
 
 - `getAnyosProfesional` : retorna el número de años que un deportista ha estado compitiendo en nivel profesional.
 - `getListadoEquipos` : devuelve un listado con el nombre de todos los equipos en los que ha estado el deportista.
 - `getTotalTrofeos` : obtiene el total de trofeos conseguidos por el deportista.
 
-También se debe crear una clase **Equipo** que tenga como atributos:
+c) También se debe crear una clase **Equipo** que tenga como atributos:
 
 - `Nombre`: nombre del equipo
 - `Listado de Futbolistas`. Listado de futbolistas del equipo
@@ -176,12 +184,14 @@ También se debe crear una clase **Equipo** que tenga como atributos:
    - Primero generaremos el listado ordenado, para ello utilizaréis el método sort asociado al ArrayList, y deberéis sobreescribir el método compare.
    - Luego recorreremos este con un *iterator* y mostraremos la información de cada elemento.
    
-   
-   Respecto a la clase Aplicación `TestEquipo`, simplemente crear un equipo y añadir futbolistas de diferente tipo, generar una solución dónde se pruebe todo lo implementado. Es decir, el hecho de superar el número máximo de futbolistas en cada posición en cada equipo y también que se vea el funcionamiento del método que ordena.
 
-(9) (**paquete `SistemaAnalisisTextos`**) Crear un sistema de análisis de texto que permita procesar y analizar cadenas de texto utilizando conceptos avanzaeos de colecciones en JAVA.
+d) Respecto a la clase Aplicación `TestEquipo`, simplemente crear un equipo y añadir futbolistas de diferente tipo, generar una solución dónde se pruebe todo lo implementado. Es decir, el hecho de superar el número máximo de futbolistas en cada posición en cada equipo y también que se vea el funcionamiento del método que ordena.
 
-​	a. Crea una clase de  nombre `AnalizadoDeTexto` que contenga los siguientes atributos y métodos:
+
+
+(**ejercicio 9**: paquete **`SistemaAnalisisTextos`**) Crear un sistema de análisis de texto que permita procesar y analizar cadenas de texto utilizando conceptos avanzaeos de colecciones en JAVA.
+
+  a) Crea una clase de  nombre `AnalizadoDeTexto` que contenga los siguientes atributos y métodos:
 - atributos:
     - texto (String)
     - palabras (HashMap<String, Integer>)
@@ -192,15 +202,11 @@ También se debe crear una clase **Equipo** que tenga como atributos:
     - `palabrasMenosFrecuentes(int n)`: método que devuelva una lista de las `n` palabras menos frecuentes en ele texto, junto con su frecuencia.
     - `palabrasPorLongitud()`: método que devuelva un mapa (HashMap) en el que las claves sean las longitudes de las palabras y los valores sean listas (ArrayList) de palabras que tengan esa longitud. Ordena las listas de palabras alfabéticamente.
 
-​	b. Realiza pruebas en un main `TestAnalizadorDeTexto`:
+ b) Realiza pruebas en un main `TestAnalizadorDeTexto`:
 - Crea una instancia de un objeto de la clase `AnalizadoDeTexto` con un texto de prueba.
 - Ejecuta el método `contarPalabras()` para procesar el texto.
 - Muestra las palabras más y menos frecuentes utilizando los métodos `palabrasMasFrecuentes(int n)` y `palabrasMenosFrecuentes(int n)`.
 - Muestra las palabras agrupadas por su longitud utilizando el método `palabrasPorLongitud()`.
-
-
-
-
 
 # Actividades
 
