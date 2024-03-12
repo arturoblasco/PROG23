@@ -13,7 +13,8 @@ typora-copy-images-to:${filename}/../assets
 ---
 
 
-[TOC]
+
+[toc]
 
 # Streams (Flujos)
 
