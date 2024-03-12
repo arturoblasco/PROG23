@@ -1,5 +1,6 @@
 ﻿---
-title: UD10: Acceso a Bases de Datos
+unit: UD 9
+title: Acceso a Bases de Datos
 language: ES
 author: Arturo Blasco Cervera
 subject: Programación
@@ -12,7 +13,7 @@ typora-copy-images-to:${filename}/../assets
 ---
 [toc]
 
-# Introducción
+# introducción
 
 Hoy en día, la mayoría de aplicaciones informáticas necesitan almacenar y gestionar gran cantidad de datos.
 
@@ -54,7 +55,7 @@ Este problema es lo que denominábamos **impedancia Objeto‐Relacional** , o se
 
 Veremos este desfase a lo largo de las actividades.
 
-## Conexión a las BD: Conectores
+## conexión a las BD: Conectores
 
 Dejemos de momento de lado el desfase Objeto-Relacional y centrémonos ahora en el acceso a Base de Datos Relacionales desde los lenguajes de programación. Lo razonaremos en general y lo aplicaremos a Java.
 
@@ -88,7 +89,7 @@ JDBC intenta ser tan simple como sea posible, pero proporcionando a los desarrol
 
 > JDBC es la versión de ODBC para Java.
 
-### Instalación controlador MySql
+### instalación controlador MySql
 
 El primer paso es descargar desde https://www.mysql.com/products/connector/ el conector apropiado.
 
@@ -112,7 +113,7 @@ El siguiente paso es configurar Eclipse para que se comunique con **MySql**. En 
 
 El siguiente paso es crear un **New Driver Definition**, desde `Window -> Preferences -> Data Management -> Connectivity -> Driver Definitions` y pulsamos el botón **Add**.
 
-### Agregar la librería a un proyecto Eclipse
+### agregar la librería a un proyecto Eclipse
 
 Una vez creado el proyecto, hemos de añadir el conector como una **librería externa**, configurando el Build Path
 
@@ -122,7 +123,7 @@ Y ya tenemos instalada la librería.
 
 <img src="https://victorponz.github.io/programacion-java/assets/img/BD/1557848175572.png" alt="1557848175572" style="zoom:67%;" />
 
-### Instalar driver en IntelliJ
+### instalar driver en IntelliJ
 
 En el caso de IntelliJ lo instalaremos como una dependencia el archivo `pom.xml` que se encuentra en raíz del proyecto, donde añadimos las siguientes líneas:
 
@@ -139,13 +140,13 @@ En el caso de IntelliJ lo instalaremos como una dependencia el archivo `pom.xml`
 
 Después pulsamos botón derecho sobre el archivo `pom.xml` y elegimos `maven -> Reload project`
 
-### Instalar driver en BlueJ
+### instalar driver en BlueJ
 
 En el caso de **BlueJ**, se añaden las librerías desde *Herramientas -> Preferencias -> Librerías*
 
 <img src="https://victorponz.github.io/programacion-java/assets/img/BD/1520962274001.png" alt="1520962274001" style="zoom:67%;" />
 
-### Carga del controlador JDBC y conexión con la BD
+### carga del controlador JDBC y conexión con la BD
 
 El primer paso para conectarnos a una base de datos mediante JDBC es cargar el controlado apropiado. Estos controladores se distribuyen en un archivo `.jar` que provee el fabricante del SGBD y deben estar accesibles por la aplicación, bien porque están en el `CLASSPATH` de java o porque lo tenemos en el mismo directorio que la aplicación.
 
@@ -223,7 +224,7 @@ public class ConnectToMySqlDriver {
 
 > En este caso, sólo funcionará si el driver se encuentra en el `CLASSPATH` o hemos añadido la librería a nuestro IDE
 
-### Carga del controlador y de la conexión mediante el patrón Singleton
+### carga del controlador y de la conexión mediante el patrón Singleton
 
 Este patrón de diseño está diseñado para restringir la creación de objetos pertenecientes a una clase. Su intención consiste en garantizar que una clase sólo tenga una instancia y proporcionar un punto de acceso global a ella. El patrón `Singleton` se implementa creando en nuestra clase un método que crea una instancia del objeto sólo si todavía no existe alguna. Para asegurar que la clase no puede ser instanciada nuevamente se regula el alcance del constructor haciéndolo privado. Las situaciones más habituales de aplicación de este patrón son aquellas en las que dicha clase ofrece un conjunto de utilidades comunes para todas las capas (como puede ser el sistema de log, conexión a la base de datos, …) o cuando cierto tipo de datos debe estar disponible para todos los demás objetos de la aplicación (en java no hay variables globales) El patrón Singleton provee una única instancia global gracias a que:
 
@@ -312,7 +313,7 @@ La diferencia entre los dos métodos que ejecutan sentencias SQL es:
 - El método `executeQuery` sirve para ejecutar sentencias de las que se espera que devuelven datos, es decir, son consultas **SELECT**.
 - En cambio, el método `executeUpdate` sirve específicamente para sentencias que no devuelven datos. Servirán para modificar la Base de Datos conectada (**INSERT**, **DELETE**, **UPDATE**, incluso **CREATE** TABLE).
 
-## Sentencias que no devuelven datos
+## sentencias que no devuelven datos
 
 Las ejecutamos con el método `executeUpdate`. Serán todas las sentencias SQL **excepto el SELECT**, que es la de consulta. Es decir, nos servirá para las siguientes sentencias:
 
@@ -332,7 +333,7 @@ Miremos este ejemplo, en el que vamos a crear una tabla muy sencilla en la Base 
 
 <img src="https://victorponz.github.io/programacion-java/assets/img/datos/1558006429758.png" alt="1558006429758" style="zoom:67%;" />
 
-## Sentencias que devuelven datos
+## sentencias que devuelven datos
 
 Las ejecutamos con el método `executeQuery`. Servirá para la sentencia **SELECT**, que es la de consulta. Los datos que nos devuelva esta sentencia las tendremos que guardar en un objeto de la clase `java.sql.ResultSet`, es decir conjunto de resultado. Por lo tanto, la ejecución de las consultas tendrá un forma similar a la siguiente:
 
@@ -360,7 +361,7 @@ En este ejemplo accedemos a la tabla usuarios y mostramos todos sus registros
 
 <img src="https://victorponz.github.io/programacion-java/assets/img/datos/1558006455182.png" alt="1558006455182" style="zoom:67%;" />
 
-## Asegurar la liberación de recursos
+## asegurar la liberación de recursos
 
 Las instancias de `Connection` y las de `Statement` guardan, en memoria, mucha información relacionada con las ejecuciones realizadas. Además, mientras continúan activas mantienen en el SGBD una sesión abierta, que supondrá un conjunto importante de recursos abiertos, destinados a servir de forma eficiente las peticiones de los clientes. Es importante cerrar estos objetos para liberar recursos tanto del cliente como del servidor.
 
@@ -376,7 +377,7 @@ Aquí tenéis un ejemplo completo:
 
 <img src="https://victorponz.github.io/programacion-java/assets/img/datos/1558006483816.png" alt="1558006483816" style="zoom:67%;" />
 
-## Ejemplos
+## ejemplos
 
 El siguiente ejemplo permite insertar un usuario en la base de datos:
 
@@ -388,7 +389,7 @@ Y este sería el mismo método pero pasándole los parámetros nombre y apellido
 
 Como se puede observar, hemos de construir la cadena sql concatenado datos, alternando comillas simples con dobles. Vamos, que si hemos de realizar una consulta con muchos campos, resulta bastante complejo crear la cadena sql y, además, puede llevarnos a errores.
 
-## Sentencias predefinidas
+## sentencias predefinidas
 
 Para solucionar el problema de crear sentencias sql complejas, se utiliza `PreparedStatement`.
 
@@ -415,7 +416,7 @@ Este es el mismo método para insertar un usuario pero usando `PreparedStatement
 
 Fijaos que ahora, además, la sentencia sql es mucho más fácil de escribir.
 
-## Trabajar con Sqlite
+## trabajar con Sqlite
 
 Para poder trabajar en casa, vamos a utilizar Sqlite que es un una base de datos sencilla que se guarda en un único archivo en disco.
 
@@ -518,7 +519,7 @@ Conexión realizada
 1	Janet	Espinosa
 ```
 
-### Ejemplos
+### ejemplos
 
 Vamos a crear una pequeña base de datos para Empleados en Sqlite:
 
@@ -547,13 +548,13 @@ String host = "jdbc:sqlite:./bd/empleados.bd";
 con = java.sql.DriverManager.getConnection( host);
 ```
 
-#### Crear tabla
+#### crear tabla
 
 Creamos una clase `CreateTable` para poder crear la tabla:
 
 <img src="https://victorponz.github.io/programacion-java/assets/img/datos/1558290594573.png" alt="1558290594573" style="zoom:67%;" />
 
-#### Insertar datos
+#### insertar datos
 
 Y creamos otra para insertar datos. Esta vez lo haremos con `PreparedStatement`:
 
@@ -563,13 +564,13 @@ Esta es la versión con `Statement`:
 
 <img src="https://victorponz.github.io/programacion-java/assets/img/datos/1558290468365.png" alt="1558290468365" style="zoom:67%;" />
 
-#### Consultar datos
+#### consultar datos
 
 Creamos una clase `getAllEmpleados` que nos devuelva todos los empleados:
 
 <img src="https://victorponz.github.io/programacion-java/assets/img/datos/1558290433130.png" alt="1558290433130" style="zoom:67%;" />
 
-#### Modificar datos
+#### modificar datos
 
 Ahora modificamos los datos. Simplemente aumentamos el sueldo un 5% y modificamos el departamento del empleado 3, poniéndole el departamento 3.
 

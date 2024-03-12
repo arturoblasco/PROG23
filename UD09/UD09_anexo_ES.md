@@ -1,21 +1,22 @@
 ---
-title: Anexo UD10: BBDD en la nube (AWS)
+unit: UD 9
+title: BBDD en la nube (AWS)
 language: ES
-author: David Martínez Peña [www.martinezpenya.es]
+author: Arturo BC
 subject: Programación
 keywords: [PRG, 2023, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet) [www.ieseduardoprimo.es]
+IES: IES Merstre Ramon Esteve (Catadau) [www.iesmre.com]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url: ${filename}/../
 typora-copy-images-to: ${filename}/../assets
 ---
 
-# Introducción
+# introducción
 
 La intención de este documento es la de dar una perspectiva más realista del uso del acceso a datos, ya que en lugar de usar la misma máquina del alumno como servidor de BBDD, vamos a desplegar el servidor MariaDB en una máquina alojada en la nube de Amazon (AWS).
 
-# Requisitos
+# requisitos
 
 Para realizar esta práctica guiada necesitamos:
 
@@ -23,11 +24,11 @@ Para realizar esta práctica guiada necesitamos:
 - Conocimientos sobre las BBDD, IP's y puertos.
 - Un dispositivo local con capacidad de ejecutar un cliente de BBDD, con acceso a los puertos e Ip's de AWS (Ojo con la red de conselleria)
 
-# Guía paso a paso
+# guía paso a paso
 
-## Preparar el entorno de la nube
+## preparar el entorno de la nube
 
-### Iniciar Laboratorio
+### iniciar Laboratorio
 
 Lo primero que necesitamos es arrancar el laboratorio, para ello Accedemos al LMS del awsacademy, buscamos el Curso facilitado por el docente, accedemos a sus contenidos y a continuación al Learner Lab. (Si es la primera vez que accedemos debemos aceptar los términos de uso).
 
@@ -45,7 +46,7 @@ Una vez aparece en verde podemos hacer click sobre las letras AWS y aparecerá e
 
 ![Dashboard AWS](/assets/LAB03.png)
 
-### Crear una BD en AWS
+### crear una BD en AWS
 
 Debemos buscar el apartado Amazon RDS:
 
@@ -113,7 +114,7 @@ Una vez aparezca el estado en `Disponible`, podremos pasar al siguiente paso:
 
 ![Screenshot_20230404_120627](/assets/RDS11.png)
 
-### Abrir puertos para el acceso público
+### abrir puertos para el acceso público
 
 Ahora abriremos el puerto necesario para la que la BD sea accesible desde el exterior, para ello haremos clic sobre el nombre de la base de datos:
 
@@ -135,7 +136,7 @@ Y por último agrega la ip 0.0.0.0 para que sea acesible desde cualquier lugar:
 
 ![ip 0.0.0.0](/assets/RDS16.png)
 
-### Dirección pública de la BBDD
+### dirección pública de la BBDD
 
 Ahora necesitamos la URL de acceso a la BD desde el exterior, primero volvemos al apartado RDS:
 
@@ -151,15 +152,15 @@ Y en la siguiente ventana encontraremos los datos que necesitamos, por un lado e
 
 Con toda esta información podemos realizar conexiones desde el exterior.
 
-## Cliente de terceros y carga de datos
+## cliente de terceros y carga de datos
 
-### Instalar MySQL WorkBench
+### instalar MySQL WorkBench
 
 Dependiendo de nuestro sistema operativo deberemos usar un procedimiento u otro, lo mejor es consultar la página web y seguir sus instrucciones:
 
 https://www.mysql.com/products/workbench/
 
-### Conexión de prueba
+### conexión de prueba
 
 Una vez instalado nuestro cliente configuraremos una nueva conexión con los datos que hemos guardado en pasos anteriores, indicaremos el `Connection Name` (nombre de la conexión), `Hostname` (URL de la base de datos), y `username` (usuario de la base de datos). Al pulsar el botón `Test Connection`, nos permite probar la conexión y nos pedirá el `password`, y si pulsamos `OK` se guardará.
 
@@ -173,7 +174,7 @@ Y deberíamos ver nuestro entorno de modo similar a este:
 
 ![Entorno](/assets/WB03.png)
 
-### Importar datos de muestra
+### importar datos de muestra
 
 Para no trabajar con una base de datos vacía partiremos de una base de datos con información que podemos encontrar en el siguiente enlace: https://github.com/miguelmarti/FreakDataBases
 
@@ -189,9 +190,9 @@ Una vez hecho todo esto debería tener al menos 7 tablas:
 
 Cuando comprobemos que tenemos la 7 tablas, podemos seguir.
 
-## Preparar el cliente local
+## preparar el cliente local
 
-### Descargar MySQL connector
+### descargar MySQL connector
 
 Para el tipo de Base de Datos que vamos a usar (MariaDB/MySQL) necesitaremos el conector de MySQL para Java, desde la web https://dev.mysql.com/downloads/connector/j/ podemos descargar la versión **Platform Independent** (con extensión `.zip`)
 
@@ -216,7 +217,7 @@ Ahora solo nos falta añadir la librería recién creada a nuestro proyecto:
    ![Añadir libreria al proyecto](/assets/MYSQL03.png)
 
 
-### Código del cliente
+### código del cliente
 
 En nuestro IDE preferido creamos un nuevo archivo `ClienteBD.java` con el siguiente código:
 
@@ -270,9 +271,9 @@ public class AWSTest {
 
 > Recuerda cambiar la constante `AWSDNS`, `DBNAME`, `PUERTO`, `USERNAME` y `PASSWORD` por el `String` o `int` que corresponda con tu configuración.
 
-## Ejecución de prueba
+## ejecución de prueba
 
-### Desde el punto de vista del cliente
+### desde el punto de vista del cliente
 
 Una vez ejecutado el cliente debe aparecer algo similar a esto:
 
@@ -312,7 +313,7 @@ Elige un número de película y te mostraré los personajes que aparecen en ella
 90  Ponda Baba  0  0.0  null  null
 ```
 
-# Fuentes de información
+# fuentes de información
 
 - https://awsacademyinstructure.com
 - https://dev.mysql.com

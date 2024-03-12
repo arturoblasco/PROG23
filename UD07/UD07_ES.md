@@ -1441,6 +1441,12 @@ public class Ejemplo10 {
 }
 ```
 
+
+
+
+
+
+
 ## ejemplo11
 
 Ejercicio resuelto `Comparator1`. Imagínate que Objeto es una clase como la siguiente:
@@ -1483,13 +1489,7 @@ class ComparadorDeObjetos implements Comparator<Objeto> {
   public int compare(Objeto o1, Objeto o2) {
      int sumao1 = o1.a + o1.b;
      int sumao2 = o2.a + o2.b;
-     if (sumao1 < sumao2) {
-         return -1;
-     } else if (sumao1 > sumao2) {
-         return 1;
-     } else {
-         return 0;
-     }
+     return suma02 - suma01; // invertir la resta para descendientes
   }
 }
 ```
@@ -1555,17 +1555,15 @@ public class Objeto implements Comparable<Objeto> {
   public int compareTo(Objeto t) {
      int sumao1 = this.a + this.b;
      int sumao2 = t.a + t.b;
-     if (sumao1 < sumao2) {
-        return -1;
-     } else if (sumao1 > sumao2) {
-        return 1;
-     } else {
-        return 0;
-     }
+     return suma02 - suma01; // invertir la resta para descendientes
   }
 
 }
 ```
+
+
+
+
 
 Y lo usamos directamente en la clase `Principal`:
 
