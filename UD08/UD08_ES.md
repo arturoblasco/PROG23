@@ -6,8 +6,8 @@ author: Arturo Blasco
 subject: Programación
 keywords: [PRG, 2023, Programacion, Java]
 IES: IES Mestre Ramon Esteve (Catadau) [www.iesmre.com]
-header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+header: ${unit}: ${title} (${subject})  |  fichero: ${currentFileName}.pdf  |  ver: ${today}
+footer: ${author}  |  ${IES}  |  página ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
 typora-copy-images-to:${filename}/../assets
 ---
