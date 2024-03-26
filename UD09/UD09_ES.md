@@ -97,32 +97,29 @@ Los drivers nos permiten conectarnos con una base de datos determinada. Existen 
 
 ## instalación controlador MySql
 
-El primer paso es descargar desde https://www.mysql.com/products/connector/ el conector apropiado.
+1. El primer paso es descargar desde https://www.mysql.com/products/connector/ el conector apropiado.
 
-<img src="./assets/jdbc_1_download.png" alt="1557845207905" style="zoom: 75%;" />
+<img src="./assets/jdbc_1_download.png" alt="jdbc download" style="zoom: 75%;"/>
 
-Elegir Sistema Operativo y versión:
+2. Elegir Sistema Operativo y versión:
 
-<img src="./assets/jdbc_2_version.png" alt="1557845207905" style="zoom: 60%;" />
+<img src="./assets/jdbc_2_version.png" alt="jdbc version" style="zoom: 60%;" />
 
-Haz clic en **Donwload** y selecciona la opción: **No thanks, just start download**
+3. Haz clic en **Donwload** y selecciona la opción: **No thanks, just start download**
 
-<img src="./assets/jdbc_2_accept.png" alt="1557845207905" style="zoom: 60%;" />
+<img src="./assets/jdbc_2_accept.png" alt="aceptar jdbc" style="zoom: 60%;" />
 
-Ejecuta el fichero *deb* (en el caso de *Ubuntu*) descargado:
+4. Ejecuta el fichero *deb* (en el caso de *Ubuntu*) descargado:
 
-<img src="./assets/jdbc_3_deb.png" alt="1557845207905" style="zoom: 80%;" />
+<img src="./assets/jdbc_3_deb.png" alt="fichero debian" style="zoom: 80%;" />
 
-Ahora copia el archivo `mysql-connector-java-8.3.0.jar` en directorio del proyecto de *VS Code*:
+​	5. Ahora deberemos añadir la librería JDBC a nuestro proyecto. Para ello copia el archivo `mysql-connector-java-8.3.0.jar` (en Ubuntu se encuentra en la ruta  `/usr/share/java`) en a *Referenced Libraries* de *VS Code*:
 
-- el fichero `mysql-connector-java-8.3.0.jar` se encuentra en la ruta: `/usr/share/java`.
-- añadir, en nuestro proyecto Java en VS Code, la librería:
-
-<img src="./assets/jdbc_5_anyadirjdbaVSC.png" alt="1557845207905" style="zoom: 60%;" />
+<img src="./assets/jdbc_5_anyadirjdbaVSC.png" alt="agregar libreria jdbc" style="zoom: 60%;" />
 
 ## carga del controlador JDBC y conexión con la BD
 
-El primer paso para conectarnos a una base de datos mediante JDBC es cargar el controlador apropiado. Estos controladores se distribuyen en un archivo `.jar` que provee el fabricante del SGBD y deben estar accesibles por la aplicación, bien porque están en el `CLASSPATH` de java o porque lo tenemos en el mismo directorio que la aplicación.
+El primer paso para conectarnos a una base de datos mediante JDBC es cargar el controlador apropiado. Estos controladores se distribuyen en un archivo `.jar` que provee el fabricante del SGBD y deben estar accesibles por la aplicación.
 
 Para cargar el controlador se usan las siguientes sentencias:
 
@@ -174,33 +171,33 @@ import java.util.Properties;
 
 public class ConnectToMySqlDriver {
 
-    public static void main(String[] args)  {
-        String url="jdbc:mysql://localhost:3306/prueba";
-        String username = "prueba";
-        String password = "1234";
+  public static void main(String[] args)  {
+    String url="jdbc:mysql://localhost:3306/prueba";
+    String username = "prueba";
+    String password = "1234";
 		
-		try{
-		    Driver driver = DriverManager.getDriver(url);
+    try{
+       Driver driver = DriverManager.getDriver(url);
 
-		    Properties properties = new Properties();
-		    properties.setProperty("user", username);
-		    properties.setProperty("password", password);
+	   Properties properties = new Properties();
+	   properties.setProperty("user", username);
+	   properties.setProperty("password", password);
 
-		    Connection con = driver.connect(url, properties);
-		    System.out.println("Conexión completada a través de Driver");
-		    con.close();
-		} catch (SQLException ex) {
-      		System.out.println("Se ha producido un error al conectar: " + ex.getMessage());
-    	}
-    }
+	   Connection con = driver.connect(url, properties);
+	   System.out.println("Conexión completada a través de Driver");
+	   con.close();
+	 } catch (SQLException ex) {
+       System.out.println("Se ha producido un error al conectar: " + ex.getMessage());
+     }
+  }
 }
 ```
 
-> En este caso, sólo funcionará si el driver se encuentra en el `CLASSPATH` o hemos añadido la librería a nuestro IDE
+
 
 ## carga del controlador y de la conexión mediante el patrón Singleton
 
-Este patrón de diseño está diseñado para restringir la creación de objetos pertenecientes a una clase. Su intención consiste en garantizar que una clase sólo tenga una instancia y proporcionar un punto de acceso global a ella. El patrón `Singleton` se implementa creando en nuestra clase un método que crea una instancia del objeto sólo si todavía no existe alguna. Para asegurar que la clase no puede ser instanciada nuevamente se regula el alcance del constructor haciéndolo privado. Las situaciones más habituales de aplicación de este patrón son aquellas en las que dicha clase ofrece un conjunto de utilidades comunes para todas las capas (como puede ser el sistema de log, conexión a la base de datos, …) o cuando cierto tipo de datos debe estar disponible para todos los demás objetos de la aplicación (en java no hay variables globales) El patrón Singleton provee una única instancia global gracias a que:
+Este patrón de diseño está diseñado para restringir la creación de objetos pertenecientes a una clase. Su intención consiste en garantizar que una clase sólo tenga una instancia y proporcionar un punto de acceso global a ella. El patrón `Singleton` se implementa creando en nuestra clase un método que crea una instancia del objeto sólo si todavía no existe alguna. Para asegurar que la clase no puede ser instanciada nuevamente se regula el alcance del constructor haciéndolo privado. Las situaciones más habituales de aplicación de este patrón son aquellas en las que dicha clase ofrece un conjunto de utilidades comunes para todas las capas (como puede ser el sistema de *log*, conexión a la base de datos, …) o cuando cierto tipo de datos debe estar disponible para todos los demás objetos de la aplicación (en java no hay variables globales) El patrón Singleton provee una única instancia global gracias a que:
 
 - La propia clase es responsable de crear la única instancia.
 - Permite el acceso global a dicha instancia mediante un método de clase.
@@ -223,38 +220,37 @@ Este patrón de diseño está diseñado para restringir la creación de objetos 
  * - Permite el acceso global a dicha instancia mediante un método de clase.
  * - Declara el constructor de clase como privado para que no sea instanciable directamente.
  */
-public class DatabaseConnection
-{
-    private static DatabaseConnection dbInstance; //Variable para almacenar la unica instancia de la clase
-    private static java.sql.Connection con;
+public class DatabaseConnection {
+  private static DatabaseConnection dbInstance; //Variable para almacenar la unica instancia de la clase
+  private static java.sql.Connection con;
 
-    private DatabaseConnection() {
-      // El Constructor es privado!!
+  private DatabaseConnection() {
+    // El Constructor es privado!!
+  }
+
+  public static DatabaseConnection getInstance(){
+    //Si no hay ninguna instancia...
+    if(dbInstance==null){
+      dbInstance= new DatabaseConnection();
+    }
+      return dbInstance;
+  }
+
+  public static java.sql.Connection getConnection(){
+
+    if(con==null){
+      try {
+        String host = "jdbc:mysql://localhost:3306/prueba";
+        String username = "prueba";
+        String password = "1234";
+        con = java.sql.DriverManager.getConnection( host, username, password );
+        System.out.println("Conexión realizada");
+      } catch (java.sql.SQLException ex) {
+        System.out.println("Se ha producido un error al conectar: " + ex.getMessage());
+      }
     }
 
-    public static DatabaseConnection getInstance(){
-        //Si no hay ninguna instancia...
-        if(dbInstance==null){
-            dbInstance= new DatabaseConnection();
-        }
-        return dbInstance;
-    }
-
-    public static java.sql.Connection getConnection(){
-
-        if(con==null){
-            try {
-                String host = "jdbc:mysql://localhost:3306/prueba";
-                String username = "prueba";
-                String password = "1234";
-                con = java.sql.DriverManager.getConnection( host, username, password );
-                System.out.println("Conexión realizada");
-            } catch (java.sql.SQLException ex) {
-                System.out.println("Se ha producido un error al conectar: " + ex.getMessage());
-            }
-        }
-
-        return con;
+      return con;
     }
 }
 ```
@@ -265,8 +261,7 @@ Vamos a crear una nueva clase para probar la conexión.
 
 ```java
 import java.sql.*;
-public class Test
-{
+public class Test {
     static java.sql.Connection con = DatabaseConnection.getInstance().getConnection();
     public Test(){
         //De momento no hace nada
@@ -280,50 +275,9 @@ public class Test
 
 En este apartado se ofrece una introducción a los aspectos fundamentales del acceso a bases de datos mediante código Java. En los siguientes apartados se explicarán algunos aspectos en mayor detalle, sobre todo los relacionados con las clases Statement y ResultSet.
 
-<img src="./assets/jdbc_proceso.png" alt="jdbc proceso" style="zoom:60%;" />
-
-**Paso 1: Establecer conexión con la BBDD**
-
-```java
-//...
-jdbc:mysql://localhost:3306/gestionPedidos    // para MySQL
-/* jdbc  --> driver
-   mysql --> protocolo driver
-   localhost:3306/gestionPedidos --> detalles de la conexión
-*/
-//...
-jdbc:odbc:DSN_gestionPedidos				  // para SQL Server
-//...
-jdbc:oracle:juan@servidor:3306:gestionPedidos // para Oracle
-```
-
-Vamos a necesitar información adicional como son los datos de usuario y contraseña.
-
-Las conexiones pueden lanzar excepciones; por lo tanto, toda la conexión debería estar dentro de un bloque *try-catch* para capturar la posible excepción que pudiera lanzarse.
-
-**Paso 2. Crear un objeto Statement**
-
-Con nuestro objeto *conexión* creado (del primer punto) podemos ahora utilizar el método `createStatement()` y, al aplicar este método al objeto *conexión*, nos va a devolver un objeto de tipo *statement*.
-
-**Paso 3. Ejecutar sentencia SQL**
-
-Con el objeto *statement* creado en el paso anterior, podemos utilizar un método `executeQuery("sentecia_SQL")` que nos permite ejecutar una sentencia SQL. La ejecución de este método nos va a devolver un *resultset*. ¿*Qué es un resultset*? es un objeto en el que se almacena la información que devuelve la ejecución de la sentencia sql; es decir, la información que vamos a consultar en la BD.
-
-> Podríamos decir que este *resultset* es una especie de *tabla virtual* que se almacena en memoria con la información en su interior.
-
-**Paso 4. Leer el resultset**
-
-Este paso consiste en leer el *resultset* generado en el anterior punto. 
-
-Para leer este *resultset* tenemos diferentes métodos, como `getString()` o `next()`. Utilizando estos métodos vamos a poder navegar registro a registro por esta *tabla virtual* o *resultset*. ¿*Cómo vamos a hacerlo*? mediante un bucle (while, until, etc).
-
-## Añadir la librería JDBC al proyecto
-
-Para poder utilizar la librería JDBC en un proyecto Java primero deberemos añadirla al proyecto. Para ello debemos hacer clic derecho sobre la carpeta ‘Libraries’ del proyecto y seleccionar `Add JAR/Folder`. En la ventana emergente deberemos seleccionar el archivo del driver previamente descargado mysql-connector-java-8.0.19.jar y clic en OK.
-
 ## Cargar el Driver
 
-En un proyecto Java que realice conexiones a bases de datos es necesario, antes que nada, utilizar *Class.forname(…).newInstance()* para cargar dinámicamente el Driver que vamos a utilizar. Esto solo es necesario hacerlo una vez en nuestro programa. Puede lanzar excepciones por lo que es necesario utilizar un bloque try-catch.
+En un proyecto Java que realice conexiones a bases de datos es necesario, antes que nada, utilizar `Class.forname(…).newInstance()` para cargar dinámicamente el Driver que vamos a utilizar. Esto solo es necesario hacerlo una vez en nuestro programa. Puede lanzar excepciones por lo que es necesario utilizar un bloque *try-catch*.
 
 ```java
 try {
@@ -333,73 +287,96 @@ try {
 }
 ```
 
-Hay que tener en cuenta que las clases y métodos utilizados para conectarse a una base de datos (explicados más adelante) funcionan con todos los drivers disponibles para Java (JDBC es solo uno, hay muchos más). Esto es posible ya que el estándar de Java solo los define como interfaces (interface) y cada librería driver los implementa (define las clases y su código). Por ello es necesario utilizar Class.forName(…) para indicarle a Java qué driver vamos a utilizar.
+Hay que tener en cuenta que las clases y métodos utilizados para conectarse a una base de datos (explicados más adelante) funcionan con todos los drivers disponibles para Java (JDBC es solo uno, hay muchos más). Esto es posible ya que el estándar de Java solo los define como interfaces (*interface*) y cada librería driver los implementa (define las clases y su código). Por ello es necesario utilizar `Class.forName(…)` para indicarle a Java qué driver vamos a utilizar.
+
+<img src="./assets/jdbc_proceso.png" alt="jdbc proceso" style="zoom:60%;" />
 
 <img src="/assets/lu8009ml6n_tmp_323050a8fd0104b9.png" alt="img" style="zoom:45%;" />
 
 Este nivel de asbtracción facilita el desarrollo de proyectos ya que si necesitáramos utilizar otro sistema de base de datos (que no fuera MySQL) solo necesitaríamos cambiar la línea de código que carga el driver y poco más. Si cada sistema de base de datos necesitara que utilizáramos distintas clases y métodos todo sería mucho más complicado.
 
 
-Las cuatro clases fundamentales que toda aplicación Java necesita para conectarse a una base de datos y ejecutar sentencias son: **DriverManager**, **Connection**, **Statement** y **ResultSet**. 
+Las cuatro clases fundamentales que toda aplicación Java necesita para conectarse a una base de datos y ejecutar sentencias son: **`DriverManager`**, **`Connection`**, **`Statement`** y **`ResultSet`**. 
 
-##  Clase `DriverManager`
+##  clase `DriverManager`
+
+**Paso 1: Establecer conexión con la BBDD**
+
+```sh
+/* Para MySQL
+   jdbc  --> driver
+   mysql --> protocolo driver
+   localhost:3306/gestionPedidos --> detalles de la conexión
+*/
+jdbc:mysql://localhost:3306/gestionPedidos
+
+jdbc:odbc:DSN_gestionPedidos				  // para SQL Server
+
+jdbc:oracle:juan@servidor:3306:gestionPedidos // para Oracle
+```
+
+Vamos a necesitar información adicional como son los datos de *usuario* y *contraseña*.
 
 La clase ***java.sql.DriverManager*** es la capa gestora del driver JDBC. Se encarga de manejar el Driver apropiado y **permite crear conexiones con una base de datos** mediante el método estático **getConnection(…)** que tiene dos variantes:
 
 
-​	DriveManager.getConnection(String url).
+​	- `DriveManager.getConnection(String url)`
 
-​	DriveManager.getConnection(String url, String user, String password).
+​	- `DriveManager.getConnection(String url, String user, String password)`
 
 
 Este método intentará establecer una conexión con la base de datos según la URL indicada. Opcionalmente se le puede pasar el usuario y contraseña como argumento (también se puede indicar en la propia URL). Si la conexión es satisfactoria devolverá un objeto **Connection**.
 
-
 Ejemplo de conexión a la base de datos ‘prueba’ en localhost:
 
+```java
+String url = "jdbc:mysql://localhost:3306/prueba";
+Connection conn = DriverManager.getConnection(url,"root","");
+```
 
-​	String url = "jdbc:mysql://localhost:3306/prueba";
 
-​	Connection conn = DriverManager.getConnection(url,"root","");
-
-
-Este método puede lanzar dos tipos de excepciones (que habrá que manejar con un try-catch):
+Este método puede lanzar dos tipos de excepciones (que habrá que manejar con un *try-catch*):
 
 - **SQLException**: La conexión no ha podido producirse. Puede ser por multitud de motivos como una URL mal formada, un error en la red, host o puerto incorrecto, base de datos no existente, usuario y contraseña no válidos, etc.
-- **SQLTimeOutException**: Se ha superado el LoginTiemout sin recibir respuesta del servidor.
+- **SQLTimeOutException**: Se ha superado el *LoginTiemout* sin recibir respuesta del servidor.
 
 
-##  Clase `Connection`
+##  clase `Connection`
+
+**Paso 2. Crear un objeto Statement**
 
 Un objeto **java.sql.Connection representa una** **sesión de** **conexión con una base de datos**. Una aplicación puede tener tantas conexiones como necesite, ya sea con una o varias bases de datos.
 
-El método más relevante es **createStatement()** que devuelve un objeto Statement asociado a dicha conexión que permite ejecutar sentencias SQL. El método createStatement() puede lanzar excepciones de tipo **SQLException**.
+El método más relevante es **`createStatement()`** que devuelve un objeto *Statement* asociado a dicha conexión que permite ejecutar sentencias SQL. El método createStatement() puede lanzar excepciones de tipo **SQLException**.
 
-
-​	`Statement stmt = conn.createStatement();`
-
+```java
+Statement stmt = conn.createStatement();
+```
 
 Cuando ya no la necesitemos es aconsejable **cerrar** **la conexión con close()** para liberar recursos.
 
-
-​	`conn.close();`
-
-
-##  Clase `Statement`
-
-Un objeto **java.sql.Statement** permite **ejecutar** **sentencias SQL** **en** **la base de datos** a través de la conexión con la que se creó el Statement (ver apartado anterior). Los tres métodos más comunes de ejecución de sentencias SQL son executeQuery(…), executeUpdate(…) y execute(…). Pueden lanzar excepciones de tipo **SQLException** y **SQLTimeoutException**.
+```java
+conn.close();
+```
 
 
-- **ResultSet executeQuery(String sql)**: Ejecuta la sentencia sql indicada (de tipo SELECT). Devuelve un objeto ResultSet con los datos proporcionados por el servidor.  
+##  clase `Statement`
+
+**Paso 3. Ejecutar sentencia SQL**
+
+Un objeto **java.sql.Statement** permite **ejecutar** **sentencias SQL** **en** **la base de datos** a través de la conexión con la que se creó el *Statement* (ver apartado anterior). Los tres métodos más comunes de ejecución de sentencias SQL son `executeQuery(…)`, `executeUpdate(…)` y `execute(…)`. Pueden lanzar excepciones de tipo **SQLException** y **SQLTimeoutException**.
+
+
+- **`ResultSet executeQuery(String sql)`**: ejecuta la sentencia sql indicada (de tipo *SELECT*). Devuelve un objeto ResultSet con los datos proporcionados por el servidor.  
 
    ```java
    ResultSet rs = stmt.executeQuery("SELECT * FROM vendedores");
    ```
 
-- **int executeUpdate(String sql)**: Ejecuta la sentencia sql indicada (de tipo DML como por ejemplo INSERT, UPDATE o DELETE).  Devuelve un el número de registros que han sido insertados, modificados o eliminados.
+- **`int executeUpdate(String sql)`**: ejecuta la sentencia sql indicada (de tipo DML como por ejemplo *INSERT*, *UPDATE* o *DELETE*).  Devuelve un el número de registros que han sido insertados, modificados o eliminados.
 
    ```java
-   int nr = stmt.executeUpdate("INSERT INTO vendedores VALUES (1,'Pedro Gil', '2017-04-11', 15000);")
+   int nr = stmt.executeUpdate ("INSERT INTO vendedores VALUES (1,'Pedro Gil', '2017-04-11', 15000);")
    ```
 
 Cuando ya no lo necesitemos es aconsejable **cerrar el statement con close()** para liberar recursos.
@@ -408,31 +385,50 @@ Cuando ya no lo necesitemos es aconsejable **cerrar el statement con close()** p
    stmt.close();
    ```
 
-##  Clase `ResultSet`
+> Podríamos decir que este *resultset* es una especie de *tabla virtual* que se almacena en memoria con la información en su interior.
+
+##  clase `ResultSet`
+
+**Paso 4. Leer el resultset**
 
 Un objeto **java.sql.ResultSet** contiene un conjunto de resultados (datos) obtenidos tras ejecutar una sentencia SQL, normalmente de tipo SELECT. Es una **estructura de datos en forma de tabla** con **registros (filas)** que podemos recorrer para acceder a la información de sus **campos (columnas)**.
 
+*ResultSet* utiliza internamente un cursor que apunta al ‘registro actual’ sobre el que podemos operar. Inicialmente dicho cursor está situado antes de la primera fila y disponemos de varios métodos para desplazar el cursor. El más común es `next()`:
 
-ResultSet utiliza internamente un cursor que apunta al ‘registro actual’ sobre el que podemos operar. Inicialmente dicho cursor está situado antes de la primera fila y disponemos de varios métodos para desplazar el cursor. El más común es next():
 
-
-- **boolean next()**: Mueve el cursor al siguiente registro. Devuelve true si fué posible y false en caso contrario (si ya llegamos al final de la tabla).
+- **`boolean next()`**: Mueve el cursor al siguiente registro. Devuelve *true* si fue posible y *false* en caso contrario (si ya llegamos al final de la tabla).
 
 
 Algunos de los métodos para obtener los datos del registro actual son:
 
 
-- **String getString(String columnLabel)**: Devuelve un dato String de la columna indicada por su nombre. Por ejemplo: rs.getString("nombre")
-- **String getString(int columnIndex)**: Devuelve un dato String de la columna indicada por su nombre. La primera columna es la 1, no la cero. Por ejemplo: rs.getString(2)
+- **`String getString(String columnLabel)`**: Devuelve un dato *String* de la columna indicada por su nombre. 
+
+  Por ejemplo: 
+
+  ```java
+  rs.getString("nombre");
+  ```
+
+- **`String getString(int columnIndex)`**: Devuelve un dato *String* de la columna indicada por su nombre (la primera columna es la 1, no la cero). 
+
+  Por ejemplo: 
+
+  ```java
+  rs.getString(2);
+  ```
+
+  Existen métodos análogos a los anteriores para obtener valores de tipo *int*, *long*, *float*, *double*, *boolean*, *Date*, *Time*, *Array*, etc. Pueden consultarse todos en la [documentación oficial de Java](https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html).
 
 
-Existen métodos análogos a los anteriores para obtener valores de tipo int, long, float, double, boolean, Date, Time, Array, etc. Pueden consultarse todos en la [documentación oficial de Java](https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html).
-
-
-- **int getInt(String columnLabel) int getInt(int columnIndex)**
-- **double getDouble(String columnLabel) double getDouble(int columnIndex)**
-- **boolean getBoolean(String columnLabel) boolean getBoolean(int columnIndex)**
-- **Date getDate(String columnLabel) int getDate(int columnIndex)**
+- **`int getInt(String columnLabel)`**
+- **`int getInt(int columnIndex)`**
+- **`double getDouble(String columnLabel)`**
+- **`double getDouble(int columnIndex)`**
+- **`boolean getBoolean(String columnLabel)`**
+- **`boolean getBoolean(int columnIndex)`**
+- **`Date getDate(String columnLabel)`**
+- **`Date getDate(int columnIndex)`**
 - etc.
 
 
@@ -440,7 +436,7 @@ Más adelante veremos cómo se realiza la modificación e inserción de datos.
 
 Todos estos métodos pueden lanzar una **SQLException**.
 
-Veamos un ejemplo de cómo recorrer un ResultSet llamado rs y mostrarlo por pantalla:
+Veamos un ejemplo de cómo recorrer un *ResultSet* llamado *rs* y mostrarlo por pantalla:
 
 ```java
 while(rs.next()) {
@@ -460,18 +456,18 @@ Cuando invocamos a ***createStatement()*** **sin** **argumentos**, como hemos vi
 Por ello el método *createStatement()* está sobrecargado (existen varias versiones de dicho método) lo cual nos permite invocarlo con argumentos en los que podemos especificar el funcionamiento.
 
 
-- **Statement createStatement(int resultSetType, int resultSetConcurrency)**: Devuelve un objeto Statement cuyos objetos ResultSet serán del tipo y concurrencia especificados. Los valores válidos son constantes definidas en ResultSet.
+- **`Statement createStatement(int resultSetType, int resultSetConcurrency)`**: Devuelve un objeto Statement cuyos objetos ResultSet serán del tipo y concurrencia especificados. Los valores válidos son constantes definidas en ResultSet.
 
 
 El **argumento resultSetType** indica el tipo de ResultSet:
 
-- **ResultSet.TYPE_FORWARD_ONLY**: ResultSet por defecto, forward-only y no-actualizable.
+- **`ResultSet.TYPE_FORWARD_ONLY`**: ResultSet por defecto, forward-only y no-actualizable.
   - Solo permite movimiento hacia delante con next().
   - Sus datos NO se actualizan. Es decir, no reflejará cambios producidos en la base de datos. Contiene una instantánea del momento en el que se realizó la consulta.
-- **ResultSet.TYPE_SCROLL_INSENSITIVE**: ResultSet desplazable y no actualizable.
+- **`ResultSet.TYPE_SCROLL_INSENSITIVE`**: ResultSet desplazable y no actualizable.
   - Permite libertad de movimiento del cursor con otros métodos como first(), previous(), last(), etc. además de next().
   - Sus datos NO se actualizan, como en el caso anterior.
-- **ResultSet.TYPE_SCROLL_SENSITIVE**: ResultSet desplazable y actualizable.
+- **`ResultSet.TYPE_SCROLL_SENSITIVE`**: ResultSet desplazable y actualizable.
   - Permite libertad de movimientos del cursor, como en el caso anterior.
   - Sus datos SÍ se actualizan. Es decir, mientras el ResultSet esté abierto se actualizará automáticamente con los cambios producidos en la base de datos. Esto puede suceder incluso mientras se está recorriendo el ResultSet, lo cual puede ser conveniente o contraproducente según el caso.
 
@@ -572,7 +568,7 @@ También podría hacerse de la siguiente manera, suponiendo que la columna “ed
 rs.updateInt(2, 28);
 ```
 
-Los métodos updateXXX() no devuelven ningún valor (son de tipo void). Si se produce algún error se lanzará una SQLException.
+Los métodos *updateXXX()* no devuelven ningún valor (son de tipo void). Si se produce algún error se lanzará una SQLException.
 
 
 Posteriormente hay que **llamar a updateRow() para que los cambios realizados se apliquen sobre la base de datos**. El Driver JDBC se encargará de ejecutar las sentencias SQL necesarias. Esta es una característica muy potente ya que nos facilita enormemente la tarea de modificar los datos de una base de datos. Este método devuelve void.
@@ -700,8 +696,6 @@ try {
 	e.printStackTrace();
 }
 ```
-
-
 
 
 # Píldoras informáticas relacionadas
