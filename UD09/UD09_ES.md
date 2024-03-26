@@ -15,13 +15,48 @@ typora-copy-images-to:${filename}/../assets
 
 # Introducción
 
+Hoy en día, la mayoría de aplicaciones informáticas necesitan almacenar y gestionar gran cantidad de datos.
 
+Esos datos, se suelen guardar en **bases de datos relacionales**, ya que éstas son las más extendidas actualmente.
+
+Las bases de datos relacionales permiten organizar los datos en **tablas** y esas tablas y datos se relacionan mediante campos clave. Además se trabaja con el lenguaje estándar conocido como **SQL**, para poder realizar las consultas que deseemos a la base de datos.
+
+Una base de datos relacional se puede definir de una manera simple como aquella que presenta la información en tablas con filas y columnas.
+
+Una tabla es una serie de **filas** y **columnas** , en la que cada fila es un **registro** y cada columna es un **campo**. Un campo representa un dato de los elementos almacenados en la tabla (NSS, nombre, etc.). Cada registro representa un elemento de la tabla (el equipo Real Madrid, el equipo Real Murcia, etc.)
+
+No se permite que pueda aparecer dos o más veces el mismo registro, por lo que uno o más campos de la tabla forman lo que se conoce como **clave primaria** (atributo que se elige como identificador en una tabla, de manera que no haya dos registros iguales, sino que se diferencien al menos en esa clave. Por ejemplo, en el caso de una tabla que guarda datos de personas, el número de la seguridad social, podría elegirse como clave primaria, pues sabemos que aunque haya dos personas llamadas, por ejemplo, Juan Pérez Pérez, estamos seguros de que su número de seguridad social será distinto).
+
+El sistema gestor de bases de datos, en inglés conocido como: **Database Management System** (**DBMS**) , gestiona el modo en que los datos se almacenan, mantienen y recuperan.
+
+En el caso de una base de datos relacional, el sistema gestor de base de datos se denomina: **Relational Database Management System** (**RDBMS**).
+
+Tradicionalmente, la programación de bases de datos ha sido como una Torre de Babel: gran cantidad de productos de bases de datos en el mercado, y cada uno “hablando” en su lenguaje privado con las aplicaciones.
+
+Java, mediante **JDBC** ( Java Database Connectivity, API que permite la ejecución de operaciones sobre bases de datos desde el lenguaje de programación Java, independientemente del sistema operativo donde se ejecute o de la base de datos a la cual se accede), permite simplificar el acceso a base de datos , proporcionando un lenguaje mediante el cual las aplicaciones pueden comunicarse con motores de bases de datos. Sun desarrolló este API para el acceso a bases de datos, con tres objetivos principales en mente:
+
+- Ser un API con soporte de SQL: poder construir sentencias SQL e insertarlas dentro de llamadas al API de Java,
+- Aprovechar la experiencia de los APIs de bases de datos existentes,
+- Ser sencillo.
+
+## conexión a las BBDD: Conectores
+
+Dejemos de momento de lado el desfase Objeto-Relacional y centrémonos ahora en el acceso a Base de Datos Relacionales desde los lenguajes de programación. Lo razonaremos en general y lo aplicaremos a Java.
+
+Desde la década de los 80 que existen a pleno rendimiento las bases de datos relacionales. Casi todos los Sistemas Gestores de Bases de Datos (excepto los más pequeños como Access o Base de LibreOffice) utilizan la arquitectura cliente-servidor. Esto significa que hay un ordenador central donde está instalado el Sistema Gestor de Bases de Datos Relacional que actúa como servidor, y habrá muchos clientes que se conectarán al servidor haciendo peticiones sobre la Base de Datos.
+
+Los Sistemas Gestores de Bases de Datos inicialmente disponían de lenguajes de programación propios para poder hacer los accesos desde los clientes. Era muy consistente, pero a base de ser muy poco operativo:
+
+- La empresa desarrolladora del SGBD debían mantener un lenguaje de programación, que resultaba necesariamente muy costoso, si no querían que quedara desfasado.
+- Las empresas usuarias del SGBD, que se conectaban como clientes, se encontraban muy ligadas al servidor para tener que utilizar el lenguaje de programación para acceder al servidor, lo que no siempre se ajustaba a sus necesidades. Además, el plantearse cambiar de servidor, significaba que había que rehacer todos los programas, y por tanto una tarea de muchísima envergadura.
+
+Para poder ser más operativos, había que desvincular los lenguajes de programación de los Sistemas Gestores de Bases de Datos utilizando unos estándares de conexión.
 
 # JDBC
 
 Java puede conectarse con distintos SGBD y en diferentes sistemas operativos. Independientemente del método en que se almacenen los datos debe existir siempre un **mediador** entre la aplicación y el sistema de base de datos y en Java esa función la realiza **JDBC**. 
 
-> Para la conexión a las bases de datos utilizaremos la API estándar de JAVA denominada **JDBC** (Java Data Base Connection)
+> Para la conexión a las bases de datos utilizaremos la API estándar de JAVA denominada **JDBC** (*Java Data Base Connectivity*).
 
 JDBC es un API incluido dentro del lenguaje Java para el acceso a bases de datos. Consiste en un conjunto de clases e interfaces escritas en Java que ofrecen un completo API para la programación con bases de datos, por lo tanto es la única solución 100% Java que permite el acceso a bases de datos.
 
@@ -29,9 +64,15 @@ JDBC es una especificación formada por una colección de interfaces y clases ab
 
 > No será necesario escribir un programa para cada tipo de base de datos, una misma aplicación escrita utilizando JDBC podrá manejar bases de datos Oracle, Sybase, SQL Server, etc.
 
+<img src="./assets/jdbc.png" alt="jdbc_rdbms" style="zoom:80%;" />
+
 Además podrá ejecutarse en cualquier sistema operativo que posea una Máquina Virtual de Java, es decir, serán aplicaciones completamente independientes de la plataforma. Otras APIS que se suelen utilizar bastante para el acceso a bases de datos son DAO (Data Access Objects) y RDO (Remote Data Objects), y ADO (ActiveX Data Objects), pero el problema que ofrecen estas soluciones es que sólo son para plataformas Windows.
 
 JDBC tiene sus clases en el paquete *java.sql* y otras extensiones en el paquete *javax.sql*.
+
+<img src="./assets/jdbc_clases.png" alt="jdbc paquetes" style="zoom:60%;" />
+
+
 
 ## Funciones del JDBC
 
@@ -46,21 +87,239 @@ Básicamente el API JDBC hace posible la realización de las siguientes tareas:
 
 Los drivers nos permiten conectarnos con una base de datos determinada. Existen **cuatro tipos de drivers JDBC**, cada tipo presenta una filosofía de trabajo diferente. A continuación se pasa a comentar cada uno de los drivers:
 
-- JDBC-ODBC bridge plus ODBC driver (tipo 1): permite al programador acceder a fuentes de  datos ODBC existentes mediante JDBC. El JDBC-ODBC Bridge (puente JDBC-ODBC) implementa operaciones JDBC traduciéndolas a operaciones ODBC, se encuentra dentro del paquete *sun.jdbc.odbc* y contiene librerías nativas para acceder a ODBC.
+- **JDBC-ODBC bridge plus ODBC driver** (tipo 1): permite al programador acceder a fuentes de  datos ODBC existentes mediante JDBC. El JDBC-ODBC Bridge (puente JDBC-ODBC) implementa operaciones JDBC traduciéndolas a operaciones ODBC, se encuentra dentro del paquete *sun.jdbc.odbc* y contiene librerías nativas para acceder a ODBC.
 
 ​	Al ser usuario de ODBC depende de las dll de ODBC y eso limita la cantidad de plataformas en donde se puede ejecutar la aplicación.
 
-- Native-API partly-Java driver (tipo 2): son similares a los drivers de tipo1, en tanto en cuanto  también necesitan una configuración en la máquina cliente. Este tipo de driver convierte llamadas JDBC a llamadas de Oracle, Sybase, Informix, DB2 u otros SGBD. Tampoco se pueden utilizar dentro de applets al poseer código nativo.
-- JDBC-Net pure Java driver (tipo 3): Estos controladores están escritos en Java y se encargan de convertir las llamadas JDBC a un protocolo independiente de la base de datos y en la aplicación servidora utilizan las funciones nativas del sistema de gestión de base de datos mediante el uso de una biblioteca JDBC en el servidor. La ventaja de esta opción es la portabilidad.
-- JDBC de Java cliente (tipo 4): Estos controladores están escritos en Java y se encargan de convertir las llamadas JDBC a un protocolo independiente de la base de datos y en la aplicación servidora utilizan las funciones nativas del sistema de gestión de base de datos sin necesidad de bibliotecas. La ventaja de esta opción es la portabilidad. Son como los drivers de tipo 3 pero sin la figura del intermediario y tampoco requieren ninguna configuración en la máquina cliente. Los drivers de tipo 4 se pueden utilizar para servidores Web de tamaño pequeño y medio, así como para intranets.
+- **Native-API partly-Java driver** (tipo 2): son similares a los drivers de tipo1, en tanto en cuanto  también necesitan una configuración en la máquina cliente. Este tipo de driver convierte llamadas JDBC a llamadas de Oracle, Sybase, Informix, DB2 u otros SGBD. Tampoco se pueden utilizar dentro de applets al poseer código nativo.
+- **JDBC-Net pure Java driver** (tipo 3): Estos controladores están escritos en Java y se encargan de convertir las llamadas JDBC a un protocolo independiente de la base de datos y en la aplicación servidora utilizan las funciones nativas del sistema de gestión de base de datos mediante el uso de una biblioteca JDBC en el servidor. La ventaja de esta opción es la portabilidad.
+- **JDBC de Java cliente** (tipo 4): Estos controladores están escritos en Java y se encargan de convertir las llamadas JDBC a un protocolo independiente de la base de datos y en la aplicación servidora utilizan las funciones nativas del sistema de gestión de base de datos sin necesidad de bibliotecas. La ventaja de esta opción es la portabilidad. Son como los drivers de tipo 3 pero sin la figura del intermediario y tampoco requieren ninguna configuración en la máquina cliente. Los drivers de tipo 4 se pueden utilizar para servidores Web de tamaño pequeño y medio, así como para intranets.
+
+## instalación controlador MySql
+
+El primer paso es descargar desde https://www.mysql.com/products/connector/ el conector apropiado.
+
+<img src="./assets/jdbc_1_download.png" alt="1557845207905" style="zoom: 75%;" />
+
+Elegir Sistema Operativo y versión:
+
+<img src="./assets/jdbc_2_version.png" alt="1557845207905" style="zoom: 60%;" />
+
+Haz clic en **Donwload** y selecciona la opción: **No thanks, just start download**
+
+<img src="./assets/jdbc_2_accept.png" alt="1557845207905" style="zoom: 60%;" />
+
+Ejecuta el fichero *deb* (en el caso de *Ubuntu*) descargado:
+
+<img src="./assets/jdbc_3_deb.png" alt="1557845207905" style="zoom: 80%;" />
+
+Ahora copia el archivo `mysql-connector-java-8.3.0.jar` en directorio del proyecto de *VS Code*:
+
+- el fichero `mysql-connector-java-8.3.0.jar` se encuentra en la ruta: `/usr/share/java`.
+- añadir, en nuestro proyecto Java en VS Code, la librería:
+
+<img src="./assets/jdbc_5_anyadirjdbaVSC.png" alt="1557845207905" style="zoom: 60%;" />
+
+## carga del controlador JDBC y conexión con la BD
+
+El primer paso para conectarnos a una base de datos mediante JDBC es cargar el controlador apropiado. Estos controladores se distribuyen en un archivo `.jar` que provee el fabricante del SGBD y deben estar accesibles por la aplicación, bien porque están en el `CLASSPATH` de java o porque lo tenemos en el mismo directorio que la aplicación.
+
+Para cargar el controlador se usan las siguientes sentencias:
+
+```java
+import java.sql.*;
+public class ConnectToMySql {
+  public static void main(String[] av) {
+    try {
+      // Dependiendo de a qué tipo de SGBD queramos conectar cargaremos un controlador u otro
+      // Intentar cargar el driver de MySQL
+      Class<?> c = Class.forName("com.mysql.jdbc.Driver");
+      System.out.println("Cargado " + c.getName());
+        
+      //Definir la url de conexión y los parámetros de usuario y contraseña
+      String host = "jdbc:mysql://localhost:3306/prueba";
+      String username = "prueba";
+      String password = "1234";
+      Connection con = DriverManager.getConnection(host, username, password);
+        
+      System.out.println("Conexión completada");
+      con.close();
+    } catch (ClassNotFoundException cnfe) {
+      System.out.println(cnfe.getMessage());
+	} catch (SQLException ex) {
+      System.out.println("Se ha producido un error al conectar: " + ex.getMessage());
+    }
+  }
+}
+```
+
+Observamos las siguientes cuestiones:
+
+- Como ya hemos comentado alguna vez, la sentencia `Class.forName()` no sería necesaria en muchas aplicaciones. Pero nos asegura que hemos cargado el driver, y por tanto el `DriverManager` la sabrá manejar
+- El `DriverManager` es capaz de encontrar el driver adecuado a través de la url proporcionada (sobre todo si el driver está cargado en memoria), y es quien nos proporciona el objeto `Connection` por medio del método `getConnection()`. Hay otra manera de obtener el `Connection` por medio del objeto `Driver`, como veremos más adelante, pero también será pasando indirectamente por `DriverManager`.
+- Si no se encuentra la clase del driver (por no tenerlo en las librerías del proyecto, o haber escrito mal su nombre) se producirá la excepción `ClassNotFoundException`. Es conveniente tratarla con `try ... catch`.
+- Si no se puede establecer la conexión por alguna razón se producirá la excepción `SQLException`. Al igual que en el caso anterior, es conveniente tratarla con `try ... catch`.
+- El objeto `Connection` mantendrá una conexión con la Base de Datos desde el momento de la creación hasta el momento de cerrarla con `close()`. Es muy importante cerrar la conexión, no sólo para liberar la memoria de nuestro ordenador (que al cerrar la aplicación liberaría), sino sobre todo para cerrar la sesión abierta en el Servidor de Bases de Datos.
+
+Una manera de conectar alternativa a las anteriores es utilizando el objeto `Driver`. La clase `java.sql.Driver` pertenece a la **API JDBC**, pero no es instanciable, y tan sólo es una interfaz, para que las clases `Driver` de los contenedores hereden de ella e implementen la manera exacta de acceder al SGBD correspondiente. Como no es instanciable (no podemos hacer new Driver()) la manera de crearlo es a través del método `getDriver()` del `DriverManager`, que seleccionará el driver adecuado a partir de la url. Ya sólo quedarán definir algunas propiedades, como el usuario y la contraseña, y obtener el `Connection` por medio del método `connect()`
+
+La manera de conectar a través de un objeto `Driver` es más larga, pero más completa ya que se podrían especificar más cosas. Y quizás ayude a entender el montaje de los controladores de los diferentes SGBD en Java.
+
+```java
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+public class ConnectToMySqlDriver {
+
+    public static void main(String[] args)  {
+        String url="jdbc:mysql://localhost:3306/prueba";
+        String username = "prueba";
+        String password = "1234";
+		
+		try{
+		    Driver driver = DriverManager.getDriver(url);
+
+		    Properties properties = new Properties();
+		    properties.setProperty("user", username);
+		    properties.setProperty("password", password);
+
+		    Connection con = driver.connect(url, properties);
+		    System.out.println("Conexión completada a través de Driver");
+		    con.close();
+		} catch (SQLException ex) {
+      		System.out.println("Se ha producido un error al conectar: " + ex.getMessage());
+    	}
+    }
+}
+```
+
+> En este caso, sólo funcionará si el driver se encuentra en el `CLASSPATH` o hemos añadido la librería a nuestro IDE
+
+## carga del controlador y de la conexión mediante el patrón Singleton
+
+Este patrón de diseño está diseñado para restringir la creación de objetos pertenecientes a una clase. Su intención consiste en garantizar que una clase sólo tenga una instancia y proporcionar un punto de acceso global a ella. El patrón `Singleton` se implementa creando en nuestra clase un método que crea una instancia del objeto sólo si todavía no existe alguna. Para asegurar que la clase no puede ser instanciada nuevamente se regula el alcance del constructor haciéndolo privado. Las situaciones más habituales de aplicación de este patrón son aquellas en las que dicha clase ofrece un conjunto de utilidades comunes para todas las capas (como puede ser el sistema de log, conexión a la base de datos, …) o cuando cierto tipo de datos debe estar disponible para todos los demás objetos de la aplicación (en java no hay variables globales) El patrón Singleton provee una única instancia global gracias a que:
+
+- La propia clase es responsable de crear la única instancia.
+- Permite el acceso global a dicha instancia mediante un método de clase.
+- Declara el constructor de clase como privado para que no sea instanciable directamente.
+
+```java
+/**
+ * @see <a href="https://stackoverflow.com/questions/6567839/if-i-use-a-singleton-class-for-a-database-connection-can-one-user-close-the-con">Stackoverflow Singleton</a>
+ * Patron Singleton
+ * ================
+ * Este patrón de diseño está diseñado para restringir la creación de objetos pertenecientes a una clase. Su intención consiste en garantizar que
+ * una clase sólo tenga una instancia y proporcionar un punto de acceso global a ella.
+ * El patrón Singleton se implementa creando en nuestra clase un método que crea una instancia del objeto sólo si todavía no existe alguna.
+ * Para asegurar que la clase no puede ser instanciada nuevamente se regula el alcance del constructor haciéndolo privado.
+ * Las situaciones más habituales de aplicación de este patrón son aquellas en las que dicha clase ofrece un conjunto de utilidades comunes
+ * para todas las capas (como puede ser el sistema de log, conexión a la base de datos, ...)
+ * o cuando cierto tipo de datos debe estar disponible para todos los demás objetos de la aplicación.
+ * El patrón Singleton provee una única instancia global gracias a que:
+ * - La propia clase es responsable de crear la única instancia.
+ * - Permite el acceso global a dicha instancia mediante un método de clase.
+ * - Declara el constructor de clase como privado para que no sea instanciable directamente.
+ */
+public class DatabaseConnection
+{
+    private static DatabaseConnection dbInstance; //Variable para almacenar la unica instancia de la clase
+    private static java.sql.Connection con;
+
+    private DatabaseConnection() {
+      // El Constructor es privado!!
+    }
+
+    public static DatabaseConnection getInstance(){
+        //Si no hay ninguna instancia...
+        if(dbInstance==null){
+            dbInstance= new DatabaseConnection();
+        }
+        return dbInstance;
+    }
+
+    public static java.sql.Connection getConnection(){
+
+        if(con==null){
+            try {
+                String host = "jdbc:mysql://localhost:3306/prueba";
+                String username = "prueba";
+                String password = "1234";
+                con = java.sql.DriverManager.getConnection( host, username, password );
+                System.out.println("Conexión realizada");
+            } catch (java.sql.SQLException ex) {
+                System.out.println("Se ha producido un error al conectar: " + ex.getMessage());
+            }
+        }
+
+        return con;
+    }
+}
+```
+
+<img src="https://victorponz.github.io/programacion-java/assets/img/BD/1557849184617.png" alt="1557849184617" style="zoom:67%;" />
+
+Vamos a crear una nueva clase para probar la conexión.
+
+```java
+import java.sql.*;
+public class Test
+{
+    static java.sql.Connection con = DatabaseConnection.getInstance().getConnection();
+    public Test(){
+        //De momento no hace nada
+    }
+}
+```
+
+<img src="https://victorponz.github.io/programacion-java/assets/img/BD/1557849470525.png" alt="1557849470525" style="zoom:67%;" />
 
 # Acceso a BBDD
 
 En este apartado se ofrece una introducción a los aspectos fundamentales del acceso a bases de datos mediante código Java. En los siguientes apartados se explicarán algunos aspectos en mayor detalle, sobre todo los relacionados con las clases Statement y ResultSet.
 
+<img src="./assets/jdbc_proceso.png" alt="jdbc proceso" style="zoom:60%;" />
+
+**Paso 1: Establecer conexión con la BBDD**
+
+```java
+//...
+jdbc:mysql://localhost:3306/gestionPedidos    // para MySQL
+/* jdbc  --> driver
+   mysql --> protocolo driver
+   localhost:3306/gestionPedidos --> detalles de la conexión
+*/
+//...
+jdbc:odbc:DSN_gestionPedidos				  // para SQL Server
+//...
+jdbc:oracle:juan@servidor:3306:gestionPedidos // para Oracle
+```
+
+Vamos a necesitar información adicional como son los datos de usuario y contraseña.
+
+Las conexiones pueden lanzar excepciones; por lo tanto, toda la conexión debería estar dentro de un bloque *try-catch* para capturar la posible excepción que pudiera lanzarse.
+
+**Paso 2. Crear un objeto Statement**
+
+Con nuestro objeto *conexión* creado (del primer punto) podemos ahora utilizar el método `createStatement()` y, al aplicar este método al objeto *conexión*, nos va a devolver un objeto de tipo *statement*.
+
+**Paso 3. Ejecutar sentencia SQL**
+
+Con el objeto *statement* creado en el paso anterior, podemos utilizar un método `executeQuery("sentecia_SQL")` que nos permite ejecutar una sentencia SQL. La ejecución de este método nos va a devolver un *resultset*. ¿*Qué es un resultset*? es un objeto en el que se almacena la información que devuelve la ejecución de la sentencia sql; es decir, la información que vamos a consultar en la BD.
+
+> Podríamos decir que este *resultset* es una especie de *tabla virtual* que se almacena en memoria con la información en su interior.
+
+**Paso 4. Leer el resultset**
+
+Este paso consiste en leer el *resultset* generado en el anterior punto. 
+
+Para leer este *resultset* tenemos diferentes métodos, como `getString()` o `next()`. Utilizando estos métodos vamos a poder navegar registro a registro por esta *tabla virtual* o *resultset*. ¿*Cómo vamos a hacerlo*? mediante un bucle (while, until, etc).
+
 ## Añadir la librería JDBC al proyecto
 
-Para poder utilizar la librería JDBC en un proyecto Java primero deberemos añadirla al proyecto. Para ello debemos hacer clic derecho sobre la carpeta ‘Libraries’ del proyecto y seleccionar ‘Add JAR/Folder’. En la ventana emergente deberemos seleccionar el archivo del driver previamente descargado mysql-connector-java-8.0.19.jar y clic en OK.
+Para poder utilizar la librería JDBC en un proyecto Java primero deberemos añadirla al proyecto. Para ello debemos hacer clic derecho sobre la carpeta ‘Libraries’ del proyecto y seleccionar `Add JAR/Folder`. En la ventana emergente deberemos seleccionar el archivo del driver previamente descargado mysql-connector-java-8.0.19.jar y clic en OK.
 
 ## Cargar el Driver
 
