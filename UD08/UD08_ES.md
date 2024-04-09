@@ -1,5 +1,5 @@
 ---
-unit: UD08
+unit: unidad 8
 title: Composición, Herencia y Polimorfismo
 language: ES
 author: Arturo Blasco
